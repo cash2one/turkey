@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {% block head_meta %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% endblock head_meta %}
+
+    <!--
+    <link rel="icon" href="../../favicon.ico">-->
+
+    <title>概述分析 - 人物画像系统</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css">
+
+    <!-- daterangepicker css -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/datarangepiker.css') }}">
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+        /*
+         * Base structure
+         */
+
+        /* Move down content because we have a fixed navbar that is 50px tall */
+        body {
+            padding-top: 60px;
+            /*font-family: Arial,"Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei","文泉驿微米黑",STXihei,"华文细黑",sans-serif;*/
+            font-size: 13px;
+            line-height: 20px;
+            background-color: #ebebeb;
+        }
+        body, form, ul, ol, li, h1, h2, h3, h4, h5, h6, p, dl, dd, td, th, input, img {
+            margin: 0;
+            padding: 0;
+        }
+        #overview{
+            width:1000px;
+            margin:0 auto;
+            background-color: white;
+            margin-left: 175px;
+            float: left
+            /*height: 200px*/
+
+        }
+        #overview p {
+            margin-bottom:10px;
+        }
+
+        .open a, a, a:hover {
+            text-decoration: None;
+        }
+
+        /*a:hover {
+            text-decoration:underline;
+
+        }*/
+
+        ul, ol, li {
+            list-style: none;
+        }
+        .panel-body div{
+/*            float:left;
+*/        }
+        .panel-heading div{
+            font-size: 16px;
+        }
+        table th, td{
+            text-align: center;
+            height: 30px;
+            line-height: 50px;
+        }
+        .list-group a{
+            float: right;
+        }
+        .shadow {
+        -webkit-box-shadow:5px 6px 3px #ABA8A8;
+        -moz-box-shadow:5px 6px 3px #ABA8A8;
+        box-shadow:5px 6px 3px #ABA8A8;
+    }
+    .panel-heading {
+        background-color: #78748C;
+        color: white;
+    }
+    .personal_domain {
+        height: 35px;
+    }
+    .personal_domain b{
+        font-size: 14px;
+    }
+    .personal_domain span{
+        padding: 10px;
+        background-color: #45b8b3;
+        color: white;
+        border-radius: 4px;
+        margin:5px;
+    }
+    .focused span{
+        padding: 10px;
+        background-color: #43b6af;
+        color: white;
+        border-radius: 4px;
+        margin:5px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    #comment ul li {
+        line-height: 25px;
+        height:80px;
+    }
+
+    .btn-default, .btn-success{
+            background-color: #43b6af;
+            border-color:#43b6af; 
+            color: white;
+
+        }
+    .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
+            background-color:#49827E;
+            border-color:#43b6af; 
+            color: white;
+    }
+    .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+        background-color:#49827E;
+        color: white;
+    } 
+    .personal_domain a{
+        color: #fff;
+    }
+    .weibo a .undlin {
+        color:#43b6af;
+        text-decoration: underline;
+
+    }
+    .weibo_info a ,.undlin {
+        color:#43b6af;
+        text-decoration: underline;
+
+    }
+    .menu_overview{
+        float: left;
+    background-color: #3379b7;
+    margin-left:30px;
+    height: 61px;
+    color: white;
+    width: 100px;
+    padding: 18px;
+    font-size: 15px;
+    }
+    .item{
+            margin-bottom: 10px;
+    }
+    </style>
+    {% block head_css %}
+    {% endblock head_css %}
+    <!-- JQuery core JS -->
+    <script src="/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap core JS -->
+    <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/moment.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/datarangepiker.js') }}"></script>
+    {% block head_js %}
+    {% endblock head_js %}
+
+</head>
+
+<body>
+    {% block main %}
+    <div id="float-wrap" hidden style="position:fixed;background-image:url(/static/img/touming.png);display:none;width:100%;height:100%;z-index:1000;"></div><!-- 模态框背景 -->
+
+        <div style="width:100%; height:61px;background-color:#104F87;position:fixed;z-index:10000;border-bottom: 5px solid #F4A615">
+            <!-- <img src="/static/img/banner.png"> -->
+                <span style="font-size:24px;color:#fff;float:left;padding-top: 22px;padding:0 23px;">
+                    <span style="font-size:25px;line-height:38px;color:#addf58;font-family: 'PTSansRegular', Arial, Helvetica, sans-serif;">PMS</span>
+                    <span style="font-size:14px;margin-left:15px;">人事管理系统（外网）</span>
+                    <span style="font-size:14px;margin-left:15px;">概述分析</span>
+                </span>
+                    <form class="navbar-form navbar-right" style="margin-right:30px;margin-top: 25px;">
+                        <span ><a href="/news/search/" target='_blank' style="color: #fff;font-size: 14px;" >首页</a></span>
+                        <!-- <input type="text" class="form-control" placeholder="人物搜索..."> -->
+                    </form>
+        </div>
+        <div id="overview" style="margin-top:51px;" >
+            <div class="shadow" style="border-radius: 10px;float: left;padding:15px;border: 4px solid #104F87;margin: 15px;">
+                <div id = "porphoto" style="width:245px;float:left;margin-top:25px;">
+                    <span class="img-photo" style="margin-left: 63px;margin-top: -15px;margin-bottom: 8px;display:block;float:left;"><img id="portraitImg" src="http://www.gps-ie.com/upfiles/201539173050.jpg" alt="Photo" width="110" height="130"></span>
+                </div>
+                <div style="float:left;width:685px;">
+                    <p style="font-size:16px;"><b>冯宽</b></p>
+                    <p class="personal_domain"><b>身&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份：</b><span>文学学士</span></p>
+                    <p class="personal_domain"><b>社会职务：</b><span>冯骥才的基金会秘书长</span><span>民进天津市委青年工作委员会主任</span><span>民进天津市代表大会市委会委员</span></p>
+                    <div class="personal_domain"><b>个人链接：</b><!-- <span><a href="http://www.gps-ie.com/team-details.asp?id=79" target="_blank">上海改进专家</a></span> --><span><a href="http://www.gps-ie.com/team-details.asp?id=79" target="_blank">上海改进管理咨询有限公司专家团队成员</a></span><span><a href="http://www.tjnbcc.org/index.php?case=archive&act=list&catid=10&page=2" target="_blank">天津市宁波商会理事</a></span><span><a href="http://www.sclf.org/sclf/gygj/200707/t20070717_5033_4.htm" target="_blank">中国非公募基金会调查</a></span>
+                    </div>
+                </div>
+                <p style="font-size:11px;color:#8F8A8A;    float: left;margin-left: 250px;">数据源说明：通过监测30+主流新闻、论坛、博客、微博站点，采集外网舆情信息达到30000条，随后对采集的海量信息过滤不相关信息并进行文本去重，保留有用信息支撑后续分析。</p>
+
+            </div>
+                        <div class="col-lg-12" >
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div><span id="relation_href" style="float:right;cursor:pointer;"></span>社会关系</div>
+                    </div>
+                    <div class="panel-body">
+                        <div id="hot_issue_mining" style="height: 600px; width: 900px;;cursor: default; background-color: rgba(0, 0, 0, 0);">
+                            </div>
+                            <div id="profile_div" style="visibility: hidden;">
+                                <div class="panel-heading" style="border-top: solid #ebebeb;">
+                                    <h3 class="panel-title" style="text-align: center;" id="company-panel-title"> 基本信息 </h3>
+                                </div>
+                                <ul class="list-group" id="basicprofile"></ul>
+                            </div>
+                            <div style="width:50%;margin-right:30px;float:left;">
+                                <p><h4 style="margin-left:150px;">紧密联系人</h4></p>
+                                <div id="related_people"  style="width:100%"></div>
+                            </div>
+                            <div id="related_people_pie" style="width:400px; height:350px;float:left;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12" >
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div><span id="act_href" style="float:right;cursor:pointer;"></span>社会活动（2000年至今）</div>
+                    </div>
+                    <div class="panel-body">
+                      <div style="width:900px;">
+                        <div style="clear:left;width:50%;float:left;height:330px;position:relative;" id="subeventpie">
+                        </div>
+                        <div id="acttypepie" style="width:50%;float:left;height:330px;position:relative;">
+                        </div>
+                      </div>
+                      <div style="width:900px;">
+                        <div id="subtype_tab" style="margin: 20px;">
+                                <div class="btn-group" id="acttype1"><button type="button" class="btn btn-default" style="margin: 5px;" onclick="drawWeiboByCategory('1')">参政议政(2)</button></div>
+                            
+                                <div class="btn-group" id="acttype3"><button type="button" class="btn btn-default" style="margin: 5px;" onclick="drawWeiboByCategory('3')">商业活动(1)</button></div>
+                            
+                                <div class="btn-group" id="acttype2"><button type="button" class="btn btn-default" style="margin: 5px;" onclick="drawWeiboByCategory('2')">公益活动(6)</button></div>
+                            
+                                <div class="btn-group" id="acttype5"><button type="button" class="btn btn-default" style="margin: 5px;" onclick="drawWeiboByCategory('5')">学术活动(2)</button></div>
+
+                                <!-- <div class="btn-group" id="acttype5"><button type="button" class="btn btn-default" style="margin: 5px;" onclick="drawWeiboByCategory('6')">文艺活动(1)</button></div> -->
+                            
+                        </div>
+                    </div>
+                    <div id="weibos_c_div" style="width:900px;float:left;margin-left:25px;">
+                        <div class="tabCon">
+                            <div id="weibo_c_list" class="weibo_list weibo_list_height scrolls tang-scrollpanel">
+                                <div id="content_control_c_height" class="tang-scrollpanel-wrapper">
+                                    <div class="tang-scrollpanel-content">
+                                        <ul id="weibo_c_ul_re">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="more" style="width:100%; height:24px; text-align:center;">
+                                <span class="weibo_more" id="more_c_information">加载更多</span>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div style="width:900px;float:left;">
+                        <div id="subtype_tab" style="margin: 20px;">
+                                <div class="btn-group" id="acttype1"><button type="button" class="btn btn-default" style="margin: 5px;" onclick="drawWeiboBypoint('m')">当选民进代表大会委员会(1)</button></div>
+                            
+                                <div class="btn-group" id="acttype3"><button type="button" class="btn btn-default" style="margin: 5px;" onclick="drawWeiboBypoint('q')">参观青岛出版集团(1)</button></div>
+                            
+                                <div class="btn-group" id="acttype2"><button type="button" class="btn btn-default" style="margin: 5px;" onclick="drawWeiboBypoint('t')">天津文化需要抢救(3)</button></div>
+                            
+                                <div class="btn-group" id="acttype5"><button type="button" class="btn btn-default" style="margin: 5px;" onclick="drawWeiboBypoint('d')">大同雕塑全集出版(2)</button></div>
+                                
+                                <div class="btn-group" id="acttype5"><button type="button" class="btn btn-default" style="margin: 5px;" onclick="drawWeiboBypoint('g')">民间文化支离飘零(1)</button></div>
+                            
+                        </div>
+                    </div>
+                    <div id="weibos_c_div_p" style="width:900px;float:left;margin-left:25px;">
+                        <div class="tabCon">
+                            <div id="weibo_c_list_p" class="weibo_list weibo_list_height scrolls tang-scrollpanel">
+                                <div id="content_control_c_height_p" class="tang-scrollpanel-wrapper">
+                                    <div class="tang-scrollpanel-content">
+                                        <ul id="weibo_c_ul_re_p">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="more" style="width:100%; height:24px; text-align:center;">
+                                <span class="weibo_more" id="more_c_information">加载更多</span>
+                            </div> -->
+                        </div>
+                    </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12" >
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div>其他</div>
+                    </div>
+                    <div class="panel-body">
+                        <div style="clear:left;width:44%;float:left;height:230px;position:relative;" class="keywords_cloud_div">
+                            <div class="paper" id="paper_div" style="width:100%">
+                                <ul class="list-group" id="paperul">
+                                    <li class='list-group-item'><span id="showmore_article" style="float:right;cursor:pointer" type="button"data-toggle="modal" data-target="#more_article" ></span><b style="font-size:14px;">发表作品</b></li>
+                                    <li class='list-group-item'><span>2009年6月，在冯骥才的倡导和指挥下，由全国雕塑艺术权威人士参与的盘点大同雕塑家底大型活动全面启动。《中国大同雕塑全集》由耿彦波任工作委员会主任，冯骥才任总主编并撰写总序，韩美林、金维诺、丁明夷、曾成钢、陈云岗、隋建国、孙振华、吴健、冯宽、王晓岩等国内多位着名学者、专家、雕塑家、摄影家会同大同地方专家学者共同编制完成。</span><a href="http://www.doc88.com/p-9425722905359.html" target="_blank" class="align-right">链接</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="width:56%;float:left;height:230px;position:relative;">
+                            <ul class="list-group" id="honorul">
+                                <li class='list-group-item'><span id="showmore_article2" style="float:right;cursor:pointer" type="button"data-toggle="modal" data-target="#more_article2" ></span><b style="font-size:14px;">所获荣誉</b></li>
+                                <li class='list-group-item'><span>在国际及港澳台奖项中，由冯骥才主编、冯宽执行负责的《中国木版年画代表作》夺得全球印刷界最高荣誉奖——美国国家印刷金奖(班尼奖)，该书还在“香港印制大奖”评比中获“全场冠军”、“最佳印制书籍奖”、“豪华精装书刊冠军奖”及“最佳创意印刷大奖优异奖”等项殊荣，并获得第八届全国书籍装帧金奖。<a href="http://www.tjmj.gov.cn/index.php?c=main&a=viewnews&id=1348" target="_blank" class="align-right">链接</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="related_people_modal_fk" style="padding: 20px;border-radius: 6px;display:none;position: fixed;left: 70%;top: 30%;z-index: 1005;width: 420px;background: #FFF none repeat scroll 0% 0%;border: 1px solid #999;max-height: 400px;overflow: auto;margin-left: -460px;font_family: "Microsoft YaHei UI";">
+    <h4 class="title" style="padding: 10px;border-bottom:solid 1px #999;padding-top: 0;"><a href="javascript:void(0)" class="Basicclose" id="close" style="float:right;">X</a><span id="modal_title">相关活动</span></h4>
+    <div class="m-wrap" id="related_people_detail_fk" style="font-size:14px;margin-top:15px;">
+        
+    </div>
+</div>
+
+    {% endblock main %}
+
+
+{% block tail_js %}
+    <!--<script src="http://hijiangtao.github.io/variety-show-hot-spot-vis/js/esl.js"></script>
+    <script src="http://echarts.baidu.com/echarts2/doc/example/www/js/echarts.js"></script>
+    <script src="http://hijiangtao.github.io/variety-show-hot-spot-vis/js/echarts-plain-map.js"></script>-->
+    <script type="text/javascript">
+        var name = "{{ topic }}";
+        var subevent_id = "{{ subevent_id }}";
+        var topicid= "{{ topic_id }}";
+        cluster_eva_min_size = "{{ cluster_eva_min_size }}";
+        var vsm = "{{ vsm }}"
+        $('#act_href').click(function(){
+            window.open("/news/?query=" + name);
+        });
+        $('#commtent_href').click(function(){
+            window.open("/cluster/?query=" + name + "&subevent_id="+ subevent_id);
+        });
+        $('#relation_href').click(function(){
+            window.open("/news/network/?query=" + name);
+        });
+        </script>
+        <script src="/static/echarts/echarts.js"></script>
+
+    <script>
+require.config({
+    paths : {
+        echarts : "/static/echarts/"
+    }
+});
+
+drawActTypePie();
+
+    function drawActTypePie(){
+       var data = [{"name": "参政议政", "count": 2},{"name": "商业活动", "count": 1},{"name": "公益活动", "count": 6}, {"name": "学术活动", "count": 2}];
+       refreshACTPiedata(data);
+    }
+
+    function refreshACTPiedata(data){
+    var pie_data = [];
+    var One_pie_data = {};
+    for (var d in data){ 
+        d = data[d];
+        One_pie_data = {'value': d["count"], 'name': d["name"] + d["count"]};
+        pie_data.push(One_pie_data);        
+    }
+
+    var option = {
+        title : {
+            text: '社会活动类型占比图',
+            x:'center', 
+            y: 'bottom',
+            textStyle:{
+            fontWeight:'lighter',
+            fontSize: 13,
+            }        
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {d}%"
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                restore : {show: true},            
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        series : [
+            {
+                name:'社会活动类型',
+                type:'pie',
+                radius : '50%',
+                center: ['50%', '50%'],
+                roseType : 'area',
+                data: pie_data
+            }
+        ]
+    };
+        require(
+        [
+            'echarts',
+            'echarts/chart/pie'
+        ],
+        function (echarts) {
+            var myChart = echarts.init(document.getElementById('acttypepie'));
+            myChart.setOption(option);
+        });
+    }
+
+var subeventpie_data = [{"name": "当选民进代表大会委员会", "count": 1}, {"name": "参观青岛出版集团", "count": 1}, {"name": "天津文化需要抢救", "count": 3}, {"name": "大同雕塑全集出版", "count": 2}, {"name": "民间文化支离飘零", "count": 1}]
+
+drawSubeventPie(subeventpie_data);
+
+function drawSubeventPie(data){
+    var pie_data = [];
+    var One_pie_data = {};
+    for (var d in data){ 
+        d = data[d];
+        // One_pie_data = {'value': d["count"], 'name': d["name"] + d["count"]};
+        One_pie_data = {'value': d["count"], 'name': d["name"]};
+        pie_data.push(One_pie_data);        
+    }
+
+    var option = {
+        color: ['#3E13AF','#FFA900','#00C12B','#FF1800','#7109AA','#CD0074','#1142AA',
+        '#9FEE00','#9BCA63','#B5C334','#E87C25','#27727B','#D7504B','#C6E579','#F4E001' ],
+        title : {
+            text: '社会活动主题占比图',
+            x:'center', 
+            y: 'bottom',
+            textStyle:{
+            fontWeight:'lighter',
+            fontSize: 13,
+            }        
+        },
+        tooltip : {
+                trigger: 'item',
+                formatter: function (params) {
+                    var weibo = ['中国民主促进会天津市第九次代表大会<br>于6月19日上午开幕。新当选的民进天津市委委员有:民<br>进天津大学委员会常务副主委、天津大学精仪学院副<br>教授何明霞，天津市冯骥才民间文化基金会<br>秘书长冯宽。', '青岛出版集团：今天下午，冯骥才民间文化基金会<br>秘书长冯宽先生、著名摄影家郑云峰先生莅临<br>青岛出版集团。','今年6月9日是由冯骥才提出并经国<br>务院批准的第七个国家文化遗产日，<br>此次启动会是在国家文化遗产日来临之际，<br>呼吁对蕴含独特津味地域文化的皇会项目抢救<br>和保护，展示天津深厚的文化底蕴，唤起天津历史<br>文化记忆。','《中国大同雕塑全集》首发式暨新闻发布会<br>在人民大会堂重庆厅隆重举行。<br>这部由国内多位着名文化学者、艺术史<br>论专家、雕塑家、摄影家会同大同地方<br>专家学者历经两年共同完成，集资料、欣赏、研究、收藏<br>等多重价值于一体的辉煌巨制，是对古都大同<br>的历代雕塑进行记录的视觉档案，是对大同文化家<br>底的全面盘点...','冯骥才一再强调，民间文化应该自救，应该<br>调动民间力量、民间感情来拯救我们自己的<br>文化，我们需要侠义心肠、肝胆相照的一批人士<br>去做这件事。']
+                    var res = params[1]+':'+params[2]+'('+ params[3]+'%)<br>'+ weibo[params.dataIndex];
+                    return res;
+                    // var res = 'Function formatter : <br/>' + params[0].name;
+                    // for (var i = 0, l = params.length; i < l; i++) {
+                    //     res += '<br/>' + params[i].seriesName + ' : ' + params[i].value;
+                    // }
+                    // return 'loading';
+                }
+        //formatter: "Template formatter: <br/>{b}<br/>{a}:{c}<br/>{a1}:{c1}"
+        
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                restore : {show: true},            
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        series : [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius : '50%',
+                center: ['50%', '50%'],
+                roseType : 'area',
+                data: pie_data
+            }
+        ]
+    };
+        require(
+        [
+            'echarts',
+            'echarts/chart/pie'
+        ],
+        function (echarts) {
+            var myChart = echarts.init(document.getElementById('subeventpie'));
+            myChart.setOption(option);
+        });
+}
+
+var data_people=[['冯骥才', '0.40','家庭成员-父亲', '中国民间文艺家协会', '主席'],['戈长复','0.20', '家庭成员-奶奶', '无', '无'], ['顾同昭', '0.20','家庭成员-母亲', '无', '无'],['王悲秋', '0.20','文艺工作者', '中国美术家协会', '会员'],['孟鸣飞', '0.20','商界人士', '青岛出版集团', '党委书记'],['郑云峰', '0.20','文艺工作者', '江苏省摄影家协会', '副主席'],['陈玉恒','0.20', '党政干部', '南开区政府', '委副书记'], ['朱树江', '0.20','党政干部', '南开区政府', '宣传部部长'],['耿彦波', '0.20','党政干部', '太原市政府会', '市长'],['陆炳文', '0.20','党政干部', '中华如意学会', '理事长']];
+
+related_people(data_people);
+
+function related_people(data){
+    $('#related_people').empty();
+    // var date = new Date();
+    // var from_date_time = Math.floor(date.getTime()/1000) - 60*60*24*7;
+    // var from_date = from_date_time.format('yyyy/MM/dd hh:mm');
+    // var to_date = date.format('yyyy/MM/dd hh:mm');
+    var html = '';
+    html += ' <table class="table table-bordered table-striped table-condensed datatable" >';
+    html += ' <thead><tr style="text-align:center;">';
+    html += '<th>姓名</th><th>紧密度</th><th>类型</th><th>单位</th><th>职务</th>';
+    html += '</tr></thead>';
+    html += '<tbody>';
+    for(var i=0;i<data_people.length;i++){
+        html += '<tr>'
+        html += ' <td>'+data[i][0]+'</td>';
+        html += ' <td>'+data[i][1]+'</td>';
+        html += ' <td>'+data[i][2]+'</td>';
+        html += ' <td>'+data[i][3]+'</td>';
+        html += ' <td>'+data[i][4]+'</td>';
+        html += '</tr>';
+    }
+
+    html += '</tbody></table>';
+    $('#related_people').append(html);
+}
+
+    //事件关联分析
+function drawKG(category_list, category_dict, nodes, links){
+    console.log(links)
+    document.getElementById("hot_issue_mining").style.height='600px';
+    require.config({
+        paths : {
+            echarts : "/static/echarts/"
+        }
+    });
+    require(
+    [
+        'echarts',
+        'echarts/chart/force'
+    ],
+    function (echarts) {
+        var myChart = echarts.init(document.getElementById('hot_issue_mining'));
+        
+        var option = {
+            title : {
+                //text: '爸爸去哪儿节目人物关系图',
+                //subtext: '数据来自新浪微博与湖南卫视',
+                //x:'right',
+                //y:'bottom'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: '{a} : {b}'
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            legend: {
+                x: 'left',
+                data: category_list //
+            },
+            series : [
+                {
+                    type:'force',
+                    name : "人物关系",
+                    ribbonType: false,
+                    // categories : category_dict,
+                    categories:[{"name":"中心人物","itemStyle": {"normal":{"color":'#104F87'}}},{"name":"家庭成员","itemStyle": {"normal":{"color":'#0554A5'}}},{"name":"事件","itemStyle": {"normal":{"color":'#008891'}}},{"name":"好友","itemStyle": {"normal":{"color":'rgb(83, 178, 245)',"label":{"textStyle": {"color": '#000'}}}}}],
+                    /*[
+                        {
+                            name: '节目'
+                        },
+                        {
+                            name: '小朋友'
+                        },
+                        {
+                            name: '父亲'
+                        },
+                        {
+                            name:'导演'
+                        },
+                        {
+                            name:'节目工作组'
+                        }
+                    ],*/
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                textStyle: {
+                                    color: '#fff'
+                                }
+                            },
+                            nodeStyle : {
+                                brushType : 'both',
+                                strokeColor : 'rgba(255,215,0,0.4)',
+                                lineWidth : 3.5
+                            },
+                            linkStyle: {
+                                //type: 'curve'
+                            }
+                        },
+                        emphasis: {
+                            label: {
+                                show: false
+                                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+                            },
+                            nodeStyle : {
+                                //r: 30
+                            },
+                            linkStyle : {}
+                        }
+                    },
+                    useWorker: true,
+                    minRadius : 18,
+                    maxRadius: 35,
+                    gravity: 1.1,
+                    scaling: 1.2,
+                    steps: 20,
+                    large: true,
+                    useWorker: true,
+                    coolDown: 0.995,
+                    ribbonType: false,
+                    nodes: nodes/*[
+                        {category:0, name: '爸爸去哪儿', value : 28},
+                        {category:1, name: '杨阳洋',value : 13},
+                        {category:1, name: 'Feyman',value : 13},
+                        {category:1, name: '多多',value : 13},
+                        {category:1, name: 'Joe',value : 13},
+                        {category:1, name: '姐姐',value : 13},
+                        {category:1, name: '贝儿',value : 13},
+                        {category:2, name: '杨威',value : 16},
+                        {category:2, name: '吴镇宇',value : 16},
+                        {category:2, name: '黄磊',value : 16},
+                        {category:2, name: '曹格',value : 16},
+                        {category:2, name: '陆毅',value : 16},
+                        {category:3, name: '谢涤葵',value : 20},
+                        {category:4, name: '潇湘卧龙',value : 10},
+                        {category:4, name: '芒果捞小丸子',value : 10},
+                        {category:4, name: '芒果洪涛',value : 10},
+                        {category:4, name: '李锐',value : 18},
+                    ]*/,
+                    links : links/*[
+                        {source : '爸爸去哪儿', target : '杨威', weight : 3},
+                        {source : '爸爸去哪儿', target : '吴镇宇', weight : 3},
+                        {source : '爸爸去哪儿', target : '黄磊', weight : 3},
+                        {source : '爸爸去哪儿', target : '曹格', weight : 3},
+                        {source : '爸爸去哪儿', target : '陆毅', weight : 3},
+                        {source : '杨威', target : '杨阳洋', weight : 4},
+                        {source : '吴镇宇', target : 'Feyman', weight : 4},
+                        {source : '黄磊', target : '多多', weight : 4},
+                        {source : '曹格', target : 'Joe', weight : 4},
+                        {source : '曹格', target : '姐姐', weight : 4},
+                        {source : '陆毅', target : '贝儿', weight : 4},
+                        {source : '爸爸去哪儿', target : '谢涤葵', weight : 4},
+                        {source : '爸爸去哪儿', target : '芒果洪涛', weight : 2},
+                        {source : '谢涤葵', target : '潇湘卧龙', weight : 2},
+                        {source : '谢涤葵', target : '芒果洪涛', weight : 2},
+                        {source : '谢涤葵', target : '李锐', weight : 1},
+                        {source : '谢涤葵', target : '芒果捞小丸子', weight : 1},
+                        {source : '李锐', target : '爸爸去哪儿', weight : 3},
+                        {source : '谢涤葵', target : '李锐', weight : 6}
+                        // {source : '爸爸去哪儿', target : '杨阳洋', weight : 3},
+                        // {source : '爸爸去哪儿', target : 'Feyman', weight : 3},
+                        // {source : '爸爸去哪儿', target : '多多', weight : 3},
+                        // {source : '爸爸去哪儿', target : 'Joe', weight : 3},
+                        // {source : '爸爸去哪儿', target : '姐姐', weight : 3},
+                        // {source : '爸爸去哪儿', target : '贝儿', weight : 3},
+                        
+                    ]*/
+                }
+            ]
+        };
+        myChart.setOption(option);
+        var ecConfig = require('echarts/config');
+        myChart.on(ecConfig.EVENT.CLICK, function(param){
+            var data = param.data;
+            var links = option.series[0].links;
+            var nodes = option.series[0].nodes;
+            if ( data.source !== undefined && data.target !== undefined) { //点击的是边
+                var sourceNode = nodes.filter(function (n) {return n.name == data.source})[0];
+                var targetNode = nodes.filter(function (n) {return n.name == data.target})[0];
+                // console.log("选 " + sourceNode.name + ' -> ' + targetNode.name + ' (' + data.weight + ')');
+            } else { 
+                // 点击的是点
+                //console.log("选中了" + data.name);
+                /*if(myChart){
+                    myChart.clear();
+                }*/
+                //console.log(data);
+                addprofile(data.name);
+            }
+        });
+    });
+}
+
+    function addprofile(name){
+        document.getElementById('profile_div').scrollIntoView();
+        $.post("/news/nodeinfo/", {
+            'name': name
+        },
+        function(data, status) {
+            $("#profile_div").attr("style", "visibility: visible");
+            $("#basicprofile").empty();
+
+            var center_node_info = data;
+            if (center_node_info != null){
+              $("#company-panel-title").html(center_node_info["name"]);
+              $("#basicprofile").append("<li class='list-group-item'><span>节点：" + center_node_info["name"] + "<span></li>"); 
+              $("#basicprofile").append("<li class='list-group-item'><span>描述：" + center_node_info["description"] + "<span></li>"); 
+              $("#basicprofile").append("<li class='list-group-item' style='height:42px;'><span><a style='float:left;' target='_blank' href='" + center_node_info["url"] + "'>" + "链接: '" + center_node_info["url"] + "'</a><span></li>"); 
+            }
+            else{
+              $("#company-panel-title").html(name);
+              $("#basicprofile").html("没有查到结果");
+            }
+        }, "json");
+    }
+
+$.ajax({
+    url: "/news/networkdata/?query=" + '{{topic}}',
+    type: "GET",
+    dataType: "json",
+    async: false,
+    success: function(data){
+        console.log('{{topic}}')
+        // console.log(url);
+        if (data){
+            drawKG(data.category_list, data.category_dict, data.nodes, data.links);
+        }
+    }
+})
+var weibo_r_series = ['合作者','家庭成员','商界人士','党政干部','其他人员','文艺工作者','媒体工作者'];
+
+var weibo_r_1 = [{name:'党政干部',value:5},{name:'商界人士',value:2},{name:'家庭成员',value:3},{name:'其他人员',value:1},{name:'文艺工作者',value:2}];
+related_people_pie(weibo_r_1, 'related_people_pie', '相关人物比例')
+
+function related_people_pie (data, div_name, title) {
+
+    var pie_data = data
+    // var pie_data = [];
+    // var One_pie_data = {};
+    // for (var key in data){ 
+    //  One_pie_data = {'value': data[key].toFixed(2), 'name': key };
+    //  pie_data.push(One_pie_data);
+    // }
+
+    require.config({
+        paths : {
+            echarts : "/static/echarts/"
+        }
+    });
+    require(
+    [
+        'echarts',
+        'echarts/chart/pie'
+    ],
+    function (echarts) {
+        var data = [];
+        var myChart = echarts.init(document.getElementById(div_name));
+
+        var option = {
+            title : {
+                text: title,
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c}({d}%)"
+            },
+            // legend: {
+            //     orient : 'vertical',
+            //     x : 'left',
+            //     data:data_x
+            // },
+            toolbox: {
+                show : false,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {
+                        show: true, 
+                        type: ['pie', 'funnel'],
+                        option: {
+                            funnel: {
+                                x: '25%',
+                                y: '120px',
+                                width: '50%',
+                                funnelAlign: 'left',
+                                max: 1548
+                            }
+                        }
+                    },
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            series : [
+                {
+                    name:title,
+                    type:'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    itemStyle : {
+                        normal : {
+                          label : {
+                            show : true
+                          },
+                          labelLine : {
+                            show : true,
+                            length : 15
+                          }
+                        },
+                        emphasis : {
+                          label : {
+                            show : false,
+                            position : 'bottom',
+                            textStyle : {
+                              fontSize : '14',
+                              fontWeight : 'bold'
+                            }
+                          }
+                        }
+                      },
+                    data:pie_data
+                }
+            ]
+        }
+            myChart.setOption(option);
+            var ecConfig = require('echarts/config');
+            myChart.on(ecConfig.EVENT.CLICK, function(param){
+            // var data = param.data;
+            // var links = option.series[0].links;
+            // var nodes = option.series[0].nodes;
+            console.log(param);
+            var seriesIndex = param.seriesIndex;
+            var dataIndex = param.dataIndex;
+            show_related_people_fengk(param.seriesName, param.name);
+
+        });
+
+    });
+
+}
+
+function show_related_people_fengk(seriesName, name){
+    var dict = {'相关人物比例':{'合作者':[],'媒体工作者':[],'家庭成员':["冯骥才","顾同昭","戈长复"],'商界人士':["柳静安","孟鸣飞"],'党政干部':["陈玉恒","朱树江","陆炳文","耿彦波","李春梅"],'文艺工作者':["郑云峰","王悲秋"],'其他人员':["张建勋"]}};
+    console.log(dict[seriesName][name]);    
+    var data = dict[seriesName][name];
+    // data = data.split(',');
+    $('#related_people_detail_fk').empty();
+    var html = '';
+    for(var i=0;i<data.length;i++){
+        html += '<div style="min-width:65px;padding:10px;float:left;">' +data[i]+'</div>';
+    }
+    $('#related_people_detail_fk').append(html);
+    $('#modal_title').empty();
+    if(seriesName == '活动数量'){
+        $('#modal_title').append(name + ' ('+data.length +')');
+    }else{
+        $('#modal_title').append(name + ' ('+data.length +')');
+    }
+    $('#related_people_modal_fk').css('display','block');
+    $("#float-wrap").css('display','block');
+
+}
+
+// 画重要微博
+function refreshWeibodataByCategory(data){  //需要传过来的是新闻的data
+    var html = "";
+    for ( e in data){
+        var d = data[e];
+        var content_summary = d['content168'].substring(0, 168) + '...';
+        if (d['same_list'] == undefined){
+            var same_text_count = 0;
+        }
+        else{
+            var same_text_count = d['same_list'].length;
+        }
+        var user_name;
+        var source_from_name;
+        if (d['transmit_name'] != null){
+            user_name = d['transmit_name'];
+        }
+        else{
+            user_name = d['news_author'];
+        }
+        if (d['source_from_name'] != null){
+            source_from_name = d['source_from_name'];
+        }
+        else{
+            source_from_name = d['user_name'];
+        }
+        var url;
+        if (d["url"] != null){
+            url = d["url"];
+        }
+        else{
+            url = d["showurl"];
+        }
+        var weight;
+        // if (sort_weight in d){
+        //     weight = d[sort_weight];
+        // }
+        // else{
+        //     weight = 0;
+        // }
+        html += '<li class="item">';
+        html += '<div class="weibo_detail" >';
+        html += '<p>媒体:<a class="undlin" target="_blank" href="javascript;;">' + source_from_name + '</a>&nbsp;&nbsp;发布:';
+        html += '<span class="title" style="color:#49827E;font-size14px;" id="' + d['_id'] + '"><b>[' + d['title'] + ']</b></span>';
+        html += '&nbsp;&nbsp;发布内容：&nbsp;&nbsp;<span id="content_summary_' + d['_id']  + '">' + content_summary + '</span>';
+        html += '<span style="display: none;" id="content_' + d['_id']  + '">' + d['content168'] + '&nbsp;&nbsp;</span>';
+        html += '</p>';
+        html += '<div class="weibo_info">';
+        html += '<div class="weibo_pz" style="margin-right:10px;">';
+        html += "</div>";
+        html += '<div class="m">';
+        html += '<a>' +d["datetime"]  + '</a>&nbsp;-&nbsp;';
+        html += '<a>转载于'+ user_name +'</a>&nbsp;&nbsp;';
+        html += '<a target="_blank" href="'+ url +'">新闻</a>&nbsp;&nbsp;';
+        html += '</div>';
+        html += '</div>' 
+        html += '</div>';
+        html += '</li>';
+    }
+    $("#weibo_c_ul_re").append(html);
+    $("#content_control_c_height").css("height", $("#weibo_c_ul_re").css("height"));
+}
+
+function drawWeiboByCategory(acttypeid){
+    $("#weibo_c_ul_re").empty();
+var data = {"1":[{"activity_type":"1", "category":null, "classid":null, "content168":"王德荣 冯宽 刘强 刘万春 刘吉祥 刘学安 刘洪杰 刘振跃 刘晓琴(女) 齐崴(女) 孙中堂 孙惠玲(女) 纪荣泰 严秀平 李旭 李永丹 李荣林 时迎春 吴晓红(女) 邱... ", "date": "2012-06-21", "datetime":"2012-06-21 21:22:00", "duplicate":false, "first_in":1459695377.25843, "id":"http://cpc.people.com.cn/GB/64107/18260712.html", "isV":null, "key":null, "last_modify":1459695377.25843, "more_same_link": null, "news_author":"天津日报", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://cpc.people.com.cn/GB/64107/18260712.html", "same_news_num":null, "showurl":null, "source_from_name":"中国共产党新闻网", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1340442960, "title":"民进天津市第九次代表大会闭幕", "title1":null,"tplid":null, "transmit_name":null, "url":"http://cpc.people.com.cn/GB/64107/18260712.html","user_id":null,"user_image_url":null,"user_name":'天津日报',"user_url":null,"weight":1},{"activity_type":"1", "category":null, "classid":null, "content168":"本站讯（通讯员 黄欣）6月20日，中国民主促进会天津市第九次代表大会闭幕。大会听取并审议了副市长、民进市委会主委张俊芳代表民进天津市第十届委员会作的题为《高举旗帜，团结协作，为加快高素质参政党建设而努力奋斗》的工作报告。选举产生了第十一届民进天津市委员会。天津市知识产权局局长、天津大学化工学院教授何志敏，天津大学机械学院教授黄田，天津大学化工研究所所长、教授袁希钢再次当选民进天津市委员会常委、副主任委员。民进天津大学委员会主委、天津大学化工学院教授李永丹再次当选为民进天津市委委员、常委，天津大学化工学院教授齐崴当选为民进天津市委委员、常委。新当选的民进天津市委委员有:民进天津大学委员会常务副主委、天津大学精仪学院副教授何明霞，天津市冯骥才民间文化基金会秘书长冯宽。中国民主促进会天津市第九次代表大会于6月19日上午开幕。中共天津市委副书记何立峰，全国政协常委、民进中央副主席冯骥才出席，全国政协常委、民进中央副主席蔡达峰致贺辞。市委常委、市委统战部部长刘长喜，市人大常委会副主任李润兰，副市长尹海林，市政协副主席只升华，老同志余国琮、姚建铨出席。市政协副主席、九三学社市委会主委陈永川代表本市各民主党派、工商联致贺辞。天津大学党委统战部部长马春有、民主党派办公室主任李春梅应邀参加了开幕式并送去中共天津大学委员会统战部的贺信。何立峰在开幕式上代表中共天津市委致贺辞，刘长喜在闭幕式上讲话。这次大会以学习贯彻中国共产党天津市第十次代表大会精神为契机，不断加强自身建设，认真履行参政党职能，巩固和发展多党合作的良好局面，明确提出了民进天津市委今后五年工作的指导思想、目标和任务，努力实现中央对天津的定位作出新的更大贡献。", "date": "2012-06-23", "datetime":"2012-06-23 17:16:00", "duplicate":false, "first_in":1459695377.25843, "id":"http://edu.ifeng.com/gaoxiao/detail_2012_06/23/15509974_0.shtml", "isV":null, "key":null, "last_modify":1459695377.25843, "more_same_link": null, "news_author":"天津大学", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://edu.ifeng.com/gaoxiao/detail_2012_06/23/15509974_0.shtml", "same_news_num":null, "showurl":null, "source_from_name":"新华网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1340442960, "title":"我校教授何志敏、黄田、袁希钢再次当选民进天津市委副主委", "title1":null,"tplid":null, "transmit_name":null, "url":"http://edu.ifeng.com/gaoxiao/detail_2012_06/23/15509974_0.shtml","user_id":null,"user_image_url":null,"user_name":'天津大学',"user_url":null,"weight":1}],"3":[{"activity_type":"3", "category":null, "classid":null, "content168":"青岛出版集团：今天下午，冯骥才民间文化基金会秘书长冯宽先生、著名摄影家郑云峰先生莅临青岛出版集团。", "date": "2012-11-12", "datetime":"2012-11-12  18:04:00", "duplicate":false, "first_in":1459695377.26582, "id":"http://news.qtv.com.cn/system/2012/11/12/010277982.shtml", "isV":null, "key":null, "last_modify":1459695377.26582, "more_same_link": null, "news_author":"青岛网络电视台", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://news.qtv.com.cn/system/2012/11/12/010277982.shtml", "same_news_num":null, "showurl":null, "source_from_name":"新华网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1352714640, "title":"冯骥才民间文化基金会秘书长冯宽先生莅临青岛出版集团", "title1":null,"tplid":null, "transmit_name":null, "url":"http://news.qtv.com.cn/system/2012/11/12/010277982.shtml","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}],"2":[{"activity_type":"2", "category":null, "classid":null, "content168":"赵文瑄、冯宽代表冯骥才捐赠文物——清代文武财神木雕。这是冯骥才多年前托原天一阁馆长帮他收购的。昨天，他在接受记者采访时说：“文财神保护财富，武财神送福气，我希望它们能保佑老家人有福有财！”", "date": "2016-04-22", "datetime":"2016-04-22  12:48:00", "duplicate":false, "first_in":1459695377.26185, "id":"http://jiangsu.china.com.cn/html/2016/kuaixun_0422/5324999.html", "isV":null, "key":null, "last_modify":1459695377.26185, "more_same_link": null, "news_author":"中国宁波网", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://jiangsu.china.com.cn/html/2016/kuaixun_0422/5324999.html", "same_news_num":null, "showurl":null, "source_from_name":"东海资讯", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1339166640, "title":"冯骥才祖居博物馆今天上午开馆", "title1":null,"tplid":null, "transmit_name":null, "url":"http://jiangsu.china.com.cn/html/2016/kuaixun_0422/5324999.html","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1},{"activity_type":"2", "category":null, "classid":null, "content168":"“就算砸锅卖铁，我们也要让基金会存活下去！”2007年7月14日，刚从江苏卖画回来的冯骥才民间文化基金会秘书长冯宽对《公益时报》记者说，“这次公益画展筹到了358万元，这些资金将全部归入冯骥才民间艺术基金会，并会以专款的形式投入到民间文化遗产抢救当中。”民间文化是中华民族的文化之根，然而，在当今经济全球化和城市现代化的冲击下，民间文化身处濒危境地，如不紧急抢救和保护，先人创造的宝贵文化财富必将急速瓦解以至消亡。在这一形势下，冯骥才于2004年12月31日成立了冯骥才民间文化基金会。", "date": "2007-07-17", "datetime":"2007-07-17  19:19:00", "duplicate":false, "first_in":1459695377.26185, "id":"http://www.sclf.org/sclf/gygj/200707/t20070717_5033_4.htm", "isV":null, "key":null, "last_modify":1459695377.26185, "more_same_link": null, "news_author":"公益时报", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://www.sclf.org/sclf/gygj/200707/t20070717_5033_4.htm", "same_news_num":null, "showurl":null, "source_from_name":"中国宋庆龄基金会", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1339166640, "title":"中国非公募基金会调查", "title1":null,"tplid":null, "transmit_name":null, "url":"http://www.sclf.org/sclf/gygj/200707/t20070717_5033_4.htm","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}, {"activity_type":"2", "category":null, "classid":null, "content168":"天津北方网讯：6月8日上午，由天津大学冯骥才文学艺术研究院主办，南开区文化和旅游局、天津市民间文艺家协会、天津市冯骥才民间文化基金会协办的天津黄会再抢救启动会在冯骥才文学艺术研究院举行。　　今年6月9日是由冯骥才提出并经国务院批准的第七个国家文化遗产日，此次启动会是在国家文化遗产日来临之际，呼吁对蕴含独特津味地域文化的皇会项目抢救和保护，展示天津深厚的文化底蕴，唤起天津历史文化记忆。　　基金会副主任冯宽介绍，全国从事文化保护公益性工作的基金会只有两家，一家是贵州的一个基金会，另一个就是天津的民间保护天津皇会奖励基金会。他说：“目前，国内文化公益领域的工作还比较缺乏。天津皇会的保护采用的是政府支持、专家团队指导和资金支持三结合的方式。天津皇会有南开区文化和旅游局的政策支持；有冯骥才文学艺术研究院天津皇会保护课题组专家在实地研究和发掘；基金会有来自民间的专项资金支持。”　　冯宽说，资金仍然是文化保护工作的普遍问题所在。同时他也表示，文化保护重要的是民众的支持，应该具有广泛的传播性，建议天津的小学三四年级教材中涉及皇会内容，给孩子普及皇会知识。", "date": "2012-06-08", "datetime":"2012-6-8  22:44:00", "duplicate":false, "first_in":1459695377.26185, "id":"http://news.xinmin.cn/shehui/2012/06/08/15077418.html", "isV":null, "key":null, "last_modify":1459695377.26185, "more_same_link": null, "news_author":"天津北方网", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://news.xinmin.cn/shehui/2012/06/08/15077418.html", "same_news_num":null, "showurl":null, "source_from_name":"新华网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1339166640, "title":"冯骥才：天津皇会抢救需全社会关注和资金支持", "title1":null,"tplid":null, "transmit_name":null, "url":"http://news.xinmin.cn/shehui/2012/06/08/15077418.html","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}, {"activity_type":"2", "category":null, "classid":null, "content168":"汾酒荣获巴拿马甲等大奖章100周年前夕柳静安走进天津大学冯骥才文学艺术研究院", "date": "2014-05-17", "datetime":"2014-05-17  16:39:00", "duplicate":false, "first_in":1459695377.26395, "id":"http://www.sx.chinanews.com/news/2014/0517/83411.html", "isV":null, "key":null, "last_modify":1459695377.26395, "more_same_link": null, "news_author":"山西青年报", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://www.sx.chinanews.com/news/2014/0517/83411.html", "same_news_num":null, "showurl":null, "source_from_name":"新华网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1339166640, "title":"冯骥才：晋善晋美出自汾酒", "title1":null,"tplid":null, "transmit_name":null, "url":"http://www.sx.chinanews.com/news/2014/0517/83411.html","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}, {"activity_type":"2", "category":null, "classid":null, "content168":"中新社北京十一月二十一日电 题：抢救民间文化带头人冯骥才", "date": "2004-11-22", "datetime":"2004-11-22  10:18:00", "duplicate":false, "first_in":1459695377.26936, "id":"http://news.sina.com.cn/o/2004-11-22/10184309545s.shtml", "isV":null, "key":null, "last_modify":1459695377.26936, "more_same_link": null, "news_author":"中国新闻网", "pagesize":null, "rank":3, "relative_news":null, "replies":null, "same_from": "http://news.sina.com.cn/o/2004-11-22/10184309545s.shtml", "same_news_num":null, "showurl":null, "source_from_name":"新浪网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1101089880, "title":"冯骥才：我们的民间文化已经支离飘零 承续乏人", "title1":null,"tplid":null, "transmit_name":null, "url":"http://news.sina.com.cn/o/2004-11-22/10184309545s.shtml","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1},{"activity_type":"2", "category":null, "classid":null, "content168":"汾酒荣获巴拿马甲等大奖章100周年前夕柳静安走进天津大学冯骥才文学艺术研究院", "date": "2014-05-17", "datetime":"2014-05-17  16:39:00", "duplicate":false, "first_in":1459695377.26395, "id":"http://www.sx.chinanews.com/news/2014/0517/83411.html", "isV":null, "key":null, "last_modify":1459695377.26395, "more_same_link": null, "news_author":"山西青年报", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://www.sx.chinanews.com/news/2014/0517/83411.html", "same_news_num":null, "showurl":null, "source_from_name":"网易网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1339166640, "title":"冯骥才：晋善晋美出自汾酒", "title1":null,"tplid":null, "transmit_name":null, "url":"http://www.sx.chinanews.com/news/2014/0517/83411.html","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}],"5":[{"activity_type":"5", "category":null, "classid":null, "content168":"中国网 山西综合编辑：昨日上午，《中国大同雕塑全集》首发式暨新闻发布会在人民大会堂重庆厅隆重举行。这部由国内多位着名文化学者、艺术史论专家、雕塑家、摄影家会同大同地方专家学者历经两年共同完成，集资料、欣赏、研究、收藏等多重价值于一体的辉煌巨制，是对古都大同的历代雕塑进行记录的视觉档案，是对大同文化家底的全面盘点。中国文联副主席、国务院参事、中国民间文艺家协会主席冯骥才，国家文物局局长单霁翔出席首发式。", "date": "2012-01-10", "datetime":"2012-01-10  20:16:00", "duplicate":false, "first_in":1459695377.26763, "id":"http://jjsx.china.com.cn/lm309/2012/165867.htm", "isV":null, "key":null, "last_modify":1459695377.26763, "more_same_link": null, "news_author":"大同日报", "pagesize":null, "rank":3, "relative_news":null, "replies":null, "same_from": "http://jjsx.china.com.cn/lm309/2012/165867.htm", "same_news_num":null, "showurl":null, "source_from_name":"新华网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1326197640, "title":"《中国大同雕塑全集》首发式在北京举行", "title1":null,"tplid":null, "transmit_name":null, "url":"http://jjsx.china.com.cn/lm309/2012/165867.htm","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}, {"activity_type":"5", "category":null, "classid":null, "content168":"昨日上午，《中国大同雕塑全集》首发式暨新闻发布会在人民大会堂重庆厅隆重举行。这部由国内多位着名文化学者、艺术史论专家、雕塑家、摄影家会同大同地方专家学者历经两年共同完成，集资料、欣赏、研究、收藏等多重价值于一体的辉煌巨制，是对古都大同的历代雕塑进行记录的视觉档案，是对大同文化家底的全面盘点。中国文联副主席、国务院参事、中国民间文艺家协会主席冯骥才，国家文物局局长单霁翔出席首发式。", "date": "2012-01-10", "datetime":"2012-01-10  08:31:00", "duplicate":false, "first_in":1459695377.27622, "id":"http://sx.people.com.cn/GB//n/2012/0110/c189130-16664238.html", "isV":null, "key":null, "last_modify":1459695377.27622, "more_same_link": null, "news_author":"大同日报", "pagesize":null, "rank":3, "relative_news":null, "replies":null, "same_from": "http://sx.people.com.cn/GB//n/2012/0110/c189130-16664238.html", "same_news_num":null, "showurl":null, "source_from_name":"人民网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1326197640, "title":"《中国大同雕塑全集》首发式在北京举行", "title1":null,"tplid":null, "transmit_name":null, "url":"http://sx.people.com.cn/GB//n/2012/0110/c189130-16664238.html","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}]};
+
+    refreshWeibodataByCategory(data[acttypeid]);
+}
+
+function refreshWeibodataBypoint(data){  //需要传过来的是新闻的data
+    var html = "";
+    for ( e in data){
+        var d = data[e];
+        var content_summary = d['content168'].substring(0, 168) + '...';
+        if (d['same_list'] == undefined){
+            var same_text_count = 0;
+        }
+        else{
+            var same_text_count = d['same_list'].length;
+        }
+        var user_name;
+        var source_from_name;
+        if (d['transmit_name'] != null){
+            user_name = d['transmit_name'];
+        }
+        else{
+            user_name = d['user_name'];
+        }
+        if (d['source_from_name'] != null){
+            source_from_name = d['source_from_name'];
+        }
+        else{
+            source_from_name = d['user_name'];
+        }
+        var url;
+        if (d["url"] != null){
+            url = d["url"];
+        }
+        else{
+            url = d["showurl"];
+        }
+        var weight;
+        // if (sort_weight in d){
+        //     weight = d[sort_weight];
+        // }
+        // else{
+        //     weight = 0;
+        // }
+        html += '<li class="item">';
+        html += '<div class="weibo_detail" >';
+        html += '<p>媒体:<a class="undlin" target="_blank" href="javascript;;">' + source_from_name + '</a>&nbsp;&nbsp;发布:';
+        html += '<span class="title" style="color:#49827E;font-size14px;" id="' + d['_id'] + '"><b>[' + d['title'] + ']</b></span>';
+        html += '&nbsp;&nbsp;发布内容：&nbsp;&nbsp;<span id="content_summary_' + d['_id']  + '">' + content_summary + '</span>';
+        html += '<span style="display: none;" id="content_' + d['_id']  + '">' + d['content168'] + '&nbsp;&nbsp;</span>';
+        html += '</p>';
+        html += '<div class="weibo_info">';
+        html += '<div class="weibo_pz" style="margin-right:10px;">';
+        html += "</div>";
+        html += '<div class="m">';
+        html += '<a>' +d["datetime"]  + '</a>&nbsp;-&nbsp;';
+        html += '<a>转载于'+ user_name +'</a>&nbsp;&nbsp;';
+        html += '<a target="_blank" href="'+ url +'">新闻</a>&nbsp;&nbsp;';
+        html += '</div>';
+        html += '</div>' 
+        html += '</div>';
+        html += '</li>';
+    }
+    $("#weibo_c_ul_re_p").append(html);
+    $("#content_control_c_height_p").css("height", $("#weibo_c_ul_re_p").css("height"));
+}
+
+function drawWeiboBypoint(acttypeid){
+    $("#weibo_c_ul_re_p").empty();
+    var data = {'m':[{"activity_type":"1", "category":null, "classid":null, "content168":"本站讯（通讯员 黄欣）6月20日，中国民主促进会天津市第九次代表大会闭幕。大会听取并审议了副市长、民进市委会主委张俊芳代表民进天津市第十届委员会作的题为《高举旗帜，团结协作，为加快高素质参政党建设而努力奋斗》的工作报告。选举产生了第十一届民进天津市委员会。天津市知识产权局局长、天津大学化工学院教授何志敏，天津大学机械学院教授黄田，天津大学化工研究所所长、教授袁希钢再次当选民进天津市委员会常委、副主任委员。民进天津大学委员会主委、天津大学化工学院教授李永丹再次当选为民进天津市委委员、常委，天津大学化工学院教授齐崴当选为民进天津市委委员、常委。新当选的民进天津市委委员有:民进天津大学委员会常务副主委、天津大学精仪学院副教授何明霞，天津市冯骥才民间文化基金会秘书长冯宽。中国民主促进会天津市第九次代表大会于6月19日上午开幕。中共天津市委副书记何立峰，全国政协常委、民进中央副主席冯骥才出席，全国政协常委、民进中央副主席蔡达峰致贺辞。市委常委、市委统战部部长刘长喜，市人大常委会副主任李润兰，副市长尹海林，市政协副主席只升华，老同志余国琮、姚建铨出席。市政协副主席、九三学社市委会主委陈永川代表本市各民主党派、工商联致贺辞。天津大学党委统战部部长马春有、民主党派办公室主任李春梅应邀参加了开幕式并送去中共天津大学委员会统战部的贺信。何立峰在开幕式上代表中共天津市委致贺辞，刘长喜在闭幕式上讲话。这次大会以学习贯彻中国共产党天津市第十次代表大会精神为契机，不断加强自身建设，认真履行参政党职能，巩固和发展多党合作的良好局面，明确提出了民进天津市委今后五年工作的指导思想、目标和任务，努力实现中央对天津的定位作出新的更大贡献。", "date": "2012-06-23", "datetime":"2012-06-23 17:16:00", "duplicate":false, "first_in":1459695377.25843, "id":"http://edu.ifeng.com/gaoxiao/detail_2012_06/23/15509974_0.shtml", "isV":null, "key":null, "last_modify":1459695377.25843, "more_same_link": null, "news_author":"天津大学", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://edu.ifeng.com/gaoxiao/detail_2012_06/23/15509974_0.shtml", "same_news_num":null, "showurl":null, "source_from_name":"新华网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1340442960, "title":"我校教授何志敏、黄田、袁希钢再次当选民进天津市委副主委", "title1":null,"tplid":null, "transmit_name":null, "url":"http://edu.ifeng.com/gaoxiao/detail_2012_06/23/15509974_0.shtml","user_id":null,"user_image_url":null,"user_name":'天津大学',"user_url":null,"weight":1}],'q':[{"activity_type":"3", "category":null, "classid":null, "content168":"青岛出版集团：今天下午，冯骥才民间文化基金会秘书长冯宽先生、著名摄影家郑云峰先生莅临青岛出版集团。", "date": "2012-11-12", "datetime":"2012-11-12  18:04:00", "duplicate":false, "first_in":1459695377.26582, "id":"http://news.qtv.com.cn/system/2012/11/12/010277982.shtml", "isV":null, "key":null, "last_modify":1459695377.26582, "more_same_link": null, "news_author":"青岛网络电视台", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://news.qtv.com.cn/system/2012/11/12/010277982.shtml", "same_news_num":null, "showurl":null, "source_from_name":"新华网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1352714640, "title":"冯骥才民间文化基金会秘书长冯宽先生莅临青岛出版集团", "title1":null,"tplid":null, "transmit_name":null, "url":"http://news.qtv.com.cn/system/2012/11/12/010277982.shtml","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}],'t':[{"activity_type":"2", "category":null, "classid":null, "content168":"天津北方网讯：6月8日上午，由天津大学冯骥才文学艺术研究院主办，南开区文化和旅游局、天津市民间文艺家协会、天津市冯骥才民间文化基金会协办的天津黄会再抢救启动会在冯骥才文学艺术研究院举行。　　今年6月9日是由冯骥才提出并经国务院批准的第七个国家文化遗产日，此次启动会是在国家文化遗产日来临之际，呼吁对蕴含独特津味地域文化的皇会项目抢救和保护，展示天津深厚的文化底蕴，唤起天津历史文化记忆。　　基金会副主任冯宽介绍，全国从事文化保护公益性工作的基金会只有两家，一家是贵州的一个基金会，另一个就是天津的民间保护天津皇会奖励基金会。他说：“目前，国内文化公益领域的工作还比较缺乏。天津皇会的保护采用的是政府支持、专家团队指导和资金支持三结合的方式。天津皇会有南开区文化和旅游局的政策支持；有冯骥才文学艺术研究院天津皇会保护课题组专家在实地研究和发掘；基金会有来自民间的专项资金支持。”　　冯宽说，资金仍然是文化保护工作的普遍问题所在。同时他也表示，文化保护重要的是民众的支持，应该具有广泛的传播性，建议天津的小学三四年级教材中涉及皇会内容，给孩子普及皇会知识。", "date": "2012-06-08", "datetime":"2012-6-8  22:44:00", "duplicate":false, "first_in":1459695377.26185, "id":"http://news.xinmin.cn/shehui/2012/06/08/15077418.html", "isV":null, "key":null, "last_modify":1459695377.26185, "more_same_link": null, "news_author":"天津北方网", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://news.xinmin.cn/shehui/2012/06/08/15077418.html", "same_news_num":null, "showurl":null, "source_from_name":"新华网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1339166640, "title":"冯骥才：天津皇会抢救需全社会关注和资金支持", "title1":null,"tplid":null, "transmit_name":null, "url":"http://news.xinmin.cn/shehui/2012/06/08/15077418.html","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}, {"activity_type":"2", "category":null, "classid":null, "content168":"汾酒荣获巴拿马甲等大奖章100周年前夕柳静安走进天津大学冯骥才文学艺术研究院", "date": "2014-05-17", "datetime":"2014-05-17  16:39:00", "duplicate":false, "first_in":1459695377.26395, "id":"http://www.sx.chinanews.com/news/2014/0517/83411.html", "isV":null, "key":null, "last_modify":1459695377.26395, "more_same_link": null, "news_author":"山西青年报", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://www.sx.chinanews.com/news/2014/0517/83411.html", "same_news_num":null, "showurl":null, "source_from_name":"新华网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1339166640, "title":"冯骥才：晋善晋美出自汾酒", "title1":null,"tplid":null, "transmit_name":null, "url":"http://www.sx.chinanews.com/news/2014/0517/83411.html","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}, {"activity_type":"2", "category":null, "classid":null, "content168":"汾酒荣获巴拿马甲等大奖章100周年前夕柳静安走进天津大学冯骥才文学艺术研究院", "date": "2014-05-17", "datetime":"2014-05-17  16:39:00", "duplicate":false, "first_in":1459695377.26395, "id":"http://www.sx.chinanews.com/news/2014/0517/83411.html", "isV":null, "key":null, "last_modify":1459695377.26395, "more_same_link": null, "news_author":"山西青年报", "pagesize":null, "rank":1, "relative_news":null, "replies":null, "same_from": "http://www.sx.chinanews.com/news/2014/0517/83411.html", "same_news_num":null, "showurl":null, "source_from_name":"网易网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1339166640, "title":"冯骥才：晋善晋美出自汾酒", "title1":null,"tplid":null, "transmit_name":null, "url":"http://www.sx.chinanews.com/news/2014/0517/83411.html","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}],'g':[{"activity_type":"2", "category":null, "classid":null, "content168":"中新社北京十一月二十一日电 题：抢救民间文化带头人冯骥才", "date": "2004-11-22", "datetime":"2004-11-22  10:18:00", "duplicate":false, "first_in":1459695377.26936, "id":"http://news.sina.com.cn/o/2004-11-22/10184309545s.shtml", "isV":null, "key":null, "last_modify":1459695377.26936, "more_same_link": null, "news_author":"中国新闻网", "pagesize":null, "rank":3, "relative_news":null, "replies":null, "same_from": "http://news.sina.com.cn/o/2004-11-22/10184309545s.shtml", "same_news_num":null, "showurl":null, "source_from_name":"新浪网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1101089880, "title":"冯骥才：我们的民间文化已经支离飘零 承续乏人", "title1":null,"tplid":null, "transmit_name":null, "url":"http://news.sina.com.cn/o/2004-11-22/10184309545s.shtml","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}],'d':[{"activity_type":"5", "category":null, "classid":null, "content168":"中国网 山西综合编辑：昨日上午，《中国大同雕塑全集》首发式暨新闻发布会在人民大会堂重庆厅隆重举行。这部由国内多位着名文化学者、艺术史论专家、雕塑家、摄影家会同大同地方专家学者历经两年共同完成，集资料、欣赏、研究、收藏等多重价值于一体的辉煌巨制，是对古都大同的历代雕塑进行记录的视觉档案，是对大同文化家底的全面盘点。中国文联副主席、国务院参事、中国民间文艺家协会主席冯骥才，国家文物局局长单霁翔出席首发式。", "date": "2012-01-10", "datetime":"2012-01-10  20:16:00", "duplicate":false, "first_in":1459695377.26763, "id":"http://jjsx.china.com.cn/lm309/2012/165867.htm", "isV":null, "key":null, "last_modify":1459695377.26763, "more_same_link": null, "news_author":"大同日报", "pagesize":null, "rank":3, "relative_news":null, "replies":null, "same_from": "http://jjsx.china.com.cn/lm309/2012/165867.htm", "same_news_num":null, "showurl":null, "source_from_name":"新华网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1326197640, "title":"《中国大同雕塑全集》首发式在北京举行", "title1":null,"tplid":null, "transmit_name":null, "url":"http://jjsx.china.com.cn/lm309/2012/165867.htm","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}, {"activity_type":"5", "category":null, "classid":null, "content168":"昨日上午，《中国大同雕塑全集》首发式暨新闻发布会在人民大会堂重庆厅隆重举行。这部由国内多位着名文化学者、艺术史论专家、雕塑家、摄影家会同大同地方专家学者历经两年共同完成，集资料、欣赏、研究、收藏等多重价值于一体的辉煌巨制，是对古都大同的历代雕塑进行记录的视觉档案，是对大同文化家底的全面盘点。中国文联副主席、国务院参事、中国民间文艺家协会主席冯骥才，国家文物局局长单霁翔出席首发式。", "date": "2012-01-10", "datetime":"2012-01-10  08:31:00", "duplicate":false, "first_in":1459695377.27622, "id":"http://sx.people.com.cn/GB//n/2012/0110/c189130-16664238.html", "isV":null, "key":null, "last_modify":1459695377.27622, "more_same_link": null, "news_author":"大同日报", "pagesize":null, "rank":3, "relative_news":null, "replies":null, "same_from": "http://sx.people.com.cn/GB//n/2012/0110/c189130-16664238.html", "same_news_num":null, "showurl":null, "source_from_name":"人民网-新闻", "source_website":null, "subeventid":"", "summary":null,"thumbnail_url":null, "timestamp":1326197640, "title":"《中国大同雕塑全集》首发式在北京举行", "title1":null,"tplid":null, "transmit_name":null, "url":"http://sx.people.com.cn/GB//n/2012/0110/c189130-16664238.html","user_id":null,"user_image_url":null,"user_name":'',"user_url":null,"weight":1}]}
+
+    refreshWeibodataBypoint(data[acttypeid]);
+}
+
+    $("#close").off("click").click(function(){
+        $('#related_people_modal_fk').css('display','none');
+        $("#float-wrap").css('display','none');
+        return false;
+    });
+
+drawWeiboByCategory("1");
+drawWeiboBypoint("m");
+
+
+    </script>
+{% endblock tail_js %}
+</body>
+</html>

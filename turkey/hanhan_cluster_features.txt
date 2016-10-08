@@ -1,0 +1,4 @@
+cluster1,韩寒真乖文章没了作品不出了
+cluster2,方韩之争
+cluster3,冯骥才做法不妥
+cluster4,这些人控制中国文坛

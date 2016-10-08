@@ -1,0 +1,817 @@
+{% extends "base.html" %}
+{% block title %}社会舆论分析{% endblock %}
+
+{% block head_css %}
+    <!--
+    <link rel="stylesheet" href="/static/css/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/css/style_blue.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/css/thickbox.css" type="text/css" media="all">
+    -->
+    <link type="text/css" rel="stylesheet" href="/static/css/css/timeline.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/css/table.css">
+    <link rel="stylesheet" href="/static/css/css/tab.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/showloading/showLoading.css" type="text/css"/>
+
+        <style type="text/css">
+        /* keywords tag cloud */
+        #keywords_cloud_div {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0px auto 0
+        }
+
+        #keywords_cloud_div a {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-family: Microsoft YaHei;
+            color: #AD12C2;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 3px 6px;
+        }
+
+        #keywords_cloud_div a:hover {
+            border: 1px solid #eee;
+            background: #000;
+        }
+        #keywords_cloud_div .blue {
+            color: blue;
+        }
+        #keywords_cloud_div .red {
+            color: red;
+        }
+        #keywords_cloud_div .yellow {
+            color: yellow;
+        }
+
+        #trend_div {
+            height: 270px;
+            width: 100%;
+            float: left;
+            border: 1px solid #F0F0F0;
+            background: #F0F0F0;
+        }
+
+        .blkUnit {
+            position: relative;
+            clear: both;
+            margin-top: 25px;
+            background-color: #fff;
+        }
+        .blkUnit .titlBar {
+            z-index: 4;
+            position: relative;
+            padding: 20px;
+            background-color: #f6f6f6;
+        }
+        .titlBar h4 {
+            display: inline-block;
+            margin-top: -5px;
+            padding-right: 0px;
+            font-size: 15px;
+            color: #666;
+        }
+        .titlBar .compInfo {
+            padding-right: 15px;
+            color: #858585;
+        }
+        .stmTabs{
+            padding: 20px;
+        }
+        .stmTabs .tabTitle {
+            height: 22px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .stmTabs .tabLi .nmTab, .stmTabs .tabLi .hvTab {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .stmTabs .tabLi .nmTab, .stmTabs .tabLi .hvTab {
+            height: 21px;
+            padding: 0 14px;
+            _float: left;
+        }
+        .stmTabs .tabLi {
+            display: block;
+            float: left;
+            text-decoration: none;
+            color: #666;
+        }
+        .stmTabs .tabLi .hvTab {
+            display: none;
+            color: #6e87d7;
+            height: 21px;
+            border-bottom: 2px solid #6e87d7;
+        }
+        .stmTabs .tabLi:hover .hvTab,.stmTabs .tabLi.curr .hvTab {
+            display: block
+        }
+        .stmTabs .tabLi:hover .nmTab,.stmTabs .tabLi.curr .nmTab {
+            display:none
+        }
+        .stmTabs .tabConts {
+            padding-bottom: 10px
+        }
+        .stmTabs .moreLnk {
+            float: right;
+            margin-bottom: -10px;
+            _position:relative
+        }
+        .stmTabs .moreLnk a {
+            text-decoration: none
+        }
+        .stmTabs .moreLnk a:hover {
+            text-decoration: underline
+        }
+        .stmTabs .tabLi .nmTab, .stmTabs .tabLi .hvTab {
+         
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap
+        }
+        .stmTabs .gColor0:hover .hvTab,.stmTabs .gColor0.curr .hvTab {
+            color: #6e87d7;
+            border-color: #6e87d7
+        }
+        .stmTabs .gColor1:hover .hvTab,.stmTabs .gColor1.curr .hvTab {
+            color: #11c897;
+            border-color: #11c897
+        }
+        .stmTabs .gColor2:hover .hvTab,.stmTabs .gColor2.curr .hvTab {
+            color: #fa7256;
+            border-color: #fa7256;
+        }
+        .stmTabs .gColor3:hover .hvTab,.stmTabs .gColor3.curr .hvTab {
+            color: #b172c5;
+            border-color: #b172c5
+        }
+        .stmTabs .gColor4:hover .hvTab,.stmTabs .gColor4.curr .hvTab {
+            color: #f367a7;
+            border-color: #f367a7
+        }
+        /*.weibo_list_height {
+            max-height: 670px;
+            overflow: scroll;
+        }*/
+        .scrolls {
+            overflow: hidden;
+        }
+        .tang-scrollpanel {
+            overflow: hidden;
+        }
+        .tang-scrollpanel .tang-scrollpanel-wrapper {
+            position: relative;
+            /*overflow: scroll;*/
+            min-height: 470px;
+            width: 100%!important;
+        }
+        .tang-scrollpanel .tang-scrollpanel-content {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%!important;
+        }
+        .tang-scrollpanel .tang-slider {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 0;
+        }
+        .tang-scrollpanel .tang-slider-vtl {
+            height: 100%;
+        }
+        li.item {
+            line-height: 18px;
+            border-bottom: 1px solid #f5f5f5;
+            padding: 9px 10px 10px 0;
+            min-height: 55px;
+            _height: 55px;
+        }
+        .weibo_face {
+            position: relative;
+            float: left;
+            width: 50px;
+            margin-top: 2px;
+            margin-right: 15px;
+        }
+        .weibo_list a {
+            text-decoration: none;
+        }
+        .weibo_face img {
+            width: 50px;
+            height: 50px;
+        }
+        .weibo_detail {
+            margin-left: 5px;
+        }
+        .weibo_list a.undlin {
+            text-decoration: underline;
+            color:#43b6af;
+        }
+        .weibo_info {
+            margin-top: 7px;
+            color: #666;
+        }
+
+        .focused .weibo_pz {
+            float: right;
+            color: #858585;
+            height: 18px;
+            line-height: 18px;
+        }
+        .weibo_info .m a {
+            color: #666;
+        }
+        a:-webkit-any-link{
+            color:#43b6af;
+            text-decoration:underline;
+            cursor:auto;
+        }
+
+        tr {
+            height:23px;
+        }
+        table.altrowstable td {
+            border-width: 1px;
+            padding: 0px;
+            height: 22px;
+ 
+            border-color: #a9c6c9;
+        }
+        table.altrowstable th {
+            border-width: 1px;
+            padding-left: 5px;
+            border-style: solid;
+            border-color: #a9c6c9;
+        }
+        .tablecurrent {
+            background-color:#3385ff;
+        }
+        .blkUnit .titlBar {
+            background-color: #384653;
+            color: white;
+            border-bottom: 1px solid transparent;
+            border-color: #384653;
+        }
+        .titlBar h4 {
+            display: inline-block;
+            /*margin-top: -5px;*/
+            padding-right: 0px;
+            font-size: 16px;
+            color:#fff;
+        }
+        .titlBar .compInfo {
+            padding-right: 15px;
+            color: #858585;
+        }
+        #senti_more_information,#subevent_more_information {
+            cursor: pointer;
+        }
+         .focused span{
+            padding: 10px;
+            background-color: #43b6af;
+            color: white;
+            border-radius: 4px;
+            margin:5px;
+            margin-right: 10px;
+            cursor: pointer;
+            float: left;
+        }
+
+
+    </style>
+{% endblock head_css %}
+
+{% block head_js %}
+    <script src="/static/css/js/timeline.js"></script>
+    <script src="/static/js/echarts-2.0.1/_build/echarts-plain.js" type="text/javascript"></script>
+    <script src="/static/showloading/jquery.showLoading.min.js" type="text/javascript"></script>
+        <script src="/static/echarts/echarts.js"></script>
+{% endblock head_js %}
+
+{% block content %}
+<div id="top" style="margin-top:-50px;height: 55px;";></div>
+        <div style="position:fixed;float:right;margin-top: 40%;margin-left: 80%;z-index: 10000;color:#fff;"><a href="#top"><img src="/static/img/top.png" style="width:40px;"></a></div>
+     <div class="blkUnit grpUnit" id="yulun" style="height: 170px;margin-top: 51px;">
+        <div id="topic_name"><b>{{topic}}</b></div>
+        <div class="titlBar" style="padding:10px;width:99%">
+            <h4>舆情事件</h4>
+            <i id="personal_yuqing_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="网上发表的个人观点"></i>&nbsp;&nbsp;
+        </div>
+        <div class="stmTabs tabUnit" style="width:1100px;">
+            <div class="tabConts">
+                <div id="yuqing_div" style="width:1100px;float:left;">
+                    <div class="tabCon">
+                        <div id="yuqing_list" class="weibo_list weibo_list_height scrolls tang-scrollpanel">
+                            <div id="yuqing_control_height"  style="min-height:170px;" class="tang-scrollpanel-wrapper">
+                                <div class="tang-scrollpanel-content">
+                                    <div class="focused" id="focus_1" style="padding:10px;">
+                                        <span id="opinion_h" style="background-color:#49827E">事件一：支持韩寒“代笔门”</span>2012年3月7日，冯骥才在回答记者提问时，对当时正处在“代笔门事件”风波中的作家韩寒表示支持,冯骥才表示“如果我是韩寒，就不会搭理这事，你爱说什么说什么去，我还是继续写文章，不断地发表作品”。
+                                        <div hidden class="weibo_pz" style="background-color:lightblue;margin-right:10px;cursor:pointer;" id="opinion_h"><u>
+                                            网民观点分析</u>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>
+                                    </div>
+                                    <div class="focused" id="focus_1" style="padding:10px;">
+                                        <li><span id="opinion_w" style="width:170px;">事件二：评价婺源文化</span>2005年11月7日，在江西省婺源县举办的中国乡村文化旅游论坛上，著名作家冯骥才先生回答听众提问时，称婺源文化受外来文化影响很深，不是单一的徽文化。</li>
+                                        <div hidden class="weibo_pz" style="margin-right:10px;cursor:pointer;" ><u>
+                                            网民观点分析</u>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <div>
+
+    <div class="blkUnit grpUnit" style="float:left;width:99%;display:none" id="yuqing_ul_h" >
+        <div class="titlBar" style="padding:10px;">
+            <h4>媒体报道——支持韩寒“代笔门”</h4> 
+            <i id="table_pie_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="各大媒体对事件的报道情况"></i>&nbsp;&nbsp;
+        </div>
+        <div class="tabUnit">
+            <div class="tabTitle" style="padding-top:1px;"></div>
+            <div class="tabConts">
+                <div >
+                    <ul  style="border: 1px solid #ccc;padding: 10px;margin-top: 15px;">
+                                        <li class="item" style="">
+                                            <div class="weibo_detail">
+                                                <p>新浪新闻:
+                                                    <a class="undlin" target="_blank" href="javascript;;">金羊网-新快报-新闻</a>&nbsp;&nbsp;发布:<span class="title" style="color:#49827E" id="http---culture-gmw-cn-2012-11-12-content_5645972-htm"><b>[冯骥才肯定韩寒才华:无须回应代笔门事件]</b>
+                                                    </span>&nbsp;&nbsp;发布内容：&nbsp;&nbsp;<span id="content_summary_http---culture-gmw-cn-2012-11-12-content_5645972-htm">新快报讯 特派记者 陈茜 报道今年初的“代笔门事件”，将韩寒再次推到了舆论的风口浪尖。“如果我是韩寒，就不会搭理这事，你爱说什么说什么去，我还是继续写文章，不断地发表作品”。昨日，在回答记者提问时，文化界的政协委员、著名当代作家冯骥才如此表示。...</span>
+                                                </p>
+                                                <div class="weibo_info">
+                                                    
+                                                    <div class="m">
+                                                        <a>2012-03-08 05:00:00</a>&nbsp;-&nbsp;<a>转载于新浪新闻</a>&nbsp;&nbsp;<a target="_blank" href="http://news.sina.com.cn/c/2012-03-08/050024078220.shtml">新闻</a>&nbsp;&nbsp;
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="item" style="">
+                                            <div class="weibo_detail">
+                                                <p>天涯论坛:
+                                                    <a class="undlin" target="_blank" href="javascript;;">挣脱枷锁的囚徒 </a>&nbsp;&nbsp;发布:<span class="title" style="color:#49827E" id="http---culture-gmw-cn-2012-11-12-content_5645972-htm"><b>[关于“韩寒事件”，冯骥才在维护什么]</b>
+                                                    </span>&nbsp;&nbsp;发布内容：&nbsp;&nbsp;<span id="content_summary_http---culture-gmw-cn-2012-11-12-content_5645972-htm">文坛大佬，著名当代作家，文学家，艺术家，民间艺术工作者。著名民间文艺家。现任中国文学艺术界联合会执行副主席，中国文联副主席，中国小说学会会长，中国民间文艺家协会主席，天津大学文学艺术研究院院长，《文学自由谈》杂志和《艺术家》杂志主编，并任中国民主促进会中央副主席，全国政协常委在政协会议上大谈“文化强国”和“文明社会”。</span>
+                                                </p>
+                                                <div class="weibo_info">
+                                                    <div class="m">
+                                                        <a>2012-03-08 18:44:00</a>&nbsp;-&nbsp;<a>发布于天涯杂谈</a>&nbsp;&nbsp;<a target="_blank" href="http://bbs.tianya.cn/post-free-2418899-1.shtml">帖子</a>&nbsp;&nbsp;
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="item" style="">
+                                            <div class="weibo_detail">
+                                                <p>天涯论坛:
+                                                    <a class="undlin" target="_blank" href="javascript;;">高原红酒</a>&nbsp;&nbsp;发布:<span class="title" style="color:#49827E" id="http---culture-gmw-cn-2012-11-12-content_5645972-htm"><b>[冯骥才先生，九岁的那多比你更有才华！]</b>
+                                                    </span>&nbsp;&nbsp;发布内容：&nbsp;&nbsp;<span id="content_summary_http---culture-gmw-cn-2012-11-12-content_5645972-htm">津门所谓名家人大代表冯骥才先生出来挺韩了，不过，和易中天一样，牵强附会，欲盖弥彰，漏洞百出，仍然是睁眼说瞎话，脸上写满了利益两字，良知被自己吃了！...</span>
+                                                </p>
+                                                <div class="weibo_info">
+                                                    <div class="m">
+                                                        <a>2012-03-09 09:07:00</a>&nbsp;-&nbsp;<a>发布于天涯杂谈</a>&nbsp;&nbsp;<a target="_blank" href="http://bbs.tianya.cn/post-free-2419619-1.shtml">帖子</a>&nbsp;&nbsp;
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="item" style="">
+                                            <div class="weibo_detail">
+                                                <p>天涯论坛:
+                                                    <a class="undlin" target="_blank" href="javascript;;">静静的母亲河</a>&nbsp;&nbsp;发布:<span class="title" style="color:#49827E" id="http---culture-gmw-cn-2012-11-12-content_5645972-htm"><b>[我们对冯骥才有意见]</b>
+                                                    </span>&nbsp;&nbsp;发布内容：&nbsp;&nbsp;<span id="content_summary_http---culture-gmw-cn-2012-11-12-content_5645972-htm">我想大家推荐一个观点：
+　　我们对冯骥才有意见，不是对冯作家有意见，而是对文联冯执行副主席有意见，对冯政协常委有意见。。...</span>
+                                                </p>
+                                                <div class="weibo_info">
+                                                    <div class="m">
+                                                        <a>2012-03-09 18:11:00</a>&nbsp;-&nbsp;<a>发布于天涯杂谈</a>&nbsp;&nbsp;<a target="_blank" href="http://bbs.tianya.cn/post-free-2420669-1.shtml">帖子</a>&nbsp;&nbsp;
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     </div>
+    </div>   
+ 
+    <div class="blkUnit grpUnit" style="float:left;width:99%;display:none" id="cloudpie_h1" >
+        <div class="titlBar" style="padding:10px;">
+            <h4>主题占比分析|情绪占比分析——支持韩寒“代笔门”</h4>
+             <i id="table_pie_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="各类信息占比分析:子观点信息占比；各类子观点的关键词对"></i>&nbsp;&nbsp;
+        </div>
+        <div class="tabUnit">
+            <div class="tabTitle" style="padding-top:1px;"></div>
+            <div class="tabConts">
+                <div style="width:1133px;">
+                    <div id="main_pie" style="clear:left;width:550px;float:left;height:400px;position:relative;"></div>
+                    <div id="senti_pie" style="clear:right;width:500px;float:left;height:400px;position:relative;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blkUnit grpUnit" style="float:left;width:99%;display:none" id="cloudpie_h2">
+        <div class="titlBar" style="padding:10px;">
+            <h4>按主题查看评论——支持韩寒“代笔门”</h4>
+            <i id="_weibo_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="重要评论:各类子观点的重要评论"></i>&nbsp;&nbsp;
+            <span class="pull-right" style="margin:-3px -2px -10px auto;cursor: pointer;">
+                <div id="sort_cluster" class="r_v2" style="float: right;">
+                    <!-- 排序：<span id="cluster_sort_by_weight" style="color: #fff">按相关度</span> | -->
+                    <!-- <span id="cluster_sort_by_attitudes_count" style="color: #ccc">按赞数</span> | -->
+                    <!-- <span id="cluster_sort_by_timestamp" style="color: #ccc;" >按时间</span> -->
+                </div>
+            </span>
+        </div>
+        <div class="stmTabs tabUnit" style="width:1053px;">
+            <div class="tabTitle" style="padding-top:1px;">
+                <div class="tabUI" id="OpinionTabDiv" style = "width:1033px;">
+                </div>
+            </div>
+            <div class="tabConts">
+                <div id="weibos_div_opinion" style="float:left;">
+                    <div class="tabCon">
+                        <div class="cur" id="vertical-ticker_opinion" style="width:1068px;"></div>
+                    </div>
+                    <div class="more" style="width:100%; height:24px; text-align:center;">
+                        <span class="weibo_more" id="subevent_more_information">……</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blkUnit grpUnit" style="float:left;width:99%;display:none" id="cloudpie_h3">
+        <div class="titlBar" style="padding:10px;">
+            <h4>按情绪查看评论——支持韩寒“代笔门”</h4>
+            <i id="weibo_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="重要评论:各类子观点的重要评论"></i>&nbsp;&nbsp;
+            <span class="pull-right" style="margin:-3px -2px -10px auto;cursor: pointer;">
+                <div id="sort_sentiment" class="r_v2" style="float: right;">
+                    <!-- 排序：<span id="sentiment_sort_by_weight" style="color: #fff">按相关度</span> | -->
+<!--                     <span id="sentiment_sort_by_attitudes_count" style="color: #ccc;">按赞数</span>  -->
+                    <!-- <span id="sentiment_sort_by_timestamp" style="color: #ccc;" >按时间</span> -->
+                </div>
+            </span>
+        </div>
+        <div class="stmTabs tabUnit" style="width:1053px;">
+            <div class="tabTitle" style="padding-top:1px;">
+                <div class="tabUI" id="SentimentTabDiv" style = "width:1033px;">
+                    <a sentiment="1" class="tabLi gColor1 curr" href="javascript:;" style="display: block;">
+                        <div class="nmTab">积极</div>
+                        <div class="hvTab">积极</div>
+                    </a>
+                    <a sentiment="2" class="tabLi gColor2" href="javascript:;" style="display: block;">
+                        <div class="nmTab">愤怒</div>
+                        <div class="hvTab">愤怒</div>
+                    </a>
+                    <a sentiment="3" class="tabLi gColor0" href="javascript:;" style="display: block;">
+                        <div class="nmTab">悲伤</div>
+                        <div class="hvTab">悲伤</div>
+                    </a>
+                    <a sentiment="0" class="tabLi gColor4" href="javascript:;" style="display: block;">
+                        <div class="nmTab">中性</div>
+                        <div class="hvTab">中性</div>
+                    </a>
+                </div>
+            </div>
+            <div class="tabConts">
+                <div id="weibos_div" style="float:left;">
+                    <div class="tabCon">
+                        <div class="cur" id="vertical-ticker" style="width:1068px;"></div>
+                    </div>
+                    <div class="more" style="width:100%; height:24px; text-align:center;">
+                        <span class="weibo_more" id="senti_more_information">……</span>
+                    </div>
+                    <!-- <p style="float:right;cursor:pointer;" id="fold_h"><u>收起</u></p> -->
+                </div>
+            </div>
+        </div>    
+    </div>
+
+
+    <div class="blkUnit grpUnit" style="float:left;width:99%;display:none" id="yuqing_ul_w" >
+        <div class="titlBar" style="padding:10px;">
+            <h4>媒体报道——评价婺源文化</h4> 
+            <i id="table_pie_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="各大媒体对事件的报道情况"></i>&nbsp;&nbsp;
+        </div>
+        <div class="tabUnit">
+            <div class="tabTitle" style="padding-top:1px;"></div>
+            <div class="tabConts">
+                <div >
+                 <ul  style="border: 1px solid #ccc;padding: 10px;margin-top: 15px;">
+                    <li class="item" style="">
+                        <div class="weibo_detail">
+                            <p>新浪新闻:
+                                <a class="undlin" target="_blank" href="javascript;;">新华网-安徽频道-新闻</a>&nbsp;&nbsp;发布:<span class="title" style="color:#49827E" id="http---culture-gmw-cn-2012-11-12-content_5645972-htm"><b>[冯骥才一语激起千层浪]</b>
+                                </span>&nbsp;&nbsp;发布内容：&nbsp;&nbsp;<span id="content_summary_http---culture-gmw-cn-2012-11-12-content_5645972-htm">11月7日上午，在江西省婺源县举办的中国乡村文化旅游论坛上，著名作家冯骥才先生回答听众提问时，称婺源文化受外来文化影响很深，不是单一的徽文化。这一言论迅即引起徽州与婺源两地数百位网民的非议，一位历史教师还赠书冯先生，称要启蒙他对徽文化的了解。昨日，徽文化研究学者再次表态：婺源文化的主体就是徽文化</span>
+                            </p>
+                            <div class="weibo_info">
+                                
+                                <div class="m">
+                                    <a>2005-11-09 09:02:00</a>&nbsp;-&nbsp;<a>转载于新华网新闻</a>&nbsp;&nbsp;<a target="_blank" href="http://www.ah.xinhuanet.com/news2005/2005-11/09/content_5541461.htm">新闻</a>&nbsp;&nbsp;
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item" style="">
+                        <div class="weibo_detail">
+                            <p>天涯论坛:
+                                <a class="undlin" target="_blank" href="javascript;;">新安老童生 </a>&nbsp;&nbsp;发布:<span class="title" style="color:#49827E" id="http---culture-gmw-cn-2012-11-12-content_5645972-htm"><b>[冯骥才把婺源文化归纳为赣文化！]</b>
+                                </span>&nbsp;&nbsp;发布内容：&nbsp;&nbsp;<span id="content_summary_http---culture-gmw-cn-2012-11-12-content_5645972-htm">热烈祝贺婺源文化位列赣文化仙班！这是大名鼎鼎的冯骥才先生的定论，他认为婺源虽然在民居上是徽派的，但是不完全是徽文化，比如傩，就不是徽傩，而是赣傩，婺源的文化心理更倾向于赣文化！恭喜婺源，贺喜婺源，经过半个多世纪的磨合，婺源文化终于修成正果，位列赣文化仙班！这就是大名鼎鼎的冯骥才先生！</span>
+                            </p>
+                            <div class="weibo_info">
+                                <div class="m">
+                                    <a>2005-11-07 20:37:01</a>&nbsp;-&nbsp;<a>发布于天涯杂谈</a>&nbsp;&nbsp;<a target="_blank" href="http://bbs.tianya.cn/post-310-1067-1.shtml">帖子</a>&nbsp;&nbsp;
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item" style="">
+                        <div class="weibo_detail">
+                            <p>天涯论坛:
+                                <a class="undlin" target="_blank" href="javascript;;">度假旅游 </a>&nbsp;&nbsp;发布:<span class="title" style="color:#49827E" id="http---culture-gmw-cn-2012-11-12-content_5645972-htm"><b>[冯骥才犯了个太低级的错误(转载)]</b>
+                                </span>&nbsp;&nbsp;发布内容：&nbsp;&nbsp;<span id="content_summary_http---culture-gmw-cn-2012-11-12-content_5645972-htm">『徽文化』 [情系徽州]冯骥才把婺源文化归纳为赣文化.文化人士并不代表就是真理,只是冯某人的一家之言.务源文化是客观存在,代表不代表徽文化,或者代表不代表赣文化,对他而言,权作参考吧,不必太过上心.</span>
+                            </p>
+                            <div class="weibo_info">
+                                <div class="m">
+                                    <a>2005-11-11 12:11:00</a>&nbsp;-&nbsp;<a>发布于天涯杂谈</a>&nbsp;&nbsp;<a target="_blank" href="http://bbs.tianya.cn/post-books-69229-1.shtml">帖子</a>&nbsp;&nbsp;
+                                </div>
+                            </div>
+                        </div>
+                    </li>                  
+            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="blkUnit grpUnit" style="float:left;width:99%;display:none" id="cloudpie_w1" >
+        <div class="titlBar" style="padding:10px;">
+            <h4>主题占比分析|情绪占比分析——评价婺源文化</h4>
+             <i id="table_pie_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="各类信息占比分析:子观点信息占比；各类子观点的关键词对"></i>&nbsp;&nbsp;
+        </div>
+        <div class="tabUnit">
+            <div class="tabTitle" style="padding-top:1px;"></div>
+            <div class="tabConts">
+                <div style="width:1033px;">
+                    <div id="main_w" style="clear:left;width:500px;float:left;height:400px;position:relative;"></div>
+                    <div id="senti_pie_w" style="clear:right;width:500px;float:left;height:400px;position:relative;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blkUnit grpUnit" style="float:left;width:99%;display:none" id="cloudpie_w2">
+        <div class="titlBar" style="padding:10px;">
+            <h4>按主题查看评论——评价婺源文化</h4>
+            <i id="_weibo_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="重要评论:各类子观点的重要评论"></i>&nbsp;&nbsp;
+            <span class="pull-right" style="margin:-3px -2px -10px auto;cursor: pointer;">
+                <div id="sort_cluster_w" class="r_v2" style="float: right;">
+                    <!-- 排序：<span id="cluster_sort_by_weight_w" style="color: #fff">按相关度</span> | -->
+                    <!-- <span id="cluster_sort_by_attitudes_count" style="color: #ccc">按赞数</span> | -->
+                    <!-- <span id="cluster_sort_by_timestamp_w" style="color: #ccc;" >按时间</span> -->
+                </div>
+            </span>
+        </div>
+        <div class="stmTabs tabUnit" style="width:1053px;">
+            <div class="tabTitle" style="padding-top:1px;">
+                <div class="tabUI" id="try" style = "width:1033px;">
+                </div>
+            </div>
+            <div class="tabConts">
+                <div id="weibos_div_opinion_w" style="float:left;">
+                    <div class="tabCon">
+                        <div class="cur" id="vertical-ticker_opinion_w" style="width:1068px;"></div>
+                    </div>
+                    <div class="more" style="width:100%; height:24px; text-align:center;">
+                        <span class="weibo_more" id="subevent_more_information_w">……</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blkUnit grpUnit" style="float:left;width:99%;display:none" id="cloudpie_w3">
+        <div class="titlBar" style="padding:10px;">
+            <h4>按情绪查看评论——评价婺源文化</h4>
+            <i id="weibo_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="重要评论:各类子观点的重要评论"></i>&nbsp;&nbsp;
+            <span class="pull-right" style="margin:-3px -2px -10px auto;cursor: pointer;">
+                <div id="sort_sentiment_w" class="r_v2" style="float: right;">
+                    <!-- 排序：<span id="sentiment_sort_by_weight_w" style="color: #fff">按相关度</span> | -->
+                    <!-- <span id="sentiment_sort_by_attitudes_count" style="color: #ccc;">按赞数</span> | -->
+                    <!-- <span id="sentiment_sort_by_timestamp_w" style="color: #ccc;" >按时间</span> -->
+                </div>
+            </span>
+        </div>
+        <div class="stmTabs tabUnit" style="width:1053px;">
+            <div class="tabTitle" style="padding-top:1px;">
+                <div class="tabUI" id="SentimentTabDiv_w" style = "width:1033px;">
+                    <a sentiment="1" class="tabLi gColor1 curr" href="javascript:;" style="display: block;">
+                        <div class="nmTab">积极</div>
+                        <div class="hvTab">积极</div>
+                    </a>
+                    <a sentiment="2" class="tabLi gColor2" href="javascript:;" style="display: block;">
+                        <div class="nmTab">愤怒</div>
+                        <div class="hvTab">愤怒</div>
+                    </a>
+                    <a sentiment="3" class="tabLi gColor0" href="javascript:;" style="display: block;">
+                        <div class="nmTab">悲伤</div>
+                        <div class="hvTab">悲伤</div>
+                    </a>
+                    <a sentiment="0" class="tabLi gColor4" href="javascript:;" style="display: block;">
+                        <div class="nmTab">中性</div>
+                        <div class="hvTab">中性</div>
+                    </a>
+                </div>
+            </div>
+            <div class="tabConts">
+                <div id="weibos_div_w" style="float:left;">
+                    <div class="tabCon">
+                        <div class="cur" id="vertical-ticker_w" style="width:1068px;"></div>
+                    </div>
+                    <div class="more" style="width:100%; height:24px; text-align:center;">
+                        <span class="weibo_more" id="senti_more_information_w">……</span>
+                    </div>
+                    <!-- <p style="float:right;cursor:pointer;" id="fold_w"><u>收起</u></p> -->
+                </div>
+            </div>
+        </div>    
+    </div>
+
+
+
+<!--     <div class="blkUnit grpUnit" style="float:left;width:1100px;" id="cloudpie" >
+        <div class="titlBar" style="padding:10px;">
+            <h4>主题占比分析|情绪占比分析</h4>
+             <i id="table_pie_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="各类信息占比分析:子观点信息占比；各类子观点的关键词对"></i>&nbsp;&nbsp;
+        </div>
+        <div class="tabUnit">
+            <div class="tabTitle" style="padding-top:1px;"></div>
+            <div class="tabConts">
+                <div style="width:1033px;">
+                    <div id="main" style="clear:left;width:50%;float:left;height:400px;position:relative;"></div>
+                    <div id="senti_pie" style="clear:right;width:50%;float:left;height:400px;position:relative;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blkUnit grpUnit" style="float:left;width:1100px;" id="cloudpie">
+        <div class="titlBar" style="padding:10px;">
+            <h4>按主题查看评论</h4>
+            <i id="_weibo_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="重要评论:各类子观点的重要评论"></i>&nbsp;&nbsp;
+            <span class="pull-right" style="margin:-3px -2px -10px auto;cursor: pointer;">
+                <div id="sort_cluster" class="r_v2" style="float: right;">
+                    排序：<span id="cluster_sort_by_weight" style="color: #333">按相关度</span> |
+                    <span id="cluster_sort_by_attitudes_count" style="color: -webkit-link;">按赞数</span> |
+                    <span id="cluster_sort_by_timestamp" style="color: -webkit-link;" >按时间</span>
+                </div>
+            </span>
+        </div>
+        <div class="stmTabs tabUnit" style="width:1053px;">
+            <div class="tabTitle" style="padding-top:1px;">
+                <div class="tabUI" id="OpinionTabDiv" style = "width:1033px;">
+                </div>
+            </div>
+            <div class="tabConts">
+                <div id="weibos_div_opinion" style="float:left;">
+                    <div class="tabCon">
+                        <div class="cur" id="vertical-ticker_opinion" style="width:1068px;"></div>
+                    </div>
+                    <div class="more" style="width:100%; height:24px; text-align:center;">
+                        <span class="weibo_more" id="subevent_more_information">加载更多</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blkUnit grpUnit" style="float:left;width:1100px;" id="cloudpie">
+        <div class="titlBar" style="padding:10px;">
+            <h4>按情绪查看评论</h4>
+            <i id="weibo_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="重要评论:各类子观点的重要评论"></i>&nbsp;&nbsp;
+            <span class="pull-right" style="margin:-3px -2px -10px auto;cursor: pointer;">
+                <div id="sort_sentiment" class="r_v2" style="float: right;">
+                    排序：<span id="sentiment_sort_by_weight" style="color: #333">按相关度</span> |
+                    <span id="sentiment_sort_by_attitudes_count" style="color: -webkit-link;">按赞数</span> |
+                    <span id="sentiment_sort_by_timestamp" style="color: -webkit-link;" >按时间</span>
+                </div>
+            </span>
+        </div>
+        <div class="stmTabs tabUnit" style="width:1053px;">
+            <div class="tabTitle" style="padding-top:1px;">
+                <div class="tabUI" id="SentimentTabDiv" style = "width:1033px;">
+                    <a sentiment="happy" class="tabLi gColor1 curr" href="javascript:;" style="display: block;">
+                        <div class="nmTab">积极</div>
+                        <div class="hvTab">积极</div>
+                    </a>
+                    <a sentiment="angry" class="tabLi gColor2" href="javascript:;" style="display: block;">
+                        <div class="nmTab">愤怒</div>
+                        <div class="hvTab">愤怒</div>
+                    </a>
+                    <a sentiment="sad" class="tabLi gColor0" href="javascript:;" style="display: block;">
+                        <div class="nmTab">悲伤</div>
+                        <div class="hvTab">悲伤</div>
+                    </a>
+                    <a sentiment="neutral" class="tabLi gColor4" href="javascript:;" style="display: block;">
+                        <div class="nmTab">中性</div>
+                        <div class="hvTab">中性</div>
+                    </a>
+                </div>
+            </div>
+            <div class="tabConts">
+                <div id="weibos_div" style="float:left;">
+                    <div class="tabCon">
+                        <div class="cur" id="vertical-ticker" style="width:1068px;"></div>
+                    </div>
+                    <div class="more" style="width:100%; height:24px; text-align:center;">
+                        <span class="weibo_more" id="senti_more_information">加载更多</span>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div> -->
+
+{% endblock content %}
+{% block tail_js %}
+    <script src="/static/css/js/tab.js" type="text/javascript"></script>
+    <script>
+        var QUERY = "{{topic}}";
+        var TOPIC_ID="{{topic_id}}";
+        var SUBEVENT_ID = "{{subevent_id}}";
+        var MIN_CLUSTER_NUM = "{{ min_cluster_num }}";
+        var MAX_CLUSTER_NUM = "{{ max_cluster_num }}";
+        var CLUSTER_EVA_MIN_SIZE = "{{ cluster_eva_min_size }}";
+        var VSM = "{{ vsm }}";
+        $("#submit_request").click(function(){
+            var min_cluster_num = $("#min_cluster_num").val();
+            var max_cluster_num = $("#max_cluster_num").val();
+            var cluster_eva_min_size = $("#cluster_eva_min_size").val();
+            var vsm = $("select_vsm").val();
+            if (max_cluster_num < min_cluster_num){
+                alert('最大聚簇数应当大于最小聚簇数!');
+            }
+            else{
+                window.location.href = "/cluster/?query=" + query + "&subevent_id=" + subevent_id + "&min_cluster_num=" + min_cluster_num + "&max_cluster_num=" + max_cluster_num + "&cluster_eva_min_size=" + cluster_eva_min_size + "&vsm=" + vsm;
+            }
+        });
+    </script>
+    <script>
+        $('#yuqing_ul_h').css('display', 'block');
+        $('#cloudpie_h1').css('display', 'block');
+        $('#cloudpie_h2').css('display', 'block');
+        $('#cloudpie_h3').css('display', 'block');
+
+    $('#opinion_h').click(function(){
+        $('#opinion_h').css('background-color', '#49827E');
+        $('#opinion_w').css('background-color', '#43b6af');
+        $('#yuqing_ul_h').css('display', 'block');
+        $('#cloudpie_h1').css('display', 'block');
+        $('#cloudpie_h2').css('display', 'block');
+        $('#cloudpie_h3').css('display', 'block');
+
+        $('#yuqing_ul_w').css('display', 'none');
+        $('#cloudpie_w1').css('display', 'none');
+        $('#cloudpie_w2').css('display', 'none');
+        $('#cloudpie_w3').css('display', 'none');
+    });
+    $('#fold_h').click(function(){
+        $('#cloudpie_h1').css('display', 'none');
+        $('#cloudpie_h2').css('display', 'none');
+        $('#cloudpie_h3').css('display', 'none');
+    });
+    $('#opinion_w').click(function(){
+        $('#opinion_h').css('background-color', '#43b6af');
+        $('#opinion_w').css('background-color', '#49827E');
+        $('#yuqing_ul_h').css('display', 'none');        
+        $('#cloudpie_h1').css('display', 'none');
+        $('#cloudpie_h2').css('display', 'none');
+        $('#cloudpie_h3').css('display', 'none');
+
+        $('#yuqing_ul_w').css('display', 'block');
+        $('#cloudpie_w1').css('display', 'block');
+        $('#cloudpie_w2').css('display', 'block');
+        $('#cloudpie_w3').css('display', 'block');
+    });
+    $('#fold_w').click(function(){
+        $('#cloudpie_w1').css('display', 'none');
+        $('#cloudpie_w2').css('display', 'none');
+        $('#cloudpie_w3').css('display', 'none');
+    });
+        $(document).ready(function(){
+            $("#timeline_tooltip").tooltip();
+            $("#table_pie_tooltip").tooltip();
+            $("#weibo_tooltip").tooltip();           
+            //$(".timetab").tooltip({trigger : "click",}); 
+        });
+    </script>
+    <script src="/static/js/topic_comment.js" type="text/javascript"></script>
+    <script src="/static/js/topic_w.js" type="text/javascript"></script>
+{% endblock tail_js %}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>人物搜索-人物画像系统</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+    /*
+     * Base structure
+     */
+
+    /* Move down content because we have a fixed navbar that is 50px tall */
+    body {
+      font-family: Arial,"Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei","文泉驿微米黑",STXihei,"华文细黑",sans-serif;
+      background-image: url(/static/img/bg.jpg);
+      background-size:100%;
+      background-repeat:no-repeat;
+
+    }
+
+
+    /*
+     * Global add-ons
+     */
+
+    .sub-header {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    /*
+     * Top navigation
+     * Hide default border to remove 1px line.
+     */
+    .navbar-fixed-top {
+      border: 0;
+    }
+
+    /*
+     * Sidebar
+     */
+
+    /* Hide for mobile, show later */
+    .sidebar {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .sidebar {
+        position: fixed;
+        top: 51px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        background-color: #f5f5f5;
+        border-right: 1px solid #eee;
+      }
+    }
+
+    /* Sidebar navigation */
+    .nav-sidebar {
+      margin-right: -21px; /* 20px padding + 1px border */
+      margin-bottom: 20px;
+      margin-left: -20px;
+    }
+    .nav-sidebar > li > a {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+    .nav-sidebar > .active > a,
+    .nav-sidebar > .active > a:hover,
+    .nav-sidebar > .active > a:focus {
+      color: #fff;
+      background-color: #428bca;
+    }
+
+
+    /*
+     * Main content
+     */
+
+    .main {
+      padding: 20px;
+    }
+    @media (min-width: 768px) {
+      .main {
+        padding-right: 40px;
+        padding-left: 40px;
+      }
+    }
+    .main .page-header {
+      margin-top: 0;
+      color: #fff;
+      border-bottom: 0px solid #eee; 
+    }
+
+
+    /*
+     * Placeholder dashboard ideas
+     */
+
+    .placeholders {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .placeholders h4 {
+      margin-bottom: 0;
+    }
+    .placeholder {
+      margin-bottom: 20px;
+    }
+    .placeholder img {
+      display: inline-block;
+      border-radius: 50%;
+    }
+    </style>
+  </head>
+
+  <body>
+        <!-- <div style="width:100%; height:51px;background-color:#384653;position:fixed;z-index:10000">
+            <span style="font-size:24px;color:#fff;float:left;line-height:51px;background-color:#0095FF;padding:0 25px;"><b>外网舆情系统</b></span>
+            <ul class="nav navbar-nav">
+                        <li style="color:#fff;line-height:51px;margin-left:20px;"><strong><font size="+1" style="text-decoration:none;">首页</font></strong></li>
+            </ul>
+        </div> -->
+
+<!--     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">外网舆情系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="搜索...">
+          </form>
+        </div>
+      </div>
+    </nav> -->
+
+    <div class="container-fluid">
+      <div class="row" style="margin-top:50px;">
+        <!-- <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">人物搜索<span class="sr-only">(current)</span></a></li>
+            <li><a href="/news/">社会活动分析</a></li>
+            <li><a href="#">社会舆论分析</a></li>
+            <li><a href="#">社会关系分析</a></li>
+            <li><a href="#">舆情报告生成</a></li>
+          </ul>
+
+        </div> -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="width:60%;">
+          <h2 class="page-header"><center><img src="/static/img/pms_logo.png"><b style="margin-left: 15px;">人事管理系统（外网）</b></center></h2>
+
+          <div class="row" style="margin-top:160px;">
+            <div class="col-xs-12">
+                <div class="form-group">
+                  <input id="input_name" onsubmit="requestIDs()" onchange="requestIDs()"  type="text" name="input_name" class="form-control search clearable" placeholder="搜索人物，例如：冯骥才"> <i class="fa x fa-search"></i>
+                </div>
+              <!--</form>-->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-8 col-xs-10" id="candidates">
+            </div>
+          </div>
+        </div>
+
+          <!--
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+          </div>
+
+          <h2 class="sub-header">Section title</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+                <tr>
+                  <td>1,004</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                </tr>
+                <tr>
+                  <td>1,005</td>
+                  <td>Nulla</td>
+                  <td>quis</td>
+                  <td>sem</td>
+                  <td>at</td>
+                </tr>
+                <tr>
+                  <td>1,006</td>
+                  <td>nibh</td>
+                  <td>elementum</td>
+                  <td>imperdiet</td>
+                  <td>Duis</td>
+                </tr>
+                <tr>
+                  <td>1,007</td>
+                  <td>sagittis</td>
+                  <td>ipsum</td>
+                  <td>Praesent</td>
+                  <td>mauris</td>
+                </tr>
+                <tr>
+                  <td>1,008</td>
+                  <td>Fusce</td>
+                  <td>nec</td>
+                  <td>tellus</td>
+                  <td>sed</td>
+                </tr>
+                <tr>
+                  <td>1,009</td>
+                  <td>augue</td>
+                  <td>semper</td>
+                  <td>porta</td>
+                  <td>Mauris</td>
+                </tr>
+                <tr>
+                  <td>1,010</td>
+                  <td>massa</td>
+                  <td>Vestibulum</td>
+                  <td>lacinia</td>
+                  <td>arcu</td>
+                </tr>
+                <tr>
+                  <td>1,011</td>
+                  <td>eget</td>
+                  <td>nulla</td>
+                  <td>Class</td>
+                  <td>aptent</td>
+                </tr>
+                <tr>
+                  <td>1,012</td>
+                  <td>taciti</td>
+                  <td>sociosqu</td>
+                  <td>ad</td>
+                  <td>litora</td>
+                </tr>
+                <tr>
+                  <td>1,013</td>
+                  <td>torquent</td>
+                  <td>per</td>
+                  <td>conubia</td>
+                  <td>nostra</td>
+                </tr>
+                <tr>
+                  <td>1,014</td>
+                  <td>per</td>
+                  <td>inceptos</td>
+                  <td>himenaeos</td>
+                  <td>Curabitur</td>
+                </tr>
+                <tr>
+                  <td>1,015</td>
+                  <td>sodales</td>
+                  <td>ligula</td>
+                  <td>in</td>
+                  <td>libero</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          -->
+        </div>
+      </div>
+    </div>
+
+    <!-- JQuery core JS -->
+    <script src="/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="/static/js/d3.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap core JS -->
+    <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script>
+    function triger_suggestion(name){
+        $.post("/news/person_suggest/", {
+            'key': name
+       },
+       function (data, status) {
+          console.log(data)
+           candiv = d3.select("div#candidates");
+           candiv.html("");
+           if(data.names.length==0){
+               candiv.append("h3").attr("class","panel-title").text("没有查到结果");
+           }else{
+               canpan = candiv.append("div").attr("class","panel panel-info");
+               canpan.append("div").
+                         attr("class","panel-heading").
+                         append("h3").attr("class","panel-title").
+                         text("搜索结果如下，请点击查看分析结果");
+               canul=canpan.append("ul").attr("class","list-group").attr("id", "list-group-suggestion");
+               data.names.forEach(function(d){
+                  if(d == '赵实'){
+                   auser= canul.append("li").
+                    attr("title", d).
+                    attr("class", "list-group-item").
+                    attr("style", "height: 42px;").append("a").
+                    attr("title", d).
+                    attr('href', '/news/overview/?query='+d).
+                    attr("style", "overflow: hidden;width: 100%;height: 20px;").
+                    text(d)
+                  }
+                  if(d == '冯宽'){
+                   auser= canul.append("li").
+                    attr("title", d).
+                    attr("class", "list-group-item").
+                    attr("style", "height: 42px;").append("a").
+                    attr("title", d).
+                    attr('href', '/news/relevant/?query='+d).
+                    attr("style", "overflow: hidden;width: 100%;height: 20px;").
+                    text(d)
+                  }
+                  if(d== '冯骥才'){
+                   auser= canul.append("li").
+                    attr("title", d).
+                    attr("class", "list-group-item").
+                    attr("style", "height: 42px;").append("a").
+                    attr("title", d).
+                    attr('href', '/news/overview/?query='+d).
+                    attr("style", "overflow: hidden;width: 100%;height: 20px;").
+                    text(d)
+                  }
+
+               });
+               d3.select("ul.list-group#list-group-suggestion").selectAll("li.list-group-item")[0].forEach(function(d){
+                  if(d.title == "赵实"){
+                   d3.select(d).append("span").attr("style", "float: right;font-size:11px;color:#8F8A8A;margin-right: 10px;").text("为您找到相关结果约327,000条");
+                  }
+                  if(d.title == "冯骥才"){
+                   d3.select(d).append("span").attr("style", "float: right;font-size:11px;color:#8F8A8A;margin-right: 10px;").text("为您找到相关结果约3,930,000条");
+                  }
+                  if(d.title == "冯宽"){
+                   d3.select(d).append("span").attr("style", "float: right;font-size:11px;color:#8F8A8A;margin-right: 10px;").text("为您找到相关结果约60,000条");
+                  }
+                   // d3.select(d).append("span").attr("style", "float: right;font-size:10px;color:#ddd;margin-right: 10px;").text("为您找到相关结果约500条");
+                   // d3.select(d).append("span").attr("style", "float: right;margin-right: 10px;").append("a").attr("style", "cursor:pointer").attr("href", "/news/network/?query=" + d.title).attr("target", "_blank").text("社会关系分析");
+                   // d3.select(d).append("span").attr("style", "float: right;margin-right: 10px;").append("a").attr("style", "cursor:pointer").attr("href", "/cluster/?query=" + d.title + "&subevent_id=global").attr("target", "_blank").text("社会舆论分析");
+                   // d3.select(d).append("span").attr("style", "float: right;margin-right: 10px;").append("a").attr("style", "cursor:pointer").attr("href", "/news/?query=" + d.title).attr("target", "_blank").text("社会活动分析");
+                   // d3.select(d).append("span").attr("style", "float: right;margin-right: 10px;").append("a").attr("style", "cursor:pointer").attr("href", "/news/overview/?query=" + d.title).attr("target", "_blank").text("人物概览");
+               });
+           }
+        }, "json");
+      }
+      function requestIDs(){
+          triger_suggestion(($("input#input_name").val()));    
+      }
+      </script>
+  </body>
+</html>

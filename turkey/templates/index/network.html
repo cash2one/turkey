@@ -1,0 +1,536 @@
+{% extends "base.html" %}
+{% block title %}社会关系分析{% endblock %}
+
+{% block head_css %}
+    <!--
+    <link rel="stylesheet" href="/static/css/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/css/style_blue.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/css/thickbox.css" type="text/css" media="all">
+    -->
+    <link type="text/css" rel="stylesheet" href="/static/css/css/timeline.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/css/table.css">
+    <link rel="stylesheet" href="/static/css/css/tab.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/showloading/showLoading.css" type="text/css"/>
+    <style type="text/css">
+        .blkUnit .titlBar {
+            background-color: #104F87;
+            color: white;
+            border-bottom: 1px solid transparent;
+            border-color: #104F87;
+        }
+        .titlBar h4 {
+            display: inline-block;
+            /*margin-top: -5px;*/
+            padding-right: 0px;
+            font-size: 16px;
+            color:#fff;
+        }
+        .titlBar .compInfo {
+            padding-right: 15px;
+            color: #858585;
+        }
+        .shadow {
+            border: 1px solid #ccc;
+            width: 98%;
+        -webkit-box-shadow:5px 6px 3px #ABA8A8;
+        -moz-box-shadow:5px 6px 3px #ABA8A8;
+        box-shadow:5px 6px 3px #ABA8A8;
+    }
+    .shadow a:hover{
+        color:black;
+        text-decoration: underline;
+    }
+    #profile_div{
+        margin-bottom: 20px;
+    }
+    #related_people_modal a:hover{
+        color:blue;
+    }
+    </style>
+
+{% endblock head_css %}
+
+{% block head_js %}
+    <script src="/static/css/js/timeline.js"></script>
+    <script src="/static/js/echarts-2.0.1/_build/echarts-plain.js" type="text/javascript"></script>
+    <script src="/static/showloading/jquery.showLoading.min.js" type="text/javascript"></script>
+{% endblock head_js %}
+
+    {% block content %}
+                <div class="blkUnit grpUnit" id="kwgraph" style="margin-top:55px;">
+                    <div id="topic_name"><b>{{topic}}</b></div>
+                    <div class="titlBar" style="padding:10px;width:99%">
+                        <h4>社会关系图谱</h4>
+                        <i id="kw_tooltip" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="各类社会关系图谱可视化"></i>&nbsp;&nbsp;
+                        <span id="status_kw_tooltip"></span>
+                    </div>
+
+                    <div class="tabUnit">
+                        <div class="tabTitle" style="padding-top:1px;">
+                        </div>
+                        <div class="tabConts">
+                            <div id="hot_issue_mining" style="height: 600px;width:1000px; cursor: default; background-color: rgba(0, 0, 0, 0);">
+                            </div>
+                            <div id="profile_div" class="shadow" style="visibility: hidden;">
+                                <div class="" style="border-top: solid #ebebeb;padding:10px 0;">
+                                    <h3 class="panel-title" style="text-align: center;" id="company-panel-title"> 基本信息 </h3>
+                                </div>
+                                <ul class="list-group" id="basicprofile"></ul>
+                            </div>
+                            <div style="width:100%;margin-right:30px;">
+                               <p><!-- <span id="showmore_user" style="float:right;cursor:pointer" type="button"data-toggle="modal" data-target="#more_user" ><u>查看更多</u></span> --><h4 style="margin-left:-30px;"><center>紧密联系人</center></h4></p>
+                                <div id="related_people_net"  style="width:90%;margin-left:50px;margin-top:15px;"></div>
+                            </div>
+                            <div id="compare_of_pro_day" style="border-top: solid #ebebeb;"></div>
+                        </div>
+                    </div>
+                </div>
+
+<div id="related_people_modal" style="padding: 20px;border-radius: 6px;display:none;position: fixed;left: 70%;top: 30%;z-index: 1005;width: 420px;background: #FFF none repeat scroll 0% 0%;border: 1px solid #999;max-height: 400px;overflow: auto;margin-left: -460px;font_family: "Microsoft YaHei UI";">
+    <h4 class="title" style="padding: 10px;border-bottom:solid 1px #999;padding-top: 0;"><a href="javascript:void(0)" class="Basicclose" id="close" style="float:right;">X</a><span id="modal_title">相关活动</span></h4>
+    <div class="m-wrap" id="related_people_detail" style="font-size:14px;margin-top:15px;">
+        
+    </div>
+</div>
+
+<!--     <div class="modal fade" id="sentiment_task_detail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display:block">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="position: absolute;margin-top: 40px;float :none;width: 900px;margin-left: -135px;">
+          <div class="modal-header" style="float:inherit;margin:initial;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">情绪监测</h4>
+          </div>
+          <div class="modal-body" style="float:none;max-height: 400px;overflow-y: auto;">
+            <div id="sentiment_task_detail_modal"></div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    {% endblock content %}
+    {% block tail_js %}
+    <!--<script src="http://hijiangtao.github.io/variety-show-hot-spot-vis/js/esl.js"></script>
+    <script src="http://echarts.baidu.com/echarts2/doc/example/www/js/echarts.js"></script>
+    <script src="http://hijiangtao.github.io/variety-show-hot-spot-vis/js/echarts-plain-map.js"></script>-->
+    <script src="/static/echarts/echarts.js"></script>
+
+    <script>
+    var query_name = "{{topic}}"
+    //事件关联分析
+function drawKG(category_list, category_dict, nodes, links){
+    // var hover_link = []
+    // for(var j =0; j<nodes.length;j++){
+    //     if(nodes[j].category == 2){
+    //         if(nodes[j].name.length>5){
+    //             nodes[j].name = nodes[j].name.substr(0, 5) + '...';
+    //         }
+    //     }
+    // }
+    // for(var i=0; i<links.length;i++){
+    //     hover_link.push(links[i].target);
+    //     if(links[i].target.length>5){
+
+    //         links[i].target = links[i].target.substr(0,5) +'...';
+    //     }
+    // }
+    document.getElementById("hot_issue_mining").style.height='600px';
+    require.config({
+        paths : {
+            echarts : "/static/echarts/"
+        }
+    });
+    require(
+    [
+        'echarts',
+        'echarts/chart/force'
+    ],
+    function (echarts) {
+        var myChart = echarts.init(document.getElementById('hot_issue_mining'));
+        
+        var option = {
+            title : {
+                //text: '爸爸去哪儿节目人物关系图',
+                //subtext: '数据来自新浪微博与湖南卫视',
+                //x:'right',
+                //y:'bottom'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: '{a} : {b}'
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            legend: {
+                x: 'left',
+                data: category_list 
+            },
+            series : [
+                {
+                    type:'force',
+                    name : "人物关系",
+                    ribbonType: false,
+                    categories:[{"name":"中心人物","itemStyle": {"normal":{"color":'#104F87'}}},{"name":"家庭成员","itemStyle": {"normal":{"color":'#0554A5'}}},{"name":"事件","itemStyle": {"normal":{"color":'#008891'}}},{"name":"好友","itemStyle": {"normal":{"color":'rgb(83, 178, 245)',"label":{"textStyle": {"color": '#000'}}}}}],
+
+                    //categories:[{"name":"中心人物","itemStyle": {"normal":{"color":'#F2753F'}}},{"name":"家庭成员","itemStyle": {"normal":{"color":'#E87E51'}}},{"name":"事件","itemStyle": {"normal":{"color":'#F29F3F'}}},{"name":"好友","itemStyle": {"normal":{"color":'#FFE957'}}}],
+                    // categories:[{"name":"中心人物","itemStyle": {"normal":{"color":'#F2935C'}}},{"name":"家庭成员","itemStyle": {"normal":{"color":'#F2C36B'}}},{"name":"事件","itemStyle": {"normal":{"color":'#82C0AF'}}},{"name":"好友","itemStyle": {"normal":{"color":'#BED984'}}}],
+                    // categories : category_dict,
+                    /*[
+                        {
+                            name: '节目'
+                        },
+                        {
+                            name: '小朋友'
+                        },
+                        {
+                            name: '父亲'
+                        },
+                        {
+                            name:'导演'
+                        },
+                        {
+                            name:'节目工作组'
+                        }
+                    ],*/
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                // position: 'bottom',
+                                show: true,
+                                textStyle: {
+                                    color: '#fff'
+                                }
+                            },
+                            nodeStyle : {
+                                brushType : 'both',
+                                strokeColor : 'rgba(255,215,0,0.4)',
+                                lineWidth : 3.5
+                            },
+                            linkStyle: {
+                                //type: 'curve'
+                            }
+                        },
+                        emphasis: {
+                            label: {
+                                show: false
+                                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+                            },
+                            nodeStyle : {
+                                //r: 30
+                            },
+                            linkStyle : {}
+                        }
+                    },
+                    //large:true,
+                    useWorker: true,
+                    minRadius : 18,
+                    maxRadius: 35,
+                    gravity: 1.1,
+                    scaling: 1.2,
+                    steps: 20,
+                    large: true,
+                    useWorker: true,
+                    coolDown: 0.995,
+                    ribbonType: false,
+                    nodes: nodes/*[
+                        {category:0, name: '爸爸去哪儿', value : 28},
+                    ]*/,
+                    links : links/*[
+                        {source : '爸爸去哪儿', target : '杨威', weight : 3},
+                       
+                    ]*/
+                }
+            ]
+        };
+        myChart.setOption(option);
+        var ecConfig = require('echarts/config');
+        myChart.on(ecConfig.EVENT.CLICK, function(param){
+            var data = param.data;
+            var links = option.series[0].links;
+            var nodes = option.series[0].nodes;
+            if ( data.source !== undefined && data.target !== undefined) { //点击的是边
+                var sourceNode = nodes.filter(function (n) {return n.name == data.source})[0];
+                var targetNode = nodes.filter(function (n) {return n.name == data.target})[0];
+                // console.log("选 " + sourceNode.name + ' -> ' + targetNode.name + ' (' + data.weight + ')');
+            } else { 
+                // 点击的是点
+                //console.log("选中了" + data.name);
+                /*if(myChart){
+                    myChart.clear();
+                }*/
+                //console.log(data);
+                addprofile(data.name);
+            }
+        });
+    });
+}
+var weibo_r_series = ['合作者','家庭成员','商界人士','党政干部','其他人员','文艺工作者','媒体工作者'];
+
+function show_related_people(seriesName, name){
+    if(query_name == '冯骥才'){
+        var dict = {'活动数量':{'合作者':["盘点大同雕塑家底大型活动","联合提出“立法取缔活熊取胆”提案"],'媒体工作者':["张贤亮去世之际接受采访"],'家庭成员':["浙江慈城寻根"],'商界人士':["邀请举办个人画展","参加韩美林美术馆开幕并讲话"],'党政干部':["山西平顺县旅游工作考察调研","主持中国民协第九次全国代表大会开幕式","被颁发宁夏“文化使者”聘书","参加保护与发展传统村落座谈会","参加“山花奖”获奖代表、传承人代表座谈会","参加文艺工作座谈会","在庆祝中国民主促进会成立70周年之际接受看望"],'文艺工作者':["《霓裳集》作序","“抢救民间文化遗产”公益画展", "《绝世金莲》出版","作品被拍成电影《炮打双灯》","参与《在希望的田野上——人民音乐家施光南诞辰七十周年纪念音乐会》","参与拍摄马年央视春晚《春晚是什么》先导片"],'其他人员':["陪同参观天津大学冯骥才文学艺术研究院","举行“冯骥才向家乡宁波慈城文化捐赠仪式”","获万宝龙国际艺术赞助大奖"]} , '联系人数量':{'合作者':["姚明","林丹"],'家庭成员':["冯宽","顾同昭","冯吉甫","戈长复"],'商界人士':["柳静安","贝陆慈"],'文艺工作者':["柯基生","何平","英达","宋雨桂","韩美林","崔波","余秋雨","莫言","严歌苓","刘诗昆","陈履生","刘华","李雪健","冯小刚","陈道明","章金莱","徐沛东","姜昆","李谷一","贾平凹","冯其庸","麦家","张贤亮","郑云峰","施光南","成龙","吴秀波","葛优","范伟","张嘉译"],'媒体工作者':["李楠","白岩松"],'党政干部':["耿彦波","常嗣新","郑一民","陈建文","罗杨","郭运德","蒋效愚","卢昌华","蔡国英","徐广国","何学清","马力","郑欣淼","王峻","谢雅贞","王勇超","韦苏文","严隽琪","丁晓芳"],'其他人员':["樊锦诗","沙玛拉毅","吴元新","曹保明","洪如丁"]}};
+    }
+    if(query_name == '赵实'){
+        var dict = {'联系人数量':{'党政干部':['王东明','张岱梨','田进','王莉莉','沈跃跃','李源潮','王太华','王嘉猷','刘道平','雷元亮','张海涛','赵化勇','安思国','李群','张丕民','傅克诚','孙家正','李五四','罗志军','钱小芊','李岚清','刘延东','卢展工','王家瑞','夏红民','李前光','刘永富','王元军','张海','张雪','路甬祥','刘淇','刘奇葆','李肇星','焦利'],'合作者':['姜树森','李玲修'],'家庭成员':[],'商界人士':[],'其他人员':['王彬颖','章素贞'],'文艺工作者':['韩三平','唐国强','刘劲','王伍福','刘沙','王健','欧阳中石','徐克','姜文','冯小刚','范冰冰','章子怡','韩再芬','谢莉斯','王洁实','邓文迪','詹姆斯-卡梅隆'],'媒体工作者':[]} ,'活动数量':{'党政干部':['王东明看望赵实一行并就有关工作交换意见','赵实出席全国广播影视法制工作会议','赵实、田进、王莉莉出席总局纪念三八国际劳动妇女节暨表彰大会','赵实、王莉莉出席总局扶贫工作领导小组会议','赵实、王莉莉出席“两代表一委员”学习实践活动座谈会','赵实看望慰问王嘉猷同志','王太华、赵实会见四川甘孜州负责同志','王太华、赵实考察国家中影数字制作基地','总局领导出席学习实践活动会议','赵实、雷元亮出席观看艺术团艺术周演出','赵实、张海涛、赵化勇出席BIRTV2008展览会','赵实听取新疆广播影视工作汇报','赵实与山东省委领导座谈广电体制改革事宜','赵实、张丕民出席总局首批赴安徽挂职锻炼干部座谈会','傅克诚、赵实到中影国家数字电影制作基地检查指导学习实践活动','中国文联专题研讨繁荣发展社会主义文艺意见','中央第二巡视组巡视中国文联工作动员会召开','引领风气之先 以优秀作品报答人民——孙家正、赵实考察广东文艺工作','多出有筋骨、有道德、有温度的文艺作品'],'合作者':['联合导演电影《女人的力量》','联合导演电影《花园街五号》'],'家庭成员':[],'商界人士':[],'其他人员':['赵实会见世界知识产权组织官员及专家'],'文艺工作者':['李岚清篆刻书法艺术展在京举行','“百花迎春”文学艺术界2016春节大联欢举行','探望《建国大业》剧组','出席中国电影乐团纪念建团六十周年庆典晚会','出席观看艺术团艺术周演出','出席国家大剧院演出黄梅戏《徽州往事》','第二届北京国际电影开幕','参观“欧阳中石书中华美德古训展”','出席第七届中国牡丹奖颁奖晚会','出席甘肃省双联行动精准扶贫精准脱贫主题晚会'],'媒体工作者':[]} }
+    }
+    // console.log(dict[seriesName][name]);    
+    var data = dict[seriesName][name];
+    // data = data.split(',');
+    $('#related_people_detail').empty();
+    var html = '';
+    for(var i=0;i<data.length;i++){
+        html += '<div style="min-width:65px;padding:10px;float:left;">' +data[i]+'</div>';
+    }
+    $('#related_people_detail').append(html);
+    $('#modal_title').empty();
+    if(seriesName == '活动数量'){
+        $('#modal_title').append(name + ' ('+data.length +')');
+    }else{
+        $('#modal_title').append(name + ' ('+data.length +')');
+    }
+    $('#related_people_modal').css('display','block');
+    $("#float-wrap").css('display','block');
+
+}
+
+    function addprofile(name){
+        document.getElementById('profile_div').scrollIntoView();
+        $.post("/news/nodeinfo/", {
+            'name': name
+        },
+        function(data, status) {
+            // console.log(data);
+            var self_url = '';
+            if(data.name == '人物-冯宽'){
+                selfurl = document.location.href;
+                self_url = selfurl.split('/')[2];
+                self_url = 'http://' + self_url;
+
+            }
+
+            $("#profile_div").attr("style", "visibility: visible");
+            $("#basicprofile").empty();
+
+            var center_node_info = data;
+            if (center_node_info != null){
+              $("#company-panel-title").html(center_node_info["name"]);
+              $("#basicprofile").append("<li class='list-group-item'><span>节点：" + center_node_info["name"] + "<span></li>"); 
+              $("#basicprofile").append("<li class='list-group-item'><span>描述：" + center_node_info["description"] + "<span></li>"); 
+              $("#basicprofile").append("<li class='list-group-item'><span>链接：<a target='_blank' href='" + center_node_info["url"] + "'>"  +self_url+ center_node_info["url"] + "</a><span></li>"); 
+            }
+            else{
+              $("#company-panel-title").html(name);
+              $("#basicprofile").html("没有查到结果");
+            }
+        }, "json");
+    }
+
+$.ajax({
+    url: "/news/networkdata/?query=" + '{{topic}}',
+    type: "GET",
+    dataType: "json",
+    async: false,
+    success: function(data){
+        // console.log('{{topic}}')
+        if (data){
+            // console.log(data.nodes)
+            drawKG(data.category_list, data.category_dict, data.nodes, data.links);
+        }
+    }
+})
+
+var weibo_r_series = ['合作者','家庭成员','商界人士','党政干部','其他人员','文艺工作者','媒体工作者'];
+// console.log(query_name);
+if(query_name == '冯骥才'){
+    var weibo_r_series = ['合作者','家庭成员','商界人士','党政干部','其他人员','文艺工作者','媒体工作者'];
+    var weibo_r = [{name:'合作者',value:2},{name:'家庭成员',value:1},{name:'商界人士',value:2},{name:'党政干部',value:7},{name:'其他人员',value:3},{name:'文艺工作者',value:6},{name:'媒体工作者',value:1}];
+    var weibo_r_1 = [{name:'合作者',value:2},{name:'家庭成员',value:4},{name:'商界人士',value:2},{name:'党政干部',value:19},{name:'其他人员',value:5},{name:'文艺工作者',value:30},{name:'媒体工作者',value:2}];
+};
+if(query_name == '赵实'){
+    // 带值为0的条目
+    // var weibo_r = [{name:'合作者',value:2},{name:'家庭成员',value:0},{name:'商界人士',value:0},{name:'党政干部',value:19},{name:'其他人员',value:1},{name:'文艺工作者',value:10},{name:'媒体工作者',value:0}];
+    // var weibo_r_1 = [{name:'党政干部',value:35},{name:'合作者',value:2},{name:'家庭成员',value:0},{name:'商界人士',value:0},{name:'其他人员',value:2},{name:'文艺工作者',value:16},{name:'媒体工作者',value:0}];
+    // 不带值为0的条目
+    var weibo_r_series = ['合作者','党政干部','其他人员','文艺工作者'];
+
+    var weibo_r = [{name:'合作者',value:2},{name:'党政干部',value:19},{name:'其他人员',value:1},{name:'文艺工作者',value:10}];
+    var weibo_r_1 = [{name:'党政干部',value:35},{name:'合作者',value:2},{name:'其他人员',value:2},{name:'文艺工作者',value:16}];
+
+}
+
+//微博电视阅读人/次数表现
+function weibo_reflect(){
+    document.getElementById("compare_of_pro_day").style.height='400px';
+    require.config({
+        paths : {
+            echarts : "/static/echarts/"
+        }
+    });
+    require(
+    [
+        'echarts',
+        'echarts/chart/pie'
+    ],
+    function (echarts) {
+        var myChart = echarts.init(document.getElementById('compare_of_pro_day'));
+        
+        var c_option = {
+            title: {
+                text: "{{topic}}" + '社会关系占比分析（左图为活动比例分析，右图为相关人物比例分析）',
+                //subtext: '2014年'  + '数据（源自CSM与新浪官方）',
+                x: 'left'
+            },
+            tooltip: {
+                trigger: 'item',
+                showDelay: 10,
+                hideDelay: 50,
+                formatter: "{a} <br/> {b} : {c} ({d}%)",
+                textStyle: {
+                    fontFamily: '微软雅黑'
+                }
+            },
+            legend: {
+                //orient: 'vertical',
+                x: 'left',
+                y: 'top',
+                padding: 30,
+                data: weibo_r_series
+            },
+            toolbox: {
+                show : true,
+                x: 'right',
+                y: 30,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    restore : {show: true},
+                    magicType : {show: true, type: ['line', 'bar']},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            series : [
+                {
+                    name: '活动数量',
+                    type: 'pie',
+                    radius: '50%',
+                    center: ['25%', 200],
+                    roseType : 'area',
+                    itemStyle : {
+                        normal : {
+                            label : {
+                                show : true
+                            },
+                            labelLine : {
+                                show : true
+                            }
+                        },
+                        // emphasis : {
+                        //     label : {
+                        //         show : true,
+                        //         position : 'center',
+                        //         textStyle : {
+                        //             fontSize : '30',
+                        //             fontWeight : 'bold',
+                        //             fontFamily: '微软雅黑'
+                        //         }
+                        //     }
+                        // }
+                    },
+                    data: weibo_r
+                },
+                {
+                    name: '联系人数量',
+                    type: 'pie',
+                    radius: '50%',
+                    center: ['75%', 200],
+                    roseType : 'area',
+                    itemStyle : {
+                        normal : {
+                            label : {
+                                show : true
+                            },
+                            labelLine : {
+                                show : true
+                            }
+                        },
+                        // emphasis : {
+                        //     label : {
+                        //         show : true,
+                        //         position : 'center',
+                        //         textStyle : {
+                        //             fontSize : '30',
+                        //             fontWeight : 'bold',
+                        //             fontFamily: '微软雅黑'
+                        //         }
+                        //     }
+                        // }
+                    },
+                    data: weibo_r_1
+                }
+            ]
+        };
+        myChart.setOption(c_option);
+        var ecConfig = require('echarts/config');
+        myChart.on(ecConfig.EVENT.CLICK, function(param){
+            // var data = param.data;
+            // var links = option.series[0].links;
+            // var nodes = option.series[0].nodes;
+            // console.log(param);
+            var seriesIndex = param.seriesIndex;
+            var dataIndex = param.dataIndex;
+            show_related_people(param.seriesName, param.name);
+
+        });
+    });
+};
+
+function related_people_net(data){
+    $('#related_people_net').empty();
+    // var date = new Date();
+    // var from_date_time = Math.floor(date.getTime()/1000) - 60*60*24*7;
+    // var from_date = from_date_time.format('yyyy/MM/dd hh:mm');
+    // var to_date = date.format('yyyy/MM/dd hh:mm');
+    var html = '';
+    html += ' <table class="table table-bordered table-striped table-condensed datatable" >';
+    html += ' <thead><tr style="text-align:center;">';
+    html += '<th style="">姓名</th><th style="">紧密度</th><th style="">类型</th><th>单位</th><th>职务</th>';
+    html += '</tr></thead>';
+    html += '<tbody>';
+    for(var i=0;i<10;i++){
+        html += '<tr>'
+        html += ' <td>'+data[i][0]+'</td>';
+        html += ' <td>'+data[i][1]+'</td>';
+        html += ' <td>'+data[i][2]+'</td>';
+        html += ' <td>'+data[i][3]+'</td>';
+        html += ' <td>'+data[i][4]+'</td>';
+        html += '</tr>';
+    }
+
+    html += '</tbody></table>';
+    $('#related_people_net').append(html);
+}
+
+    $("#close").off("click").click(function(){
+        $('#related_people_modal').css('display','none');
+        $("#float-wrap").css('display','none');
+        return false;
+    });
+
+weibo_reflect();
+
+if(query_name == '冯骥才'){
+    var data_people=[['顾同昭', '0.80', '家庭成员-妻子', '无', '绘画爱好者'],['冯宽', '0.60', '家庭成员-儿子', '冯骥才民间文化基金会', '秘书长'],['韩美林', '0.60', '文艺工作者', '清华大学美术学院', '教授'],['李雪健', '0.40', '文艺工作者', '中央实验话剧院', '影视演员'],['白岩松', '0.40', '媒体工作者', '中央电视台', '主持人'],['冯小刚', '0.20', '文艺工作者', '无', '导演、演员'],['英达', '0.20', '文艺工作者', '北京英氏影视传媒公司', '导演、演员'],['罗杨', '0.20', '党政干部', '中国民间文艺家协会', '分党委书记、书法家'],['陈道明', '0.20', '文艺工作者', '无', '演员'],['余秋雨', '0.20', '文艺工作者', '澳门科技大学', '艺术学院院长']];
+}else if (query_name == '赵实') {
+        var data_people = [['孙家正' ,'0.80', '党政干部', '中国文学艺术界联合会', '主席'],['王莉莉', '0.60', '党政干部' ,'国家广播电影电视总局', '总局直属机关党委书记'],['雷元亮', '0.60', '党政干部' ,'中国广播电视学会', '副会长'],['王太华', '0.60', '党政干部', '全国政协文史和学习委员会' , '主任委员'],['姜树森' ,'0.40' ,'合作者', '广西电影制片厂、长春电影制片厂', '导演'],['王东明', '0.20', '党政干部', '无', '四川省委书记'],['李岚清', '0.20', '党政干部', '无', '曾任中共第十五届中央委员'],['王家瑞', '0.20', '党政干部', '国务院', '中共十八届中央委员'],['韩三平', '0.20', '文艺工作者', '无', '制片人、导演'],['路甬祥', '0.20', '党政干部', '国务院', '曾任中共中央委员']]
+
+};
+
+
+related_people_net(data_people);
+
+    </script>
+{% endblock tail_js %}

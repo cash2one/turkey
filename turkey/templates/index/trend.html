@@ -1,0 +1,457 @@
+{% extends "base.html" %}
+{% block module_title %}新闻评论观点分析{% endblock %}
+
+{% block head_css %}
+    <!--
+    <link rel="stylesheet" href="/static/css/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/css/style_blue.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/css/thickbox.css" type="text/css" media="all">
+    -->
+    <link type="text/css" rel="stylesheet" href="/static/css/css/timeline.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/css/table.css">
+    <link rel="stylesheet" href="/static/css/css/tab.css" type="text/css" media="all">
+
+        <style type="text/css">
+        /* keywords tag cloud */
+        #keywords_cloud_div {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0px auto 0
+        }
+
+        #keywords_cloud_div a {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-family: Microsoft YaHei;
+            color: #AD12C2;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 3px 6px;
+        }
+
+        #keywords_cloud_div a:hover {
+            border: 1px solid #eee;
+            background: #000;
+        }
+        #keywords_cloud_div .blue {
+            color: blue;
+        }
+        #keywords_cloud_div .red {
+            color: red;
+        }
+        #keywords_cloud_div .yellow {
+            color: yellow;
+        }
+
+        #trend_div {
+            height: 270px;
+            width: 100%;
+            float: left;
+            border: 1px solid #F0F0F0;
+            background: #F0F0F0;
+        }
+
+        .blkUnit {
+            position: relative;
+            clear: both;
+            margin-top: 25px;
+            background-color: #fff;
+        }
+        .blkUnit .titlBar {
+            z-index: 4;
+            position: relative;
+            height: 16px;
+            padding: 20px;
+            background-color: #f6f6f6;
+        }
+        .titlBar h4 {
+            display: inline-block;
+            margin-top: -5px;
+            padding-right: 0px;
+            font-size: 15px;
+            color: #666;
+        }
+        .titlBar .compInfo {
+            padding-right: 15px;
+            color: #858585;
+        }
+        .stmTabs{
+            padding: 20px;
+        }
+        .stmTabs .tabTitle {
+            height: 22px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .stmTabs .tabLi .nmTab, .stmTabs .tabLi .hvTab {
+            max-width: 110px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .stmTabs .tabLi .nmTab, .stmTabs .tabLi .hvTab {
+            height: 23px;
+            padding: 0 14px;
+            _float: left;
+        }
+        .stmTabs .tabLi {
+            display: block;
+            float: left;
+            text-decoration: none;
+            color: #666;
+        }
+        .stmTabs .tabLi .hvTab {
+            display: none;
+            color: #6e87d7;
+            height: 21px;
+            border-bottom: 2px solid #6e87d7;
+        }
+        .stmTabs .tabLi:hover .hvTab,.stmTabs .tabLi.curr .hvTab {
+            display: block
+        }
+        .stmTabs .tabLi:hover .nmTab,.stmTabs .tabLi.curr .nmTab {
+            display:none
+        }
+        .stmTabs .tabConts {
+            padding-bottom: 10px
+        }
+        .stmTabs .moreLnk {
+            float: right;
+            margin-bottom: -10px;
+            _position:relative
+        }
+        .stmTabs .moreLnk a {
+            text-decoration: none
+        }
+        .stmTabs .moreLnk a:hover {
+            text-decoration: underline
+        }
+        .stmTabs .tabLi .nmTab, .stmTabs .tabLi .hvTab {
+            max-width: 110px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap
+        }
+        .stmTabs .gColor0:hover .hvTab,.stmTabs .gColor0.curr .hvTab {
+            color: #6e87d7;
+            border-color: #6e87d7
+        }
+        .stmTabs .gColor1:hover .hvTab,.stmTabs .gColor1.curr .hvTab {
+            color: #11c897;
+            border-color: #11c897
+        }
+        .stmTabs .gColor2:hover .hvTab,.stmTabs .gColor2.curr .hvTab {
+            color: #fa7256;
+            border-color: #fa7256;
+        }
+        .stmTabs .gColor3:hover .hvTab,.stmTabs .gColor3.curr .hvTab {
+            color: #b172c5;
+            border-color: #b172c5
+        }
+        .stmTabs .gColor4:hover .hvTab,.stmTabs .gColor4.curr .hvTab {
+            color: #f367a7;
+            border-color: #f367a7
+        }
+ 
+
+        .scrolls {
+
+            overflow: hidden;
+
+        }
+
+        .tang-scrollpanel {
+
+            overflow: hidden;
+
+        }
+
+        .tang-scrollpanel .tang-scrollpanel-wrapper {
+
+            position: relative;
+
+            overflow: hidden;
+
+            width: 100%!important;
+
+        }
+
+        .tang-scrollpanel .tang-scrollpanel-content {
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            width: 100%!important;
+
+        }
+
+        .tang-scrollpanel .tang-slider {
+
+            position: absolute;
+
+            top: 0;
+
+            right: 0;
+
+            font-size: 0;
+
+        }
+
+        .tang-scrollpanel .tang-slider-vtl {
+
+            height: 100%;
+
+        }
+
+        .weibo_list li.item {
+
+            line-height: 18px;
+
+            border-bottom: 1px solid #f5f5f5;
+
+            padding: 9px 10px 10px 0;
+
+            min-height: 55px;
+
+            _height: 55px;
+
+        }
+
+        .weibo_face {
+
+            position: relative;
+
+            float: left;
+
+            width: 50px;
+
+            margin-top: 3px;
+
+        }
+
+        .weibo_list a {
+
+            text-decoration: none;
+
+        }
+
+        .weibo_face img {
+
+            width: 50px;
+
+            height: 50px;
+
+        }
+
+        .weibo_detail {
+
+            margin-left: 0px;
+
+        }
+
+        .weibo_list a.undlin {
+
+            text-decoration: underline;
+
+        }
+
+        .weibo_info {
+
+            margin-top: 7px;
+
+            color: #666;
+
+        }
+
+        .weibo_info .weibo_pz {
+
+            float: right;
+
+            color: #858585;
+
+            height: 18px;
+
+            line-height: 18px;
+
+        }
+
+        .weibo_info .m a {
+
+            color: #666;
+
+        }
+		a:-webkit-any-link {
+		color: -webkit-link;
+		text-decoration: underline;
+		cursor: auto;
+		}
+        tr {
+            height:23px;
+        }
+        table.altrowstable td {
+            border-width: 1px;
+            padding: 0px;
+            height: 22px;
+ 
+            border-color: #a9c6c9;
+        }
+        table.altrowstable th {
+            border-width: 1px;
+            padding-left: 5px;
+            border-style: solid;
+            border-color: #a9c6c9;
+        }
+        .tablecurrent {
+            background-color:#3385ff;
+        }
+        .input_curr{
+            checked: "checked";
+        }
+        .inner {
+            padding: 10px;
+            border: 1px #000 dotted solid;
+            box-sizing: border-box;
+        }
+        /*.inner-same {
+            border: solid 1px #F3DDB3;
+            background: #FFFEF4;
+            color: #999;
+            margin-top: -1px;
+        }*/
+        .navbar-inner {
+            background-color: #02C874;
+        }
+        .title {
+            color: #02C874;
+            font-size: 15px;
+            border: 1px #000 dotted solid;
+        }
+        #keywords_cloud_div {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0px auto 0
+        }
+
+        #keywords_cloud_div a {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-family: Microsoft YaHei;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 3px 6px;
+        }
+
+        #keywords_cloud_div a:hover {
+            border: 1px solid #eee;
+            background-color: #FFF;
+        }
+        #keywords_cloud_div .blue {
+            color: blue;
+        }
+        #keywords_cloud_div .red {
+            color: red;
+        }
+        #keywords_cloud_div .yellow {
+            color: yellow;
+        }
+
+
+    </style>
+{% endblock head_css %}
+
+{% block head_js %}
+    <script src="/static/css/js/echarts-all.js"></script>
+{% endblock head_js %}
+
+{% block content %}
+    <div class="blkUnit grpUnit" id="trendProfile">
+        <div class="titlBar" style="padding-bottom:25px;">
+            <h4>话题走势图</h4>
+        </div>
+
+        <div class="tabUnit">
+            <div class="tabTitle" style="padding-top:1px;background-color:#f6f6f6;" id="auto_gsid_3">
+            </div>
+            <div class="tabConts">
+                <div id="trend"style="height:500px;width:1033px"></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+{% block tail_js %}
+    <script>
+        var mode = '{{mode}}';
+    $.ajax({
+        url: "/news/trenddata/?query=" + QUERY + "&mode=" + mode,
+        type: "GET",
+        dataType: "json",
+        async: false,
+        success: function(data){
+            console.log(data);
+            drawTrendline(data['dates'], data['counts']);
+        }
+    });
+
+    function drawTrendline(xAxis, data){
+        var option = {
+            title : {
+                text: '话题走势',
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['新闻数']
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {show: true, type: ['line', 'bar']},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : xAxis
+            }
+            ],
+            yAxis : [
+            {
+                type : 'value',
+                axisLabel : {
+                    formatter: '{value}'
+                }
+            }
+            ],
+            series : [
+            {
+                name:'新闻数',
+                type:'line',
+                data: data,
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                }
+            }]
+        };
+        var myChart = echarts.init(document.getElementById('trend'));
+        myChart.setOption(option);
+    }
+    </script>
+{% endblock tail_js %}

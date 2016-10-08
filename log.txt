@@ -1,0 +1,305 @@
+2016-09-29 17:20:49,288 INFO -------------------------------
+2016-09-29 17:20:49,289 INFO start comments calculation v2
+2016-09-29 17:20:49,316 INFO start comments sentiment calculation
+2016-09-29 17:20:51,939 INFO end comments sentiment calculation
+2016-09-29 17:20:51,939 INFO start comments clustering calculation
+2016-09-29 17:20:52,181 INFO end comments clustering calculation
+2016-09-29 17:20:52,182 INFO end comments calculation v2
+2016-09-29 17:20:52,193 INFO 10.138.218.0 - - [29/Sep/2016 17:20:52] "GET /news/comments_list/?topicid=56f0f2b313de9935ba7d6e96&subeventid=global&min_cluster_num=&max_cluster_num=&cluster_eva_min_size=2&vsm=v1 HTTP/1.1" 500 -
+2016-09-29 17:21:45,443 INFO  * Detected change in '/home/ubuntu2/turkey/turkey/news/views.py', reloading
+2016-09-29 17:22:24,836 INFO -------------------------------
+2016-09-29 17:22:24,836 INFO start comments calculation v2
+2016-09-29 17:22:24,853 INFO start comments sentiment calculation
+2016-09-29 17:22:27,478 INFO end comments sentiment calculation
+2016-09-29 17:22:27,478 INFO start comments clustering calculation
+2016-09-29 17:22:27,724 INFO end comments clustering calculation
+2016-09-29 17:22:27,725 INFO end comments calculation v2
+2016-09-29 17:22:27,737 INFO 10.138.218.0 - - [29/Sep/2016 17:22:27] "GET /news/comments_list/?topicid=56f0f2b313de9935ba7d6e96&subeventid=global&min_cluster_num=&max_cluster_num=&cluster_eva_min_size=2&vsm=v1 HTTP/1.1" 500 -
+2016-09-29 17:22:27,739 INFO 10.138.218.0 - - [29/Sep/2016 17:22:27] "GET /static/img/touming.png HTTP/1.1" 304 -
+2016-09-29 17:22:27,815 INFO 10.138.218.0 - - [29/Sep/2016 17:22:27] "GET /static/echarts//chart/pie.js HTTP/1.1" 304 -
+2016-09-29 17:22:27,878 INFO 10.138.218.0 - - [29/Sep/2016 17:22:27] "GET /static/img/unknown_profile_image.gif HTTP/1.1" 304 -
+2016-09-29 17:22:58,984 INFO  * Detected change in '/home/ubuntu2/turkey/turkey/news/views.py', reloading
+2016-09-29 17:23:39,358 INFO -------------------------------
+2016-09-29 17:23:39,358 INFO start comments calculation v2
+2016-09-29 17:23:39,385 INFO start comments sentiment calculation
+2016-09-29 17:23:41,992 INFO end comments sentiment calculation
+2016-09-29 17:23:41,992 INFO start comments clustering calculation
+2016-09-29 17:23:42,250 INFO end comments clustering calculation
+2016-09-29 17:23:42,251 INFO end comments calculation v2
+2016-09-29 17:23:42,258 INFO 10.138.218.0 - - [29/Sep/2016 17:23:42] "GET /news/comments_list/?topicid=56f0f2b313de9935ba7d6e96&subeventid=global&min_cluster_num=&max_cluster_num=&cluster_eva_min_size=2&vsm=v1 HTTP/1.1" 200 -
+2016-09-29 17:23:42,309 INFO 10.138.218.0 - - [29/Sep/2016 17:23:42] "GET /static/echarts//chart/pie.js HTTP/1.1" 304 -
+2016-09-29 17:23:42,342 INFO 10.138.218.0 - - [29/Sep/2016 17:23:42] "GET /news/cluster_comments?sort=weight HTTP/1.1" 404 -
+2016-09-29 17:23:42,367 INFO 10.138.218.0 - - [29/Sep/2016 17:23:42] "GET /news/sentiment_comments?sort=weight HTTP/1.1" 404 -
+2016-09-29 17:23:42,389 INFO 10.138.218.0 - - [29/Sep/2016 17:23:42] "GET /static/bootstrap/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 304 -
+2016-09-29 17:23:42,391 INFO 10.138.218.0 - - [29/Sep/2016 17:23:42] "GET /static/img/touming.png HTTP/1.1" 304 -
+2016-09-29 17:23:42,422 INFO 10.138.218.0 - - [29/Sep/2016 17:23:42] "GET /static/img/unknown_profile_image.gif HTTP/1.1" 304 -
+2016-09-29 17:52:52,395 INFO -------------------------------
+2016-09-29 17:52:52,395 INFO start comments calculation v2
+2016-09-29 17:52:52,426 INFO start comments sentiment calculation
+2016-09-29 17:52:54,926 INFO end comments sentiment calculation
+2016-09-29 17:52:54,926 INFO start comments clustering calculation
+2016-09-29 17:52:55,150 INFO end comments clustering calculation
+2016-09-29 17:52:55,151 INFO end comments calculation v2
+2016-09-29 17:52:55,157 INFO 10.138.218.0 - - [29/Sep/2016 17:52:55] "GET /news/comments_list/?topicid=56f0f2b313de9935ba7d6e96&subeventid=global&min_cluster_num=&max_cluster_num=&cluster_eva_min_size=2&vsm=v1 HTTP/1.1" 200 -
+2016-09-29 17:52:55,159 INFO 10.138.218.0 - - [29/Sep/2016 17:52:55] "GET /static/img/top.png HTTP/1.1" 304 -
+2016-09-29 17:52:55,178 INFO 10.138.218.0 - - [29/Sep/2016 17:52:55] "GET /static/echarts//chart/pie.js HTTP/1.1" 304 -
+2016-09-29 17:52:55,248 INFO 10.138.218.0 - - [29/Sep/2016 17:52:55] "GET /news/cluster_comments?sort=weight HTTP/1.1" 301 -
+2016-09-29 17:52:55,279 INFO 10.138.218.0 - - [29/Sep/2016 17:52:55] "GET /news/cluster_comments/?sort=weight HTTP/1.1" 200 -
+2016-09-29 17:52:55,408 INFO 10.138.218.0 - - [29/Sep/2016 17:52:55] "GET /news/sentiment_comments?sort=weight HTTP/1.1" 301 -
+2016-09-29 17:52:55,411 INFO 10.138.218.0 - - [29/Sep/2016 17:52:55] "GET /static/img/unknown_profile_image.gif HTTP/1.1" 304 -
+2016-09-29 17:52:55,447 INFO 10.138.218.0 - - [29/Sep/2016 17:52:55] "GET /news/sentiment_comments/?sort=weight HTTP/1.1" 200 -
+2016-09-29 17:52:55,562 INFO 10.138.218.0 - - [29/Sep/2016 17:52:55] "GET /static/bootstrap/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 304 -
+2016-09-29 17:52:55,564 INFO 10.138.218.0 - - [29/Sep/2016 17:52:55] "GET /static/img/touming.png HTTP/1.1" 304 -
+2016-09-29 17:59:15,323 INFO 10.138.218.0 - - [29/Sep/2016 17:59:15] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-09-29 17:59:15,603 INFO 10.138.218.0 - - [29/Sep/2016 17:59:15] "GET /static/js/highstock.js HTTP/1.1" 200 -
+2016-09-29 17:59:17,440 INFO 10.138.218.0 - - [29/Sep/2016 17:59:17] "GET /static/js/exporting.js HTTP/1.1" 200 -
+2016-09-29 18:01:20,419 INFO  * Detected change in '/home/ubuntu2/turkey/turkey/news/views.py', reloading
+2016-09-30 16:56:52,576 INFO -------------------------------
+2016-09-30 16:56:52,586 INFO start comments calculation v2
+2016-09-30 16:56:52,604 INFO start comments sentiment calculation
+2016-09-30 16:56:55,249 INFO end comments sentiment calculation
+2016-09-30 16:56:55,249 INFO start comments clustering calculation
+2016-09-30 16:56:55,529 INFO end comments clustering calculation
+2016-09-30 16:56:55,531 INFO end comments calculation v2
+2016-09-30 16:56:55,538 INFO 10.138.220.5 - - [30/Sep/2016 16:56:55] "GET /news/comments_list/?topicid=56f0f2b313de9935ba7d6e96&subeventid=global&min_cluster_num=&max_cluster_num=&cluster_eva_min_size=2&vsm=v1 HTTP/1.1" 200 -
+2016-09-30 16:56:55,614 INFO 10.138.220.5 - - [30/Sep/2016 16:56:55] "GET /news/cluster_comments?sort=weight HTTP/1.1" 301 -
+2016-09-30 16:56:55,641 INFO 10.138.220.5 - - [30/Sep/2016 16:56:55] "GET /news/cluster_comments/?sort=weight HTTP/1.1" 200 -
+2016-09-30 16:56:55,998 INFO 10.138.220.5 - - [30/Sep/2016 16:56:55] "GET /news/sentiment_comments?sort=weight HTTP/1.1" 301 -
+2016-09-30 16:56:56,032 INFO 10.138.220.5 - - [30/Sep/2016 16:56:56] "GET /news/sentiment_comments/?sort=weight HTTP/1.1" 200 -
+2016-09-30 16:56:56,417 INFO 10.138.220.5 - - [30/Sep/2016 16:56:56] "GET /static/img/unknown_profile_image.gif HTTP/1.1" 200 -
+2016-09-30 16:59:36,175 INFO 10.138.220.5 - - [30/Sep/2016 16:59:36] "GET /static/bootstrap/css/bootstrap.css.map HTTP/1.1" 200 -
+2016-09-30 16:59:39,643 INFO 10.138.220.5 - - [30/Sep/2016 16:59:39] "GET /news/new1/?query=%E5%86%AF%E5%AE%BD HTTP/1.1" 404 -
+2016-09-30 16:59:42,811 INFO 10.138.220.5 - - [30/Sep/2016 16:59:42] "GET /news/new1/?query=%E5%86%AF%E5%AE%BD HTTP/1.1" 404 -
+2016-09-30 16:59:51,549 INFO 10.138.220.5 - - [30/Sep/2016 16:59:51] "GET /news/relevant/?query=%E5%86%AF%E5%AE%BD HTTP/1.1" 200 -
+2016-09-30 16:59:51,788 INFO 10.138.220.5 - - [30/Sep/2016 16:59:51] "GET /news/networkdata/?query=%E5%86%AF%E5%AE%BD HTTP/1.1" 200 -
+2016-09-30 17:00:03,319 INFO 10.138.220.5 - - [30/Sep/2016 17:00:03] "GET /news/networkdata/?query=%E5%86%AF%E5%AE%BD HTTP/1.1" 200 -
+2016-09-30 17:00:21,355 INFO 10.138.220.5 - - [30/Sep/2016 17:00:21] "GET /news/networkdata/?query=%E5%86%AF%E5%AE%BD HTTP/1.1" 200 -
+2016-09-30 17:06:02,930 INFO 10.138.220.5 - - [30/Sep/2016 17:06:02] "GET /news/search/ HTTP/1.1" 200 -
+2016-09-30 17:06:28,026 INFO 10.138.220.5 - - [30/Sep/2016 17:06:28] "GET /news/network/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-09-30 17:06:28,226 INFO 10.138.220.5 - - [30/Sep/2016 17:06:28] "GET /news/networkdata/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:37:55,687 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /favicon.ico HTTP/1.1" 404 -
+2016-10-06 20:37:55,793 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:37:55,885 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+2016-10-06 20:37:55,892 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /static/bootstrap/css/bootstrap-responsive.min.css HTTP/1.1" 200 -
+2016-10-06 20:37:55,903 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /static/css/datarangepiker.css HTTP/1.1" 200 -
+2016-10-06 20:37:55,913 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /static/js/jquery-1.9.1.min.js HTTP/1.1" 200 -
+2016-10-06 20:37:55,925 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2016-10-06 20:37:55,927 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /static/js/moment.js HTTP/1.1" 200 -
+2016-10-06 20:37:55,928 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /static/js/highstock.js HTTP/1.1" 200 -
+2016-10-06 20:37:55,944 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /static/js/datarangepiker.js HTTP/1.1" 200 -
+2016-10-06 20:37:55,953 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /static/js/exporting.js HTTP/1.1" 200 -
+2016-10-06 20:37:55,955 INFO 219.224.135.22 - - [06/Oct/2016 20:37:55] "GET /static/echarts/echarts.js HTTP/1.1" 200 -
+2016-10-06 20:37:56,044 INFO 219.224.135.22 - - [06/Oct/2016 20:37:56] "GET /static/js/overview.js HTTP/1.1" 200 -
+2016-10-06 20:37:56,056 INFO 219.224.135.22 - - [06/Oct/2016 20:37:56] "GET /static/img/fengjicai.jpg HTTP/1.1" 200 -
+2016-10-06 20:37:56,232 INFO 219.224.135.22 - - [06/Oct/2016 20:37:56] "GET /static/img/warning2.png HTTP/1.1" 200 -
+2016-10-06 20:37:56,234 INFO 219.224.135.22 - - [06/Oct/2016 20:37:56] "GET /static/img/touming.png HTTP/1.1" 200 -
+2016-10-06 20:37:56,406 INFO 219.224.135.22 - - [06/Oct/2016 20:37:56] "GET /static/echarts//chart/pie.js HTTP/1.1" 200 -
+2016-10-06 20:37:56,525 INFO 219.224.135.22 - - [06/Oct/2016 20:37:56] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:37:56,556 INFO 219.224.135.22 - - [06/Oct/2016 20:37:56] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:37:59,761 INFO 219.224.135.22 - - [06/Oct/2016 20:37:59] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:00,111 INFO 219.224.135.22 - - [06/Oct/2016 20:38:00] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:00,140 INFO 219.224.135.22 - - [06/Oct/2016 20:38:00] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:02,949 INFO 219.224.135.22 - - [06/Oct/2016 20:38:02] "GET /news/network/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:03,034 INFO 219.224.135.22 - - [06/Oct/2016 20:38:03] "GET /static/css/css/timeline.css HTTP/1.1" 200 -
+2016-10-06 20:38:03,036 INFO 219.224.135.22 - - [06/Oct/2016 20:38:03] "GET /static/css/css/table.css HTTP/1.1" 200 -
+2016-10-06 20:38:03,037 INFO 219.224.135.22 - - [06/Oct/2016 20:38:03] "GET /static/css/css/tab.css HTTP/1.1" 200 -
+2016-10-06 20:38:03,046 INFO 219.224.135.22 - - [06/Oct/2016 20:38:03] "GET /static/showloading/showLoading.css HTTP/1.1" 200 -
+2016-10-06 20:38:03,057 INFO 219.224.135.22 - - [06/Oct/2016 20:38:03] "GET /static/css/js/timeline.js HTTP/1.1" 200 -
+2016-10-06 20:38:03,083 INFO 219.224.135.22 - - [06/Oct/2016 20:38:03] "GET /static/js/echarts-2.0.1/_build/echarts-plain.js HTTP/1.1" 200 -
+2016-10-06 20:38:03,135 INFO 219.224.135.22 - - [06/Oct/2016 20:38:03] "GET /static/showloading/jquery.showLoading.min.js HTTP/1.1" 200 -
+2016-10-06 20:38:03,287 INFO 219.224.135.22 - - [06/Oct/2016 20:38:03] "GET /static/bootstrap/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 200 -
+2016-10-06 20:38:03,377 INFO 219.224.135.22 - - [06/Oct/2016 20:38:03] "GET /news/networkdata/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:03,393 INFO 219.224.135.22 - - [06/Oct/2016 20:38:03] "GET /static/echarts//chart/force.js HTTP/1.1" 200 -
+2016-10-06 20:38:05,351 INFO 219.224.135.22 - - [06/Oct/2016 20:38:05] "GET /news/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:05,489 INFO 219.224.135.22 - - [06/Oct/2016 20:38:05] "GET /static/css/js/tab.js HTTP/1.1" 200 -
+2016-10-06 20:38:05,490 INFO 219.224.135.22 - - [06/Oct/2016 20:38:05] "GET /static/js/api/cloud_keywords.js HTTP/1.1" 200 -
+2016-10-06 20:38:05,492 INFO 219.224.135.22 - - [06/Oct/2016 20:38:05] "GET /static/css/js/jquery.b1njTimeline.js HTTP/1.1" 200 -
+2016-10-06 20:38:05,493 INFO 219.224.135.22 - - [06/Oct/2016 20:38:05] "GET /static/css/js/timeline_pie_text.js HTTP/1.1" 200 -
+2016-10-06 20:38:05,496 INFO 219.224.135.22 - - [06/Oct/2016 20:38:05] "GET /static/img/top.png HTTP/1.1" 200 -
+2016-10-06 20:38:05,577 INFO 219.224.135.22 - - [06/Oct/2016 20:38:05] "GET /news/eventriver/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&during=512438400&ts=1459180800 HTTP/1.1" 200 -
+2016-10-06 20:38:05,723 INFO 219.224.135.22 - - [06/Oct/2016 20:38:05] "GET /news/timeline/?ts=946742400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:05,732 INFO 219.224.135.22 - - [06/Oct/2016 20:38:05] "GET /news/keywords/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&subevent=global&during=512438400&ts=1459180800 HTTP/1.1" 200 -
+2016-10-06 20:38:05,744 INFO 219.224.135.22 - - [06/Oct/2016 20:38:05] "GET /static/echarts//chart/wordCloud.js HTTP/1.1" 200 -
+2016-10-06 20:38:05,757 INFO 219.224.135.22 - - [06/Oct/2016 20:38:05] "GET /news/weibos/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&limit=1000&skip=0&ts=1459180800&during=512438400&subevent=global&sort=weight HTTP/1.1" 200 -
+2016-10-06 20:38:06,075 INFO 219.224.135.22 - - [06/Oct/2016 20:38:06] "GET /news/ratio/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&subevent=global&during=512438400&ts=1459180800 HTTP/1.1" 200 -
+2016-10-06 20:38:06,110 INFO 219.224.135.22 - - [06/Oct/2016 20:38:06] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:06,127 INFO 219.224.135.22 - - [06/Oct/2016 20:38:06] "GET /news/weibo_c/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&acttype=1 HTTP/1.1" 200 -
+2016-10-06 20:38:06,212 INFO 219.224.135.22 - - [06/Oct/2016 20:38:06] "GET /news/timeline/?ts=978278400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:06,625 INFO 219.224.135.22 - - [06/Oct/2016 20:38:06] "GET /news/timeline/?ts=1009814400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:07,223 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/timeline/?ts=1041350400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:07,310 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/timeline/?ts=1072886400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:07,389 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/timeline/?ts=1104422400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:07,456 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/timeline/?ts=1135958400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:07,568 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/report/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 500 -
+2016-10-06 20:38:07,574 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/timeline/?ts=1167494400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:07,663 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/timeline/?ts=1199030400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:07,743 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/timeline/?ts=1230566400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:07,767 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/report/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-10-06 20:38:07,775 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/report/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-10-06 20:38:07,779 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/report/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-10-06 20:38:07,780 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/report/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-10-06 20:38:07,820 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/timeline/?ts=1262102400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:07,894 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/timeline/?ts=1293638400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:07,939 INFO 219.224.135.22 - - [06/Oct/2016 20:38:07] "GET /news/report/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2016-10-06 20:38:08,023 INFO 219.224.135.22 - - [06/Oct/2016 20:38:08] "GET /news/report/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-10-06 20:38:08,024 INFO 219.224.135.22 - - [06/Oct/2016 20:38:08] "GET /news/report/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2016-10-06 20:38:08,066 INFO 219.224.135.22 - - [06/Oct/2016 20:38:08] "GET /news/timeline/?ts=1325174400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:08,144 INFO 219.224.135.22 - - [06/Oct/2016 20:38:08] "GET /news/timeline/?ts=1356710400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:08,212 INFO 219.224.135.22 - - [06/Oct/2016 20:38:08] "GET /news/timeline/?ts=1388246400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:08,263 INFO 219.224.135.22 - - [06/Oct/2016 20:38:08] "GET /news/timeline/?ts=1419782400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:08,311 INFO 219.224.135.22 - - [06/Oct/2016 20:38:08] "GET /news/timeline/?ts=1451318400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:20,086 INFO 219.224.135.22 - - [06/Oct/2016 20:38:20] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:20,266 INFO 219.224.135.22 - - [06/Oct/2016 20:38:20] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:20,294 INFO 219.224.135.22 - - [06/Oct/2016 20:38:20] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:39,703 INFO 219.224.135.22 - - [06/Oct/2016 20:38:39] "GET /news/search/ HTTP/1.1" 200 -
+2016-10-06 20:38:39,722 INFO 219.224.135.22 - - [06/Oct/2016 20:38:39] "GET /static/img/pms_logo.png HTTP/1.1" 200 -
+2016-10-06 20:38:39,724 INFO 219.224.135.22 - - [06/Oct/2016 20:38:39] "GET /static/js/d3.min.js HTTP/1.1" 200 -
+2016-10-06 20:38:39,735 INFO 219.224.135.22 - - [06/Oct/2016 20:38:39] "GET /favicon.ico HTTP/1.1" 404 -
+2016-10-06 20:38:39,821 INFO 219.224.135.22 - - [06/Oct/2016 20:38:39] "GET /static/img/bg.jpg HTTP/1.1" 200 -
+2016-10-06 20:38:48,613 INFO 219.224.135.22 - - [06/Oct/2016 20:38:48] "POST /news/person_suggest/ HTTP/1.1" 200 -
+2016-10-06 20:38:54,106 INFO 219.224.135.22 - - [06/Oct/2016 20:38:54] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:54,388 INFO 219.224.135.22 - - [06/Oct/2016 20:38:54] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:54,416 INFO 219.224.135.22 - - [06/Oct/2016 20:38:54] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:38:59,911 INFO 219.224.135.22 - - [06/Oct/2016 20:38:59] "GET /news/search/ HTTP/1.1" 200 -
+2016-10-06 20:38:59,939 INFO 219.224.135.22 - - [06/Oct/2016 20:38:59] "GET /favicon.ico HTTP/1.1" 404 -
+2016-10-06 20:39:03,722 INFO 219.224.135.22 - - [06/Oct/2016 20:39:03] "POST /news/person_suggest/ HTTP/1.1" 200 -
+2016-10-06 20:39:09,044 INFO 219.224.135.22 - - [06/Oct/2016 20:39:09] "POST /news/person_suggest/ HTTP/1.1" 200 -
+2016-10-06 20:39:10,462 INFO 219.224.135.22 - - [06/Oct/2016 20:39:10] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:10,724 INFO 219.224.135.22 - - [06/Oct/2016 20:39:10] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:10,752 INFO 219.224.135.22 - - [06/Oct/2016 20:39:10] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:47,801 INFO 219.224.135.22 - - [06/Oct/2016 20:39:47] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:48,083 INFO 219.224.135.22 - - [06/Oct/2016 20:39:48] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:48,112 INFO 219.224.135.22 - - [06/Oct/2016 20:39:48] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:49,507 INFO 219.224.135.22 - - [06/Oct/2016 20:39:49] "GET /news/network/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:49,843 INFO 219.224.135.22 - - [06/Oct/2016 20:39:49] "GET /news/networkdata/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:51,119 INFO 219.224.135.22 - - [06/Oct/2016 20:39:51] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:51,453 INFO 219.224.135.22 - - [06/Oct/2016 20:39:51] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:51,483 INFO 219.224.135.22 - - [06/Oct/2016 20:39:51] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:55,842 INFO 219.224.135.22 - - [06/Oct/2016 20:39:55] "GET /news/network/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:56,070 INFO 219.224.135.22 - - [06/Oct/2016 20:39:56] "GET /news/networkdata/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:57,931 INFO 219.224.135.22 - - [06/Oct/2016 20:39:57] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:58,139 INFO 219.224.135.22 - - [06/Oct/2016 20:39:58] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:39:58,168 INFO 219.224.135.22 - - [06/Oct/2016 20:39:58] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:46:17,060 INFO 219.224.135.22 - - [06/Oct/2016 20:46:17] "GET /news/network/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:46:17,291 INFO 219.224.135.22 - - [06/Oct/2016 20:46:17] "GET /news/networkdata/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:47:54,348 INFO 219.224.135.22 - - [06/Oct/2016 20:47:54] "GET /news/network/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:47:54,572 INFO 219.224.135.22 - - [06/Oct/2016 20:47:54] "GET /news/networkdata/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:47:59,944 INFO 219.224.135.22 - - [06/Oct/2016 20:47:59] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:48:00,146 INFO 219.224.135.22 - - [06/Oct/2016 20:48:00] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-06 20:48:00,174 INFO 219.224.135.22 - - [06/Oct/2016 20:48:00] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 10:11:33,498 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 10:11:33,530 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/css/datarangepiker.css HTTP/1.1" 200 -
+2016-10-08 10:11:33,538 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/bootstrap/css/bootstrap-responsive.min.css HTTP/1.1" 200 -
+2016-10-08 10:11:33,546 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+2016-10-08 10:11:33,557 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/js/jquery-1.9.1.min.js HTTP/1.1" 200 -
+2016-10-08 10:11:33,569 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2016-10-08 10:11:33,574 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/js/moment.js HTTP/1.1" 200 -
+2016-10-08 10:11:33,579 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/js/datarangepiker.js HTTP/1.1" 200 -
+2016-10-08 10:11:33,587 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/js/highstock.js HTTP/1.1" 200 -
+2016-10-08 10:11:33,605 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/js/exporting.js HTTP/1.1" 200 -
+2016-10-08 10:11:33,607 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/echarts/echarts.js HTTP/1.1" 200 -
+2016-10-08 10:11:33,634 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/js/overview.js HTTP/1.1" 200 -
+2016-10-08 10:11:33,658 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/img/fengjicai.jpg HTTP/1.1" 200 -
+2016-10-08 10:11:33,668 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/img/warning2.png HTTP/1.1" 200 -
+2016-10-08 10:11:33,864 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/echarts//chart/pie.js HTTP/1.1" 200 -
+2016-10-08 10:11:33,932 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 10:11:33,961 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 10:11:33,984 INFO 219.224.135.22 - - [08/Oct/2016 10:11:33] "GET /static/img/touming.png HTTP/1.1" 200 -
+2016-10-08 10:11:34,559 INFO 219.224.135.22 - - [08/Oct/2016 10:11:34] "GET /favicon.ico HTTP/1.1" 404 -
+2016-10-08 10:11:54,558 INFO 219.224.135.22 - - [08/Oct/2016 10:11:54] "GET /news/relevant/?query=%E5%86%AF%E5%AE%BD HTTP/1.1" 200 -
+2016-10-08 10:11:54,582 INFO 219.224.135.22 - - [08/Oct/2016 10:11:54] "GET /static/bootstrap/css/bootstrap.css HTTP/1.1" 200 -
+2016-10-08 10:11:54,755 INFO 219.224.135.22 - - [08/Oct/2016 10:11:54] "GET /news/networkdata/?query=%E5%86%AF%E5%AE%BD HTTP/1.1" 200 -
+2016-10-08 10:11:54,766 INFO 219.224.135.22 - - [08/Oct/2016 10:11:54] "GET /static/echarts//chart/force.js HTTP/1.1" 200 -
+2016-10-08 10:23:27,520 INFO 219.224.135.22 - - [08/Oct/2016 10:23:27] "GET /cluster/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&subevent_id=global HTTP/1.1" 404 -
+2016-10-08 13:24:40,703 INFO 10.138.216.180 - - [08/Oct/2016 13:24:40] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:24:42,300 INFO 10.138.216.180 - - [08/Oct/2016 13:24:42] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+2016-10-08 13:24:43,964 INFO 10.138.216.180 - - [08/Oct/2016 13:24:43] "GET /static/bootstrap/css/bootstrap-responsive.min.css HTTP/1.1" 200 -
+2016-10-08 13:24:44,817 INFO 10.138.216.180 - - [08/Oct/2016 13:24:44] "GET /static/css/datarangepiker.css HTTP/1.1" 200 -
+2016-10-08 13:24:48,202 INFO 10.138.216.180 - - [08/Oct/2016 13:24:48] "GET /static/js/jquery-1.9.1.min.js HTTP/1.1" 200 -
+2016-10-08 13:24:48,698 INFO 10.138.216.180 - - [08/Oct/2016 13:24:48] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2016-10-08 13:24:49,444 INFO 10.138.216.180 - - [08/Oct/2016 13:24:49] "GET /static/js/moment.js HTTP/1.1" 200 -
+2016-10-08 13:24:49,450 INFO 10.138.216.180 - - [08/Oct/2016 13:24:49] "GET /static/js/datarangepiker.js HTTP/1.1" 200 -
+2016-10-08 13:24:51,307 INFO 10.138.216.180 - - [08/Oct/2016 13:24:51] "GET /static/js/highstock.js HTTP/1.1" 200 -
+2016-10-08 13:24:52,077 INFO 10.138.216.180 - - [08/Oct/2016 13:24:52] "GET /static/js/overview.js HTTP/1.1" 200 -
+2016-10-08 13:24:53,237 INFO 10.138.216.180 - - [08/Oct/2016 13:24:53] "GET /static/js/exporting.js HTTP/1.1" 200 -
+2016-10-08 13:24:53,238 INFO 10.138.216.180 - - [08/Oct/2016 13:24:53] "GET /static/echarts/echarts.js HTTP/1.1" 200 -
+2016-10-08 13:24:54,431 INFO 10.138.216.180 - - [08/Oct/2016 13:24:54] "GET /news/relevant/?query=%E5%86%AF%E5%AE%BD HTTP/1.1" 200 -
+2016-10-08 13:24:57,934 INFO 10.138.216.180 - - [08/Oct/2016 13:24:57] "GET /static/bootstrap/css/bootstrap.css HTTP/1.1" 200 -
+2016-10-08 13:25:04,450 INFO 10.138.216.180 - - [08/Oct/2016 13:25:04] "GET /static/echarts/echarts.js HTTP/1.1" 200 -
+2016-10-08 13:25:46,024 INFO 10.138.216.180 - - [08/Oct/2016 13:25:46] "GET /static/js/jquery-1.9.1.min.js HTTP/1.1" 200 -
+2016-10-08 13:25:53,109 INFO 10.138.216.180 - - [08/Oct/2016 13:25:53] "GET /static/js/moment.js HTTP/1.1" 200 -
+2016-10-08 13:25:53,111 INFO 10.138.216.180 - - [08/Oct/2016 13:25:53] "GET /static/js/moment.js HTTP/1.1" 200 -
+2016-10-08 13:25:53,114 INFO 10.138.216.180 - - [08/Oct/2016 13:25:53] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2016-10-08 13:26:23,923 INFO 10.138.216.180 - - [08/Oct/2016 13:26:23] "GET /static/js/datarangepiker.js HTTP/1.1" 200 -
+2016-10-08 13:26:26,006 INFO 10.138.216.180 - - [08/Oct/2016 13:26:26] "GET /static/js/datarangepiker.js HTTP/1.1" 200 -
+2016-10-08 13:26:39,683 INFO 10.138.216.180 - - [08/Oct/2016 13:26:39] "GET /news/networkdata/?query=%E5%86%AF%E5%AE%BD HTTP/1.1" 200 -
+2016-10-08 13:26:39,697 INFO 10.138.216.180 - - [08/Oct/2016 13:26:39] "GET /static/echarts//chart/pie.js HTTP/1.1" 200 -
+2016-10-08 13:26:41,302 INFO 10.138.216.180 - - [08/Oct/2016 13:26:41] "GET /static/echarts//chart/force.js HTTP/1.1" 200 -
+2016-10-08 13:26:42,764 INFO 10.138.216.180 - - [08/Oct/2016 13:26:42] "GET /static/js/highstock.js HTTP/1.1" 200 -
+2016-10-08 13:26:48,760 INFO 10.138.216.180 - - [08/Oct/2016 13:26:48] "GET /favicon.ico HTTP/1.1" 404 -
+2016-10-08 13:26:49,355 INFO 10.138.216.180 - - [08/Oct/2016 13:26:49] "GET /static/js/exporting.js HTTP/1.1" 200 -
+2016-10-08 13:26:53,341 INFO 10.138.216.180 - - [08/Oct/2016 13:26:53] "GET /static/img/fengjicai.jpg HTTP/1.1" 200 -
+2016-10-08 13:26:53,619 INFO 10.138.216.180 - - [08/Oct/2016 13:26:53] "GET /static/js/overview.js HTTP/1.1" 200 -
+2016-10-08 13:26:53,709 INFO 10.138.216.180 - - [08/Oct/2016 13:26:53] "GET /static/img/warning2.png HTTP/1.1" 200 -
+2016-10-08 13:26:54,344 INFO 10.138.216.180 - - [08/Oct/2016 13:26:54] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:26:54,377 INFO 10.138.216.180 - - [08/Oct/2016 13:26:54] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:29:31,109 INFO 10.138.216.180 - - [08/Oct/2016 13:29:31] "GET /cluster/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&subevent_id=global HTTP/1.1" 404 -
+2016-10-08 13:29:32,616 INFO 10.138.216.180 - - [08/Oct/2016 13:29:32] "GET /news/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:29:48,022 INFO 10.138.216.180 - - [08/Oct/2016 13:29:48] "GET /static/img/top.png HTTP/1.1" 200 -
+2016-10-08 13:29:48,097 INFO 10.138.216.180 - - [08/Oct/2016 13:29:48] "GET /static/bootstrap/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 200 -
+2016-10-08 13:29:51,185 INFO 10.138.216.180 - - [08/Oct/2016 13:29:51] "GET /static/css/js/tab.js HTTP/1.1" 200 -
+2016-10-08 13:29:51,375 INFO 10.138.216.180 - - [08/Oct/2016 13:29:51] "GET /static/js/api/cloud_keywords.js HTTP/1.1" 200 -
+2016-10-08 13:29:51,378 INFO 10.138.216.180 - - [08/Oct/2016 13:29:51] "GET /static/css/js/jquery.b1njTimeline.js HTTP/1.1" 200 -
+2016-10-08 13:29:51,380 INFO 10.138.216.180 - - [08/Oct/2016 13:29:51] "GET /static/css/js/timeline_pie_text.js HTTP/1.1" 200 -
+2016-10-08 13:29:54,166 INFO 10.138.216.180 - - [08/Oct/2016 13:29:54] "GET /news/eventriver/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&during=512438400&ts=1459180800 HTTP/1.1" 200 -
+2016-10-08 13:29:54,832 INFO 10.138.216.180 - - [08/Oct/2016 13:29:54] "GET /news/timeline/?ts=946742400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:29:54,843 INFO 10.138.216.180 - - [08/Oct/2016 13:29:54] "GET /news/keywords/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&subevent=global&during=512438400&ts=1459180800 HTTP/1.1" 200 -
+2016-10-08 13:29:55,810 INFO 10.138.216.180 - - [08/Oct/2016 13:29:55] "GET /news/timeline/?ts=978278400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:29:55,825 INFO 10.138.216.180 - - [08/Oct/2016 13:29:55] "GET /static/echarts//chart/wordCloud.js HTTP/1.1" 200 -
+2016-10-08 13:29:57,330 INFO 10.138.216.180 - - [08/Oct/2016 13:29:57] "GET /news/weibos/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&limit=1000&skip=0&ts=1459180800&during=512438400&subevent=global&sort=weight HTTP/1.1" 200 -
+2016-10-08 13:30:00,474 INFO 10.138.216.180 - - [08/Oct/2016 13:30:00] "GET /news/timeline/?ts=1009814400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:01,712 INFO 10.138.216.180 - - [08/Oct/2016 13:30:01] "GET /news/timeline/?ts=1041350400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:01,754 INFO 10.138.216.180 - - [08/Oct/2016 13:30:01] "GET /news/ratio/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&subevent=global&during=512438400&ts=1459180800 HTTP/1.1" 200 -
+2016-10-08 13:30:01,821 INFO 10.138.216.180 - - [08/Oct/2016 13:30:01] "GET /news/timeline/?ts=1072886400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:09,030 INFO 10.138.216.180 - - [08/Oct/2016 13:30:09] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:09,034 INFO 10.138.216.180 - - [08/Oct/2016 13:30:09] "GET /news/timeline/?ts=1104422400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:09,050 INFO 10.138.216.180 - - [08/Oct/2016 13:30:09] "GET /news/weibo_c/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&acttype=1 HTTP/1.1" 200 -
+2016-10-08 13:30:13,518 INFO 10.138.216.180 - - [08/Oct/2016 13:30:13] "GET /news/timeline/?ts=1135958400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:16,261 INFO 10.138.216.180 - - [08/Oct/2016 13:30:16] "GET /news/timeline/?ts=1167494400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:16,351 INFO 10.138.216.180 - - [08/Oct/2016 13:30:16] "GET /news/timeline/?ts=1199030400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:17,078 INFO 10.138.216.180 - - [08/Oct/2016 13:30:17] "GET /news/timeline/?ts=1230566400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:17,675 INFO 10.138.216.180 - - [08/Oct/2016 13:30:17] "GET /news/timeline/?ts=1262102400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:18,462 INFO 10.138.216.180 - - [08/Oct/2016 13:30:18] "GET /news/timeline/?ts=1293638400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:19,099 INFO 10.138.216.180 - - [08/Oct/2016 13:30:19] "GET /news/timeline/?ts=1325174400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:22,838 INFO 10.138.216.180 - - [08/Oct/2016 13:30:22] "GET /news/timeline/?ts=1356710400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:26,392 INFO 10.138.216.180 - - [08/Oct/2016 13:30:26] "GET /news/timeline/?ts=1388246400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:27,161 INFO 10.138.216.180 - - [08/Oct/2016 13:30:27] "GET /news/timeline/?ts=1419782400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:30:27,762 INFO 10.138.216.180 - - [08/Oct/2016 13:30:27] "GET /news/timeline/?ts=1451318400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:37:26,206 INFO 10.138.216.180 - - [08/Oct/2016 13:37:26] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:37:28,263 INFO 10.138.216.180 - - [08/Oct/2016 13:37:28] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:37:28,295 INFO 10.138.216.180 - - [08/Oct/2016 13:37:28] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:37:32,067 INFO 10.138.216.180 - - [08/Oct/2016 13:37:32] "GET /cluster/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&subevent_id=global HTTP/1.1" 404 -
+2016-10-08 13:37:36,636 INFO 10.138.216.180 - - [08/Oct/2016 13:37:36] "GET /news/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:37:39,979 INFO 10.138.216.180 - - [08/Oct/2016 13:37:39] "GET /news/eventriver/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&during=512438400&ts=1459180800 HTTP/1.1" 200 -
+2016-10-08 13:37:43,564 INFO 10.138.216.180 - - [08/Oct/2016 13:37:43] "GET /news/timeline/?ts=946742400&during=31536000&subevent=global&query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:37:44,164 INFO 10.138.216.180 - - [08/Oct/2016 13:37:44] "GET /news/weibos/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&limit=1000&skip=0&ts=1459180800&during=512438400&subevent=global&sort=weight HTTP/1.1" 200 -
+2016-10-08 13:37:58,433 INFO 10.138.216.180 - - [08/Oct/2016 13:37:58] "GET /news/ratio/?query=%E5%86%AF%E9%AA%A5%E6%89%8D&subevent=global&during=512438400&ts=1459180800 HTTP/1.1" 200 -
+2016-10-08 13:44:44,973 INFO 219.224.135.22 - - [08/Oct/2016 13:44:44] "GET /news/overview/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:44:45,030 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+2016-10-08 13:44:45,039 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/bootstrap/css/bootstrap-responsive.min.css HTTP/1.1" 200 -
+2016-10-08 13:44:45,042 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/css/datarangepiker.css HTTP/1.1" 200 -
+2016-10-08 13:44:45,045 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/js/jquery-1.9.1.min.js HTTP/1.1" 200 -
+2016-10-08 13:44:45,054 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2016-10-08 13:44:45,057 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/js/moment.js HTTP/1.1" 200 -
+2016-10-08 13:44:45,060 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/js/datarangepiker.js HTTP/1.1" 200 -
+2016-10-08 13:44:45,063 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/js/highstock.js HTTP/1.1" 200 -
+2016-10-08 13:44:45,107 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/js/exporting.js HTTP/1.1" 200 -
+2016-10-08 13:44:45,112 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/echarts/echarts.js HTTP/1.1" 200 -
+2016-10-08 13:44:45,204 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/js/overview.js HTTP/1.1" 200 -
+2016-10-08 13:44:45,255 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/img/fengjicai.jpg HTTP/1.1" 200 -
+2016-10-08 13:44:45,264 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/img/warning2.png HTTP/1.1" 200 -
+2016-10-08 13:44:45,282 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/img/touming.png HTTP/1.1" 200 -
+2016-10-08 13:44:45,682 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /static/echarts//chart/pie.js HTTP/1.1" 200 -
+2016-10-08 13:44:45,754 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /news/distinct_types_list/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:44:45,791 INFO 219.224.135.22 - - [08/Oct/2016 13:44:45] "GET /news/alert/?query=%E5%86%AF%E9%AA%A5%E6%89%8D HTTP/1.1" 200 -
+2016-10-08 13:44:46,329 INFO 219.224.135.22 - - [08/Oct/2016 13:44:46] "GET /favicon.ico HTTP/1.1" 404 -
