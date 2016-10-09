@@ -23,6 +23,15 @@ em = EventManager()
 temp_file = 'cluster_dump_dict.txt'
 
 
+@mod.route('/infor_search/')
+def infor_search():
+    return render_template('index/infor_search.html')
+
+@mod.route('/interview_detail/')
+def interview_detail():
+    return render_template('index/interview_detail.html')
+
+
 @mod.route('/turkey_info/')
 def turkey_info():
     """进入土耳其信息展示页面
@@ -38,6 +47,7 @@ def turkey_info():
     return render_template("index/turkey_info.html",module_name=module_name, topic=topic_name, topic_id=topicid, subevent_id=subevent_id, \
             cluster_num=cluster_num, cluster_eva_min_size=cluster_eva_min_size, \
             vsm=vsm)
+
 
 
 @mod.route('/alert/')

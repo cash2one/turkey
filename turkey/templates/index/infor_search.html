@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+{% block module_title %}人物概览{% endblock %}
+
+{% block head_css %}
+<style type="text/css">
+/* #overview{
+            width:1000px;
+            height: 300px;
+            margin:0 auto;
+            border-color: #104F87;
+            margin-left: 75px;
+            float: left;
+            
+
+        }
+        #overview p {
+            margin-bottom:10px;
+        }*/
+</style>
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap-datetimepicker1.css" />
+{% endblock head_css %}
+  
+
+{% block head_js %}
+<script type="text/javascript" src="../../static/js/jquery.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> 
+   <script type="text/javascript" src="../../static/js/moment.min.js"></script>
+	<script type="text/javascript" src="../../static/js/moment-with-locales.min.js"></script>
+	<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/js/bootstrap-datetimepicker1.min.js"></script>
+   <!--  <script type="text/javascript" src="static/js/bootstrap-datetimepicker.js"></script> -->
+  		<script type="text/javascript" >
+		/*弹出对话框*/
+			function change_html()
+			{
+				
+				window.open("/news/interview_detail/");
+			}
+				
+		</script>
+   
+{% endblock head_js %}
+
+{% block content %}    
+<div class="panel panel-primary" style="margin-top:100px;margin-left: 2.5%;width: 95%;">
+    <div class="panel-heading" style="background-color:#104F87;border-color: #104F87;">
+        <h3 class="panel-title">走进出访事件</h3>
+    </div>
+    <div class="panel-body">
+		<div id="content" class="content1">			
+		<!--第一个面板显示的内容-->	
+		<div id="content1">
+
+			    <!--版面1的左半部分-->	
+			<div style="float:left;margin-left:100px;">
+				<img src="/static/img/explore.png" width="200px" height="200px" style="margin-top:20%;margin-left:20px;">
+					
+				<p style="margin-left:22%;margin-top:20%;font-size:x-large;font-weight: bold;color:#104F87;">直击出访事件</p>
+			</div>
+
+			<div id="content1"> 
+				<!--版面1的右半部分-->	
+				<div style="float:left;margin-left:30%;">
+					<form role="form" style="margin-top:-280px;float:left;">
+					    <div class="form-group">
+					        <span style="float: left;margin-left:6%;margin-right: 10px;margin-top: 9px;">请输入您感兴趣的出访领导人</span>
+
+						    <input id="search_name" type="text" class="form-control " placeholder="多个领导人请用空格隔开" style="width:38%;height:43px;margin-left:5px "  >
+						    <!-- onkeydown="if(event.keyCode==13){entersearch()}" -->
+						    <img src="/static/img/star.png" width="10px" height="10px" style="float:left;margin-left: 61%;margin-top: -30px;">
+						</div>
+
+						<div class="container" style="margin-left:5%;margin-top: 20px;">
+							<span style="float: left;margin-top: 9px;">请选择领导人出访时间</span>
+							<div style="float:left;">
+
+							<p style="margin-left:49px;margin-top: 10px;">From</p>
+
+							<div class='col-md-3' id="date1">
+			       				<div class="form-group">
+			        	    		<div class='input-group date' id='datetimepicker_index_from' style="width: 180px;height:40px;margin-left: 80px;margin-top:-80%;float: left;">
+			                			<input id="input_date_from" type='text' class="form-control" style="height:40px;" />
+			                			<span class="input-group-addon">
+			                				<span class="glyphicon glyphicon-calendar"></span>
+			                			</span>
+			           		 		</div>
+			        			</div>
+
+			        		<p style="float: left;position: relative;margin-left: 630%;margin-top: -40px;width: 30px;">To</p>
+
+			        		<div class='col-md-3' id="date2">
+			        			<div class="form-group" style="float:left;">
+			            			<div class='input-group date' id='datetimepicker_index_to' style="width: 180px;height:40px;margin-top: -27%;margin-left: 155%;float: left;">
+			                			<input id="input_date_to" type='text' class="form-control"  style="height:40px;" />
+			                			<span class="input-group-addon">
+			                				<span class="glyphicon glyphicon-calendar"></span>
+			                			</span>
+			            			</div>
+			        			</div>
+			    			</div>
+							</div>
+
+					<script type="text/javascript">
+
+					    $(function () {
+					        $('#datetimepicker_index_from').datetimepicker();
+					        $('#datetimepicker_index_to').datetimepicker();
+					        $("#datetimepicker_index_from").on("dp.change",function (e) {
+					            $('#datetimepicker_index_to').data("DateTimePicker").minDate(e.date);
+					        });
+					        $("#datetimepicker_index_to").on("dp.change",function (e) {
+					            $('#datetimepicker_index_from').data("DateTimePicker").maxDate(e.date);
+					        });
+					    });
+					</script>
+
+				<!-- 	<script type="text/javascript">
+						function entersearch()
+						{
+							var topic_name=document.getElementById("search_name").value;
+
+								if (topic_name==null&&topic_name=="")				
+							 {
+			 					alert('关键字不能为空');
+							 }
+						}
+
+					</script> -->
+
+		    			</div>
+						</div>
+
+						<div class="form-group" style="width:60%;margin-left:5%;">
+							<span style="float: left;margin-left:2%;margin-right: 20px;margin-top: 9px;">请选择访问地点信息</span>
+								<p style="float:left;margin-top:10px;margin-left:40px;">国家</p>
+						        <select class="form-control input-lg" style="width: 25%;height: 40px;float:left;margin-left:10px;">
+						                <option value="">土耳其</option>
+						        </select>
+
+						        <p style="float:left;margin-top:10px;margin-left:17px;margin-right: 10px;">城市</p>
+						        <select class="form-control input-lg" style="width:25%;height: 40px;margin-left:50px;">
+						                <option value="">伊斯坦布尔</option>       
+						        </select>
+						</div>
+
+						<div class="form-group">
+						    <span style="float: left;margin-left:6%;margin-right: 20px;margin-top: 9px;">请输入您感兴趣的被访问人</span>
+						    <input  class="form-control input-lg" type="search" placeholder="多个领导人请用空格隔开" style="width:38%;height:40px;margin-left:7%" >
+						    <img src="/static/img/star.png" width="10px" height="10px" style="float:left;margin-left: 61%;margin-top: -30px;">
+						                
+						</div>
+
+						<div class="form-group">
+						    <span style="float: left;margin-left:6%;margin-right: 22px;margin-top: 9px;">请输入您感兴趣的访问议题</span>
+						    <input class="form-control  input-lg" type="text" placeholder="请输入您感兴趣的访问议题关键词" style="width:38%;margin-left:8%;height:40px">
+						    <img src="/static/img/star.png" width="10px" height="10px" style="float:left;margin-left: 61%;margin-top: -30px;">
+						</div>
+					          <!--   <div class="form-group">
+					                <input class="form-control input-sm" type="text" placeholder=".input-sm" style="width:90%;margin-left:5%">
+					            </div> -->
+						<div class="form-group">
+
+						</div>   
+					        
+					    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="margin-top:10px;margin-left:52%;width: 100px;height: 40px;" > 搜索
+					    </button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>	   
+</div>
+</div>
+
+<!--多条件搜索模态框-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					给您推荐您可能感兴趣的出访领导人、被访问人和访问议题哦
+				</h4>
+			</div>
+			<div class="modal-body">
+				<table class="table">					
+				   <thead>
+				      <tr>
+				         <th>你可能感兴趣的领导人</th>
+				      </tr>
+				   </thead>
+				   <tbody>
+				      <tr>
+				         <td><input type="checkbox">习近平</td>
+				         <td><input type="checkbox">习仲勋</td>
+				      </tr>
+				      
+				   </tbody>
+				</table>
+
+				<table class="table">
+				   <thead>
+				      <tr>
+				         <th>你可能感兴趣的被访问人</th>
+				      </tr>
+				   </thead>
+				   <tbody>
+				      <tr>
+				         <td><input type="checkbox">艾尔多安</td>
+				         <td><input type="checkbox">艾有勤</td>		         
+				      </tr>			      
+				   </tbody>
+				</table>
+
+				<table class="table">
+				   <thead>
+				      <tr>
+				         <th>你可能感兴趣的出访议题</th>
+				      </tr>
+				   </thead>
+				   <tbody>
+				      <tr>
+				         <td><input type="checkbox">一带一路框架下的互利共赢发展</td>	         
+				      </tr>			      
+				   </tbody>
+				</table>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1" >
+					确认搜索
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+<!--确认搜索后弹出的模态框-->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"> </h4>
+            </div>
+            <div class="modal-body">习近平于2016年11月20日到伊斯坦布尔访问艾尔多安进行访问，访问议题“一带一路框架下的互利共赢发展”</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="change_html()" >查看详情</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" ">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+<!-- <div class="panel panel-primary" style="margin-top:10px;margin-left: 2.5%;width: 95%; ">
+    <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
+            <h3 class="panel-title">政治形势</h3>
+    </div>
+    <div class="panel-body">
+
+    </div>
+</div>
+
+<div class="panel panel-primary" style="margin-top:10px;margin-left: 2.5%;width: 95%; ">
+    <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
+        <h3 class="panel-title">对华情绪</h3>
+    </div>
+    <div class="panel-body">
+
+    </div>
+</div>
+ -->
+{% endblock content %}
+
