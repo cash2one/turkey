@@ -1,0 +1,50 @@
+        .form {
+            width:180px; 
+            padding:5px;
+            float:left;
+            }
+        
+        .select{
+            width: 70px;
+            float:left;
+        }
+        .cata_name{
+            float:left;
+            height: 30px;
+            line-height: 30px;
+            text-indent: 1em;
+            margin-right: 10px;
+            padding-right: 4px;
+        }
+        .f-sort{
+            float: left;
+            width:100%;
+            margin-left:5px;
+            margin-top:3px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+
+        }
+        .f-sort a{
+            float: left;
+            padding: 0 10px;
+            height: 30px;
+            border: 1px solid #CCC;
+            line-height: 30px;
+            margin-right: -1px;
+            text-decoration: none;
+            background: #FFF;
+            color: #333;
+            cursor: pointer;
+        }
+        .f-sort a.curr{
+            background: #e4393c;
+            color: #FFF;
+            border-color: #e4393c;
+        }
+        .f-sort a:hover {
+		    position: relative;
+		    text-decoration: none;
+		    border-color: #e4393c;
+		    color: #e4393c;
+		}

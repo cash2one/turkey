@@ -2931,5 +2931,5 @@ def cluster_comments():
 def emergency():
     """返回话题管理页面
     """
-    # topic_name = request.args.get('query', default_topic_name) # 国家名
+    #topic_name = request.args.get('query', default_topic_name) # 国家名
     return render_template('index/emergency.html')
