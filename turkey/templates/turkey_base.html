@@ -416,12 +416,7 @@
         <ul id="accordion" class="accordion" style="margin-top: 6%;margin-bottom: 200%;">
             <li>
                 <div class="link" style="color: #104F87;"><i class="fa fa-code"></i>首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页<i class="fa fa-chevron-down"></i></div>
-                <!-- <ul class="submenu">
-                    <li><a href="">二级标题</a></li>
-                    <li><a href="">二级标题</a></li>
-                    <li><a href="">二级标题</a></li>
-                
-                </ul> -->
+            
             </li>
             <li>
                 <div class="link" style="color: #104F87;"><i class="fa fa-paint-brush"></i>走近土耳其<i class="fa fa-chevron-down"></i></div>
@@ -462,86 +457,13 @@
         {% block content %}
         {% endblock content %}
     </div>
-        <div class="modal fade" id="alert_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document" style="width: 600px;margin-top: 7%;">
-            <div class="modal-content">
-           
-              <div class="modal-body" id=''>
-                暂无社会舆论数据
-              </div>
-            </div>
-          </div>
-        </div>
+   
      
 
 
 
 {% endblock navbar %}
-    <script>
-        var QUERY = "{{topic}}";
-        console.log(QUERY)
-        var TIME_RANGE = "20000102-20160329";// $('#all_time').html();
-        var START_TS = date2ts(TIME_RANGE.split('-')[0]);
-        var END_TS = date2ts(TIME_RANGE.split('-')[1]);
 
-        var height = screen.height
-        $(".left_menu").css('height', height+'px');
-        /*
-        $("#submit_request").click(function(){
-            var QUERY = document.getElementById('keyword_input').value;
-            var TIME_RANGE = $('#all_time').html();
-            window.location.href = "/news/?query=" + QUERY + "&time_range=" + TIME_RANGE;
-        });
-        
-        //var all_startDate = new Date('09/01/2013');
-        var all_endDate = new Date();
-        //var all_maxDate = new Date('09/21/2013');
-        //var all_minDate = new Date('09/01/2013');
-        var week_ago = subtract(all_endDate,7);
-
-        function subtract(date,days){
-            var nd = new Date(date);
-            nd = nd.valueOf();
-            nd = nd - days * 24 * 60 * 60 * 1000;
-            nd = new Date(nd);
-            var y = nd.getFullYear();
-            var m = nd.getMonth()+1;
-            var d = nd.getDate();
-            if(m <= 9) m = "0"+m;
-            if(d <= 9) d = "0"+d; 
-            var cdate = y+"-"+m+"-"+d;
-            return cdate;
-        }
-        $('#reportrange').daterangepicker({
-            ranges: {
-                '今天': [all_endDate, all_endDate],
-                '最近7天': [week_ago, all_endDate],
-            },
-            //startDate: all_startDate,
-            endDate: all_endDate,
-            //minDate: all_minDate,
-            //maxDate: all_maxDate
-        },
-        function(start, end) {
-            $('#reportrange span').html(start.format('YYYYMMDD') + '-' + end.format('YYYYMMDD'));
-        }
-        );
-        */
-
-        function date2ts(date){
-            var year = date.substring(0, 4);
-            var month = date.substring(4, 6);
-            var day = date.substring(6, 8);
-            return new Date(year, month-1, day).getTime() / 1000;
-        }
-        function alert(){
-            console.log('fdv')
-            alert('暂无社会舆论情况');
-        }
-    </script>
-    {% block tail_js %}
-
-    {% endblock tail_js %}
 
     <script src='/static/js/jquery.js'></script>
 
