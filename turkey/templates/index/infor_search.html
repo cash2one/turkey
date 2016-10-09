@@ -18,7 +18,7 @@
         }*/
 </style>
   <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
-    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap-datetimepicker1.css" />
 {% endblock head_css %}
   
 
@@ -28,18 +28,19 @@
    <script type="text/javascript" src="../../static/js/moment.min.js"></script>
 	<script type="text/javascript" src="../../static/js/moment-with-locales.min.js"></script>
 	<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../static/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../static/js/bootstrap-datetimepicker1.min.js"></script>
    <!--  <script type="text/javascript" src="static/js/bootstrap-datetimepicker.js"></script> -->
-  
+  		<script type="text/javascript" >
+		/*弹出对话框*/
+			function change_html()
+			{
+				
+				window.open("/news/interview_detail/");
+			}
+				
+		</script>
    
 {% endblock head_js %}
-
-
-				
-
-					
-					
-
 
 {% block content %}    
 <div class="panel panel-primary" style="margin-top:100px;margin-left: 2.5%;width: 95%;">
@@ -250,8 +251,8 @@
             </div>
             <div class="modal-body">习近平于2016年11月20日到伊斯坦布尔访问艾尔多安进行访问，访问议题“一带一路框架下的互利共赢发展”</div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">查看详情</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="change_html()" >查看详情</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" ">关闭</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
