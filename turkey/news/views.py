@@ -22,6 +22,10 @@ mod = Blueprint('news', __name__, url_prefix='/news')
 em = EventManager()
 temp_file = 'cluster_dump_dict.txt'
 
+@mod.route('/infor_search/')
+def infor_search():
+    return render_template('index/infor_search.html')
+
 @mod.route('/alert/')
 def alert():
     """alert for personal overview
