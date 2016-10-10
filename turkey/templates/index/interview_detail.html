@@ -9,27 +9,43 @@
 
 {% block head_js %}
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../static/js/echarts.js"></script>
+	<script type="text/javascript" src="../../static/js/echarts-all.js"></script>
 
 {% endblock head_js %}
 
-
-{% block content %}   
-<div class="panel panel-primary" style="margin-top:80px;margin-left: 2.5%;width: 95%; ">
+{% block content %} 
+<!-- <div class="panel panel-primary" style="margin-top:80px;margin-left: 2.5%;width: 95%; ">
     <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
+        <h3 class="panel-title">人物资讯</h3>
+    </div>
+    <div class="panel-body">
+        这是一个基本的面板
+    </div>
+</div>
+ -->
+<div class="panel panel-primary" style="margin-top:80px;margin-left: 2.5%;width: 95%; ">
 
+    <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
             <h3 class="panel-title">业务评估</h3>
     </div>
     <div class="panel-body">
     	<ul id="myTab" class="nav nav-tabs">
-			<li class="active">
+    		<li class="active">
+				<a href="#people" data-toggle="tab">
+					人物信息
+				</a>
+			</li>
+			<li>
 				<a href="#political" data-toggle="tab">
 					政治形势
 				</a>
 			</li>
-			<li>
+			<!-- <li>
 				<a href="#attitude" data-toggle="tab">对华态度</a>
-			</li>
+			</li> -->
 
 			<li>
 				<a href="#detail" data-toggle="tab">访问议题信息</a>
@@ -37,13 +53,93 @@
 			
 		</ul>
     	<div id="myTabContent" class="tab-content">
-			<div class="tab-pane fade in active" id="political">
-				<p>W3Cschoool菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
+    		
+    		<!--人物资讯详细内容-->
+    		<div class="tab-pane fade in active" id="people" style="height:200px;">
+
+    			<div style="margin-left:10%;">
+    				<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 20px;margin-right: 0.6%;" >
+    				
+	    			</div>
+	                    <p class="personal_domain" style="margin-top: 30px;" ><b>拟出访人</b>
+	                        <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+	                    </p>
+					<div>
+						<img id="zongtong_1_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-left: 1%;float: left;">
+						<p style="float: left;margin-left:10px;">塔伊普·埃尔多安</br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</br></br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="" style="margin-top:5px;">查看更多详情</a></p>
+
+					</div>
+
+    			</div>
+
+                
 			</div>
-			<div class="tab-pane fade" id="attitude">
+			
+			<!--政治形势详细内容-->
+			<div class="tab-pane fade" id="political">
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" 
+								   href="#collapseOne">
+									土耳其国内政治形势
+								</a>
+							</h4>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+								cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+								vice lomo.
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" 
+								   href="#collapseTwo">
+									土耳其国际政治形势
+								</a>
+							</h4>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse">
+							<div class="panel-body">
+								<div id="international" style="height:400px;width:1000px;">
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!-- <div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" 
+								   href="#collapseThree">
+									点击我进行展开，再次点击我进行折叠。第 3 部分
+								</a>
+							</h4>
+						</div>
+						<div id="collapseThree" class="panel-collapse collapse">
+							<div class="panel-body">
+								Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+								cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+								vice lomo.
+							</div>
+						</div>
+					</div> -->
+				</div>
+
+			</div>
+
+			<!-- <div class="tab-pane fade" id="attitude">
 				<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
 					TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
-			</div>
+			</div> -->
+
 			<div class="tab-pane fade" id="detail">
 				<p>iOS </p>
 			</div>
@@ -125,4 +221,137 @@
     </div>
 </div>
 
+<script type="text/javascript">
+		var myChart = echarts.init(document.getElementById('international'));
+			option = {
+		    title : {
+		        text: '土耳其与其他国家关系',
+		       
+		        x:'right',
+		        y:'bottom'
+		    },
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: '{b}'
+		        // formatter: '{a} : {b}'
+		    },
+		    toolbox: {
+		        show : true,
+		        feature : {
+		            restore : {show: true},
+		            magicType: {show: true, type: ['force', 'chord']},
+		            saveAsImage : {show: true}
+		        }
+		    },
+		    legend: {
+		        x: 'left',
+		        data:['其他国家','土耳其']
+		    },
+		    series : [
+		        {
+		            type:'force',
+		            name : "",
+		            ribbonType: false,
+		            categories : [
+		                {
+		                    name: '土耳其'
+		                },
+		                {
+		                    name: '其他国家'
+		                },
+		                
+		            ],
+		            itemStyle: {
+		                normal: {
+		                    label: {
+		                        show: true,
+		                        textStyle: {
+		                            color: '#333'
+		                        }
+		                    },
+		                    nodeStyle : {
+		                        brushType : 'both',
+		                        borderColor : 'rgba(255,215,0,0.4)',
+		                        borderWidth : 1
+		                    },
+		                    linkStyle: {
+		                        type: 'curve'
+		                    }
+		                },
+		                emphasis: {
+		                    label: {
+		                        show: false
+		                        // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+		                    },
+		                    nodeStyle : {
+		                        //r: 30
+		                    },
+		                    linkStyle : {}
+		                }
+		            },
+		            useWorker: false,
+		            minRadius : 15,
+		            maxRadius : 25,
+		            gravity: 1.1,
+		            scaling: 1.1,
+		            roam: 'move',
+		            nodes:[
+		                {category:0, name: '土耳其', value : 10, label: '土耳其\n（主要）'},
+		                {category:1, name: '中国',value : 2},
+		                {category:1, name: '美国',value : 3},
+		                {category:1, name: '俄罗斯',value : 3},
+		                {category:1, name: '以色列',value : 7},
+		                {category:1, name: '叙利亚',value : 8},
+		                
+		            ],
+		            links : [
+		                {source : '中国', target : '土耳其', weight : 1,},
+		                {source : '美国', target : '土耳其', weight : 2, },
+		                {source : '俄罗斯', target : '土耳其', weight : 1, },
+		                {source : '以色列', target : '土耳其', weight : 2},
+		                {source : '叙利亚', target : '土耳其', weight : 3, },
+		               
+		            ]
+		        }
+		    ]
+		};				
+		myChart.setOption(option);  
+		 require([
+            'echarts'
+        ],
+        function(ec){
+            var ecConfig = require('echarts/config');
+            function focus(param) 
+            {
+              //param是echarts里面存储的数据，可以console出来看一下
+                console.log(param);
+                var data = param.data;
+                var links = option.series[0].links;
+                var nodes = option.series[0].nodes;
+
+                if (data.source != null&& data.target != null) 
+                { //点击的是边
+                    var sourceNode = nodes.filter(function (n) {return n.name == data.source})[0];
+                    var targetNode = nodes.filter(function (n) {return n.name == data.target})[0];
+                    // console.log(data.sourceNode);
+                } else {
+                      //点击的是点
+                      alert("美国与土耳其之间的关系可追溯到1947年实行的、旨在加强土耳其经济及军事自立的杜鲁门主义。多年来，美土两国通过密切的双边外交关系以及作为北约盟国中的两支最大军队之间的伙伴关系，使这一目标从冷战时期一直发展至今。 2003年，由于土耳其议会决定拒绝让美国为首的盟军把土耳其作为进入邻国伊拉克的基地，美土关系出现紧张，但是两国政府后来发起2006年共同未来与系统化对话，为加强战略合作建立了框架。2009年，在奥巴马宣布将分期从伊拉克撤出作战部队后，土耳其表示愿意为美国军事设备提供过境便利。同时有媒体报道，土耳其有可能成为伊朗恢复与美国关系的斡旋国。在反恐合作方面，美土两国打击共同面临的来自从基地组织到库尔德工人党的极端主义的威胁。");
+                      if(param.name==中国) 
+                      {
+                      	alert("暂无信息");
+                      }
+                     
+                }
+            }
+                myChart.on(ecConfig.EVENT.CLICK, focus)
+                myChart.on(ecConfig.EVENT.FORCE_LAYOUT_END, function () {
+                });
+            }
+    )   
+
+   
+	</script>
+
 {% endblock content %}
+
