@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {% block head_meta %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {% endblock head_meta %}
+
+    <!--
+    <link rel="icon" href="../../favicon.ico">-->
+
+    <title>{% block title %}{% endblock %}  {% block module_title %}{% endblock %} - 基础页面</title>
+
+
+    <!-- Iconos -->
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/turkey_style.css" media="screen" type="text/css" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css">
+
+    <!-- daterangepicker css -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/datarangepiker.css') }}">
+    <link rel="stylesheet" href="/static/css/citySelector.css">
+    
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+        
+        .cityinput{
+            border-width: 1px;
+            border-style: solid;
+           /* border-color: #ffffff #ffffff #ffffff #ffffff;*/
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            height: 24px;
+            line-height: 24px;
+            width: 175px;
+            font-size: 12px;
+            padding-left: 2px;
+            background: url(http://img02.taobaocdn.com/tps/i2/T1EPyLXm0hXXXXXXXX-200-100.png) no-repeat 150px 5px;
+            }
+
+        /*
+         * Base structure
+         */
+
+        /* Move down content because we have a fixed navbar that is 50px tall */
+        html{
+            background-color: #fff;
+        }
+        body {
+            padding-top: 60px;
+            /*font-family: Arial,"Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei","文泉驿微米黑",STXihei,"华文细黑",sans-serif;*/
+            font-size: 13px;
+            line-height: 20px;
+            background-color: #ebebeb;
+        }
+        body, form, ul, ol, li, h1, h2, h3, h4, h5, h6, p, dl, dd, td, th, input, img {
+            margin: 0;
+            padding: 0;
+        }
+
+        .open a, a, a:hover {
+        }
+        a:hover {
+            color: #FFF;
+            text-decoration: underline;
+
+        }
+
+        ul, ol, li {
+            list-style: none;
+        }
+        #compTab .tabLi.curr {
+            border-bottom: 2px solid #fff;
+            background-color: #fff;
+            width: 221px;
+        }
+        #compTab .tabLi {
+            float: left;
+            width: 110px;
+            height: 68px;
+            margin-left: -2px;
+            border-left: 2px solid #e1e1e1;
+            border-bottom: 2px solid #ebebeb;
+        }
+        #compTab .tabLi.curr span, #compTab .tabLi:hover span {
+            display: block;
+            text-align: center;
+            color: #4284e2;
+        }
+        .tabLi {
+            cursor: pointer;
+        }
+        #compTab {
+            height: 70px;
+            background-color: #f6f6f6;
+            overflow: hidden;
+        }
+        #compTab .tabLi.curr .byWord, #compTab .tabLi:hover .byWord {
+            background-position: -80px -80px;
+        }
+        #compTab .tabLi .byWord, #compTab .tabLi.dsab:hover .byWord {
+            background-position: -120px -80px;
+        }
+        #compTab .tabLi .icons {
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: 6px auto 0 auto;
+        }
+        .icons {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            background-image: url(/static/img/icons.png);
+        }
+        .comCtl {
+            width: 202px;
+            height: 38px;
+            margin: 7px auto;
+        }
+        .comBorderL {
+            float: left;
+            width: 194px;
+            height: 34px;
+            border: 1px solid #e5e5e5;
+            border-right: 0;
+            background-color: #f6f6f6;
+        }
+        .hideDel .comBorderL .comWord {
+            width: 180px;
+        }
+        .comBorderL .comWord {
+            font-weight: normal;
+        }
+        .comBorderL .comWord, .comBorderL .holdBox {
+            display: block;
+            width: 150px;
+            height: 32px;
+            margin: 2px 0 0 2px;
+            padding-left: 10px;
+            border: 0;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #f6f6f6;
+            line-height: 30px;
+            _height: 30px;
+            _line-height: 30px;
+        }
+        input, textarea, select {
+            outline: 0;
+            font-size: inherit;
+            font-family: inherit;
+        }
+        img, input, label {
+            vertical-align: middle;
+        }
+        .comBorderL .icontext {
+            display: inline-block;
+            height: 32px;
+            line-height: 32px;
+            padding-left: 4px;
+            margin-right: -3px;
+        }
+        .comBorderL .comWord, .comBorderL .holdBox {
+            display: block;
+            width: 150px;
+            height: 32px;
+            margin: 2px 0 0 2px;
+            padding-left: 10px;
+            border: 0;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #f6f6f6;
+            line-height: 30px;
+            _height: 30px;
+            _line-height: 30px;
+        }
+        .mw1300 {
+            width: 100%;
+            margin-left: 194px;
+            _width: 1000px;
+        }
+
+        .navbar-inner {
+          background-color: rgb(19, 112, 218);
+          background-image: none;
+          background-repeat: no-repeat;
+          filter: none;
+        }
+
+        .navbar-fixed-top .nav>li>a, .navbar-fixed-top .nav>li>a:hover {
+            color: #FFF;
+            background-color: transparent;
+        }
+
+        .navbar-fixed-top .nav>.active>a, .navbar-fixed-top .nav>li>a.iactive:hover{
+            color: #FFF;
+            border-bottom: 3px solid #FFF;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: #FFF;
+            background: transparent;
+        }
+        .navbar-fixed-top ul li a {
+            display: block;
+            float: left;
+        }
+
+        .filter-block {
+            padding: 10px 20px;
+            background-color: #F9F9F9;
+            border-bottom: 1px solid gainsboro;
+        }
+
+        .override-linehight {
+            line-height: 34px;
+        }
+
+        .filter-block .datepicker {
+            padding: 0 15px;
+            width: 235px;
+            float: left;
+        }
+
+        #mainWrap {
+            /*border-left: 222px solid #ebebeb;*/
+        }
+
+        .lTools {
+            z-index: 1000;
+            position: absolute;
+            height:751px;
+            width: 222px;
+            top: 61px;
+            display: block;
+            padding: 1px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #FFF;
+            border-right: 1px solid #eee;
+        }
+
+        .nav-sidebar {
+            margin-right: -21px;
+            margin-bottom: 20px;
+            margin-left: -20px;
+        }
+        .nav-sidebar > li > a {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        .nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus {
+            color: #fff;
+            background-color: #428bca;
+        }
+        .compVsplit {
+            clear: both;
+            margin: 1px 12px 10px 10px;
+            border-top: 1px dashed #e5e5e5;
+        }
+        .compOK {
+            color: #FFF;
+            text-decoration: none;
+            display: block;
+            width: 198px;
+            height: 27px;
+            margin-left: 9px;
+            padding-top: 6px;
+            text-align: center;
+            border: 1px solid #3073d1;
+            background-color: #4284e2;
+            cursor: pointer;
+        }
+        .mainSplit {
+            top: 16px;
+            position: relative;
+            _overflow: visible;
+            padding: 20px 26px 20px 15px;
+        }
+        .navbar-collapse{
+            background-color: #02C874;
+        }
+        .brand{
+            background-color: #3379b7;
+        }
+        .left_menu{
+            -webkit-box-shadow:-2px -5px 5px #000 inset; 
+            position: fixed;
+            float: left;
+            padding-top:40px; 
+            margin-top: 51px;
+            width: 194px;
+            height:screen.height;
+            background-color: #104F87;
+        }
+
+        .turkey_left_menu{
+            -webkit-box-shadow:-2px -5px 5px #000 inset; 
+            position: fixed;
+            float: left;
+            padding-top:40px; 
+            margin-top: 51px;
+            width: 194px;
+            height:screen.height;
+            background-color: #104F87;
+        }
+        .left_menu ul li{
+            width:99%;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 14px;
+            color:#fff;
+            margin: 1px 1px;
+            -webkit-box-shadow:0px -1px 5px -1px #000 inset; 
+            /*background-color: rgba(255, 255, 255, 0.08);*/
+        }
+        .left_menu ul li a{
+            color: white;
+            text-decoration: none;
+        }
+        /*#module_name :hover{
+            text-decoration: underline;
+        }*/
+        a:-webkit-any-link{
+            text-decoration: none;
+        }
+        #topic_name{
+            font-size: 16px;
+            padding: 10px 20px;
+            color: #43B6AF;
+        }
+        .blkUnit .titlBar {
+            background-color: #104F87 !important; 
+            color: white;
+            border-bottom: 1px solid transparent;
+            border-color: #104F87 !important;
+        } 
+        .box-shadow2{
+            -webkit-box-shadow:-5px -5px 5px #999 inset;          /* For Chrome5+, Safari5+ */
+            box-shadow:-5px -5px 5px #999 inset;                  /* For Latest Opera */
+}
+    </style>
+    {% block head_css %}
+    {% endblock head_css %}
+
+    <!-- JQuery core JS -->
+    <script src="/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap core JS -->
+    <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/moment.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/datarangepiker.js') }}"></script>
+    {% block head_js %}
+    {% endblock head_js %}
+
+</head>
+
+<body>
+{% block navbar %}
+<div id="float-wrap" hidden style="position:fixed;background-image:url(/static/img/touming.png);display:none;width:100%;height:100%;z-index:1000;"></div><!-- 模态框背景 -->
+
+    <div class="navbar navbar-fixed-top" style="border-bottom: 5px solid #F4A615;">
+        <div class="navbar-inner" style="background-color:#104F87">
+            <div class="mw1300_title" style="height: 48px;">
+                
+
+                <span style="font-size:24px;color:#fff;float:left;padding-top: 22px;padding:0 23px;    margin-top: 1%;">
+                    <span style="font-size:25px;line-height:38px;color:#addf58;font-family: Microsoft YaHei;">国外安全监测系统</span>
+                   <!--  <span style="font-size:14px;margin-left:15px;">人事管理系统（外网）</span>
+                    <span style="font-size:14px;margin-left:15px;">{{module_name}}</span> -->
+                </span>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="navbar-collapse collapse" style="background-color:#104F87">
+                    <ul class="nav navbar-nav">
+                        
+                        <li style="color:#fff;line-height:51px;margin-left:20px;"><font size="+1" style="text-decoration:none;"></font></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" style="margin-right:30px;margin-top: 25px;">
+                     <!-- 选择其他国家 -->
+                      <input type="text" class="cityinput" id="citySelect" value="土耳其（可更换其他国家）" style="margin-left: -70%;color:#ffffff">
+                      <br/>
+                      <script src="/static/js/citySelector.js" type="text/javascript"></script>
+                        <script type="text/javascript">
+                            var test=new Vcity.CitySelector({input:'citySelect'});
+                            var test2=new Vcity.CitySelector({input:'citySelect1'});
+                        </script>
+
+                       
+                    </form>
+                    &nbsp;&nbsp;
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="turkey_left_menu">
+        <ul id="accordion" class="accordion" style="margin-top: 6%;margin-bottom: 200%;box-shadow: -2px 0px 5px #000 inset;">
+            <li>
+                <div class="link"><i class="fa fa-code"></i>首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页<i class="fa fa-chevron-down"></i></div>
+            
+            </li>
+            <li>
+                <div class="link"><i class="fa fa-paint-brush"></i>走近土耳其<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="">国&nbsp;&nbsp;&nbsp;&nbsp;家&nbsp;&nbsp;&nbsp;&nbsp;概&nbsp;&nbsp;&nbsp;&nbsp;况</a></li>
+                    <li><a href="">政&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;治</a></li>
+                    <li><a href="">经&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;济</a></li>
+                    <li><a href="">国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;防</a></li>
+                    <li><a href="">外&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交</a></li>
+                    <li><a href="">民&nbsp;&nbsp;族&nbsp;&nbsp;与&nbsp;&nbsp;宗&nbsp;&nbsp;教</a></li>
+                    <li><a href="">极端及反华组织</a></li>
+                    <li><a href="">中&nbsp;&nbsp;&nbsp;&nbsp;国&nbsp;&nbsp;&nbsp;&nbsp;利&nbsp;&nbsp;&nbsp;&nbsp;益</a></li>
+                    
+                </ul>
+            </li>
+            
+            <li>
+                <div class="link" ><i class="fa fa-mobile"></i>一级分类<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="">二级标题</a></li>
+                    <li><a href="">二级标题</a></li>
+                    <li><a href="">二级标题</a></li>
+                    
+                </ul>
+            </li>
+            <li>
+            <div class="link"><i class="fa fa-globe" ></i>一级分类<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="">二级标题</a></li>
+                    <li><a href="">二级标题</a></li>
+                    <li><a href="">二级标题</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div style="float:left;width:100%;background-color:white;padding-left:200px;">
+
+        {% block content %}
+        {% endblock content %}
+    </div>
+   
+     
+
+
+
+{% endblock navbar %}
+
+
+    <script src='/static/js/jquery.js'></script>
+
+    <script src="/static/js/index.js"></script>
+</body>
+</html>
+

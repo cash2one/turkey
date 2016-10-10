@@ -22,6 +22,34 @@ mod = Blueprint('news', __name__, url_prefix='/news')
 em = EventManager()
 temp_file = 'cluster_dump_dict.txt'
 
+
+@mod.route('/infor_search/')
+def infor_search():
+    return render_template('index/infor_search.html')
+
+@mod.route('/interview_detail/')
+def interview_detail():
+    return render_template('index/interview_detail.html')
+
+
+@mod.route('/turkey_info/')
+def turkey_info():
+    """进入土耳其信息展示页面
+    """
+    topic_name = request.args.get('query', default_topic_name) # 话题名
+    topicid = em.getEventIDByName(topic_name)
+    module_name = u'人物概览分析'
+    subevent_id = request.args.get('subevent_id', 'global')
+    cluster_num = request.args.get('cluster_num', default_cluster_num)
+    cluster_eva_min_size = request.args.get('cluster_eva_min_size', default_cluster_eva_min_size)
+    vsm = request.args.get('vsm', default_vsm)
+
+    return render_template("index/turkey_info.html",module_name=module_name, topic=topic_name, topic_id=topicid, subevent_id=subevent_id, \
+            cluster_num=cluster_num, cluster_eva_min_size=cluster_eva_min_size, \
+            vsm=vsm)
+
+
+
 @mod.route('/alert/')
 def alert():
     """alert for personal overview

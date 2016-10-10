@@ -1,0 +1,717 @@
+{% extends "turkey_base.html" %}
+{% block module_title %}人物概览{% endblock %}
+
+{% block head_css %}
+
+
+    <style type="text/css">
+        /*
+         * Base structure
+         */
+
+        /* Move down content because we have a fixed navbar that is 50px tall */
+        /*body {
+            padding-top: 60px;
+            font-family: Arial,"Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei","文泉驿微米黑",STXihei,"华文细黑",sans-serif;
+            font-size: 12px;
+            background-color: #ebebeb;
+        }
+        body, form, ul, ol, li, h1, h2, h3, h4, h5, h6, p, dl, dd, td, th, input, img {
+            margin: 0;
+            padding: 0;
+        }*/
+        #overview{
+            width: 1100px;
+		    margin: 0 auto;
+		    background-color: white;
+		    margin-left: 12px;
+		    margin-top: 60px;
+		    float: left;
+
+            
+
+        }
+        #overview p {
+            margin-bottom:10px;
+        }
+
+        .open a, a, a:hover {
+            text-decoration: None;
+        }
+
+        a:hover {
+            /*text-decoration:underline;*/
+            color:blue;
+
+        }
+
+        ul, ol, li {
+            list-style: none;
+        }
+        .panel-body div{
+            /*float:left;*/
+        }
+        .panel-heading div{
+            font-size: 22px;
+            font-family: Microsoft YaHei;
+        }
+        table th, td{
+            text-align: center;
+            height: 30px;
+            line-height: 50px;
+        }
+        .list-group a{
+            float: right;
+        }
+        .shadow {
+        -webkit-box-shadow:5px 6px 3px #ABA8A8;
+        -moz-box-shadow:5px 6px 3px #ABA8A8;
+        box-shadow:5px 6px 3px #ABA8A8;
+    }
+    .panel-heading {
+        background-color: #78748C;
+        color: white;
+    }
+    .personal_domain {
+        height: 35px;
+    }
+    .personal_domain b{
+        font-family: Microsoft YaHei;color: #104F87;font-size: 16px;
+    }
+    .personal_domain span{
+        padding: 10px;
+        background-color: #45b8b3;
+        color: white;
+        border-radius: 4px;
+        margin:5px;
+    }
+    #hanhan , #wuyuan{
+        padding: 10px;
+        background-color: #43b6af;
+        color: white;
+        border-radius: 4px;
+        margin:12px;
+        margin-right: 10px;
+    }
+    #comment ul li {
+        line-height: 25px;
+        height:80px;
+    }
+    .personal_domain a{
+        color: #2a6496;
+    }
+    .menu_overview{
+        float: left;
+    background-color: #3379b7;
+    margin-left:30px;
+    height: 51px;
+    color: white;
+    width: 100px;
+    padding: 18px;
+    font-size: 15px;
+    }
+    .keywords_cloud_div a:hover{
+        color:blue;
+
+    }
+
+    .right_col{
+    	float: left;
+        padding-top: 40px;
+        margin-top: 30px;
+        margin-left: 25px;
+        width: 20%;
+        height: 340px;
+        height: screen.height;
+        background-color: #ffffff;
+        border-bottom: 1px solid #CCCCCC;
+        border-top: 1px solid #CCCCCC;
+        border-left: 1px solid #CCCCCC;
+        border-right: 1px solid #CCCCCC;
+    }
+
+    .right_col_title{
+	    width: 100%;
+		height: 30px;
+		margin-top: -20%;
+		background-color: #CCCCCC;
+    }
+
+    .right_col_zhengzhi{
+    	float: left;
+        padding-top: 40px;
+        margin-top: 30px;
+        margin-left: 96px;
+        width: 20%;
+        height: 400px;
+        height: screen.height;
+        background-color: #ffffff;
+        border-bottom: 1px solid #CCCCCC;
+        border-top: 1px solid #CCCCCC;
+        border-left: 1px solid #CCCCCC;
+        border-right: 1px solid #CCCCCC;
+    }
+
+    </style>
+    {% endblock head_css %}
+
+    {% block head_js %}
+        <!-- JQuery core JS -->
+    <script src="/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap core JS -->
+    <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/moment.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/datarangepiker.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/highstock.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/exporting.js') }}"></script>
+    <!--<script src="/static/css/js/echarts-all.js"></script>-->
+    <script src="/static/echarts/echarts.js"></script>
+{% endblock head_js %}
+
+{% block content %}
+
+        <div id="overview" >
+            {% if topic == '冯骥才' %}
+                <!-- <p>sdvhbskjdbvkjdsbvkjd</p> -->
+            
+
+            <div class="shadow" style="border-radius: 10px;float: left;padding:15px;border: 4px solid #104F87;margin: 15px;width: 97%;">
+                <div id = "porphoto" style="width:105px;float:left;margin-top: 0.4%;margin-left: -1%;">
+                    <p style="margin-top: 5.3%;font-family: Microsoft YaHei;color: #104F87;font-size: 24px;margin-left: 11%;" >Turkey</p>
+                    <span class="img-photo" style="margin-left:1%;margin-top:0px;margin-bottom:10px;display:block;float:left;"><img id="turkey_img" src="/static/img/turkey/turkey.png" alt="Photo" width="100" height="70"></span>
+                </div>
+                <div style="float:left;width:675px;margin-left: 1%;">
+                    <p style="font-size:16px;">
+                        <!-- <b>{{topic}}</b> -->
+                        
+                        <!-- <a id="alert_png" href="/cluster/?query=冯骥才&subevent_id=global"><img src="../../static/img/warning2.png" width="20px" style="margin-left: 1px;margin-bottom: 5px;" title="有舆情事件，请点击查看"></a> -->
+                    </p>
+
+                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                    <p class="personal_domain"><b>人口地理</b>
+                    <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+                    </p>
+                    <p style="font-size: 14px;margin-top: -2%;">
+                        土耳其共和国，简称土耳其，现有人口78,741,053人，是一个横跨欧亚两洲的国家，北临黑海，南临地中海，东南与叙利亚、伊拉克接壤，西临爱琴海，并与希腊以及保加利亚接壤，东部与格鲁吉亚、亚美尼亚、阿塞拜疆和伊朗接壤。土耳其地理位置和地缘政治战略意义极为重要，是连接欧亚的十字路口。
+                    </p>
+
+                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                    <p class="personal_domain"><b>行政区域</b>
+                    <a href="">查看详情</a>
+                    </p>
+                    <p style="font-size: 14px;margin-top: -2%;">土耳其行政区划等级为省、县、乡、村。全国共分为81省、约600个县、3.6万多乡村。</p>
+                    
+                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                    <div class="personal_domain"><b>机构设置</b>
+                    <a href="">查看详情</a>
+                    </div>
+                    <p style="font-size: 14px;margin-top: -0.5%;margin-bottom: 3%;">
+                        政府机构：总统府、大国民议会、总理府、总参谋部、司法部、国防部、内政部、外交部、财政部、教育部、环境部、卫生部、交通、航运和通讯部、食品、农业和畜牧业部、劳动和社会保障部、科学、工业和技术部、能源和自然资源部、文化旅游部、森林和水利部、家庭和社会政策部、欧盟事务部、经济部、青年与体育部、海关和贸易部、发展部。
+                    </p>
+                    <p style="font-size: 14px;margin-top: -0.5%;margin-bottom: 3%;">
+                         强力部门：对外情报机构：国家情报组织（英语：National Intelligence Organization、土耳其语：Millî İstihbarat Teşkilatı, MİT）、对内情报机构：公共秩序及安全部。（ 英语：Undersecretariat of Public Order and Security、土耳其语：Kamu Düzeni ve Güvenliği Müsteşarlığı（KDGM ））、土耳其安全总局。
+
+                    </p>
+
+                    
+                </div>
+
+                <div class="right_col" style="">
+                	<div class="right_col_title">
+                		<div style="margin-top: 2.3%;margin-left: 5%;float:left">
+                			<p style="font-family: Microsoft YaHei;color: #104F87;font-size: 16px;">其他人还在看</p>
+                		</div>
+                		<div style="margin-top: 0%;margin-left: -1%;float：left;" >
+                       
+                           <img id="yilang_img" src="/static/img/turkey/yilang.png" alt="Photo" style="float：left;width:80px;height: 60px;margin-top: 20%;margin-left: -45%;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="http://baike.baidu.com/link?url=DyeVveVUww4ea_KOLwiAUT81KqXm1Iey1MBI4slgwFlEbdLNtMjYw2FX6YAB8vSC_aergr2tsoLXQ6kzg0vqVPKVA2GA9Yed0tgjZ_QnZK_" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">伊朗</a></p>
+                        
+                       </div>
+
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;margin-top: -44.2%;margin-left: 49%;" >
+                       
+                           <img id="ruassia_img" src="/static/img/turkey/ruassia.png" alt="Photo" style="float：left;width:80px;height: 60px;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">俄罗斯</a></p>
+                        
+                       </div>
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;" >
+                       
+                           <img id="shatealabo_img" src="/static/img/turkey/shatealabo.png" alt="Photo" style="float：left;width:80px;height: 60px;margin-left: 9%;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">沙特阿拉伯</a></p>
+                        
+                       </div>
+
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;margin-top: -44.2%;margin-left: 49%;" >
+                       
+                           <img id="yiselie_img" src="/static/img/turkey/yiselie.png" alt="Photo" style="float：left;width:80px;height: 60px;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">以色列</a></p>
+                        
+                       </div>
+                		
+                	</div>
+                	
+                </div>
+            </div>
+            {% endif %}
+            
+            <div class="col-lg-12" >
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div>
+                        <img id="political_img" src="/static/img/turkey/political.png" alt="Photo" style="width: 30px;height: 25px;margin-top: -0.5%;">
+                        <span id="relation_href" style="float:right;cursor:pointer;"><u>查看详情</u></span>政治</div>
+                    </div>
+                    <!-- 历任总统 -->
+                    <div class="panel-body" style="float: left;">
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                        <p class="personal_domain"><b>历任总统</b>
+                        <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+                        </p>
+                        
+                        <p style="font-size: 14px;margin-top: -1%;">任期：5年</p>
+                        <!-- <p style="font-size: 14px;margin-top: -2%;">5年</p> -->
+                        <p style="font-size: 14px;margin-top: -1%;">首任总统：<a href="http://baike.baidu.com/view/1059820.htm?fromtitle=%E7%A9%86%E6%96%AF%E5%A1%94%E6%B3%95%C2%B7%E5%87%AF%E6%9C%AB%E5%B0%94%C2%B7%E9%98%BF%E5%A1%94%E5%9B%BE%E5%B0%94%E5%85%8B&fromid=4255894&type=syn">穆斯塔法·凯末尔·阿塔图尔克</a></p>
+                        <!-- <p style="font-size: 14px;margin-top: -2%;">穆斯塔法·凯末尔·阿塔图尔克 </p> -->
+                        <p style="font-size: 14px;margin-top: -1%;">现任总统：<a>雷杰普·塔伊普·埃尔多安</a></p>
+                        <!-- <p style="font-size: 14px;margin-top: -2%;">雷杰普·塔伊普·埃尔多安 </p> -->
+                       <div>
+                      
+                           <img id="zongtong_1_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
+                           <p style="margin-left:45%;margin-top: -45%;width: 100%;" ><a href="http://baike.baidu.com/view/158815.htm" style="font-size: 12px;margin-top: -1%;float：left;">塔伊普·埃尔多安</a></br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</p>
+
+                       </div>
+                       <div style="margin-top: 16%;margin-left: -1%;" >
+                       
+                           <img id="zongtong_2_img" src="/static/img/turkey/zongtong_2.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
+                           <p style="margin-left:45%;margin-top: -45%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">阿卜杜拉·居尔</a></br>在任时间：2007.08-2014.08</br>出生日期：1950年10月29日</br>外文名：Abdullah Gul/Abdullah Gül</br>毕业院校：伊斯坦布尔大学经济学院</p>
+                             
+                             
+
+                       </div>
+                       <div style="margin-top: 16%;">
+                           
+                          
+                           <img id="zongtong_3_img" src="/static/img/turkey/zongtong_3.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
+                           <p style="margin-left:45%;margin-top: -45%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">内吉代特·塞泽尔</a></br>在任时间：2000.05-2007.08</br>出生日期：1941年3月13日</br>外文名：Ahmet Necdet Sezer</br>毕业院校：安卡拉大学法学院</p>
+                             
+                       </div>
+                       <div style="margin-top: 12%;">
+                           
+                           <a href="">查看所有总统</a>
+                       </div>
+                       
+                    </div>
+                   <!-- 历任总理 -->
+
+                    <div class="panel-body" style="margin-left: 10%;float:left">
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                        <p class="personal_domain"><b>历任总理</b>
+                        <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+                        </p>
+                        
+                        <p style="font-size: 14px;margin-top: -1%;">任期：1~3年</p>
+                        <!-- <p style="font-size: 14px;margin-top: -2%;">5年</p> -->
+                        <p style="font-size: 14px;margin-top: -1%;">首任总理：<a>伊斯梅特·伊纳尼</a></p>
+                        <!-- <p style="font-size: 14px;margin-top: -2%;">穆斯塔法·凯末尔·阿塔图尔克 </p> -->
+                        <p style="font-size: 14px;margin-top: -1%;">现任总理：<a>毕纳利·耶尔德勒姆</a></p>
+                        <!-- <p style="font-size: 14px;margin-top: -2%;">雷杰普·塔伊普·埃尔多安 </p> -->
+                      
+                       
+                       <div>
+                           
+                           <img id="zongli_1_img" src="/static/img/turkey/zongli_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
+                           <p style="margin-left:35%;margin-top: -36%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">比纳利·耶伊尔德勒姆</a></br>在任时间：2016.05-至今</br>出生日期:1955年12月20日</br>外文名：Binali Yıldırım</br>毕业院校:伊斯坦布尔理工大学海事学院、世界海事大学</p>
+
+                       </div>
+                       <div style="margin-top: 16%;margin-left: -1%;" >
+                       
+                           <img id="zongli_2_img" src="/static/img/turkey/zongli_2.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: -1%;margin-left: 2%;">
+                           <p style="margin-left:36%;margin-top: -36%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">艾哈迈德·达乌特奥卢</a></br>在任时间：2014.08-2016.05</br>出生日期:1959年2月26日</br>外文名：Ahmet Davutoglu</br>毕业院校:海峡大学（Boğaziçi University）</p>
+                             
+
+                       </div>
+                       <div style="margin-top: 16%;">
+                           <img id="zongli_3_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 0%;margin-left: 1%;">
+                           <p style="margin-left:36%;margin-top: -36%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">塔伊普·埃尔多安</a></br>在任时间：2003.03—2014.08</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</p>
+                           
+                       </div>
+                       <div style="margin-top: 10%;">
+                           
+                           <a href="">查看所有总理</a>
+                       </div>
+                       
+                    </div>
+                    
+                     <!-- 政治右侧栏 -->
+                    <div class="right_col_zhengzhi" style="">
+	                	<div class="right_col_title">
+	                		<div style="margin-top: 2.3%;margin-left: 5%;float:left">
+	                			<p style="font-family: Microsoft YaHei;color: #104F87;font-size: 16px;">其他人还在看</p>
+	                		</div>
+	                		<div style="margin-top: 0%;margin-left: -1%;float：left;" >
+	                       
+	                           <img id="pujing_img" src="/static/img/turkey/pujing.png" alt="Photo" style="float：left;width: 80px;height: 100px;margin-top: 19%;margin-left: -43%;">
+                       			<p style="margin-left:22%;margin-top: -1%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">普京</a></p>
+	                        
+	                       </div>
+
+	                       <div style="margin-top: 0%;margin-left: -1%;float：left;margin-top: -60.2%;margin-left: 49%;" >
+	                       
+	                           <img id="hamei_img" src="/static/img/turkey/hamei.png" alt="Photo" style="float：left;width:80px;height: 100px;">
+	                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">哈梅内伊</a></p>
+	                        
+	                       </div>
+	                		
+	                	</div>
+                	
+                	</div>
+
+                	<div style="margin-top: 62%;">
+                		<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                        <p class="personal_domain"><b>政治制度</b>
+                             <p style="font-size: 14px;margin-top: -1%;margin-left: 3%;">以世俗主义为基础的议会共和制</p>
+	                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
+	                        <p class="personal_domain"><b>政治局势</b>
+	                        	<p style="font-size: 14px;margin-top: -1%;margin-left: 3%;width: 65%;">当前局势：政局相对稳定，政变失败后，军方在土耳其国内的政治领域的影响力将被终结。另一方面，执政的正义与发展党力量强大，有较强的民意基础</p>
+	                        	<p style="font-size: 14px;margin-top: -1%;margin-left: 3%;width: 65%;">未来局势：未遂政变给了埃尔多安一个难得的清洗异己的机会，能够加快政体转变的速度，从而达到政教合一的目的。土耳其将会更加趋于保守，而只要这个保守政策能够成功，随之也必将会给土耳其带来相对稳定的一段时间。</p>
+	                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
+	                    <p class="personal_domain"><b>四大政党</b>
+
+	                    	<div style="float:left;">
+                           
+	                           <img id="zhengyidang_img" src="/static/img/turkey/zhengyidang.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 0%;margin-left: 2%;">
+	                           <p style="margin-left:55%;margin-top: -50%;width: 100%;" ><a href="http://baike.baidu.com/view/3367393.htm" style="font-size: 12px;margin-top: -1%;float：left;">正义与发展党</a></br>创立人：埃尔多安</br>创立时间:2001年</br>外文名：Adalet ve Kalkınma Partisi</p>
+
+	                       </div>
+	                       <div style="margin-top: 1%;margin-left: 18%;float:left;" >
+	                       
+	                           <img id="minzhudang_img" src="/static/img/turkey/minzhudang.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: -1%;margin-left: 2%;">
+	                           <p style="margin-left:56%;margin-top: -60%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">民主左翼党</a></br>创立人：拉赫桑·埃杰维特</br>创立时间:1985年11月14日</br>外文名：Democratic Left Party</p>
+	                             
+	                       </div>
+
+	                       <div style="float:left;margin-top: 14%;margin-left: -53%;">
+                           
+	                           <img id="gonghedang_img" src="/static/img/turkey/gonghedang.png" alt="Photo" style="float：left;width: 80px;height: 100px;margin-top: 0%;margin-left: 2%;">
+	                           <p style="margin-left:48%;margin-top: -46%;width: 100%;" ><a href="http://baike.baidu.com/view/3367393.htm" style="font-size: 12px;margin-top: -1%;float：left;">共和人民党</a></br>创立人：埃尔多安</br>创立时间:2001年</br>外文名：Adalet ve Kalkınma Partisi</p>
+
+	                       </div>
+	                       <div style="margin-top: 14%;margin-left: -15.5%;float:left;" >
+	                       
+	                           <img id="minzudang_img" src="/static/img/turkey/minzudang.png" alt="Photo" style="float：left;width: 80px;height: 100px;margin-top: -1%;margin-left: 2%;">
+	                           <p style="margin-left:52%;margin-top: -54%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">民族行动党</a></br>创立人：拉赫桑·埃杰维特</br>创立时间:1985年11月14日</br>外文名：Democratic Left Party</p>
+	                             
+	                       </div>
+
+                	</div>
+                      <p style="margin-left:12%;margin-top: 25%;width: 100%;color: #ffffff" >民族行动党</p>
+                </div>
+            </div>
+            <div class="col-lg-12" >
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div><span id="act_href" style="float:right;cursor:pointer;"><u>查看详情</u></span>社会活动
+                        {% if topic == '冯骥才' %}
+                            （2000年至今）</div>
+                        {% endif %}
+                        {% if topic == '赵实' %}
+                            （2011年至今）</div>
+                        {% endif %}
+                    </div>
+                    <div class="panel-body">
+                      <div id="active_type"  style="width:450px;height:300px;float:left;"></div>
+                      <div id="subeventpie"  style="width:480px;height:300px;float:left;">
+                      <!--<div id="sub_topic"  style="width:450px;height:300px;float:left;">
+                      </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="col-lg-12" >
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div>
+                            {% if topic == '冯骥才' %}
+                                <span id="commtent_href" style="float:right;cursor:pointer;"><u>查看详情</u></span>
+                            {% endif %}
+                                社会舆论
+                            {% if topic == '冯骥才' %}
+                                （2000年至今）</div>
+                            {% endif %}
+                            {% if topic == '赵实' %}
+                                （2011年至今）</div>
+                            {% endif %}
+                        <!-- </div> -->
+                    </div>
+                    <div class="panel-body" id="comment">
+                    {% if topic == '冯骥才' %}
+                      <div style="width:32%;">
+                        <div id="all_support"  style="width:300px;height:200px;margin-top:50px;margin-left: -10px;"></div>
+                      </div>
+                      <div style="width:68%">
+                          <p class="focused"><b style="font-size:16px;">焦点舆情</b></p>
+                          <div id="related_hanhan" style="padding: 5px;border: 1px solid #ccc;">
+                            <p style="padding-top: 10px;"><div id="hanhan">韩寒代笔门</div>2012年3月7日，冯骥才在回答记者提问时，对当时正处在“代笔门事件”风波中的作家韩寒表示支持,冯骥才表示“如果我是韩寒，就不会搭理这事，你爱说什么说什么去，我还是继续写文章，不断地发表作品”。</p>
+<!--                             <div id="sub_point_1"  style="width:370px;height:200px;margin-left: -30px;"></div>
+                            <div id="sub_sentiment_1"  style="width:290px;height:200px;margin-left: -30px;"></div>
+ -->                          </div>
+                          <div id="related_wuyuan" style="padding: 5px;border: 1px solid #ccc;">
+                            <p style="padding-top: 10px;"><div id="wuyuan">婺 源 文 化</div>2005年11月7日，在江西省婺源县举办的中国乡村文化旅游论坛上，著名作家冯骥才先生回答听众提问时，称婺源文化受外来文化影响很深，不是单一的徽文化。</p>
+<!--                             <div id="sub_point_2"  style="width:370px;height:200px;margin-left: -30px;"></div>
+                            <div id="sub_sentiment_2"  style="width:290px;height:200px;margin-left: -30px;"></div>
+ -->                          </div>
+                      </div>
+                      {% endif %}
+                      {% if topic == '赵实' %}
+                      <div id ="">暂无相关内容</div>
+                      {% endif %}
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-12" >
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div>其他</div>
+                    </div>
+                    <div class="panel-body">
+                      {% if topic == '冯骥才' %}
+                        <div style="clear:left;width:44%;float:left;height:230px;position:relative;" class="keywords_cloud_div">
+                            <div class="paper" id="paper_div" style="width:100%">
+                                <ul class="list-group" id="paperul">
+                                    <li class='list-group-item'><span id="showmore_article" style="float:right;cursor:pointer" type="button"data-toggle="modal" data-target="#more_article" ><u>查看更多</u></span><b style="font-size:14px;">发表文章</b></li>
+                                    <li class='list-group-item'><span>用一部书总结自己</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wv4f.html" target="_blank" class="align-right">链接</a></li>
+                                    <li class='list-group-item'><span>仿古街，请三思而后行</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wkqz.html" target="_blank" class="align-right">链接</a></li>
+                                    <li class='list-group-item'><span>即兴的感谢</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wko0.html" target="_blank" class="align-right">链接</a></li>
+                                    <li class='list-group-item'><span>缘何为徐志摩立像</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wiis.html" target="_blank" class="align-right">链接</a></li>
+                                    <li class='list-group-item'><span>纪念草婴先生</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wgbw.html" target="_blank" class="align-right">链接</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="width:56%;float:left;height:230px;position:relative;">
+                            <ul class="list-group" id="honorul">
+                                <li class='list-group-item'><span id="showmore_article2" style="float:right;cursor:pointer" type="button"data-toggle="modal" data-target="#more_article2" ><u>查看更多</u></span><b style="font-size:14px;">所获荣誉</b></li>
+                                <li class='list-group-item'><span>2016年3月24日，作品短篇小说《俗世奇人（足本）》入围中国出版集团“中版好书榜”</span></li>
+                                <li class='list-group-item'><span>2016年2月，短篇小说《俗世奇人新篇》入选2015年中国当代文学最新作品排行榜。</span></li>
+                                <li class='list-group-item'><span>2015年12月21日，被颁发宁夏回族自治区“文化使者”聘书</span></li>
+                                <li class='list-group-item'><span>2015年12月18日，当选“传播中华文化年度人物”</span></li>
+                                <li class='list-group-item'><span>2013年6月18日，获万宝龙国际艺术赞助大奖</span></li>
+                            </ul>
+                        </div>
+                      {% endif %}
+                      {% if topic == '赵实' %}
+                        <div style="clear:left;width:60%;float:left;height:230px;position:relative;" class="keywords_cloud_div">
+                            <div class="paper" id="paper_div" style="width:100%">
+                                <ul class="list-group" id="paperul">
+                                    <li class='list-group-item'><span id="showmore_article_z" style="float:right;cursor:pointer" type="button"data-toggle="modal" data-target="#more_article_z" ><u>查看更多</u></span><b style="font-size:14px;">发表作品</b></li>
+                                    <li class='list-group-item'><span>电影：《女人的力量》</span><a href="http://baike.baidu.com/link?url=fzB1fz_cGW8_CBw_IKpL7c5d368IcVSPZXUHnQWxthjUHr6-EolG7HJLVj-jqws3T7sIO-ONObhOzBAmtBD9nkFbLpaqua3XX5dc54AVg23" target="_blank" class="align-right">链接</a></li>
+                                    <li class='list-group-item'><span>电影：《花园街五号》</span><a href="http://baike.baidu.com/link?url=TEKPALz_YPpecoUcglxW2CGFkbctxJAtOWa45CN-25eBUp6YSlpIpHoQ28hktz_i7-NYTo4OY5FD3iiF2xQi7K" target="_blank" class="align-right">链接</a></li>
+                                    <li class='list-group-item'><span>认真践行“三严三实”要求 努力推动文联工作取得新成效 </span><a href="http://dangjian.people.com.cn/n1/2016/0224/c117092-28147370.html" target="_blank" class="align-right">链接</a></li>
+                                    <li class='list-group-item'><span>2011年《求是》杂志：走在建设社会主义文化强国的前列</span><a href="http://www.cnki.com.cn/Article/CJFDTotal-QUSI201123007.htm" target="_blank" class="align-right">链接</a></li>
+                                    <li class='list-group-item'><span>2012年《求是》杂志：坚定不移走与人民相结合的文艺道路 </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=26&CurRec=5&recid=&filename=QUSI201211020&dbname=CJFD2012&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=MDUwOTdyM0pORGpZWjdHNEg5UE5ybzlIWklSOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMeWZZK2R0RnluZ1U=" target="_blank" class="align-right">链接</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="width:40%;float:left;height:230px;position:relative;">
+                            <ul class="list-group" id="honorul">
+                                <li class='list-group-item'><span id="showmore_article2" style="float:right;cursor:pointer" type="button"data-toggle="modal" data-target="#more_article2" ></span><b style="font-size:14px;">所获荣誉</b></li>
+                                <li class='list-group-item'><span>无</span></li>
+                            </ul>
+                        </div>
+                      {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+<!--         <div class="overall_evaluation" style="float:left;" >
+ -->
+
+        <div class="modal fade" id="more_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document" style="width: 600px;margin-top: 7%;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" style="font-size:18px" id="myModalLabel">联系人信息</h4>
+              </div>
+              <div class="modal-body" id='user_List'>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="more_article" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document" style="width: 600px;margin-top: 7%;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" style="font-size:18px" id="myModalLabel">发表文章</h4>
+              </div>
+              <div class="modal-body" id='article_List'>
+                <ul class="list-group" id="paperul">
+                    <li class='list-group-item'><span>用一部书总结自己</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wv4f.html" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>仿古街，请三思而后行</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wkqz.html" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>即兴的感谢</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wko0.html" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>缘何为徐志摩立像</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wiis.html" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>纪念草婴先生</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wgbw.html" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>两会观察:10年消失90万自然村 中国古村落亟待保护</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102vke1.html" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>乙未政协提案</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102vikm.html" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>双倍的悼念</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102v6uj.html" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>悼词</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102v1j0.html" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>驻圣彼得堡总领馆举办冯骥才诗画集发布会</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102v0se.html" target="_blank" class="align-right">链接</a></li>
+                    
+                </ul>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="more_article_z" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document" style="width: 600px;margin-top: 7%;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" style="font-size:18px" id="myModalLabel">发表文章</h4>
+              </div>
+              <div class="modal-body" id='article_List'>
+                <ul class="list-group" id="paperul">
+                    <li class='list-group-item'><span>电影：《女人的力量》</span><a href="http://baike.baidu.com/link?url=fzB1fz_cGW8_CBw_IKpL7c5d368IcVSPZXUHnQWxthjUHr6-EolG7HJLVj-jqws3T7sIO-ONObhOzBAmtBD9nkFbLpaqua3XX5dc54AVg23" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>电影：《花园街五号》</span><a href="http://baike.baidu.com/link?url=TEKPALz_YPpecoUcglxW2CGFkbctxJAtOWa45CN-25eBUp6YSlpIpHoQ28hktz_i7-NYTo4OY5FD3iiF2xQi7K" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>认真践行“三严三实”要求 努力推动文联工作取得新成效 </span><a href="http://dangjian.people.com.cn/n1/2016/0224/c117092-28147370.html" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>2011年《求是》杂志：走在建设社会主义文化强国的前列</span><a href="http://www.cnki.com.cn/Article/CJFDTotal-QUSI201123007.htm" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>2012年《求是》杂志：坚定不移走与人民相结合的文艺道路 </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=26&CurRec=5&recid=&filename=QUSI201211020&dbname=CJFD2012&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=MDUwOTdyM0pORGpZWjdHNEg5UE5ybzlIWklSOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMeWZZK2R0RnluZ1U=" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>2012年《人民日报》：奋力开拓社会主义文艺事业新局面  </span><a href="http://www.12371.cn/2012/10/17/ARTI1350439444321931.shtml" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>2014年《求是》杂志：坚持中国特色社会主义文化发展道路  </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=34&CurRec=6&recid=&filename=QUSI201401019&dbname=CJFD2014&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=MDAyODhZK2R0RnluZ1Y3L0xORGpZWjdHNEg5WE1ybzlFYllSOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMeWY=" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>2014年努力唱响实现中国梦的时代最强音   </span><a href="http://www.cflac.org.cn/wywzt/2014/96qwh/huandeng/201401/t20140115_239946.html" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>2014年《求是》杂志：把最好的精神食粮奉献给人民   </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=34&CurRec=4&recid=&filename=QUSI201422008&dbname=CJFDLAST2015&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=MTE0NzdJUjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTHlmWStkdEZ5bmdXNzdPTkRqWVo3RzRIOVhPclk5RmI=" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>2014年《党建》杂志：中国特色社会主义文艺事业的科学指南   </span><a href="http://www.dangjian.cn/djzx/srt/201410/t20141030_2262371.shtml" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>2015年《中国文艺评论》杂志：救亡图存的战鼓 民族精神的号角  </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=34&CurRec=9&recid=&filename=CYSB201509090011&dbname=CCNDLAST2015&dbcode=CCND&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=MTQ3MDhFaWptVTc3TUlsMGNKalRZYkxHNEg5VE1wbzlNWk9zT0RSTkt1aGRobmo5OFRuanFxeGRFZU1PVUtyaWZadUJ2" target="_blank" class="align-right">链接</a></li>
+                    <li class='list-group-item'><span>2015年《求是》杂志：真心、真情、真诚、真实 </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=34&CurRec=3&recid=&filename=QUSI201520020&dbname=CJFDLAST2016&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=Mjg3MDNMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTHlmWStkdEZ5bmhWci9LTkRqWVo3RzRIOVRPcjQ5SFpJUjhlWDE=" target="_blank" class="align-right">链接</a></li>
+                    
+                </ul>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="more_article2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document" style="width: 600px;margin-top: 7%;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" style="font-size:18px" id="myModalLabel">所获荣誉</h4>
+              </div>
+              <div class="modal-body" id='article2_List'>
+                <ul class="list-group" id="honorul">
+                    <li class='list-group-item'><span>2016年3月24日，作品短篇小说《俗世奇人（足本）》入围中国出版集团“中版好书榜”</span></li>
+                    <li class='list-group-item'><span>2016年2月，短篇小说《俗世奇人新篇》入选2015年中国当代文学最新作品排行榜。</span></li>
+                    <li class='list-group-item'><span>2015年12月21日，被颁发宁夏回族自治区“文化使者”聘书</span></li>
+                    <li class='list-group-item'><span>2015年12月18日，当选“传播中华文化年度人物”</span></li>
+                    <li class='list-group-item'><span>2013年6月18日，获万宝龙国际艺术赞助大奖</span></li>
+                    
+                    <li class='list-group-item'><span>2010年，入围“免网杯”中国文艺网络奖最佳作家候选人</span></li>
+                    <li class='list-group-item'><span>2007年5月26日，获《小说月报》第十二届百花奖</span></li>
+                    <li class='list-group-item'><span>《炮打双灯》改编的同名电影获“夏威夷电影节”和“西班牙电影节”奖</span></li>
+                    <li class='list-group-item'><span>中篇小说《啊！》《神鞭》分别获得全国优秀短篇、优秀中篇小说奖</span></li>
+                    <li class='list-group-item'><span>《感谢生活》《挑山工》曾获法国“青年读物奖”，并获瑞士“蓝眼镜蛇奖”</span></li>
+                    
+                </ul>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="related_people_modal" style="padding: 20px;border-radius: 6px;display:none;position: fixed;left: 70%;top: 30%;z-index: 1005;width: 420px;background: #FFF none repeat scroll 0% 0%;border: 1px solid #999;max-height: 400px;overflow: auto;margin-left: -460px;font_family: "Microsoft YaHei UI";">
+    <h4 class="title" style="padding: 10px;border-bottom:solid 1px #999;padding-top: 0;"><a href="javascript:void(0)" class="Basicclose" id="close" style="float:right;">X</a><span id="modal_title">相关活动</span></h4>
+    <div class="m-wrap" id="related_people_detail" style="font-size:14px;margin-top:15px;">
+        
+    </div>
+</div>
+
+
+{% endblock content %}
+
+{% block tail_js %}
+    <script src="/static/echarts/echarts.js"></script>
+    <script type="text/javascript">
+        var name = "{{ topic }}";
+        var subevent_id = "{{ subevent_id }}";
+        var topicid= "{{ topic_id }}";
+        cluster_eva_min_size = "{{ cluster_eva_min_size }}";
+        var vsm = "{{ vsm }}"
+        $('#act_href').click(function(){
+            window.open("/news/?query=" + name);
+        });
+        $('#commtent_href').click(function(){
+            window.open("/cluster/?query=" + name + "&subevent_id="+ subevent_id);
+        });
+        $('#relation_href').click(function(){
+            window.open("/news/network/?query=" + name);
+        });
+        </script>
+    <script src="/static/js/overview.js"></script>
+    <script>
+    function drawSubeventPie(data){
+        var pie_data = [];
+        var One_pie_data = {};
+        for (var d in data){ 
+            d = data[d];
+            One_pie_data = {'value': d["count"], 'name': d["name"] + d["count"]};
+            pie_data.push(One_pie_data);        
+        }
+
+        var option = {
+            title : {
+                text: '社会活动主题占比图',
+                x:'center', 
+                y: 'bottom',
+                textStyle:{
+                fontWeight:'lighter',
+                fontSize: 13,
+                }        
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    restore : {show: true},            
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            series : [
+                {
+                    name:'访问来源',
+                    type:'pie',
+                    radius : '50%',
+                    center: ['50%', '50%'],
+                    roseType : 'area',
+                    data: pie_data
+                }
+            ]
+        };
+            require(
+            [
+                'echarts',
+                'echarts/chart/pie'
+            ],
+            function (echarts) {
+                var myChart = echarts.init(document.getElementById('subeventpie'));
+                myChart.setOption(option);
+            });
+    }
+    </script>
+
+{% endblock tail_js %}
