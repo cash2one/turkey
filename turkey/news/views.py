@@ -2961,3 +2961,9 @@ def emergency():
     """
     #topic_name = request.args.get('query', default_topic_name) # 国家名
     return render_template('index/emergency.html')
+
+@mod.route('/turkey_emergency/')
+def turkey_emergency():
+    """返回话题管理页面
+    """
+    return render_template('index/turkey_emergency.html')
