@@ -25,39 +25,6 @@
         <div><span style="float:right;cursor:pointer;"></span>最新资讯</div>
       </div>
       <div class="panel-body">
-      <!--内容类型选择、排序选择-->
-        <div class="form">
-          <div class="cata_name">通道：</div>  
-            <select id="channel" class="select">
-              <option value="全部">全部</option>
-              <option value="新闻">新闻</option>
-              <option value="facebook">facebook</option>
-              <option value="twitter">twitter</option>
-            </select>
-        </div>                   
-        <div class="form">  
-          <div class="cata_name">媒体：</div>
-            <select id="media" class="select">
-              <option value="全部">全部</option>
-              <option value="央视新闻">央视新闻</option>
-              <option value="人民网">人民网</option>
-              <option value="新浪新闻">新浪新闻</option>
-            </select>
-        </div> 
-        <div class="form">  
-          <div class="cata_name">类别：</div>
-            <select id="catalog" class="select">
-              <option value="全部">全部</option>
-              <option value="军事">军事</option>
-              <option value="政治">政治</option>
-              <option value="经济">经济</option>
-              <option value="教育">教育</option>
-            </select>  
-        </div>
-        <div class="f-sort">
-          <div class="cata_name">排序：</div>
-          <a>时间</a><a>热度</a><a>重要性</a>
-        </div>
         <!--媒体、facebook、twitter展示-->
   <div id="content_panel" style="margin-top:110px;">
     <div class="news_box">
@@ -162,10 +129,23 @@
   <div class="col-lg-12" >
     <div class="panel panel-default">
       <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
-        <div><span style="float:right;cursor:pointer;"></span>突发事件</div>
+        <div><span style="float:right;cursor:pointer;"></span>媒体热度</div>
       </div>
       <div class="panel-body">
-        <div id="emergency_grah" style="height:600px;"></div>
+        <div id="" style="height:600px;"></div>
+      </div>
+    </div>
+    <!--panel///////////////////-->
+  </div>
+  <!--col-lg-12///////////////////-->
+
+  <div class="col-lg-12" >
+    <div class="panel panel-default">
+      <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+        <div><span style="float:right;cursor:pointer;"></span>事件趋势</div>
+      </div>
+      <div class="panel-body">
+        <div id="" style="height:600px;"></div>
       </div>
     </div>
     <!--panel///////////////////-->
@@ -181,8 +161,4 @@
     <script src="/static/js/jquery-jSelect.min.js"></script>
     <script src="/static/js/emergency.js"></script>
     <script src="/static/js/echarts-all.js"></script>
-    <script src="/static/js/emergency_grah.js"></script>
-    <script type="text/javascript">
-        $(".select").jSelect();
-    </script>
 {% endblock tail_js %}
