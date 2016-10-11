@@ -2,19 +2,27 @@
 {% block module_title %}人物概览{% endblock %}
 
 {% block head_css %}
+<!-- <link rel="stylesheet" src="../../static/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 
 {% endblock head_css %}
 
 
 {% block head_js %}
-	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	
-	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../../static/js/jquery-1.9.1.min.js"></script>
+	<!-- <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script> -->
+	<script src="../../static/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../static/js/echarts.js"></script>
 	<script type="text/javascript" src="../../static/js/echarts-all.js"></script>
 
 {% endblock head_js %}
+<!-- <style type="text/css">
+	
+	#detail:hover {
+    color: #607D8B;
+    text-decoration: underline;
+	}
+</style> -->
 
 {% block content %} 
 <!-- <div class="panel panel-primary" style="margin-top:80px;margin-left: 2.5%;width: 95%; ">
@@ -48,7 +56,7 @@
 			</li> -->
 
 			<li>
-				<a href="#detail" data-toggle="tab">访问议题信息</a>
+				<a href="#detail2" data-toggle="tab">访问议题信息</a>
 			</li>
 			
 		</ul>
@@ -66,7 +74,7 @@
 	                    </p>
 					<div>
 						<img id="zongtong_1_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-left: 1%;float: left;">
-						<p style="float: left;margin-left:10px;">塔伊普·埃尔多安</br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</br></br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="" style="margin-top:5px;">查看更多详情</a></p>
+						<p style="float: left;margin-left:10px;">塔伊普·埃尔多安</br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</br></br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="detail" href="" style="margin-top:5px;">查看更多详情</a></p>
 
 					</div>
 
@@ -140,7 +148,7 @@
 					TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
 			</div> -->
 
-			<div class="tab-pane fade" id="detail">
+			<div class="tab-pane fade" id="detail2">
 				<p>iOS </p>
 			</div>
 		</div>
@@ -171,7 +179,7 @@
 		</ul>
     	<div id="myTabContent" class="tab-content">
 			<div class="tab-pane fade in active" id="reactionary">
-				<p>W3Cschoool菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
+				<iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d6383616.992675474!2d30.696190404289105!3d38.625869907953465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2z5Zyf6ICz5YW2!5e0!3m2!1szh-CN!2scn!4v1476155526026" width="900" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
 			<div class="tab-pane fade" id="local_power">
 				<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
@@ -324,23 +332,27 @@
             function focus(param) 
             {
               //param是echarts里面存储的数据，可以console出来看一下
-                console.log(param);
+                console.log(param.name);
+
                 var data = param.data;
                 var links = option.series[0].links;
                 var nodes = option.series[0].nodes;
 
                 if (data.source != null&& data.target != null) 
                 { //点击的是边
+                	// console.log(data.source);
                     var sourceNode = nodes.filter(function (n) {return n.name == data.source})[0];
                     var targetNode = nodes.filter(function (n) {return n.name == data.target})[0];
-                    // console.log(data.sourceNode);
-                } else {
-                      //点击的是点
-                      alert("美国与土耳其之间的关系可追溯到1947年实行的、旨在加强土耳其经济及军事自立的杜鲁门主义。多年来，美土两国通过密切的双边外交关系以及作为北约盟国中的两支最大军队之间的伙伴关系，使这一目标从冷战时期一直发展至今。 2003年，由于土耳其议会决定拒绝让美国为首的盟军把土耳其作为进入邻国伊拉克的基地，美土关系出现紧张，但是两国政府后来发起2006年共同未来与系统化对话，为加强战略合作建立了框架。2009年，在奥巴马宣布将分期从伊拉克撤出作战部队后，土耳其表示愿意为美国军事设备提供过境便利。同时有媒体报道，土耳其有可能成为伊朗恢复与美国关系的斡旋国。在反恐合作方面，美土两国打击共同面临的来自从基地组织到库尔德工人党的极端主义的威胁。");
-                      if(param.name==中国) 
-                      {
-                      	alert("暂无信息");
-                      }
+                    
+                } 
+                else 
+                {	
+                	switch(param.name)
+                	{
+                		case '美国' :prompt("美国与土耳其之间的关系可追溯到1947年实行的、旨在加强土耳其经济及军事自立的杜鲁门主义。多年来，美土两国通过密切的双边外交关系以及作为北约盟国中的两支最大军队之间的伙伴关系，使这一目标从冷战时期一直发展至今。 2003年，由于土耳其议会决定拒绝让美国为首的盟军把土耳其作为进入邻国伊拉克的基地，美土关系出现紧张，但是两国政府后来发起2006年共同未来与系统化对话，为加强战略合作建立了框架。2009年，在奥巴马宣布将分期从伊拉克撤出作战部队后，土耳其表示愿意为美国军事设备提供过境便利。同时有媒体报道，土耳其有可能成为伊朗恢复与美国关系的斡旋国。在反恐合作方面，美土两国打击共同面临的来自从基地组织到库尔德工人党的极端主义的威胁。");break;
+
+                		case '中国': prompt("暂无数据");break;
+                	}
                      
                 }
             }
