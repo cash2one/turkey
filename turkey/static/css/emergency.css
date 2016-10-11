@@ -96,8 +96,10 @@
         .sns_user {
             width: 100%;
             float: left;
+            margin-bottom: 10px;
         }
         .sns_box .text_box p{
             font-size: 14px;
-            margin-bottom: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
