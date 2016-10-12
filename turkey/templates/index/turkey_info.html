@@ -1,5 +1,5 @@
 {% extends "turkey_base.html" %}
-{% block module_title %}人物概览{% endblock %}
+{% block module_title %}土耳其信息{% endblock %}
 
 {% block head_css %}
 
@@ -24,7 +24,7 @@
             width: 1100px;
 		    margin: 0 auto;
 		    background-color: white;
-		    margin-left: 12px;
+		    margin-left: 16px;
 		    margin-top: 60px;
 		    float: left;
 
@@ -173,9 +173,6 @@
 {% block content %}
 
         <div id="overview" >
-            {% if topic == '冯骥才' %}
-                <!-- <p>sdvhbskjdbvkjdsbvkjd</p> -->
-            
 
             <div class="shadow" style="border-radius: 10px;float: left;padding:15px;border: 4px solid #104F87;margin: 15px;width: 97%;">
                 <div id = "porphoto" style="width:105px;float:left;margin-top: 0.4%;margin-left: -1%;">
@@ -254,19 +251,19 @@
                 	
                 </div>
             </div>
-            {% endif %}
+            
             
             <div class="col-lg-12" >
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
                         <div>
                         <img id="political_img" src="/static/img/turkey/political.png" alt="Photo" style="width: 30px;height: 25px;margin-top: -0.5%;">
-                        <span id="relation_href" style="float:right;cursor:pointer;"><u>查看详情</u></span>政治</div>
+                        <!-- <span id="relation_href" style="float:right;cursor:pointer;"><u>查看详情</u></span> -->政治</div>
                     </div>
                     <!-- 历任总统 -->
                     <div class="panel-body" style="float: left;">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
-                        <p class="personal_domain"><b>历任总统</b>
+                        <p class="personal_domain"  ><b style="margin-left:2%;" >历任总统</b>
                         <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
                         </p>
                         
@@ -279,13 +276,13 @@
                        <div>
                       
                            <img id="zongtong_1_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
-                           <p style="margin-left:45%;margin-top: -45%;width: 100%;" ><a href="http://baike.baidu.com/view/158815.htm" style="font-size: 12px;margin-top: -1%;float：left;">塔伊普·埃尔多安</a></br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</p>
+                           <p style="margin-left:45%;margin-top: -48%;width: 100%;" ><a href="http://baike.baidu.com/view/158815.htm" style="font-size: 12px;margin-top: -1%;float：left;">雷杰普·塔伊普·埃尔多安</a></br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>所属党派：<a href="">正义与发展党</a></br>毕业院校：马尔马拉大学经贸学院</p>
 
                        </div>
                        <div style="margin-top: 16%;margin-left: -1%;" >
                        
                            <img id="zongtong_2_img" src="/static/img/turkey/zongtong_2.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
-                           <p style="margin-left:45%;margin-top: -45%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">阿卜杜拉·居尔</a></br>在任时间：2007.08-2014.08</br>出生日期：1950年10月29日</br>外文名：Abdullah Gul/Abdullah Gül</br>毕业院校：伊斯坦布尔大学经济学院</p>
+                           <p style="margin-left:45%;margin-top: -47%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">阿卜杜拉·居尔</a></br>在任时间：2007.08-2014.08</br>出生日期：1950年10月29日</br>外文名：Abdullah Gul/Abdullah Gül</br>所属党派：<a href="">正义与发展党</a></br>毕业院校：伊斯坦布尔大学经济学院</p>
                              
                              
 
@@ -294,10 +291,10 @@
                            
                           
                            <img id="zongtong_3_img" src="/static/img/turkey/zongtong_3.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
-                           <p style="margin-left:45%;margin-top: -45%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">内吉代特·塞泽尔</a></br>在任时间：2000.05-2007.08</br>出生日期：1941年3月13日</br>外文名：Ahmet Necdet Sezer</br>毕业院校：安卡拉大学法学院</p>
+                           <p style="margin-left:45%;margin-top: -47%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">阿赫迈特·内吉代特·塞泽尔</a></br>在任时间：2000.05-2007.08</br>出生日期：1941年3月13日</br>外文名：Ahmet Necdet Sezer</br>所属党派：其他</br>毕业院校：安卡拉大学法学院</p>
                              
                        </div>
-                       <div style="margin-top: 12%;">
+                       <div style="margin-top: 6%;margin-left: 1%;">
                            
                            <a href="">查看所有总统</a>
                        </div>
@@ -305,9 +302,9 @@
                     </div>
                    <!-- 历任总理 -->
 
-                    <div class="panel-body" style="margin-left: 10%;float:left">
+                    <div class="panel-body" style="margin-left: 20%;float:left">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
-                        <p class="personal_domain"><b>历任总理</b>
+                        <p class="personal_domain"><b style="margin-left:2%;" >历任总理</b>
                         <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
                         </p>
                         
@@ -322,22 +319,22 @@
                        <div>
                            
                            <img id="zongli_1_img" src="/static/img/turkey/zongli_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
-                           <p style="margin-left:35%;margin-top: -36%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">比纳利·耶伊尔德勒姆</a></br>在任时间：2016.05-至今</br>出生日期:1955年12月20日</br>外文名：Binali Yıldırım</br>毕业院校:伊斯坦布尔理工大学海事学院、世界海事大学</p>
+                           <p style="margin-left:37%;margin-top: -39%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">毕纳利·耶尔德勒姆</a></br>在任时间：2016.05-至今</br>出生日期:1955年12月20日</br>外文名：Binali Yıldırım</br>所属党派：<a href="">正义与发展党</a></br>毕业院校:伊斯坦布尔理工大学海事学院/世界海事大学</p>
 
                        </div>
                        <div style="margin-top: 16%;margin-left: -1%;" >
                        
                            <img id="zongli_2_img" src="/static/img/turkey/zongli_2.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: -1%;margin-left: 2%;">
-                           <p style="margin-left:36%;margin-top: -36%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">艾哈迈德·达乌特奥卢</a></br>在任时间：2014.08-2016.05</br>出生日期:1959年2月26日</br>外文名：Ahmet Davutoglu</br>毕业院校:海峡大学（Boğaziçi University）</p>
+                           <p style="margin-left:38%;margin-top: -39%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">艾哈迈德·达乌特奥卢</a></br>在任时间：2014.08-2016.05</br>出生日期:1959年2月26日</br>外文名：Ahmet Davutoglu</br>所属党派：<a href="">正义与发展党</a></br>毕业院校:海峡大学（Boğaziçi University）</p>
                              
 
                        </div>
                        <div style="margin-top: 16%;">
-                           <img id="zongli_3_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 0%;margin-left: 1%;">
-                           <p style="margin-left:36%;margin-top: -36%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">塔伊普·埃尔多安</a></br>在任时间：2003.03—2014.08</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</p>
+                           <img id="zongli_3_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
+                           <p style="margin-left:38%;margin-top: -39%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">雷杰普·塔伊普·埃尔多安</a></br>在任时间：2003.03—2014.08</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>所属党派：<a href="">正义与发展党</a></br>毕业院校：马尔马拉大学经贸学院</p>
                            
                        </div>
-                       <div style="margin-top: 10%;">
+                       <div style="margin-top: 6%;margin-left: 1%;">
                            
                            <a href="">查看所有总理</a>
                        </div>
@@ -345,7 +342,7 @@
                     </div>
                     
                      <!-- 政治右侧栏 -->
-                    <div class="right_col_zhengzhi" style="">
+                    <!-- <div class="right_col_zhengzhi" style="">
 	                	<div class="right_col_title">
 	                		<div style="margin-top: 2.3%;margin-left: 5%;float:left">
 	                			<p style="font-family: Microsoft YaHei;color: #104F87;font-size: 16px;">其他人还在看</p>
@@ -366,59 +363,148 @@
 	                		
 	                	</div>
                 	
-                	</div>
+                	</div> -->
 
                 	<div style="margin-top: 62%;">
-                		<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
-                        <p class="personal_domain"><b>政治制度</b>
-                             <p style="font-size: 14px;margin-top: -1%;margin-left: 3%;">以世俗主义为基础的议会共和制</p>
-	                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
-	                        <p class="personal_domain"><b>政治局势</b>
-	                        	<p style="font-size: 14px;margin-top: -1%;margin-left: 3%;width: 65%;">当前局势：政局相对稳定，政变失败后，军方在土耳其国内的政治领域的影响力将被终结。另一方面，执政的正义与发展党力量强大，有较强的民意基础</p>
-	                        	<p style="font-size: 14px;margin-top: -1%;margin-left: 3%;width: 65%;">未来局势：未遂政变给了埃尔多安一个难得的清洗异己的机会，能够加快政体转变的速度，从而达到政教合一的目的。土耳其将会更加趋于保守，而只要这个保守政策能够成功，随之也必将会给土耳其带来相对稳定的一段时间。</p>
-	                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
-	                    <p class="personal_domain"><b>四大政党</b>
+                		<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: -76.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                        <p class="personal_domain"><b style="margin-left: -75%;">政治制度</b>
+                             <p style="font-size: 14px;margin-top: -1%;margin-left: 3%;">以世俗主义为基础的议会共和制。<br>土耳其以世俗主义为指导，力图建设一个现代化的世俗国家，严禁宗教以任何形势干预政治。土耳其的国体是议会共和制，政体为议会制代民主制，国家特征为民主的、世俗的法治国家；致力于民族团结、社会安定和正义；尊重人权，忠于凯末尔主义；实行三权分立的政治制度，大国民议会为最高立法机构，宪法法院为最高司法机构，总理行使最高行政权。</p>
+	                    
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                        <p class="personal_domain"><b>重要政党</b>
 
-	                    	<div style="float:left;">
+                            <div style="float:left;">
                            
-	                           <img id="zhengyidang_img" src="/static/img/turkey/zhengyidang.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 0%;margin-left: 2%;">
-	                           <p style="margin-left:55%;margin-top: -50%;width: 100%;" ><a href="http://baike.baidu.com/view/3367393.htm" style="font-size: 12px;margin-top: -1%;float：left;">正义与发展党</a></br>创立人：埃尔多安</br>创立时间:2001年</br>外文名：Adalet ve Kalkınma Partisi</p>
+                               <img id="zhengyidang_img" src="/static/img/turkey/zhengyidang.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 0%;margin-left: 7%;">
+                               <p style="margin-left:59%;margin-top: -59%;width: 100%;" ><a href="http://baike.baidu.com/view/3367393.htm" style="font-size: 12px;margin-top: -1%;float：left;">正义与发展党</a></br>创立人：<a href="">雷杰普·塔伊普·埃尔多安</a></br>创立时间:2001年8月14日</br>外文名：Adalet ve Kalkınma Partisi</br>现任主席：<a href="">毕纳利·耶尔德勒姆</a></br><a href="">大国民议会</a>占有席位：317 / 550</p>
 
-	                       </div>
-	                       <div style="margin-top: 1%;margin-left: 18%;float:left;" >
-	                       
-	                           <img id="minzhudang_img" src="/static/img/turkey/minzhudang.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: -1%;margin-left: 2%;">
-	                           <p style="margin-left:56%;margin-top: -60%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">民主左翼党</a></br>创立人：拉赫桑·埃杰维特</br>创立时间:1985年11月14日</br>外文名：Democratic Left Party</p>
-	                             
-	                       </div>
-
-	                       <div style="float:left;margin-top: 14%;margin-left: -53%;">
+                           </div>
+                           <div style="margin-top: 1%;margin-left: 18%;float:left;" >
                            
-	                           <img id="gonghedang_img" src="/static/img/turkey/gonghedang.png" alt="Photo" style="float：left;width: 80px;height: 100px;margin-top: 0%;margin-left: 2%;">
-	                           <p style="margin-left:48%;margin-top: -46%;width: 100%;" ><a href="http://baike.baidu.com/view/3367393.htm" style="font-size: 12px;margin-top: -1%;float：left;">共和人民党</a></br>创立人：埃尔多安</br>创立时间:2001年</br>外文名：Adalet ve Kalkınma Partisi</p>
+                               <img id="gonghedang_img" src="/static/img/turkey/gonghedang.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: -1%;margin-left: 65%;">
+                               <p style="margin-left:125%;margin-top: -64%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">共和人民党</a></br>创立人：<a href="">拉赫桑·埃杰维特</a></br>创立时间:1985年11月14日</br>外文名：Democratic Left Party</br>现任主席：<a href="">凯末尔·科勒齐达奥卢</a></br><a href="">大国民议会</a>占有席位：134 / 550</p>
+                                 
+                           </div>
 
-	                       </div>
-	                       <div style="margin-top: 14%;margin-left: -15.5%;float:left;" >
-	                       
-	                           <img id="minzudang_img" src="/static/img/turkey/minzudang.png" alt="Photo" style="float：left;width: 80px;height: 100px;margin-top: -1%;margin-left: 2%;">
-	                           <p style="margin-left:52%;margin-top: -54%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">民族行动党</a></br>创立人：拉赫桑·埃杰维特</br>创立时间:1985年11月14日</br>外文名：Democratic Left Party</p>
-	                             
-	                       </div>
+                           <div style="float:left;margin-top: 14%;margin-left: -53%;" >
+                           
+                               <img id="minzhudang_img" src="/static/img/turkey/minzhudang.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 0%;margin-left: 0%;">
+                               <p style="margin-left:50%;margin-top: -56%;width: 100%;" ><a href="http://baike.baidu.com/view/3367393.htm" style="font-size: 12px;margin-top: -1%;float：left;">人民民主党</a></br>创立人：具体不详</br>创立时间:2012年8月12日</br>外文名：Halkların Demokratik Partisi</br>现任主席：<a href="">塞拉哈丁·德米尔塔什</a></br><a href="">大国民议会</a>占有席位：59 / 550</p>
+                                 
+                           </div>
+
+                           <div style="margin-top: 14%;margin-left: -15.5%;float:left;" >
+                           
+                               <img id="minzudang_img" src="/static/img/turkey/minzudang.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: -1%;margin-left: 57%;">
+                               <p style="margin-left:119%;margin-top: -66%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">民族行动党</a></br>创立人：<a href="">拉赫桑·埃杰维特</a></br>创立时间:1985年11月14日</br>外文名：Democratic Left Party</br>现任主席：<a href="">德夫莱特·巴赫切利</a></br><a href="">大国民议会</a>占有席位：40 / 550</p>
+
+                           </div>
+
+                         
+                               <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: -54.6%;margin-top: 27.5%;margin-right: 0.6%;" ></div>
+                                <p class="personal_domain" style="margin-top: 28.5%;"><b>政治局势</b>
+                                    <p style="font-size: 14px;margin-top: -1%;margin-left: 3%;width: 90%;">当前局势：政局相对稳定，政变失败后，军方在土耳其国内的政治领域的影响力将被终结。另一方面，执政的正义与发展党力量强大，有较强的民意基础</p>
+                                    <p style="font-size: 14px;margin-top: -1%;margin-left: 3%;width: 90%;">未来局势：未遂政变给了埃尔多安一个难得的清洗异己的机会，能够加快政体转变的速度，从而达到政教合一的目的。土耳其将会更加趋于保守，而只要这个保守政策能够成功，随之也必将会给土耳其带来相对稳定的一段时间。</p>
+                           
+	                    
 
                 	</div>
-                      <p style="margin-left:12%;margin-top: 25%;width: 100%;color: #ffffff" >民族行动党</p>
+                      
                 </div>
             </div>
             <div class="col-lg-12" >
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
-                        <div><span id="act_href" style="float:right;cursor:pointer;"><u>查看详情</u></span>社会活动
-                        {% if topic == '冯骥才' %}
-                            （2000年至今）</div>
-                        {% endif %}
-                        {% if topic == '赵实' %}
-                            （2011年至今）</div>
-                        {% endif %}
+                        <div>
+                        <!-- <span id="act_href" style="float:right;cursor:pointer;"><u>查看详情</u></span> -->
+                        经济
+                        </div>
+                        
+                    </div>
+                    <div class="panel-body">
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>概述</b>
+                                        <p style="font-size: 14px;margin-top: -1%;margin-left: 1%;width: 90%;">土耳其的大部分自由市场经济由其工业和服务业所推动，尽管其传统农业仍占就业的25％左右。积极的私有化计划减少了国家在基础工业，银行，运输和通信方面的干预。一个新兴的中产阶级企业家阶层为其经济注入了动力，扩大了除传统纺织品和服装以外的产品。汽车，石油化工和电子工业的重要性逐步上升，在土耳其的出口商品结构中超过了纺织品。
+                                        2006年5月，开通巴库 - 第比利斯 - 杰伊汉石油管道，标志着一个重大里程碑，每天由里海地区向市场提供100万桶石油。土耳其阿塞拜疆安那托利亚天然气管道（TANAP）的连接，解决了土耳其对进口天然气的依赖，目前满足其98％的能源需求。
+                                        土耳其在2001年发生严重的金融危机后，安卡拉政府采取金融和财政改革，作为世界基金组织项目的一部分。此次改革加强了该国的经济基基础，并迎来了一个强劲增长的时代，直到2008年年均增长率达到6％。全球经济情况以及更严格的财政政策使GDP在2009年开始收缩。但土耳其管理完善的金融市场和银行系统帮助该国抵御全球金融危机，GDP在2010年11月大幅回升至9％左右，出口也在危机后恢复正常水平。两家评级机构在2012年和2013年将土耳其的债务升级为投资级别。2014年年底境外直接投资的股票价值接近1,950亿美元。尽管有这些积极的趋势，但GDP增长率在2013年下降到4.4％，2014年下降到2.9％。2014年第四季度增长放缓，这主要是由于国内和欧洲土耳其最重要的出口市场的消费需求疲软。高利率也导致了增长放缓，土耳其在2014年1月大幅增加利率，以加强该国的货币和减少通货膨胀。土耳其在2015年2月降息，以刺激经济增长。
+                                        土耳其经济仍然存在显著的弱点。具体来说，土耳其相对较高的经常账户赤字，对结构改革的不明朗承诺，以及土耳其邻近地区的动荡使得其经济容易受到投资者信心不稳定的影响。土耳其仍然过度依赖通过不稳定的短期投资来为其大量经常账目赤字提供资金。</p>
+                         <!-- GDP相关条目 -->
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>GDP相关</b>
+                                    <div id="gdp_growth" style="float:left;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        <!-- GDP相关图 -->
+                                    </div>
+
+                                    <div id="gdp_renjun" style="float:left;margin-left:2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        <!-- GDP相关图 -->
+                                    </div>
+                                    <div id="gdp_ppp" style="float:left;margin-top: 2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        <!-- GDP相关图 -->
+                                    </div>
+
+                                    <div id="gdp_chuxu" style="float:left;margin-top: 2%;margin-left:2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        
+                                    </div>
+
+                                    <div id="gdp_anyongtu" style="float:left;margin-top: 2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        
+                                    </div>
+
+                                     <div id="gdp_anchanye" style="float:left;margin-top: 2%;margin-left:2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        
+                                    </div>
+
+
+                                    </p>
+                        <!-- 进出口相关 -->
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: -98%;margin-top: 23%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 64.5%;margin-left: -98%;"><b>进口</b>
+                                    <div id="gdp_growth" style="float:left;width:48%;height:300px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        <!-- 进口相关图 -->
+                                        <p style="margin-top: 2%;margin-left: 2%;">出口金额：1546亿美元（2015年）、1689亿美元（2014年估计）</p>
+                                        <p style="margin-top: 2%;margin-left: 2%;">出口商品：服装，食品，纺织品，金属制品，运输设备。</p>
+                                        <div id="jinkou" style="float:left;width:48%;height:200px;">
+                                            
+                                        </div>
+                                    </div>
+                                    </p>
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 2%;margin-top: -4%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: -4%;margin-left: 24%;"><b style="margin-left: 36%;">出口</b>
+                                    <div id="gdp_renjun" style="float:left;margin-top: -0.4%;margin-left:2%;width:48%;height:300px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        <!-- 出口相关图 -->
+                                    </div>
+                                    <!-- <div id="gdp_ppp" style="float:left;margin-top: 2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
+                                                                            </div>
+
+                                    <div id="gdp_chuxu" style="float:left;margin-top: 2%;margin-left:2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        
+                                    </div>
+
+                                    <div id="gdp_anyongtu" style="float:left;margin-top: 2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        
+                                    </div>
+
+                                     <div id="gdp_anchanye" style="float:left;margin-top: 2%;margin-left:2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        
+                                    </div> -->
+
+
+
+                                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+            <div class="col-lg-12" >
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div>
+                        <!-- <span id="act_href" style="float:right;cursor:pointer;"><u>查看详情</u></span> -->
+                        经济
+                        </div>
+                        
                     </div>
                     <div class="panel-body">
                       <div id="active_type"  style="width:450px;height:300px;float:left;"></div>
@@ -428,290 +514,423 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-            <div class="col-lg-12" >
-                <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
-                        <div>
-                            {% if topic == '冯骥才' %}
-                                <span id="commtent_href" style="float:right;cursor:pointer;"><u>查看详情</u></span>
-                            {% endif %}
-                                社会舆论
-                            {% if topic == '冯骥才' %}
-                                （2000年至今）</div>
-                            {% endif %}
-                            {% if topic == '赵实' %}
-                                （2011年至今）</div>
-                            {% endif %}
-                        <!-- </div> -->
-                    </div>
-                    <div class="panel-body" id="comment">
-                    {% if topic == '冯骥才' %}
-                      <div style="width:32%;">
-                        <div id="all_support"  style="width:300px;height:200px;margin-top:50px;margin-left: -10px;"></div>
-                      </div>
-                      <div style="width:68%">
-                          <p class="focused"><b style="font-size:16px;">焦点舆情</b></p>
-                          <div id="related_hanhan" style="padding: 5px;border: 1px solid #ccc;">
-                            <p style="padding-top: 10px;"><div id="hanhan">韩寒代笔门</div>2012年3月7日，冯骥才在回答记者提问时，对当时正处在“代笔门事件”风波中的作家韩寒表示支持,冯骥才表示“如果我是韩寒，就不会搭理这事，你爱说什么说什么去，我还是继续写文章，不断地发表作品”。</p>
-<!--                             <div id="sub_point_1"  style="width:370px;height:200px;margin-left: -30px;"></div>
-                            <div id="sub_sentiment_1"  style="width:290px;height:200px;margin-left: -30px;"></div>
- -->                          </div>
-                          <div id="related_wuyuan" style="padding: 5px;border: 1px solid #ccc;">
-                            <p style="padding-top: 10px;"><div id="wuyuan">婺 源 文 化</div>2005年11月7日，在江西省婺源县举办的中国乡村文化旅游论坛上，著名作家冯骥才先生回答听众提问时，称婺源文化受外来文化影响很深，不是单一的徽文化。</p>
-<!--                             <div id="sub_point_2"  style="width:370px;height:200px;margin-left: -30px;"></div>
-                            <div id="sub_sentiment_2"  style="width:290px;height:200px;margin-left: -30px;"></div>
- -->                          </div>
-                      </div>
-                      {% endif %}
-                      {% if topic == '赵实' %}
-                      <div id ="">暂无相关内容</div>
-                      {% endif %}
-
-                    </div>
-                </div>
-            </div>
             
-            <div class="col-lg-12" >
-                <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
-                        <div>其他</div>
-                    </div>
-                    <div class="panel-body">
-                      {% if topic == '冯骥才' %}
-                        <div style="clear:left;width:44%;float:left;height:230px;position:relative;" class="keywords_cloud_div">
-                            <div class="paper" id="paper_div" style="width:100%">
-                                <ul class="list-group" id="paperul">
-                                    <li class='list-group-item'><span id="showmore_article" style="float:right;cursor:pointer" type="button"data-toggle="modal" data-target="#more_article" ><u>查看更多</u></span><b style="font-size:14px;">发表文章</b></li>
-                                    <li class='list-group-item'><span>用一部书总结自己</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wv4f.html" target="_blank" class="align-right">链接</a></li>
-                                    <li class='list-group-item'><span>仿古街，请三思而后行</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wkqz.html" target="_blank" class="align-right">链接</a></li>
-                                    <li class='list-group-item'><span>即兴的感谢</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wko0.html" target="_blank" class="align-right">链接</a></li>
-                                    <li class='list-group-item'><span>缘何为徐志摩立像</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wiis.html" target="_blank" class="align-right">链接</a></li>
-                                    <li class='list-group-item'><span>纪念草婴先生</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wgbw.html" target="_blank" class="align-right">链接</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div style="width:56%;float:left;height:230px;position:relative;">
-                            <ul class="list-group" id="honorul">
-                                <li class='list-group-item'><span id="showmore_article2" style="float:right;cursor:pointer" type="button"data-toggle="modal" data-target="#more_article2" ><u>查看更多</u></span><b style="font-size:14px;">所获荣誉</b></li>
-                                <li class='list-group-item'><span>2016年3月24日，作品短篇小说《俗世奇人（足本）》入围中国出版集团“中版好书榜”</span></li>
-                                <li class='list-group-item'><span>2016年2月，短篇小说《俗世奇人新篇》入选2015年中国当代文学最新作品排行榜。</span></li>
-                                <li class='list-group-item'><span>2015年12月21日，被颁发宁夏回族自治区“文化使者”聘书</span></li>
-                                <li class='list-group-item'><span>2015年12月18日，当选“传播中华文化年度人物”</span></li>
-                                <li class='list-group-item'><span>2013年6月18日，获万宝龙国际艺术赞助大奖</span></li>
-                            </ul>
-                        </div>
-                      {% endif %}
-                      {% if topic == '赵实' %}
-                        <div style="clear:left;width:60%;float:left;height:230px;position:relative;" class="keywords_cloud_div">
-                            <div class="paper" id="paper_div" style="width:100%">
-                                <ul class="list-group" id="paperul">
-                                    <li class='list-group-item'><span id="showmore_article_z" style="float:right;cursor:pointer" type="button"data-toggle="modal" data-target="#more_article_z" ><u>查看更多</u></span><b style="font-size:14px;">发表作品</b></li>
-                                    <li class='list-group-item'><span>电影：《女人的力量》</span><a href="http://baike.baidu.com/link?url=fzB1fz_cGW8_CBw_IKpL7c5d368IcVSPZXUHnQWxthjUHr6-EolG7HJLVj-jqws3T7sIO-ONObhOzBAmtBD9nkFbLpaqua3XX5dc54AVg23" target="_blank" class="align-right">链接</a></li>
-                                    <li class='list-group-item'><span>电影：《花园街五号》</span><a href="http://baike.baidu.com/link?url=TEKPALz_YPpecoUcglxW2CGFkbctxJAtOWa45CN-25eBUp6YSlpIpHoQ28hktz_i7-NYTo4OY5FD3iiF2xQi7K" target="_blank" class="align-right">链接</a></li>
-                                    <li class='list-group-item'><span>认真践行“三严三实”要求 努力推动文联工作取得新成效 </span><a href="http://dangjian.people.com.cn/n1/2016/0224/c117092-28147370.html" target="_blank" class="align-right">链接</a></li>
-                                    <li class='list-group-item'><span>2011年《求是》杂志：走在建设社会主义文化强国的前列</span><a href="http://www.cnki.com.cn/Article/CJFDTotal-QUSI201123007.htm" target="_blank" class="align-right">链接</a></li>
-                                    <li class='list-group-item'><span>2012年《求是》杂志：坚定不移走与人民相结合的文艺道路 </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=26&CurRec=5&recid=&filename=QUSI201211020&dbname=CJFD2012&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=MDUwOTdyM0pORGpZWjdHNEg5UE5ybzlIWklSOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMeWZZK2R0RnluZ1U=" target="_blank" class="align-right">链接</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div style="width:40%;float:left;height:230px;position:relative;">
-                            <ul class="list-group" id="honorul">
-                                <li class='list-group-item'><span id="showmore_article2" style="float:right;cursor:pointer" type="button"data-toggle="modal" data-target="#more_article2" ></span><b style="font-size:14px;">所获荣誉</b></li>
-                                <li class='list-group-item'><span>无</span></li>
-                            </ul>
-                        </div>
-                      {% endif %}
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-<!--         <div class="overall_evaluation" style="float:left;" >
- -->
-
-        <div class="modal fade" id="more_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document" style="width: 600px;margin-top: 7%;">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" style="font-size:18px" id="myModalLabel">联系人信息</h4>
-              </div>
-              <div class="modal-body" id='user_List'>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="more_article" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document" style="width: 600px;margin-top: 7%;">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" style="font-size:18px" id="myModalLabel">发表文章</h4>
-              </div>
-              <div class="modal-body" id='article_List'>
-                <ul class="list-group" id="paperul">
-                    <li class='list-group-item'><span>用一部书总结自己</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wv4f.html" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>仿古街，请三思而后行</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wkqz.html" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>即兴的感谢</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wko0.html" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>缘何为徐志摩立像</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wiis.html" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>纪念草婴先生</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102wgbw.html" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>两会观察:10年消失90万自然村 中国古村落亟待保护</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102vke1.html" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>乙未政协提案</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102vikm.html" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>双倍的悼念</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102v6uj.html" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>悼词</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102v1j0.html" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>驻圣彼得堡总领馆举办冯骥才诗画集发布会</span><a href="http://blog.sina.com.cn/s/blog_46e7b3fd0102v0se.html" target="_blank" class="align-right">链接</a></li>
-                    
-                </ul>
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="more_article_z" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document" style="width: 600px;margin-top: 7%;">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" style="font-size:18px" id="myModalLabel">发表文章</h4>
-              </div>
-              <div class="modal-body" id='article_List'>
-                <ul class="list-group" id="paperul">
-                    <li class='list-group-item'><span>电影：《女人的力量》</span><a href="http://baike.baidu.com/link?url=fzB1fz_cGW8_CBw_IKpL7c5d368IcVSPZXUHnQWxthjUHr6-EolG7HJLVj-jqws3T7sIO-ONObhOzBAmtBD9nkFbLpaqua3XX5dc54AVg23" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>电影：《花园街五号》</span><a href="http://baike.baidu.com/link?url=TEKPALz_YPpecoUcglxW2CGFkbctxJAtOWa45CN-25eBUp6YSlpIpHoQ28hktz_i7-NYTo4OY5FD3iiF2xQi7K" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>认真践行“三严三实”要求 努力推动文联工作取得新成效 </span><a href="http://dangjian.people.com.cn/n1/2016/0224/c117092-28147370.html" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>2011年《求是》杂志：走在建设社会主义文化强国的前列</span><a href="http://www.cnki.com.cn/Article/CJFDTotal-QUSI201123007.htm" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>2012年《求是》杂志：坚定不移走与人民相结合的文艺道路 </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=26&CurRec=5&recid=&filename=QUSI201211020&dbname=CJFD2012&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=MDUwOTdyM0pORGpZWjdHNEg5UE5ybzlIWklSOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMeWZZK2R0RnluZ1U=" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>2012年《人民日报》：奋力开拓社会主义文艺事业新局面  </span><a href="http://www.12371.cn/2012/10/17/ARTI1350439444321931.shtml" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>2014年《求是》杂志：坚持中国特色社会主义文化发展道路  </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=34&CurRec=6&recid=&filename=QUSI201401019&dbname=CJFD2014&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=MDAyODhZK2R0RnluZ1Y3L0xORGpZWjdHNEg5WE1ybzlFYllSOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMeWY=" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>2014年努力唱响实现中国梦的时代最强音   </span><a href="http://www.cflac.org.cn/wywzt/2014/96qwh/huandeng/201401/t20140115_239946.html" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>2014年《求是》杂志：把最好的精神食粮奉献给人民   </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=34&CurRec=4&recid=&filename=QUSI201422008&dbname=CJFDLAST2015&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=MTE0NzdJUjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTHlmWStkdEZ5bmdXNzdPTkRqWVo3RzRIOVhPclk5RmI=" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>2014年《党建》杂志：中国特色社会主义文艺事业的科学指南   </span><a href="http://www.dangjian.cn/djzx/srt/201410/t20141030_2262371.shtml" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>2015年《中国文艺评论》杂志：救亡图存的战鼓 民族精神的号角  </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=34&CurRec=9&recid=&filename=CYSB201509090011&dbname=CCNDLAST2015&dbcode=CCND&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=MTQ3MDhFaWptVTc3TUlsMGNKalRZYkxHNEg5VE1wbzlNWk9zT0RSTkt1aGRobmo5OFRuanFxeGRFZU1PVUtyaWZadUJ2" target="_blank" class="align-right">链接</a></li>
-                    <li class='list-group-item'><span>2015年《求是》杂志：真心、真情、真诚、真实 </span><a href="http://www.cnki.net/KCMS/detail/detail.aspx?QueryID=34&CurRec=3&recid=&filename=QUSI201520020&dbname=CJFDLAST2016&dbcode=CJFQ&pr=&urlid=&yx=&uid=WEEvREcwSlJHSldTTGJhYlN6S2IyalFWeUw2Rm9RRjBjdXdEdkhwakpiQ1NxVHFmekRmcmNaazAxWkVES0Q5NVZDcz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=Mjg3MDNMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTHlmWStkdEZ5bmhWci9LTkRqWVo3RzRIOVRPcjQ5SFpJUjhlWDE=" target="_blank" class="align-right">链接</a></li>
-                    
-                </ul>
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="more_article2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document" style="width: 600px;margin-top: 7%;">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" style="font-size:18px" id="myModalLabel">所获荣誉</h4>
-              </div>
-              <div class="modal-body" id='article2_List'>
-                <ul class="list-group" id="honorul">
-                    <li class='list-group-item'><span>2016年3月24日，作品短篇小说《俗世奇人（足本）》入围中国出版集团“中版好书榜”</span></li>
-                    <li class='list-group-item'><span>2016年2月，短篇小说《俗世奇人新篇》入选2015年中国当代文学最新作品排行榜。</span></li>
-                    <li class='list-group-item'><span>2015年12月21日，被颁发宁夏回族自治区“文化使者”聘书</span></li>
-                    <li class='list-group-item'><span>2015年12月18日，当选“传播中华文化年度人物”</span></li>
-                    <li class='list-group-item'><span>2013年6月18日，获万宝龙国际艺术赞助大奖</span></li>
-                    
-                    <li class='list-group-item'><span>2010年，入围“免网杯”中国文艺网络奖最佳作家候选人</span></li>
-                    <li class='list-group-item'><span>2007年5月26日，获《小说月报》第十二届百花奖</span></li>
-                    <li class='list-group-item'><span>《炮打双灯》改编的同名电影获“夏威夷电影节”和“西班牙电影节”奖</span></li>
-                    <li class='list-group-item'><span>中篇小说《啊！》《神鞭》分别获得全国优秀短篇、优秀中篇小说奖</span></li>
-                    <li class='list-group-item'><span>《感谢生活》《挑山工》曾获法国“青年读物奖”，并获瑞士“蓝眼镜蛇奖”</span></li>
-                    
-                </ul>
-
-              </div>
-            </div>
-          </div>
         </div>
 
 
-        <div id="related_people_modal" style="padding: 20px;border-radius: 6px;display:none;position: fixed;left: 70%;top: 30%;z-index: 1005;width: 420px;background: #FFF none repeat scroll 0% 0%;border: 1px solid #999;max-height: 400px;overflow: auto;margin-left: -460px;font_family: "Microsoft YaHei UI";">
-    <h4 class="title" style="padding: 10px;border-bottom:solid 1px #999;padding-top: 0;"><a href="javascript:void(0)" class="Basicclose" id="close" style="float:right;">X</a><span id="modal_title">相关活动</span></h4>
-    <div class="m-wrap" id="related_people_detail" style="font-size:14px;margin-top:15px;">
         
-    </div>
 </div>
 
+<!-- 实际增长率 -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('gdp_growth'));
+       
+        var option = {
+        title : {
+            text: 'GDP相关指标',
+           
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['年实际增长率'],
+            x: '140'
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['2013年','2014年','2015年']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+               axisLabel : {
+                formatter: '{value} %'
+                }
+            }
+        ],
+        series : [
+            {
+                name:'年实际增长率',
+                type:'bar',
+                data:[4.2, 2.9, 3.8],
+                
+            }
+        ]
+    };
+      
+            myChart.setOption(option) ; 
+     
+</script>
+
+<!-- 人均gdp -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('gdp_renjun'));
+       
+        var option = {
+        title : {
+            text: 'GDP相关指标',
+           
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['人均GDP'],
+            x: '140'
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['2013年','2014年','2015年']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                axisLabel : {
+                    formatter: '{value} 美元'
+                }
+            }
+        ],
+        series : [
+            {
+                name:'人均GDP',
+                type:'bar',
+                data:[19500, 19900, 20400],
+                
+            }
+        ]
+    };
+      
+            myChart.setOption(option) ; 
+     
+</script>
+
+<!-- 购买力平价 -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('gdp_ppp'));
+       
+        var option = {
+        title : {
+            text: 'GDP相关指标',
+           
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['购买力平价(PPP)'],
+            x: '140'
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['2013年','2014年','2015年']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                axisLabel : {
+                    formatter: '{value} 美元'
+                }
+            }
+        ],
+        series : [
+            {
+                name:'购买力平价(PPP)',
+                type:'bar',
+                data:[1.589, 1.53, 1.48],
+                
+            }
+        ]
+    };
+      
+            myChart.setOption(option) ; 
+     
+</script>
+
+<!-- 国民储蓄总额占比 -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('gdp_chuxu'));
+       
+        var option = {
+        title : {
+            text: 'GDP相关指标',
+           
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['国民储蓄总额占比'],
+            x: '140'
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['2013年','2014年','2015年']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                axisLabel : {
+                    formatter: '{value} %'
+                }
+            }
+        ],
+        series : [
+            {
+                name:'国民储蓄总额占比',
+                type:'bar',
+                data:[15.6, 14.7, 12.9],
+                
+            }
+        ]
+    };
+      
+            myChart.setOption(option) ; 
+     
+</script>
+
+<!-- GDP构成按用途 -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('gdp_anyongtu'));
+       
+        var option = {
+                title : {
+                    text: 'GDP构成——按用途',
+                    subtext: '数据：2015年',
+                    x: '100'
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient : 'vertical',
+                    x : 'left',
+                    data:['家庭消费','政府消费','固定资本投资','库存投资','商品和服务出口','商品和服务进口']
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType : {
+                            show: true, 
+                            type: ['pie', 'funnel'],
+                            option: {
+                                funnel: {
+                                    x: '25%',
+                                    width: '50%',
+                                    funnelAlign: 'left',
+                                    max: 1548
+                                }
+                            }
+                        },
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                series : [
+                    {
+                        name:'GDP构成——按用途',
+                        type:'pie',
+                        radius : '55%',
+                        center: ['60%', '60%'],
+                        data:[
+                            {value:68.2, name:'家庭消费'},
+                            {value:15.4, name:'政府消费'},
+                            {value:19.8, name:'固定资本投资'},
+                            {value:0, name:'库存投资'},
+                            {value:28.7, name:'商品和服务出口'},
+                            {value:-32.1, name:'商品和服务进口'}
+                        ]
+                    }
+                ]
+            };
+                                
+      
+            myChart.setOption(option) ; 
+     
+</script>
+
+<!-- GDP构成按产业 -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('gdp_anchanye'));
+       
+        var option = {
+                title : {
+                    text: 'GDP构成——按产业',
+                    subtext: '数据：2015年',
+                    x: '100'
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient : 'vertical',
+                    x : 'left',
+                    data:['农业','工业','服务业']
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType : {
+                            show: true, 
+                            type: ['pie', 'funnel'],
+                            option: {
+                                funnel: {
+                                    x: '25%',
+                                    width: '50%',
+                                    funnelAlign: 'left',
+                                    max: 1548
+                                }
+                            }
+                        },
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                series : [
+                    {
+                        name:'GDP构成——按产业',
+                        type:'pie',
+                        radius : '55%',
+                        center: ['60%', '60%'],
+                        data:[
+                            {value:8.1, name:'农业'},
+                            {value:27.7, name:'工业'},
+                            {value:64.2, name:'服务业'}
+                        ]
+                    }
+                ]
+            };
+                                
+      
+            myChart.setOption(option) ; 
+     
+</script>
+
+<!-- 进口合作伙伴 -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('jinkou'));
+       
+        var option = {
+                title : {
+                    text: '合作伙伴',
+                    subtext: '数据：2015年',
+                    x: '100'
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient : 'vertical',
+                    x : 'left',
+                    data:['德国','英国','伊拉克','意大利','美国','法国','其他']
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType : {
+                            show: true, 
+                            type: ['pie', 'funnel'],
+                            option: {
+                                funnel: {
+                                    x: '25%',
+                                    width: '50%',
+                                    funnelAlign: 'left',
+                                    max: 1548
+                                }
+                            }
+                        },
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                series : [
+                    {
+                        name:'合作伙伴',
+                        type:'pie',
+                        radius : '55%',
+                        center: ['60%', '60%'],
+                        data:[
+                            {value:9.3, name:'德国'},
+                            {value:7.3, name:'英国'},
+                            {value:5.9, name:'伊拉克'},
+                            {value:4.8, name:'意大利'},
+                            {value:4.5, name:'美国'},
+                            {value:4.1, name:'法国'},
+                            {value:64.2, name:'其他'}
+                        ]
+                    }
+                ]
+            };
+                                
+      
+            myChart.setOption(option) ; 
+     
+</script>
 
 {% endblock content %}
 
-{% block tail_js %}
-    <script src="/static/echarts/echarts.js"></script>
-    <script type="text/javascript">
-        var name = "{{ topic }}";
-        var subevent_id = "{{ subevent_id }}";
-        var topicid= "{{ topic_id }}";
-        cluster_eva_min_size = "{{ cluster_eva_min_size }}";
-        var vsm = "{{ vsm }}"
-        $('#act_href').click(function(){
-            window.open("/news/?query=" + name);
-        });
-        $('#commtent_href').click(function(){
-            window.open("/cluster/?query=" + name + "&subevent_id="+ subevent_id);
-        });
-        $('#relation_href').click(function(){
-            window.open("/news/network/?query=" + name);
-        });
-        </script>
-    <script src="/static/js/overview.js"></script>
-    <script>
-    function drawSubeventPie(data){
-        var pie_data = [];
-        var One_pie_data = {};
-        for (var d in data){ 
-            d = data[d];
-            One_pie_data = {'value': d["count"], 'name': d["name"] + d["count"]};
-            pie_data.push(One_pie_data);        
-        }
-
-        var option = {
-            title : {
-                text: '社会活动主题占比图',
-                x:'center', 
-                y: 'bottom',
-                textStyle:{
-                fontWeight:'lighter',
-                fontSize: 13,
-                }        
-            },
-            toolbox: {
-                show : true,
-                feature : {
-                    mark : {show: true},
-                    dataView : {show: true, readOnly: false},
-                    restore : {show: true},            
-                    saveAsImage : {show: true}
-                }
-            },
-            calculable : true,
-            series : [
-                {
-                    name:'访问来源',
-                    type:'pie',
-                    radius : '50%',
-                    center: ['50%', '50%'],
-                    roseType : 'area',
-                    data: pie_data
-                }
-            ]
-        };
-            require(
-            [
-                'echarts',
-                'echarts/chart/pie'
-            ],
-            function (echarts) {
-                var myChart = echarts.init(document.getElementById('subeventpie'));
-                myChart.setOption(option);
-            });
-    }
-    </script>
-
-{% endblock tail_js %}
