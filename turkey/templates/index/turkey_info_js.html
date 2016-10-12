@@ -1,0 +1,58 @@
+<!-- {% extends "turkey_info.html" %}
+{% block echarts_js %}
+
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('gdp'));
+       
+        var option = {
+            title : {
+                text: 'GDP实际增长率',
+                // subtext: '纯属虚构'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['GDP实际增长率']
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {show: true, type: ['line', 'bar']},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    boundaryGap : false,
+                    data : ['2013年','2014年','2015年']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    axisLabel : {
+                        formatter: '{value} %'
+                    }
+                }
+            ],
+            series : [
+                {
+                    name:'GDP实际增长率',
+                    type:'line',
+                    data:[4.2, 2.9, 3.8],
+                    
+                }
+            ]
+        };
+            myChart.setOption(option) ; 
+     
+</script>
+
+
+{% endblock echarts_js %} -->

@@ -142,9 +142,9 @@ Vcity.regExChiese = /([\u4E00-\u9FA5\uf900-\ufa2d]+)/;
 })();
 /* 城市HTML模板 */
 Vcity._template = [
-    '<p class="tip">热门城市(支持汉字/拼音)</p>',
+    '<p class="tip">热门国家(支持汉字/拼音)</p>',
     '<ul>',
-    '<li class="on">热门城市</li>',
+    '<li class="on">热门国家</li>',
     '<li>ABCDEFGH</li>',
     '<li>IJKLMNOP</li>',
     '<li>QRSTUVWXYZ</li>',

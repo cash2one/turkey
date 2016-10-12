@@ -39,19 +39,22 @@ def person_detail():
 def turkey_info():
     """进入土耳其信息展示页面
     """
-    topic_name = request.args.get('query', default_topic_name) # 话题名
-    topicid = em.getEventIDByName(topic_name)
-    module_name = u'人物概览分析'
-    subevent_id = request.args.get('subevent_id', 'global')
-    cluster_num = request.args.get('cluster_num', default_cluster_num)
-    cluster_eva_min_size = request.args.get('cluster_eva_min_size', default_cluster_eva_min_size)
-    vsm = request.args.get('vsm', default_vsm)
+    # topic_name = request.args.get('query', default_topic_name) # 话题名
+    # topicid = em.getEventIDByName(topic_name)
+    # module_name = u'人物概览分析'
+    # subevent_id = request.args.get('subevent_id', 'global')
+    # cluster_num = request.args.get('cluster_num', default_cluster_num)
+    # cluster_eva_min_size = request.args.get('cluster_eva_min_size', default_cluster_eva_min_size)
+    # vsm = request.args.get('vsm', default_vsm)
 
-    return render_template("index/turkey_info.html",module_name=module_name, topic=topic_name, topic_id=topicid, subevent_id=subevent_id, \
-            cluster_num=cluster_num, cluster_eva_min_size=cluster_eva_min_size, \
-            vsm=vsm)
+    # return render_template("index/turkey_info.html",module_name=module_name, topic=topic_name, topic_id=topicid, subevent_id=subevent_id, \
+    #         cluster_num=cluster_num, cluster_eva_min_size=cluster_eva_min_size, \
+    #         vsm=vsm)
+    return render_template("index/turkey_info.html")
 
-
+@mod.route('/map/')
+def interview_map():
+    return render_template('index/map.html')
 
 @mod.route('/alert/')
 def alert():
@@ -2956,3 +2959,17 @@ def cluster_comments():
         data[1].sort(key=lambda c:c[sort_by], reverse=True)
 
     return json.dumps(cluster_comments)
+
+
+@mod.route('/emergency/')
+def emergency():
+    """返回话题管理页面
+    """
+    #topic_name = request.args.get('query', default_topic_name) # 国家名
+    return render_template('index/emergency.html')
+
+@mod.route('/turkey_emergency/')
+def turkey_emergency():
+    """返回话题管理页面
+    """
+    return render_template('index/turkey_emergency.html')
