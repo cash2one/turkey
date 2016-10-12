@@ -1,4 +1,4 @@
-{% extends "turkey_base.html" %}
+{% extends "base.html" %}
 {% block module_title %}人物概览{% endblock %}
 
 {% block head_css %}
@@ -10,8 +10,12 @@
 
 {% block head_js %}
 	<script src="../../static/js/jquery-1.9.1.min.js"></script>
-	<!-- <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script> -->
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="../../static/js/bootstrap.min.js"></script>
+<!-- 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+
 	<script type="text/javascript" src="../../static/js/echarts.js"></script>
 	<script type="text/javascript" src="../../static/js/echarts-all.js"></script>
 
@@ -23,7 +27,14 @@
     text-decoration: underline;
 	}
 </style> -->
-
+<script type="text/javascript">
+	$(function () { $('#collapseFour').collapse({
+		toggle: false
+	})});
+	$(function () { $('#collapseTwo').collapse('show')});
+	$(function () { $('#collapseThree').collapse('toggle')});
+	$(function () { $('#collapseOne').collapse('hide')});
+</script>  
 {% block content %} 
 <!-- <div class="panel panel-primary" style="margin-top:80px;margin-left: 2.5%;width: 95%; ">
     <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
@@ -153,140 +164,126 @@
 
 				    <div class="news_box" >
 				      <h4>
-				        <span><a>一带一路政策的基本介绍</a></span>
+				        <span style="color:#337ab7">一带一路政策的基本介绍</span>
 				      </h4>
 				      <div class="text_box">
-				        <p>埃塞俄比亚国家通讯社9日援引总理海尔马里亚姆的话说，为应对奥罗米亚地区民众示威引发的紧张局势，埃塞进入为期6个月的国家紧急状态。</p>
+				        <p>丝绸之路经济带和21世纪海上丝绸之路，简称“一带一路”[1]，是由中国共产党中央委员会总书记习近平于2013年9月和10月分别提出的经济合作概念[2]，属于跨国经济带。中华人民共和国国务院总理李克强在亚洲和欧洲访问时进一步推广[3]，并写进总理政府工作报告中[4]，成为中华人民共和国对外的主要经济战略。目前已有60国家和国际组织响应一带一路。[来源请求]这些国家的总人口约44亿，经济总量约21万亿美元，分别占全世界的63%和29%......</p>
 				        <h5>
-				          <a href="" target="_blank">查看详情</a>
+				          <a href="https://zh.wikipedia.org/wiki/%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF%E7%BB%8F%E6%B5%8E%E5%B8%A6%E5%92%8C21%E4%B8%96%E7%BA%AA%E6%B5%B7%E4%B8%8A%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF#cite_note-10" target="_blank">查看详情</a>
 				          
 				        </h5>
+				       
+				      </div>
+				    </div>
+
+				    <div class="news_box" style="border-top:1px solid #ddd">
+				      <h4>
+				        <span style="color:#337ab7">一带一路官方文件</span>
+				      </h4>
+				      <div class="text_box">
+				        <p>2015年3月28日，国务院授权国家发改委、外交部、商务部等三部委联合发布“一带一路”建设的愿景与行动文件。</p>
 				        <h5>
-				          <i>2016-10-09 16：30</i>
-				          &nbsp;&nbsp;来源：央视新闻
+				          <a href="http://www.gov.cn/xinwen/2015-03/28/content_2839723.htm" target="_blank">查看详情</a>
+				          
+				        </h5>
+				        
+				      </div>
+				    </div>
+
+				    <div class="news_box" style="border-top:1px solid #ddd">
+				      <h4>
+				        <span style="color:#337ab7">一带一路框架思路</span>
+				      </h4>
+				      <div class="text_box">
+				        <p>「一帶一路」將通過五個走向貫穿亞歐非大陸。當中絲綢之路經濟帶重點暢通(1)中國經中亞、俄羅斯至歐洲；(2)中國經中亞、西亞至中東、地中海；(3)中國至東南亞、南亞、印度洋。而21世紀海上絲綢之路則重點(4)從中國沿海港口過南海到印度洋，延伸至歐洲；和(5)從中國沿海港口過南海到南太平洋......</p>
+				        <h5>
+				          <a href="http://beltandroad.hktdc.com/tc/about-the-belt-and-road-initiative/about-the-belt-and-road-initiative.aspx" target="_blank">查看详情</a>
+				          
 				        </h5>
 				      </div>
 				    </div>
 
 				    <div class="news_box" style="border-top:1px solid #ddd">
 				      <h4>
-				        <span><a>周本顺涉嫌受贿案 杨栋梁涉嫌受贿贪污案：检察机关依法对两案提起公诉</a></span>
+				        <span style="color:#337ab7">一带一路国家概况</span>
 				      </h4>
 				      <div class="text_box">
-				        <p>埃塞俄比亚国家通讯社9日援引总理海尔马里亚姆的话说，为应对奥罗米亚地区民众示威引发的紧张局势，埃塞进入为期6个月的国家紧急状态。</p>
+				        <p>提供了 ｢一帶一路｣ 沿線六十多個國家及地區的貿易、經濟概況及投資政策......</p>
 				        <h5>
-				          <a href="" target="_blank">查看详情</a>
+				          <a href="http://beltandroad.hktdc.com/tc/country-profiles/country-profiles.aspx">查看详情</a>
 				          
-				        </h5>
-				        <h5>
-				          <i>2016-10-09 16：30</i>
-				          &nbsp;&nbsp;来源：央视新闻
 				        </h5>
 				      </div>
 				    </div>
 
 				    <div class="news_box" style="border-top:1px solid #ddd">
 				      <h4>
-				        <span><a>周本顺涉嫌受贿案 杨栋梁涉嫌受贿贪污案：检察机关依法对两案提起公诉</a></span>
+				        <span style="color:#337ab7">从中国到土耳其：一带一路政策的契机与挑战</span>
 				      </h4>
 				      <div class="text_box">
-				        <p>埃塞俄比亚国家通讯社9日援引总理海尔马里亚姆的话说，为应对奥罗米亚地区民众示威引发的紧张局势，埃塞进入为期6个月的国家紧急状态。</p>
+				        <p>2014年中國最高領導人習近平正式提出「一帶一路」政策，「一帶一路」分別由「絲綢之路經濟帶」與「海上絲綢之路」組成，貫穿南亞、中亞、中東直到歐洲。在一帶一路政策中，位於歐亞交界的土耳其扮演著相當重要的角色，對於中國「一帶一路，互利共生」的美麗夢想，土耳其打著什麼算盤？中土之間又有著什麼不可忽略的疙瘩？</p>
 				        <h5>
-				          <a href="" target="_blank">查看详情</a>
+				          <a href="http://global.udn.com/global_vision/story/8663/1338888">查看详情</a>
 				          
 				        </h5>
-				        <h5>
-				          <i>2016-10-09 16：30</i>
-				          &nbsp;&nbsp;来源：央视新闻
-				        </h5>
 				      </div>
 				    </div>
-
-				    <div class="sns_box" style="border-top:1px solid #ddd">
-				      <div class="sns_user">
-				        <img src="/static/img/sns_1.png"/>
-				        <h4>王天明</h4>
-				        <span>2016-10-09 10:00</span>
-				      </div>
-				      <div class="text_box">
-				        <p>Got many Asian stuff today that makes me homesick, especially the fan seem like my granny's</p>
-				        <h5>
-				         来源：facebook
-				        </h5>
-				      </div>
-				    </div>
-
-				    <div class="sns_box" style="border-top:1px solid #ddd">
-				      <div class="sns_user">
-				        <img src="/static/img/sns_1.png"/>
-				        <h4>王天明</h4>
-				        <span>2016-10-09 10:00</span>
-				      </div>
-				      <div class="text_box">
-				        <p>Got many Asian stuff today that makes me homesick, especially the fan seem like my granny's</p>
-				        <h5>
-				          来源：facebook
-				        </h5>
-				      </div>
-				    </div>
-
-				    <div class="sns_box" style="border-top:1px solid #ddd">
-				      <div class="sns_user">
-				        <img src="/static/img/sns_1.png"/>
-				        <h4>王天明</h4>
-				        <span>2016-10-09 10:00</span>
-				      </div>
-				      <div class="text_box">
-				        <p>Got many Asian stuff today that makes me homesick, especially the fan seem like my granny's</p>
-				        <h5>
-				          来源：facebook
-				        </h5>
-				      </div>
-				    </div>    
+				      
 				  </div>
 			</div>
 		</div>
-
     </div>
 </div>
 
 <div class="panel panel-primary" style="margin-top:10px;margin-left: 2.5%;width: 95%; ">
+
     <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
         <h3 class="panel-title">安保评估</h3>
     </div>
-    <div class="panel-body">
-    	<div class="panel-body" style="margin-top:-15px;">
-    	<ul id="myTab" class="nav nav-tabs">
-			<li class="active">
-				<a href="#reactionary" data-toggle="tab">
-					反动情况
-				</a>
-			</li>
-			<li>
-				<a href="#local_power" data-toggle="tab">地方力量情况</a>
-			</li>
 
-			<li>
-				<a href="#security_incident" data-toggle="tab">近期安全事件</a>
-			</li>
-			
-		</ul>
+    <div class="panel-body" style="margin-top:-15px;">
+    	<!-- <div class="panel-body" > -->
+	    	<ul id="myTab" class="nav nav-tabs">
+				<li class="active">
+					<a href="#reactionary" data-toggle="tab">
+						反动情况
+					</a>
+				</li>
+
+				<li>
+					<a href="#security_incident" data-toggle="tab">近期安全事件</a>
+				</li>
+				
+			</ul>
+
     	<div id="myTabContent" class="tab-content">
-			<div class="tab-pane fade in active" id="reactionary">
-				<!-- <iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d6383616.992675474!2d30.696190404289105!3d38.625869907953465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2z5Zyf6ICz5YW2!5e0!3m2!1szh-CN!2scn!4v1476155526026" width="900" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+
+    		
+			<!-- 地图 -->
+			<div class="tab-pane fade in active" id="reactionary" style="float:left;margin-left:50px;">
+				<!---->
+				<div class="btn-group-vertical" style="float:left;margin-top:50px;">
+					<button type="button" class="btn btn-default">极端组织</button>
+					<button type="button" class="btn btn-default">反华势力</button>
+					<button type="button" class="btn btn-default">地方力量</button>				
+				</div>
+
+				<iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d6383616.992675474!2d30.696190404289105!3d38.625869907953465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2z5Zyf6ICz5YW2!5e0!3m2!1szh-CN!2scn!4v1476155526026" width="950" height="480" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
-			<div class="tab-pane fade" id="local_power">
+
+
+			<!-- <div class="tab-pane fade" id="local_power">
 				<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
 					TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
-			</div>
+			</div> -->
 
 			<div class="tab-pane fade" id="security_incident">
 					
-					 <div class="news_box" style="border-top:1px solid #ddd">
+				<div class="news_box" style="border-top:1px solid #ddd">
 				      <h4>
-				        <span><a>“库尔德自由之鹰”宣称制造伊斯坦布尔汽车炸弹袭击事件</a></span>
+				        <span style="color:#337ab7">“库尔德自由之鹰”宣称制造伊斯坦布尔汽车炸弹袭击事件</span>
 				      </h4>
-				      <div class="text_box">
+				    <div class="text_box">
 				        <p>新华社伊斯坦布尔６月１０日电（记者易爱军）“库尔德自由之鹰”组织１０日宣称制造了土耳其最大城市伊斯坦布尔７日发生的汽车炸弹袭击事件。“库尔德自由之鹰”在推特上发表声明说，袭击由该组织一个行动小组实施。一辆防暴警察乘坐的大巴７日上午在伊斯坦布尔法蒂赫区遭汽车炸弹袭击，造成包括６名警察在内的１１人死亡、３６人受伤。最近数月，土耳其境内恐怖袭击频发，伊斯坦布尔和安卡拉等城市已发生多起自杀式爆炸袭击，造成重大人员伤亡。</p>
 				        <h5>
 				          <a href="http://news.xinhuanet.com/world/2016-06/10/c_1119019672.htm" target="_blank">查看详情</a>
@@ -297,12 +294,12 @@
 				          &nbsp;&nbsp;来源：新华社
 				        </h5>
 				      </div>
-				    </div>
+				</div>
 
 
 				     <div class="news_box" style="border-top:1px solid #ddd">
 				      <h4>
-				        <span><a>灰狼组织抗议俄叙内战</a></span>
+				        <span style="color:#337ab7">灰狼组织抗议俄叙内战</span>
 				      </h4>
 				      <div class="text_box">
 				        <p>灰狼组织在伊斯坦布尔俄罗斯领事馆附近抗议俄罗斯参与叙利亚内战。他们指责俄罗斯屠宰叙利亚土库曼人。</p>
@@ -320,7 +317,7 @@
 
 				    <div class="news_box" style="border-top:1px solid #ddd">
 				      <h4>
-				        <span><a>中国规定遭极端组织抗议</a></span>
+				        <span style="color:#337ab7">中国规定遭极端组织抗议</span>
 				      </h4>
 				      <div class="text_box">
 				        <p>灰狼组织在土耳其伊斯坦布尔举行抗议活动，抗议“中国政府禁止维吾尔人于斋戒月敬拜及斋戒”。该组织烧毁中国国旗，袭击中国餐馆，伤害了误认为是中国人的韩国游客。</p>
@@ -337,7 +334,7 @@
 
 				    <div class="news_box" style="border-top:1px solid #ddd">
 				      <h4>
-				        <span><a>土耳其办事处遭袭击</a></span>
+				        <span style="color:#337ab7">土耳其办事处遭袭击</span>
 				      </h4>
 				      <div class="text_box">
 				        <p>2015年9月7-8日土耳其民族主义者，包括灰狼组织的成员，袭击了亲库尔德人民民主党（HDP）在土耳其的128个办事处。</p>
@@ -354,7 +351,7 @@
 				   
 				    <div class="news_box" style="border-top:1px solid #ddd">
 				      <h4>
-				        <span><a>中国公民于土耳其遭遇绑架</a></span>
+				        <span style="color:#337ab7">中国公民于土耳其遭遇绑架</span>
 				      </h4>
 				      <div class="text_box">
 				        <p>3名中国工程师在土耳其东南部被库尔德工人党绑架。</p>
@@ -371,10 +368,12 @@
 
 				    
 			</div>
+
 		</div>
 
     </div>
-    </div>
+    <!-- </div> -->
+
 </div>
 
 <div class="panel panel-primary" style="margin-top:10px;margin-left: 2.5%;width: 95%; ">
@@ -382,56 +381,139 @@
         <h3 class="panel-title">历史出访</h3>
     </div>
 
-    <div class="news_box" style="border-top:1px solid #ddd">
-		<h4>
-			<span><a>习近平出席第十次峰会</a></span>
-		</h4>
+    <!--第一条出访信息-->
+    <div class="news_box" style="border-top:1px solid #ddd;width: 96%;margin-left: 2%;">
+		
+
 		<div class="text_box">
-			<p>土耳其安塔利亚，国家主席习近平，应土耳其共和国总统埃尔多安邀请，出席二十国集团领导人第十次峰会。</p>
+			<h4>
+			<span style="color:#337ab7">习近平出席第十次峰会</span>
+		    </h4>
+			<p>土耳其安塔利亚，国家主席习近平，应土耳其共和国总统埃尔多安邀请，出席二十国集团领导人第十次峰会......</p>
 			<h5>
 				<a href="http://www.xinhuanet.com/world/xjpcf201202/" target="_blank">查看详情</a>
-				          
 			</h5>
+			
+		</div>
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1" style="float:left;margin-top: -40px;margin-left: 800px;height: 30px;line-height: 2px;">查看此事件媒体反映
+		</button>
+		
+	</div>
+
+    <!--第2条出访信息-->
+	<div class="news_box" style="border-top:1px solid #ddd;width: 96%;margin-left: 2%;">
+		<h4>
+			<span style="color:#337ab7">习近平访问土耳其</span>
+		</h4>
+
+		<div class="text_box">
+			<p>应土耳其总统居尔邀请，国家副主席习近平当地时间２０日晚抵达安卡拉，开始对土耳其进行正式访问......</p>
 			<h5>
-				<i>2015-11</i>
-				&nbsp;&nbsp;来源：新华网
-			</h5>
-			</div>
+				<a href="http://news.xinhuanet.com/world/2012-02/21/c_122729502.htm" target="_blank">查看详情</a>				          
+			</h5>		
 		</div>
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2" style="float:left;margin-top: -40px;margin-left: 800px;height: 30px;line-height: 2px;">查看此事件媒体反映
+		</button>
+	</div>
 
 
 
+	<!--模态框-查看历史出访1媒体反映-->
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						媒体对此出访事件的反映
+					</h4>
+				</div>
+				<!--模态框1的详细信息-->
+				<div class="modal-body">
+
+					<div class="news_box" >
+				      <h4>
+				        <span style="color:#337ab7">一带一路政策的基本介绍</span>
+				      </h4>
+				      <div class="text_box">
+				        <p>
+				        	
+				        </p>
+				        <h5>
+				          <a href="https://zh.wikipedia.org/wiki/%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF%E7%BB%8F%E6%B5%8E%E5%B8%A6%E5%92%8C21%E4%B8%96%E7%BA%AA%E6%B5%B7%E4%B8%8A%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF#cite_note-10" target="_blank">查看详情</a>
+				          
+				        </h5>
+				       
+				      </div>
+				    </div>
 
 
-    <!-- <div class="panel-body">
-    	<div class="panel-body">
-    	<div class="panel-body" style="margin-top:-15px;">
-    	<ul id="myTab" class="nav nav-tabs">
-			<li class="active">
-				<a href="#history" data-toggle="tab">
-					历史出访详细信息
-				</a>
-			</li>
-			<li>
-				<a href="#outside" data-toggle="tab">外界响应</a>
-			</li>
+				</div>
 
-			
-			
-		</ul>
-    	<div id="myTabContent" class="tab-content">
-			<div class="tab-pane fade in active" id="history">
-				<p>W3Cschoool菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
-			</div>
-			<div class="tab-pane fade" id="outside">
-				<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
-					TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
-			</div>
-			
-		</div>
+				<div class="modal-body">
 
-    </div> -->
-    </div>
+					<div class="news_box" >
+				      <h4>
+				        <span style="color:#337ab7">一带一路政策的基本介绍</span>
+				      </h4>
+				      <div class="text_box">
+				        <p>
+				        	
+				        </p>
+				        <h5>
+				          <a href="https://zh.wikipedia.org/wiki/%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF%E7%BB%8F%E6%B5%8E%E5%B8%A6%E5%92%8C21%E4%B8%96%E7%BA%AA%E6%B5%B7%E4%B8%8A%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF#cite_note-10" target="_blank">查看详情</a>
+				          
+				        </h5>
+				       
+				      </div>
+				    </div>
+
+
+				</div>
+
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<!-- <button type="button" class="btn btn-primary">
+						提交更改
+					</button> -->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+
+
+	<!--模态框-查看历史出访2媒体反映-->
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						媒体对此出访事件的反映
+					</h4>
+				</div>
+				<div class="modal-body">
+					在这里添加一些文本
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<!-- <button type="button" class="btn btn-primary">
+						提交更改
+					</button> -->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+
+
+</div>
 </div>
 
 <script type="text/javascript">
