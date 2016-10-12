@@ -1,0 +1,65 @@
+#myTab{
+	height: 42px;
+    display: block;
+    background-color: #EFEFEF;
+    border-radius: 5px 5px 0px 0px;
+}
+#myTab li:hover{
+    color: #ff8500;
+    background-color: #fff;
+}
+#myTab li{
+	display: block;
+	line-height: 38px;
+	height: 38px;
+    float: left;s
+	font-size: 16px;
+	text-decoration: none;
+	color: #3e3e3e;
+	text-align: center;
+	cursor: pointer;
+}
+#eventprofile h2{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	line-height: 80px;
+	background-color: #ff8400;
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+	margin-left: 10px;
+}
+.float_l {
+    float: left;
+}
+#eventprofile .sz{
+	float: left;
+    margin: 15px 5px;
+}
+#eventprofile .line{
+	display: block;
+	width: 2px;
+	height: 100%;
+	background: #ff8400;
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	left: 50px;
+}
+#eventprofile .round{
+	display: block;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	-moz-border-radius: 22px;
+	-webkit-border-radius: 22px;
+	border-radius: 22px;
+	border: solid 1px #ff8400;
+	background-color: #ff8400;
+	position: absolute;
+	z-index: 2;
+	top: 42px;
+	left: 43px;
+}
