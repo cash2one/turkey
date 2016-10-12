@@ -236,54 +236,46 @@
 </div>
 
 <div class="panel panel-primary" style="margin-top:10px;margin-left: 2.5%;width: 95%; ">
-
     <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
         <h3 class="panel-title">安保评估</h3>
     </div>
+    <div class="panel-body">
+    	<div class="panel-body" style="margin-top:-15px;">
+    	<ul id="myTab" class="nav nav-tabs">
+			<li class="active">
+				<a href="#reactionary" data-toggle="tab">
+					反动情况
+				</a>
+			</li>
+			<li>
+				<a href="#local_power" data-toggle="tab">地方力量情况</a>
+			</li>
 
-    <div class="panel-body" style="margin-top:-15px;">
-    	<!-- <div class="panel-body" > -->
-	    	<ul id="myTab" class="nav nav-tabs">
-				<li class="active">
-					<a href="#reactionary" data-toggle="tab">
-						反动情况
-					</a>
-				</li>
-
-				<li>
-					<a href="#security_incident" data-toggle="tab">近期安全事件</a>
-				</li>
-				
-			</ul>
-
+			<li>
+				<a href="#security_incident" data-toggle="tab">近期安全事件</a>
+			</li>
+			
+		</ul>
     	<div id="myTabContent" class="tab-content">
 
-    		
-			<!-- 地图 -->
-			<div class="tab-pane fade in active" id="reactionary" style="float:left;margin-left:50px;">
+			<div class="tab-pane fade in active" id="reactionary">
 				<!---->
-				<div class="btn-group-vertical" style="float:left;margin-top:50px;">
-					<button type="button" class="btn btn-default">极端组织</button>
-					<button type="button" class="btn btn-default">反华势力</button>
-					<button type="button" class="btn btn-default">地方力量</button>				
-				</div>
-
-				<iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d6383616.992675474!2d30.696190404289105!3d38.625869907953465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2z5Zyf6ICz5YW2!5e0!3m2!1szh-CN!2scn!4v1476155526026" width="950" height="480" frameborder="0" style="border:0" allowfullscreen></iframe>
+				<iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d6383616.992675474!2d30.696190404289105!3d38.625869907953465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2z5Zyf6ICz5YW2!5e0!3m2!1szh-CN!2scn!4v1476155526026" width="900" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
 
 
-			<!-- <div class="tab-pane fade" id="local_power">
+			<div class="tab-pane fade" id="local_power">
 				<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
 					TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
-			</div> -->
+			</div>
 
 			<div class="tab-pane fade" id="security_incident">
 					
-				<div class="news_box" style="border-top:1px solid #ddd">
+					 <div class="news_box" style="border-top:1px solid #ddd">
 				      <h4>
 				        <span style="color:#337ab7">“库尔德自由之鹰”宣称制造伊斯坦布尔汽车炸弹袭击事件</span>
 				      </h4>
-				    <div class="text_box">
+				      <div class="text_box">
 				        <p>新华社伊斯坦布尔６月１０日电（记者易爱军）“库尔德自由之鹰”组织１０日宣称制造了土耳其最大城市伊斯坦布尔７日发生的汽车炸弹袭击事件。“库尔德自由之鹰”在推特上发表声明说，袭击由该组织一个行动小组实施。一辆防暴警察乘坐的大巴７日上午在伊斯坦布尔法蒂赫区遭汽车炸弹袭击，造成包括６名警察在内的１１人死亡、３６人受伤。最近数月，土耳其境内恐怖袭击频发，伊斯坦布尔和安卡拉等城市已发生多起自杀式爆炸袭击，造成重大人员伤亡。</p>
 				        <h5>
 				          <a href="http://news.xinhuanet.com/world/2016-06/10/c_1119019672.htm" target="_blank">查看详情</a>
@@ -294,7 +286,7 @@
 				          &nbsp;&nbsp;来源：新华社
 				        </h5>
 				      </div>
-				</div>
+				    </div>
 
 
 				     <div class="news_box" style="border-top:1px solid #ddd">
@@ -368,12 +360,10 @@
 
 				    
 			</div>
-
 		</div>
 
     </div>
-    <!-- </div> -->
-
+    </div>
 </div>
 
 <div class="panel panel-primary" style="margin-top:10px;margin-left: 2.5%;width: 95%; ">
@@ -381,45 +371,55 @@
         <h3 class="panel-title">历史出访</h3>
     </div>
 
-    <!--第一条出访信息-->
     <div class="news_box" style="border-top:1px solid #ddd;width: 96%;margin-left: 2%;">
-		
-
-		<div class="text_box">
-			<h4>
-			<span style="color:#337ab7">习近平出席第十次峰会</span>
-		    </h4>
-			<p>土耳其安塔利亚，国家主席习近平，应土耳其共和国总统埃尔多安邀请，出席二十国集团领导人第十次峰会......</p>
-			<h5>
-				<a href="http://www.xinhuanet.com/world/xjpcf201202/" target="_blank">查看详情</a>
-			</h5>
-			
-		</div>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1" style="float:left;margin-top: -40px;margin-left: 800px;height: 30px;line-height: 2px;">查看此事件媒体反映
-		</button>
-		
-	</div>
-
-    <!--第2条出访信息-->
-	<div class="news_box" style="border-top:1px solid #ddd;width: 96%;margin-left: 2%;">
 		<h4>
-			<span style="color:#337ab7">习近平访问土耳其</span>
+			<span style="color:#337ab7">习近平出席第十次峰会</span>
 		</h4>
 
 		<div class="text_box">
-			<p>应土耳其总统居尔邀请，国家副主席习近平当地时间２０日晚抵达安卡拉，开始对土耳其进行正式访问......</p>
+			<p>土耳其安塔利亚，国家主席习近平，应土耳其共和国总统埃尔多安邀请，出席二十国集团领导人第十次峰会。</p>
 			<h5>
-				<a href="http://news.xinhuanet.com/world/2012-02/21/c_122729502.htm" target="_blank">查看详情</a>				          
-			</h5>		
+				<a href="http://www.xinhuanet.com/world/xjpcf201202/" target="_blank">查看详情</a>				          
+			</h5>
+			
+			<!-- <h5>
+				<i>2015-11</i>
+				&nbsp;&nbsp;来源：新华网
+			</h5> -->
+			
 		</div>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2" style="float:left;margin-top: -40px;margin-left: 800px;height: 30px;line-height: 2px;">查看此事件媒体反映
-		</button>
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">查看此事件媒体反映
+			</button>
+		
+
+	</div>
+
+	<div class="news_box" style="border-top:1px solid #ddd;width: 96%;margin-left: 2%;">
+		<h4>
+			<span style="color:#337ab7">习近平出席第十次峰会</span>
+		</h4>
+
+		<div class="text_box">
+			<p>土耳其安塔利亚，国家主席习近平，应土耳其共和国总统埃尔多安邀请，出席二十国集团领导人第十次峰会。</p>
+			<h5>
+				<a href="http://www.xinhuanet.com/world/xjpcf201202/" target="_blank">查看详情</a>				          
+			</h5>
+			<!-- <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">查看此事件媒体反映
+			</button> -->
+			<!-- <h5>
+				<i>2015-11</i>
+				&nbsp;&nbsp;来源：新华网
+			</h5> -->
+			
+		</div>
+		
+
 	</div>
 
 
 
-	<!--模态框-查看历史出访1媒体反映-->
-	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<!--模态框-查看历史出访媒体反映-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -427,75 +427,7 @@
 						&times;
 					</button>
 					<h4 class="modal-title" id="myModalLabel">
-						媒体对此出访事件的反映
-					</h4>
-				</div>
-				<!--模态框1的详细信息-->
-				<div class="modal-body">
-
-					<div class="news_box" >
-				      <h4>
-				        <span style="color:#337ab7">一带一路政策的基本介绍</span>
-				      </h4>
-				      <div class="text_box">
-				        <p>
-				        	
-				        </p>
-				        <h5>
-				          <a href="https://zh.wikipedia.org/wiki/%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF%E7%BB%8F%E6%B5%8E%E5%B8%A6%E5%92%8C21%E4%B8%96%E7%BA%AA%E6%B5%B7%E4%B8%8A%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF#cite_note-10" target="_blank">查看详情</a>
-				          
-				        </h5>
-				       
-				      </div>
-				    </div>
-
-
-				</div>
-
-				<div class="modal-body">
-
-					<div class="news_box" >
-				      <h4>
-				        <span style="color:#337ab7">一带一路政策的基本介绍</span>
-				      </h4>
-				      <div class="text_box">
-				        <p>
-				        	
-				        </p>
-				        <h5>
-				          <a href="https://zh.wikipedia.org/wiki/%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF%E7%BB%8F%E6%B5%8E%E5%B8%A6%E5%92%8C21%E4%B8%96%E7%BA%AA%E6%B5%B7%E4%B8%8A%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF#cite_note-10" target="_blank">查看详情</a>
-				          
-				        </h5>
-				       
-				      </div>
-				    </div>
-
-
-				</div>
-
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
-					</button>
-					<!-- <button type="button" class="btn btn-primary">
-						提交更改
-					</button> -->
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal -->
-	</div>
-
-
-	<!--模态框-查看历史出访2媒体反映-->
-	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-						&times;
-					</button>
-					<h4 class="modal-title" id="myModalLabel">
-						媒体对此出访事件的反映
+						模态框（Modal）标题
 					</h4>
 				</div>
 				<div class="modal-body">
@@ -504,14 +436,13 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
 					</button>
-					<!-- <button type="button" class="btn btn-primary">
+					<button type="button" class="btn btn-primary">
 						提交更改
-					</button> -->
+					</button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal -->
 	</div>
-
 
 </div>
 </div>
