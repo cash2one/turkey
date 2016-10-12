@@ -49,7 +49,9 @@ def turkey_info():
     #         vsm=vsm)
     return render_template("index/turkey_info.html")
 
-
+@mod.route('/map/')
+def interview_map():
+    return render_template('index/map.html')
 
 @mod.route('/alert/')
 def alert():
