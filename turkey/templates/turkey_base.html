@@ -395,11 +395,8 @@
                      <!-- 选择其他国家 -->
                       <input type="text" class="cityinput" id="citySelect" value="土耳其" style="margin-left: -70%;color:#ffffff">
                       <br/>
-                      <script src="/static/js/citySelector.js" type="text/javascript"></script>
-                        <script type="text/javascript">
-                            var test=new Vcity.CitySelector({input:'citySelect'});
-                            var test2=new Vcity.CitySelector({input:'citySelect1'});
-                        </script>
+                     <!--  <script src="/static/js/citySelector.js" type="text/javascript"></script> -->
+                        
 
                        
                     </form>
@@ -462,10 +459,15 @@
 
 {% endblock navbar %}
 
-
+   
     <script src='/static/js/jquery.js'></script>
 
     <script src="/static/js/index.js"></script>
+    <script src="/static/js/citySelector.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var test=new Vcity.CitySelector({input:'citySelect'});
+    var test2=new Vcity.CitySelector({input:'citySelect1'});
+    </script>
 </body>
 </html>
 
