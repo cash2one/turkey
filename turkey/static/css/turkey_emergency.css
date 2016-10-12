@@ -91,3 +91,55 @@
     width: 100%;
     word-break: break-all;
 }
+.editBox {
+    width: 100%;
+    display: none;
+    font-size: 14px;
+    position: initial;
+}
+.text {
+    position: relative;
+    margin-bottom: 0 !important;
+}
+#eventprofile .text2 {
+    width: 850px;
+}
+#eventprofile .text {
+    line-height: 20px;
+    width: 85%;
+    margin-top: 13px;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    padding: 5px 10px;
+    margin-left: 70px;
+    background-color: #EDEDED;
+    border-radius: 5px;
+    min-height: 60px;
+    position: relative;
+}
+.roundEnd {
+    display: block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    -moz-border-radius: 32px;
+    -webkit-border-radius: 32px;
+    border-radius: 32px;
+    border: solid 1px #ff8400;
+    background-color: #ff8400;
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    bottom: -22px;
+    left: 34px;
+}
+.text::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: -10px;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #EDEDED;
+}
