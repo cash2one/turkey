@@ -42,6 +42,13 @@
             color: #FFF;
             border-color: #e4393c;
         }
+        .f-sort a.curr:hover{
+            background: #e4393c;
+            color: #FFF;
+            border-color: #e4393c;
+        }
+        
+
         .f-sort a:hover {
 		    position: relative;
 		    text-decoration: none;
