@@ -35,6 +35,8 @@ def interview_detail():
 def person_detail():
     return render_template('index/card/person_detail_president_now.html')
 
+
+
 @mod.route('/turkey_info/')
 def turkey_info():
     """进入土耳其信息展示页面

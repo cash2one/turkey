@@ -10,16 +10,32 @@
 
 {% block head_js %}
 	<script src="../../static/js/jquery-1.9.1.min.js"></script>
-	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="../../static/js/bootstrap.min.js"></script>
+	<!-- <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script> -->
+	<!-- <script src="../../static/js/bootstrap.min.js"></script> -->
 <!-- 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-
-
 	<script type="text/javascript" src="../../static/js/echarts.js"></script>
 	<script type="text/javascript" src="../../static/js/echarts-all.js"></script>
+	<script type="text/javascript" src="../../static/js/API.js"></script>
 
 {% endblock head_js %}
+
+<style type="text/css">
+			html {
+				height: 100%;
+			}
+			
+			body {
+				height: 50%;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			#container {
+				width: 900px;
+				height: 450px;
+			}
+		</style>
 <!-- <style type="text/css">
 	
 	#detail:hover {
@@ -27,14 +43,14 @@
     text-decoration: underline;
 	}
 </style> -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(function () { $('#collapseFour').collapse({
 		toggle: false
 	})});
 	$(function () { $('#collapseTwo').collapse('show')});
 	$(function () { $('#collapseThree').collapse('toggle')});
 	$(function () { $('#collapseOne').collapse('hide')});
-</script>  
+</script>   -->
 {% block content %} 
 <!-- <div class="panel panel-primary" style="margin-top:80px;margin-left: 2.5%;width: 95%; ">
     <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
@@ -85,7 +101,7 @@
 	                    </p>
 					<div>
 						<img id="zongtong_1_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-left: 1%;float: left;">
-						<p style="float: left;margin-left:10px;">塔伊普·埃尔多安</br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</br></br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="detail" href="" style="margin-top:5px;">查看更多详情</a></p>
+						<p style="float: left;margin-left:10px;">塔伊普·埃尔多安</br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</br></br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="detail" href="/news/turkey_info" style="margin-top:5px;">查看更多详情</a></p>
 
 					</div>
 
@@ -109,9 +125,53 @@
 						<div id="collapseOne" class="panel-collapse collapse in">
 							<div class="panel-body">
 								<div style="float:left;width:6px;height:25px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
-	                        <p class="personal_domain" style="font-size: 21px;"><b>政治局势</b>
+	                        	<p class="personal_domain" style="font-size: 21px;"><b>政治局势</b>
 	                        	<p style="font-size: 14px;margin-top: 20px;margin-left: 3%;line-height:2">    2015年下半年和2016年上半年，土耳其两个最大的城市和其他地方的恐怖主义暴力活动有所增加。 2015年10月在安卡拉发生了几次汽车炸弹和枪攻击，2015年2月和6月发生了两次攻击，其次是对伊斯坦布尔阿塔图尔克机场的袭击。 2016年7月15日，土耳其武装部队人员在安卡拉和伊斯坦布尔的关键政府和基础设施地点发动政变。</p>
-							</div>
+
+
+	                        	<div style="float:left;width:6px;height:25px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
+	                        	<p class="personal_domain" style="font-size: 21px;"><b>政治局势相关报道</b>
+
+
+	                        	 <div class="news_box" style="margin-left:35px;">
+							      <h4>
+							        <span style="color:#337ab7">土耳其政治经济安全局势四面楚歌，观察人士忧心忡忡</span>
+							      </h4>
+							      <div class="text_box">
+							        <p style="line-height:2">土耳其正面临新的安全问题。本周早些时候，土耳其安卡拉市中心发生了汽车炸弹爆炸事件，目前已造成至少28人死亡、61人受伤。这凸显了土耳其在国内外所面临的严峻挑战。专家担心，土耳其总统埃尔多安（Recep Tayyip Erdogan）领导的土耳其政府正遭受“四面夹击”：既不能致力于急需的经济改革，与库尔德民兵的战争硝烟再起，来自伊斯兰国势力的威胁日益上升，还有不断发酵的难民危机。最主要的，叙利亚战争正在其家门口开打。媒体评析称，土耳其最大的问题在于树敌太多......</p>
+							        <h5>
+							          <a href="http://finance.sina.com.cn/money/forex/hbfx/2016-02-19/doc-ifxprupc9496653.shtml" target="_blank">查看详情</a>
+							          
+							        </h5>
+							        <h5>
+							          <i>2016-02-19 18：20</i>
+							          &nbsp;&nbsp;来源：新浪新闻网
+							        </h5>
+							       
+							      </div>
+							    </div>
+
+							     	 <div class="news_box" style="margin-left:35px;border-top:1px solid #ddd">
+							      <h4>
+							        <span style="color:#337ab7">土耳其军事政变拨开了击落俄罗斯战机事件的疑云</span>
+							      </h4>
+							      <div class="text_box">
+							        <p style="line-height:2">去年11月24日，土耳其空军战斗机在土、叙边境击落俄罗斯的苏-24歼击轰炸机，堪称叙利亚战争中最具神秘色彩的一幕。事件引发俄罗斯与土耳其双边政治危机，两国最高领导人均发表了立场强硬的声明，采取了大规模的军事部署与经济制裁。</p>
+							        <h5>
+							          <a href="http://www.weidu8.net/wx/445044" target="_blank">查看详情</a>
+							          
+							        </h5>
+							        <h5>
+							          <i>2016-09-10</i>
+							          &nbsp;&nbsp;来源：中东研究通讯
+							        </h5>
+							       
+							      </div>
+							    </div>
+
+	                        	<!-- <p style="font-size: 14px;margin-top: 20px;margin-left: 3%;line-height:2">    2015年下半年和2016年上半年，土耳其两个最大的城市和其他地方的恐怖主义暴力活动有所增加。 2015年10月在安卡拉发生了几次汽车炸弹和枪攻击，2015年2月和6月发生了两次攻击，其次是对伊斯坦布尔阿塔图尔克机场的袭击。 2016年7月15日，土耳其武装部队人员在安卡拉和伊斯坦布尔的关键政府和基础设施地点发动政变。</p> -->
+								</div>
+
 						</div>
 					</div>
 
@@ -268,7 +328,91 @@
 					<button type="button" class="btn btn-default">地方力量</button>				
 				</div>
 
-				<iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d6383616.992675474!2d30.696190404289105!3d38.625869907953465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2z5Zyf6ICz5YW2!5e0!3m2!1szh-CN!2scn!4v1476155526026" width="950" height="480" frameborder="0" style="border:0" allowfullscreen></iframe>
+				<div onload="loand()">
+					<div id="container">
+					</div>
+					<!--//绑定-->
+					<!--<input id="txtAddress" type="text" placeholder="请输入用餐地址" data-bind="textInput: addressInput" />-->
+					<input id="lng" type="hidden" runat="server" />
+					<input id="lat" type="hidden" runat="server" />
+					<!--<input id="Button1" type="button" value="标记图标" runat="server" onclick="getbiaoji()" />-->
+					<script type="text/javascript">
+						function getbiaoji() {
+							var lng = document.getElementByIdx_x("lng").value;
+							var lat = document.getElementByIdx_x("lat").value;
+							var map = new BMap.Map("container");
+							var point = new BMap.Point(lng, lat);
+							var marker = new BMap.Marker(point);
+							var opts = {
+								width: 250, // 信息窗口宽度 
+								height: 100, // 信息窗口高度 
+								title: "事件地址" // 信息窗口标题
+							}
+							var infoWindow = new BMap.InfoWindow("移动拖拽 事件发生位置:" + lng + lat, opts); // 创建信息窗口对象
+							marker.enableDragging(); //启用拖拽
+							map.addControl(new BMap.NavigationControl()); //左上角控件
+							map.enableScrollWheelZoom(); //滚动放大
+							map.enableKeyboard(); //键盘放大
+							map.centerAndZoom(point, 13); //绘制地图
+							map.addOverlay(marker); //标记地图
+							map.openInfoWindow(infoWindow, map.getCenter());
+						}
+
+						function loand() {
+							var map = new BMap.Map("container");
+							var point = new BMap.Point(32.863, 39.937); //默认中心点
+							var marker = new BMap.Marker(point);
+							var opts = {
+								width: 250, // 信息窗口宽度 
+								height: 100, // 信息窗口高度 
+								title: "事件" // 信息窗口标题
+							}
+							var infoWindow = new BMap.InfoWindow("移动拖拽 事件发生位置", opts); // 创建信息窗口对象
+							marker.enableDragging(); //启用拖拽
+							marker.addEventListener("dragend", function(e) {
+								point = new BMap.Point(e.point.lng, e.point.lat); //标记坐标（拖拽以后的坐标）
+								marker = new BMap.Marker(point);
+								document.getElementById("lng").value = e.point.lng;
+								document.getElementById("lat").value = e.point.lat;
+								infoWindow = new BMap.InfoWindow("当前位置<br />经度：" + e.point.lng + "<br />纬度：" + e.point.lat, opts);
+								map.openInfoWindow(infoWindow, point);
+							})
+							map.addControl(new BMap.NavigationControl()); //左上角控件
+							map.enableScrollWheelZoom(); //滚动放大
+							map.enableKeyboard(); //键盘放大
+							map.centerAndZoom(point, 13); //绘制地图
+							map.addOverlay(marker); //标记地图
+							map.openInfoWindow(infoWindow, map.getCenter()); // 打开信息窗口  
+						}
+					</script>
+					<script type="text/javascript">
+						var localSearch = null;
+						//查询参数
+						var options = {
+							//智能搜索
+							onSearchComplete: function(results) {
+								//查询结果状态码
+								if(localSearch.getStatus() == BMAP_STATUS_SUCCESS) {
+									var s = convertMapSearch(results); //对结果进行处理
+									model.locationAddress(s); //将结果数据赋予knockout对象数组（可用其他数组对象代替）
+								}
+							}
+						};
+						localSearch = new BMap.LocalSearch("城市", options);
+						//subscribe属性 在输入变化的时候执行地址查询
+			//			sf.addressInput.subscribe(function(val) {
+			//				var addr = $.trim(val);
+			//				if(addr == "") {
+			//					return;
+			//				}
+			//				localSearch.search(addr);
+			//			})
+					</script>
+				</div>
+
+				<!-- <iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d6383616.992675474!2d30.696190404289105!3d38.625869907953465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2z5Zyf6ICz5YW2!5e0!3m2!1szh-CN!2scn!4v1476155526026" width="950" height="480" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+
+
 			</div>
 
 
@@ -433,17 +577,42 @@
 				<!--模态框1的详细信息-->
 				<div class="modal-body">
 
-					<div class="news_box" >
+					<div class="news_box" style="margin-left: 12px;" >
 				      <h4>
-				        <span style="color:#337ab7">一带一路政策的基本介绍</span>
+				        <span style="color:#337ab7">习近平在G20峰会上：世界经济需要新的增长点</span>
 				      </h4>
 				      <div class="text_box">
-				        <p>
-				        	
+				        <p style="line-height:2;">
+				        	中国国家主席习近平在土耳其20国集团领导人会议上说，世界迫切需要找到新的经济增长源。中国官方媒体新华社社星期一报道。
 				        </p>
 				        <h5>
-				          <a href="https://zh.wikipedia.org/wiki/%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF%E7%BB%8F%E6%B5%8E%E5%B8%A6%E5%92%8C21%E4%B8%96%E7%BA%AA%E6%B5%B7%E4%B8%8A%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF#cite_note-10" target="_blank">查看详情</a>
+				          <a href="http://atimes.com/2015/11/xi-at-g20-world-needs-new-sources-of-economic-growth/" target="_blank">查看详情</a>
 				          
+				        </h5>
+				        <h5>
+				          <i>2015-11-16</i>
+				          &nbsp;&nbsp;来源：ASIA TIMES
+				        </h5>
+				      </div>
+				    </div>
+
+				    <div class="modal-body">
+
+					<div class="news_box" style="border-top:1px solid #ddd">
+				      <h4>
+				        <span style="color:#337ab7">习近平的反恐小组全线布局 预防江派混水摸鱼</span>
+				      </h4>
+				      <div class="text_box">
+				        <p style="line-height:2;">
+				        	在大陆反腐提速、国际恐怖主义猖獗之际，习近平的亲信掌握大陆“国家反恐怖工作领导小组”实权，并首次公开露面。近年来，大陆新疆及一些地方恐怖袭击事件频发，据悉部分事件涉及江派搞破坏。分析认为，习近平亲信掌控大陆反恐实权，或可防江泽民集团利用暴力袭击事件来混水摸鱼，制造混乱......
+				        </p>
+				        <h5>
+				          <a href="https://www-cnnews.rhcloud.com/%E4%B9%A0%E8%BF%91%E5%B9%B3%E7%9A%84%E5%8F%8D%E6%81%90%E5%B0%8F%E7%BB%84%E5%85%A8%E7%BA%BF%E5%B8%83%E5%B1%80-%E9%A2%84%E9%98%B2%E6%B1%9F%E6%B4%BE%E6%B7%B7%E6%B0%B4%E6%91%B8%E9%B1%BC/" target="_blank">查看详情</a>
+				          
+				        </h5>
+				        <h5>
+				          <i>2015-09-17</i>
+				          &nbsp;&nbsp;来源：禁闻
 				        </h5>
 				       
 				      </div>
@@ -451,27 +620,9 @@
 
 
 				</div>
-
-				<div class="modal-body">
-
-					<div class="news_box" >
-				      <h4>
-				        <span style="color:#337ab7">一带一路政策的基本介绍</span>
-				      </h4>
-				      <div class="text_box">
-				        <p>
-				        	
-				        </p>
-				        <h5>
-				          <a href="https://zh.wikipedia.org/wiki/%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF%E7%BB%8F%E6%B5%8E%E5%B8%A6%E5%92%8C21%E4%B8%96%E7%BA%AA%E6%B5%B7%E4%B8%8A%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF#cite_note-10" target="_blank">查看详情</a>
-				          
-				        </h5>
-				       
-				      </div>
-				    </div>
-
-
 				</div>
+
+				
 
 
 				<div class="modal-footer">
@@ -498,9 +649,54 @@
 						媒体对此出访事件的反映
 					</h4>
 				</div>
+
+
 				<div class="modal-body">
-					在这里添加一些文本
+				<!--模态框2的内容-->	
+					<div class="news_box" >
+				      <h4>
+				        <span style="color:#337ab7">习近平:望土耳其继续阻止东突在土反华分裂活动</span>
+				      </h4>
+				      <div class="text_box">
+				        <p style="line-height:2;">
+				        	当地时间2月21日，正在土耳其进行正式访问的国家副主席习近平在伊斯坦布尔会见了土耳其总理埃尔多安。
+				        </p>
+				        <h5>
+				          <a href="http://news.sina.com.cn/z/xjpcfuit/" target="_blank">查看详情</a>
+				          
+				        </h5>
+				        <h5>
+				          <i>2012-02-22 05:59</i>
+				          &nbsp;&nbsp;来源：新浪网
+				        </h5>
+				      </div>
+				    </div>
+
+
+				    <div class="news_box" style="border-top:1px solid #ddd">
+				      <h4>
+				        <span style="color:#337ab7">习近平访问土耳其介绍新疆情况</span>
+				      </h4>
+				      <div class="text_box">
+				        <p style="line-height:2;">
+				        	正在土耳其访问的中国国家副主席习近平与土耳其领导人论及叙利亚、贸易问题同时，通过媒体采访呼吁土耳其到新疆投资，谋求互利共赢。
+				        </p>
+				        <h5>
+				          <a href="http://www.bbc.com/zhongwen/simp/chinese_news/2012/02/120221_xi_turkey_china.shtml" target="_blank">查看详情</a>
+				          
+				        </h5>
+				        <h5>
+				          <i>2012-02-21</i>
+				          &nbsp;&nbsp;来源：BBC中文网
+				        </h5>
+				      </div>
+				    </div>
+
+
 				</div>
+
+
+
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
 					</button>
@@ -592,11 +788,11 @@
 		            roam: 'move',
 		            nodes:[
 		                {category:0, name: '土耳其', value : 10, label: '土耳其\n（主要）'},
-		                {category:1, name: '中国',value : 2},
-		                {category:1, name: '美国',value : 3},
-		                {category:1, name: '俄罗斯',value : 3},
+		                {category:1, name: '中国',value : 10},
+		                {category:1, name: '美国',value : 9},
+		                {category:1, name: '俄罗斯',value : 9},
 		                {category:1, name: '以色列',value : 7},
-		                {category:1, name: '叙利亚',value : 8},
+		                {category:1, name: '叙利亚',value : 2},
 		                
 		            ],
 		            links : [
@@ -636,11 +832,14 @@
                 {	
                 	switch(param.name)
                 	{
-                		case '美国' :confirm("      美国与土耳其之间的关系可追溯到1947年实行的、旨在加强土耳其经济及军事自立的杜鲁门主义。多年来，美土两国通过密切的双边外交关系以及作为北约盟国中的两支最大军队之间的伙伴关系，使这一目标从冷战时期一直发展至今。\n      2003年，由于土耳其议会决定拒绝让美国为首的盟军把土耳其作为进入邻国伊拉克的基地，美土关系出现紧张，但是两国政府后来发起2006年共同未来与系统化对话，为加强战略合作建立了框架。2009年，在奥巴马宣布将分期从伊拉克撤出作战部队后，土耳其表示愿意为美国军事设备提供过境便利。同时有媒体报道，土耳其有可能成为伊朗恢复与美国关系的斡旋国。在反恐合作方面，美土两国打击共同面临的来自从基地组织到库尔德工人党的极端主义的威胁。");break;
+                		case '美国' :alert("      美国与土耳其之间的关系可追溯到1947年实行的、旨在加强土耳其经济及军事自立的杜鲁门主义。多年来，美土两国通过密切的双边外交关系以及作为北约盟国中的两支最大军队之间的伙伴关系，使这一目标从冷战时期一直发展至今。\n      2003年，由于土耳其议会决定拒绝让美国为首的盟军把土耳其作为进入邻国伊拉克的基地，美土关系出现紧张，但是两国政府后来发起2006年共同未来与系统化对话，为加强战略合作建立了框架。2009年，在奥巴马宣布将分期从伊拉克撤出作战部队后，土耳其表示愿意为美国军事设备提供过境便利。同时有媒体报道，土耳其有可能成为伊朗恢复与美国关系的斡旋国。在反恐合作方面，美土两国打击共同面临的来自从基地组织到库尔德工人党的极端主义的威胁。");break;
 
                 		case '中国': confirm("一、建交\n      两国于 1971年8月4日建交，建交后，中土两国关系发展顺利，特别自80年代起，两国交往增多，关系发展较快。中方访土的领导人有国家主席李先念（1984年3月）、总理赵紫阳（1986年7月）、八届全国人大常委会委员长乔石（1996年11月）等。土方访华的领导人有总统埃夫伦（1982年12月）、总理厄扎尔（1985年7月）、议长卡拉杜曼（1985年10月）、总统德米雷尔（1995年5月）等。\n二、贸易交流\n      1981年，中土两国签订贸易议定书。 1981年12月两国签署了经济、工业和技术合作协定。1985年6月，签署了关于经济技术、贸易、民航和电讯合作会谈纪要。1991年10月，中土各自成立了双边企业家理事会。2003年，中土两国贸易额为25.98亿美元，其中我出口20.65亿美元，进口5.33亿美元。2004年，中土两国贸易额为34.1亿美元，其中我出口28.2亿美元，进口5.9亿美元。\n三、文化交往与合作\n      在双方的共同努力下，两国的文化交流与合作关系不断发展。1993年11月，中、土签署了两国政府文化合作协定，交流项目包括文化、体育、教育、新闻等各个领域。文化部长王蒙1988年3月访土，土文化和旅游部长梯梯兹（1988年6月）、文化部长萨拉尔（1992年9月）先后访华。此外，北京、上海、天津、西安、日照、鞍山、南京、蚌埠、镇江和盘锦分别与安卡拉、伊斯坦布尔、伊兹密尔、科尼亚、特拉布松、布尔萨、梅尔辛、辛姜、伊兹密特和亚洛瓦结为友好城市。");break;
+
                 		case '俄罗斯': confirm("        自去年11月土耳其击落一架在叙执行任务的俄罗斯战机后，两国关系跌至冰点。俄罗斯对土耳其实施了严厉的经济制裁，双方在政治、外交领域陷入严重对立。这种僵局一直持续至今年5月才有所松动。随着土方不断释放和解信号，特别是埃尔多安6月亲自致信普京，就击落俄战机事件“道歉”后，俄土关系随之开始解冻。但是，考虑到该事件对两国关系的深度伤害，以及俄土两国在中东、黑海、地中海区域的激烈博弈，各界普遍对土俄关系的改善前景较为谨慎。");break;
+
                 		case'以色列':confirm("历史良好 奈何宗教不同\n        土耳其与以色列1949年建交，土耳其是第一个承认以色列国家地位的穆斯林国家，此后两国在军事、经济、外交等方面长期保持着密切合作和良好关系。土耳其的军事基地供以色列空军使用，而以色列工程师也曾帮土耳其改良战机。在阿拉伯世界一致排斥犹太人为主的以色列的时期，土以两国的友好关系在很大程度上影响了中东格局。\n        然而两国关系并没有一致持续，土耳其现总统埃尔多安执政以来，两国关系急剧恶化。其根本原因是埃尔多安的宗教意识，执政后土耳其宗教化有所回归，并公开支持穆兄会和哈马斯，宗教元素对土耳其外交政策的影响日益显现。尤其是08年至09年的加沙战争之后，土以关系不断恶化，尽管有美国从中调和，也无力回天。2013年，以色列安插在伊朗的特工身份暴露，坊间传言土耳其是幕后黑手，土以关系跌至谷底。世事无料，2015年底，在中东战火正旺之时，土耳其在土叙边境击落了一架执行空袭任务的俄罗斯战机，土耳其越发孤立，外交关系紧张到了极点。此时土政府积极缓和了与以色列的关系。两国最终在今年6月底达成一致，将努力恢复两国关系正常化。");break;
+
                 		case'叙利亚':confirm("你家着火 我家烤得慌\n        作为邻居，两国民族间、政权间的历史纠葛一言难尽，在叙利亚内战前的2009年，土耳其总统还曾对叙利亚进行国事访问。2011年叙利亚内战爆发后，土耳其的对叙政策开始向西方倾斜，强烈谴责阿萨德政府。2012年，叙政府军击落一架“入侵领空”的土耳其战机，两国关系跌至冰点，土耳其甚至一度与美国、北约协商推翻阿萨德政权。\n        叙内战爆发后，最令土耳其头疼的莫过于难民问题了。五年间，数百万的叙利亚难民逃至土耳其，或偷渡进入欧洲，或就在土耳其居留。对土耳其的社会安定和发展造成了不小的压力。叙利亚境内的恐怖主义扩张也开始威胁土耳其，2015年以来，土耳其首都安卡拉和主要城市伊斯坦布尔遭遇多起炸弹袭击，死伤百人，旅游业遭受重创，原本就下行的经济更加雪上加霜，土耳其里拉汇率也持续走低。邻居叙利亚的这场大火，把土耳其烤的外焦里嫩。\n        此前土耳其对叙利亚的政策是一方面反对阿萨德政权，另一方面瞅准机会打击库尔德工人党。对打击极端组织、冷却叙利亚战事并无益处。而7月13日土耳其总理在宣布恢复与叙利亚关系时，称这将有利于叙利亚打击恐怖主义，是否意味着土耳其开始抛弃成见，准备为地区和平努力了呢？");break;
                 	}
                      
