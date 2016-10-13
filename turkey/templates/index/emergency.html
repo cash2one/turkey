@@ -24,14 +24,14 @@
       <!--内容类型选择、排序选择-->
         <div class="form">
           <div class="cata_name">通道：</div>  
-            <select id="channel" class="select">
+            <select id="channel" class="select" onclick="channel_select()">
               <option value="全部">全部</option>
               <option value="新闻">新闻</option>
               <option value="facebook">facebook</option>
               <option value="twitter">twitter</option>
             </select>
         </div>                   
-        <div class="form">  
+        <div class="form" id="media_form" style="display: none;">  
           <div class="cata_name">媒体：</div>
             <select id="media" class="select">
               <option value="全部">全部</option>
@@ -40,7 +40,7 @@
               <option value="新浪新闻">新浪新闻</option>
             </select>
         </div> 
-        <div class="form">  
+        <div class="form" id="catalog_form" style="display: none;">  
           <div class="cata_name">类别：</div>
             <select id="catalog" class="select">
               <option value="全部">全部</option>
