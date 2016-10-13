@@ -12,7 +12,7 @@
 	display: block;
 	line-height: 38px;
 	height: 38px;
-    float: left;s
+    float: left;
 	font-size: 16px;
 	text-decoration: none;
 	color: #3e3e3e;
@@ -38,7 +38,7 @@
 	font-size: 12px;
 	color: #fff;
 	text-align: center;
-	margin-left: 10px; 
+	margin-left: 60px;  /* +50px*/
 	margin-bottom: 0px !important;
 }
 #eventprofile .float_1 {
@@ -57,7 +57,7 @@
 	position: absolute;
 	z-index: 1;
 	top: 0px;
-	left: 50px;
+	left: 100px; /* +50px*/
 	margin-bottom: 0px;
 }
 #eventprofile .round{
@@ -74,7 +74,7 @@
 	position: absolute;
 	z-index: 2;
 	top: 40px;
-	left: 43px;
+	left: 93px;  /* +50px*/
 }
 #eventprofile .round::after{
 	content: "";
@@ -82,7 +82,7 @@
 	width: 9px;
 	height: 9px;
 	top: 3px;
-	left: 3px;
+	left: 3px;  
 	background-color: #fff;
 	border-radius: 50%;
 }
@@ -91,6 +91,7 @@
     width: 100%;
     word-break: break-all;
 }
+
 .editBox {
     width: 100%;
     display: none;
@@ -111,7 +112,7 @@
     text-align: justify;
     text-justify: inter-ideograph;
     padding: 5px 10px;
-    margin-left: 70px;
+    margin-left: 120px; /* +50px*/
     background-color: #EDEDED;
     border-radius: 5px;
     min-height: 60px;
@@ -132,7 +133,7 @@
     position: absolute;
     z-index: 2;
     bottom: -22px;
-    left: 34px;
+    left: 84px;  /* +50px*/
 }
 .text::after {
     content: "";
@@ -142,4 +143,13 @@
     border-bottom: 10px solid transparent;
     border-top: 10px solid transparent;
     border-right: 10px solid #EDEDED;
+}
+.text_left::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: -10px;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #EDEDED;
 }
