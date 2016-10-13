@@ -363,6 +363,12 @@
     <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="{{ url_for('static', filename='js/moment.js') }}"></script>
     <script src="{{ url_for('static', filename='js/datarangepiker.js') }}"></script>
+    <script type="text/javascript">
+ 
+          function showHideCode(){
+             $("#showdiv").toggle();
+          }
+</script>
     {% block head_js %}
     {% endblock head_js %}
 
@@ -395,14 +401,14 @@
                     </ul>
                     <form class="navbar-form navbar-right" style="margin-right:30px;margin-top: 25px;">
                      <!-- 选择其他国家 -->
-                     <!--  <input type="text" class="cityinput" id="citySelect" value="土耳其" style="margin-left: -70%;color:#ffffff">
+                      <input type="text" class="cityinput" id="citySelect" value="土耳其" style="margin-left: -70%;color:#ffffff">
                       <br/>
                       <script src="/static/js/citySelector.js" type="text/javascript"></script>
                         <script type="text/javascript">
                             var test=new Vcity.CitySelector({input:'citySelect'});
                             var test2=new Vcity.CitySelector({input:'citySelect1'});
                         </script>
- -->
+
                        
                     </form>
                     &nbsp;&nbsp;
@@ -457,10 +463,6 @@
         {% block content %}
         {% endblock content %}
     </div>
-   
-     
-
-
 
 {% endblock navbar %}
 
