@@ -1,31 +1,24 @@
-var myChart = echarts.init(document.getElementById('emergency_grah')); 
+var myChart = echarts.init(document.getElementById('emergency_grah'),'shine'); 
 var option = {
     tooltip : {
         trigger: 'axis',
         showDelay : 0,
         formatter : function (params) {
-            if (params.value.length > 1) {
-                return params.seriesName + ' :<br/>'
-                   + params.value[0] + 'cm ' 
-                   + params.value[1] + 'kg ';
-            }
-            else {
-                return params.seriesName + ' :<br/>'
-                   + params.name + ' : '
-                   + params.value + 'kg ';
-            }
-        },  
-        axisPointer:{
-            show: true,
-            type : 'cross',
-            lineStyle: {
-                type : 'dashed',
-                width : 1
-            }
+            console.log(params);
+            // if (params.value.length > 1) {
+            //     return params.seriesName + ' :<br/>'
+            //        + params.value[0] + 'cm ' 
+            //        + params.value[1] + 'kg ';
+            // }
+            // else {
+            //     return params.seriesName + ' :<br/>'
+            //        + params.name + ' : '
+            //        + params.value + 'kg ';
+            // }
         }
     },
     legend: {
-        data:['一级预警','二级预警']
+        data:['一级预警','二级预警','三级预警']
     },
     toolbox: {
         show : true,
@@ -39,54 +32,53 @@ var option = {
     },
     xAxis : [
         {
-            type : 'value',
-            scale:true,
-            axisLabel : {
-                formatter: '{value} '
-            }
+           name :"时间",
+           type : 'category',
+           data : ['2016/1/1','2016/2/1','2016/3/1','2016/4/1','2016/5/1','2016/6/1','2016/7/1','2016/7/15','2016/8/1','2016/9/1','2016/10/1','2016/11/1','2016/12/1']
         }
     ],
     yAxis : [
         {
+            name :"预警指数",
             type : 'value',
             scale:true,
             axisLabel : {
                 formatter: '{value} '
             }
+            
         }
     ],
     series : [
         {
             name:'一级预警',
             type:'scatter',
-            data: [[161.2, 51.6], [167.5, 59.0], [159.5, 49.2], [157.0, 63.0], [155.8, 53.6]
-            ],
+            data: [['2016/7/15',274.0], ['2016/9/1',170.0]],
             markPoint : {
                 data : [
                     {type : 'max', name: '土耳其政变'},
                     {type : 'min', name: '伊朗军事变动'}
                 ]
-            },
-            markLine : {
+            }
+        },
+        {
+            name:'三级预警',
+            type:'scatter',
+            data: [['2016/5/1',74.0], ['2016/8/21',110.0]],
+            markPoint : {
                 data : [
-                    {type : 'average', name: '警戒线'}
+                    {type : 'max', name: '华盛顿一危化品列车发生脱轨'},
+                    {type : 'min', name: '土耳其加济安泰普婚礼现场遭爆炸袭击'}
                 ]
             }
         },
         {
             name:'二级预警',
             type:'scatter',
-            data: [[174.0, 65.6], [175.3, 71.8], [193.5, 80.7], [186.5, 72.6], [187.2, 78.8]
-               ],
+            data: [['2016/2/21',14.0], ['2016/10/1',32.0]],
             markPoint : {
                 data : [
-                    {type : 'max', name: '土耳其政变'},
-                    {type : 'min', name: '伊朗军事变动'}
-                ]
-            },
-            markLine : {
-                data : [
-                    {type : 'average', name: '警戒线'}
+                    {type : 'max', name: '突尼斯发生车祸21人死亡'},
+                    {type : 'min', name: '日本北海道决堤淹水'}
                 ]
             }
         }

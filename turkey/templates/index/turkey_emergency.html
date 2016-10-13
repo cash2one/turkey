@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css">
 
     <link rel="stylesheet" href="/static/css/emergency.css" />
+     <link rel="stylesheet" href="/static/css/turkey_emergency.css" />
 {% endblock head_css %}
 
+{% block head_js %}
+  <!--   <script src="/static/js/esl.js"></script> -->
+{% endblock head_js %}
 {% block content %}
 
 <div style="margin-top:70px;">
@@ -32,9 +36,82 @@
       <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
         <div><span style="float:right;cursor:pointer;"></span>事件趋势</div>
       </div>
-      <div class="panel-body">
-        <div id="" style="height:450px;"></div>
+      <div class="panel-body" style="padding-top:0px;padding-bottom:10px;">
+        <div id="eventprofile" style="height:450px;margin-left:350px;">
+          <h2>8月27日 9点</h2>
+          <div class="more">
+            <span>
+              <a></a>
+            </span>
+          </div>
+          <ul id="trend">
+            <li>
+              <div class="float_1">
+                <span class="line"></span>
+                <span class="round"></span>
+                <span class="line"></span>
+              </div>
+              <div class="text text2">
+                <a href="#"><div class="textShow">土耳其政变的启示</div></a>
+                <div class="editBox"></div>
+              </div>
+            </li>
+            <li>
+              <div class="float_1">
+                <span class="line"></span>
+                <span class="round"></span>
+                <span class="line"></span>
+              </div>
+              <div class="text_left">
+                <a href="#"><div class="textShow_left">土耳其政变的启示</div></a>
+                <div class="editBox_left"></div>
+              </div>
+            </li>
+            <li>
+              <div class="float_1">
+                <span class="line"></span>
+                <span class="round"></span>
+                <span class="line"></span>
+              </div>
+              <div class="text text2">
+                <a href="#"><div class="textShow">土耳其政变的启示</div></a>
+                <div class="editBox"></div>
+              </div>
+            </li>
+            <li>
+              <div class="float_1">
+                <span class="line"></span>
+                <span class="round"></span>
+                <span class="line"></span>
+              </div>
+              <div class="text_left">
+                <a href="#"><div class="textShow_left">土耳其政变的启示</div></a>
+                <div class="editBox_left"></div>
+              </div>
+            </li>
+            <li>
+              <div class="float_1">
+                <span class="line"></span>
+                <span class="round"></span>
+                <span class="line"></span>
+              </div>
+              <div class="text text2">
+                <a href="#"><div class="textShow">土耳其政变的启示</div></a>
+                <div class="editBox"></div>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <div class="float_1">
+                <span class="roundEnd">续</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!--eventprofile///////////////////-->
       </div>
+      <!--panel-body///////////////////-->
     </div>
     <!--panel///////////////////-->
   </div>
@@ -97,7 +174,15 @@
       </div>
       <div class="panel-body">
         <!--媒体、facebook、twitter展示-->
-  <div id="content_panel" style="margin-top:10px;">
+
+      <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a href="#chinese" data-toggle="tab">当地政府</a></li>
+        <li><a href="#west_country" data-toggle="tab">境外媒体</a></li>
+        <li><a href="#anti_organize" data-toggle="tab">境外反华组织</a></li>
+        
+      </ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade in active" id="chinese">
     <div class="news_box">
       <h4>
         <span><a>周本顺涉嫌受贿案 杨栋梁涉嫌受贿贪污案：检察机关依法对两案提起公诉</a></span>
@@ -131,7 +216,49 @@
       </div>
     </div>
   </div>
-    <!--content_panel///////////////////-->
+
+  <div class="tab-pane fade" id="anti_organize">
+    <div class="news_box">
+      <h4>
+        <span><a>周本顺涉嫌受贿案 杨栋梁涉嫌受贿贪污案：检察机关依法对两案提起公诉</a></span>
+      </h4>
+      <div class="text_box">
+        <p>埃塞俄比亚国家通讯社9日援引总理海尔马里亚姆的话说，为应对奥罗米亚地区民众示威引发的紧张局势，埃塞进入为期6个月的国家紧急状态。</p>
+        <h5>
+          <a href="" target="_blank">埃塞俄比亚</a>
+          <a href="" target="_blank">约旦</a>
+          <a href="" target="_blank">伊朗</a>
+        </h5>
+        <h5>
+          <i>2016-10-09 16：30</i>
+          &nbsp;&nbsp;来源：央视新闻
+        </h5>
+      </div>
+    </div>    
+  </div>
+    <!--anti_organize///////////////////-->
+    <div class="tab-pane fade" id="west_country">
+    <div class="news_box">
+      <h4>
+        <span><a>周本顺涉嫌受贿案 杨栋梁涉嫌受贿贪污案：检察机关依法对两案提起公诉</a></span>
+      </h4>
+      <div class="text_box">
+        <p>埃塞俄比亚国家通讯社9日援引总理海尔马里亚姆的话说，为应对奥罗米亚地区民众示威引发的紧张局势，埃塞进入为期6个月的国家紧急状态。</p>
+        <h5>
+          <a href="" target="_blank">埃塞俄比亚</a>
+          <a href="" target="_blank">约旦</a>
+          <a href="" target="_blank">伊朗</a>
+        </h5>
+        <h5>
+          <i>2016-10-09 16：30</i>
+          &nbsp;&nbsp;来源：央视新闻
+        </h5>
+      </div>
+    </div>    
+  </div>
+    <!--west_country///////////////////-->
+</div>
+<!--tab_content///////////////////-->
   </div>
   <!--panel_body///////////////////-->
 </div>
@@ -182,6 +309,10 @@
     </div>
   </div>
     <!--content_panel///////////////////-->
+    <div style="width:80%;margin-left:30px;float:left;">
+      <p><h4 style="margin-left:350px;">可利用资源</h4></p>
+       <div id="related_people"  style="width:100%"></div>
+    </div>
   </div>
   <!--panel_body///////////////////-->
 </div>
@@ -196,6 +327,17 @@
     <script src="/static/js/jquery-1.8.3.min.js"></script>
     <!-- Bootstrap core JS -->
     <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+   <!--  <script src="/static/js/echarts.js"></script>
+    <script src="/static/js/line.js"></script> -->
     <script src="/static/js/echarts-all.js"></script>
     <script src="/static/js/turkey_emergency.js"></script>
+    <script src="/static/js/media.js"></script>
+   <!--   <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: '/static/js/echarts-2.2.7/build/dist'
+            }
+        });
+    </script> -->
 {% endblock tail_js %}
