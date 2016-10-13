@@ -1,0 +1,155 @@
+#myTab{
+	height: 42px;
+    display: block;
+    background-color: #EFEFEF;
+    border-radius: 5px 5px 0px 0px;
+}
+#myTab li:hover{
+    color: #ff8500;
+    background-color: #fff;
+}
+#myTab li{
+	display: block;
+	line-height: 38px;
+	height: 38px;
+    float: left;
+	font-size: 16px;
+	text-decoration: none;
+	color: #3e3e3e;
+	text-align: center;
+	cursor: pointer;
+}
+#eventprofile ul li {
+    padding-left: 5px;
+    line-height: 50px;
+    color: #2b2b2b;
+    font-size: 13px;
+    float: left;
+    clear: both;
+    position: relative;
+    padding-bottom: 10px;
+}
+#eventprofile h2{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	line-height: 80px;
+	background-color: #ff8400;
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+	margin-left: 60px;  /* +50px*/
+	margin-bottom: 0px !important;
+}
+#eventprofile .float_1 {
+    float: left;
+}
+#eventprofile .sz{
+	display: block;
+	float: left;
+    margin: 15px 5px;
+}
+#eventprofile .line{
+	display: block;
+	width: 2px;
+	height: 100%;
+	background: #ff8400;
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	left: 100px; /* +50px*/
+	margin-bottom: 0px;
+}
+#eventprofile .round{
+	display: block;
+	width: 16px;
+	height: 16.5px;
+	line-height: 15px;
+	text-align: center;
+	-moz-border-radius: 22px;
+	-webkit-border-radius: 22px;
+	border-radius: 22px;
+	border: solid 1px #ff8400;
+	background-color: #ff8400;
+	position: absolute;
+	z-index: 2;
+	top: 40px;
+	left: 93px;  /* +50px*/
+}
+#eventprofile .round::after{
+	content: "";
+	position: absolute;
+	width: 9px;
+	height: 9px;
+	top: 3px;
+	left: 3px;  
+	background-color: #fff;
+	border-radius: 50%;
+}
+.textShow {
+    display: inline-block;
+    width: 100%;
+    word-break: break-all;
+}
+
+.editBox {
+    width: 100%;
+    display: none;
+    font-size: 14px;
+    position: initial;
+}
+.text {
+    position: relative;
+    margin-bottom: 0 !important;
+}
+#eventprofile .text2 {
+    width: 850px;
+}
+#eventprofile .text {
+    line-height: 20px;
+    width: 85%;
+    margin-top: 13px;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    padding: 5px 10px;
+    margin-left: 120px; /* +50px*/
+    background-color: #EDEDED;
+    border-radius: 5px;
+    min-height: 60px;
+    position: relative;
+}
+.roundEnd {
+    display: block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    -moz-border-radius: 32px;
+    -webkit-border-radius: 32px;
+    border-radius: 32px;
+    border: solid 1px #ff8400;
+    background-color: #ff8400;
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    bottom: -22px;
+    left: 84px;  /* +50px*/
+}
+.text::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: -10px;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #EDEDED;
+}
+.text_left::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: -10px;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #EDEDED;
+}

@@ -32,6 +32,8 @@ def interview_detail():
     return render_template('index/interview_detail.html')
 
 
+
+
 @mod.route('/turkey_info/')
 def turkey_info():
     """进入土耳其信息展示页面
