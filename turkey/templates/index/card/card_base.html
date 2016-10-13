@@ -20,7 +20,6 @@
     <!-- Iconos -->
     <link href="/static/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/static/css/turkey_style.css" media="screen" type="text/css" />
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css">
@@ -61,19 +60,11 @@
             /*font-family: Arial,"Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei","文泉驿微米黑",STXihei,"华文细黑",sans-serif;*/
             font-size: 13px;
             line-height: 20px;
-            background-color: #ebebeb;
+            background-color: #f5f5f5 !important;
         }
         body, form, ul, ol, li, h1, h2, h3, h4, h5, h6, p, dl, dd, td, th, input, img {
             margin: 0;
             padding: 0;
-        }
-
-        .open a, a, a:hover {
-        }
-        a:hover {
-            color: #FFF;
-            text-decoration: underline;
-
         }
 
         ul, ol, li {
@@ -334,9 +325,6 @@
         /*#module_name :hover{
             text-decoration: underline;
         }*/
-        a:-webkit-any-link{
-            text-decoration: none;
-        }
         #topic_name{
             font-size: 16px;
             padding: 10px 20px;
@@ -379,6 +367,7 @@
 
                 <span style="font-size:24px;color:#fff;float:left;padding-top: 22px;padding:0 23px;    margin-top: 1%;">
                     <span style="font-size:25px;line-height:38px;color:#addf58;font-family: Microsoft YaHei;">海外利益保护系统</span>
+                    <!-- <span style="font-size:22px;line-height:38px;color:#addf58;font-family: Microsoft YaHei;float: left;">————人物卡片</span> -->
                    <!--  <span style="font-size:14px;margin-left:15px;">人事管理系统（外网）</span>
                     <span style="font-size:14px;margin-left:15px;">{{module_name}}</span> -->
                 </span>
@@ -395,15 +384,7 @@
                     </ul>
                     <form class="navbar-form navbar-right" style="margin-right:30px;margin-top: 25px;">
                      <!-- 选择其他国家 -->
-                      <input type="text" class="cityinput" id="citySelect" value="土耳其（可更换其他国家）" style="margin-left: -70%;color:#ffffff">
                       <br/>
-                      <script src="/static/js/citySelector.js" type="text/javascript"></script>
-                        <script type="text/javascript">
-                            var test=new Vcity.CitySelector({input:'citySelect'});
-                            var test2=new Vcity.CitySelector({input:'citySelect1'});
-                        </script>
-
-                       
                     </form>
                     &nbsp;&nbsp;
 
@@ -412,9 +393,12 @@
         </div>
     </div>
 {% endblock navbar %}
-
-    <div style="float:left;width:100%;background-color:white;padding-left:200px;margin-top: 58px;">
-
+    <style>s
+    body {
+        background-color: #f5f5f5;
+    }
+    </style>
+    <div style="float:left;width:100%;background-color:#f5f5f5;padding-left:180px;margin-top: 58px;padding-right:180px;">
         {% block body %}
         {% endblock body %}
     </div>

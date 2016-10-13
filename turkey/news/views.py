@@ -31,9 +31,9 @@ def infor_search():
 def interview_detail():
     return render_template('index/interview_detail.html')
 
-@mod.route('/person_detail/')
+@mod.route('/person_detail/president_now')
 def person_detail():
-    return render_template('index/card/person_detail.html')
+    return render_template('index/card/person_detail_president_now.html')
 
 @mod.route('/turkey_info/')
 def turkey_info():
