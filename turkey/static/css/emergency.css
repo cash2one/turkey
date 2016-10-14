@@ -110,3 +110,49 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
+        .quote {
+        padding-right: 153px;
+        padding-left: 3px;
+        padding-bottom: 3px;
+        margin-top: 15px;
+        padding-top: 3px;
+        text-align: center;
+        }
+         span .current {
+        border-right: #e0e0e0 1px solid;
+        padding-right: 5px;
+        border-top: #e0e0e0 1px solid;
+        padding-left: 5px;
+        font-weight: bold;
+        padding-bottom: 2px;
+        border-left: #e0e0e0 1px solid;
+        color: #aaa;
+        margin-right:2px;
+        padding-top:2px;
+        border-bottom: #e0e0e0 1px solid;
+        background-color: #f0f0f0;
+        }
+        .quote a {
+        border-right: #ddd 1px solid;
+        padding-right: 5px;
+        border-top: #ddd 1px solid;
+        padding-left: 5px;
+        padding-bottom:2px;
+        border-left: #ddd 1px solid;
+        color: #aaa;
+        margin-right: 2px;
+        padding-top:2px;
+        border-bottom: #ddd 1px solid;
+        text-decoration: none;
+    }
+        .quote a:hover {
+        border-right: #a0a0a0 1px solid;
+        padding-right: 5px;
+        border-top: #a0a0a0 1px solid;
+        padding-left: 5px;
+        padding-bottom:2px;
+        border-left: #a0a0a0 1px solid;
+        margin-right: 2px;
+        padding-top:2px;
+        border-bottom: #a0a0a0 1px solid;
+    }
