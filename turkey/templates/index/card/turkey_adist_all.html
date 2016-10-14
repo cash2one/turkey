@@ -1,0 +1,928 @@
+{% extends "/index/card/card_base.html" %}
+{% block module_title %}查看土耳其行政区{% endblock %}
+{% block body %}
+<style>
+.blueBlock {
+		float:left;
+		width:9px;
+		height:26px;
+		background-color: #104F87;
+		margin-left: 0%;
+		margin-top: 0%;
+		margin-right: 0.6%;
+}
+.blueBlock_title {
+		color: #104F87;
+		font-size:24px;
+/*  font-weight: bolder;
+*/  font-family: Microsoft YaHei;
+		margin-top: 2px;
+}
+.text p {
+	line-height: inherit;
+	margin: 0.5em 0;
+	display: block;
+	font-size: 16px;
+	line-height: 1.6;
+}
+.shadow{
+	box-shadow:2px 2px 10px #909090;
+}
+.main-content table .para {
+    font-size: 12px;
+    text-indent: 0;
+    margin: 0;
+    height: auto;
+}
+.main-content table.table-view {
+    margin: 5px 0;
+    border-collapse: collapse;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 12px;
+    line-height: 22px;
+    color: #000;
+}
+.body-wrapper .para {
+    font-size: 16px;
+    word-wrap: break-word;
+    color: #333;
+    margin-bottom: 15px;
+    text-indent: 2em;
+    line-height: 1.5;
+    zoom: 1;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+#dist_chart table th {
+    text-align: left;
+    font-weight: 700;
+    height: 30px;
+}
+#dist_chart table th, #dist_chart table td {
+    padding: 2px 10px;
+    font-size: 15px;
+    line-height: 1.6;
+    height: 30px;
+}
+</style>
+<div class="panel panel-primary" style="margin-top: 20px;">
+	<div class="panel-heading" style="height: 50px !important;">
+		<h3 class="panel-title" style="font-size: 26px;padding: 2px;font-weight: bolder;float: left;">土耳其行政区</h3>
+	</div>
+	<div class="panel-body" >
+	  <div style="padding-top:10px;margin-left:10px;">
+		<div class="blueBlock"></div><p class="blueBlock_title">概述</p>
+	  </div>
+
+		<div class="text" style="font-size:16px;margin-left:10px;">
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;土耳其行政区划等级为省、县、乡、村。全国共分为８１个省、约600个县、3.6万多乡村。首都安卡拉(Ankara)，座落在安纳托利亚高原的西北部，是一座海拔900米左右的高原古城，有人口390万（2002年）。</p>
+		</div>
+
+		<div style="padding-top:10px;margin-left:10px;">
+			<div class="blueBlock"></div><p class="blueBlock_title">行政区列表</p>
+		</div>
+		<img src="/static/img/card/TRProvinceNumbers.svg" class="shadow" style="width:850px;margin-top:20px;margin-left:9%;border:1px solid;">
+
+		<!-- 行政区列表 -->
+		<div id="dist_chart" style="margin-left:100px;margin-top:40px;line-height: 1.6;">
+		<table align="center" border="1" cellpadding="6" cellspacing="0" style="margin: 0 0 0 1em; background: #ffffff; border: 1px #aaaaaa solid; border-collapse: collapse; text-align:left; font-size: 95%; ">
+		  <tbody class="table-striped">
+			<tr style="text-align:center; background: #efefef; border-bottom:2px solid gray;height:40px;font-size:18px;">
+				<th>序号</th>
+				<th>省</th>
+				<th>土耳其语名称</th>
+				<th>面积</th>
+				<th>人口</th>
+				<th>人口密度</th>
+				<th>首府</th>
+				<th>人口</th>
+			</tr>
+			<tr>
+			<td>1</td>
+			<td><a href="/wiki/%E9%98%BF%E8%BE%BE%E7%BA%B3%E7%9C%81" title="阿达纳省">阿达纳省</a></td>
+			<td>Adana</td>
+			<td align="right">14,256 km<sup>2</sup></td>
+			<td align="right">1,849,478</td>
+			<td align="right">129.73</td>
+			<td><a href="/wiki/%E9%98%BF%E8%BE%BE%E7%BA%B3" title="阿达纳">阿达纳</a> (aggl.)</td>
+			<td align="right">1,130,710</td>
+			</tr>
+			<tr>
+			<td>2</td>
+			<td><a href="/wiki/%E9%98%BF%E5%BE%B7%E4%BA%9A%E6%9B%BC%E7%9C%81" title="阿德亚曼省">阿德亚曼省</a></td>
+			<td>Adıyaman</td>
+			<td align="right">7,572 km<sup>2</sup></td>
+			<td align="right">623,811</td>
+			<td align="right">82.38</td>
+			<td><a href="/wiki/%E9%98%BF%E5%BE%B7%E4%BA%9A%E6%9B%BC" title="阿德亚曼">阿德亚曼</a></td>
+			<td align="right">178,538</td>
+			</tr>
+			<tr>
+			<td>3</td>
+			<td><a href="/wiki/%E9%98%BF%E8%8F%B2%E6%B0%B8%E5%8D%A1%E6%8B%89%E5%B8%8C%E8%90%A8%E5%B0%94%E7%9C%81" title="阿菲永卡拉希萨尔省">阿菲永卡拉希萨尔省</a></td>
+			<td>Afyonkarahisar</td>
+			<td align="right">14,532 km<sup>2</sup></td>
+			<td align="right">812,416</td>
+			<td align="right">55.91</td>
+			<td><a href="/wiki/%E9%98%BF%E8%8F%B2%E6%B0%B8" class="mw-redirect" title="阿菲永">阿菲永</a></td>
+			<td align="right">128.516</td>
+			</tr>
+			<tr>
+			<td>4</td>
+			<td><a href="/wiki/%E9%98%BF%E5%8B%92%E7%9C%81" title="阿勒省">阿勒省</a></td>
+			<td>Ağrı</td>
+			<td align="right">11,315 km<sup>2</sup></td>
+			<td align="right">528,744</td>
+			<td align="right">46.73</td>
+			<td><a href="/wiki/%E9%98%BF%E5%8B%92" title="阿勒">阿勒</a></td>
+			<td align="right">79.764</td>
+			</tr>
+			<tr>
+			<td>5</td>
+			<td><a href="/wiki/%E9%98%BF%E9%A9%AC%E8%A5%BF%E4%BA%9A%E7%9C%81" title="阿马西亚省">阿马西亚省</a></td>
+			<td>Amasya</td>
+			<td align="right">5,731 km<sup>2</sup></td>
+			<td align="right">365,231</td>
+			<td align="right">63.73</td>
+			<td><a href="/wiki/%E9%98%BF%E9%A9%AC%E8%A5%BF%E4%BA%9A" class="mw-redirect" title="阿马西亚">阿马西亚</a></td>
+			<td align="right">74,393</td>
+			</tr>
+			<tr>
+			<td>6</td>
+			<td><a href="/wiki/%E5%AE%89%E5%8D%A1%E6%8B%89%E7%9C%81" title="安卡拉省">安卡拉省</a></td>
+			<td>Ankara</td>
+			<td align="right">25,615 km<sup>2</sup></td>
+			<td align="right">4,007,860</td>
+			<td align="right">156.47</td>
+			<td><a href="/wiki/%E5%AE%89%E5%8D%A1%E6%8B%89" title="安卡拉">安卡拉</a> (aggl.)</td>
+			<td align="right">3,203,362</td>
+			</tr>
+			<tr>
+			<td>7</td>
+			<td><a href="/wiki/%E5%AE%89%E5%A1%94%E5%88%A9%E4%BA%9A%E7%9C%81" title="安塔利亚省">安塔利亚省</a></td>
+			<td>Antalya</td>
+			<td align="right">20,599 km<sup>2</sup></td>
+			<td align="right">1,719,751</td>
+			<td align="right">83.49</td>
+			<td><a href="/wiki/%E5%AE%89%E5%A1%94%E5%88%A9%E4%BA%9A" title="安塔利亚">安塔利亚</a></td>
+			<td align="right">603,190</td>
+			</tr>
+			<tr>
+			<td>8</td>
+			<td><a href="/wiki/%E9%98%BF%E5%B0%94%E7%89%B9%E6%B8%A9%E7%9C%81" title="阿尔特温省">阿尔特温省</a></td>
+			<td>Artvin</td>
+			<td align="right">7,493 km<sup>2</sup></td>
+			<td align="right">191,934</td>
+			<td align="right">25.62</td>
+			<td><a href="/wiki/%E9%98%BF%E7%88%BE%E7%89%B9%E6%BA%AB" title="阿尔特温">阿尔特温</a></td>
+			<td align="right">23,157</td>
+			</tr>
+			<tr>
+			<td>9</td>
+			<td><a href="/wiki/%E8%89%BE%E7%99%BB%E7%9C%81" title="艾登省">艾登省</a></td>
+			<td>Aydın</td>
+			<td align="right">7,922 km<sup>2</sup></td>
+			<td align="right">950,757</td>
+			<td align="right">120.01</td>
+			<td><a href="/wiki/%E8%89%BE%E7%99%BB" class="mw-disambig" title="艾登">艾登</a></td>
+			<td align="right">142,267</td>
+			</tr>
+			<tr>
+			<td>10</td>
+			<td><a href="/wiki/%E5%B7%B4%E5%8B%92%E5%85%8B%E5%9F%83%E8%A5%BF%E5%B0%94%E7%9C%81" title="巴勒克埃西尔省">巴勒克埃西尔省</a></td>
+			<td>Balıkesir</td>
+			<td align="right">14,442 km<sup>2</sup></td>
+			<td align="right">1,076,347</td>
+			<td align="right">74.53</td>
+			<td><a href="/wiki/%E5%B7%B4%E5%8B%92%E5%85%8B%E5%9F%83%E8%A5%BF%E7%88%BE" title="巴勒克埃西尔">巴勒克埃西尔</a></td>
+			<td align="right">215,436</td>
+			</tr>
+			<tr>
+			<td>11</td>
+			<td><a href="/wiki/%E6%AF%94%E8%8E%B1%E5%90%89%E5%85%8B%E7%9C%81" title="比莱吉克省">比莱吉克省</a></td>
+			<td>Bilecik</td>
+			<td align="right">4,181 km<sup>2</sup></td>
+			<td align="right">194,326</td>
+			<td align="right">46.48</td>
+			<td><a href="/wiki/%E6%AF%94%E8%90%8A%E5%90%89%E5%85%8B" title="比莱吉克">比莱吉克</a></td>
+			<td align="right">34,105</td>
+			</tr>
+			<tr>
+			<td>12</td>
+			<td><a href="/wiki/%E5%AE%BE%E6%A0%BC%E5%B0%94%E7%9C%81" title="宾格尔省">宾格尔省</a></td>
+			<td>Bingöl</td>
+			<td align="right">8,402 km<sup>2</sup></td>
+			<td align="right">253,739</td>
+			<td align="right">30.20</td>
+			<td><a href="/wiki/%E8%B3%93%E6%A0%BC%E7%88%BE" title="宾格尔">宾格尔</a></td>
+			<td align="right">68,876</td>
+			</tr>
+			<tr>
+			<td>13</td>
+			<td><a href="/wiki/%E6%AF%94%E7%89%B9%E5%88%A9%E6%96%AF%E7%9C%81" title="比特利斯省">比特利斯省</a></td>
+			<td>Bitlis</td>
+			<td align="right">8,413 km<sup>2</sup></td>
+			<td align="right">388,678</td>
+			<td align="right">46.20</td>
+			<td><a href="/wiki/%E6%AF%94%E7%89%B9%E5%88%A9%E6%96%AF" title="比特利斯">比特利斯</a></td>
+			<td align="right">44,923</td>
+			</tr>
+			<tr>
+			<td>14</td>
+			<td><a href="/wiki/%E5%8D%9A%E5%8D%A2%E7%9C%81" title="博卢省">博卢省</a></td>
+			<td>Bolu</td>
+			<td align="right">10,716 km<sup>2</sup></td>
+			<td align="right">270,654</td>
+			<td align="right">25.26</td>
+			<td><a href="/wiki/%E5%8D%9A%E5%8D%A2" class="mw-redirect mw-disambig" title="博卢">博卢</a></td>
+			<td align="right">84,565</td>
+			</tr>
+			<tr>
+			<td>15</td>
+			<td><a href="/wiki/%E5%B8%83%E5%B0%94%E6%9D%9C%E5%B0%94%E7%9C%81" title="布尔杜尔省">布尔杜尔省</a></td>
+			<td>Burdur</td>
+			<td align="right">7,238 km<sup>2</sup></td>
+			<td align="right">256,803</td>
+			<td align="right">35.48</td>
+			<td><a href="/wiki/%E5%B8%83%E5%B0%94%E6%9D%9C%E5%B0%94" class="mw-redirect" title="布尔杜尔">布尔杜尔</a></td>
+			<td align="right">63,363</td>
+			</tr>
+			<tr>
+			<td>16</td>
+			<td><a href="/wiki/%E5%B8%83%E5%B0%94%E8%90%A8%E7%9C%81" title="布尔萨省">布尔萨省</a></td>
+			<td>Bursa</td>
+			<td align="right">11,087 km<sup>2</sup></td>
+			<td align="right">2,125,140</td>
+			<td align="right">191.68</td>
+			<td><a href="/wiki/%E5%B8%83%E5%B0%94%E8%90%A8" title="布尔萨">布尔萨</a> (aggl.)</td>
+			<td align="right">1,194,687</td>
+			</tr>
+			<tr>
+			<td>17</td>
+			<td><a href="/wiki/%E6%81%B0%E7%BA%B3%E5%8D%A1%E8%8E%B1%E7%9C%81" title="恰纳卡莱省">恰纳卡莱省</a></td>
+			<td>Çanakkale</td>
+			<td align="right">9,887 km<sup>2</sup></td>
+			<td align="right">464,975</td>
+			<td align="right">47.03</td>
+			<td><a href="/wiki/%E6%81%B0%E7%B4%8D%E5%8D%A1%E8%90%8A" title="恰纳卡莱">恰纳卡莱</a></td>
+			<td align="right">75,810</td>
+			</tr>
+			<tr>
+			<td>18</td>
+			<td><a href="/wiki/%E6%98%8C%E5%85%8B%E5%8B%92%E7%9C%81" title="昌克勒省">昌克勒省</a></td>
+			<td>Çankırı</td>
+			<td align="right">8,411 km<sup>2</sup></td>
+			<td align="right">270,355</td>
+			<td align="right">32.14</td>
+			<td><a href="/wiki/%E6%98%8C%E5%85%8B%E5%8B%92" title="昌克勒">昌克勒</a></td>
+			<td align="right">62,508</td>
+			</tr>
+			<tr>
+			<td>19</td>
+			<td><a href="/wiki/%E4%B9%94%E9%B2%81%E5%A7%86%E7%9C%81" title="乔鲁姆省">乔鲁姆省</a></td>
+			<td>Çorum</td>
+			<td align="right">12,833 km<sup>2</sup></td>
+			<td align="right">597,065</td>
+			<td align="right">46.53</td>
+			<td><a href="/wiki/%E5%96%AC%E9%AD%AF%E5%A7%86" title="乔鲁姆">乔鲁姆</a></td>
+			<td align="right">161,321</td>
+			</tr>
+			<tr>
+			<td>20</td>
+			<td><a href="/wiki/%E4%BB%A3%E5%B0%BC%E5%85%B9%E5%88%A9%E7%9C%81" title="代尼兹利省">代尼兹利省</a></td>
+			<td>Denizli</td>
+			<td align="right">11,716 km<sup>2</sup></td>
+			<td align="right">850,029</td>
+			<td align="right">72.55</td>
+			<td><a href="/wiki/%E4%BB%A3%E5%B0%BC%E8%8C%B2%E5%88%A9" title="代尼兹利">代尼兹利</a></td>
+			<td align="right">275,480</td>
+			</tr>
+			<tr>
+			<td>21</td>
+			<td><a href="/wiki/%E8%BF%AA%E4%BA%9A%E5%B7%B4%E5%85%8B%E5%B0%94%E7%9C%81" title="迪亚巴克尔省">迪亚巴克尔省</a></td>
+			<td>Diyarbakır</td>
+			<td align="right">15,162 km<sup>2</sup></td>
+			<td align="right">1,362,708</td>
+			<td align="right">89.88</td>
+			<td><a href="/wiki/%E8%BF%AA%E4%BA%9A%E5%B7%B4%E5%85%8B%E5%B0%94" title="迪亚巴克尔">迪亚巴克尔</a></td>
+			<td align="right">545,983</td>
+			</tr>
+			<tr>
+			<td>22</td>
+			<td><a href="/wiki/%E5%9F%83%E8%BF%AA%E5%B0%94%E5%86%85%E7%9C%81" title="埃迪尔内省">埃迪尔内省</a></td>
+			<td>Edirne</td>
+			<td align="right">6,241 km<sup>2</sup></td>
+			<td align="right">402,606</td>
+			<td align="right">64.51</td>
+			<td><a href="/wiki/%E5%9F%83%E8%BF%AA%E7%88%BE%E5%85%A7" title="埃迪尔内">埃迪尔内</a></td>
+			<td align="right">119,298</td>
+			</tr>
+			<tr>
+			<td>23</td>
+			<td><a href="/wiki/%E5%9F%83%E6%8B%89%E6%B3%BD%E7%9C%81" title="埃拉泽省">埃拉泽省</a></td>
+			<td>Elazığ</td>
+			<td align="right">9,181 km<sup>2</sup></td>
+			<td align="right">569,616</td>
+			<td align="right">62.04</td>
+			<td><a href="/wiki/%E5%9F%83%E6%8B%89%E6%B3%BD" title="埃拉泽">埃拉泽</a></td>
+			<td align="right">266,495</td>
+			</tr>
+			<tr>
+			<td>24</td>
+			<td><a href="/wiki/%E5%9F%83%E5%B0%94%E6%B4%A5%E8%A9%B9%E7%9C%81" title="埃尔津詹省">埃尔津詹省</a></td>
+			<td>Erzincan</td>
+			<td align="right">11,974 km<sup>2</sup></td>
+			<td align="right">316,841</td>
+			<td align="right">26.46</td>
+			<td><a href="/wiki/%E5%9F%83%E5%B0%94%E6%B4%A5%E8%A9%B9" title="埃尔津詹">埃尔津詹</a></td>
+			<td align="right">107,175</td>
+			</tr>
+			<tr>
+			<td>25</td>
+			<td><a href="/wiki/%E5%9F%83%E5%B0%94%E7%A5%96%E9%B2%81%E5%A7%86%E7%9C%81" title="埃尔祖鲁姆省">埃尔祖鲁姆省</a></td>
+			<td>Erzurum</td>
+			<td align="right">24,741 km<sup>2</sup></td>
+			<td align="right">937,389</td>
+			<td align="right">37.89</td>
+			<td><a href="/wiki/%E5%9F%83%E5%B0%94%E7%A5%96%E9%B2%81%E5%A7%86" title="埃尔祖鲁姆">埃尔祖鲁姆</a></td>
+			<td align="right">361,235</td>
+			</tr>
+			<tr>
+			<td>26</td>
+			<td><a href="/wiki/%E5%9F%83%E6%96%AF%E5%9F%BA%E8%B0%A2%E5%B8%8C%E5%B0%94%E7%9C%81" title="埃斯基谢希尔省">埃斯基谢希尔省</a></td>
+			<td>Eskişehir</td>
+			<td align="right">13,904 km<sup>2</sup></td>
+			<td align="right">706,009</td>
+			<td align="right">50.78</td>
+			<td><a href="/wiki/%E5%9F%83%E6%96%AF%E5%9F%BA%E8%B0%A2%E5%B8%8C%E5%B0%94" title="埃斯基谢希尔">埃斯基谢希尔</a></td>
+			<td align="right">482,793</td>
+			</tr>
+			<tr>
+			<td>27</td>
+			<td><a href="/wiki/%E5%8A%A0%E6%B5%8E%E5%AE%89%E6%B3%B0%E6%99%AE%E7%9C%81" title="加济安泰普省">加济安泰普省</a></td>
+			<td>Gaziantep</td>
+			<td align="right">7,194 km<sup>2</sup></td>
+			<td align="right">1,285,249</td>
+			<td align="right">178.66</td>
+			<td><a href="/wiki/%E5%8A%A0%E6%BF%9F%E5%AE%89%E6%B3%B0%E6%99%AE" title="加济安泰普">加济安泰普</a> (aggl.)</td>
+			<td align="right">853,513</td>
+			</tr>
+			<tr>
+			<td>28</td>
+			<td><a href="/wiki/%E5%90%89%E9%9B%B7%E6%9D%BE%E7%9C%81" title="吉雷松省">吉雷松省</a></td>
+			<td>Giresun</td>
+			<td align="right">7,151 km<sup>2</sup></td>
+			<td align="right">523,819</td>
+			<td align="right">73.25</td>
+			<td><a href="/wiki/%E5%90%89%E9%9B%B7%E6%9D%BE" title="吉雷松">吉雷松</a></td>
+			<td align="right">83,636</td>
+			</tr>
+			<tr>
+			<td>29</td>
+			<td><a href="/wiki/%E5%B1%85%E7%B1%B3%E4%BB%80%E5%93%88%E5%86%85%E7%9C%81" title="居米什哈内省">居米什哈内省</a></td>
+			<td>Gümüşhane</td>
+			<td align="right">6,125 km<sup>2</sup></td>
+			<td align="right">186,953</td>
+			<td align="right">30.52</td>
+			<td><a href="/wiki/%E5%B1%85%E7%B1%B3%E4%BB%80%E5%93%88%E5%85%A7" title="居米什哈内">居米什哈内</a></td>
+			<td align="right">30,270</td>
+			</tr>
+			<tr>
+			<td>30</td>
+			<td><a href="/wiki/%E5%93%88%E5%8D%A1%E9%87%8C%E7%9C%81" title="哈卡里省">哈卡里省</a></td>
+			<td>Hakkâri</td>
+			<td align="right">7,729 km<sup>2</sup></td>
+			<td align="right">236,581</td>
+			<td align="right">30.61</td>
+			<td><a href="/wiki/%E5%93%88%E5%8D%A1%E9%87%8C" title="哈卡里">哈卡里</a></td>
+			<td align="right">58,145</td>
+			</tr>
+			<tr>
+			<td>31</td>
+			<td><a href="/wiki/%E5%93%88%E5%A1%94%E4%BC%8A%E7%9C%81" title="哈塔伊省">哈塔伊省</a></td>
+			<td>Hatay</td>
+			<td align="right">5,678 km<sup>2</sup></td>
+			<td align="right">1,253,726</td>
+			<td align="right">220.80</td>
+			<td><a href="/wiki/%E5%AE%89%E5%A1%94%E5%9F%BA%E4%BA%9A" class="mw-redirect" title="安塔基亚">安塔基亚</a></td>
+			<td align="right">144,910</td>
+			</tr>
+			<tr>
+			<td>32</td>
+			<td><a href="/wiki/%E4%BC%8A%E6%96%AF%E5%B8%95%E5%B0%94%E5%A1%94%E7%9C%81" title="伊斯帕尔塔省">伊斯帕尔塔省</a></td>
+			<td>Isparta</td>
+			<td align="right">8,733 km<sup>2</sup></td>
+			<td align="right">513,681</td>
+			<td align="right">58.82</td>
+			<td><a href="/wiki/%E4%BC%8A%E6%96%AF%E5%B8%95%E7%88%BE%E5%A1%94" title="伊斯帕尔塔">伊斯帕尔塔</a></td>
+			<td align="right">148,496</td>
+			</tr>
+			<tr>
+			<td>33</td>
+			<td><a href="/wiki/%E6%A2%85%E5%B0%94%E8%BE%9B%E7%9C%81" title="梅尔辛省">梅尔辛省</a></td>
+			<td>Mersin</td>
+			<td align="right">15,737 km<sup>2</sup></td>
+			<td align="right">1,651,400</td>
+			<td align="right">104.94</td>
+			<td><a href="/wiki/%E6%A2%85%E7%88%BE%E8%BE%9B" title="梅尔辛">梅尔辛</a></td>
+			<td align="right">537,842</td>
+			</tr>
+			<tr>
+			<td>34</td>
+			<td><a href="/wiki/%E4%BC%8A%E6%96%AF%E5%9D%A6%E5%B8%83%E5%B0%94%E7%9C%81" class="mw-redirect" title="伊斯坦布尔省">伊斯坦布尔省</a></td>
+			<td>İstanbul</td>
+			<td align="right">5,170 km<sup>2</sup></td>
+			<td align="right">10,018,735</td>
+			<td align="right">1,937.86</td>
+			<td><a href="/wiki/%E4%BC%8A%E6%96%AF%E5%9D%A6%E5%B8%83%E5%B0%94" class="mw-redirect" title="伊斯坦布尔">伊斯坦布尔</a> (aggl.)</td>
+			<td align="right">8,803,468</td>
+			</tr>
+			<tr>
+			<td>35</td>
+			<td><a href="/wiki/%E4%BC%8A%E5%85%B9%E5%AF%86%E5%B0%94%E7%9C%81" title="伊兹密尔省">伊兹密尔省</a></td>
+			<td>İzmir</td>
+			<td align="right">11,811 km<sup>2</sup></td>
+			<td align="right">3,370,866</td>
+			<td align="right">285.40</td>
+			<td><a href="/wiki/%E4%BC%8A%E5%85%B9%E5%AF%86%E5%B0%94" title="伊兹密尔">伊兹密尔</a> (aggl.)</td>
+			<td align="right">2,232,265</td>
+			</tr>
+			<tr>
+			<td>36</td>
+			<td><a href="/wiki/%E5%8D%A1%E5%B0%94%E6%96%AF%E7%9C%81" title="卡尔斯省">卡尔斯省</a></td>
+			<td>Kars</td>
+			<td align="right">9,594 km<sup>2</sup></td>
+			<td align="right">325,016</td>
+			<td align="right">33.88</td>
+			<td><a href="/wiki/%E5%8D%A1%E7%88%BE%E6%96%AF" title="卡尔斯">卡尔斯</a></td>
+			<td align="right">78,473</td>
+			</tr>
+			<tr>
+			<td>37</td>
+			<td><a href="/wiki/%E5%8D%A1%E6%96%AF%E5%A1%94%E8%8E%AB%E5%8A%AA%E7%9C%81" title="卡斯塔莫努省">卡斯塔莫努省</a></td>
+			<td>Kastamonu</td>
+			<td align="right">13,473 km<sup>2</sup></td>
+			<td align="right">375,476</td>
+			<td align="right">27.87</td>
+			<td><a href="/wiki/%E5%8D%A1%E6%96%AF%E5%A1%94%E8%8E%AB%E5%8A%AA" title="卡斯塔莫努">卡斯塔莫努</a></td>
+			<td align="right">64,606</td>
+			</tr>
+			<tr>
+			<td>38</td>
+			<td><a href="/wiki/%E5%BC%80%E5%A1%9E%E5%88%A9%E7%9C%81" title="开塞利省">开塞利省</a></td>
+			<td>Kayseri</td>
+			<td align="right">17,116 km<sup>2</sup></td>
+			<td align="right">1,060,432</td>
+			<td align="right">61.96</td>
+			<td><a href="/wiki/%E9%96%8B%E5%A1%9E%E5%88%A9" title="开塞利">开塞利</a> (aggl.)</td>
+			<td align="right">536,392</td>
+			</tr>
+			<tr>
+			<td>39</td>
+			<td><a href="/wiki/%E5%85%8B%E5%B0%94%E5%85%8B%E6%8B%89%E9%9B%B7%E5%88%A9%E7%9C%81" title="克尔克拉雷利省">克尔克拉雷利省</a></td>
+			<td>Kırklareli</td>
+			<td align="right">6,056 km<sup>2</sup></td>
+			<td align="right">328,461</td>
+			<td align="right">54.24</td>
+			<td><a href="/wiki/%E5%85%8B%E7%88%BE%E5%85%8B%E6%8B%89%E9%9B%B7%E5%88%A9" title="克尔克拉雷利">克尔克拉雷利</a></td>
+			<td align="right">53,221</td>
+			</tr>
+			<tr>
+			<td>40</td>
+			<td><a href="/wiki/%E5%85%8B%E5%B0%94%E8%B0%A2%E5%B8%8C%E5%B0%94%E7%9C%81" title="克尔谢希尔省">克尔谢希尔省</a></td>
+			<td>Kırşehir</td>
+			<td align="right">6,434 km<sup>2</sup></td>
+			<td align="right">253,239</td>
+			<td align="right">39.36</td>
+			<td><a href="/wiki/%E5%85%8B%E7%88%BE%E8%AC%9D%E5%B8%8C%E7%88%BE" title="克尔谢希尔">克尔谢希尔</a></td>
+			<td align="right">88,105</td>
+			</tr>
+			<tr>
+			<td>41</td>
+			<td><a href="/wiki/%E7%A7%91%E8%B4%BE%E5%9F%83%E5%88%A9%E7%9C%81" title="科贾埃利省">科贾埃利省</a></td>
+			<td>Kocaeli</td>
+			<td align="right">3,635 km<sup>2</sup></td>
+			<td align="right">1,206,085</td>
+			<td align="right">331.80</td>
+			<td><a href="/wiki/%E4%BC%8A%E5%85%B9%E7%B1%B3%E7%89%B9" class="mw-redirect" title="伊兹米特">伊兹米特</a></td>
+			<td align="right">195,699</td>
+			</tr>
+			<tr>
+			<td>42</td>
+			<td><a href="/wiki/%E7%A7%91%E5%B0%BC%E4%BA%9A%E7%9C%81" title="科尼亚省">科尼亚省</a></td>
+			<td>Konya</td>
+			<td align="right">40,824 km<sup>2</sup></td>
+			<td align="right">2,192,166</td>
+			<td align="right">53.70</td>
+			<td><a href="/wiki/%E7%A7%91%E5%B0%BC%E4%BA%9A" class="mw-redirect mw-disambig" title="科尼亚">科尼亚</a> (aggl.)</td>
+			<td align="right">742,690</td>
+			</tr>
+			<tr>
+			<td>43</td>
+			<td><a href="/wiki/%E5%B1%88%E5%A1%94%E5%B8%8C%E4%BA%9A%E7%9C%81" title="屈塔希亚省">屈塔希亚省</a></td>
+			<td>Kütahya</td>
+			<td align="right">12,119 km<sup>2</sup></td>
+			<td align="right">656,903</td>
+			<td align="right">54.20</td>
+			<td><a href="/wiki/%E5%B1%88%E5%A1%94%E5%B8%8C%E4%BA%9E" title="屈塔希亚">屈塔希亚</a></td>
+			<td align="right">166,665</td>
+			</tr>
+			<tr>
+			<td>44</td>
+			<td><a href="/wiki/%E9%A9%AC%E6%8B%89%E8%92%82%E4%BA%9A%E7%9C%81" title="马拉蒂亚省">马拉蒂亚省</a></td>
+			<td>Malatya</td>
+			<td align="right">12,235 km<sup>2</sup></td>
+			<td align="right">853,658</td>
+			<td align="right">69.77</td>
+			<td><a href="/wiki/%E9%A6%AC%E6%8B%89%E8%92%82%E4%BA%9E" title="马拉蒂亚">马拉蒂亚</a></td>
+			<td align="right">381,081</td>
+			</tr>
+			<tr>
+			<td>45</td>
+			<td><a href="/wiki/%E9%A9%AC%E5%B0%BC%E8%90%A8%E7%9C%81" title="马尼萨省">马尼萨省</a></td>
+			<td>Manisa</td>
+			<td align="right">13,120 km<sup>2</sup></td>
+			<td align="right">1,260,169</td>
+			<td align="right">96.05</td>
+			<td><a href="/wiki/%E9%A6%AC%E5%B0%BC%E8%96%A9" title="马尼萨">马尼萨</a></td>
+			<td align="right">214,345</td>
+			</tr>
+			<tr>
+			<td>46</td>
+			<td><a href="/wiki/%E5%8D%A1%E8%B5%AB%E6%8B%89%E6%9B%BC%E9%A9%AC%E6%8B%89%E4%BB%80%E7%9C%81" title="卡赫拉曼马拉什省">卡赫拉曼马拉什省</a></td>
+			<td>Kahramanmaraş</td>
+			<td align="right">14,213 km<sup>2</sup></td>
+			<td align="right">1,002,384</td>
+			<td align="right">70.53</td>
+			<td><a href="/wiki/%E5%8D%A1%E8%B5%AB%E6%8B%89%E6%9B%BC%E9%A6%AC%E6%8B%89%E4%BB%80" title="卡赫拉曼马拉什">卡赫拉曼马拉什</a></td>
+			<td align="right">326,198</td>
+			</tr>
+			<tr>
+			<td>47</td>
+			<td><a href="/wiki/%E9%A9%AC%E5%B0%94%E4%B8%81%E7%9C%81" title="马尔丁省">马尔丁省</a></td>
+			<td>Mardin</td>
+			<td align="right">9,097 km<sup>2</sup></td>
+			<td align="right">705,098</td>
+			<td align="right">77.51</td>
+			<td><a href="/wiki/%E9%A6%AC%E7%88%BE%E4%B8%81" title="马尔丁">马尔丁</a></td>
+			<td align="right">65,072</td>
+			</tr>
+			<tr>
+			<td>48</td>
+			<td><a href="/wiki/%E7%A9%86%E6%8B%89%E7%9C%81" title="穆拉省">穆拉省</a></td>
+			<td>Muğla</td>
+			<td align="right">12,716 km<sup>2</sup></td>
+			<td align="right">715,328</td>
+			<td align="right">56.25</td>
+			<td><a href="/wiki/%E7%A9%86%E6%8B%89" title="穆拉">穆拉</a></td>
+			<td align="right">43,845</td>
+			</tr>
+			<tr>
+			<td>49</td>
+			<td><a href="/wiki/%E7%A9%86%E4%BB%80%E7%9C%81" title="穆什省">穆什省</a></td>
+			<td>Muş</td>
+			<td align="right">8,023 km<sup>2</sup></td>
+			<td align="right">453,654</td>
+			<td align="right">56.54</td>
+			<td><a href="/wiki/%E7%A9%86%E4%BB%80" title="穆什">穆什</a></td>
+			<td align="right">67,927</td>
+			</tr>
+			<tr>
+			<td>50</td>
+			<td><a href="/wiki/%E5%86%85%E5%A4%AB%E8%B0%A2%E5%B8%8C%E5%B0%94%E7%9C%81" title="内夫谢希尔省">内夫谢希尔省</a></td>
+			<td>Nevşehir</td>
+			<td align="right">5,438 km<sup>2</sup></td>
+			<td align="right">309,914</td>
+			<td align="right">56.99</td>
+			<td><a href="/wiki/%E5%85%A7%E5%A4%AB%E8%AC%9D%E5%B8%8C%E7%88%BE" title="内夫谢希尔">内夫谢希尔</a></td>
+			<td align="right">67,864</td>
+			</tr>
+			<tr>
+			<td>51</td>
+			<td><a href="/wiki/%E5%B0%BC%E4%BB%A3%E7%9C%81" title="尼代省">尼代省</a></td>
+			<td>Niğde</td>
+			<td align="right">7,318 km<sup>2</sup></td>
+			<td align="right">348,081</td>
+			<td align="right">47.57</td>
+			<td><a href="/wiki/%E5%B0%BC%E4%BB%A3" title="尼代">尼代</a></td>
+			<td align="right">78,088</td>
+			</tr>
+			<tr>
+			<td>52</td>
+			<td><a href="/wiki/%E5%A5%A5%E5%B0%94%E6%9D%9C%E7%9C%81" title="奥尔杜省">奥尔杜省</a></td>
+			<td>Ordu</td>
+			<td align="right">5,894 km<sup>2</sup></td>
+			<td align="right">887,765</td>
+			<td align="right">150.62</td>
+			<td><a href="/wiki/%E5%A5%A7%E7%88%BE%E6%9D%9C" title="奥尔杜">奥尔杜</a></td>
+			<td align="right">112,525</td>
+			</tr>
+			<tr>
+			<td>53</td>
+			<td><a href="/wiki/%E9%87%8C%E6%B3%BD%E7%9C%81" title="里泽省">里泽省</a></td>
+			<td>Rize</td>
+			<td align="right">3,792 km<sup>2</sup></td>
+			<td align="right">365,938</td>
+			<td align="right">96.50</td>
+			<td><a href="/wiki/%E9%87%8C%E6%BE%A4" title="里泽">里泽</a></td>
+			<td align="right">78,144</td>
+			</tr>
+			<tr>
+			<td>54</td>
+			<td><a href="/wiki/%E8%90%A8%E5%8D%A1%E9%87%8C%E4%BA%9A%E7%9C%81" title="萨卡里亚省">萨卡里亚省</a></td>
+			<td>Sakarya</td>
+			<td align="right">4,895 km<sup>2</sup></td>
+			<td align="right">756,168</td>
+			<td align="right">154.48</td>
+			<td><a href="/wiki/%E9%98%BF%E8%BE%BE%E5%B8%95%E6%89%8E%E5%8B%92" title="阿达帕扎勒">阿达帕扎勒</a></td>
+			<td align="right">283,752</td>
+			</tr>
+			<tr>
+			<td>55</td>
+			<td><a href="/wiki/%E8%90%A8%E5%A7%86%E6%9D%BE%E7%9C%81" title="萨姆松省">萨姆松省</a></td>
+			<td>Samsun</td>
+			<td align="right">9,474 km<sup>2</sup></td>
+			<td align="right">1,209,137</td>
+			<td align="right">127.63</td>
+			<td><a href="/wiki/%E8%96%A9%E5%A7%86%E6%9D%BE" title="萨姆松">萨姆松</a></td>
+			<td align="right">363,180</td>
+			</tr>
+			<tr>
+			<td>56</td>
+			<td><a href="/wiki/%E9%94%A1%E5%B0%94%E7%89%B9%E7%9C%81" title="锡尔特省">锡尔特省</a></td>
+			<td>Siirt</td>
+			<td align="right">5,465 km<sup>2</sup></td>
+			<td align="right">263,676</td>
+			<td align="right">48.25</td>
+			<td><a href="/wiki/%E9%8C%AB%E7%88%BE%E7%89%B9" title="锡尔特">锡尔特</a></td>
+			<td align="right">98,281</td>
+			</tr>
+			<tr>
+			<td>57</td>
+			<td><a href="/wiki/%E9%94%A1%E8%AF%BA%E6%99%AE%E7%9C%81" title="锡诺普省">锡诺普省</a></td>
+			<td>Sinop</td>
+			<td align="right">5,858 km<sup>2</sup></td>
+			<td align="right">225,574</td>
+			<td align="right">38.51</td>
+			<td><a href="/wiki/%E9%94%A1%E8%AF%BA%E6%99%AE" title="锡诺普">锡诺普</a></td>
+			<td align="right">30,502</td>
+			</tr>
+			<tr>
+			<td>58</td>
+			<td><a href="/wiki/%E9%8C%AB%E7%93%A6%E6%96%AF%E7%9C%81" title="锡瓦斯省">锡瓦斯省</a></td>
+			<td>Sivas</td>
+			<td align="right">28,129 km<sup>2</sup></td>
+			<td align="right">755,091</td>
+			<td align="right">26.84</td>
+			<td><a href="/wiki/%E9%8C%AB%E7%93%A6%E6%96%AF" title="锡瓦斯">锡瓦斯</a></td>
+			<td align="right">251,776</td>
+			</tr>
+			<tr>
+			<td>59</td>
+			<td><a href="/wiki/%E6%B3%B0%E5%9F%BA%E5%B0%94%E8%BE%BE%E7%9C%81" title="泰基尔达省">泰基尔达省</a></td>
+			<td>Tekirdağ</td>
+			<td align="right">6,345 km<sup>2</sup></td>
+			<td align="right">623,591</td>
+			<td align="right">98.28</td>
+			<td><a href="/wiki/%E6%B3%B0%E5%9F%BA%E7%88%BE%E9%81%94" title="泰基尔达">泰基尔达</a></td>
+			<td align="right">107,191</td>
+			</tr>
+			<tr>
+			<td>60</td>
+			<td><a href="/wiki/%E6%89%98%E5%8D%A1%E7%89%B9%E7%9C%81" title="托卡特省">托卡特省</a></td>
+			<td>Tokat</td>
+			<td align="right">9,912 km<sup>2</sup></td>
+			<td align="right">828,027</td>
+			<td align="right">83.54</td>
+			<td><a href="/wiki/%E6%89%98%E5%8D%A1%E7%89%B9" title="托卡特">托卡特</a></td>
+			<td align="right">113,100</td>
+			</tr>
+			<tr>
+			<td>61</td>
+			<td><a href="/wiki/%E7%89%B9%E6%8B%89%E5%B8%83%E5%AE%97%E7%9C%81" title="特拉布宗省">特拉布宗省</a></td>
+			<td>Trabzon</td>
+			<td align="right">4,495 km<sup>2</sup></td>
+			<td align="right">975,137</td>
+			<td align="right">216.94</td>
+			<td><a href="/wiki/%E7%89%B9%E6%8B%89%E5%B8%83%E5%AE%97" title="特拉布宗">特拉布宗</a></td>
+			<td align="right">214,949</td>
+			</tr>
+			<tr>
+			<td>62</td>
+			<td><a href="/wiki/%E9%80%9A%E6%9D%B0%E5%88%A9%E7%9C%81" title="通杰利省">通杰利省</a></td>
+			<td>Tunceli</td>
+			<td align="right">7,406 km<sup>2</sup></td>
+			<td align="right">93,584</td>
+			<td align="right">12.64</td>
+			<td><a href="/wiki/%E9%80%9A%E5%82%91%E5%88%A9" title="通杰利">通杰利</a></td>
+			<td align="right">25,041</td>
+			</tr>
+			<tr>
+			<td>63</td>
+			<td><a href="/wiki/%E5%B0%9A%E5%8B%92%E4%B9%8C%E5%B0%94%E6%B3%95%E7%9C%81" title="尚勒乌尔法省">尚勒乌尔法省</a></td>
+			<td>Şanlıurfa</td>
+			<td align="right">19,091 km<sup>2</sup></td>
+			<td align="right">1,443,422</td>
+			<td align="right">75.61</td>
+			<td><a href="/wiki/%E5%B0%9A%E5%8B%92%E7%83%8F%E7%88%BE%E6%B3%95" title="尚勒乌尔法">尚勒乌尔法</a></td>
+			<td align="right">385,588</td>
+			</tr>
+			<tr>
+			<td>64</td>
+			<td><a href="/wiki/%E4%B9%8C%E6%B2%99%E5%85%8B%E7%9C%81" title="乌沙克省">乌沙克省</a></td>
+			<td>Uşak</td>
+			<td align="right">5,174 km<sup>2</sup></td>
+			<td align="right">322,313</td>
+			<td align="right">62.29</td>
+			<td><a href="/wiki/%E7%83%8F%E6%B2%99%E5%85%8B" title="乌沙克">乌沙克</a></td>
+			<td align="right">137,001</td>
+			</tr>
+			<tr>
+			<td>65</td>
+			<td><a href="/wiki/%E5%87%A1%E5%9F%8E%E7%9C%81" title="凡城省">凡城省</a></td>
+			<td>Van</td>
+			<td align="right">20,927 km<sup>2</sup></td>
+			<td align="right">877,524</td>
+			<td align="right">41.93</td>
+			<td><a href="/wiki/%E5%87%A1%E5%9F%8E" title="凡城">凡城</a></td>
+			<td align="right">284,464</td>
+			</tr>
+			<tr>
+			<td>66</td>
+			<td><a href="/wiki/%E7%BA%A6%E5%85%B9%E5%8A%A0%E7%89%B9%E7%9C%81" title="约兹加特省">约兹加特省</a></td>
+			<td>Yozgat</td>
+			<td align="right">14,083 km<sup>2</sup></td>
+			<td align="right">682,919</td>
+			<td align="right">48.49</td>
+			<td><a href="/wiki/%E7%B4%84%E8%8C%B2%E5%8A%A0%E7%89%B9" title="约兹加特">约兹加特</a></td>
+			<td align="right">73,930</td>
+			</tr>
+			<tr>
+			<td>67</td>
+			<td><a href="/wiki/%E5%AE%97%E5%8F%A4%E5%B0%94%E8%BE%BE%E5%85%8B%E7%9C%81" title="宗古尔达克省">宗古尔达克省</a></td>
+			<td>Zonguldak</td>
+			<td align="right">3,470 km<sup>2</sup></td>
+			<td align="right">615,599</td>
+			<td align="right">177.41</td>
+			<td><a href="/wiki/%E5%AE%97%E5%8F%A4%E5%B0%94%E8%BE%BE%E5%85%8B%E7%9C%81" title="宗古尔达克省">宗古尔达克省</a></td>
+			<td align="right">104,276</td>
+			</tr>
+			<tr>
+			<td>68</td>
+			<td><a href="/wiki/%E9%98%BF%E5%85%8B%E8%90%A8%E8%B5%96%E7%9C%81" title="阿克萨赖省">阿克萨赖省</a></td>
+			<td>Aksaray</td>
+			<td align="right">8,051 km<sup>2</sup></td>
+			<td align="right">396,084</td>
+			<td align="right">49.20</td>
+			<td><a href="/wiki/%E9%98%BF%E5%85%8B%E8%90%A8%E8%B5%96" title="阿克萨赖">阿克萨赖</a></td>
+			<td align="right">129,949</td>
+			</tr>
+			<tr>
+			<td>69</td>
+			<td><a href="/wiki/%E5%B7%B4%E4%BC%8A%E5%B8%83%E5%B0%94%E7%89%B9%E7%9C%81" title="巴伊布尔特省">巴伊布尔特省</a></td>
+			<td>Bayburt</td>
+			<td align="right">4,043 km<sup>2</sup></td>
+			<td align="right">97,358</td>
+			<td align="right">24.08</td>
+			<td><a href="/wiki/%E5%B7%B4%E4%BC%8A%E5%B8%83%E7%88%BE%E7%89%B9" title="巴伊布尔特">巴伊布尔特</a></td>
+			<td align="right">32,285</td>
+			</tr>
+			<tr>
+			<td>70</td>
+			<td><a href="/wiki/%E5%8D%A1%E6%8B%89%E6%9B%BC%E7%9C%81" title="卡拉曼省">卡拉曼省</a></td>
+			<td>Karaman</td>
+			<td align="right">8,816 km<sup>2</sup></td>
+			<td align="right">243,210</td>
+			<td align="right">27.59</td>
+			<td><a href="/wiki/%E5%8D%A1%E6%8B%89%E6%9B%BC" title="卡拉曼">卡拉曼</a></td>
+			<td align="right">105,384</td>
+			</tr>
+			<tr>
+			<td>71</td>
+			<td><a href="/wiki/%E5%85%8B%E5%8B%92%E5%85%8B%E5%8D%A1%E8%8E%B1%E7%9C%81" title="克勒克卡莱省">克勒克卡莱省</a></td>
+			<td>Kırıkkale</td>
+			<td align="right">4,589 km<sup>2</sup></td>
+			<td align="right">383,508</td>
+			<td align="right">83.57</td>
+			<td><a href="/wiki/%E5%85%8B%E5%8B%92%E5%85%8B%E5%8D%A1%E8%90%8A" title="克勒克卡莱">克勒克卡莱</a></td>
+			<td align="right">205,078</td>
+			</tr>
+			<tr>
+			<td>72</td>
+			<td><a href="/wiki/%E5%B7%B4%E7%89%B9%E6%9B%BC%E7%9C%81" title="巴特曼省">巴特曼省</a></td>
+			<td>Batman</td>
+			<td align="right">4,671 km<sup>2</sup></td>
+			<td align="right">456,734</td>
+			<td align="right">97.78</td>
+			<td><a href="/wiki/%E5%B7%B4%E7%89%B9%E6%9B%BC" title="巴特曼">巴特曼</a></td>
+			<td align="right">246,678</td>
+			</tr>
+			<tr>
+			<td>73</td>
+			<td><a href="/wiki/%E8%88%8D%E5%B0%94%E7%BA%B3%E5%85%8B%E7%9C%81" title="舍尔纳克省">舍尔纳克省</a></td>
+			<td>Şırnak</td>
+			<td align="right">7,296 km<sup>2</sup></td>
+			<td align="right">353,197</td>
+			<td align="right">48.41</td>
+			<td><a href="/wiki/%E8%88%8D%E7%88%BE%E5%A5%88%E5%85%8B" class="mw-redirect" title="舍尔奈克">舍尔纳克</a></td>
+			<td align="right">52,743</td>
+			</tr>
+			<tr>
+			<td>74</td>
+			<td><a href="/wiki/%E5%B7%B4%E5%B0%94%E6%BB%95%E7%9C%81" title="巴尔滕省">巴尔滕省</a></td>
+			<td>Bartın</td>
+			<td align="right">1,960 km<sup>2</sup></td>
+			<td align="right">184,178</td>
+			<td align="right">93.97</td>
+			<td><a href="/wiki/%E5%B7%B4%E7%88%BE%E6%BB%95" title="巴尔滕">巴尔滕</a></td>
+			<td align="right">35,992</td>
+			</tr>
+			<tr>
+			<td>75</td>
+			<td><a href="/wiki/%E9%98%BF%E5%B0%94%E8%BE%BE%E6%B1%89%E7%9C%81" title="阿尔达汉省">阿尔达汉省</a></td>
+			<td>Ardahan</td>
+			<td align="right">5,495 km<sup>2</sup></td>
+			<td align="right">133,756</td>
+			<td align="right">24.34</td>
+			<td><a href="/wiki/%E9%98%BF%E7%88%BE%E9%81%94%E6%BC%A2" title="阿尔达汉">阿尔达汉</a></td>
+			<td align="right">17,274</td>
+			</tr>
+			<tr>
+			<td>76</td>
+			<td><a href="/wiki/%E5%8E%84%E5%BE%B7%E5%B0%94%E7%9C%81" title="厄德尔省">厄德尔省</a></td>
+			<td>Iğdır</td>
+			<td align="right">3,584 km<sup>2</sup></td>
+			<td align="right">168,634</td>
+			<td align="right">47.05</td>
+			<td><a href="/wiki/%E5%8E%84%E5%BE%B7%E5%B0%94" title="厄德尔">厄德尔</a></td>
+			<td align="right">59,880</td>
+			</tr>
+			<tr>
+			<td>77</td>
+			<td><a href="/wiki/%E4%BA%9A%E6%B4%9B%E7%93%A6%E7%9C%81" title="亚洛瓦省">亚洛瓦省</a></td>
+			<td>Yalova</td>
+			<td align="right">403 km<sup>2</sup></td>
+			<td align="right">168,593</td>
+			<td align="right">418.34</td>
+			<td><a href="/wiki/%E4%BA%9E%E6%B4%9B%E7%93%A6" title="亚洛瓦">亚洛瓦</a></td>
+			<td align="right">70,118</td>
+			</tr>
+			<tr>
+			<td>78</td>
+			<td><a href="/wiki/%E5%8D%A1%E6%8B%89%E6%AF%94%E5%85%8B%E7%9C%81" title="卡拉比克省">卡拉比克省</a></td>
+			<td>Karabük</td>
+			<td align="right">2,864 km<sup>2</sup></td>
+			<td align="right">225,102</td>
+			<td align="right">78.60</td>
+			<td><a href="/wiki/%E5%8D%A1%E6%8B%89%E6%AF%94%E5%85%8B" title="卡拉比克">卡拉比克</a></td>
+			<td align="right">100,749</td>
+			</tr>
+			<tr>
+			<td>79</td>
+			<td><a href="/wiki/%E5%9F%BA%E5%88%A9%E6%96%AF%E7%9C%81" title="基利斯省">基利斯省</a></td>
+			<td>Kilis</td>
+			<td align="right">1,239 km<sup>2</sup></td>
+			<td align="right">114,724</td>
+			<td align="right">92.59</td>
+			<td><a href="/wiki/%E5%9F%BA%E5%88%A9%E6%96%AF" title="基利斯">基利斯</a></td>
+			<td align="right">70,670</td>
+			</tr>
+			<tr>
+			<td>80</td>
+			<td><a href="/wiki/%E5%A5%A7%E6%96%AF%E6%9B%BC%E5%B0%BC%E8%80%B6%E7%9C%81" title="奥斯曼尼耶省">奥斯曼尼耶省</a></td>
+			<td>Osmaniye</td>
+			<td align="right">3,189 km<sup>2</sup></td>
+			<td align="right">458,782</td>
+			<td align="right">143.86</td>
+			<td><a href="/wiki/%E5%A5%A7%E6%96%AF%E6%9B%BC%E5%B0%BC%E8%80%B6" title="奥斯曼尼耶">奥斯曼尼耶</a></td>
+			<td align="right">173,977</td>
+			</tr>
+			<tr>
+			<td>81</td>
+			<td><a href="/wiki/%E8%BF%AA%E5%85%B9%E6%9D%B0%E7%9C%81" title="迪兹杰省">迪兹杰省</a></td>
+			<td>Düzce</td>
+			<td align="right">1,065 km<sup>2</sup></td>
+			<td align="right">314,266</td>
+			<td align="right">295.09</td>
+			<td><a href="/wiki/%E8%BF%AA%E8%8C%B2%E5%82%91" title="迪兹杰">迪兹杰</a></td>
+			<td align="right">56,649</td>
+			</tr>
+		  </tbody>
+		</table>
+		  <p><br clear="all" /></p>
+			<ul>
+			<li>注:人口数据来源于土耳其2000年人口普查。</li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}
