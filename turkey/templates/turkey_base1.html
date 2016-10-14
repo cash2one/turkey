@@ -31,11 +31,11 @@
     <!-- Custom styles for this template -->
     <style type="text/css">
         
-        .cityinput{
+       /* .cityinput{
             border-width: 1px;
             border-style: solid;
-            border-color: #ffffff #ffffff #ffffff #ffffff;
-            border-top: 1px solid #fff;
+           /* border-color: #ffffff #ffffff #ffffff #ffffff;*/
+        /*    border-top: 1px solid #fff;
             border-left: 1px solid #fff;
             border-right: 1px solid #fff;
             border-bottom: 1px solid #fff;
@@ -45,8 +45,8 @@
             font-size: 12px;
             padding-left: 2px;
             background: url(http://img02.taobaocdn.com/tps/i2/T1EPyLXm0hXXXXXXXX-200-100.png) no-repeat 150px 5px;
-            }
-/*
+            }*/
+/**/
         /*
          * Base structure
          */
@@ -405,7 +405,7 @@
                     </ul>
                     <form class="navbar-form navbar-right" style="margin-right:30px;margin-top: 25px;">
                      <!-- 选择其他国家 -->
-                      <input type="text" class="cityinput" id="citySelect" value="土耳其" style="margin-left: -70%;color:#111111;background-color: #ffffff;">
+                      <input type="text" class="cityinput" id="citySelect" value="土耳其" style="margin-left: -70%;color:#ffffff">
                       <br/>
                       <script src="/static/js/citySelector.js" type="text/javascript"></script>
                         <script type="text/javascript">
@@ -454,11 +454,10 @@
             </li>
             <li>
             <div class="link"><i class="fa fa-globe" ></i>出访风险评估<i class="fa fa-chevron-down"></i></div>
-                <ul class="submenu">
-                    <li><a href="#business">业务评估</a></li>
-                    <li><a href="#security">安保评估</a></li>
-                    <li><a href="#history_visit">历史出访</a></li>
-                </ul>
+                <!-- <ul class="submenu">
+                    <li><a href="#outside_accident">出访信息搜索</a></li>
+                    
+                </ul> -->
             </li>
         </ul>
     </div>
@@ -468,15 +467,12 @@
         {% endblock content %}
     </div>
 
-
 {% endblock navbar %}
-{% block tail_js %}
- 
+
 
     <script src='/static/js/jquery.js'></script>
 
     <script src="/static/js/index.js"></script>
-{% endblock tail_js %}
 </body>
 </html>
 
