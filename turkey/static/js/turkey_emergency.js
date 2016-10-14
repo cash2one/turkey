@@ -1,6 +1,5 @@
 var data_people=[['中国驻土耳其大使馆', 'Gölgeli Sokak No.34, Gaziosmanpaşa, 06700 Ankara, Turkey','0090-312-4360628', '0090-312-4464248'],['中国驻伊斯坦布尔总领事馆', 'Ahi Çelebi Cad. Çoban Çeşme Sok. No:4, Tarabya, Sarıyer, İstanbul','0090-312-2992188', '0090-312-2992633']];
 
-
 function related_people(data){
     $('#related_people').empty();
     // var date = new Date();
@@ -23,9 +22,9 @@ function related_people(data){
     }
 
     html += '</tbody></table>';
+    console.log(html);
     $('#related_people').append(html);
 }
-
 
 related_people(data_people);
 
