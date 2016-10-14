@@ -121,7 +121,7 @@
         margin-top: 30px;
         margin-left: 25px;
         width: 20%;
-        height: 340px;
+        height: 240px;
         height: screen.height;
         background-color: #ffffff;
         border-bottom: 1px solid #CCCCCC;
@@ -153,6 +153,8 @@
     }
 
     </style>
+    <link rel="stylesheet" href="/static/css/turkey_info_zixun.css">
+    <!-- <link rel="stylesheet" href="/static/css/bootstrap.css"> -->
     {% endblock head_css %}
 
     {% block head_js %}
@@ -173,22 +175,176 @@
 {% block content %}
 
         <div id="overview" >
+            <div class="col-lg-12" style="width: 1100px;">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div><img id="gaikuang_img" src="/static/img/turkey/gaikuang.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">国家概况</div>                       
+                    </div>
+                    <!-- <div class="panel-body"> -->
+                      <div class="panel-body">
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>历史综述</b>
+                                   
+                                        <div style="margin-top: -1%;width: 70%;">
+                                          
+                                           土耳其从奥托曼帝国的剩余领土中独立出来并于1923年10月29日成为土耳其共和国。1922年，新政权推翻了苏丹穆罕默德六世的统治，代之以共和政体的土耳其，结束了奥托曼政权。 现代土耳其人的起源可以追溯到来自于11世纪塞尔柱王朝统治下的安那托利亚的土耳其人。 在穆斯塔法・凯末尔（Mustafa Kemal Pasha）领导下解放战争爆发，这战争始于Mondros休战和塞夫勒条约的抗议中。 
+                                           <div id = "showdiv" style="display:none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;国民运动反对一战中的战胜国企图对奥托曼帝国进行瓜分的条约。1922年9月18日，入侵的各国被击退，土耳其获得了解放。 随后在1922年11月1日，土耳其大国民议会废除了苏丹统治政权，结束了631年的奥托曼帝国。1923年，洛桑条约（Treaty of Lausanne）承认了新的土耳其共和国的主权，大国民议会授予穆斯塔法・凯末尔（（Mustafa Kemal Pasha））Atatürk的称号（意思是土耳其之父）任命其为土耳其共和国的第一位总统。1924年3月3日，大国民议会废除了宗教法律的政府部门，实行政教分离并于1924年4月20日确立新宪法。在凯末尔的一党制的领导下，土耳其稳步地进行着欧美化的进程。在二战期间，土耳其和德国签署了和平条约，并一直保持中立直到二战末期。结束了一党执政后，多党政治使民主党在1950年的大选中获胜及权力的和平更替。 从那以后，土耳其的政党增多，但是民主党在一系列不稳定且间断的军事政变中(1960, 1971, 1980)分裂，这些军事政变最终导致了政党权力交还给民众。 1997年，土耳其军方又一次出面干涉，驱逐了当时伊斯兰倾向的政府，这一事件常被称为“后现代政变（post-modern coup）”。土耳其在1945年加入联合国，1952年称为北大西洋公约组织的一员。在1964年，土耳其加入欧洲共同体。它于2005年开始与欧盟开始加入成员国会谈。在过去十年中，经济改革促进了快速增长的经济。2015年下半年和2016年上半年，土耳其两个最大的城市和其他地方的恐怖主义暴力活动有所增加。 2015年10月在安卡拉发生了几次汽车炸弹和枪攻击，2015年2月和6月发生了两次攻击，其次是对伊斯坦布尔阿塔图尔克机场的袭击。 2016年7月15日，土耳其武装部队人员在安卡拉和伊斯坦布尔的关键政府和基础设施地点发动政变。
+                                            </div>
+                                           <a href="#" onclick="showHideCode()">查看更多</a>
+                                        </div>
+               
+                                    </p>
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>地理信息</b>
+                                     </p>
+                                     <div style="width: 72%;height: auto;margin-bottom: 1%;">
+                                         <span style="margin-top: -1%; margin-left:10px"><b>地理坐标：</b>39.00N,35.00E.</span>
+                                        <span style="margin-top: -1%;margin-left: 84px"><b>领土面积：</b>总计783562平方公里(领土：769632平方公里,领海：13930平方公里).</span>
+                                        <p></p>
+                                        
+                                        <span style="margin-top: -1%;margin-left: 10px"><b>专属经济区：</b>仅在黑海（与前苏联商定的海洋边界）.</span>
+                                        <span style="margin-top: -1%;margin-left: 10px"><b>气候：</b>中央高原（安那托利亚高原Anatolia）;狭窄的海岸平原;几个山脉.</span>
+                                        <p></p>
+                                        <span style="margin-top: -1%;margin-left: 10px"><b>地形：</b>仅在黑海（与前苏联商定的海洋边界）.</span>
+                                        <span style="margin-top: -1%;margin-left: 50px"><b>海拔极限：</b>最低点：地中海0 m;最高点：阿拉拉特山5166米.</span>
+                                        
+                                        <p></p>
+                                        <span style="margin-top: -1%;margin-left: 10px"><b>土地利用：</b>农业用地：49.7％;耕地26.7％;永久作物4％;永久牧场19％;森林：14.9％;其他：35.4％（2011年）.</span>
+                                        <p></p>
+                                        <span style="margin-top: -1%;margin-left: 10px"><b>自然灾害：</b>严重的地震，特别是在土耳其北部，沿着从马尔马拉海延伸到凡湖的弧线.</span>
+                                        <p></p>
+                                        <span style="margin-top: -1%;margin-left: 10px"><b>自然资源：</b>煤，铁矿石，铜，铬，锑，汞，金，重晶石，硼酸盐，天青石（锶），金刚砂，长石，石灰石，菱镁矿，大理石，珍珠岩，浮石.</span>
+                                     </div>
 
-            <div class="shadow" style="border-radius: 10px;float: left;padding:15px;border: 4px solid #104F87;margin: 15px;width: 97%;">
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>行政区域</b>
+                                     </p>
+                                     <div style="width: 72%;height: auto;margin-bottom: 1%;">
+                                         <span style="margin-top: -1%; margin-left:10px">土耳其行政区划等级为省、县、乡、村。全国共分为81省、约600个县、3.6万多乡村。<a href="">查看详情</a></span>
+                                        
+                                        <p></p>
+                                     </div>
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>机构设置</b>
+                                     </p>
+                                     <div style="width: 72%;height: auto;margin-bottom: 1%;">
+                                         <span style="margin-top: -1%; margin-left:10px"><b>政府机构：</b>总统府、大国民议会、总理府、总参谋部、内政部、外交部、财政部、教育部、环境部、卫生部、交通、航运和通讯部、食品、农业和畜牧业部、劳动和社会保障部、科学、工业和技术部、能源和自然资源部、文化旅游部、森林和水利部、家庭和社会政策部、欧盟事务部、经济部、青年与体育部、海关和贸易部、发展部。<a href="">查看详情</a></span>
+                                        
+                                        <p></p>
+                                     </div>
+                                     <div style="width: 72%;height: auto;margin-bottom: 1%;">
+                                         <span style="margin-top: -1%; margin-left:10px"><b>强力部门：</b>国家情报组织、公共秩序及安全部、土耳其安全总局、司法部、国防部。<a href="">查看详情</a></span>
+                                        
+                                        <p></p>
+                                     </div>
+
+                        <div style="width:20%;height:350px;background-color:#fff;    margin-top: -55%;margin-left: 80%;">
+                            <table class="table table-bordered">
+                                        <!-- <caption>边框表格布局</caption> -->
+                                        <thead>
+                                            <tr>
+                                                <th>土耳其共和国<br>Türkiye Cumhuriyeti （土语）</th>
+                                                
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                <img id="yilang_img" src="/static/img/turkey/turkey.png" alt="Photo" style="float：left;width:40px;height: 30px;margin-top: 0%;margin-left: -5%;">国旗
+                                                </td>
+                                                
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td><span><b style="margin-left: -82%;"> 政治</b> </span><br>
+                                                <p>总统：<a href="">雷杰普·塔伊普·埃尔多安</a></p><br><p style="margin-top: -14%;margin-left: -15%;margin-bottom: -2%;">总理：<a href="">毕纳利·耶尔德勒姆</a></p></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span><b style="margin-left: -26%;"> 经济</b> </span>&nbsp;
+                                                <a href="">GDP</a>&nbsp;
+                                                <a href="">进口和出口</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span><b style="margin-left: -52%;"> 国防</b> </span>&nbsp;
+                                                <a href="">军队体系</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span><b style="margin-left: -46%;"> 外交</b> </span>&nbsp;
+                                                <a href="">与他国关系</a></td>
+                                            </tr>
+                                            <!-- <tr>
+                                                <td><span><b style="margin-left: -46%;"> 外交</b> </span>&nbsp;
+                                                <a href="">与他国关系</a></td>
+                                            </tr> -->
+                                            <tr>
+                                                <td><span><b style="margin-left: -10%;"> 民族与宗教</b> </span>&nbsp;
+                                                <a href="">分布、组成统计</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span><b style="margin-left: -10%;"> 中国利益</b> </span>&nbsp;
+                                                <a href="">华人商会</a>&nbsp;<a href="">中资机构</a></td>
+                                            </tr>
+                                            
+                                            
+                                        </tbody>
+                                    </table>
+
+
+                            
+                        </div>
+                        <div class="right_col" style="margin-top: -8%;margin-left: 80%;">
+                    <div class="right_col_title">
+                        <div style="margin-top: 2.3%;margin-left: 5%;float:left">
+                            <p style="font-family: Microsoft YaHei;color: #104F87;font-size: 16px;">相关国家</p>
+                        </div>
+                        <div style="margin-top: 0%;margin-left: -1%;float：left;" >
+                       
+                           <img id="yilang_img" src="/static/img/turkey/yilang.png" alt="Photo" style="float：left;width:80px;height: 60px;margin-top: 20%;margin-left: -45%;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="http://baike.baidu.com/link?url=DyeVveVUww4ea_KOLwiAUT81KqXm1Iey1MBI4slgwFlEbdLNtMjYw2FX6YAB8vSC_aergr2tsoLXQ6kzg0vqVPKVA2GA9Yed0tgjZ_QnZK_" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">伊朗</a></p>
+                        
+                       </div>
+
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;margin-top: -44.2%;margin-left: 49%;" >
+                       
+                           <img id="ruassia_img" src="/static/img/turkey/ruassia.png" alt="Photo" style="float：left;width:80px;height: 60px;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">俄罗斯</a></p>
+                        
+                       </div>
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;" >
+                       
+                           <img id="shatealabo_img" src="/static/img/turkey/shatealabo.png" alt="Photo" style="float：left;width:80px;height: 60px;margin-left: 9%;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">沙特阿拉伯</a></p>
+                        
+                       </div>
+
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;margin-top: -44.2%;margin-left: 49%;" >
+                       
+                           <img id="yiselie_img" src="/static/img/turkey/yiselie.png" alt="Photo" style="float：left;width:80px;height: 60px;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">以色列</a></p>
+                        
+                       </div>
+                        
+                    </div>
+                    
+                </div>
+                       
+                    </div>
+                </div>
+              </div>
+           <!--  <div class="shadow" style="border-radius: 10px;float: left;padding:15px;border: 4px solid #104F87;margin: 15px;width: 97%;">
                 <div id = "porphoto" style="width:105px;float:left;margin-top: 0.4%;margin-left: -1%;">
                     <p style="margin-top: 5.3%;font-family: Microsoft YaHei;color: #104F87;font-size: 24px;margin-left: 11%;" >Turkey</p>
                     <span class="img-photo" style="margin-left:1%;margin-top:0px;margin-bottom:10px;display:block;float:left;"><img id="turkey_img" src="/static/img/turkey/turkey.png" alt="Photo" width="100" height="70"></span>
                 </div>
                 <div style="float:left;width:675px;margin-left: 1%;">
                     <p style="font-size:16px;">
-                        <!-- <b>{{topic}}</b> -->
-                        
-                        <!-- <a id="alert_png" href="/cluster/?query=冯骥才&subevent_id=global"><img src="../../static/img/warning2.png" width="20px" style="margin-left: 1px;margin-bottom: 5px;" title="有舆情事件，请点击查看"></a> -->
+                       
                     </p>
 
                     <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                     <p class="personal_domain"><b>人口地理</b>
-                    <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+                   
                     </p>
                     <p style="font-size: 14px;margin-top: -2%;">
                         土耳其共和国，简称土耳其，现有人口78,741,053人，是一个横跨欧亚两洲的国家，北临黑海，南临地中海，东南与叙利亚、伊拉克接壤，西临爱琴海，并与希腊以及保加利亚接壤，东部与格鲁吉亚、亚美尼亚、阿塞拜疆和伊朗接壤。土耳其地理位置和地缘政治战略意义极为重要，是连接欧亚的十字路口。
@@ -250,7 +406,7 @@
                 	</div>
                 	
                 </div>
-            </div>
+            </div> -->
             
             
             <div class="col-lg-12" >
@@ -271,7 +427,7 @@
                         <!-- <p style="font-size: 14px;margin-top: -2%;">5年</p> -->
                         <p style="font-size: 14px;margin-top: -1%;">首任总统：<a href="http://baike.baidu.com/view/1059820.htm?fromtitle=%E7%A9%86%E6%96%AF%E5%A1%94%E6%B3%95%C2%B7%E5%87%AF%E6%9C%AB%E5%B0%94%C2%B7%E9%98%BF%E5%A1%94%E5%9B%BE%E5%B0%94%E5%85%8B&fromid=4255894&type=syn">穆斯塔法·凯末尔·阿塔图尔克</a></p>
                         <!-- <p style="font-size: 14px;margin-top: -2%;">穆斯塔法·凯末尔·阿塔图尔克 </p> -->
-                        <p style="font-size: 14px;margin-top: -1%;">现任总统：<a>雷杰普·塔伊普·埃尔多安</a></p>
+                        <p style="font-size: 14px;margin-top: -1%;">现任总统：<a href="/news/person_detail/president_now">雷杰普·塔伊普·埃尔多安</a></p>
                         <!-- <p style="font-size: 14px;margin-top: -2%;">雷杰普·塔伊普·埃尔多安 </p> -->
                        <div>
                       
@@ -402,9 +558,15 @@
 
                          
                                <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: -54.6%;margin-top: 27.5%;margin-right: 0.6%;" ></div>
-                                <p class="personal_domain" style="margin-top: 28.5%;"><b>政治局势</b>
-                                    <p style="font-size: 14px;margin-top: -1%;margin-left: 3%;width: 90%;">当前局势：政局相对稳定，政变失败后，军方在土耳其国内的政治领域的影响力将被终结。另一方面，执政的正义与发展党力量强大，有较强的民意基础</p>
-                                    <p style="font-size: 14px;margin-top: -1%;margin-left: 3%;width: 90%;">未来局势：未遂政变给了埃尔多安一个难得的清洗异己的机会，能够加快政体转变的速度，从而达到政教合一的目的。土耳其将会更加趋于保守，而只要这个保守政策能够成功，随之也必将会给土耳其带来相对稳定的一段时间。</p>
+                                <p class="personal_domain" style="margin-top: 28.5%;"><b>政治时事</b>
+                                <!-- <div id="zhengzhishishi" style="float:left;margin-top: 2%;margin-left:2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;"> -->
+                                    <div id="zhengzhi_content" style="width:100%;height: auto;margin-left: 3%;">
+                                        
+                                    </div>
+                                        
+
+                                    <!-- </div> -->
+                                    
                            
 	                    
 
@@ -415,19 +577,13 @@
             <div class="col-lg-12" >
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
-                        <div>
-                        <!-- <span id="act_href" style="float:right;cursor:pointer;"><u>查看详情</u></span> -->
-                        经济
-                        </div>
-                        
+                        <div><img id="economic_img" src="/static/img/turkey/economic.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.3%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">经济</div>     
                     </div>
                     <div class="panel-body">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>概述</b>
-                                        <p style="font-size: 14px;margin-top: -1%;margin-left: 1%;width: 90%;">土耳其的大部分自由市场经济由其工业和服务业所推动，尽管其传统农业仍占就业的25％左右。积极的私有化计划减少了国家在基础工业，银行，运输和通信方面的干预。一个新兴的中产阶级企业家阶层为其经济注入了动力，扩大了除传统纺织品和服装以外的产品。汽车，石油化工和电子工业的重要性逐步上升，在土耳其的出口商品结构中超过了纺织品。
-                                        2006年5月，开通巴库 - 第比利斯 - 杰伊汉石油管道，标志着一个重大里程碑，每天由里海地区向市场提供100万桶石油。土耳其阿塞拜疆安那托利亚天然气管道（TANAP）的连接，解决了土耳其对进口天然气的依赖，目前满足其98％的能源需求。
-                                        土耳其在2001年发生严重的金融危机后，安卡拉政府采取金融和财政改革，作为世界基金组织项目的一部分。此次改革加强了该国的经济基基础，并迎来了一个强劲增长的时代，直到2008年年均增长率达到6％。全球经济情况以及更严格的财政政策使GDP在2009年开始收缩。但土耳其管理完善的金融市场和银行系统帮助该国抵御全球金融危机，GDP在2010年11月大幅回升至9％左右，出口也在危机后恢复正常水平。两家评级机构在2012年和2013年将土耳其的债务升级为投资级别。2014年年底境外直接投资的股票价值接近1,950亿美元。尽管有这些积极的趋势，但GDP增长率在2013年下降到4.4％，2014年下降到2.9％。2014年第四季度增长放缓，这主要是由于国内和欧洲土耳其最重要的出口市场的消费需求疲软。高利率也导致了增长放缓，土耳其在2014年1月大幅增加利率，以加强该国的货币和减少通货膨胀。土耳其在2015年2月降息，以刺激经济增长。
-                                        土耳其经济仍然存在显著的弱点。具体来说，土耳其相对较高的经常账户赤字，对结构改革的不明朗承诺，以及土耳其邻近地区的动荡使得其经济容易受到投资者信心不稳定的影响。土耳其仍然过度依赖通过不稳定的短期投资来为其大量经常账目赤字提供资金。</p>
+                                        <p style="font-size: 14px;margin-top: -1%;margin-left: 1%;width: 90%;">土耳其2015年国内生产总值为7336亿美元。其大部分自由市场经济由其工业和服务业所推动，尽管其传统农业仍占就业的25％左右。积极的私有化计划减少了国家在基础工业，银行，运输和通信方面的干预。一个新兴的中产阶级企业家阶层为其经济注入了动力，扩大了除传统纺织品和服装以外的产品。汽车，石油化工和电子工业的重要性逐步上升，在土耳其的出口商品结构中超过了纺织品。
+                                        </p>
                          <!-- GDP相关条目 -->
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>GDP相关</b>
@@ -458,39 +614,143 @@
                                     </p>
                         <!-- 进出口相关 -->
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: -98%;margin-top: 23%;margin-right: 0.6%;" ></div>
-                                    <p class="personal_domain" style="margin-top: 64.5%;margin-left: -98%;"><b>进口</b>
-                                    <div id="gdp_growth" style="float:left;width:48%;height:300px;box-shadow: 0px 0px 5px #ddd inset;">
-                                        <!-- 进口相关图 -->
-                                        <p style="margin-top: 2%;margin-left: 2%;">出口金额：1546亿美元（2015年）、1689亿美元（2014年估计）</p>
+                                    <p class="personal_domain" style="margin-top: 64.5%;margin-left: -98%;"><b>出口</b>
+                                    <div id="chukou_big" style="float:left;width:48%;height:300px;box-shadow: 0px 0px 5px #ddd inset;">
+                                        <!-- 出口相关图 -->
+                                        <p style="margin-top: 2%;margin-left: 2%;">出口金额：1546亿美元（2015年）、1689亿美元（2014年估计）。</p>
                                         <p style="margin-top: 2%;margin-left: 2%;">出口商品：服装，食品，纺织品，金属制品，运输设备。</p>
-                                        <div id="jinkou" style="float:left;width:48%;height:200px;">
+                                        <div id="chukou" style="float:left;width:100%;height:200px;">
                                             
                                         </div>
                                     </div>
                                     </p>
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 2%;margin-top: -4%;margin-right: 0.6%;" ></div>
-                                    <p class="personal_domain" style="margin-top: -4%;margin-left: 24%;"><b style="margin-left: 36%;">出口</b>
-                                    <div id="gdp_renjun" style="float:left;margin-top: -0.4%;margin-left:2%;width:48%;height:300px;box-shadow: 0px 0px 5px #ddd inset;">
-                                        <!-- 出口相关图 -->
-                                    </div>
-                                    <!-- <div id="gdp_ppp" style="float:left;margin-top: 2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
-                                                                            </div>
-
-                                    <div id="gdp_chuxu" style="float:left;margin-top: 2%;margin-left:2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
-                                        
-                                    </div>
-
-                                    <div id="gdp_anyongtu" style="float:left;margin-top: 2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
-                                        
-                                    </div>
-
-                                     <div id="gdp_anchanye" style="float:left;margin-top: 2%;margin-left:2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;">
-                                        
-                                    </div> -->
-
-
+                                    <p class="personal_domain" style="margin-top: -4%;margin-left: 24%;"><b style="margin-left: 36%;">进口</b>
+                                        <div id="jinkou_big" style="float:left;margin-top: -0.4%;margin-left:2%;width:48%;height:300px;box-shadow: 0px 0px 5px #ddd inset;">
+                                            <!-- 进口相关图 -->
+                                            <p style="margin-top: 2%;margin-left: 2%;">进口金额：2043亿美元（2015年估计）、2325亿美元（2014年估计）。</p>
+                                            <p style="margin-top: 2%;margin-left: 2%;">进口商品：机械，化工，半成品，燃料，运输设备。</p>
+                                            <div id="jinkou" style="float:left;width:100%;height:200px;">
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: -98%;margin-top: 30.5%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 31.5%;margin-left: -84%;"><b>国际储备、债务及汇率</b>
+                                        <div id="guojichubei_big" style="float:left;margin-top: -0.4%;width:100%;height:400px;box-shadow: 0px 0px 5px #ddd inset;">
+                                            <!-- 进口相关图 -->
+                                            <p style="margin-top: 2%;margin-left: 2%;">外汇和黄金储备：1183亿美元（2015年12月31日估计）、1273亿美元（2014年12月31日估计）。</p>
+                                            <p style="margin-top: 2%;margin-left: 2%;">债务-外部：2040亿美元（2014年12月31日估计）、3992亿美元（2013年12月31日估值）。</p>
+                                            <div id="guojichubei" style="float:left;width:80%;height:300px;margin-left: 12%;">
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: -100%;margin-top: 40%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 41%;margin-left: -64%;"><b style="margin-top: -2%;">其他经济数据</b>
+                                    <table class="table table-bordered">
+                                        <!-- <caption>边框表格布局</caption> -->
+                                        <thead>
+                                            <tr>
+                                                <th>年份</th>
+                                                <th>预算收入</th>
+                                                <th>预算支出</th>
+                                                <th>税收和其他收入</th>
+                                                <th>预算盈余（+）或赤字（ - ）</th>
+                                                <th>公共债务</th>
+                                                <th>通货膨胀率</th>
+                                                <th>商业银行优先贷款利率</th>
+                                                <th>国内信贷存量</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2015年</td>
+                                                <td>1754亿美元</td>
+                                                <td>1874亿美元</td>
+                                                <td>24.3％(GDP)</td>
+                                                <td>-1.7％(GDP)</td>
+                                                <td>33.1％(GDP)</td>
+                                                <td>8.9％</td>
+                                                <td>13.8％</td>
+                                                <td>551亿美元</td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>2014年</td>
+                                                <td>—</td>
+                                                <td>—</td>
+                                                <td>—</td>
+                                                <td>—</td>
+                                                <td>35％(GDP)</td>
+                                                <td>7.7％</td>
+                                                <td>13.38％</td>
+                                                <td>6866亿美元</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
 
                                     </p>
+                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>中土贸易总额统计</b>
+                                        <p style="font-size: 14px;margin-top: -1%;margin-left: 1%;width: 90%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016年1-4月，中土贸易总额为86.78亿美元，同比下降4.9%。其中，土自华进口80.86亿美元，同比下降4.2%，对华出口5.92亿美元，同比下降13.1%。2016年1-4月，土对外贸易总额为1096.56亿美元，同比下降9.4%。其中，出口466.81亿美元，同比下降7.4%，进口629.75亿美元，同比下降10.9%。数据显示，德国依然是土最大的贸易伙伴，第二、三位为中国和俄罗斯。2015年1-4月，土俄贸易额占土外贸总额7.28%，今年同期下降至5.07%。
+
+                                        </p>
+                                    </p>
+                                    <table class="table table-bordered">
+                                        <caption>双边经贸关系(单位：十亿美元)</caption>
+                                        <thead>
+                                            <tr>
+                                                <th>年份</th>
+                                                <th>出口</th>
+                                                <th>出口</th>
+                                                <th>总额</th>
+                                                <th>贸易平衡</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2015年</td>
+                                                <td>2,41</td>
+                                                <td>24,86</td>
+                                                <td>27,27</td>
+                                                <td>-22,45</td> 
+                                            </tr>
+                                             <tr>
+                                                <td>2014年</td>
+                                                <td>2,86</td>
+                                                <td>24,92</td>
+                                                <td>27,78</td>
+                                                <td>-22,05</td> 
+                                            </tr>
+                                             <tr>
+                                                <td>2013年</td>
+                                                <td>3,6</td>
+                                                <td>24,68</td>
+                                                <td>28,29</td>
+                                                <td>-21,08</td> 
+                                            </tr>
+                                             <tr>
+                                                <td>2012年</td>
+                                                <td>2,83</td>
+                                                <td>21,29</td>
+                                                <td>24,13</td>
+                                                <td>-18,46</td> 
+                                            </tr>
+                                             <tr>
+                                                <td>2011年</td>
+                                                <td>2,46</td>
+                                                <td>21,69</td>
+                                                <td>24,16</td>
+                                                <td>-19,22</td> 
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+
+                                    <!-- </p> -->
                 </div>
             </div>
 
@@ -500,21 +760,406 @@
             <div class="col-lg-12" >
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
-                        <div>
-                        <!-- <span id="act_href" style="float:right;cursor:pointer;"><u>查看详情</u></span> -->
-                        经济
-                        </div>
-                        
+                        <div><img id="guofang_img" src="/static/img/turkey/guofang.png" alt="Photo" style="width: 30px;height: 30px;margin-top: -0.3%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">国防</div>                       
                     </div>
                     <div class="panel-body">
-                      <div id="active_type"  style="width:450px;height:300px;float:left;"></div>
-                      <div id="subeventpie"  style="width:480px;height:300px;float:left;">
-                      <!--<div id="sub_topic"  style="width:450px;height:300px;float:left;">
-                      </div>-->
+                      <div class="panel-body">
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>军队体系说明</b>
+                                        <p style="font-size: 14px;margin-top: -1%;margin-left: 1%;width: 90%;">在和平时期，作为国内安全力量的国家宪兵总队和海岸警卫队隶属于内政部管辖，而在战时宪兵总队由陆军司令部管辖，海岸警卫队由海军司令部管辖。7·15政变后，总参谋长对土耳其总理负责，拥有武装部队的总指挥和控制权。同时还负责有效地进行军事行动，以及武装部队的作战准备。
+                                        </p>
+                        
+                                    </p>
+                        <div style="width: 300px;height: 200px;">
+                            <img id="jundui_img" src="/static/img/turkey/guofangjiegou.jpg" style="width: 700px;margin-left: 50%;">
+                        </div>
                     </div>
                 </div>
             </div>
 
+             <div class="col-lg-12" style="width: 1100px;margin-left: -1.6%;">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div><img id="waijiao_img" src="/static/img/turkey/waijiao.png" alt="Photo" style="width: 30px;height: 30px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">外交</div>                       
+                    </div>
+                    <div class="panel-body">
+                      <div class="panel-body">
+                        <!-- <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>外交综述</b>
+                                        <p style="font-size: 14px;margin-top: -1%;margin-left: 1%;width: 90%;">在和平时期，作为国内安全力量的国家宪兵总队和海岸警卫队隶属于内政部管辖，而在战时宪兵总队由陆军司令部管辖，海岸警卫队由海军司令部管辖。7·15政变后，总参谋长对土耳其总理负责，拥有武装部队的总指挥和控制权。同时还负责有效地进行军事行动，以及武装部队的作战准备。
+                                        </p>
+                        
+                                    </p> -->
+                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>与其他国家关系</b>
+                        <div id="waijiaoguanxi" style="width: 100%;height: 400px;">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+              <div class="col-lg-12" style="width: 1100px;margin-left: -1.6%;">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div><img id="people_img" src="/static/img/turkey/people.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">民族与宗教</div>                       
+                    </div>
+                    <!-- <div class="panel-body"> -->
+                      <div class="panel-body">
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>民族</b>
+                                       
+                                        
+                                        <table class="table table-bordered">
+                                        <!-- <caption>双边经贸关系(单位：十亿美元)</caption> -->
+                                        <thead>
+                                            <tr>
+                                                <th>民族</th>
+                                                <th>人口</th>
+                                                <th>地域分布</th>
+                                                <th>民族矛盾</th>
+                                                <th style="width: 100px;">政治倾向</th>
+                                                <th>与政党、组织的关系</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>土耳其人</td>
+                                                <td>55000000</td>
+                                                <td>人口最多的民族，分布在土耳其大部分地区。</td>
+                                                <td>土耳其族与希腊族的矛盾：塞浦路斯问题。</td>
+                                                <td>偏右</td>
+                                                <td>-</td> 
+                                            </tr>
+                                             <tr>
+                                                <td>库尔德人</td>
+                                                <td>12600000</td>
+                                                <td>主要分布在土耳其东部和东南部大片地广人稀的地区。</td>
+                                                <td>库尔德人：受西方国家影响，试图推翻土耳其的统治。</td>
+                                                <td>偏左</td>
+                                                <td>成立了库尔德社会主义党（SPTK）、库尔德工人先锋队（PPKK）等库尔德人自治组织。</td> 
+                                            </tr>
+                                             <tr>
+                                                <td>切尔卡西人</td>
+                                                <td>2500000</td>
+                                                <td>主要分布在土耳其的西部和中部安纳托利亚地区。</td>
+                                                <td>故土在俄罗斯北高加索，民族认同感引起土耳其和俄罗斯政府的不安。</td>
+                                                <td>-</td>
+                                                <td>-</td> 
+                                            </tr>
+                                             <tr>
+                                                <td>波斯尼亚人</td>
+                                                <td>2000000</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td> 
+                                                <td>-</td>
+                                            </tr>
+                                             <tr>
+                                                <td>阿尔巴尼亚人</td>
+                                                <td>1300000</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td> 
+                                                <td>-</td>
+                                            </tr>
+                                             <tr>
+                                                <td>格鲁吉亚人</td>
+                                                <td>1000000</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td> 
+                                                <td>-</td>
+                                            </tr>
+                                             <tr>
+                                                <td>阿拉伯人</td>
+                                                <td>870000</td>
+                                                <td>分布在土耳其的南部和东南部。</td>
+                                                <td>-</td>
+                                                <td>偏右</td> 
+                                                <td>-</td>
+                                            </tr>
+                                             <tr>
+                                                <td>朴玛克人</td>
+                                                <td>600000</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td> 
+                                                <td>-</td>
+                                            </tr>
+                                             <tr>
+                                                <td>拉兹人</td>
+                                                <td>80000</td>
+                                                <td>分布在土耳其的东北部，居住在特拉布宗和里泽之间的河谷。</td>
+                                                <td>-</td>
+                                                <td>偏右</td> 
+                                                <td>-</td>
+                                            </tr>
+                                             <tr>
+                                                <td>Hemşinler</td>
+                                                <td>13000</td>
+                                                <td>原本来自土耳其东部的黑海沿岸地区，但现仍居住在此地区的仅约数万人，很多含姆辛人早就迁入了土耳其各地的城市。</td>
+                                                <td>跨界民族问题，民族利益高于国家利益，民族认同超乎国家认同，极端形式就是民族分离主义。</td>
+                                                <td>-</td> 
+                                                <td>-</td>
+                                            </tr>
+                                             <tr>
+                                                <td>其他</td>
+                                                <td>1000000</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td> 
+                                                <td>-</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                        </table>                                    
+                                    </p>
+                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>宗教</b>
+                                        <p style="font-size: 14px;margin-top: -1%;margin-left: 1%;width: 90%;margin-bottom: 2%;">宗教分为：伊斯兰教(99%)和其他宗教(1%)。
+                                            </p>
+                                        <div id="zongjiao" style="float:left;width:50%;height:270px;">
+                                                <!-- 宗教饼图 -->
+                                        </div>
+                                        <table class="table table-bordered" style="float:left;width:40%;margin-left: 8%">
+                                        <caption>其他宗教构成</caption>
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>基督徒</th>
+                                                <th>犹太人</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>构成</td>
+                                                <td>东方正统教教徒<br>希腊东正教教徒<br>亚美尼亚使徒教会教徒</td>
+                                                <td>塞法尔迪犹太人<br>德系犹太人</td>
+                                                
+                                            </tr>
+                                          
+                                        </tbody>
+                                        </table>      
+
+                                    </p>
+                       
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-12" style="width: 1100px;margin-left: -1.6%;">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div><img id="orgnize_img" src="/static/img/turkey/orgnize.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">组织及地方力量</div>                       
+                    </div>
+                    <!-- <div class="panel-body"> -->
+                      <div class="panel-body">
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>组织及地方力量结构树图</b>
+                                       <!-- 树状图 -->
+                                        <div id="zuzhi" style="float:left;width:100%;height:450px;">
+                                                <!-- 宗教饼图 -->
+                                        </div>
+                                                               
+                                    </p>
+                         
+                       
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-lg-12" style="width: 1100px;margin-left: -1.6%;">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                        <div><img id="china_img" src="/static/img/turkey/china.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.2%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">中国利益</div>                       
+                    </div>
+                    <!-- <div class="panel-body"> -->
+                      <div class="panel-body">
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>华人与华侨</b>
+                                       <!-- 树状图 -->
+                                        <table class="table table-bordered">
+                                        <caption>华人与华侨(6~8万)</caption>
+                                        <thead>
+                                            <tr>
+                                                <th>民族</th>
+                                                <th>人口</th>
+                                                <th>简介</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>维吾尔族</td>
+                                                <td>4~5万</td>
+                                                <td>20 世纪30 年代开始到土耳其定居<br>1962 年“伊塔事件”<br>出国留学、探亲、经商和朝觐等原因<br>大多数从事中土之间的贸易：服装、丝绸等批发和零售<br>在跨国公司供职。</td>
+                                                
+                                            </tr>
+                                             <tr>
+                                                <td>哈萨克族</td>
+                                                <td>2~3万</td>
+                                                <td>1949 年走出新疆，经西藏到印度，后于50 年代初到土定居<br>1962 年“伊塔事件”时到土定居者<br>大多从事制革、皮衣加工和销售</td>
+                                               
+                                            </tr>
+                                             <tr>
+                                                <td>乌兹别克族、柯尔克孜族、塔塔尔族、汉族</td>
+                                                <td>少量</td>
+                                                <td>土耳其汉族华侨华人约400 人左右<br>多以开设餐厅及帮厨为主<br>集中在土耳其工商业大城市伊斯坦布尔</td>
+                                               
+                                            </tr>
+                                            
+                                        </tbody>
+                                        </table>
+   
+                                                               
+                                    </p>
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>华人商会</b>
+                                       
+                                       <table class="table table-bordered">
+                                        <!-- <caption>双边经贸关系(单位：十亿美元)</caption> -->
+                                        <thead>
+                                            <tr>
+                                                <th>名称</th>
+                                                 <th>成立时间</th>
+                                                <th>所在地</th>
+                                                <th>负责人</th>
+                                                <th>电话</th>
+                                                <th style="width: 100px;">传真</th>
+                                                <th>邮箱</th>
+                                                <th>网址</th> 
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>土耳其中资企业商会</td>
+                                                <td>2010/10/7</td>
+                                                <td>安卡拉</td>
+                                                <td>邱育新</td>
+                                                <td>0090-321-4911129/30</td>
+                                                <td>0090-321-4911187</td>
+                                                <td>zhongziqiyeshanghui@gmail</td> 
+                                                <td>www.tcid.com.tr</td> 
+                                            </tr>
+                                             <tr>
+                                                <td>土耳其中国工商总会</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>江小斌</td>
+                                                <td>0090-212-2913588</td>
+                                                <td>0090-212-2913588</td>
+                                                <td>-</td>
+                                                <td>www.tcsiad.com</td>
+                                                 
+                                            </tr>
+                                             <tr>
+                                                <td>伊斯坦布尔中资企业协会</td>
+                                                <td>-</td>
+                                                <td>伊斯坦布尔</td>
+                                                <td>徐克恩</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td> 
+                                                <td>-</td>
+                                            </tr>
+                                             <tr>
+                                                <td>伊斯坦布尔工业协会</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>0090-212-2522900</td>
+                                                <td>0090-212-2495084,2934398</td>
+                                                <td>-</td> 
+                                                <td>www.iso.org.tr</td>
+                                            </tr>
+                                             <tr>
+                                                <td>伊斯坦布尔商会</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>0090-212-4556000</td>
+                                                <td>0090-212-5131565,5201656</td>
+                                                <td>-</td> 
+                                                <td>www.ito.org.tr</td>
+                                            </tr>
+                                             <tr>
+                                               <td>安卡拉商会</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>0090-312-2897950</td>
+                                                <td>0090-312-2863446,2862764</td>
+                                                <td>-</td> 
+                                                <td>www.atonet.org.tr</td>
+                                            </tr>
+                                             <tr>
+                                               <td>安卡拉工业协会</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>0090-312-4171200</td>
+                                                <td>0090-312-4175205,4174370</td>
+                                                <td>-</td> 
+                                                <td>-</td>
+                                            </tr>
+                                             <tr>
+                                                 <td>伊兹密尔商会</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>0090-232-4417777</td>
+                                                <td>0090-232-4416528</td>
+                                                <td>-</td> 
+                                                <td>www.izto.org.tr</td>
+                                            </tr>
+                                             <tr>
+                                                 <td>梅尔森工业与贸易协会</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>0090-324-2389500</td>
+                                                <td>0090-324-2319697</td>
+                                                <td>-</td> 
+                                                <td>-</td>
+                                            </tr>
+                                             <tr>
+                                                 <td>布尔萨工业与贸易协会</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>0090-224-2431500</td>
+                                                <td>0090-2428510</td>
+                                                <td>-</td> 
+                                                <td>-</td>
+                                            </tr>
+                                           
+                                            
+                                        </tbody>
+                                        </table>                      
+   
+                                                               
+                                    </p>
+                          <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>留学生</b>
+                                      <div style="width: 100%;height: 100px;">
+                                          
+                                      </div> 
+                                                          
+                           
+                                    </p>
+                          <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>中资机构</b>
+                                    <div id="zhongzi_table" style="width:100%;height: auto;" >
+                                        
+                                    </div>
+                                     
+                                    </p>
+
+                       
+                    </div>
+                </div>
+              </div>
             
         </div>
 
@@ -527,51 +1172,112 @@
     var myChart = echarts.init(document.getElementById('gdp_growth'));
        
         var option = {
-        title : {
-            text: 'GDP相关指标',
+                // title : {
+                //     text: '未来一周气温变化',
+                //     subtext: '纯属虚构'
+                // },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['年实际增长率'],
+                    x: '140'
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType : {show: true, type: ['line', 'bar']},
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : ['2013年','2014年','2015年']
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value',
+                        axisLabel : {
+                            formatter: '{value} %'
+                        }
+                    }
+                ],
+                series : [
+                    {
+                        name:'年实际增长率',
+                        type:'line',
+                        data:[4.2, 2.9, 3.8]
+                       
+                    }
+                ]
+            };
+
+                    
+
+
+
+
+
+
+
+
+
+
+    // var myChart = echarts.init(document.getElementById('gdp_growth'));
+       
+    //     var option = {
+    //     title : {
+    //         text: 'GDP相关指标',
            
-        },
-        tooltip : {
-            trigger: 'axis'
-        },
-        legend: {
-            data:['年实际增长率'],
-            x: '140'
-        },
-        toolbox: {
-            show : true,
-            feature : {
-                mark : {show: true},
-                dataView : {show: true, readOnly: false},
-                magicType : {show: true, type: ['line', 'bar']},
-                restore : {show: true},
-                saveAsImage : {show: true}
-            }
-        },
-        calculable : true,
-        xAxis : [
-            {
-                type : 'category',
-                data : ['2013年','2014年','2015年']
-            }
-        ],
-        yAxis : [
-            {
-                type : 'value',
-               axisLabel : {
-                formatter: '{value} %'
-                }
-            }
-        ],
-        series : [
-            {
-                name:'年实际增长率',
-                type:'bar',
-                data:[4.2, 2.9, 3.8],
+    //     },
+    //     tooltip : {
+    //         trigger: 'axis'
+    //     },
+    //     legend: {
+    //         data:['年实际增长率'],
+    //         x: '140'
+    //     },
+    //     toolbox: {
+    //         show : true,
+    //         feature : {
+    //             mark : {show: true},
+    //             dataView : {show: true, readOnly: false},
+    //             magicType : {show: true, type: ['line', 'bar']},
+    //             restore : {show: true},
+    //             saveAsImage : {show: true}
+    //         }
+    //     },
+    //     calculable : true,
+    //     xAxis : [
+    //         {
+    //             type : 'category',
+    //             data : ['2013年','2014年','2015年']
+    //         }
+    //     ],
+    //     yAxis : [
+    //         {
+    //             type : 'value',
+    //            axisLabel : {
+    //             formatter: '{value} %'
+    //             }
+    //         }
+    //     ],
+    //     series : [
+    //         {
+    //             name:'年实际增长率',
+    //             type:'bar',
+    //             data:[4.2, 2.9, 3.8],
                 
-            }
-        ]
-    };
+    //         }
+    //     ]
+    // };
       
             myChart.setOption(option) ; 
      
@@ -581,52 +1287,101 @@
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('gdp_renjun'));
        
-        var option = {
-        title : {
-            text: 'GDP相关指标',
+    var option = {
+                // title : {
+                //     text: '未来一周气温变化',
+                //     subtext: '纯属虚构'
+                // },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['人均GDP'],
+                    x: '140'
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType : {show: true, type: ['line', 'bar']},
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : ['2013年','2014年','2015年']
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value',
+                        axisLabel : {
+                            formatter: '{value} 美元'
+                        }
+                    }
+                ],
+                series : [
+                    {
+                        name:'人均GDP',
+                        type:'line',
+                        data:[19500, 19900, 20400]
+                       
+                    }
+                ]
+            };
+
+
+    //     var option = {
+    //     title : {
+    //         text: 'GDP相关指标',
            
-        },
-        tooltip : {
-            trigger: 'axis'
-        },
-        legend: {
-            data:['人均GDP'],
-            x: '140'
-        },
-        toolbox: {
-            show : true,
-            feature : {
-                mark : {show: true},
-                dataView : {show: true, readOnly: false},
-                magicType : {show: true, type: ['line', 'bar']},
-                restore : {show: true},
-                saveAsImage : {show: true}
-            }
-        },
-        calculable : true,
-        xAxis : [
-            {
-                type : 'category',
-                data : ['2013年','2014年','2015年']
-            }
-        ],
-        yAxis : [
-            {
-                type : 'value',
-                axisLabel : {
-                    formatter: '{value} 美元'
-                }
-            }
-        ],
-        series : [
-            {
-                name:'人均GDP',
-                type:'bar',
-                data:[19500, 19900, 20400],
+    //     },
+    //     tooltip : {
+    //         trigger: 'axis'
+    //     },
+    //     legend: {
+    //         data:['人均GDP'],
+    //         x: '140'
+    //     },
+    //     toolbox: {
+    //         show : true,
+    //         feature : {
+    //             mark : {show: true},
+    //             dataView : {show: true, readOnly: false},
+    //             magicType : {show: true, type: ['line', 'bar']},
+    //             restore : {show: true},
+    //             saveAsImage : {show: true}
+    //         }
+    //     },
+    //     calculable : true,
+    //     xAxis : [
+    //         {
+    //             type : 'category',
+    //             data : ['2013年','2014年','2015年']
+    //         }
+    //     ],
+    //     yAxis : [
+    //         {
+    //             type : 'value',
+    //             axisLabel : {
+    //                 formatter: '{value} 美元'
+    //             }
+    //         }
+    //     ],
+    //     series : [
+    //         {
+    //             name:'人均GDP',
+    //             type:'bar',
+    //             data:[19500, 19900, 20400],
                 
-            }
-        ]
-    };
+    //         }
+    //     ]
+    // };
       
             myChart.setOption(option) ; 
      
@@ -636,52 +1391,101 @@
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('gdp_ppp'));
        
-        var option = {
-        title : {
-            text: 'GDP相关指标',
+         var option = {
+                // title : {
+                //     text: '未来一周气温变化',
+                //     subtext: '纯属虚构'
+                // },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['购买力平价(PPP)'],
+                    x: '140'
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType : {show: true, type: ['line', 'bar']},
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : ['2013年','2014年','2015年']
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value',
+                        axisLabel : {
+                            formatter: '{value} 万亿美元'
+                        }
+                    }
+                ],
+                series : [
+                    {
+                        name:'购买力平价(PPP)',
+                        type:'line',
+                        data:[1.589, 1.53, 1.48]
+                       
+                    }
+                ]
+            };
+
+
+    //     var option = {
+    //     title : {
+    //         text: 'GDP相关指标',
            
-        },
-        tooltip : {
-            trigger: 'axis'
-        },
-        legend: {
-            data:['购买力平价(PPP)'],
-            x: '140'
-        },
-        toolbox: {
-            show : true,
-            feature : {
-                mark : {show: true},
-                dataView : {show: true, readOnly: false},
-                magicType : {show: true, type: ['line', 'bar']},
-                restore : {show: true},
-                saveAsImage : {show: true}
-            }
-        },
-        calculable : true,
-        xAxis : [
-            {
-                type : 'category',
-                data : ['2013年','2014年','2015年']
-            }
-        ],
-        yAxis : [
-            {
-                type : 'value',
-                axisLabel : {
-                    formatter: '{value} 美元'
-                }
-            }
-        ],
-        series : [
-            {
-                name:'购买力平价(PPP)',
-                type:'bar',
-                data:[1.589, 1.53, 1.48],
+    //     },
+    //     tooltip : {
+    //         trigger: 'axis'
+    //     },
+    //     legend: {
+    //         data:['购买力平价(PPP)'],
+    //         x: '140'
+    //     },
+    //     toolbox: {
+    //         show : true,
+    //         feature : {
+    //             mark : {show: true},
+    //             dataView : {show: true, readOnly: false},
+    //             magicType : {show: true, type: ['line', 'bar']},
+    //             restore : {show: true},
+    //             saveAsImage : {show: true}
+    //         }
+    //     },
+    //     calculable : true,
+    //     xAxis : [
+    //         {
+    //             type : 'category',
+    //             data : ['2013年','2014年','2015年']
+    //         }
+    //     ],
+    //     yAxis : [
+    //         {
+    //             type : 'value',
+    //             axisLabel : {
+    //                 formatter: '{value} 美元'
+    //             }
+    //         }
+    //     ],
+    //     series : [
+    //         {
+    //             name:'购买力平价(PPP)',
+    //             type:'bar',
+    //             data:[1.589, 1.53, 1.48],
                 
-            }
-        ]
-    };
+    //         }
+    //     ]
+    // };
       
             myChart.setOption(option) ; 
      
@@ -690,53 +1494,102 @@
 <!-- 国民储蓄总额占比 -->
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('gdp_chuxu'));
-       
         var option = {
-        title : {
-            text: 'GDP相关指标',
+                // title : {
+                //     text: '未来一周气温变化',
+                //     subtext: '纯属虚构'
+                // },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['国民储蓄总额占比'],
+                    x: '140'
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType : {show: true, type: ['line', 'bar']},
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : ['2013年','2014年','2015年']
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value',
+                        axisLabel : {
+                            formatter: '{value} %'
+                        }
+                    }
+                ],
+                series : [
+                    {
+                        name:'国民储蓄总额占比',
+                        type:'line',
+                        data:[15.6, 14.7, 12.9]
+                       
+                    }
+                ]
+            };
+
+
+
+    //     var option = {
+    //     title : {
+    //         text: 'GDP相关指标',
            
-        },
-        tooltip : {
-            trigger: 'axis'
-        },
-        legend: {
-            data:['国民储蓄总额占比'],
-            x: '140'
-        },
-        toolbox: {
-            show : true,
-            feature : {
-                mark : {show: true},
-                dataView : {show: true, readOnly: false},
-                magicType : {show: true, type: ['line', 'bar']},
-                restore : {show: true},
-                saveAsImage : {show: true}
-            }
-        },
-        calculable : true,
-        xAxis : [
-            {
-                type : 'category',
-                data : ['2013年','2014年','2015年']
-            }
-        ],
-        yAxis : [
-            {
-                type : 'value',
-                axisLabel : {
-                    formatter: '{value} %'
-                }
-            }
-        ],
-        series : [
-            {
-                name:'国民储蓄总额占比',
-                type:'bar',
-                data:[15.6, 14.7, 12.9],
+    //     },
+    //     tooltip : {
+    //         trigger: 'axis'
+    //     },
+    //     legend: {
+    //         data:['国民储蓄总额占比'],
+    //         x: '140'
+    //     },
+    //     toolbox: {
+    //         show : true,
+    //         feature : {
+    //             mark : {show: true},
+    //             dataView : {show: true, readOnly: false},
+    //             magicType : {show: true, type: ['line', 'bar']},
+    //             restore : {show: true},
+    //             saveAsImage : {show: true}
+    //         }
+    //     },
+    //     calculable : true,
+    //     xAxis : [
+    //         {
+    //             type : 'category',
+    //             data : ['2013年','2014年','2015年']
+    //         }
+    //     ],
+    //     yAxis : [
+    //         {
+    //             type : 'value',
+    //             axisLabel : {
+    //                 formatter: '{value} %'
+    //             }
+    //         }
+    //     ],
+    //     series : [
+    //         {
+    //             name:'国民储蓄总额占比',
+    //             type:'bar',
+    //             data:[15.6, 14.7, 12.9],
                 
-            }
-        ]
-    };
+    //         }
+    //     ]
+    // };
       
             myChart.setOption(option) ; 
      
@@ -867,9 +1720,9 @@
      
 </script>
 
-<!-- 进口合作伙伴 -->
+<!-- 出口合作伙伴 -->
 <script type="text/javascript">
-    var myChart = echarts.init(document.getElementById('jinkou'));
+    var myChart = echarts.init(document.getElementById('chukou'));
        
         var option = {
                 title : {
@@ -921,7 +1774,7 @@
                             {value:4.8, name:'意大利'},
                             {value:4.5, name:'美国'},
                             {value:4.1, name:'法国'},
-                            {value:64.2, name:'其他'}
+                            {value:64.1, name:'其他'}
                         ]
                     }
                 ]
@@ -931,6 +1784,426 @@
             myChart.setOption(option) ; 
      
 </script>
+
+<!-- 进口合作伙伴 -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('jinkou'));
+       
+        var option = {
+                title : {
+                    text: '合作伙伴',
+                    subtext: '数据：2015年',
+                    x: '100'
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient : 'vertical',
+                    x : 'left',
+                    data:['中国','德国','俄罗斯','美国','意大利','其他']
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType : {
+                            show: true, 
+                            type: ['pie', 'funnel'],
+                            option: {
+                                funnel: {
+                                    x: '25%',
+                                    width: '50%',
+                                    funnelAlign: 'left',
+                                    max: 1548
+                                }
+                            }
+                        },
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                series : [
+                    {
+                        name:'合作伙伴',
+                        type:'pie',
+                        radius : '55%',
+                        center: ['60%', '60%'],
+                        data:[
+                            {value:12, name:'中国'},
+                            {value:10.3, name:'德国'},
+                            {value:9.9, name:'俄罗斯'},
+                            {value:5.4, name:'美国'},
+                            {value:5.1, name:'意大利'},
+                            {value:57.3, name:'其他'}
+                        ]
+                    }
+                ]
+            };
+                                
+      
+            myChart.setOption(option) ; 
+     
+</script>
+
+<!-- 汇率变化-->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('guojichubei'));
+       
+        var option = {
+                title : {
+                    text: '汇率变化趋势图',
+                    // subtext: '纯属虚构'
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['土耳其里拉-美元']
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType : {show: true, type: ['line', 'bar']},
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : ['2011年','2012年','2013年','2014年','2015年']
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value',
+                        axisLabel : {
+                            formatter: '{value} '
+                        }
+                    }
+                ],
+                series : [
+                    {
+                        name:'土耳其里拉-美元',
+                        type:'line',
+                        data:[1.675, 1.8, 2.1885, 2.1885, 2.739]
+                        
+                    }
+                ]
+            };
+                    
+                                
+      
+            myChart.setOption(option) ; 
+     
+</script>
+
+<!-- 伊斯兰教构成 -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('zongjiao'));
+       
+        var option = {
+                title : {
+                    text: '伊斯兰教派别',
+                    // subtext: '数据：2015年',
+                    x: '140'
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient : 'vertical',
+                    x : 'left',
+                    data:['伊斯兰教逊尼派','什叶派的支派阿列维派','什叶派中的十二伊玛目派']
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType : {
+                            show: true, 
+                            type: ['pie', 'funnel'],
+                            option: {
+                                funnel: {
+                                    x: '25%',
+                                    width: '50%',
+                                    funnelAlign: 'left',
+                                    max: 1548
+                                }
+                            }
+                        },
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                series : [
+                    {
+                        name:'伊斯兰教派别',
+                        type:'pie',
+                        radius : '55%',
+                        center: ['60%', '65%'],
+                        data:[
+                            {value:70, name:'伊斯兰教逊尼派'},
+                            {value:25, name:'什叶派的支派阿列维派'},
+                            {value:5, name:'什叶派中的十二伊玛目派'}
+                        ]
+                    }
+                ]
+            };
+                                
+      
+            myChart.setOption(option) ; 
+     
+</script>
+
+<!-- 组织及地方力量构成 -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('zuzhi'));
+       
+        var option = {
+                // title : {
+                //     text: '冰桶挑战'
+                // },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                series : [
+                    {
+                        name:'树图',
+                        type:'tree',
+                        orient: 'horizontal',  // vertical horizontal
+                        rootLocation: {x: 100,y: 230}, // 根节点位置  {x: 100, y: 'center'}
+                        nodePadding: 8,
+                        layerPadding: 200,
+                        hoverable: false,
+                        roam: true,
+                        symbolSize: 6,
+                        itemStyle: {
+                            normal: {
+                                color: '#4883b4',
+                                label: {
+                                    show: true,
+                                    position: 'right',
+                                    formatter: "{b}",
+                                    textStyle: {
+                                        color: '#000',
+                                        fontSize: 5
+                                    }
+                                },
+                                lineStyle: {
+                                    color: '#ccc',
+                                    type: 'curve' // 'curve'|'broken'|'solid'|'dotted'|'dashed'
+
+                                }
+                            },
+                            emphasis: {
+                                color: '#4883b4',
+                                label: {
+                                    show: false
+                                },
+                                borderWidth: 0
+                            }
+                        },
+                        
+                        data: [{"name":"组织及地方力量",
+                                "children":[{"name":"土耳其地方极端组织",
+                                            "children":[{"name":"库尔德工人党(Partiya Karkerên Kurdistan)"},
+                                                        {"name":"库尔德自由之鹰(Kurdistan Freedom Falcons)"},
+                                                        {"name":"灰狼组(Grey Wolves)"}
+                                                        ]},
+                                            {"name":"国际恐怖组织",
+                                            "children":[{"name":"伊斯兰国(ISIS)"},
+                                                        {"name":"叙利亚土库曼旅(Suriye Türkmen Ordusu)"},
+                                                        {"name":"人民保卫军(YPG)(Halk Koruma Birlikleri)"}
+                                                        ]},
+                                            {"name":"东突&疆独组织",
+                                            "children":[{"name":"东突基金会(Doğu Türkistan Vakfı)"},
+                                                        {"name":"东突移民协会(Doğu Türkistan Göçmenler Derneği)"},
+                                                        {"name":"欧亚突厥协会联盟(Avrasya Türk Dernekleri Federasyonu)"},
+                                                        {"name":"东突教育与互助协会(Doğu Türkistan Maarif ve Dayanışma Derneği)"},
+                                                        {"name":"东突青年协会(Doğu Türkistan Gençlik ve Kültür Derneği)"},
+                                                        {"name":"东突文化与团结协会"}
+                                                        ]},
+                                            {"name":"地方力量",
+                                            "children":[{"name":"土耳其商人和工业家联合会(TUSKON)"},
+                                                        {"name":"公共部门工会联合会(KESK)"},
+                                                        {"name":"革命工会联合会(DISK)"},
+                                                        {"name":"独立工商者和商人协会(MUSIAD)"},
+                                                        {"name":"道德权利工人联合会(Hak-Is)"},
+                                                        {"name":"土耳其雇主联合会(TISK)"},
+                                                        {"name":"土耳其劳工联合会(Turk-Is)"},
+                                                        {"name":"土耳其工业家和商人协会(TUSIAD)"},
+                                                        {"name":"土耳其商业和商品交易所联合会(TOBB)"}
+                                                        ]},
+                                            {"name":"反华势力",
+                                            "children":[{"name":"法轮功组织(Fa Lungong)"}]}
+                                ]}]
+                        
+                    }
+                ]
+            };
+        myChart.setOption(option) ; 
+     
+</script>
+
+<!-- 外交关系 -->
+<script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('waijiaoguanxi'));
+            option = {
+            title : {
+                text: '土耳其与其他国家关系',
+                subtext:'点击节点可以查看详情哦',
+                x:'right',
+                y:'bottom'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: '{b}'
+                // formatter: '{a} : {b}'
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    restore : {show: true},
+                    magicType: {show: true, type: ['force', 'chord']},
+                    saveAsImage : {show: true}
+                }
+            },
+            legend: {
+                x: 'left',
+                data:['其他国家','土耳其']
+            },
+            series : [
+                {
+                    type:'force',
+                    name : "",
+                    ribbonType: false,
+                    categories : [
+                        {
+                            name: '土耳其'
+                        },
+                        {
+                            name: '其他国家'
+                        },
+                        
+                    ],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                textStyle: {
+                                    color: '#333'
+                                }
+                            },
+                            nodeStyle : {
+                                brushType : 'both',
+                                borderColor : 'rgba(255,215,0,0.4)',
+                                borderWidth : 1
+                            },
+                            linkStyle: {
+                                type: 'curve'
+                            }
+                        },
+                        emphasis: {
+                            label: {
+                                show: false
+                                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+                            },
+                            nodeStyle : {
+                                //r: 30
+                            },
+                            linkStyle : {}
+                        }
+                    },
+                    useWorker: false,
+                    minRadius : 15,
+                    maxRadius : 25,
+                    gravity: 1.1,
+                    scaling: 1.1,
+                    roam: 'move',
+                    nodes:[
+                        {category:0, name: '土耳其', value : 10, label: '土耳其\n（主要）'},
+                        {category:1, name: '中国',value : 2},
+                        {category:1, name: '美国',value : 3},
+                        {category:1, name: '俄罗斯',value : 3},
+                        {category:1, name: '以色列',value : 7},
+                        {category:1, name: '叙利亚',value : 8},
+                        
+                    ],
+                    links : [
+                        {source : '中国', target : '土耳其', weight : 1,},
+                        {source : '美国', target : '土耳其', weight : 2, },
+                        {source : '俄罗斯', target : '土耳其', weight : 1, },
+                        {source : '以色列', target : '土耳其', weight : 2},
+                        {source : '叙利亚', target : '土耳其', weight : 3, },
+                       
+                    ]
+                }
+            ]
+        };              
+        myChart.setOption(option);  
+         require([
+            'echarts'
+        ],
+        function(ec){
+            var ecConfig = require('echarts/config');
+            function focus(param) 
+            {
+              //param是echarts里面存储的数据，可以console出来看一下
+                console.log(param.name);
+
+                var data = param.data;
+                var links = option.series[0].links;
+                var nodes = option.series[0].nodes;
+
+                if (data.source != null&& data.target != null) 
+                { //点击的是边
+                    // console.log(data.source);
+                    var sourceNode = nodes.filter(function (n) {return n.name == data.source})[0];
+                    var targetNode = nodes.filter(function (n) {return n.name == data.target})[0];
+                    
+                } 
+                else 
+                {   
+                    switch(param.name)
+                    {
+                        case '美国' :confirm("      美国与土耳其之间的关系可追溯到1947年实行的、旨在加强土耳其经济及军事自立的杜鲁门主义。多年来，美土两国通过密切的双边外交关系以及作为北约盟国中的两支最大军队之间的伙伴关系，使这一目标从冷战时期一直发展至今。\n      2003年，由于土耳其议会决定拒绝让美国为首的盟军把土耳其作为进入邻国伊拉克的基地，美土关系出现紧张，但是两国政府后来发起2006年共同未来与系统化对话，为加强战略合作建立了框架。2009年，在奥巴马宣布将分期从伊拉克撤出作战部队后，土耳其表示愿意为美国军事设备提供过境便利。同时有媒体报道，土耳其有可能成为伊朗恢复与美国关系的斡旋国。在反恐合作方面，美土两国打击共同面临的来自从基地组织到库尔德工人党的极端主义的威胁。");break;
+
+                        case '中国': confirm("一、建交\n      两国于 1971年8月4日建交，建交后，中土两国关系发展顺利，特别自80年代起，两国交往增多，关系发展较快。中方访土的领导人有国家主席李先念（1984年3月）、总理赵紫阳（1986年7月）、八届全国人大常委会委员长乔石（1996年11月）等。土方访华的领导人有总统埃夫伦（1982年12月）、总理厄扎尔（1985年7月）、议长卡拉杜曼（1985年10月）、总统德米雷尔（1995年5月）等。\n二、贸易交流\n      1981年，中土两国签订贸易议定书。 1981年12月两国签署了经济、工业和技术合作协定。1985年6月，签署了关于经济技术、贸易、民航和电讯合作会谈纪要。1991年10月，中土各自成立了双边企业家理事会。2003年，中土两国贸易额为25.98亿美元，其中我出口20.65亿美元，进口5.33亿美元。2004年，中土两国贸易额为34.1亿美元，其中我出口28.2亿美元，进口5.9亿美元。\n三、文化交往与合作\n      在双方的共同努力下，两国的文化交流与合作关系不断发展。1993年11月，中、土签署了两国政府文化合作协定，交流项目包括文化、体育、教育、新闻等各个领域。文化部长王蒙1988年3月访土，土文化和旅游部长梯梯兹（1988年6月）、文化部长萨拉尔（1992年9月）先后访华。此外，北京、上海、天津、西安、日照、鞍山、南京、蚌埠、镇江和盘锦分别与安卡拉、伊斯坦布尔、伊兹密尔、科尼亚、特拉布松、布尔萨、梅尔辛、辛姜、伊兹密特和亚洛瓦结为友好城市。");break;
+                        case '俄罗斯': confirm("        自去年11月土耳其击落一架在叙执行任务的俄罗斯战机后，两国关系跌至冰点。俄罗斯对土耳其实施了严厉的经济制裁，双方在政治、外交领域陷入严重对立。这种僵局一直持续至今年5月才有所松动。随着土方不断释放和解信号，特别是埃尔多安6月亲自致信普京，就击落俄战机事件“道歉”后，俄土关系随之开始解冻。但是，考虑到该事件对两国关系的深度伤害，以及俄土两国在中东、黑海、地中海区域的激烈博弈，各界普遍对土俄关系的改善前景较为谨慎。");break;
+                        case'以色列':confirm("历史良好 奈何宗教不同\n        土耳其与以色列1949年建交，土耳其是第一个承认以色列国家地位的穆斯林国家，此后两国在军事、经济、外交等方面长期保持着密切合作和良好关系。土耳其的军事基地供以色列空军使用，而以色列工程师也曾帮土耳其改良战机。在阿拉伯世界一致排斥犹太人为主的以色列的时期，土以两国的友好关系在很大程度上影响了中东格局。\n        然而两国关系并没有一致持续，土耳其现总统埃尔多安执政以来，两国关系急剧恶化。其根本原因是埃尔多安的宗教意识，执政后土耳其宗教化有所回归，并公开支持穆兄会和哈马斯，宗教元素对土耳其外交政策的影响日益显现。尤其是08年至09年的加沙战争之后，土以关系不断恶化，尽管有美国从中调和，也无力回天。2013年，以色列安插在伊朗的特工身份暴露，坊间传言土耳其是幕后黑手，土以关系跌至谷底。世事无料，2015年底，在中东战火正旺之时，土耳其在土叙边境击落了一架执行空袭任务的俄罗斯战机，土耳其越发孤立，外交关系紧张到了极点。此时土政府积极缓和了与以色列的关系。两国最终在今年6月底达成一致，将努力恢复两国关系正常化。");break;
+                        case'叙利亚':confirm("你家着火 我家烤得慌\n        作为邻居，两国民族间、政权间的历史纠葛一言难尽，在叙利亚内战前的2009年，土耳其总统还曾对叙利亚进行国事访问。2011年叙利亚内战爆发后，土耳其的对叙政策开始向西方倾斜，强烈谴责阿萨德政府。2012年，叙政府军击落一架“入侵领空”的土耳其战机，两国关系跌至冰点，土耳其甚至一度与美国、北约协商推翻阿萨德政权。\n        叙内战爆发后，最令土耳其头疼的莫过于难民问题了。五年间，数百万的叙利亚难民逃至土耳其，或偷渡进入欧洲，或就在土耳其居留。对土耳其的社会安定和发展造成了不小的压力。叙利亚境内的恐怖主义扩张也开始威胁土耳其，2015年以来，土耳其首都安卡拉和主要城市伊斯坦布尔遭遇多起炸弹袭击，死伤百人，旅游业遭受重创，原本就下行的经济更加雪上加霜，土耳其里拉汇率也持续走低。邻居叙利亚的这场大火，把土耳其烤的外焦里嫩。\n        此前土耳其对叙利亚的政策是一方面反对阿萨德政权，另一方面瞅准机会打击库尔德工人党。对打击极端组织、冷却叙利亚战事并无益处。而7月13日土耳其总理在宣布恢复与叙利亚关系时，称这将有利于叙利亚打击恐怖主义，是否意味着土耳其开始抛弃成见，准备为地区和平努力了呢？");break;
+                    }
+                     
+                }
+            }
+                myChart.on(ecConfig.EVENT.CLICK, focus)
+                myChart.on(ecConfig.EVENT.FORCE_LAYOUT_END, function () {
+                });
+            }
+    )   
+
+   
+    </script>
+
+<script src="../../static/js/turkey_info_zixun.js" type="text/javascript"></script>
 
 {% endblock content %}
 
