@@ -11,7 +11,7 @@ var option = {
         trigger: 'axis',
         showDelay : 0,
         formatter : function (params) {
-            console.log(params);
+            // console.log(params);
             // if (params.value.length > 1) {
             //     return params.seriesName + ' :<br/>'
             //        + params.value[0] + 'cm ' 

@@ -82,7 +82,6 @@ for(var i =0;i<length;i++){
    $(".media_current_select_text").text("全部");
    $(".catalog_current_select_text").text("全部");
    $("#channel").change(function(){
-    console.log('33');
     if($(".channel_current_select_text").text()=="新闻"){
        $("#media_form").css("display","block");
        $("#catalog_form").css("display","block");
