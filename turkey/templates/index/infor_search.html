@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "turkey_base1.html" %}
 {% block module_title %}人物概览{% endblock %}
 
 {% block head_css %}
@@ -23,13 +23,16 @@
   
 
 {% block head_js %}
-	<!-- <script type="text/javascript" src="../../static/js/jquery.js"></script> -->
+	<script type="text/javascript" src="../../static/js/jquery.js"></script>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>  -->
-    <script type="text/javascript" src="../../static/js/moment.min.js"></script>
-	<script type="text/javascript" src="../../static/js/moment-with-locales.min.js"></script>
+    
 	<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../static/js/bootstrap-datetimepicker1.min.js"></script>
-    <script type="text/javascript" src="../../static/js/bootstrap-datetimepicker.js"></script>
+    <!-- <script type="text/javascript" src="../../static/js/bootstrap-datetimepicker1.min.js"></script>
+    <script type="text/javascript" src="../../static/js/moment.min.js"></script>
+	<script type="text/javascript" src="../../static/js/moment-with-locales.min.js"></script> -->
+    <!-- <script type="text/javascript" src="../../static/js/bootstrap-datetimepicker.js"></script> -->
+
   		<script type="text/javascript" >
 		/*弹出对话框*/
 			function change_html()
@@ -45,7 +48,7 @@
 {% block content %}    
 <div class="panel panel-primary" style="margin-top:100px;margin-left: 2.5%;width: 95%;">
     <div class="panel-heading" style="background-color:#104F87;border-color: #104F87;">
-        <h3 class="panel-title">走进出访事件</h3>
+        <h3 id="outside_accident" class="panel-title">走进出访事件</h3>
     </div>
     <div class="panel-body">
 		<div id="content" class="content1">			
@@ -79,11 +82,9 @@
 
 							<div class='col-md-3' id="date1">
 			       				<div class="form-group">
-			        	    		<div class='input-group date' id='datetimepicker_index_from' style="width: 180px;height:40px;margin-left: 80px;margin-top:-80%;float: left;">
-			                			<input id="input_date_from" type='text' class="form-control" style="height:40px;" />
-			                			<span class="input-group-addon">
-			                				<span class="glyphicon glyphicon-calendar"></span>
-			                			</span>
+			        	    		<div class='input-group date'  style="width: 180px;height:40px;margin-left: 80px;margin-top:-80%;float: left;">
+			                			<input placeholder="2016-11-01" type='text' class="form-control" style="height:40px;" />
+			                			
 			           		 		</div>
 			        			</div>
 
@@ -91,17 +92,15 @@
 
 			        		<div class='col-md-3' id="date2">
 			        			<div class="form-group" style="float:left;">
-			            			<div class='input-group date' id='datetimepicker_index_to' style="width: 180px;height:40px;margin-top: -27%;margin-left: 155%;float: left;">
-			                			<input id="input_date_to" type='text' class="form-control"  style="height:40px;" />
-			                			<span class="input-group-addon">
-			                				<span class="glyphicon glyphicon-calendar"></span>
-			                			</span>
+			            			<div class='input-group date'  style="width: 180px;height:40px;margin-top: -27%;margin-left: 155%;float: left;">
+			                			<input placeholder="2016-11-20" type='text' class="form-control"  style="height:40px;" />
+			                			
 			            			</div>
 			        			</div>
 			    			</div>
-							</div>
+					</div>
 
-					<script type="text/javascript">
+					<!-- <script type="text/javascript">
 
 					    $(function () {
 					        $('#datetimepicker_index_from').datetimepicker();
@@ -113,7 +112,7 @@
 					            $('#datetimepicker_index_from').data("DateTimePicker").maxDate(e.date);
 					        });
 					    });
-					</script>
+					</script> -->
 
 				<!-- 	<script type="text/javascript">
 						function entersearch()
