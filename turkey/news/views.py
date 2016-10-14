@@ -32,9 +32,16 @@ def interview_detail():
     return render_template('index/interview_detail.html')
 
 @mod.route('/person_detail/president_now')
-def person_detail():
+def person_detail_president_now():
     return render_template('index/card/person_detail_president_now.html')
 
+@mod.route('/person_detail/president_first')
+def person_detail_president_first():
+    return render_template('index/card/person_detail_president_first.html')
+
+@mod.route('/president_total/')
+def president_total():
+    return render_template('index/card/president_total.html')
 
 
 @mod.route('/turkey_info/')

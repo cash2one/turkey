@@ -1,0 +1,287 @@
+{% extends "/index/card/card_base.html" %}
+{% block module_title %}查看历任总统{% endblock %}
+{% block body %}
+
+<style type="text/css">
+	.basicInfo_head{
+		width: 90px;
+		padding: 0 5px 0 12px;
+		font-weight: 700;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		word-wrap: normal;
+		color: #999;
+	}
+	.abstract_tbl_wrap {
+			margin: 10px 35px;
+			overflow: hidden;
+	}
+	.abstract_tbl {
+		width: 100%;
+		margin-top: -1px;
+		margin-top: -5px;
+}
+table {
+		border-collapse: collapse;
+		border-spacing: 0;
+}
+.abstract_list th {
+		font-weight: bold;
+		width: 90px;
+		line-height: 27px;
+		border-top: 1px dashed #dedfe1;
+		text-align: left;
+		vertical-align: top;
+}
+.abstract_list td {
+		line-height: 27px;
+		border-top: 1px dashed #dedfe1;
+}
+.preInfo p {
+		line-height: inherit;
+		margin: 0.5em 0;
+		display: block;
+		font-size: 16px;
+		line-height: 1.6;
+}
+.preInfo_detail p {
+		margin: 0.5em 0;
+		display: block;
+		font-size: 16px;
+		line-height: 1.4;
+}
+.blueBlock {
+		float:left;
+		width:9px;
+		height:26px;
+		background-color: #104F87;
+		margin-left: 0%;
+		margin-top: 0%;
+		margin-right: 0.6%;
+}
+.blueBlock_title {
+		color: #104F87;
+		font-size:24px;
+/*  font-weight: bolder;
+*/  font-family: Microsoft YaHei;
+		margin-top: 2px;
+}
+hr {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border: 0;
+		border-top: 1px solid #aaa;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+.external {
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-image: url(/static/img/card/outLine.svg);
+    padding-right: 13px;
+}
+
+ol .references li:target, sup.reference:target, span.citation:target {
+        background-color: #DEF;
+   }
+
+</style>
+
+<div class="panel panel-primary" style="margin-top: 20px; height: 1800px;">
+	<div class="panel-heading" style="height: 50px !important;">
+		<h3 class="panel-title" style="font-size: 26px;padding: 2px;font-weight: bolder;float: left;">历任总统</h3>
+	</div>
+	<div class="panel-body" >
+	  <div class="preInfo">	
+		 <p style="font-size: 16px;">土耳其总统任期：5年</p>
+		 <p style="font-size: 16px;">首任总统：<a href="">穆斯塔法·凯末尔·阿塔图尔克</a></p>
+		 <p style="font-size: 16px;">现任总统：<a>雷杰普·塔伊普·埃尔多安</a></p>
+	  </div>
+
+	  <!-- 现任 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_1_img" src="/static/img/card/president_now.JPG" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:15px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">雷杰普·塔伊普·埃尔多安</a><p>
+	      	<p>在任时间：2014.08-至今</p>
+	      	<p>出生日期：1954年2月26日</p>
+	      	<p>外文名：Recep Tayyip Erdogan</p>
+	      	<p>所属党派：<a href="">正义与发展党</a></p>
+	      	<p>毕业院校：马尔马拉大学经贸学院</p>
+	      </div>
+	  </div>
+
+	  <!-- 居尔 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_2_img" src="/static/img/card/Abdullah_Gul.jpg" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:15px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">阿卜杜拉·居尔</a><p>
+	      	<p>在任时间：2007.08-2014.08</p>
+	      	<p>出生日期：1950年10月29日</p>
+	      	<p>外文名：Abdullah Gul/Abdullah Gül</p>
+	      	<p>所属党派：<a href="">正义与发展党</a></p>
+	      	<p>毕业院校：伊斯坦布尔大学经济学院</p>
+	      </div>
+	  </div>
+
+	  <!-- 阿赫迈特•内吉代特•塞泽尔 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_3_img" src="/static/img/card/Ahmet_Necdet_Sezer_2006.jpg" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:15px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">阿赫迈特•内吉代特•塞泽尔</a><p>
+	      	<p>在任时间：2000.05-2007.08</p>
+	      	<p>出生日期：1941年3月13日</p>
+	      	<p>外文名：Ahmet Necdet Sezer</p>
+	      	<p>所属党派：<a href="">其他</a></p>
+	      	<p>毕业院校：安卡拉大学法学院</p>
+	      </div>
+	  </div>
+
+	  <!-- 苏莱曼•德米雷尔 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_4_img" src="/static/img/card/220px-Suleyman_Demirel_1998.jpg" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:10px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">苏莱曼•德米雷尔</a><p>
+	      	<p>在任时间：1993.5.16—2000.5.16</p>
+	      	<p>出生日期：1941年3月13日</p>
+	      	<p>逝世日期：2015年6月17日</p>
+	      	<p>外文名：Suleyman Demirel</p>
+	      	<p>所属党派：<a href="">正确道路党</a></p>
+	      	<p>毕业院校：<a>伊斯坦布尔理工大学</a></p>
+	      </div>
+	  </div>
+
+	  <!-- 图尔古特•厄扎尔 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_5_img" src="/static/img/card/220px-Turgut_Ozal_cropped.jpg" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;height:200px;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:10px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">图尔古特•厄扎尔</a><p>
+	      	<p>在任时间：1989.11.9—1993.4.17</p>
+	      	<p>出生日期：1927年10月13日</p>
+	      	<p>逝世日期：1993年4月17日</p>
+	      	<p>外文名：Kenan Evren</p>
+	      	<p>所属党派：<a href="">祖国党</a></p>
+	      	<p>毕业院校：<a>伊斯坦布尔技术大学</a></p>
+	      </div>
+	  </div>
+		  	
+
+	  <!-- 凯南•埃夫伦 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_5_img" src="/static/img/card/88b380a1c1c7a09_size12_w220_h308.jpg" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:10px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">凯南•埃夫伦</a><p>
+	      	<p>在任时间：1980.9.12—1989.11.9</p>
+	      	<p>出生日期：1917年7月17日</p>
+	      	<p>逝世日期：2015年5月9日</p>
+	      	<p>外文名：Turgut Özal cropped</p>
+	      	<p>所属党派：无党派</p>
+	      	<p>毕业院校：<a>伊斯坦布尔高等军事学院</a></p>
+	      </div>
+	  </div>
+
+	  <!-- 法赫里•科鲁蒂尔克 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_5_img" src="/static/img/card/fahri-koruturk.jpg" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:10px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">法赫里•科鲁蒂尔克</a><p>
+	      	<p>在任时间：1973.4.6—1980.4.6</p>
+	      	<p>出生日期：1903年8月3日</p>
+	      	<p>逝世日期：1987年10月12日</p>
+	      	<p>外文名：Fahri Koruturk</p>
+	      	<p>所属党派：无党派</p>
+	      	<p>毕业院校：<a>海军学员学校</a></p>
+	      </div>
+	  </div>
+
+	  <!-- 杰夫德特·苏奈 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_3_img" src="/static/img/card/Cevdet_Sunay.png" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:15px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">杰夫德特·苏奈</a><p>
+	      	<p>在任时间：1966.3.28-1973.3.28</p>
+	      	<p>出生日期：1899年2月10日</p>
+	      	<p>逝世日期：1982年5月22日</p>
+	      	<p>外文名：Cevdet Sunay</p>
+	      	<p>所属党派：无政党</p>
+	      	<p>毕业院校：伊斯坦布尔库列利军事高中</p>
+	      </div>
+	  </div>
+
+	  <!-- 杰马勒•古尔塞勒 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_4_img" src="/static/img/card/komploteorilerimiz_cemal_gursel.jpg" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:10px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">杰马勒•古尔塞勒</a><p>
+	      	<p>在任时间：1961.10.10—1966.3.28</p>
+	      	<p>出生日期：1895年10月13日</p>
+	      	<p>逝世日期：1966年9月14日</p>
+	      	<p>外文名：Cemal Gürsel</p>
+	      	<p>所属党派：无党派</p>
+	      	<p>毕业院校：<a>伊斯坦布尔库列利军事高中</a></p>
+	      </div>
+	  </div>
+
+	  <!-- 杰拉勒•拜亚尔 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_5_img" src="/static/img/card/Celal_Bayar.jpg" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;height:200px;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:10px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">杰拉勒•拜亚尔</a><p>
+	      	<p>在任时间：1950.5.22-1960.5.27</p>
+	      	<p>出生日期：1883年5月16日</p>
+	      	<p>逝世日期：1986年8月22日</p>
+	      	<p>外文名：Celal bayar</p>
+	      	<p>所属党派：<a href="">民主党</a></p>
+	      </div>
+	  </div>
+	   	
+	  <!-- 伊斯麦特•伊诺努 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_5_img" src="/static/img/card/Inonu_Ismet.jpg" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:10px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">伊斯麦特•伊诺努</a><p>
+	      	<p>在任时间：1938.11.11—1950.5.22</p>
+	      	<p>出生日期：1884年9月24日</p>
+	      	<p>逝世日期：1973年12月25日</p>
+	      	<p>外文名：Inonu Ismet</p>
+	      	<p>所属党派：<a>共和人民党</a></p>
+	      	<p>毕业院校：<a>伊斯坦布尔军事学院</a></p>
+	      </div>
+	  </div>
+
+	  <!-- 穆斯塔法•凯末尔•阿塔图尔克 -->
+	  <div style="width:50%;height:250px;float:left;">
+	      <img id="zongtong_5_img" src="/static/img/card/president_1st.JPG" alt="Photo" style="float：left;width: 150px;margin-top: 3%;margin-left: 1%;float:left;">
+	      <div class="preInfo_detail" style="margin-left:30px;margin-top:10px;float:left;" >
+	      	<p><a href="" style="font-size: 20px;font-weight:bolder;font-family: Microsoft YaHei;">穆斯塔法•凯末尔•阿塔图尔克</a><p>
+	      	<p>在任时间：1923.10.29—1938.11.10</p>
+	      	<p>出生日期：1881年5月19日</p>
+	      	<p>逝世日期：1938年11月10日</p>
+	      	<p>外文名：Mustafa Kemal Atatürk</p>
+	      	<p>所属党派：<a>共和人民党</a></p>
+	      	<p>毕业院校：<a>哈拜参谋学院</a></p>
+	      </div>
+	  </div>
+
+
+	</div>
+		
+</div>
+
+
+
+
+{% endblock body %}
+
+
+
+
+

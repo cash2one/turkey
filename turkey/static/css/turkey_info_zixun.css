@@ -20,10 +20,10 @@
     margin-bottom: 15px;
 }
 
-a:hover, a:focus {
+/*a:hover, a:focus {
     color: #2a6496;
     text-decoration: underline;
-}
+}*/
 
 h1, h2, h3, h4, h5, h6 {
     margin: 10px 0;
