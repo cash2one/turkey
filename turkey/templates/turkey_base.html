@@ -26,16 +26,16 @@
 
     <!-- daterangepicker css -->
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/datarangepiker.css') }}">
-    <!-- <link rel="stylesheet" href="/static/css/citySelector.css"> -->
+    <link rel="stylesheet" href="/static/css/citySelector.css">
     
     <!-- Custom styles for this template -->
     <style type="text/css">
         
-       /* .cityinput{
+        .cityinput{
             border-width: 1px;
             border-style: solid;
-           /* border-color: #ffffff #ffffff #ffffff #ffffff;*/
-        /*    border-top: 1px solid #fff;
+            border-color: #ffffff #ffffff #ffffff #ffffff;
+            border-top: 1px solid #fff;
             border-left: 1px solid #fff;
             border-right: 1px solid #fff;
             border-bottom: 1px solid #fff;
@@ -45,8 +45,8 @@
             font-size: 12px;
             padding-left: 2px;
             background: url(http://img02.taobaocdn.com/tps/i2/T1EPyLXm0hXXXXXXXX-200-100.png) no-repeat 150px 5px;
-            }*/
-/**/
+            }
+/*
         /*
          * Base structure
          */
@@ -357,11 +357,13 @@
 
     <!-- JQuery core JS -->
     <script src="/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
     <script type="text/javascript" src="/static/echarts/echarts.js"></script>
     <script type="text/javascript" src="/static/echarts/echarts-all.js"></script>
 
     <!-- Bootstrap core JS -->
-    <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    
     <script src="{{ url_for('static', filename='js/moment.js') }}"></script>
     <script src="{{ url_for('static', filename='js/datarangepiker.js') }}"></script>
     <script type="text/javascript">
@@ -402,7 +404,7 @@
                     </ul>
                     <form class="navbar-form navbar-right" style="margin-right:30px;margin-top: 25px;">
                      <!-- 选择其他国家 -->
-                      <input type="text" class="cityinput" id="citySelect" value="土耳其" style="margin-left: -70%;color:#ffffff">
+                      <input type="text" class="cityinput" id="citySelect" value="土耳其" style="margin-left: -70%;color:#111111;background-color: #ffffff;">
                       <br/>
                       <script src="/static/js/citySelector.js" type="text/javascript"></script>
                         <script type="text/javascript">
@@ -426,22 +428,22 @@
             
             </li>
             <li>
-                <div class="link"><i class="fa fa-paint-brush"></i>走近土耳其<i class="fa fa-chevron-down"></i></div>
+                <div class="link"><i class="fa fa-paint-brush"></i>国家情报解密<i class="fa fa-chevron-down"></i></div>
                 <ul class="submenu">
-                    <li><a href="">国&nbsp;&nbsp;&nbsp;&nbsp;家&nbsp;&nbsp;&nbsp;&nbsp;概&nbsp;&nbsp;&nbsp;&nbsp;况</a></li>
-                    <li><a href="">政&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;治</a></li>
-                    <li><a href="">经&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;济</a></li>
-                    <li><a href="">国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;防</a></li>
-                    <li><a href="">外&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交</a></li>
-                    <li><a href="">民&nbsp;&nbsp;族&nbsp;&nbsp;与&nbsp;&nbsp;宗&nbsp;&nbsp;教</a></li>
-                    <li><a href="">极端及反华组织</a></li>
-                    <li><a href="">中&nbsp;&nbsp;&nbsp;&nbsp;国&nbsp;&nbsp;&nbsp;&nbsp;利&nbsp;&nbsp;&nbsp;&nbsp;益</a></li>
+                    <li><a href="#gaikuang_id">国&nbsp;&nbsp;&nbsp;&nbsp;家&nbsp;&nbsp;&nbsp;&nbsp;概&nbsp;&nbsp;&nbsp;&nbsp;况</a></li>
+                    <li><a href="#zhengzhi_id">政&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;治</a></li>
+                    <li><a href="#jingji_id">经&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;济</a></li>
+                    <li><a href="#guofang_id">国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;防</a></li>
+                    <li><a href="#waijiao_id">外&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交</a></li>
+                    <li><a href="#minzong_id">民&nbsp;&nbsp;族&nbsp;&nbsp;与&nbsp;&nbsp;宗&nbsp;&nbsp;教</a></li>
+                    <li><a href="#zuzhi_id">极端及反华组织</a></li>
+                    <li><a href="#china_id">中&nbsp;&nbsp;&nbsp;&nbsp;国&nbsp;&nbsp;&nbsp;&nbsp;利&nbsp;&nbsp;&nbsp;&nbsp;益</a></li>
                     
                 </ul>
             </li>
             
             <li>
-                <div class="link" ><i class="fa fa-mobile"></i>一级分类<i class="fa fa-chevron-down"></i></div>
+                <div class="link" ><i class="fa fa-mobile"></i>突发事件响应<i class="fa fa-chevron-down"></i></div>
                 <ul class="submenu">
                     <li><a href="">二级标题</a></li>
                     <li><a href="">二级标题</a></li>
@@ -450,11 +452,11 @@
                 </ul>
             </li>
             <li>
-            <div class="link"><i class="fa fa-globe" ></i>一级分类<i class="fa fa-chevron-down"></i></div>
+            <div class="link"><i class="fa fa-globe" ></i>出访风险评估<i class="fa fa-chevron-down"></i></div>
                 <ul class="submenu">
-                    <li><a href="">二级标题</a></li>
-                    <li><a href="">二级标题</a></li>
-                    <li><a href="">二级标题</a></li>
+                    <li><a href="">业务评估</a></li>
+                    <li><a href="">安保评估</a></li>
+                    <li><a href="">历史出访</a></li>
                 </ul>
             </li>
         </ul>
@@ -465,12 +467,15 @@
         {% endblock content %}
     </div>
 
-{% endblock navbar %}
 
+{% endblock navbar %}
+{% block tail_js %}
+ 
 
     <script src='/static/js/jquery.js'></script>
 
     <script src="/static/js/index.js"></script>
+{% endblock tail_js %}
 </body>
 </html>
 
