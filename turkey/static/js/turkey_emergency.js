@@ -27,3 +27,24 @@ function related_people(data){
 
 
 related_people(data_people);
+
+
+var west_reac_data = [{"title":"Turkey's failed coup reveals army within an army","paragraph":"As of July 21, 124 Turkish generals and admirals have been detained on charges of participating in the failed coup of July 15.","keyword":["Turkish","army"],"time":"July 24,2016","channel":"From：Al-monitor"},{"title":"Turkey coup attempt: How a night of death and mayhem unfolded","paragraph":"Forces loyal to Turkish President Recep Tayyip Erdogan quashed a coup attempt by some members of the military that began Friday evening and devolved into turmoil and violence.","keyword":["Turkish","military"],"time":"July 17, 2016","channel":"From：CNN"},{"title":"Failed coup in Turkey: What you need to know","paragraph":"Late Friday, tanks rolled onto the streets of the capital, Ankara, and Istanbul. Uniformed soldiers blocked the famous Bosphorus Bridge connecting the European and Asian sides of Istanbul.","keyword":["Turkish","Ankara"],"time":"July 18, 2016","channel":"From：CNN"},{"title":"How the Turkish government regained control after a failed military coup","paragraph":"On Saturday, the Turkish government under President Recep Tayyip Erdogan successfully suppressed an attempted coup by Turkish military officials.","keyword":["Turkish","Ankara"],"time":"July 18, 2016","channel":"From：The Washington Post"},{"title":"Turkish President Erdogan appears in Istanbul to denounce army coup attempt","paragraph":"Turkish President Recep Tayyip Erdogan has flown in to Istanbul, after an army group said it took over the country.","keyword":["Turkish","Ankara"],"time":"July 16, 2016","channel":"From：BBC"}]
+function draw_news(news_data,length,IDdiv){
+for(var i =0;i<length;i++){
+	var html = '';
+	html += '<div class="news_box"><h4><span><a>'+news_data[i]["title"];
+	html += '</a></span></h4><div class="text_box"><p>'+news_data[i]["paragraph"]+'</p><h5>';
+    for(var j = 0;j<news_data[i]["keyword"].length;j++){
+    	html += '<a href="" target="_blank">'+news_data[i]["keyword"][j]+'</a>&nbsp;';
+    }
+    html += '</h5><h5><i>'+news_data[i]["time"]+'</i>&nbsp;&nbsp;';
+    html += news_data[i]["channel"]+'</h5></div></div>';
+	 $("#IDdiv").append(html);
+}
+}
+
+draw_news(west_reac_data,west_reac_data.length,west_country);
+
+
+var data_people=[['土耳其外交部', '90-312-287 25 55','90-312-287 16 83','www.mfa.gov.tr'],['土耳其交通部', '90-312-212 67 30','90-312-212 49 00','www.ulastirma.gov.tr'],['土耳其外贸部', '90-312-212 88 00','90-312-212 16 22','www.foreigntrade.gov.tr'],['土耳其外贸部', '90-312-212 88 00','90-312-212 16 22','www.foreigntrade.gov.tr'],['土耳其共和国中央银行', '90-312-310 36 46','90-312-310 74 34','www.tcmb.gov.tr'],['土耳其外贸部', '90-312-212 88 00','90-312-212 16 22','www.foreigntrade.gov.tr'],['土耳其海关署', '90-312-311 12 52','90-312-310 22 14','www.gumruk.gov.tr'],['土耳其外贸部', '90-312-212 88 00','90-312-212 16 22','www.foreigntrade.gov.tr'],];
