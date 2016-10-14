@@ -107,7 +107,7 @@
 }
 #eventprofile .text {
     line-height: 20px;
-    width: 85%;
+    width: 65%;
     margin-top: 13px;
     text-align: justify;
     text-justify: inter-ideograph;
@@ -121,12 +121,12 @@
 #eventprofile .text_left {
     width: 850px;
     line-height: 20px;
-    width: 345%;
+    width: 61.5%;
     margin-top: 13px;
     text-align: justify;
     text-justify: inter-ideograph;
     padding: 5px 10px;
-    margin-left: -80px; 
+    margin-left: -330px; 
     background-color: #EDEDED;
     border-radius: 5px;
     min-height: 60px;
@@ -146,7 +146,7 @@
     color: #fff;
     position: absolute;
     z-index: 2;
-    bottom: -22px;
+    bottom: 2px;
     left: 84px;  /* +50px*/
 }
 .text::after {
@@ -162,7 +162,7 @@
     content: "";
     position: absolute;
     top: 28px;
-    left: 150px;
+    left: 397px;
     border-bottom: 10px solid transparent;
     border-top: 10px solid transparent;
     border-left: 10px solid #EDEDED;
