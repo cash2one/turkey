@@ -1,6 +1,5 @@
 var data_people=[['中国驻土耳其大使馆', 'Gölgeli Sokak No.34, Gaziosmanpaşa, 06700 Ankara, Turkey','0090-312-4360628', '0090-312-4464248'],['中国驻伊斯坦布尔总领事馆', 'Ahi Çelebi Cad. Çoban Çeşme Sok. No:4, Tarabya, Sarıyer, İstanbul','0090-312-2992188', '0090-312-2992633']];
 
-
 function related_people(data){
     $('#related_people').empty();
     // var date = new Date();
@@ -23,9 +22,9 @@ function related_people(data){
     }
 
     html += '</tbody></table>';
+    console.log(html);
     $('#related_people').append(html);
 }
-
 
 related_people(data_people);
 
@@ -45,7 +44,11 @@ for(var i =0;i<length;i++){
 }
 }
 
-draw_news(west_reac_data,west_reac_data.length,'#west_country');
+draw_news(west_reac_data,3,'#west_country');
+
+var tur_reac_data = [{"title":"Darbe girişimi - Erdoğan'ın açıklayacağı 'önemli karar' bekleniyor","paragraph":"Cumhurbaşkanı Recep Tayyip Erdoğan, bugün düzenlenecek olan MGK toplantısının ardından önemli bir karar açıklayacağını duyurmuştu. Açıklamanın bugün yapoılması bekleniyor.","keyword":["darbe girişimi","Erdoğan"],"time":"2016-07-20","channel":"来源：bbctürkçe"},{"title":"Erdoğan'dan darbe girişimi ve Putin açıklaması","paragraph":"Rus haber ajansı Tass ve devlet televizyonu Rossiya 24'e ortak röportaj veren Cumhurbaşkanı Erdoğan, Putin in darbe girişimi sırasında en hızlı şekilde destek vermesinden memnunum dedi.","keyword":["putin","Erdoğan"],"time":"2016-08-08","channel":"来源：cnntürk"},{"title":"Başbakan Binali Yıldırım'dan darbe açıklaması","paragraph":"Başbakan Binali Yıldırım, bu akşam gelişen olayların bir darbe girişimi olduğunu açıkladı.","keyword":["Yıdırım","darbe girişimi"],"time":"2016-07-16","channel":"来源：Akşam"}];
+
+draw_news(tur_reac_data,3,'#turkey');
 
 
 var branch_lisy=[['土耳其外交部', '0090-312-2872555','0090-312-2871683','www.mfa.gov.tr'],['土耳其交通部', '0090-312-2126730','0090-312-2124900','www.ulastirma.gov.tr'],['土耳其外贸部', '0090-312-2128800','0090-312-2121622','www.foreigntrade.gov.tr'],['土耳其共和国中央银行', '0090-312-310 36 46','0090-312-3107434','www.tcmb.gov.tr'],['土耳其海关署', '0090-312-3111252','0090-312-3102214','www.gumruk.gov.tr']];
