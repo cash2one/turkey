@@ -3,13 +3,13 @@
 
 {% block head_css %}
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css"/>
 
-    <link rel="stylesheet" href="/static/css/emergency.css" />
-    <link rel="stylesheet" href="/static/css/j-select.css" />
-    <link href="/static/css/font-awesome.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="/static/css/emergency.css"/>
+    <link rel="stylesheet" href="/static/css/j-select.css"/>
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet"/>
 {% endblock head_css %}
 
 {% block content %}
@@ -24,23 +24,24 @@
       <!--内容类型选择、排序选择-->
         <div class="form">
           <div class="cata_name">通道：</div>  
-            <select id="channel" class="select">
+            <select id="channel" class="select" onclick="channel_select()">
               <option value="全部">全部</option>
               <option value="新闻">新闻</option>
               <option value="facebook">facebook</option>
               <option value="twitter">twitter</option>
             </select>
         </div>                   
-        <div class="form">  
+        <div class="form" id="media_form" style="display: none;">  
           <div class="cata_name">媒体：</div>
             <select id="media" class="select">
               <option value="全部">全部</option>
-              <option value="央视新闻">央视新闻</option>
-              <option value="人民网">人民网</option>
-              <option value="新浪新闻">新浪新闻</option>
+              <option value="新华社">新华社</option>
+              <option value="CNN">CNN</option>
+              <option value="cnntürk">cnntürk</option>
+              <option value="其他">其他</option>
             </select>
         </div> 
-        <div class="form">  
+        <div class="form" id="catalog_form" style="display: none;">  
           <div class="cata_name">类别：</div>
             <select id="catalog" class="select">
               <option value="全部">全部</option>
@@ -93,6 +94,18 @@
         </h5>
       </div>
     </div>  -->   
+  </div>
+  <div class="quote">
+    <a href="#"><</a>
+    <span class="current">1</span>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    ...
+    <a href="#">19</a>
+    <a href="#">20</a>
+    <a href="#">></a>
   </div>
     <!--content_panel///////////////////-->
   </div>

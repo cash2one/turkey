@@ -1,0 +1,35 @@
+
+.news_box {
+            width:90%;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+.news_box a{
+            cursor:pointer;
+        }
+.news_box h4{
+    font-size: 18px;
+}
+.news_box h5{
+    font-size: 12px;
+}
+.news_box .text_box p{
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+a:hover, a:focus {
+    color: #2a6496;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 10px 0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 20px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
