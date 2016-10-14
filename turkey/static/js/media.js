@@ -1,4 +1,4 @@
- var myChart = echarts.init(document.getElementById('media_hot')); 
+ var myChart = echarts.init(document.getElementById('turkey_media_hot')); 
 var option = {
     tooltip : {
         trigger: 'axis'
