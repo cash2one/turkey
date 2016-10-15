@@ -62,8 +62,12 @@ var option = {
             data: [['2016/7/15',274.0], ['2016/9/1',170.0]],
             markPoint : {
                 data : [
-                    {type : 'max', name: '土耳其政变'},
+                    {type : 'max', name: '土耳其军事政变'},
                     {type : 'min', name: '伊朗军事变动'}
+                    // {name: '土耳其军事政变',value:274.0,xAxis: '2016/7/15', yAxis: 274.0}, 
+                    // {name: '伊朗军事变动',value:170.0,xAxis: '2016/9/1', yAxis: 170.0}  
+                     
+                    
                 ]
             }
         },
@@ -75,6 +79,7 @@ var option = {
                 data : [
                     {type : 'max', name: '华盛顿一危化品列车发生脱轨'},
                     {type : 'min', name: '土耳其加济安泰普婚礼现场遭爆炸袭击'}
+                   
                 ]
             }
         },
@@ -95,5 +100,6 @@ var option = {
            //console.log(param.name);
            window.open('/news/turkey_emergency');
          })
+       myChart.setTheme('infographic');  
        myChart.setOption(option); 
 })
