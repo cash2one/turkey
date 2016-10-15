@@ -3,24 +3,24 @@
 {% block body %}
 
 <style type="text/css">
-	.basicInfo_head{
-		width: 90px;
-		padding: 0 5px 0 12px;
-		font-weight: 700;
+.basicInfo_head{
+	width: 90px;
+	padding: 0 5px 0 12px;
+	font-weight: 700;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+	color: #999;
+}
+.abstract_tbl_wrap {
+		margin: 10px 35px;
 		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		word-wrap: normal;
-		color: #999;
-	}
-	.abstract_tbl_wrap {
-			margin: 10px 35px;
-			overflow: hidden;
-	}
-	.abstract_tbl {
-		width: 100%;
-		margin-top: -1px;
-		margin-top: -5px;
+}
+.abstract_tbl {
+	width: 100%;
+	margin-top: -1px;
+	margin-top: -5px;
 }
 table {
 		border-collapse: collapse;
@@ -80,7 +80,7 @@ a:visited {
     background-position: center right;
     background-repeat: no-repeat;
     background-image: url(/static/img/card/outLine.svg);
-    padding-right: 13px;\
+    padding-right: 13px;
 }
 
 ol .references li:target, sup.reference:target, span.citation:target {
@@ -89,7 +89,7 @@ ol .references li:target, sup.reference:target, span.citation:target {
 
 </style>
 
-<div class="panel panel-primary" style="margin-top: 20px; height: 1800px;">
+<div class="panel panel-primary" style="margin-top: 20px;">
 	<div class="panel-heading" style="height: 50px !important;">
 		<h3 class="panel-title" style="font-size: 26px;padding: 2px;font-weight: bolder;float: left;">雷杰普·塔伊普·埃尔多安</h3>
 	</div>
@@ -97,9 +97,9 @@ ol .references li:target, sup.reference:target, span.citation:target {
 		<div style="height:280px;">
 		<img src="/static/img/card/president_now.JPG" style="width: 200px;padding-top: 10px;padding-left: 10px;float: left;">
 		<!-- 基本信息框 -->
-		<div style="float:left;width:880px;height:240px;margin-left: 25px;margin-top: 35px;">
+		<div style="float:left;width:730px;height:240px;margin-left: 20px;margin-top: 15px;">
 			<div class="blueBlock"></div><p class="blueBlock_title">基本信息</p>
-			<hr style="width: 845px;">
+			<hr style="width: 715px;">
 
 			<div class="abstract_tbl_wrap" ss_c="ssc.jbxxl" style="margin-top: 20px;font-size: 15px;" >
 				<table class="abstract_tbl">
@@ -146,7 +146,7 @@ ol .references li:target, sup.reference:target, span.citation:target {
 								 </tbody>
 								</table>
 							</td>
-							<td class="abstract_list_wrap" style="width: 350px;">
+							<td class="abstract_list_wrap" style="width: 450px;">
 							<table class="abstract_list">
 								 <tbody>
 								 				<tr>

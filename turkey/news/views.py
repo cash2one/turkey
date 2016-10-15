@@ -59,6 +59,10 @@ def president_total():
 def turkey_adist():
     return render_template('index/card/turkey_adist_all.html')
 
+@mod.route('/turkey_adist_Adana')
+def turkey_adist_Adana():
+    return render_template('index/card/turkey_adist_Adana.html')
+
 @mod.route('/turkey_info/')
 def turkey_info():
     """进入土耳其信息展示页面
