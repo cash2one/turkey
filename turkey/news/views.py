@@ -55,6 +55,9 @@ def person_detail_president_first():
 def president_total():
     return render_template('index/card/president_total.html')
 
+@mod.route('/turkey_adist/')
+def turkey_adist():
+    return render_template('index/card/turkey_adist_all.html')
 
 @mod.route('/turkey_info/')
 def turkey_info():

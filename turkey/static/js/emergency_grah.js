@@ -1,10 +1,17 @@
+require(
+             [  
+                    'echarts'
+                ],
+function(ec){
+
+ var ecConfig = require('echarts/config');
 var myChart = echarts.init(document.getElementById('emergency_grah'),'shine'); 
 var option = {
     tooltip : {
         trigger: 'axis',
         showDelay : 0,
         formatter : function (params) {
-            console.log(params);
+            // console.log(params);
             // if (params.value.length > 1) {
             //     return params.seriesName + ' :<br/>'
             //        + params.value[0] + 'cm ' 
@@ -84,5 +91,9 @@ var option = {
         }
     ]
 };
-                    
+         myChart.on(ecConfig.EVENT.CLICK, function (param){
+           //console.log(param.name);
+           window.open('/news/turkey_emergency');
+         })
        myChart.setOption(option); 
+})
