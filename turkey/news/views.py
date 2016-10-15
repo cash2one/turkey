@@ -63,6 +63,14 @@ def turkey_adist():
 def turkey_adist_Adana():
     return render_template('index/card/turkey_adist_Adana.html')
 
+@mod.route('/turkey_govorg')
+def turkey_govorg():
+    return render_template('index/card/turkey_govorg.html')
+
+@mod.route('/turkey_powerdep')
+def turkey_powerdep():
+    return render_template('index/card/turkey_powerdep.html')
+
 @mod.route('/turkey_info/')
 def turkey_info():
     """进入土耳其信息展示页面
