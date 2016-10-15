@@ -22,6 +22,18 @@ mod = Blueprint('news', __name__, url_prefix='/news')
 em = EventManager()
 temp_file = 'cluster_dump_dict.txt'
 
+@mod.route('/turkey_party/')
+def turkey_detail():
+    return render_template('index/card/turkey_party.html')
+
+@mod.route('/turkey_org/')
+def turkey_org():
+    return render_template('index/card/turkey_org.html')
+
+
+@mod.route('/turkey_index/')
+def turkey_index():
+    return render_template('index/turkey_index.html')
 
 @mod.route('/infor_search/')
 def infor_search():

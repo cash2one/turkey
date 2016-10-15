@@ -1,0 +1,438 @@
+{% extends "/index/card/card_base.html" %}
+{% block module_title %}人物卡片{% endblock %}
+{% block body %}
+
+{% block head_css %}
+
+
+    <style type="text/css">
+        /*
+         * Base structure
+         */
+
+        /* Move down content because we have a fixed navbar that is 50px tall */
+        /*body {
+            padding-top: 60px;
+            font-family: Arial,"Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei","文泉驿微米黑",STXihei,"华文细黑",sans-serif;
+            font-size: 12px;
+            background-color: #ebebeb;
+        }
+        body, form, ul, ol, li, h1, h2, h3, h4, h5, h6, p, dl, dd, td, th, input, img {
+            margin: 0;
+            padding: 0;
+        }*/
+        #overview{
+            width: 1100px;
+		    margin: 0 auto;
+		    background-color: white;
+		    margin-left: 16px;
+		    margin-top: 60px;
+		    float: left;
+
+            
+
+        }
+        #overview p {
+            margin-bottom:10px;
+        }
+
+        .open a, a, a:hover {
+            text-decoration: None;
+        }
+
+        a:hover {
+            /*text-decoration:underline;*/
+            color:blue;
+
+        }
+
+        ul, ol, li {
+            list-style: none;
+        }
+        .panel-body div{
+            /*float:left;*/
+        }
+        .panel-heading div{
+            font-size: 22px;
+            font-family: Microsoft YaHei;
+        }
+        table th, td{
+            text-align: center;
+            height: 30px;
+            line-height: 50px;
+        }
+        .list-group a{
+            float: right;
+        }
+        .shadow {
+        -webkit-box-shadow:5px 6px 3px #ABA8A8;
+        -moz-box-shadow:5px 6px 3px #ABA8A8;
+        box-shadow:5px 6px 3px #ABA8A8;
+    }
+    .panel-heading {
+        background-color: #78748C;
+        color: white;
+    }
+    .personal_domain {
+        height: 35px;
+    }
+    .personal_domain b{
+        font-family: Microsoft YaHei;color: #104F87;font-size: 16px;
+    }
+    .personal_domain span{
+        padding: 10px;
+        background-color: #45b8b3;
+        color: white;
+        border-radius: 4px;
+        margin:5px;
+    }
+    #hanhan , #wuyuan{
+        padding: 10px;
+        background-color: #43b6af;
+        color: white;
+        border-radius: 4px;
+        margin:12px;
+        margin-right: 10px;
+    }
+    #comment ul li {
+        line-height: 25px;
+        height:80px;
+    }
+    .personal_domain a{
+        color: #2a6496;
+    }
+    .menu_overview{
+        float: left;
+    background-color: #3379b7;
+    margin-left:30px;
+    height: 51px;
+    color: white;
+    width: 100px;
+    padding: 18px;
+    font-size: 15px;
+    }
+    .keywords_cloud_div a:hover{
+        color:blue;
+
+    }
+
+    .right_col{
+    	float: left;
+        padding-top: 40px;
+        margin-top: 30px;
+        margin-left: 25px;
+        width: 20%;
+        height: 340px;
+        height: screen.height;
+        background-color: #ffffff;
+        border-bottom: 1px solid #CCCCCC;
+        border-top: 1px solid #CCCCCC;
+        border-left: 1px solid #CCCCCC;
+        border-right: 1px solid #CCCCCC;
+    }
+
+    .right_col_title{
+	    width: 100%;
+		height: 30px;
+		margin-top: -20%;
+		background-color: #CCCCCC;
+    }
+
+    .right_col_zhengzhi{
+    	float: left;
+        padding-top: 40px;
+        margin-top: 30px;
+        margin-left: 96px;
+        width: 20%;
+        height: 400px;
+        height: screen.height;
+        background-color: #ffffff;
+        border-bottom: 1px solid #CCCCCC;
+        border-top: 1px solid #CCCCCC;
+        border-left: 1px solid #CCCCCC;
+        border-right: 1px solid #CCCCCC;
+    }
+
+    </style>
+{% endblock head_css %}
+
+{% block head_js %}
+        <!-- JQuery core JS -->
+    <script src="/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap core JS -->
+    <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/moment.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/datarangepiker.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/highstock.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/exporting.js') }}"></script>
+    <!--<script src="/static/css/js/echarts-all.js"></script>-->
+    <script src="/static/echarts/echarts.js"></script>
+{% endblock head_js %}
+
+{% block content %}
+
+        <div id="overview" >
+            {% if topic == '冯骥才' %}
+ 
+
+            <div class="shadow" style="border-radius: 10px;float: left;padding:15px;border: 4px solid #104F87;margin: 15px;width: 97%;">
+                <div id = "porphoto" style="width:105px;float:left;margin-top: 0.4%;margin-left: -1%;">
+                    <p style="margin-top: 5.3%;font-family: Microsoft YaHei;color: #104F87;font-size: 24px;margin-left: 11%;" >Turkey</p>
+                    <span class="img-photo" style="margin-left:1%;margin-top:0px;margin-bottom:10px;display:block;float:left;"><img id="turkey_img" src="/static/img/turkey/turkey.png" alt="Photo" width="100" height="70"></span>
+                </div>
+                <div style="float:left;width:675px;margin-left: 1%;">
+                    <p style="font-size:16px;">
+                        <!-- <b>{{topic}}</b> -->
+                        
+                        <!-- <a id="alert_png" href="/cluster/?query=冯骥才&subevent_id=global"><img src="../../static/img/warning2.png" width="20px" style="margin-left: 1px;margin-bottom: 5px;" title="有舆情事件，请点击查看"></a> -->
+                    </p>
+
+                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                    <p class="personal_domain"><b>人口地理</b>
+                    <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+                    </p>
+                    <p style="font-size: 14px;margin-top: -2%;">
+                        土耳其共和国，简称土耳其，现有人口78,741,053人，是一个横跨欧亚两洲的国家，北临黑海，南临地中海，东南与叙利亚、伊拉克接壤，西临爱琴海，并与希腊以及保加利亚接壤，东部与格鲁吉亚、亚美尼亚、阿塞拜疆和伊朗接壤。土耳其地理位置和地缘政治战略意义极为重要，是连接欧亚的十字路口。
+                    </p>
+
+                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                    <p class="personal_domain"><b>行政区域</b>
+                    <a href="">查看详情</a>
+                    </p>
+                    <p style="font-size: 14px;margin-top: -2%;">土耳其行政区划等级为省、县、乡、村。全国共分为81省、约600个县、3.6万多乡村。</p>
+                    
+                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                    <div class="personal_domain"><b>机构设置</b>
+                    <a href="">查看详情</a>
+                    </div>
+                    <p style="font-size: 14px;margin-top: -0.5%;margin-bottom: 3%;">
+                        政府机构：总统府、大国民议会、总理府、总参谋部、司法部、国防部、内政部、外交部、财政部、教育部、环境部、卫生部、交通、航运和通讯部、食品、农业和畜牧业部、劳动和社会保障部、科学、工业和技术部、能源和自然资源部、文化旅游部、森林和水利部、家庭和社会政策部、欧盟事务部、经济部、青年与体育部、海关和贸易部、发展部。
+                    </p>
+                    <p style="font-size: 14px;margin-top: -0.5%;margin-bottom: 3%;">
+                         强力部门：对外情报机构：国家情报组织（英语：National Intelligence Organization、土耳其语：Millî İstihbarat Teşkilatı, MİT）、对内情报机构：公共秩序及安全部。（ 英语：Undersecretariat of Public Order and Security、土耳其语：Kamu Düzeni ve Güvenliği Müsteşarlığı（KDGM ））、土耳其安全总局。
+
+                    </p>
+
+                    
+                </div>
+
+                <div class="right_col" style="">
+                	<div class="right_col_title">
+                		<div style="margin-top: 2.3%;margin-left: 5%;float:left">
+                			<p style="font-family: Microsoft YaHei;color: #104F87;font-size: 16px;">其他人还在看</p>
+                		</div>
+                		<div style="margin-top: 0%;margin-left: -1%;float：left;" >
+                       
+                           <img id="yilang_img" src="/static/img/turkey/yilang.png" alt="Photo" style="float：left;width:80px;height: 60px;margin-top: 20%;margin-left: -45%;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="http://baike.baidu.com/link?url=DyeVveVUww4ea_KOLwiAUT81KqXm1Iey1MBI4slgwFlEbdLNtMjYw2FX6YAB8vSC_aergr2tsoLXQ6kzg0vqVPKVA2GA9Yed0tgjZ_QnZK_" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">伊朗</a></p>
+                        
+                       </div>
+
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;margin-top: -44.2%;margin-left: 49%;" >
+                       
+                           <img id="ruassia_img" src="/static/img/turkey/ruassia.png" alt="Photo" style="float：left;width:80px;height: 60px;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">俄罗斯</a></p>
+                        
+                       </div>
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;" >
+                       
+                           <img id="shatealabo_img" src="/static/img/turkey/shatealabo.png" alt="Photo" style="float：left;width:80px;height: 60px;margin-left: 9%;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">沙特阿拉伯</a></p>
+                        
+                       </div>
+
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;margin-top: -44.2%;margin-left: 49%;" >
+                       
+                           <img id="yiselie_img" src="/static/img/turkey/yiselie.png" alt="Photo" style="float：left;width:80px;height: 60px;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">以色列</a></p>
+                        
+                       </div>
+                		
+                	</div>
+                	
+                </div>
+            </div>
+            {% endif %}
+            
+            <div class="col-lg-12" >
+                <div class="panel panel-default">
+                    <div>
+                        <div class="panel-heading" style="background-color: #31708f;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                            <div>
+                            <!-- <img id="political_img" src="/static/img/turkey/political.png" alt="Photo" style="width: 30px;height: 25px;margin-top: -0.5%;"> -->
+                            <!-- <span id="relation_href" style="float:right;cursor:pointer;"><u>查看详情</u></span> -->正义与发展党</div>
+                        </div>
+                        <!-- 历任总统 -->
+                        <div class="panel-body" style="float: left;width:80%">
+                            <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                            <p class="personal_domain" style='margin-bottom:12px' ><b>政党基本信息</b>
+                            <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+                            </p>
+                            <HR width="98%" style="margin-top:-26px;border-top: 1px solid #969898"/>
+                            <span style="font-size: 14px;margin-top: -1%; margin-left:10px"><b>政党名称：</b>正义与发展党</span>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left: 184px"><b>创立人：</b>埃尔多安</span>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left: 132px"><b>成立时间：</b>2001年</span>
+                            <p></p>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left:10px"><b>政党外文名：</b>Adalet ve Kalkınma Partisi</span>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left: 90px"><b>现任领导人：</b>耶尔德勒姆</span>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left: 90px"><b>政治倾向：</b>中间偏左</span>
+                            <p></p>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left: 10px"><b>欧洲组织：</b>    欧洲保守派和改革主义者联盟</span>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left:85px"><b>总部：</b>土耳其安卡拉钱卡亚区</span>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left: 60px"><b>大国民议会:：</b>317/550</span>
+                            <p></p>
+                            <p></p>
+                            <div style='float:left'>
+                                <p style="font-size: 14px;margin-left:10px"><b>历任领导人:</b></p>
+                                <p></p>
+                                <p style="font-size: 14px; margin-left:30px"><b>埃尔多安:</b>在任时间2011.8.14-2014.8.27</p>
+                                <p></p>
+                                <p style="font-size: 14px;margin-left:30px"> <b>达武特奥卢:</b>在任时间2014.8.27-2016.5.22</p>
+                            </div>
+                            <div style='float:left; margin-left:50px'>
+                                <p style="font-size: 14px;margin-left:10px"><b>意识形态:</b></p>
+                                <p></p>
+                                <p style="font-size: 14px; margin-left:30px"><b>保守主义&nbsp;&nbsp;社会保守主义</b></p>
+                                <p></p>
+                                <p style="font-size: 14px; margin-left:30px"><b>经济自由主义&nbsp;&nbsp;新奥尔曼主义</b></p>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="float: right;width:20%">
+                        <img id="zhengyidang_img" src="/static/img/turkey/zhengyidang.png" alt="Photo" style="float：left;width: 200px;height: 300px;margin-top: 0%;margin-left: -10px;">
+                        </div>
+                    </div>
+
+                	<div>
+                		<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-top: 0%;margin-left:15px;margin-right: 0.6%;" ></div>
+                        <div style="margin-top: 29%">
+                        <p class="personal_domain" style='margin-bottom:15px'><b style="">党派历史&组织架构</b>
+                        </div>
+                        <HR width="96%" style="margin-top:-28px;margin-left:25px;border-top: 1px solid #969898"/>
+                            <p style="font-size: 14px;margin-left: 3%;"><b>历史：</b></p>
+                             <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">民族秩序党->（1971）民族救赎党->（1980）繁荣党->（1998）美德党->（2001）正义 与发展党</p>
+                            <p style="font-size: 14px;margin-left: 3%;">
+                            <b>组织架构：</b></p>
+                            <p style="font-size: 14px;margin-left: 4%; ">
+                            主席<a>耶尔德勒姆</a>下设有13位副主席分管：政治与法律事务，组织事务，选举事务，宣传与媒体，对外关系，社会政策，地方领导，经济，社会与公共关系，财政与行政，研究与战略发展，人权，环境、城市与文化事务。设有一位秘书长。</p>
+                            <p style="font-size: 14px;margin-left: 3%;"><b>发展历程：</b></p>
+                            <p style="font-size: 14px;margin-left: 4%; margin-right: 10px; text-align: justify">正义与发展党（土耳其语：Adalet ve Kalkınma Partisi，简称AK Parti或AKP）是一个中间偏右的温和伊斯兰保守派土耳其政党，自2002年起一直是土耳其的执政党。党主席为现任耳其总理<a>比纳利·耶伊尔德勒姆</a>。</p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify ">正义与发展党在2001年由多个原右翼党派的成员联合成立，并于2002年大选获得压倒性的胜利，取得363席，获得三分之二的国会议席。党副主席<a>阿卜杜拉·居尔</a>成为总理，但于2003年修宪后由党主席<a>雷杰普·塔伊普·埃尔多安</a>代之。</p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">2007年大选，正义与发展党的得票率增长至47%。虽然国会席次下降至341席，但仍是国会第一大党，取得过半数议席。埃尔多安续任总理一职，而他之后提名原党副主席<a>居尔</a>出任总统。</p>
+                            <p style="font-size: 14px;margin-left: 4%;">2011年执政党通过修宪限制军方的权力。同年举办的大选，正义与发展党得票率进一步增加，至49.8%，取得327个国会席次，成为三度连任的多数党政府。</p>
+                            <p style="font-size: 14px;margin-left: 4%; margin-right: 10px; text-align: justify">2014年，<a>埃尔多安</a>当选土耳其总统，<a>艾哈迈德·达武特奥卢</a>接任正义与发展党党主席及土耳其总理。</p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">在2015年6月的大选中，正义与发展党的得票率下降至40.9%，也是自2002年以来首次未能取得国会过半数议席。2015年11月的第二次大选中，正义与发展党取得过半数议席，得以继续执政。</p>
+                            <p style="font-size: 14px;margin-left: 4%; margin-right: 10px; text-align: justify">正义与发展党把自身定义为亲西方的政党，倡导保守的社会议程与自由市场经济，支持成为欧盟的成员国资格。在2005年该党被给予成为欧洲人民党观察员身分的资格。</p>
+                             </p>
+
+                           <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left:15px;margin-right: 0.6%;" >
+                               
+                           </div>
+                            <p class="personal_domain" style='margin-bottom:15px'><b>与华关系</b>
+                            <HR width="96%" style="margin-top:-28px;margin-left:25px;border-top: 1px solid #969898"/>
+                                <p style="font-size: 14px;margin-top: -1%;margin-left: 3%;width: 90%;">维护土耳其的利益以及自身的利益，具有两面性：积极与中国合作背后纵容、支持“东突”的发展</p>
+                                                           <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left:15px;margin-right: 0.6%;" >
+                               
+                           </div>
+                            <p class="personal_domain" style='margin-bottom:15px'><b>参考文献</b>
+                            <HR width="96%" style="margin-top:-28px;margin-left:25px;border-top: 1px solid #969898"/>
+                                <p style="font-size: 14px;margin-left: 3%;"> <b>1.</b>Revisiting AKP's 'Conservative Democracy' as an Empty Signifier in Turkish Politics: What Purchase for 'Europeanisation'? - Basak Alpan. uaces.org. [7 June 2015]</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>2.</b>^ Basak Alpan. AKP's 'Conservative Democracy' as an Empty Signifier in Turkish Politics: Shifts and Challenges after 2002. academia.edu. [7 June 2015].</p>
+                                <p style="font-size: 14px;margin-left: 3%"><b>3.</b> 3.0 3.1 Cook, Steven A. Recent History: The Rise of the Justice and Development Party. U.S.-Turkey Relations: A New Partnership to (Council on Foreign Relations). 2012: 52.</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>4.</b>^ Göçek, Fatma Müge. The Transformation of Turkey: Redefining State and Society from the Ottoman Empire to the Modern Era. I.B. Tauris: 56. 2011.</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>5.</b>^ Tocci, Nathalie. Turkey and the European Union. The Routledge Handbook of Modern Turkey (Routledge). 2012: 241.</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>6.</b>^ Düşünmek Taraf Olmaktır. taraf.com.tr. [7 June 2015].</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>7.</b>.^ Osman Rifat Ibrahim. AKP and the great neo-Ottoman travesty. Al Jazeera. [7 June 2015].</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>8.</b>.^ Çagaptay, Soner. Popularity contest – the implications of Turkey's local elections (PDF). Jane's Islamic Affairs Analyst. 2014-05-07 [2015-01-14]</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>9.</b>.^ Soner Cagaptay. Turkey’s divisions are so deep they threaten its future. Guardian. [2015-12-27].</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>10.</b>^ AK PARTİ. yargitaycb.gov.tr. [7 June 2015].</p>
+
+
+                	</div>
+                      
+                </div>
+            </div>
+
+
+        
+</div>
+
+
+{% endblock content %}
+
+{% block tail_js %}
+    <script src="/static/echarts/echarts.js"></script>
+    <script type="text/javascript">
+        var name = "{{ topic }}";
+        var subevent_id = "{{ subevent_id }}";
+        var topicid= "{{ topic_id }}";
+        cluster_eva_min_size = "{{ cluster_eva_min_size }}";
+        var vsm = "{{ vsm }}"
+        $('#act_href').click(function(){
+            window.open("/news/?query=" + name);
+        });
+        $('#commtent_href').click(function(){
+            window.open("/cluster/?query=" + name + "&subevent_id="+ subevent_id);
+        });
+        $('#relation_href').click(function(){
+            window.open("/news/network/?query=" + name);
+        });
+        </script>
+    <script src="/static/js/overview.js"></script>
+    <script>
+    function drawSubeventPie(data){
+        var pie_data = [];
+        var One_pie_data = {};
+        for (var d in data){ 
+            d = data[d];
+            One_pie_data = {'value': d["count"], 'name': d["name"] + d["count"]};
+            pie_data.push(One_pie_data);        
+        }
+
+        var option = {
+            title : {
+                text: '社会活动主题占比图',
+                x:'center', 
+                y: 'bottom',
+                textStyle:{
+                fontWeight:'lighter',
+                fontSize: 13,
+                }        
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    restore : {show: true},            
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            series : [
+                {
+                    name:'访问来源',
+                    type:'pie',
+                    radius : '50%',
+                    center: ['50%', '50%'],
+                    roseType : 'area',
+                    data: pie_data
+                }
+            ]
+        };
+            require(
+            [
+                'echarts',
+                'echarts/chart/pie'
+            ],
+            function (echarts) {
+                var myChart = echarts.init(document.getElementById('subeventpie'));
+                myChart.setOption(option);
+            });
+    }
+    </script>
+
+{% endblock tail_js %}
+
+{% endblock body %}
