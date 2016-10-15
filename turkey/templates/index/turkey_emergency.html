@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="/static/css/emergency.css" />
      <link rel="stylesheet" href="/static/css/turkey_emergency.css" />
+     <link href="/static/css/font-awesome.min.css" rel="stylesheet"/>
 {% endblock head_css %}
 
 {% block head_js %}
@@ -73,12 +74,15 @@
       <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
         <div><span style="float:right;cursor:pointer;"></span>事件趋势</div>
       </div>
-      <div class="panel-body" style="padding-top:0px;padding-bottom:10px;">
+      <div class="panel-body" style="padding-top:0px;padding-bottom:4x0px;">
         <div id="eventprofile" style="height:450px;margin-left:350px;">
           <h2>7月15日 23点</h2>
           <div class="more">
-            <span>
-              <a></a>
+            <span class="packUp2">
+              <a>
+                <label >展开事件进展</label>
+                <i class="fa fa-angle-down" aria-hidden="true" style="margin-left: 12px;"></i>
+              </a>
             </span>
           </div>
           <ul id="trend">
@@ -146,7 +150,7 @@
           <ul>
             <li>
               <div class="float_1">
-                <span class="roundEnd" style="cursor: pointer;">续</span>
+                <span class="roundEnd">续</span>
               </div>
             </li>
           </ul>
@@ -257,25 +261,7 @@
   <div class="tab-pane fade in active" id="turkey"> 
   </div>
 
-  <div class="tab-pane fade" id="anti_organize">
-    <div class="news_box">
-      <h4>
-        <span><a>周本顺涉嫌受贿案 杨栋梁涉嫌受贿贪污案：检察机关依法对两案提起公诉</a></span>
-      </h4>
-      <div class="text_box">
-        <p>埃塞俄比亚国家通讯社9日援引总理海尔马里亚姆的话说，为应对奥罗米亚地区民众示威引发的紧张局势，埃塞进入为期6个月的国家紧急状态。</p>
-        <h5>
-          <a href="" target="_blank">埃塞俄比亚</a>
-          <a href="" target="_blank">约旦</a>
-          <a href="" target="_blank">伊朗</a>
-        </h5>
-        <h5>
-          <i>2016-10-09 16：30</i>
-          &nbsp;&nbsp;来源：央视新闻
-        </h5>
-      </div>
-    </div>    
-  </div>
+  <div class="tab-pane fade" id="anti_organize"></div>
     <!--anti_organize///////////////////-->
     <div class="tab-pane fade" id="west_country">    
   </div>

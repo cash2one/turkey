@@ -166,4 +166,35 @@
     border-bottom: 10px solid transparent;
     border-top: 10px solid transparent;
     border-left: 10px solid #EDEDED;
-}
+    }
+#eventprofile .more {
+    position: absolute;
+    bottom: 30px;
+    right: 55px;
+    }
+#eventprofile .packUp2 {
+    border-top: solid 1px #e7e7e7;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    }
+    label {
+    cursor: pointer;
+    font-weight: normal !important;
+    }
+    .more a {
+    border: solid 1px #e7e7e7;
+    margin-top: -1px;
+    font-size: 12px;
+    background-color: #fff;
+    color: #737373;
+    text-decoration: none;
+    display: block;
+    width: 120px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+    }
+    .more a:hover {
+    color: #ff8500;
+    }
