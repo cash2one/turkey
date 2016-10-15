@@ -22,7 +22,6 @@ function related_people(data){
     }
 
     html += '</tbody></table>';
-    console.log(html);
     $('#related_people').append(html);
 }
 
@@ -86,4 +85,17 @@ function economic_people(data,IDdiv){
  economic_people(branch_lisy,'#economic_people');
 
 // var tur_reac_data =[{"title":"13 Ekim alt?n fiyatlar? ?eyrek alt?n gram alt?n ne kadar?","paragraph":"13 Ekim alt?n fiyatlar?nda sabah saatlerinde hem dü?ü? hem yükseli? g?zükmekte. Dolar’?n 3.10’u g?rdü?ü saatlerde alt?n piyasas?n genelinde dü?ü? g?züküyor. Gram alt?nda ciddi oranda bir yükseli? g?zükürken, ?eyrek alt?nda 0.0183’lük bir dü?ü? hakim. 13 Ekim’de ?eyrek alt?n ve gram alt?n ka? lira oldu?","keyword":["alt?n fiyatlar?","d?viz"],"time":"2016-10-13","channel":"来源：cnntürk"}];
+function view_more(){
+	if($('.li_more').css('display')=='none'){
+	$('.li_more').css('display','block');
+	$('.roundEnd').html('完');
+	$('#event_more').children('label').html('收起事件进展');
+	$('#event_more').children('i').removeClass().addClass('fa fa-angle-up');
+	}else{
+	$('.li_more').css('display','none');
+	$('.roundEnd').html('续');
+	$('#event_more').children('label').html('展开事件进展');
+	$('#event_more').children('i').removeClass().addClass('fa fa-angle-down');
+	}
+}
 

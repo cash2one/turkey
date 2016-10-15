@@ -4,9 +4,9 @@ var face_data=[{"name":"cnnturk","time":"2016-10-12","paragraph":"在舍尔纳�
 var twi_data=[{"name":"VoiceOfUyghur","time":"2016-10-07","paragraph":"【维吾尔之声最新动态】 美报告指中国进一步限制公民自由 - http://www.uyghurpress.com/%e7%be%8e%e6%8a%a5%e5%91%8a%e6%8c%87%e4%b8%ad%e5%9b%bd%e8%bf%9b%e4%b8%80%e6%ad%a5%e9%99%90%e5%88%b6%e5%85%ac%e6%b0%91%e8%87%aa%e7%94%b1/ …","channel":"来源：twitter","image":"sns_1.png"},{"name":"HamitGktrk","time":"2016-10-10","paragraph":"中国的黑暗历史:占领突厥穆斯林的祖国东突厥斯坦","channel":"来源：twitter","image":"sns_2.png"},{"name":"Akparti","time":"2016-10-12","paragraph":"我们的总统没有一丝畏惧,没有一点犹豫,维护世界各地受到压迫的人民的权利.","channel":"来源：twitter","image":"sns_3.png"},{"name":"trthaber","time":"2016-10-08","paragraph":"恐怖分子在加齐安泰普省公路上布置的炸弹陷阱发生爆炸","channel":"来源：twitter","image":"sns_4.png"},{"name":"Sabah","time":"2016-10-09","paragraph":"为解决叙利亚问题而举办的四方会谈！周六土耳其,俄罗斯,美国和沙特阿拉伯首脑将举行会谈！","channel":"来源：twitter","image":"sns_5.png"}];
 var tur_data_eco = [{"title":"13 Ekim altın fiyatları Çeyrek altın gram altın ne kadar?","paragraph":"13 Ekim altın fiyatlarında sabah saatlerinde hem düşüş hem yükseliş gözükmekte. Dolar’ın 3.10’u gördüğü saatlerde altın piyasasın genelinde düşüş gözüküyor. Gram altında ciddi oranda bir yükseliş gözükürken, çeyrek altında 0.0183’lük bir düşüş hakim. 13 Ekim’de çeyrek altın ve gram altın kaç lira oldu?","keyword":["altın fiyatlar","döviz"],"time":"2016-10-13","channel":"来源：cnntürk"},{"title":"Milli Piyango ihalesinde süre uzatıldı","paragraph":"Maliye Bakanı Naci Ağbal, ihaleye katılmak isteyen grupların talepleri doğrultusunda Milli Piyango ihalesine ilişkin sürecin yeniden düzenlendiğini belirterek, İhalede 14 Ekim 2016 olan ön yeterlilik son başvuru tarihi 10 Şubat 2017'ye, 8 Kasım 2016 olan son teklif verme tarihi ise 10 Mart 2017'ye uzatıldı dedi.","keyword":["milli piyango","uzatıld?"],"time":"2016-10-13","channel":"来源：cnnturk"},{"title":"Duru Çiftliği'ne Hastalıktan Ari İşletme Sertifikası","paragraph":"Karaman'daki hayvancılık işletmelerinden Duru Çiftliği'ne Türkiye'de çok az sayıda firmanın almayı başardığı Hastalıktan Ari İşletme Sertifikası verildi.","keyword":["Türkiye","çiftlik"],"time":"2016-10-13","channel":"来源：cnntürk"},{"title":"Başbakan'ın açıklamaları doları yükseltti","paragraph":"Dolar, Başbakan Binali Yıldırım'ın kısa sürede başkanlık sistemini de içeren anayasa değişiklik tekliflerini TBMM'ye getirecekleri yönündeki açıklamalarının da etkisiyle 3.0715'ten kademeli olarak 3.0845'e yükseldi, borsa endeksi eksiye döndü.","keyword":["dollar","fiyat"],"time":"2016-10-12","channel":"来源：cnnturk"},{"title":"Dolar önce rekor kırdı, sonra düştü","paragraph":"Bütün dünyada güçlenen dolar, Türk lirası karşısında bugün tarihi zirveyi gördü. 3.11 seviyesini aşan kur, son 24 saat içerisinde 3 kez rekor kırmış oldu. Ancak daha sonra gelen satışlarla kur 3.10 seviyesinin altına indi.","keyword":["dollar","fiyat"],"time":"2016-10-13","channel":"来源：cnntürk"}];
 var tur_data_gov = [{"title":"MEB'de 2 bin 400 öğretmen açığa alındı","paragraph":"Milli Eğitim Bakanlığı'nca (MEB), Fethullahçı Terör Örgütü'nün (FETÖ) darbe girişiminin ardından yürütülen soruşturmalar kapsamında 2 bin 400 öğretmen görevinden uzaklaştırıldı.","keyword":["FETÖ","MEB"],"time":"2016-10-13","channel":"来源：cnntürk"},{"title":"OHAL'in ilk KHK'sı TBMM Genel Kurulu'nda","paragraph":"OHAL kapsamında çıkarılan ilk ve 667 sayılı Kanun Hükmünde Kararname'de yapılan değişiklikle, 53 özel okul ile bir özel öğrenci yurdu, kapatılan kuruluşlar arasından çıkarıldı. ","keyword":["Türkiye","TBMM"],"time":"2016-10-13","channel":"来源：cnntürk"},{"title":"Darbe girişimi komisyonu Erdoğan'ın eniştesini dinleyecek","paragraph":"Darbe girişimini araştırmak için kurulan Meclis Araştırma Komisyonu, Cumhurbaşkanı Erdoğan'ın eniştesi Ziya İlgen'i dinleyecek.","keyword":["darbe","Erdoğan"],"time":"2016-10-13","channel":"来源：cnntürk"},{"title":"Anayasa için uzlaşılan 60 madde neleri içeriyor?","paragraph":"MHP lideri Devlet Bahçeli'nin çağrısı üzerine AK Parti yeni anayasa için düğmeye bastı. İktidar partisi kendi taslağını Meclis gündemine getirecek. O taslakta 4 partinin daha önce uzlaştığı 60 madde de olacak. Peki 2011 seçimleri sonrasında kurulan ve 1.5 yıl çalışan Uzlaşma Komisyonunun hazırladığı o 60 madde neleri içeriyor?","keyword":["anayasa","AKP"],"time":"2016-10-13","channel":"来源：cnntürk"},{"title":"Beştepe'de Güvenlik Zirvesi","paragraph":"Beştepe'de saat 18:00'de Güvenlik Zirvesi toplanacak.","keyword":["türkiye","güvenlik zirvesi"],"time":"2016-10-13","channel":"来源：cnntürk"}]
-var news_time_data=[{"title":"土耳其内政部对警队展开调查 1.2万名警员遭停职","paragraph":"据外媒报道，土耳其当局下令12801名警员停职，土耳其内政部此前刚对土耳其警队展开调查。","keyword":["土耳其内政部","警察"],"time":"2016-10-14","channel":"来源：中新网"},{"title":"13 Ekim altın fiyatları Çeyrek altın gram altın ne kadar?","paragraph":"13 Ekim altın fiyatlarında sabah saatlerinde hem düşüş hem yükseliş gözükmekte. Dolar’ın 3.10’u gördüğü saatlerde altın piyasasın genelinde düşüş gözüküyor. Gram altında ciddi oranda bir yükseliş gözükürken, çeyrek altında 0.0183’lük bir düşüş hakim. 13 Ekim’de çeyrek altın ve gram altın kaç lira oldu?","keyword":["altın fiyatlar","döviz"],"time":"2016-10-13","channel":"来源：cnntürk"}];
-var sns_time_data=[{"name":"HamitGktrk","time":"2016-10-10","paragraph":"中国的黑暗历史:占领突厥穆斯林的祖国东突厥斯坦","channel":"来源：twitter","image":"sns_2.png"},{"name":"binaliyilidirim01","time":"2016-10-09","paragraph":"朋友们,这不是一个官方的页面.所以请向和朋友交谈那样给我留言吧.我发誓只要我有能力,必将尽全力解决大家的问题.总而言之,请不要把这儿当成一个官方页面,而看成是私人页面吧.","channel":"来源：facebook","image":"sns_9.png"}];
-var hot_data=[];
+var news_time_data=[{"title":"土耳其内政部对警队展开调查 1.2万名警员遭停职","paragraph":"据外媒报道，土耳其当局下令12801名警员停职，土耳其内政部此前刚对土耳其警队展开调查。","keyword":["土耳其内政部","警察"],"time":"2016-10-14","channel":"来源：中新网","click":"点击量：200"},{"title":"13 Ekim altın fiyatları Çeyrek altın gram altın ne kadar?","paragraph":"13 Ekim altın fiyatlarında sabah saatlerinde hem düşüş hem yükseliş gözükmekte. Dolar’ın 3.10’u gördüğü saatlerde altın piyasasın genelinde düşüş gözüküyor. Gram altında ciddi oranda bir yükseliş gözükürken, çeyrek altında 0.0183’lük bir düşüş hakim. 13 Ekim’de çeyrek altın ve gram altın kaç lira oldu?","keyword":["altın fiyatlar","döviz"],"time":"2016-10-13","channel":"来源：cnntürk","click":"点击量：400"},{"title":"Başbakan'ın açıklamaları doları yükseltti","paragraph":"Dolar, Başbakan Binali Yıldırım'ın kısa sürede başkanlık sistemini de içeren anayasa değişiklik tekliflerini TBMM'ye getirecekleri yönündeki açıklamalarının da etkisiyle 3.0715'ten kademeli olarak 3.0845'e yükseldi, borsa endeksi eksiye döndü.","keyword":["dollar","fiyat"],"time":"2016-10-12","channel":"来源：cnnturk","click":"点击量：600"},{"title":"普京访问土耳其会晤埃尔多安 签署天然气管道项目协议","paragraph":"据中国之声《全球华语广播网》报道，当地时间10号，世界能源大会在土耳其伊斯坦布尔开幕。与会议相比，大家更关注的是：俄罗斯总统普京与土耳其总统埃尔多安的会晤。这是去年11月土耳其在土叙边境击落一架俄罗斯战机，双方关系降到冰点以后，俄罗斯总统首次访问土耳其。","keyword":["土耳其","俄罗斯"],"time":"2016-10-11","channel":"来源：央广网","click":"点击量：800"},{"title":"报道称土耳其屏蔽网盘和GitHub以防止邮件泄露","paragraph":"据Turkey Blocks报道，土耳其已于上周六屏蔽了包括Google Drive、Dropbox、微软OneDrive等在内多家云存储服务（以及代码托管平台GitHub）。","keyword":["土耳其","网络"],"time":"2016-10-10","channel":"来源：cnbeta网站(台州)","click":"点击量：1000"}];
+var news_time_anti=[{"title":"报道称土耳其屏蔽网盘和GitHub以防止邮件泄露","paragraph":"据Turkey Blocks报道，土耳其已于上周六屏蔽了包括Google Drive、Dropbox、微软OneDrive等在内多家云存储服务（以及代码托管平台GitHub）。","keyword":["土耳其","网络"],"time":"2016-10-10","channel":"来源：cnbeta网站(台州)","click":"点击量：1000"},{"title":"普京访问土耳其会晤埃尔多安 签署天然气管道项目协议","paragraph":"据中国之声《全球华语广播网》报道，当地时间10号，世界能源大会在土耳其伊斯坦布尔开幕。与会议相比，大家更关注的是：俄罗斯总统普京与土耳其总统埃尔多安的会晤。这是去年11月土耳其在土叙边境击落一架俄罗斯战机，双方关系降到冰点以后，俄罗斯总统首次访问土耳其。","keyword":["土耳其","俄罗斯"],"time":"2016-10-11","channel":"来源：央广网","click":"点击量：800"},{"title":"Başbakan'ın açıklamaları doları yükseltti","paragraph":"Dolar, Başbakan Binali Yıldırım'ın kısa sürede başkanlık sistemini de içeren anayasa değişiklik tekliflerini TBMM'ye getirecekleri yönündeki açıklamalarının da etkisiyle 3.0715'ten kademeli olarak 3.0845'e yükseldi, borsa endeksi eksiye döndü.","keyword":["dollar","fiyat"],"time":"2016-10-12","channel":"来源：cnnturk","click":"点击量：600"},{"title":"13 Ekim altın fiyatları Çeyrek altın gram altın ne kadar?","paragraph":"13 Ekim altın fiyatlarında sabah saatlerinde hem düşüş hem yükseliş gözükmekte. Dolar’ın 3.10’u gördüğü saatlerde altın piyasasın genelinde düşüş gözüküyor. Gram altında ciddi oranda bir yükseliş gözükürken, çeyrek altında 0.0183’lük bir düşüş hakim. 13 Ekim’de çeyrek altın ve gram altın kaç lira oldu?","keyword":["altın fiyatlar","döviz"],"time":"2016-10-13","channel":"来源：cnntürk","click":"点击量：400"},{"title":"土耳其内政部对警队展开调查 1.2万名警员遭停职","paragraph":"据外媒报道，土耳其当局下令12801名警员停职，土耳其内政部此前刚对土耳其警队展开调查。","keyword":["土耳其内政部","警察"],"time":"2016-10-14","channel":"来源：中新网","click":"点击量：200"}];
+
 
 
 function draw_news(news_data,length){
@@ -26,8 +26,6 @@ for(var i =0;i<length;i++){
 }
 
 
-// var sns_data = [{"name":"facebook的用户名","time":"2016-09-10","paragraph":"这是发布内容","channel":"来源：facebook","image":"sns_1.png"}];
-
 function draw_sns(sns_data,length){
 for(var i =0;i<length;i++){
 	var html = '';
@@ -41,6 +39,23 @@ for(var i =0;i<length;i++){
 	$("#content_panel").append(html);
 }
 }
+
+function draw_time_news(news_data,length){
+for(var i = 0;i<length;i++){
+  var html = '';
+  html += '<div class="news_box"><h4><span><a>'+news_data[i]["title"];
+  html += '</a></span></h4><div class="text_box"><p>'+news_data[i]["paragraph"]+'</p><h5>';
+    for(var j = 0;j<news_data[i]["keyword"].length;j++){
+      html += '<a href="" target="_blank">'+news_data[i]["keyword"][j]+'</a>&nbsp;';
+    }
+    html += '</h5><h5><i>'+news_data[i]["time"]+'</i>&nbsp;&nbsp;';
+    var click_num = Math.random();
+    click_num = Math.ceil(click_num * 800);
+    html += news_data[i]["channel"]+'&nbsp;&nbsp;&nbsp;'+news_data[i]["click"]+'</h5></div></div>';    
+  $("#content_panel").append(html);
+}
+}
+
   
   function i_sort(obj){
   	$(obj).addClass("curr");
@@ -49,29 +64,66 @@ for(var i =0;i<length;i++){
   	  $("#hot_sort").children(".fa").css('display',"none");
   	  $("#time_sort").removeClass("curr");
   	  $("#hot_sort").removeClass("curr");
+      $("#content_panel").html("");
+       draw_news(news_data,3);
+        draw_sns(face_data,1);
+        draw_sns(twi_data,1);
   	}else if($(obj).attr('id')=="time_sort"){
   	  $("#hot_sort").children(".fa").css('display',"none");
   	  $("#all_sort").removeClass("curr");
   	  $("#hot_sort").removeClass("curr");
-  	  $("#content_panel").html("");
-  	  draw_news(news_time_data,2);
-  	  draw_sns(sns_time_data,2);
+  	  
+  	 
+      if($(obj).children(".fa").css('display')=="none"){
+      $(obj).children(".fa").css('display',"inline");
+         $("#content_panel").html("");
+         draw_time_news(news_time_data,5);
+    }else{
+      if($(obj).children(".fa").attr('class')=="fa fa-long-arrow-down"){
+        $(obj).children(".fa").removeClass().addClass("fa fa-long-arrow-up");
+        $("#content_panel").html("");
+         draw_time_news(news_time_anti,5);
+      }else{
+        $(obj).children(".fa").removeClass().addClass("fa fa-long-arrow-down");
+        $("#content_panel").html("");
+         draw_time_news(news_time_data,5);
+      }
+   }
      
   	}else{
   	 $("#time_sort").children(".fa").css('display',"none");
   	  $("#time_sort").removeClass("curr");
   	  $("#all_sort").removeClass("curr");
+
+      if($(obj).children(".fa").css('display')=="none"){
+      $(obj).children(".fa").css('display',"inline");
+         $("#content_panel").html("");
+        draw_time_news(news_time_data,5);
+    }else{
+      if($(obj).children(".fa").attr('class')=="fa fa-long-arrow-down"){
+        $(obj).children(".fa").removeClass().addClass("fa fa-long-arrow-up");
+        $("#content_panel").html("");
+        draw_time_news(news_time_anti,5);
+      }else{
+        $(obj).children(".fa").removeClass().addClass("fa fa-long-arrow-down");
+      $("#content_panel").html("");
+       draw_time_news(news_time_data,5);
+         
+      }
+   }
+
+
   	}
 
-  	if($(obj).children(".fa").css('display')=="none"){
-  		$(obj).children(".fa").css('display',"inline");
-  	}else{
-	  	if($(obj).children(".fa").attr('class')=="fa fa-long-arrow-down"){
-	  		$(obj).children(".fa").removeClass().addClass("fa fa-long-arrow-up");
-	  	}else{
-	  		$(obj).children(".fa").removeClass().addClass("fa fa-long-arrow-down");
-	  	}
-   }
+  	// if($(obj).children(".fa").css('display')=="none"){
+  	// 	$(obj).children(".fa").css('display',"inline");
+  	// }else{
+	  // 	if($(obj).children(".fa").attr('class')=="fa fa-long-arrow-down"){
+	  // 		$(obj).children(".fa").removeClass().addClass("fa fa-long-arrow-up");
+	  // 	}else{
+	  // 		$(obj).children(".fa").removeClass().addClass("fa fa-long-arrow-down");
+	  // 	}
+   // }
   
   }
  $(function () { 
@@ -83,6 +135,8 @@ for(var i =0;i<length;i++){
    $(".catalog_current_select_text").text("全部");
    $("#channel").change(function(){
     if($(".channel_current_select_text").text()=="新闻"){
+      $(".media_current_select_text").text("全部");
+      $(".catalog_current_select_text").text("全部");
        $("#media_form").css("display","block");
        $("#catalog_form").css("display","block");
         $("#content_panel").html("");
