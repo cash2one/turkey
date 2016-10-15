@@ -220,7 +220,7 @@
                                     <p class="personal_domain" style="margin-top: 0%;"><b>行政区域</b>
                                      </p>
                                      <div style="width: 72%;height: auto;margin-bottom: 1%;">
-                                         <span style="margin-top: -1%; margin-left:10px">土耳其行政区划等级为省、县、乡、村。全国共分为81省、约600个县、3.6万多乡村。<a href="">查看详情</a></span>
+                                         <span style="margin-top: -1%; margin-left:10px">土耳其行政区划等级为省、县、乡、村。全国共分为81省、约600个县、3.6万多乡村。<a href="/news/turkey_adist/" target="_blank">查看详情</a></span>
                                         
                                         <p></p>
                                      </div>
@@ -429,7 +429,7 @@
                        <div id="zongtong_xianren">
                       
                            <img id="zongtong_1_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
-                           <p style="margin-left:45%;margin-top: -48%;width: 100%;" ><a href="/news/person_detail/president_now" target="_blank" style="font-size: 12px;margin-top: -1%;float：left;">雷杰普·塔伊普·埃尔多安</a></br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>所属党派：<a href="">正义与发展党</a></br>毕业院校：马尔马拉大学经贸学院</p>
+                           <p style="margin-left:45%;margin-top: -48%;width: 100%;" ><a href="/news/person_detail/president_now" target="_blank" style="font-size: 12px;margin-top: -1%;float：left;">雷杰普·塔伊普·埃尔多安</a></br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>所属党派：<a href="/news/turkey_party/" target="_blank">正义与发展党</a></br>毕业院校：马尔马拉大学经贸学院</p>
 
                        </div>
                        <div style="margin-top: 16%;margin-left: -1%;" >
@@ -449,7 +449,7 @@
                        </div>
                        <div style="margin-top: 6%;margin-left: 1%;">
                            
-                           <a href="">查看所有总统</a>
+                           <a href="/news/president_total/">查看所有总统</a>
                        </div>
                        
                     </div>
@@ -529,7 +529,7 @@
                             <div style="float:left;">
                            
                                <img id="zhengyidang_img" src="/static/img/turkey/zhengyidang.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 0%;margin-left: 7%;">
-                               <p style="margin-left:59%;margin-top: -59%;width: 100%;" ><a href="http://baike.baidu.com/view/3367393.htm" style="font-size: 12px;margin-top: -1%;float：left;">正义与发展党</a></br>创立人：<a href="">雷杰普·塔伊普·埃尔多安</a></br>创立时间:2001年8月14日</br>外文名：Adalet ve Kalkınma Partisi</br>现任主席：<a href="">毕纳利·耶尔德勒姆</a></br><a href="">大国民议会</a>占有席位：317 / 550</p>
+                               <p style="margin-left:59%;margin-top: -59%;width: 100%;" ><a href="/news/turkey_party/" target="_blank" style="font-size: 12px;margin-top: -1%;float：left;">正义与发展党</a></br>创立人：<a href="">雷杰普·塔伊普·埃尔多安</a></br>创立时间:2001年8月14日</br>外文名：Adalet ve Kalkınma Partisi</br>现任主席：<a href="">毕纳利·耶尔德勒姆</a></br><a href="">大国民议会</a>占有席位：317 / 550</p>
 
                            </div>
                            <div style="margin-top: 1%;margin-left: 18%;float:left;" >
@@ -953,10 +953,10 @@
                     <!-- <div class="panel-body"> -->
                       <div class="panel-body">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
-                                    <p class="personal_domain" style="margin-top: 0%;"><b>组织及地方力量结构树图</b>
-                                       <!-- 树状图 -->
-                                        <div id="zuzhi" style="float:left;width:100%;height:450px;">
-                                                <!-- 宗教饼图 -->
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>组织及地方力量关系图</b>
+                                    
+                                        <div id="zuzhi" style="float:left;width:100%;height:600px;">
+                                                  <!-- 树状图 -->
                                         </div>
                                                                
                                     </p>
@@ -1965,7 +1965,7 @@
 </script>
 
 <!-- 组织及地方力量构成 -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('zuzhi'));
        
         var option = {
@@ -2059,9 +2059,198 @@
         myChart.setOption(option) ; 
      
 </script>
+ -->
 
+<script type="text/javascript">
+    require(  
+            [  
+                'echarts'  
+            ],  
+    function (ec) {  
+    
+      var myChart = echarts.init(document.getElementById('zuzhi'));
+      var ecConfig = require('echarts/config'); //放进require里的function{}里面
+      var zrEvent = require('zrender/tool/event');
+        // var myChart = echarts.init(document.getElementById('zuzhi'));
+        var option = {
+                title : {
+                    // text: '组织及地方力量关系图',
+                    subtext: '点击节点可查看详情',
+                    x:'right',
+                    y:'bottom'
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: '{a} : {b}'
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        restore : {show: true},
+                        magicType: {show: true, type: ['force', 'chord']},
+                        saveAsImage : {show: true}
+                    }
+                },
+                legend: {
+                    x: 'left',
+                    // y: '-20',
+                    data:['组织及地方力量','土耳其地方极端组织','国际恐怖组织','东突&疆独组织','土耳其地方力量','反华势力']
+                },
+                series : [
+                    {
+                        type:'force',
+                        name : "名称",
+                        ribbonType: false,
+                        categories : [
+                            {
+                                name: '组织及地方力量'
+                            },
+                            {
+                                name: '土耳其地方极端组织'
+                            },
+                            {
+                                name:'国际恐怖组织'
+                            },
+                            {
+                                name: '东突&疆独组织'
+                            },
+                            {
+                                name:'土耳其地方力量'
+                            },
+                            {
+                                name:'反华势力'
+                            }
+                        ],
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    textStyle: {
+                                        color: '#333'
+                                    }
+                                },
+                                nodeStyle : {
+                                    brushType : 'both',
+                                    borderColor : 'rgba(255,215,0,0.4)',
+                                    borderWidth : 1
+                                },
+                                linkStyle: {
+                                    type: 'curve'
+                                }
+                            },
+                            emphasis: {
+                                label: {
+                                    show: false
+                                    // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+                                },
+                                nodeStyle : {
+                                    //r: 30
+                                },
+                                linkStyle : {}
+                            }
+                        },
+                        useWorker: false,
+                        minRadius : 15,
+                        maxRadius : 25,
+                        gravity: 1.1,
+                        scaling: 1.1,
+                        roam: 'move',
+                        nodes:[
+                            {category:0, name: '组织及地方力量', value : 10},
+                            {category:1, name: '土耳其地方极端组织',value : 2},
+                            {category:2, name: '国际恐怖组织',value : 3},
+                            {category:3, name: '东突&疆独组织',value : 3},
+                            {category:4, name: '土耳其地方力量',value : 7},
+                            {category:5, name: '反华势力',value : 5},
 
+                            {category:1, name: '库尔德工人党',value : 8},
+                            {category:1, name: '库尔德自由之鹰',value : 9},
+                            {category:1, name: '灰狼组',value : 4},
 
+                            {category:2, name: '伊斯兰国',value : 4},
+                            {category:2, name: '叙利亚土库曼旅',value : 1},
+                            {category:2, name: '人民保卫军', value : 10},
+
+                            {category:3, name: '东突基金会',value : 2},
+                            {category:3, name: '东突移民协会',value : 3},
+                            {category:3, name: '欧亚突厥协会联盟',value : 3},
+                            {category:3, name: '东突教育与互助协会',value : 7},
+                            {category:3, name: '东突青年协会',value : 5},
+                            {category:3, name: '东突文化与团结协会',value : 8},
+
+                            {category:4, name: '土耳其商人和工业家联合会',value : 9},
+                            {category:4, name: '公共部门工会联合会',value : 4},
+                            {category:4, name: '革命工会联合会',value : 4},
+                            {category:4, name: '独立工商者和商人协会',value : 1},
+                            {category:4, name: '道德权利工人联合会',value : 2},
+                            {category:4, name: '土耳其雇主联合会',value : 3},
+                            {category:4, name: '土耳其劳工联合会',value : 3},
+                            {category:4, name: '土耳其工业家和商人协会',value : 7},
+                            {category:4, name: '土耳其商业和商品交易所联合会',value : 5},
+
+                            {category:5, name: '法轮功组织',value : 8},
+
+                        ],
+                        links : [
+                            {source : '土耳其地方极端组织', target : '组织及地方力量',weight : 1},
+                            {source : '国际恐怖组织', target : '组织及地方力量', weight : 2},
+                            {source : '东突&疆独组织', target : '组织及地方力量', weight : 1},
+                            {source : '土耳其地方力量', target : '组织及地方力量', weight : 2},
+                            {source : '反华势力', target : '组织及地方力量', weight : 3},
+                            {source : '库尔德工人党', target : '土耳其地方极端组织', weight : 1},
+                            {source : '库尔德自由之鹰', target : '土耳其地方极端组织', weight : 6},
+                            {source : '灰狼组', target : '土耳其地方极端组织', weight : 1},
+
+                            {source : '伊斯兰国', target : '国际恐怖组织', weight : 1},
+                            {source : '叙利亚土库曼旅', target : '国际恐怖组织', weight : 1},
+                            {source : '人民保卫军', target : '国际恐怖组织', weight : 1},
+
+                            {source : '东突基金会', target : '东突&疆独组织', weight : 1},
+                            {source : '东突移民协会', target : '东突&疆独组织', weight : 1},
+                            {source : '欧亚突厥协会联盟', target : '东突&疆独组织', weight : 1},
+                            {source : '东突教育与互助协会', target : '东突&疆独组织', weight : 1},
+                            {source : '东突青年协会', target : '东突&疆独组织', weight : 6},
+                            {source : '东突文化与团结协会', target : '东突&疆独组织', weight : 1},
+
+                            {source : '土耳其商人和工业家联合会', target : '土耳其地方力量', weight : 1},
+
+                            {source : '公共部门工会联合会', target : '土耳其地方力量', weight : 1},
+                            {source : '革命工会联合会', target : '土耳其地方力量', weight : 1},
+                            {source : '独立工商者和商人协会', target : '土耳其地方力量', weight : 1},
+                            {source : '道德权利工人联合会', target : '土耳其地方力量', weight : 1},
+                            {source : '土耳其雇主联合会', target : '土耳其地方力量', weight : 6},
+                            {source : '土耳其劳工联合会', target : '土耳其地方力量', weight : 1},
+
+                            {source : '土耳其工业家和商人协会', target : '土耳其地方力量', weight : 1},
+                            {source : '土耳其商业和商品交易所联合会', target : '土耳其地方力量', weight : 1},
+                            {source : '法轮功组织', target : '反华势力', weight : 6}
+                        ]
+                    }
+                ]
+            };
+            var ecConfig = require('echarts/config');
+            function focus(param) {
+                var data = param.data;
+                var links = option.series[0].links;
+                var nodes = option.series[0].nodes;
+                if (
+                    data.source !== undefined
+                    && data.target !== undefined
+                ) { //点击的是边
+                    var sourceNode = nodes.filter(function (n) {return n.name == data.source})[0];
+                    var targetNode = nodes.filter(function (n) {return n.name == data.target})[0];
+                    console.log("选中了边 " + sourceNode.name + ' -> ' + targetNode.name + ' (' + data.weight + ')');
+                } else { // 点击的是点
+                    console.log("选中了" + data.name + '(' + data.value + ')');
+                    window.open('/news/turkey_org/');
+                }
+            }
+            myChart.on(ecConfig.EVENT.CLICK, focus)
+            
+            myChart.setOption(option); 
+        }
+    );    
+</script>
 
 <!-- 外交关系 -->
 <script type="text/javascript">

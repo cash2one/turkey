@@ -351,6 +351,14 @@
             -webkit-box-shadow:-5px -5px 5px #999 inset;          /* For Chrome5+, Safari5+ */
             box-shadow:-5px -5px 5px #999 inset;                  /* For Latest Opera */
 }
+
+        
+         .link a:hover{
+            text-decoration: none;
+        }
+        .submenu a:hover{
+            text-decoration: none;
+        }
     </style>
     {% block head_css %}
     {% endblock head_css %}
@@ -425,11 +433,11 @@
     <div class="turkey_left_menu">
         <ul id="accordion" class="accordion" style="margin-top: 6%;margin-bottom: 200%;box-shadow: -2px 0px 5px #000 inset;">
             <li>
-                <div class="link"><i class="fa fa-code"></i>首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页<i class="fa fa-chevron-down"></i></div>
+                <div class="link"><i class="fa fa-home"></i><a href="/news/turkey_index/">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a><i class="fa fa-chevron-down"></i></div>
             
             </li>
             <li>
-                <div class="link"><i class="fa fa-paint-brush"></i>国家情报解密<i class="fa fa-chevron-down"></i></div>
+                <div class="link"><i class="fa fa-list"></i><a href="/news/turkey_info/">国家情报解密</a> <i class="fa fa-chevron-down"></i></div>
                 <ul class="submenu">
                     <li><a href="#gaikuang_id">国&nbsp;&nbsp;&nbsp;&nbsp;家&nbsp;&nbsp;&nbsp;&nbsp;概&nbsp;&nbsp;&nbsp;&nbsp;况</a></li>
                     <li><a href="#zhengzhi_id">政&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;治</a></li>
@@ -444,22 +452,33 @@
             </li>
             
             <li>
-                <div class="link" ><i class="fa fa-mobile"></i>突发事件响应<i class="fa fa-chevron-down"></i></div>
+                <div class="link" ><i class="fa fa-bell"></i><a href="/news/emergency" style="text-decoration-style: none;"> 突发事件响应</a><i class="fa fa-chevron-down"></i></div>
                 <ul class="submenu">
-                    <li><a href="">二级标题</a></li>
-                    <li><a href="">二级标题</a></li>
-                    <li><a href="">二级标题</a></li>
-                    
+                    <li><a href="#most_news">最新资讯</a></li>
+                    <li><a href="#detec_emer">突发事件检测</a></li>
+                  
                 </ul>
             </li>
-            <li>
-            <div class="link"><i class="fa fa-globe" ></i>出访风险评估<i class="fa fa-chevron-down"></i></div>
+
+             <li>
+                <div class="link" ><i class="fa fa-bell"></i><a href="/news/infor_search" style="text-decoration-style: none;"> 出访风险评估</a><i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="#business">业务评估</a></li>
+                    <li><a href="#security">安保评估</a></li>
+                    <li><a href="#history_visit">历史出访</a></li>
+                  
+                </ul>
+            </li>
+
+            <!-- <li>
+            <div class="link"><i class="fa fa-suitcase" ></i><a href="" style="text-decoration-style: none;"> 出访风险评估<i class="fa fa-chevron-down"></i></div>
                 <ul class="submenu">
                     <li><a href="#business">业务评估</a></li>
                     <li><a href="#security">安保评估</a></li>
                     <li><a href="#history_visit">历史出访</a></li>
                 </ul>
-            </li>
+            </li> -->
+
         </ul>
     </div>
     <div style="float:left;width:100%;background-color:white;padding-left:200px;">
