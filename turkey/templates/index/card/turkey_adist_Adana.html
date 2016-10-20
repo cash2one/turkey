@@ -1,0 +1,237 @@
+{% extends "/index/card/card_base.html" %}
+{% block module_title %}阿达纳省{% endblock %}
+{% block body %}
+<style>
+.blueBlock {
+		float:left;
+		width:9px;
+		height:26px;
+		background-color: #104F87;
+		margin-left: 0%;
+		margin-top: 0%;
+		margin-right: 0.6%;
+}
+.blueBlock_title {
+		color: #104F87;
+		font-size:24px;
+/*  font-weight: bolder;
+*/  font-family: Microsoft YaHei;
+		margin-top: 2px;
+}
+.text p {
+	line-height: inherit;
+	margin: 0.5em 0;
+	display: block;
+	font-size: 16px;
+	line-height: 1.6;
+}
+.shadow{
+	box-shadow:2px 2px 10px #909090;
+}
+.main-content table .para {
+    font-size: 12px;
+    text-indent: 0;
+    margin: 0;
+    height: auto;
+}
+.main-content table.table-view {
+    margin: 5px 0;
+    border-collapse: collapse;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 12px;
+    line-height: 22px;
+    color: #000;
+}
+a{
+	cursor: pointer;
+}
+.body-wrapper .para {
+    font-size: 16px;
+    word-wrap: break-word;
+    color: #333;
+    margin-bottom: 15px;
+    text-indent: 2em;
+    line-height: 1.5;
+    zoom: 1;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+#dist_chart table th {
+    text-align: left;
+    font-weight: 700;
+    height: 30px;
+}
+#dist_chart table th, #dist_chart table td {
+    padding: 2px 10px;
+    font-size: 15px;
+    line-height: 1.6;
+    height: 30px;
+}
+.external {
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-image: url(/static/img/card/outLine.svg);
+    padding-right: 13px;
+}
+.abstract_tbl_wrap {
+		margin: 10px 35px;
+		overflow: hidden;
+}
+.abstract_tbl {
+	width: 100%;
+	margin-top: -1px;
+	margin-top: -5px;
+}
+table {
+		border-collapse: collapse;
+		border-spacing: 0;
+}
+.abstract_list th {
+		font-weight: bold;
+		width: 90px;
+		line-height: 27px;
+		border-top: 1px dashed #dedfe1;
+		text-align: left;
+		vertical-align: top;
+}
+.abstract_list td {
+		line-height: 27px;
+		border-top: 1px dashed #dedfe1;
+}
+.shadow{
+	box-shadow:2px 2px 2px #909090;
+}
+.infobox {
+    border: 1px solid #aaaaaa;
+    background-color: #f9f9f9;
+    color: black;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+    padding: 0.2em;
+    float: right;
+    clear: right;
+}
+.picText {
+	height: 25px;
+	width: 377px;
+	border: 1px solid;
+	margin-top: 178px;
+	border: 1px solid #aaaaaa;
+	background-color: #f9f9f9;
+	margin-left: 2px;
+	font-family: Microsoft YaHei;
+	font-size:16px;
+	color:black;
+	box-shadow:1px 1px 1px #909090;
+}
+.txt{
+	line-height: inherit;
+	margin: 0.5em 0;
+	display: block;
+	font-size: 16px;
+	line-height: 1.6;
+
+}
+</style>
+<div class="panel panel-primary" style="margin-top: 20px;">
+	<div class="panel-heading" style="height: 50px !important;">
+		<img src="/static/img/card/turkey_flag.jpg" style="width:40px;float:left;">
+		<h3 class="panel-title" style="font-size: 26px;padding: 2px;font-weight: bolder;float: left;margin-left:4px;">土耳其行政区详情</h3>
+	</div>
+	
+		
+	<div class="panel-body" >
+		<h3 style="font-size: 34px;padding:8px;font-family: Microsoft YaHei;color:#104F87;padding-bottom:15px;">阿达纳省</h3>
+		<!-- 信息表单 -->
+		<div class="shadow " style="width:40%;border:solid 1px #aaaaaa;background-color:rgba(205, 222, 255, 0.1);text-align:center;float:left;">
+			<img src="/static/img/card/640px-Latrans-Turkey_location_Adana.svg.png" style="width: 380px;padding-top: 10px;padding-left	: 2px;float: left;">
+			<div class="picText">阿森纳省在土耳其的位置</div>
+			<div class="abstract_tbl_wrap abstract_tbl" ss_c="ssc.jbxxl" style="margin-top: 20px;font-size: 15px;margin-left:10px;" >
+				<table class="abstract_list">
+						<tbody>
+							<tr>
+									<th>地区 </th>
+									<td>
+											地中海
+									</td>
+							</tr>
+							<tr>
+									<th>面积</th>
+									<td>
+											14,030平方公里
+									</td>
+							</tr>
+							<tr>
+									<th>总人口</th>
+									<td>
+										2,085,225（TurkStat 2010）
+									</td>
+							 </tr>
+							<tr>
+									<th>人口密度</th>
+									<td>
+										148.63人/平方公里
+									</td>
+							</tr>
+							<tr>
+									<th>车牌号码</th>
+									<td>
+									01
+									</td>
+							</tr>
+							<tr>
+									<th>区号</th>
+									<td>
+										0322
+									</td>
+							</tr>  
+							<tr>
+									<th>省长</th>
+									<td>
+										Mustafa Bıyık
+									</td>
+							</tr>
+							<tr>
+									<th>官方网站</th>
+									<td>
+										<a rel="nofollow" class="external text" target="_blank" href="http://www.adana.gov.tr">www.adana.gov.tr</a>
+									</td>
+							<tr>
+									<th>天气预报</th>
+									<td>
+										<a rel="nofollow" class="external text" target="_blank" href="http://turkeyforecast.com/adana/">turkeyforecast.com/weather/adana</a>
+									</td>
+							</tr>
+							 </tbody>
+							</table>
+			</div>   
+		</div>
+		<!--概述表单-->
+		<div style="float:left;width:50%;margin-left:40px;">
+			<div class="blueBlock"></div><p class="blueBlock_title">概览</p>
+			<hr style="width: 500px;">
+			<p class="txt">阿达纳省（Adana）是位于土耳其东南部的一个省，首府阿达纳。相传，这个名字来源于乌拉诺斯的儿子Adanus。</p>
+			<p class="txt">北大西洋公约组织的Incirlik空军基地就位于该省。</p>
+			<p class="txt">阿达纳省其它重要的城市有<a>伊苏斯</a>和<a>科赞</a>。</p>
+			<p class="txt">阿达纳省的对外贸易向来以皮革、棉纺、烟草等行业为主。据悉,该省2004年-2008年鞋类出口量一直大于进口量,但2009年该省鞋类出口量下降近三倍,进口量值大幅度增长,且印度和中国已取代意大利,成为该省最大的鞋类进口来源国,其中去年一年该省从印度进口鞋36.57万双,占进口量的47%,从中国进口鞋13.39万双,占进口量的17%。</p>
+		</div>
+
+		<div style="width: 95%;margin-left:20px;margin-top: 55%;">
+			<div class="blueBlock"></div><p class="blueBlock_title">省会阿达纳</p>
+			<hr style="width: 500px;">
+			<p class="txt">&nbsp;&nbsp;&nbsp;&nbsp;阿达纳，土耳其阿达纳省省会。位于国境南部，地中海东北角，跨塞伊汉河两岸， 距河口约40公里。 人口56.8万(1980)。古城镇，最早为吕底亚人聚落，后为罗马帝国军事要地。</p>
+			<p class="txt">&nbsp;&nbsp;&nbsp;&nbsp;长期为阿达纳平原农产品集散地，与阿拉伯国家进行贸易的重要场所。1870年设市，1918年为法国所占，1922年归土耳其。现为土耳其南部重要农产品集散地，重要的综合性工业中心，有棉纺、人造纤维、橄榄油、木材、烟草、皮革加工、水泥等厂，还新建有化学制品、制药、肥皂和机械等厂。对外交通方便，轮船可自河口直达；有铁路通主要出口港梅尔辛、伊斯坦布尔和安卡拉，是土耳其通叙利亚、伊朗、伊拉克铁路上的重要工商业城市。1973年建成丘库罗瓦大学。</p>
+		</div>
+	
+	</div>	
+</div>
+{% endblock %}
