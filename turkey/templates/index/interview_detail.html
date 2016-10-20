@@ -38,645 +38,737 @@
 				height: 450px;
 			}
 		</style>
-<!-- <style type="text/css">
-	
-	#detail:hover {
-    color: #607D8B;
-    text-decoration: underline;
-	}
-</style> -->
-<!-- <script type="text/javascript">
-	$(function () { $('#collapseFour').collapse({
-		toggle: false
-	})});
-	$(function () { $('#collapseTwo').collapse('show')});
-	$(function () { $('#collapseThree').collapse('toggle')});
-	$(function () { $('#collapseOne').collapse('hide')});
-</script>   -->
-{% block content %} 
-<!-- <div class="panel panel-primary" style="margin-top:80px;margin-left: 2.5%;width: 95%; ">
-    <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
-        <h3 class="panel-title">人物资讯</h3>
-    </div>
-    <div class="panel-body">
-        这是一个基本的面板
-    </div>
-</div>
- -->
-<div class="panel panel-primary" style="margin-top:80px;margin-left: 2.5%;width: 95%; ">
 
-    <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
-            <h3 id="business" class="panel-title">业务评估</h3>
-    </div>
-    <div class="panel-body">
-    	<ul id="myTab" class="nav nav-tabs">
-    		<li class="active">
-				<a href="#people" data-toggle="tab">
-					人物信息
+{% block content %}
+
+
+<div>
+
+	<!-- 风土人情 -->
+	<div id="other_detail" class="panel panel-primary" style="margin-top:80px;margin-left: 2.5%;width: 95%; ">
+
+	    <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
+	        <h3 id="business" class="panel-title">当地概况</h3>
+	    </div>
+	    <div class="panel-body">
+
+	    	<ul id="myTab" class="nav nav-tabs">
+	    		<li class="active">
+					<a href="#climate" data-toggle="tab">
+						天气早知道
+					</a>
+				</li>
+				<li>
+					<a href="#local_conditions" data-toggle="tab">
+						风土人情
+					</a>
+				</li>
+				
+				
+			</ul>
+	    	<div id="myTabContent" class="tab-content">
+	    		
+	    		<!--气候详细内容-->
+	    		<div class="tab-pane fade in active" id="climate" >
+	    		
+
+	    			<div>
+	    				<button type="button" class="btn btn-default" data-toggle="collapse" 
+					    data-target="#country">查看国家天气预报</button>
+
+					    <div id="country" class="collapse" >
+						   	<div class="well" >
+			    				<h3>土耳其天气预报（一周内）</h3>
+			    				<img id="turkey_climate" src="/static/img/turkey_climate.png" style="width: 1000px;height: 400px;">
+			    			</div>
+						</div>
+	    			</div>
+
+	    			<!-- style="border-top:1px solid #ddd" -->
+	    			<div >
+	    				 <button type="button" class="btn btn-default" data-toggle="collapse" 
+					    data-target="#city">查看城市天气预报</button>
+
+					    <div id="city" class="collapse" >
+					    	<div class="well">
+					    		<h3>安卡拉天气预报</h3>
+			    				<img id="ankala_climate" src="/static/img/ankala_climate.png" style="width: 1000px;height:200px;">	
+			    				<h3>安卡拉天气详情</h3>	
+			    				<img id="ankala_climate_detail" src="/static/img/ankala_climate_detail.png" style="width: 1000px;height:200px;">		    		
+					    	</div>
+						</div>
+	    			</div>
+					    
+
+					   
+					    
+					
+
+					
+	    			
+	    			
+
+	                
+				</div>
+				
+				<!--风土人情详细内容-->
+				<div class="tab-pane fade" id="local_conditions">
+					
+
+				</div>
+
+			
+
+			</div>
+	    </div>
+	</div>
+
+
+	<!-- 业务评估 -->
+	<div class="panel panel-primary" style="margin-top:0px;margin-left: 2.5%;width: 95%; ">
+
+	    <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
+	            <h3 id="business" class="panel-title">业务评估</h3>
+	    </div>
+	    <div class="panel-body">
+	    	<ul id="myTab" class="nav nav-tabs">
+	    		<li class="active">
+					<a href="#people" data-toggle="tab">
+						人物信息
+					</a>
+				</li>
+				<li>
+					<a href="#political" data-toggle="tab">
+						政治形势
+					</a>
+				</li>
+				<!-- <li>
+					<a href="#attitude" data-toggle="tab">对华态度</a>
+				</li> -->
+
+				<li>
+					<a href="#detail2" data-toggle="tab">访问议题信息</a>
+				</li>
+				
+			</ul>
+	    	<div id="myTabContent" class="tab-content">
+	    		
+	    		<!--人物资讯详细内容-->
+	    		<div class="tab-pane fade in active" id="people" style="height:200px;">
+	    		<!-- 拟出访人 -->
+	    			<div style="margin-left:10%;">
+	    				<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 20px;margin-right: 0.6%;" >
+	    				
+		    			</div>
+		                    <p class="personal_domain" style="margin-top: 30px;" ><b>拟出访人</b>
+		                        <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+		                    </p>
+						<div>
+							<img id="zongtong_1_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-left: 1%;float: left;">
+							<p style="float: left;margin-left:10px;">塔伊普·埃尔多安</br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</br></br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="detail" href="/news/person_detail/president_now" style="margin-top:5px;">查看更多详情</a></p>
+
+						</div>
+
+	    			</div>
+
+	    		<!-- 推荐的出访人 -->
+	    		<div style="margin-top: 200px;margin-left: 110px;">
+	    				<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 20px;margin-right: 0.6%;" >
+	    				
+		    			</div>
+		                    <p class="personal_domain" style="margin-top: 30px;" ><b>推荐的拟出访人</b>
+		                        <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+		                    </p>
+						<div>
+							<img id="zongtong_1_img" src="/static/img/turkey/zongli_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-left: 1%;float: left;">
+							<p style="float: left;margin-left:10px;">毕纳利·耶尔德勒姆</br>在任时间：2016.05-至今</br>出生日期：1955年12月20日</br>外文名：Binali Yıldırım</br>毕业院校：伊斯坦布尔理工大学海事学院/世界海事大学</br></br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="detail" href="/news/person_detail/president_now" style="margin-top:5px;">查看更多详情</a></p>
+
+						</div>
+
+	    		</div>
+
+
+	    		
+
+
+
+
+
+
+	                
+				</div>
+				
+				<!--政治形势详细内容-->
+				<div class="tab-pane fade" id="political">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" 
+									   href="#collapseOne">
+										土耳其国内政治形势
+									</a>
+								</h4>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div style="float:left;width:6px;height:25px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
+		                        	<p class="personal_domain" style="font-size: 21px;"><b>政治局势</b>
+		                        	<p style="font-size: 14px;margin-top: 20px;margin-left: 3%;line-height:2">    2015年下半年和2016年上半年，土耳其两个最大的城市和其他地方的恐怖主义暴力活动有所增加。 2015年10月在安卡拉发生了几次汽车炸弹和枪攻击，2015年2月和6月发生了两次攻击，其次是对伊斯坦布尔阿塔图尔克机场的袭击。 2016年7月15日，土耳其武装部队人员在安卡拉和伊斯坦布尔的关键政府和基础设施地点发动政变。</p>
+
+
+		                        	<div style="float:left;width:6px;height:25px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
+		                        	<p class="personal_domain" style="font-size: 21px;"><b>政治局势相关报道</b>
+
+
+		                        	 <div class="news_box" style="margin-left:35px;">
+								      <h4>
+								        <span style="color:#337ab7">土耳其政治经济安全局势四面楚歌，观察人士忧心忡忡</span>
+								      </h4>
+								      <div class="text_box">
+								        <p style="line-height:2">土耳其正面临新的安全问题。本周早些时候，土耳其安卡拉市中心发生了汽车炸弹爆炸事件，目前已造成至少28人死亡、61人受伤。这凸显了土耳其在国内外所面临的严峻挑战。专家担心，土耳其总统埃尔多安（Recep Tayyip Erdogan）领导的土耳其政府正遭受“四面夹击”：既不能致力于急需的经济改革，与库尔德民兵的战争硝烟再起，来自伊斯兰国势力的威胁日益上升，还有不断发酵的难民危机。最主要的，叙利亚战争正在其家门口开打。媒体评析称，土耳其最大的问题在于树敌太多......</p>
+								        <h5>
+								          <a href="http://finance.sina.com.cn/money/forex/hbfx/2016-02-19/doc-ifxprupc9496653.shtml" target="_blank">查看详情</a>
+								          
+								        </h5>
+								        <h5>
+								          <i>2016-02-19 18：20</i>
+								          &nbsp;&nbsp;来源：新浪新闻网
+								        </h5>
+								       
+								      </div>
+								    </div>
+
+								     	 <div class="news_box" style="margin-left:35px;border-top:1px solid #ddd">
+								      <h4>
+								        <span style="color:#337ab7">土耳其军事政变拨开了击落俄罗斯战机事件的疑云</span>
+								      </h4>
+								      <div class="text_box">
+								        <p style="line-height:2">去年11月24日，土耳其空军战斗机在土、叙边境击落俄罗斯的苏-24歼击轰炸机，堪称叙利亚战争中最具神秘色彩的一幕。事件引发俄罗斯与土耳其双边政治危机，两国最高领导人均发表了立场强硬的声明，采取了大规模的军事部署与经济制裁。</p>
+								        <h5>
+								          <a href="http://www.weidu8.net/wx/445044" target="_blank">查看详情</a>
+								          
+								        </h5>
+								        <h5>
+								          <i>2016-09-10</i>
+								          &nbsp;&nbsp;来源：中东研究通讯
+								        </h5>
+								       
+								      </div>
+								    </div>
+
+		                        	<!-- <p style="font-size: 14px;margin-top: 20px;margin-left: 3%;line-height:2">    2015年下半年和2016年上半年，土耳其两个最大的城市和其他地方的恐怖主义暴力活动有所增加。 2015年10月在安卡拉发生了几次汽车炸弹和枪攻击，2015年2月和6月发生了两次攻击，其次是对伊斯坦布尔阿塔图尔克机场的袭击。 2016年7月15日，土耳其武装部队人员在安卡拉和伊斯坦布尔的关键政府和基础设施地点发动政变。</p> -->
+									</div>
+
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" 
+									   href="#collapseTwo">
+										土耳其国际政治形势
+									</a>
+								</h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div id="international" style="height:400px;width:1000px;">
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<!-- <div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" 
+									   href="#collapseThree">
+										点击我进行展开，再次点击我进行折叠。第 3 部分
+									</a>
+								</h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse">
+								<div class="panel-body">
+									Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+									cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+									vice lomo.
+								</div>
+							</div>
+						</div> -->
+					</div>
+
+				</div>
+
+				<!-- <div class="tab-pane fade" id="attitude">
+					<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
+						TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+				</div> -->
+
+				<div class="tab-pane fade" id="detail2">
+					<div id="content_panel" style="margin-top:10px;">
+
+					    <div class="news_box" >
+					      <h4>
+					        <span style="color:#337ab7">一带一路政策的基本介绍</span>
+					      </h4>
+					      <div class="text_box" >
+					        <p style="line-height:2">丝绸之路经济带和21世纪海上丝绸之路，简称“一带一路”[1]，是由中国共产党中央委员会总书记习近平于2013年9月和10月分别提出的经济合作概念[2]，属于跨国经济带。中华人民共和国国务院总理李克强在亚洲和欧洲访问时进一步推广[3]，并写进总理政府工作报告中[4]，成为中华人民共和国对外的主要经济战略。目前已有60国家和国际组织响应一带一路。[来源请求]这些国家的总人口约44亿，经济总量约21万亿美元，分别占全世界的63%和29%......</p>
+					        <h5>
+					          <a href="https://zh.wikipedia.org/wiki/%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF%E7%BB%8F%E6%B5%8E%E5%B8%A6%E5%92%8C21%E4%B8%96%E7%BA%AA%E6%B5%B7%E4%B8%8A%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF#cite_note-10" target="_blank">查看详情</a>
+					          
+					        </h5>
+					       
+					      </div>
+					    </div>
+
+					    <div class="news_box" style="border-top:1px solid #ddd">
+					      <h4>
+					        <span style="color:#337ab7">一带一路官方文件</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2">2015年3月28日，国务院授权国家发改委、外交部、商务部等三部委联合发布“一带一路”建设的愿景与行动文件。</p>
+					        <h5>
+					          <a href="http://www.gov.cn/xinwen/2015-03/28/content_2839723.htm" target="_blank">查看详情</a>
+					          
+					        </h5>
+					        
+					      </div>
+					    </div>
+
+					    <div class="news_box" style="border-top:1px solid #ddd">
+					      <h4>
+					        <span style="color:#337ab7">一带一路框架思路</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2">「一帶一路」將通過五個走向貫穿亞歐非大陸。當中絲綢之路經濟帶重點暢通(1)中國經中亞、俄羅斯至歐洲；(2)中國經中亞、西亞至中東、地中海；(3)中國至東南亞、南亞、印度洋。而21世紀海上絲綢之路則重點(4)從中國沿海港口過南海到印度洋，延伸至歐洲；和(5)從中國沿海港口過南海到南太平洋......</p>
+					        <h5>
+					          <a href="http://beltandroad.hktdc.com/tc/about-the-belt-and-road-initiative/about-the-belt-and-road-initiative.aspx" target="_blank">查看详情</a>
+					          
+					        </h5>
+					      </div>
+					    </div>
+
+					    <div class="news_box" style="border-top:1px solid #ddd">
+					      <h4>
+					        <span style="color:#337ab7">一带一路国家概况</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2">提供了 ｢一帶一路｣ 沿線六十多個國家及地區的貿易、經濟概況及投資政策......</p>
+					        <h5>
+					          <a href="http://beltandroad.hktdc.com/tc/country-profiles/country-profiles.aspx">查看详情</a>
+					          
+					        </h5>
+					      </div>
+					    </div>
+
+					    <div class="news_box" style="border-top:1px solid #ddd">
+					      <h4>
+					        <span style="color:#337ab7">从中国到土耳其：一带一路政策的契机与挑战</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2">2014年中國最高領導人習近平正式提出「一帶一路」政策，「一帶一路」分別由「絲綢之路經濟帶」與「海上絲綢之路」組成，貫穿南亞、中亞、中東直到歐洲。在一帶一路政策中，位於歐亞交界的土耳其扮演著相當重要的角色，對於中國「一帶一路，互利共生」的美麗夢想，土耳其打著什麼算盤？中土之間又有著什麼不可忽略的疙瘩？</p>
+					        <h5>
+					          <a href="http://global.udn.com/global_vision/story/8663/1338888">查看详情</a>
+					          
+					        </h5>
+					      </div>
+					    </div>
+					      
+					  </div>
+				</div>
+			</div>
+	    </div>
+	</div>
+
+
+	<!-- 安保评估 -->
+	<div class="panel panel-primary" style="margin-top:10px;margin-left: 2.5%;width: 95%; ">
+
+	    <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
+	        <h3 id="security" class="panel-title">安保评估</h3>
+	    </div>
+
+	    <ul id="myTab" class="nav nav-tabs">
+	    	<li class="dropdown">
+				<a href="#" id="myTabDrop1" class="dropdown-toggle" 
+				   data-toggle="dropdown">反动情况
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+					<li><a href="#extreme_organization" tabindex="-1" data-toggle="tab">极端组织</a></li>
+					<li><a href="#anti_force" tabindex="-1" data-toggle="tab">反华势力</a></li>
+					<li><a href="#local_organization" tabindex="-1" data-toggle="tab">地方力量</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="#safe_accident" data-toggle="tab">
+					近期安全事件
 				</a>
 			</li>
-			<li>
-				<a href="#political" data-toggle="tab">
-					政治形势
-				</a>
-			</li>
-			<!-- <li>
-				<a href="#attitude" data-toggle="tab">对华态度</a>
-			</li> -->
-
-			<li>
-				<a href="#detail2" data-toggle="tab">访问议题信息</a>
-			</li>
+			
 			
 		</ul>
-    	<div id="myTabContent" class="tab-content">
-    		
-    		<!--人物资讯详细内容-->
-    		<div class="tab-pane fade in active" id="people" style="height:200px;">
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade " id="safe_accident" style="margin-left: 15px;width: 97%;">
+				
 
-    			<div style="margin-left:10%;">
-    				<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 20px;margin-right: 0.6%;" >
-    				
-	    			</div>
-	                    <p class="personal_domain" style="margin-top: 30px;" ><b>拟出访人</b>
-	                        <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
-	                    </p>
-					<div>
-						<img id="zongtong_1_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-left: 1%;float: left;">
-						<p style="float: left;margin-left:10px;">塔伊普·埃尔多安</br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</br></br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="detail" href="/news/person_detail/president_now" style="margin-top:5px;">查看更多详情</a></p>
-
+				<div class="news_box" style="border-top:1px solid #ddd">
+					      <h4>
+					        <span style="color:#337ab7">“库尔德自由之鹰”宣称制造伊斯坦布尔汽车炸弹袭击事件</span>
+					      </h4>
+					    <div class="text_box">
+					        <p style="line-height:2">新华社伊斯坦布尔６月１０日电（记者易爱军）“库尔德自由之鹰”组织１０日宣称制造了土耳其最大城市伊斯坦布尔７日发生的汽车炸弹袭击事件。“库尔德自由之鹰”在推特上发表声明说，袭击由该组织一个行动小组实施。一辆防暴警察乘坐的大巴７日上午在伊斯坦布尔法蒂赫区遭汽车炸弹袭击，造成包括６名警察在内的１１人死亡、３６人受伤。最近数月，土耳其境内恐怖袭击频发，伊斯坦布尔和安卡拉等城市已发生多起自杀式爆炸袭击，造成重大人员伤亡。</p>
+					        <h5>
+					          <a href="http://news.xinhuanet.com/world/2016-06/10/c_1119019672.htm" target="_blank">查看详情</a>
+					          
+					        </h5>
+					        <h5>
+					          <i>2016-06-10 18：07</i>
+					          &nbsp;&nbsp;来源：新华社
+					        </h5>
+					      </div>
 					</div>
 
-    			</div>
 
-                
+					     <div class="news_box" style="border-top:1px solid #ddd">
+					      <h4>
+					        <span style="color:#337ab7">灰狼组织抗议俄叙内战</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2">灰狼组织在伊斯坦布尔俄罗斯领事馆附近抗议俄罗斯参与叙利亚内战。他们指责俄罗斯屠宰叙利亚土库曼人。</p>
+					        <h5>
+					          <a href="http://www.sozcu.com.tr/2015/gundem/ulkuculer-turkmenler-icin-sokaktaydi-991514">查看详情</a>
+					          
+					        </h5>
+					        <h5>
+					          <i>2015-11-21 18：07</i>
+					          &nbsp;&nbsp;来源：土耳其新闻网
+					        </h5>
+					      </div>
+					    </div>
+						
+
+					    <div class="news_box" style="border-top:1px solid #ddd">
+					      <h4>
+					        <span style="color:#337ab7">中国规定遭极端组织抗议</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2">灰狼组织在土耳其伊斯坦布尔举行抗议活动，抗议“中国政府禁止维吾尔人于斋戒月敬拜及斋戒”。该组织烧毁中国国旗，袭击中国餐馆，伤害了误认为是中国人的韩国游客。</p>
+					        <h5>
+					          <a href="http://www.bbc.com/news/world-asia-china-33440998" target="_blank">查看详情</a>
+					          
+					        </h5>
+					        <h5>
+					          <i>2015-09</i>
+					          &nbsp;&nbsp;来源：BBC News
+					        </h5>
+					      </div>
+					    </div>
+
+					    <div class="news_box" style="border-top:1px solid #ddd">
+					      <h4>
+					        <span style="color:#337ab7">土耳其办事处遭袭击</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2">2015年9月7-8日土耳其民族主义者，包括灰狼组织的成员，袭击了亲库尔德人民民主党（HDP）在土耳其的128个办事处。</p>
+					        <h5>
+					          <a href="http://en.rfi.fr/general/20151026-tensions-running-high-turkey-elections-loom" target="_blank">查看详情</a>
+					          
+					        </h5>
+					        <h5>
+					          <i>2015-09</i>
+					          &nbsp;&nbsp;来源：土耳其新闻网
+					        </h5>
+					      </div>
+					    </div>
+					   
+					    <div class="news_box" style="border-top:1px solid #ddd">
+					      <h4>
+					        <span style="color:#337ab7">中国公民于土耳其遭遇绑架</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2">3名中国工程师在土耳其东南部被库尔德工人党绑架。</p>
+					        <h5>
+					          <a href="http://news.xinhuanet.com/overseas/2014-08/26/c_126916492.htm" target="_blank">查看详情</a>
+					          
+					        </h5>
+					        <h5>
+					          <i>2014-08</i>
+					          &nbsp;&nbsp;来源：新华社
+					        </h5>
+					      </div>
+					    </div>
+
+
+
 			</div>
 			
-			<!--政治形势详细内容-->
-			<div class="tab-pane fade" id="political">
-				<div class="panel-group" id="accordion">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" 
-								   href="#collapseOne">
-									土耳其国内政治形势
-								</a>
-							</h4>
-						</div>
-						<div id="collapseOne" class="panel-collapse collapse in">
-							<div class="panel-body">
-								<div style="float:left;width:6px;height:25px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
-	                        	<p class="personal_domain" style="font-size: 21px;"><b>政治局势</b>
-	                        	<p style="font-size: 14px;margin-top: 20px;margin-left: 3%;line-height:2">    2015年下半年和2016年上半年，土耳其两个最大的城市和其他地方的恐怖主义暴力活动有所增加。 2015年10月在安卡拉发生了几次汽车炸弹和枪攻击，2015年2月和6月发生了两次攻击，其次是对伊斯坦布尔阿塔图尔克机场的袭击。 2016年7月15日，土耳其武装部队人员在安卡拉和伊斯坦布尔的关键政府和基础设施地点发动政变。</p>
-
-
-	                        	<div style="float:left;width:6px;height:25px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
-	                        	<p class="personal_domain" style="font-size: 21px;"><b>政治局势相关报道</b>
-
-
-	                        	 <div class="news_box" style="margin-left:35px;">
-							      <h4>
-							        <span style="color:#337ab7">土耳其政治经济安全局势四面楚歌，观察人士忧心忡忡</span>
-							      </h4>
-							      <div class="text_box">
-							        <p style="line-height:2">土耳其正面临新的安全问题。本周早些时候，土耳其安卡拉市中心发生了汽车炸弹爆炸事件，目前已造成至少28人死亡、61人受伤。这凸显了土耳其在国内外所面临的严峻挑战。专家担心，土耳其总统埃尔多安（Recep Tayyip Erdogan）领导的土耳其政府正遭受“四面夹击”：既不能致力于急需的经济改革，与库尔德民兵的战争硝烟再起，来自伊斯兰国势力的威胁日益上升，还有不断发酵的难民危机。最主要的，叙利亚战争正在其家门口开打。媒体评析称，土耳其最大的问题在于树敌太多......</p>
-							        <h5>
-							          <a href="http://finance.sina.com.cn/money/forex/hbfx/2016-02-19/doc-ifxprupc9496653.shtml" target="_blank">查看详情</a>
-							          
-							        </h5>
-							        <h5>
-							          <i>2016-02-19 18：20</i>
-							          &nbsp;&nbsp;来源：新浪新闻网
-							        </h5>
-							       
-							      </div>
-							    </div>
-
-							     	 <div class="news_box" style="margin-left:35px;border-top:1px solid #ddd">
-							      <h4>
-							        <span style="color:#337ab7">土耳其军事政变拨开了击落俄罗斯战机事件的疑云</span>
-							      </h4>
-							      <div class="text_box">
-							        <p style="line-height:2">去年11月24日，土耳其空军战斗机在土、叙边境击落俄罗斯的苏-24歼击轰炸机，堪称叙利亚战争中最具神秘色彩的一幕。事件引发俄罗斯与土耳其双边政治危机，两国最高领导人均发表了立场强硬的声明，采取了大规模的军事部署与经济制裁。</p>
-							        <h5>
-							          <a href="http://www.weidu8.net/wx/445044" target="_blank">查看详情</a>
-							          
-							        </h5>
-							        <h5>
-							          <i>2016-09-10</i>
-							          &nbsp;&nbsp;来源：中东研究通讯
-							        </h5>
-							       
-							      </div>
-							    </div>
-
-	                        	<!-- <p style="font-size: 14px;margin-top: 20px;margin-left: 3%;line-height:2">    2015年下半年和2016年上半年，土耳其两个最大的城市和其他地方的恐怖主义暴力活动有所增加。 2015年10月在安卡拉发生了几次汽车炸弹和枪攻击，2015年2月和6月发生了两次攻击，其次是对伊斯坦布尔阿塔图尔克机场的袭击。 2016年7月15日，土耳其武装部队人员在安卡拉和伊斯坦布尔的关键政府和基础设施地点发动政变。</p> -->
-								</div>
-
-						</div>
-					</div>
-
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" 
-								   href="#collapseTwo">
-									土耳其国际政治形势
-								</a>
-							</h4>
-						</div>
-						<div id="collapseTwo" class="panel-collapse collapse">
-							<div class="panel-body">
-								<div id="international" style="height:400px;width:1000px;">
-
-								</div>
-
-							</div>
-						</div>
-					</div>
-					<!-- <div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" 
-								   href="#collapseThree">
-									点击我进行展开，再次点击我进行折叠。第 3 部分
-								</a>
-							</h4>
-						</div>
-						<div id="collapseThree" class="panel-collapse collapse">
-							<div class="panel-body">
-								Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
-								cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
-								vice lomo.
-							</div>
-						</div>
-					</div> -->
+			<div class="tab-pane fade in active" id="extreme_organization" style="margin-left: 15px;">
+				<div style="height:500px;margin-left:30px">
+					<img id="zongtong_1_img" src="/static/img/jiduanzuzhi.png" style="width: 800px;" >
+				</div>
+				<div style="float:left;margin-left: 850px;margin-top: -400px;">
+					<hr style="height: 10px;width: 10px;background-color: #73e3ff;">
+						
+					<hr style="height: 10px;width: 10px;background-color: #5ab9f4;">
+						
+					<hr style="height: 10px;width: 10px;background-color: #ff7773;">
+						
+				</div>		
+				<div style=" margin-left: 880px; margin-top: -383px;float: left;">
+					<p >灰狼组织</p>
+					<p>库尔德斯坦工人党</p>
+					<p>库尔德自由之鹰</p>
+				</div>	
+			</div>
+			<div class="tab-pane fade" id="anti_force" style="margin-left: 15px;">
+				<div style="height:500px;margin-left:30px">
+					<img id="zongtong_1_img" src="/static/img/fanhuashili.png" style="width: 800px;">
+				</div>
+				<div style="float:left;margin-left: 850px;margin-top: -400px;">
+					<hr style="height: 10px;width: 10px;background-color: #ff7773;">
+					
+				</div>
+				<div style=" margin-left: 890px; margin-top: -383px;float: left;">
+					<p >"法轮功"邪教组织</p>
+					
+				</div>
+			</div>
+			<div class="tab-pane fade" id="local_organization" style="margin-left: 15px;">
+				<div style="height:500px;margin-left:30px">
+					<img id="zongtong_1_img" src="/static/img/difangliliang.png" style="width: 800px;">
+				</div>
+				<div style="float:left;margin-left: 850px;margin-top: -400px;">
+					<hr style="height: 10px;width: 10px;background-color: #cf4343;">
+					<hr style="height: 10px;width: 10px;background-color: #08c043;">
+					<hr style="height: 10px;width: 10px;background-color: #dad520;">
+					<hr style="height: 10px;width: 10px;background-color: #6241af;">
+					<hr style="height: 10px;width: 10px;background-color: #00bfb9;">
+					<hr style="height: 10px;width: 10px;background-color: #d4d1b5;">
+					<hr style="height: 10px;width: 10px;background-color: #d13a76;">
+					<hr style="height: 10px;width: 10px;background-color: #3160b3;">
 				</div>
 
-			</div>
-
-			<!-- <div class="tab-pane fade" id="attitude">
-				<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
-					TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
-			</div> -->
-
-			<div class="tab-pane fade" id="detail2">
-				<div id="content_panel" style="margin-top:10px;">
-
-				    <div class="news_box" >
-				      <h4>
-				        <span style="color:#337ab7">一带一路政策的基本介绍</span>
-				      </h4>
-				      <div class="text_box" >
-				        <p style="line-height:2">丝绸之路经济带和21世纪海上丝绸之路，简称“一带一路”[1]，是由中国共产党中央委员会总书记习近平于2013年9月和10月分别提出的经济合作概念[2]，属于跨国经济带。中华人民共和国国务院总理李克强在亚洲和欧洲访问时进一步推广[3]，并写进总理政府工作报告中[4]，成为中华人民共和国对外的主要经济战略。目前已有60国家和国际组织响应一带一路。[来源请求]这些国家的总人口约44亿，经济总量约21万亿美元，分别占全世界的63%和29%......</p>
-				        <h5>
-				          <a href="https://zh.wikipedia.org/wiki/%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF%E7%BB%8F%E6%B5%8E%E5%B8%A6%E5%92%8C21%E4%B8%96%E7%BA%AA%E6%B5%B7%E4%B8%8A%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF#cite_note-10" target="_blank">查看详情</a>
-				          
-				        </h5>
-				       
-				      </div>
-				    </div>
-
-				    <div class="news_box" style="border-top:1px solid #ddd">
-				      <h4>
-				        <span style="color:#337ab7">一带一路官方文件</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2">2015年3月28日，国务院授权国家发改委、外交部、商务部等三部委联合发布“一带一路”建设的愿景与行动文件。</p>
-				        <h5>
-				          <a href="http://www.gov.cn/xinwen/2015-03/28/content_2839723.htm" target="_blank">查看详情</a>
-				          
-				        </h5>
-				        
-				      </div>
-				    </div>
-
-				    <div class="news_box" style="border-top:1px solid #ddd">
-				      <h4>
-				        <span style="color:#337ab7">一带一路框架思路</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2">「一帶一路」將通過五個走向貫穿亞歐非大陸。當中絲綢之路經濟帶重點暢通(1)中國經中亞、俄羅斯至歐洲；(2)中國經中亞、西亞至中東、地中海；(3)中國至東南亞、南亞、印度洋。而21世紀海上絲綢之路則重點(4)從中國沿海港口過南海到印度洋，延伸至歐洲；和(5)從中國沿海港口過南海到南太平洋......</p>
-				        <h5>
-				          <a href="http://beltandroad.hktdc.com/tc/about-the-belt-and-road-initiative/about-the-belt-and-road-initiative.aspx" target="_blank">查看详情</a>
-				          
-				        </h5>
-				      </div>
-				    </div>
-
-				    <div class="news_box" style="border-top:1px solid #ddd">
-				      <h4>
-				        <span style="color:#337ab7">一带一路国家概况</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2">提供了 ｢一帶一路｣ 沿線六十多個國家及地區的貿易、經濟概況及投資政策......</p>
-				        <h5>
-				          <a href="http://beltandroad.hktdc.com/tc/country-profiles/country-profiles.aspx">查看详情</a>
-				          
-				        </h5>
-				      </div>
-				    </div>
-
-				    <div class="news_box" style="border-top:1px solid #ddd">
-				      <h4>
-				        <span style="color:#337ab7">从中国到土耳其：一带一路政策的契机与挑战</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2">2014年中國最高領導人習近平正式提出「一帶一路」政策，「一帶一路」分別由「絲綢之路經濟帶」與「海上絲綢之路」組成，貫穿南亞、中亞、中東直到歐洲。在一帶一路政策中，位於歐亞交界的土耳其扮演著相當重要的角色，對於中國「一帶一路，互利共生」的美麗夢想，土耳其打著什麼算盤？中土之間又有著什麼不可忽略的疙瘩？</p>
-				        <h5>
-				          <a href="http://global.udn.com/global_vision/story/8663/1338888">查看详情</a>
-				          
-				        </h5>
-				      </div>
-				    </div>
-				      
-				  </div>
-			</div>
-		</div>
-    </div>
-</div>
-
-<div class="panel panel-primary" style="margin-top:10px;margin-left: 2.5%;width: 95%; ">
-
-    <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
-        <h3 id="security" class="panel-title">安保评估</h3>
-    </div>
-
-    <ul id="myTab" class="nav nav-tabs">
-    	<li class="dropdown">
-			<a href="#" id="myTabDrop1" class="dropdown-toggle" 
-			   data-toggle="dropdown">反动情况
-				<b class="caret"></b>
-			</a>
-			<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-				<li><a href="#extreme_organization" tabindex="-1" data-toggle="tab">极端组织</a></li>
-				<li><a href="#anti_force" tabindex="-1" data-toggle="tab">反华势力</a></li>
-				<li><a href="#local_organization" tabindex="-1" data-toggle="tab">地方力量</a></li>
-			</ul>
-		</li>
-
-		<li>
-			<a href="#safe_accident" data-toggle="tab">
-				近期安全事件
-			</a>
-		</li>
-		
-		
-	</ul>
-	<div id="myTabContent" class="tab-content">
-		<div class="tab-pane fade " id="safe_accident" style="margin-left: 15px;width: 97%;">
-			
-
-			<div class="news_box" style="border-top:1px solid #ddd">
-				      <h4>
-				        <span style="color:#337ab7">“库尔德自由之鹰”宣称制造伊斯坦布尔汽车炸弹袭击事件</span>
-				      </h4>
-				    <div class="text_box">
-				        <p style="line-height:2">新华社伊斯坦布尔６月１０日电（记者易爱军）“库尔德自由之鹰”组织１０日宣称制造了土耳其最大城市伊斯坦布尔７日发生的汽车炸弹袭击事件。“库尔德自由之鹰”在推特上发表声明说，袭击由该组织一个行动小组实施。一辆防暴警察乘坐的大巴７日上午在伊斯坦布尔法蒂赫区遭汽车炸弹袭击，造成包括６名警察在内的１１人死亡、３６人受伤。最近数月，土耳其境内恐怖袭击频发，伊斯坦布尔和安卡拉等城市已发生多起自杀式爆炸袭击，造成重大人员伤亡。</p>
-				        <h5>
-				          <a href="http://news.xinhuanet.com/world/2016-06/10/c_1119019672.htm" target="_blank">查看详情</a>
-				          
-				        </h5>
-				        <h5>
-				          <i>2016-06-10 18：07</i>
-				          &nbsp;&nbsp;来源：新华社
-				        </h5>
-				      </div>
+				<div style=" margin-left: 870px; margin-top: -380px;float: left;">
+					<p >土耳其商人和工业家联合会 </p>
+					<p>革命工会联合会</p>
+					<p >土耳其工业家和商人协会</p>
+					<p >公共部门工会联合会 </p>
+					
+					<p >道德权利工人联合会</p>
+					<p >土耳其雇主联合会</p>
+					<p >土耳其劳工联合会</p>
+					<p >土耳其商业和商品交易所联合会</p>
 				</div>
-
-
-				     <div class="news_box" style="border-top:1px solid #ddd">
-				      <h4>
-				        <span style="color:#337ab7">灰狼组织抗议俄叙内战</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2">灰狼组织在伊斯坦布尔俄罗斯领事馆附近抗议俄罗斯参与叙利亚内战。他们指责俄罗斯屠宰叙利亚土库曼人。</p>
-				        <h5>
-				          <a href="http://www.sozcu.com.tr/2015/gundem/ulkuculer-turkmenler-icin-sokaktaydi-991514">查看详情</a>
-				          
-				        </h5>
-				        <h5>
-				          <i>2015-11-21 18：07</i>
-				          &nbsp;&nbsp;来源：土耳其新闻网
-				        </h5>
-				      </div>
-				    </div>
-					
-
-				    <div class="news_box" style="border-top:1px solid #ddd">
-				      <h4>
-				        <span style="color:#337ab7">中国规定遭极端组织抗议</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2">灰狼组织在土耳其伊斯坦布尔举行抗议活动，抗议“中国政府禁止维吾尔人于斋戒月敬拜及斋戒”。该组织烧毁中国国旗，袭击中国餐馆，伤害了误认为是中国人的韩国游客。</p>
-				        <h5>
-				          <a href="http://www.bbc.com/news/world-asia-china-33440998" target="_blank">查看详情</a>
-				          
-				        </h5>
-				        <h5>
-				          <i>2015-09</i>
-				          &nbsp;&nbsp;来源：BBC News
-				        </h5>
-				      </div>
-				    </div>
-
-				    <div class="news_box" style="border-top:1px solid #ddd">
-				      <h4>
-				        <span style="color:#337ab7">土耳其办事处遭袭击</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2">2015年9月7-8日土耳其民族主义者，包括灰狼组织的成员，袭击了亲库尔德人民民主党（HDP）在土耳其的128个办事处。</p>
-				        <h5>
-				          <a href="http://en.rfi.fr/general/20151026-tensions-running-high-turkey-elections-loom" target="_blank">查看详情</a>
-				          
-				        </h5>
-				        <h5>
-				          <i>2015-09</i>
-				          &nbsp;&nbsp;来源：土耳其新闻网
-				        </h5>
-				      </div>
-				    </div>
-				   
-				    <div class="news_box" style="border-top:1px solid #ddd">
-				      <h4>
-				        <span style="color:#337ab7">中国公民于土耳其遭遇绑架</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2">3名中国工程师在土耳其东南部被库尔德工人党绑架。</p>
-				        <h5>
-				          <a href="http://news.xinhuanet.com/overseas/2014-08/26/c_126916492.htm" target="_blank">查看详情</a>
-				          
-				        </h5>
-				        <h5>
-				          <i>2014-08</i>
-				          &nbsp;&nbsp;来源：新华社
-				        </h5>
-				      </div>
-				    </div>
-
-
-
-		</div>
-		
-		<div class="tab-pane fade in active" id="extreme_organization" style="margin-left: 15px;">
-			<div style="height:500px;margin-left:30px">
-				<img id="zongtong_1_img" src="/static/img/jiduanzuzhi.png" style="width: 800px;" >
-			</div>
-			<div style="float:left;margin-left: 850px;margin-top: -400px;">
-				<hr style="height: 10px;width: 10px;background-color: #73e3ff;">
-					
-				<hr style="height: 10px;width: 10px;background-color: #5ab9f4;">
-					
-				<hr style="height: 10px;width: 10px;background-color: #ff7773;">
-					
-			</div>		
-			<div style=" margin-left: 880px; margin-top: -383px;float: left;">
-				<p >灰狼组织</p>
-				<p>库尔德斯坦工人党</p>
-				<p>库尔德自由之鹰</p>
-			</div>	
-		</div>
-		<div class="tab-pane fade" id="anti_force" style="margin-left: 15px;">
-			<div style="height:500px;margin-left:30px">
-				<img id="zongtong_1_img" src="/static/img/fanhuashili.png" style="width: 800px;">
-			</div>
-			<div style="float:left;margin-left: 850px;margin-top: -400px;">
-				<hr style="height: 10px;width: 10px;background-color: #ff7773;">
-				
-			</div>
-			<div style=" margin-left: 890px; margin-top: -383px;float: left;">
-				<p >"法轮功"邪教组织</p>
-				
 			</div>
 		</div>
-		<div class="tab-pane fade" id="local_organization" style="margin-left: 15px;">
-			<div style="height:500px;margin-left:30px">
-				<img id="zongtong_1_img" src="/static/img/difangliliang.png" style="width: 800px;">
-			</div>
-			<div style="float:left;margin-left: 850px;margin-top: -400px;">
-				<hr style="height: 10px;width: 10px;background-color: #cf4343;">
-				<hr style="height: 10px;width: 10px;background-color: #08c043;">
-				<hr style="height: 10px;width: 10px;background-color: #dad520;">
-				<hr style="height: 10px;width: 10px;background-color: #6241af;">
-				<hr style="height: 10px;width: 10px;background-color: #00bfb9;">
-				<hr style="height: 10px;width: 10px;background-color: #d4d1b5;">
-				<hr style="height: 10px;width: 10px;background-color: #d13a76;">
-				<hr style="height: 10px;width: 10px;background-color: #3160b3;">
-			</div>
 
-			<div style=" margin-left: 870px; margin-top: -380px;float: left;">
-				<p >土耳其商人和工业家联合会 </p>
-				<p>革命工会联合会</p>
-				<p >土耳其工业家和商人协会</p>
-				<p >公共部门工会联合会 </p>
-				
-				<p >道德权利工人联合会</p>
-				<p >土耳其雇主联合会</p>
-				<p >土耳其劳工联合会</p>
-				<p >土耳其商业和商品交易所联合会</p>
-			</div>
-		</div>
+
+	    
+	    <!-- </div> -->
+
 	</div>
 
+	<!-- 历史出访 -->
+	<div class="panel panel-primary" style="margin-top:10px;margin-left: 2.5%;width: 95%; ">
+	    <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
+	        <h3 id="history_visit" class="panel-title">历史出访</h3>
+	    </div>
 
-    
-    <!-- </div> -->
+	    <!--第一条出访信息-->
+	    <div class="news_box" style="border-top:1px solid #ddd;width: 96%;margin-left: 2%;">
+			
 
-</div>
+			<div class="text_box">
+				<h4>
+				<span style="color:#337ab7">习近平出席第十次峰会</span>
+			    </h4>
+				<p>土耳其安塔利亚，国家主席习近平，应土耳其共和国总统埃尔多安邀请，出席二十国集团领导人第十次峰会......</p>
+				<h5>
+					<a href="http://www.xinhuanet.com/world/xjpcf201202/" target="_blank">查看详情</a>
+				</h5>
+				
+			</div>
+			<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1" style="float:left;margin-top: -40px;margin-left: 800px;height: 30px;line-height: 2px;">查看此事件媒体反映
+			</button>
+			
+		</div>
 
-<div class="panel panel-primary" style="margin-top:10px;margin-left: 2.5%;width: 95%; ">
-    <div class="panel-heading" style="background-color: #104F87;border-color: #104F87;">
-        <h3 id="history_visit" class="panel-title">历史出访</h3>
-    </div>
-
-    <!--第一条出访信息-->
-    <div class="news_box" style="border-top:1px solid #ddd;width: 96%;margin-left: 2%;">
-		
-
-		<div class="text_box">
+	    <!--第2条出访信息-->
+		<div class="news_box" style="border-top:1px solid #ddd;width: 96%;margin-left: 2%;">
 			<h4>
-			<span style="color:#337ab7">习近平出席第十次峰会</span>
-		    </h4>
-			<p>土耳其安塔利亚，国家主席习近平，应土耳其共和国总统埃尔多安邀请，出席二十国集团领导人第十次峰会......</p>
-			<h5>
-				<a href="http://www.xinhuanet.com/world/xjpcf201202/" target="_blank">查看详情</a>
-			</h5>
-			
+				<span style="color:#337ab7">习近平访问土耳其</span>
+			</h4>
+
+			<div class="text_box">
+				<p>应土耳其总统居尔邀请，国家副主席习近平当地时间２０日晚抵达安卡拉，开始对土耳其进行正式访问......</p>
+				<h5>
+					<a href="http://news.xinhuanet.com/world/2012-02/21/c_122729502.htm" target="_blank">查看详情</a>				          
+				</h5>		
+			</div>
+			<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2" style="float:left;margin-top: -40px;margin-left: 800px;height: 30px;line-height: 2px;">查看此事件媒体反映
+			</button>
 		</div>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1" style="float:left;margin-top: -40px;margin-left: 800px;height: 30px;line-height: 2px;">查看此事件媒体反映
-		</button>
-		
-	</div>
 
-    <!--第2条出访信息-->
-	<div class="news_box" style="border-top:1px solid #ddd;width: 96%;margin-left: 2%;">
-		<h4>
-			<span style="color:#337ab7">习近平访问土耳其</span>
-		</h4>
 
-		<div class="text_box">
-			<p>应土耳其总统居尔邀请，国家副主席习近平当地时间２０日晚抵达安卡拉，开始对土耳其进行正式访问......</p>
-			<h5>
-				<a href="http://news.xinhuanet.com/world/2012-02/21/c_122729502.htm" target="_blank">查看详情</a>				          
-			</h5>		
+
+		<!--模态框-查看历史出访1媒体反映-->
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							媒体对此出访事件的反映
+						</h4>
+					</div>
+					<!--模态框1的详细信息-->
+					<div class="modal-body">
+
+						<div class="news_box" style="margin-left: 12px;" >
+					      <h4>
+					        <span style="color:#337ab7">习近平在G20峰会上：世界经济需要新的增长点</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2;">
+					        	中国国家主席习近平在土耳其20国集团领导人会议上说，世界迫切需要找到新的经济增长源。中国官方媒体新华社社星期一报道。
+					        </p>
+					        <h5>
+					          <a href="http://atimes.com/2015/11/xi-at-g20-world-needs-new-sources-of-economic-growth/" target="_blank">查看详情</a>
+					          
+					        </h5>
+					        <h5>
+					          <i>2015-11-16</i>
+					          &nbsp;&nbsp;来源：ASIA TIMES
+					        </h5>
+					      </div>
+					    </div>
+
+					    <div class="modal-body">
+
+						<div class="news_box" style="border-top:1px solid #ddd">
+					      <h4>
+					        <span style="color:#337ab7">习近平的反恐小组全线布局 预防江派混水摸鱼</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2;">
+					        	在大陆反腐提速、国际恐怖主义猖獗之际，习近平的亲信掌握大陆“国家反恐怖工作领导小组”实权，并首次公开露面。近年来，大陆新疆及一些地方恐怖袭击事件频发，据悉部分事件涉及江派搞破坏。分析认为，习近平亲信掌控大陆反恐实权，或可防江泽民集团利用暴力袭击事件来混水摸鱼，制造混乱......
+					        </p>
+					        <h5>
+					          <a href="https://www-cnnews.rhcloud.com/%E4%B9%A0%E8%BF%91%E5%B9%B3%E7%9A%84%E5%8F%8D%E6%81%90%E5%B0%8F%E7%BB%84%E5%85%A8%E7%BA%BF%E5%B8%83%E5%B1%80-%E9%A2%84%E9%98%B2%E6%B1%9F%E6%B4%BE%E6%B7%B7%E6%B0%B4%E6%91%B8%E9%B1%BC/" target="_blank">查看详情</a>
+					          
+					        </h5>
+					        <h5>
+					          <i>2015-09-17</i>
+					          &nbsp;&nbsp;来源：禁闻
+					        </h5>
+					       
+					      </div>
+					    </div>
+
+
+					</div>
+					</div>
+
+					
+
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+						</button>
+						<!-- <button type="button" class="btn btn-primary">
+							提交更改
+						</button> -->
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
 		</div>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2" style="float:left;margin-top: -40px;margin-left: 800px;height: 30px;line-height: 2px;">查看此事件媒体反映
-		</button>
+
+
+		<!--模态框-查看历史出访2媒体反映-->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							媒体对此出访事件的反映
+						</h4>
+					</div>
+
+
+					<div class="modal-body">
+					<!--模态框2的内容-->	
+						<div class="news_box" >
+					      <h4>
+					        <span style="color:#337ab7">习近平:望土耳其继续阻止东突在土反华分裂活动</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2;">
+					        	当地时间2月21日，正在土耳其进行正式访问的国家副主席习近平在伊斯坦布尔会见了土耳其总理埃尔多安。
+					        </p>
+					        <h5>
+					          <a href="http://news.sina.com.cn/z/xjpcfuit/" target="_blank">查看详情</a>
+					          
+					        </h5>
+					        <h5>
+					          <i>2012-02-22 05:59</i>
+					          &nbsp;&nbsp;来源：新浪网
+					        </h5>
+					      </div>
+					    </div>
+
+
+					    <div class="news_box" style="border-top:1px solid #ddd">
+					      <h4>
+					        <span style="color:#337ab7">习近平访问土耳其介绍新疆情况</span>
+					      </h4>
+					      <div class="text_box">
+					        <p style="line-height:2;">
+					        	正在土耳其访问的中国国家副主席习近平与土耳其领导人论及叙利亚、贸易问题同时，通过媒体采访呼吁土耳其到新疆投资，谋求互利共赢。
+					        </p>
+					        <h5>
+					          <a href="http://www.bbc.com/zhongwen/simp/chinese_news/2012/02/120221_xi_turkey_china.shtml" target="_blank">查看详情</a>
+					          
+					        </h5>
+					        <h5>
+					          <i>2012-02-21</i>
+					          &nbsp;&nbsp;来源：BBC中文网
+					        </h5>
+					      </div>
+					    </div>
+
+
+					</div>
+
+
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+						</button>
+						<!-- <button type="button" class="btn btn-primary">
+							提交更改
+						</button> -->
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+
+
 	</div>
 
-
-
-	<!--模态框-查看历史出访1媒体反映-->
-	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-						&times;
-					</button>
-					<h4 class="modal-title" id="myModalLabel">
-						媒体对此出访事件的反映
-					</h4>
-				</div>
-				<!--模态框1的详细信息-->
-				<div class="modal-body">
-
-					<div class="news_box" style="margin-left: 12px;" >
-				      <h4>
-				        <span style="color:#337ab7">习近平在G20峰会上：世界经济需要新的增长点</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2;">
-				        	中国国家主席习近平在土耳其20国集团领导人会议上说，世界迫切需要找到新的经济增长源。中国官方媒体新华社社星期一报道。
-				        </p>
-				        <h5>
-				          <a href="http://atimes.com/2015/11/xi-at-g20-world-needs-new-sources-of-economic-growth/" target="_blank">查看详情</a>
-				          
-				        </h5>
-				        <h5>
-				          <i>2015-11-16</i>
-				          &nbsp;&nbsp;来源：ASIA TIMES
-				        </h5>
-				      </div>
-				    </div>
-
-				    <div class="modal-body">
-
-					<div class="news_box" style="border-top:1px solid #ddd">
-				      <h4>
-				        <span style="color:#337ab7">习近平的反恐小组全线布局 预防江派混水摸鱼</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2;">
-				        	在大陆反腐提速、国际恐怖主义猖獗之际，习近平的亲信掌握大陆“国家反恐怖工作领导小组”实权，并首次公开露面。近年来，大陆新疆及一些地方恐怖袭击事件频发，据悉部分事件涉及江派搞破坏。分析认为，习近平亲信掌控大陆反恐实权，或可防江泽民集团利用暴力袭击事件来混水摸鱼，制造混乱......
-				        </p>
-				        <h5>
-				          <a href="https://www-cnnews.rhcloud.com/%E4%B9%A0%E8%BF%91%E5%B9%B3%E7%9A%84%E5%8F%8D%E6%81%90%E5%B0%8F%E7%BB%84%E5%85%A8%E7%BA%BF%E5%B8%83%E5%B1%80-%E9%A2%84%E9%98%B2%E6%B1%9F%E6%B4%BE%E6%B7%B7%E6%B0%B4%E6%91%B8%E9%B1%BC/" target="_blank">查看详情</a>
-				          
-				        </h5>
-				        <h5>
-				          <i>2015-09-17</i>
-				          &nbsp;&nbsp;来源：禁闻
-				        </h5>
-				       
-				      </div>
-				    </div>
-
-
-				</div>
-				</div>
-
-				
-
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
-					</button>
-					<!-- <button type="button" class="btn btn-primary">
-						提交更改
-					</button> -->
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal -->
-	</div>
-
-
-	<!--模态框-查看历史出访2媒体反映-->
-	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-						&times;
-					</button>
-					<h4 class="modal-title" id="myModalLabel">
-						媒体对此出访事件的反映
-					</h4>
-				</div>
-
-
-				<div class="modal-body">
-				<!--模态框2的内容-->	
-					<div class="news_box" >
-				      <h4>
-				        <span style="color:#337ab7">习近平:望土耳其继续阻止东突在土反华分裂活动</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2;">
-				        	当地时间2月21日，正在土耳其进行正式访问的国家副主席习近平在伊斯坦布尔会见了土耳其总理埃尔多安。
-				        </p>
-				        <h5>
-				          <a href="http://news.sina.com.cn/z/xjpcfuit/" target="_blank">查看详情</a>
-				          
-				        </h5>
-				        <h5>
-				          <i>2012-02-22 05:59</i>
-				          &nbsp;&nbsp;来源：新浪网
-				        </h5>
-				      </div>
-				    </div>
-
-
-				    <div class="news_box" style="border-top:1px solid #ddd">
-				      <h4>
-				        <span style="color:#337ab7">习近平访问土耳其介绍新疆情况</span>
-				      </h4>
-				      <div class="text_box">
-				        <p style="line-height:2;">
-				        	正在土耳其访问的中国国家副主席习近平与土耳其领导人论及叙利亚、贸易问题同时，通过媒体采访呼吁土耳其到新疆投资，谋求互利共赢。
-				        </p>
-				        <h5>
-				          <a href="http://www.bbc.com/zhongwen/simp/chinese_news/2012/02/120221_xi_turkey_china.shtml" target="_blank">查看详情</a>
-				          
-				        </h5>
-				        <h5>
-				          <i>2012-02-21</i>
-				          &nbsp;&nbsp;来源：BBC中文网
-				        </h5>
-				      </div>
-				    </div>
-
-
-				</div>
-
-
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
-					</button>
-					<!-- <button type="button" class="btn btn-primary">
-						提交更改
-					</button> -->
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal -->
-	</div>
-
-
-</div>
+<!-- 最大的div -->
 </div>
 
+<!-- js -->
 <script type="text/javascript">
 		var myChart = echarts.init(document.getElementById('international'));
 			option = {
