@@ -25,15 +25,75 @@
 	<script type="text/javascript" src="../../static/js/moment-with-locales.min.js"></script> -->
     <!-- <script type="text/javascript" src="../../static/js/bootstrap-datetimepicker.js"></script> -->
 
+    	<!-- 跳转到新的页面 -->
   		<script type="text/javascript" >
 		/*弹出对话框*/
-			function change_html()
+			function change()
 			{
 				
 				window.open("/news/interview_detail/");
-			}
-				
+			}		
 		</script>
+<!-- 起止日期格式 -->
+		<script language="javascript" type="text/javascript">
+		function check_time_from()
+		{
+			var datetype=/^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/; 
+			var datetype1=/^[0-9]{4}\/[0-9]{1,2}\/[0-9]{1,2}$/; 
+		    var time_from= document.getElementById("input_time_from").value;
+		                 // console.log(time_from);
+		        if (time_from=='') 
+		        {
+		            alert("开始日期不能为空！");
+		        }else if (!(datetype.exec(time_from) || datetype1.exec(time_from)))
+		        {
+		            alert("对不起,请您按以下格式输入日期:\n2005-5-5或2005/1/1"); 
+		        }      
+		}
+
+		function check_time_to()
+		{
+			
+		    var datetype=/^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/; 
+			var datetype1=/^[0-9]{4}\/[0-9]{1,2}\/[0-9]{1,2}$/; 
+		    var time_to= document.getElementById("input_time_to").value;
+		                 // console.log(time_from);
+		    if (time_to=='') 
+		    {
+		        alert("截至日期不能为空！");
+		    }else if (!(datetype.exec(time_to) || datetype1.exec(time_to)))
+		    {
+		        alert("对不起,请您按以下格式输入日期:\n2005-5-5或2005/1/1"); 
+		    }                		            
+		}
+		   
+		 function check_keyword()
+		 {
+		 	 var key_word= document.getElementById("key_word").value;
+		                 // console.log(time_from);
+		        if (key_word=='') 
+		        {
+		            alert("关键词不能为空！");
+		        }  
+		 }
+
+		 function check_all()
+		 {
+		 	 var time_from= document.getElementById("input_time_from").value;
+		 	 var time_to= document.getElementById("input_time_to").value;
+		 	 var key_word= document.getElementById("key_word").value;
+		 	 var country= $('#select_country option:selected') .val();
+		 	 var city= $('#select_city option:selected') .val();
+		 	 if (time_from==''||time_to==''||key_word==''||country==''||city=='') 
+		 	 {
+		 	 	alert('信息输入不全，请重新输入!');
+		 	 }
+		 }
+		</script>
+
+		
+<!-- 关键词不能为空 -->
+		
    
 {% endblock head_js %}
 
@@ -68,8 +128,12 @@
 
 							<div class='col-md-3' id="date1">
 			       				<div class="form-group">
+			       				<!--  onchange="window.alert('触发事件，处理事情')" //失去光标时，触发事件并处理
+    onkeypress=" if(event.keyCode==13) { window.alert('触发事件，处理事情'); return false;}"   //回车触发事件并处理 -->
+    <!-- $("#txt").attr("value"); -->
+
 			        	    		<div class='input-group date'  style="width: 180px;height:40px;margin-left: 80px;margin-top:-80%;float: left;">
-			                			<input placeholder="2016-11-01" type='text' class="form-control" style="height:40px;" />
+			                			<input id="input_time_from" placeholder="2016-11-01或2016/11/01" type='text' class="form-control" onchange="check_time_from();" onkeypress="if(event.keyCode==13){ check_time_from();}" style="height:40px;"  />
 			                			
 			           		 		</div>
 			        			</div>
@@ -79,8 +143,8 @@
 			        		<div class='col-md-3' id="date2">
 			        			<div class="form-group" style="float:left;">
 			            			<div class='input-group date'  style="width: 180px;height:40px;margin-top: -27%;margin-left: 155%;float: left;">
-			                			<input placeholder="2016-11-20" type='text' class="form-control"  style="height:40px;" />
-			                			
+			                			<input id="input_time_to" placeholder="2016-11-20或2016/11/20" type='text' class="form-control" onchange="check_time_to();" onkeypress="if(event.keyCode==13){ check_time_to();}" style="height:40px;" />
+			                			<img src="/static/img/star.png" width="10px" height="10px"  style="float:left;margin-left: 110%;margin-top: -30px;">
 			            			</div>
 			        			</div>
 			    			</div>
@@ -119,8 +183,8 @@
 						<div class="form-group" style="width:60%;margin-left:5%;">
 							<span style="float: left;margin-left:2%;margin-right: 20px;margin-top: 9px;">请选择访问的地点信息</span>
 								<p style="float:left;margin-top:10px;margin-left:30px;">国家</p>
-						        <select class="form-control input-lg" style="width: 25%;height: 40px;float:left;margin-left:20px;">
-						                <option value="">土耳其</option>
+						        <select id="select_country" class="form-control input-lg" style="width: 25%;height: 40px;float:left;margin-left:20px;">
+						                <option value="1">土耳其</option>
 						                <option value="">美国</option>
 						                <option value="">德国</option>
 						                <option value="">叙利亚</option>
@@ -131,8 +195,8 @@
 						        </select>
 
 						        <p style="float:left;margin-top:10px;margin-left:10px;margin-right:5px;">城市</p>
-						        <select class="form-control input-lg" style="width:25%;height: 40px;margin-left:50px;">
-						                <option value="">伊斯坦布尔</option>
+						        <select id="select_city" class="form-control input-lg" style="width:25%;height: 40px;margin-left:50px;">
+						                <option value="1">伊斯坦布尔</option>
 						                <option value="">安卡拉</option>
 						                <option value="">阿达纳</option>
 						                <option value="">加济安泰普</option>
@@ -148,22 +212,26 @@
 						                <option value="">巴特曼</option>       
 
 						        </select>
+						        <img src="/static/img/star.png" width="10px" height="10px"  style="float:left;margin-left: 93%;margin-top: -30px;">
 						</div>
 
 						
 
 						<div class="form-group">
 						    <span style="float: left;margin-left:72px;margin-right:50px;margin-top: 9px;">请输入出访相关关键词</span>
-						    <input class="form-control  input-lg" type="text" placeholder="请输入访问议题关键词" style="width:37.5%;margin-left:10%;height:40px">
-						    <img src="/static/img/star.png" width="10px" height="10px" style="float:left;margin-left: 61%;margin-top: -30px;">
+						    <input id="key_word" class="form-control  input-lg" type="text" placeholder="请输入访问议题关键词"  onchange="check_keyword();" onkeypress="if(event.keyCode==13){ check_keyword();}" style="width:37.5%;margin-left:10%;height:40px">
+						    <img src="/static/img/star.png" width="10px" height="10px"  style="float:left;margin-left: 61%;margin-top: -30px;">
 						</div>
 					          
-						<div class="form-group">
+					<!-- 	<div class="form-group">
 
-						</div>   
+						</div>    -->
 					        
-					    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="margin-top:30px;margin-left:50%;width: 100px;height: 40px;" > 搜索
-					    </button>
+					        <!-- button默认input的回车事件 -->
+					    <linkbutton class="btn btn-primary btn-lg" onclick="check_all()" style="margin-top:30px;margin-left:50%;width: 100px;height: 40px;" > 搜索
+					    </linkbutton>
+
+					    <!-- data-toggle="modal" data-target="#myModal"  -->
 					</form>
 				</div>
 			</div>
@@ -173,7 +241,7 @@
 </div>
 
 <!--多条件搜索模态框-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -235,13 +303,15 @@
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1" >
 					确认搜索
 				</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal -->
-</div>
+			</div> -->
+		<!-- </div> -->
+		<!-- /.modal-content -->
+	<!-- </div> -->
+	<!-- /.modal -->
+<!-- </div> -->
 
 <!--确认搜索后弹出的模态框-->
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -252,13 +322,27 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" onclick="change_html()" >查看详情</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal" ">关闭</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
-</div>
+            </div> -->
+        <!-- </div> -->
+        <!-- /.modal-content -->
+    <!-- </div> -->
+    <!-- /.modal -->
+<!-- </div> -->
+<!--将导航下拉部分隐藏-->
+   <script type="text/javascript">
+		window.onload=changetype(); 
+		function changetype()
+			{
+				console.log('aaaaaa');
+				document.getElementById("sub_one").style.display='none';  
+  				document.getElementById("sub_two").style.display='none';
+  				document.getElementById("sub_three").style.display='none'; 
+  			}
+  				
 
-
+	</script>
 
 
 {% endblock content %}
+
 
