@@ -156,3 +156,12 @@
         padding-top:2px;
         border-bottom: #a0a0a0 1px solid;
     }
+        .emer_event {
+        padding: 10px;
+        background-color: #43b6af;
+        color: white;
+        border-radius: 4px;
+        margin:12px;
+        margin-right: 10px;
+        float:left;
+    }
