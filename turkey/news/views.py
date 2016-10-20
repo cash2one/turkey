@@ -3001,3 +3001,5 @@ def turkey_emergency():
     """返回话题管理页面
     """
     return render_template('index/turkey_emergency.html')
+
+
