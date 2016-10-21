@@ -143,13 +143,16 @@ for(var i =0;i<length;i++){
 
 
 
- $(function () { 
+$(function(){
+   
+   //初始化“最新资讯” 
         draw_news(news_data,3);
         draw_sns(face_data,1);
         draw_sns(twi_data,1);
    $(".channel_current_select_text").text("全部");
    $(".media_current_select_text").text("全部");
    $(".catalog_current_select_text").text("全部");
+   //定义下拉列表改变时的函数
    $("#channel").change(function(){
     if($(".channel_current_select_text").text()=="新闻"){
       $(".media_current_select_text").text("全部");
@@ -171,46 +174,35 @@ for(var i =0;i<length;i++){
               $("#content_panel").html('');
               draw_news(tur_data_eco,5);
              }
-           })
-        }
-       })
-    }else if($(".channel_current_select_text").text()=="facebook"){
+           }) //$("#catalog").change(function(){}) 结束
+        }   //if cnntürk 结束
+       })  //$("#media").change(function(){}) 结束
+    }else if($(".channel_current_select_text").text()=="facebook"){  // if 新闻 结束
        $("#media_form").css("display","none");
        $("#catalog_form").css("display","none");
        $("#content_panel").html("");
         draw_sns(face_data,face_data.length);
-    }else if($(".channel_current_select_text").text()=="twitter"){
+    }else if($(".channel_current_select_text").text()=="twitter"){   // if facebook 结束
       $("#media_form").css("display","none");
        $("#catalog_form").css("display","none");
        $("#content_panel").html("");
         draw_sns(twi_data,twi_data.length);
-    }else if($(".channel_current_select_text").text()=="全部"){
+    }else if($(".channel_current_select_text").text()=="全部"){  // if twitter 结束
       $("#media_form").css("display","none");
        $("#catalog_form").css("display","none");
        $("#content_panel").html("");
         draw_news(news_data,3);
         draw_sns(face_data,1);
         draw_sns(twi_data,1);
-    }
+    }   // if 全部 结束
+
+  });  //$("#channel").change(function(){}) 结束
 
 
-  });
-  
   function delete_key(keyword){
-    console.log(keyword);
-     // var r = confirm("您确定要删除吗？");
-     // console.log(key_data);
-     // if(r){
-     //  for( var i = 1;i<key_data.length;i++){
-     //    if (keyword == key_data[i]["key"]){
-     //       key_data.remove(i);
-     //       alert('删除成功！');
-     //       window.location.reload();
-     //    }
-     //  }
-     // }
+     console.log(keyword);
   }
-  
+
    $('#keyword_table').bootstrapTable({
                   //url: influ_url,
                   data:key_data,
@@ -262,10 +254,9 @@ for(var i =0;i<length;i++){
                       }
                     }]
 
-             });
-    
+             });//table结束
      
-})
+})//文档匿名函数结束
 
 function viewmore(){
    $('#eventdetail').modal('show');
