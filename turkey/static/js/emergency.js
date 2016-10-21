@@ -177,6 +177,70 @@ for(var i = 0;i<length;i++){
     }
 
   });
-   
+  
+   var key_data = [{"key":"暴恐","time":"2016-10-09"},{"key":"美国","time":"2016-09-20"},{"key":"维和","time":"2016-03-03"},{"key":"政变","time":"2016-03-10"}];
+   $('#keyword_table').bootstrapTable({
+                  //url: influ_url,
+                  data:key_data,
+                  search: true,//是否搜索
+                  pagination: true,//是否分页
+                  pageSize: 20,//单页记录数
+                  pageList: [5, 10, 20, 50],//分页步进值
+                  sidePagination: "client",//服务端分页
+                  searchAlign: "left",
+                  searchOnEnterKey: false,//回车搜索
+                  showRefresh: true,//刷新按钮
+                  showColumns: true,//列选择按钮
+                  buttonsAlign: "left",//按钮对齐方式
+                  locale: "zh-CN",//中文支持
+                  detailView: false,
+                  showToggle:true,
+                  sortName:'time',
+                  sortOrder:"desc",
+                  columns: [  
+                    // {
+                    //     title: "全选",
+                    //     field: "",
+                    //     checkbox: true,
+                    //     align: "center",//水平
+                    //     valign: "middle"//垂直
+                    // },
+                    {
+                        title: "关键词",
+                        field: "key",
+                        sortable: true,
+                        align: "center",//水平
+                        valign: "middle",//垂直
+                    },
+                    {
+                        title: "添加时间",
+                        field: "time",
+                        sortable: true,
+                        align: "center",//水平
+                        valign: "middle",//垂直
+                    },
+                    {
+                      title: '操作',
+                      field: '',
+                      align: 'center',
+                      valign: "middle",//垂直
+                      formatter:function(value,row,index){  
+                      var d = '<span style="cursor:pointer;" onclick="delete_key()">删除</span>';  
+                        return d;  
+                      }
+                    }]
+
+             });
+
+
 })
 
+function viewmore(){
+   $('#eventdetail').modal('show');
+}
+function delete_key(){
+   var r = confirm("您确定要删除吗？");
+   if(r){
+    alert('删除成功！');
+   }
+}

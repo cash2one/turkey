@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+    <!--
+    <link rel="icon" href="../../favicon.ico">-->
+
+    <title>强力部门- 基础页面</title>
+
+
+    <!-- Iconos -->
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css">
+
+    <!-- daterangepicker css -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/datarangepiker.css') }}">
+    <link rel="stylesheet" href="/static/css/citySelector.css">
+    
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+        
+        .cityinput{
+            border-width: 1px;
+            border-style: solid;
+           /* border-color: #ffffff #ffffff #ffffff #ffffff;*/
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            height: 24px;
+            line-height: 24px;
+            width: 175px;
+            font-size: 12px;
+            padding-left: 2px;
+            background: url(http://img02.taobaocdn.com/tps/i2/T1EPyLXm0hXXXXXXXX-200-100.png) no-repeat 150px 5px;
+            }
+
+        /*
+         * Base structure
+         */
+
+        /* Move down content because we have a fixed navbar that is 50px tall */
+        html{
+            background-color: #fff;
+        }
+        body {
+            padding-top: 60px;
+            /*font-family: Arial,"Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei","文泉驿微米黑",STXihei,"华文细黑",sans-serif;*/
+            font-size: 13px;
+            line-height: 20px;
+            background-color: #f5f5f5 !important;
+        }
+        body, form, ul, ol, li, h1, h2, h3, h4, h5, h6, p, dl, dd, td, th, input, img {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, ol, li {
+            list-style: none;
+        }
+        #compTab .tabLi.curr {
+            border-bottom: 2px solid #fff;
+            background-color: #fff;
+            width: 221px;
+        }
+        #compTab .tabLi {
+            float: left;
+            width: 110px;
+            height: 68px;
+            margin-left: -2px;
+            border-left: 2px solid #e1e1e1;
+            border-bottom: 2px solid #ebebeb;
+        }
+        #compTab .tabLi.curr span, #compTab .tabLi:hover span {
+            display: block;
+            text-align: center;
+            color: #4284e2;
+        }
+        .tabLi {
+            cursor: pointer;
+        }
+        #compTab {
+            height: 70px;
+            background-color: #f6f6f6;
+            overflow: hidden;
+        }
+        #compTab .tabLi.curr .byWord, #compTab .tabLi:hover .byWord {
+            background-position: -80px -80px;
+        }
+        #compTab .tabLi .byWord, #compTab .tabLi.dsab:hover .byWord {
+            background-position: -120px -80px;
+        }
+        #compTab .tabLi .icons {
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: 6px auto 0 auto;
+        }
+        .icons {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            background-image: url(/static/img/icons.png);
+        }
+        .comCtl {
+            width: 202px;
+            height: 38px;
+            margin: 7px auto;
+        }
+        .comBorderL {
+            float: left;
+            width: 194px;
+            height: 34px;
+            border: 1px solid #e5e5e5;
+            border-right: 0;
+            background-color: #f6f6f6;
+        }
+        .hideDel .comBorderL .comWord {
+            width: 180px;
+        }
+        .comBorderL .comWord {
+            font-weight: normal;
+        }
+        .comBorderL .comWord, .comBorderL .holdBox {
+            display: block;
+            width: 150px;
+            height: 32px;
+            margin: 2px 0 0 2px;
+            padding-left: 10px;
+            border: 0;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #f6f6f6;
+            line-height: 30px;
+            _height: 30px;
+            _line-height: 30px;
+        }
+        input, textarea, select {
+            outline: 0;
+            font-size: inherit;
+            font-family: inherit;
+        }
+        img, input, label {
+            vertical-align: middle;
+        }
+        .comBorderL .icontext {
+            display: inline-block;
+            height: 32px;
+            line-height: 32px;
+            padding-left: 4px;
+            margin-right: -3px;
+        }
+        .comBorderL .comWord, .comBorderL .holdBox {
+            display: block;
+            width: 150px;
+            height: 32px;
+            margin: 2px 0 0 2px;
+            padding-left: 10px;
+            border: 0;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #f6f6f6;
+            line-height: 30px;
+            _height: 30px;
+            _line-height: 30px;
+        }
+        .mw1300 {
+            width: 100%;
+            margin-left: 194px;
+            _width: 1000px;
+        }
+
+        .navbar-inner {
+          background-color: rgb(19, 112, 218);
+          background-image: none;
+          background-repeat: no-repeat;
+          filter: none;
+        }
+
+        .navbar-fixed-top .nav>li>a, .navbar-fixed-top .nav>li>a:hover {
+            color: #FFF;
+            background-color: transparent;
+        }
+
+        .navbar-fixed-top .nav>.active>a, .navbar-fixed-top .nav>li>a.iactive:hover{
+            color: #FFF;
+            border-bottom: 3px solid #FFF;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: #FFF;
+            background: transparent;
+        }
+        .navbar-fixed-top ul li a {
+            display: block;
+            float: left;
+        }
+
+        .filter-block {
+            padding: 10px 20px;
+            background-color: #F9F9F9;
+            border-bottom: 1px solid gainsboro;
+        }
+
+        .override-linehight {
+            line-height: 34px;
+        }
+
+        .filter-block .datepicker {
+            padding: 0 15px;
+            width: 235px;
+            float: left;
+        }
+
+        #mainWrap {
+            /*border-left: 222px solid #ebebeb;*/
+        }
+
+        .lTools {
+            z-index: 1000;
+            position: absolute;
+            height:751px;
+            width: 222px;
+            top: 61px;
+            display: block;
+            padding: 1px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #FFF;
+            border-right: 1px solid #eee;
+        }
+
+        .nav-sidebar {
+            margin-right: -21px;
+            margin-bottom: 20px;
+            margin-left: -20px;
+        }
+        .nav-sidebar > li > a {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        .nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus {
+            color: #fff;
+            background-color: #428bca;
+        }
+        .compVsplit {
+            clear: both;
+            margin: 1px 12px 10px 10px;
+            border-top: 1px dashed #e5e5e5;
+        }
+        .compOK {
+            color: #FFF;
+            text-decoration: none;
+            display: block;
+            width: 198px;
+            height: 27px;
+            margin-left: 9px;
+            padding-top: 6px;
+            text-align: center;
+            border: 1px solid #3073d1;
+            background-color: #4284e2;
+            cursor: pointer;
+        }
+        .mainSplit {
+            top: 16px;
+            position: relative;
+            _overflow: visible;
+            padding: 20px 26px 20px 15px;
+        }
+        .navbar-collapse{
+            background-color: #02C874;
+        }
+        .brand{
+            background-color: #3379b7;
+        }
+        .left_menu{
+            -webkit-box-shadow:-2px -5px 5px #000 inset; 
+            position: fixed;
+            float: left;
+            padding-top:40px; 
+            margin-top: 51px;
+            width: 194px;
+            height:screen.height;
+            background-color: #104F87;
+        }
+
+        .turkey_left_menu{
+            -webkit-box-shadow:-2px -5px 5px #000 inset; 
+            position: fixed;
+            float: left;
+            padding-top:40px; 
+            margin-top: 51px;
+            width: 194px;
+            height:screen.height;
+            background-color: #104F87;
+        }
+        .left_menu ul li{
+            width:99%;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 14px;
+            color:#fff;
+            margin: 1px 1px;
+            -webkit-box-shadow:0px -1px 5px -1px #000 inset; 
+            /*background-color: rgba(255, 255, 255, 0.08);*/
+        }
+        .left_menu ul li a{
+            color: white;
+            text-decoration: none;
+        }
+        /*#module_name :hover{
+            text-decoration: underline;
+        }*/
+        #topic_name{
+            font-size: 16px;
+            padding: 10px 20px;
+            color: #43B6AF;
+        }
+        .blkUnit .titlBar {
+            background-color: #104F87 !important; 
+            color: white;
+            border-bottom: 1px solid transparent;
+            border-color: #104F87 !important;
+        } 
+        .box-shadow2{
+            -webkit-box-shadow:-5px -5px 5px #999 inset;          /* For Chrome5+, Safari5+ */
+            box-shadow:-5px -5px 5px #999 inset;                  /* For Latest Opera */
+}
+    </style>
+    
+    <style>
+    .blueBlock {
+    		float:left;
+    		width:9px;
+    		height:26px;
+    		background-color: #104F87;
+    		margin-left: 0%;
+    		margin-top: 0%;
+    		margin-right: 0.6%;
+    }
+    a{
+    	cursor: pointer;
+    }
+    .blueBlock_title {
+    		color: #104F87;
+    		font-size:24px;
+    /*  font-weight: bolder;
+    */  font-family: Microsoft YaHei;
+    		margin-top: 4px;
+    		margin-left: 6px;
+    		float:left;
+    }
+    .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+    .tg .tg-qv16{font-weight:bold;font-size:16px;text-align:center;vertical-align:top}
+    .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+    .tg .tg-yw4l{vertical-align:top}
+    .tg .tg-9hbo{font-weight:bold;vertical-align:top}
+    </style>
+
+
+    <!-- JQuery core JS -->
+    <script src="/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap core JS -->
+    <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/moment.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/datarangepiker.js') }}"></script>
+
+
+</head>
+
+<body>
+
+<div id="float-wrap" hidden style="position:fixed;background-image:url(/static/img/touming.png);display:none;width:100%;height:100%;z-index:1000;"></div><!-- 模态框背景 -->
+
+    <div class="navbar navbar-fixed-top" style="border-bottom: 5px solid #F4A615;">
+        <div class="navbar-inner" style="background-color:#104F87">
+            <div class="mw1300_title" style="height: 48px;">
+                
+
+                <span style="font-size:24px;color:#fff;float:left;padding-top: 22px;padding:0 23px;    margin-top: 1%;">
+                    <span style="font-size:25px;line-height:38px;color:#addf58;font-family: Microsoft YaHei;">海外利益保护系统</span>
+                    <!-- <span style="font-size:22px;line-height:38px;color:#addf58;font-family: Microsoft YaHei;float: left;">————人物卡片</span> -->
+                   <!--  <span style="font-size:14px;margin-left:15px;">人事管理系统（外网）</span>
+                    <span style="font-size:14px;margin-left:15px;">{{module_name}}</span> -->
+                </span>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="navbar-collapse collapse" style="background-color:#104F87">
+                    <ul class="nav navbar-nav">
+                        
+                        <li style="color:#fff;line-height:51px;margin-left:20px;"><font size="+1" style="text-decoration:none;"></font></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" style="margin-right:30px;margin-top: 25px;">
+                     <!-- 选择其他国家 -->
+                      <br/>
+                    </form>
+                    &nbsp;&nbsp;
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    body {
+        background-color: #f5f5f5;
+    }
+    </style>
+    <div style="float:left;width:100%;background-color:#f5f5f5;padding-left:80px;margin-top: 58px;padding-right:80px;">
+      <div style="width:100%;padding-top:30px;padding-bottom:20px;margin-left:;">
+      	<img src="/static/img/card/turkey_flag.jpg" style="width:50px;float:left;padding-bottom:20px;">
+      	<p class="blueBlock_title" style="font-size:28px;">土耳其强力部门一览</p>
+      </div>
+
+      <div style="width:100%;padding-top:30px;padding-bottom:20px;margin-left:0px;">
+      	<div class="blueBlock"></div><p class="blueBlock_title">政府部门</p>
+      </div>
+
+      <table class="tg" style="undefined;table-layout: fixed; width: 1061px;margin-top:20px;margin-left:50px;">
+      <colgroup>
+      <col style="width: 80px">
+      <col style="width: 77px">
+      <col style="width: 294px">
+      <col style="width: 110px">
+      <col style="width: 163px">
+      <col style="width: 104px">
+      <col style="width: 127px">
+      <col style="width: 123px">
+      </colgroup>
+        <tr>
+          <th class="tg-qv16">部门名称</th>
+          <th class="tg-qv16">组织架构</th>
+          <th class="tg-qv16">所在地</th>
+          <th class="tg-qv16">责任人</th>
+          <th class="tg-qv16">官方网址</th>
+          <th class="tg-qv16">传真</th>
+          <th class="tg-qv16">电话</th>
+          <th class="tg-qv16">邮箱</th>
+        </tr>
+        <tr>
+          <td class="tg-amwm">司法部</td>
+          <td class="tg-yw4l"></td>
+          <td class="tg-yw4l">Vekaletler Cad. Kızılay 06659 ANKARA TÜRKİYE</td>
+          <td class="tg-yw4l">Bekir BOZDAĞ</td>
+          <td class="tg-yw4l"><a href="http://www.adalet.gov.tr/" >http://www.adalet.gov.tr/</td>
+          <td class="tg-yw4l">+90 3124193370</td>
+          <td class="tg-yw4l">+90 3124177770</td>
+          <td class="tg-yw4l">nfo@adalet.gov.tr</td>
+        </tr>
+        <tr>
+          <td class="tg-amwm">国防部</td>
+          <td class="tg-yw4l"></td>
+          <td class="tg-yw4l">Bakanlıklar 06100 ANKARA TÜRKİYE</td>
+          <td class="tg-yw4l">Sn. Fikri Işık</td>
+          <td class="tg-yw4l"><a href="http://www.msb.gov.tr/" >http://www.msb.gov.tr/</td>
+          <td class="tg-yw4l">+90 3124251150</td>
+          <td class="tg-yw4l">+90 3124026100</td>
+          <td class="tg-yw4l"></td>
+        </tr>
+      </table>
+
+      <div style="width:100%;padding-top:30px;padding-bottom:20px;margin-left:50px;">
+      	<div class="blueBlock"></div><p class="blueBlock_title">国家情报组织</p>
+      </div>
+      <div style="width:100%;margin-top:15px;margin-left:-10px;padding-bottom:20px;margin-bottom:100px;">
+
+      <table class="tg" style="undefined;table-layout: fixed; width: 1189px;margin-left:10px;">
+      <colgroup>
+      <col style="width: 80px">
+      <col style="width: 390px">
+      <col style="width: 420px">
+      <col style="width: 308px">
+      </colgroup>
+        <tr style="">
+          <th class="tg-9hbo">组织名称</th>
+          <th class="tg-9hbo" style="font-size:18px;text-align:center;">对外情报机构：国家情报组织</span></th>
+          <th class="tg-9hbo" style="font-size:18px;text-align:center;">对内情报机构：公共秩序及安全部<span></th>
+          <th class="tg-9hbo" style="font-size:18px;text-align:center;">土耳其安全总局</span></th>
+        </tr>
+           <tr>
+        	  <td class="tg-9hbo">其他名称</th>
+        	  <td class="tg-yw4l">National Intelligence Organization <br>	土耳其语:  Millî İstihbarat Teşkilatı, MİT<br> 来源：<a href="https://en.wikipedia.org/wiki/National_Intelligence_Organization_	(Turkey)">wikipedia<br></th>
+        	  <td class="tg-yw4l">土耳其语：Kamu Düzeni ve Güvenliği Müsteşarlığı（KDGM） <br>英语Undersecretariat of Public Order and Security <br> 来源:<a href="https://en.wikipedia.org/wiki/	Undersecretariat_of_Public_Order_and_Security">wikipedia</th>
+        	  <td class="tg-yw4l">无<br>来源：https://www.egm.gov.tr/Sayfalar/default.<br>aspx</th>
+          </tr>
+        <tr>
+          <td class="tg-9hbo">成立时间</td>
+          <td class="tg-yw4l">1965.7.22</td>
+          <td class="tg-yw4l">2010</td>
+          <td class="tg-yw4l">1845.4.10</td>
+        </tr>
+        <tr>
+          <td class="tg-9hbo">领导人</td>
+          <td class="tg-yw4l">Hakan Fidan</td>
+          <td class="tg-yw4l">Muhammed Dervişoğlu</td>
+          <td class="tg-yw4l">Selami ALTINOK</td>
+        </tr>
+        <tr>
+          <td class="tg-9hbo">历任领导人</td>
+          <td class="tg-yw4l">1.Avni Kantan(1965.7.14-1966.3.2)<br>2.Mehmet Fuat Do?u(1966.3.2- 1971.3.27)<br>3.Nurettin Ersin(1971.8.2-1973.7.2) <br>4.Bülent Türker(1973.7.26- 1974.2.27)<br>5.Bahattin ?zülker(1974.2.28-1974.9.26)<br>6.Bülent Türker(1974.9.26-1974.11.24)<br>7.Hamza Gürgü?(1974.11.25- 1978.7.13)<br>8.Adnan Ers?z (1978.7.13 -1979.11.19)<br>9.Bülent Türker(1979.11.19-1981.9.7)<br>10.Burhanettin Bigal(1981.9.7-1986.8.14)<br>11.Hayri ?ndül(1986.9.5-1988.8.29)<br>12.Teoman Koman(1988.8.29-1992.8.27)<br> 13.S?nmez K?ksal(1992.9.9-1998.2.11)<br>14.?enkal Atasagun(1998.2.11-2005.6.11) <br>15.Emre Taner(2005.6.1-2010.5.26)<br> 16.Hakan Fidan(2010.5.26-2015.2.10)<br>17.Hakan Fidan(2015.3,9至今)</td>
+          <td class="tg-yw4l"><a href="http://www.kdgm.gov.tr/?ax=D7C85D6C-04D3-4559-A234-42419B370D13">http://www.kdgm.gov.tr/?ax=D7C85D6C-04D3-4559-A234-42419B370D13</td>
+          <td class="tg-yw4l"></td>
+        </tr>
+        <tr>
+          <td class="tg-9hbo">势力地域分布</td>
+          <td class="tg-yw4l">总部：Çankaya, Ulus, Ankara, </td>
+          <td class="tg-yw4l">总部：Atatürk Bulvarı No:149 Bakanlıklar-Çankaya ANKARA</td>
+          <td class="tg-yw4l"></td>
+        </tr>
+        <tr>
+          <td class="tg-9hbo">组织性质</td>
+          <td class="tg-yw4l">土耳其情报机构</td>
+          <td class="tg-yw4l">土耳其情报机构</td>
+          <td class="tg-yw4l"></td>
+        </tr>
+        <tr>
+          <td class="tg-9hbo">组织结构</td>
+          <td class="tg-yw4l">下设：战略分析指挥部（Strategic Analysis Directorate）;反情报活动指挥部（Counter-Intelligence Directorate）；对外情报活动指挥部（External Operations Directorate）；安全情报指挥部（Security Intelligence Directorate）;电子技术情报指挥部（Electronic and Technical Intelligence Directorate）;信号[通讯]情报指挥部（Signal Intelligence Directorate<br>来源：http://www.mit.gov.tr/eng/index.html</td>
+          <td class="tg-yw4l">下设：情报评估中心（istihbarat değerlendirme merkezi）和副部长们分管的主要服务部门（ana hizmet birimleri）、咨询服务部门（danışma hizmet birimleri）和辅助服务部门（yardımcı hizmet birimi）。主要服务部门包括：规划协调和社会支持部（planlama koordinasyon ve sosyal destek daire başkanlığı）、研究发展部（araştırma-geliştirme daire başkanlığı）、通信部（iletişim daire başkanlığı）、对外关系部（dış ilişkiler daire başkanlığı）。咨询服务部门包括：战略发展部（strateji geliştirme daire başkanlığı）、法律咨询（hukuk müşavirliği）、咨询处（müsteşarlık müşavirliği）。辅助服务部门包括：人力资源管理和支持部（insan kaynakları ve destek hizmetleri daire başkanlığı）</td>
+          <td class="tg-yw4l">"下设：中央单位（merkaz teşkilatı）、地方单位（taşra teşkilatı）、国外单位（yurtdışı teşkilatı）
+      核心单位包括：检查委员会（teftiş kurulu başkanlığı）、法律顾问（hukuk müşavirliği）、内部审计署（iç denetim birimi başkanlığı）、交通服务部（trafik hizmetleri başkanlığı）、特别安全控制部（özel güvenlik denetleme başkanlığı）、办公室（daire başkanlığı）、交通研究中心（trafik araştırma merkezi müdürlüğü）、媒体公关和礼宾司（medya halkla ilişkiler ve protokol daire başkanlığı）、特别办公室（özel kalem müdürlüğü）<br>
+      地方单位分为中央下属的地方部门和省市级地方部门。中央下属的地方部门包括：警察学院（polis akademisi başkanlığı）、警察职业高级学校（polis meslek yüksek okulu müdürlüğü）、刑事警察实验室（kriminal polis laboratuvarları müdürlüğü）、警察教育中心（polis eğitim merkezi müdürlüğü）、警察职业教育中心（polis meslek eğitim merkezi müdürlüğü）、警察道德教育中心（polis moral eğitim merkezi müdürlüğü）。<br>省市级地方部门包括：省警察局（il emniyet müdürlüğü）、市警察局（ilçe emniyet müdürlüğü）、区警察局（ilçe emniyet amirliği）。
+      国外单位包括：安全处（emniyet ataşelikleri）、安全咨询顾问处（emniyet müşavirliği）
+      https://www.egm.gov.tr/Sayfalar/Organizasyon-Yapisi.aspx"</td>
+        </tr>
+        <tr>
+          <td class="tg-9hbo">对华态度</td>
+          <td class="tg-yw4l">不明确</td>
+          <td class="tg-yw4l"></td>
+          <td class="tg-yw4l"></td>
+        </tr>
+        <tr>
+          <td class="tg-9hbo">土耳其政府态度</td>
+          <td class="tg-yw4l">不明确</td>
+          <td class="tg-yw4l"></td>
+          <td class="tg-yw4l"></td>
+        </tr>
+        <tr>
+          <td class="tg-9hbo">与政府、地方力量间的关系</td>
+          <td class="tg-yw4l">属于政府机构</td>
+          <td class="tg-yw4l">隶属于土耳其政府，向总理负责</td>
+          <td class="tg-yw4l"></td>
+        </tr>
+        <tr>
+          <td class="tg-9hbo">相关事件</td>
+          <td class="tg-yw4l"></td>
+          <td class="tg-yw4l"></td>
+          <td class="tg-yw4l"></td>
+        </tr>
+        <tr>
+          <td class="tg-9hbo">工作职能</td>
+          <td class="tg-yw4l">1.搜集全国范围内的安全情报2.与政府首脑及部门交流收集到的.情报3.搜集抵制危害国家安全的活动4.网络安全防范及攻击</td>
+          <td class="tg-yw4l"></td>
+          <td class="tg-yw4l">一般来说，警察的责任领域在地理上位于土耳其的城市范围内。根据法律规定的“警察的权力和义务”，警察的职责是：维护公共治安保障人民生命和财产安全侦查，逮捕和将犯罪者和案件证据转交给适当的司法机关履行除法律，法规和政府法令规定的司法行政职能外的职责防止犯罪，以保护公共安全和秩序TNP还有政治职责，如保护国家的完整和维护宪法秩序。<br>此外，TNP还有行政职能，包括预防，保护和援助职责。为了更有效地处理交通问题，TNP还成立了交通服务部、公路交通安全委员会和公路安全最高委员会。TNP还主办了伊斯坦布尔民主和全球安全会议。</td>
+        </tr>
+      </table>
+      </div>
+
+
+      <script language="JavaScript" type="text/javascript">
+          <!--
+              var a = document.getElementsByTagName("a");
+              for(var i = 0;i < a.length;i++){
+                  a[i].target = "_blank";
+                  console.log("hie");
+              }
+          //-->
+      </script>
+
+    </div>
+
+
+    <script src='/static/js/jquery.js'></script>
+
+    <script src="/static/js/index.js"></script>
+</body>
+</html>
+
+
+
