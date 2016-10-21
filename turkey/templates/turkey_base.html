@@ -30,7 +30,11 @@
     
     <!-- Custom styles for this template -->
     <style type="text/css">
-        
+
+        #link1 a:hover{color:#337ab7;}
+        #link2 a:hover{color:#337ab7;}
+        #link3 a:hover{color:#337ab7;}
+        #link4 a:hover{color:#337ab7;}
         .cityinput{
             border-width: 1px;
             border-style: solid;
@@ -70,7 +74,7 @@
         .open a, a, a:hover {
         }
         a:hover {
-            color: #FFF;
+            color: #104f87;
             text-decoration: underline;
 
         }
@@ -199,12 +203,12 @@
         }
 
         .navbar-fixed-top .nav>li>a, .navbar-fixed-top .nav>li>a:hover {
-            color: #FFF;
+            color: #104f87;
             background-color: transparent;
         }
 
         .navbar-fixed-top .nav>.active>a, .navbar-fixed-top .nav>li>a.iactive:hover{
-            color: #FFF;
+            color: #104f87;
             border-bottom: 3px solid #FFF;
         }
 
@@ -261,7 +265,7 @@
             padding-left: 20px;
         }
         .nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus {
-            color: #fff;
+            color: #104f87;
             background-color: #428bca;
         }
         .compVsplit {
@@ -433,11 +437,11 @@
     <div class="turkey_left_menu">
         <ul id="accordion" class="accordion" style="margin-top: 6%;margin-bottom: 200%;box-shadow: -2px 0px 5px #000 inset;">
             <li>
-                <div class="link"><i class="fa fa-home"></i><a href="/news/turkey_index/">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a><i class="fa fa-chevron-down"></i></div>
+                <div class="link"><i class="fa fa-home"></i><a id="link1" href="/news/turkey_index/">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a><i class="fa fa-chevron-down"></i></div>
             
             </li>
             <li>
-                <div class="link"><i class="fa fa-list"></i><a href="/news/turkey_info/">国家情报解密</a> <i class="fa fa-chevron-down"></i></div>
+                <div class="link"><i class="fa fa-list"></i><a id="link2" href="/news/turkey_info/">国家情报解密</a> <i class="fa fa-chevron-down"></i></div>
                 <ul class="submenu">
                     <li><a href="#gaikuang_id">国&nbsp;&nbsp;&nbsp;&nbsp;家&nbsp;&nbsp;&nbsp;&nbsp;概&nbsp;&nbsp;&nbsp;&nbsp;况</a></li>
                     <li><a href="#zhengzhi_id">政&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;治</a></li>
@@ -452,7 +456,7 @@
             </li>
             
             <li>
-                <div class="link" ><i class="fa fa-bell"></i><a href="/news/emergency" style="text-decoration-style: none;"> 突发事件响应</a><i class="fa fa-chevron-down"></i></div>
+                <div class="link" ><i class="fa fa-bell"></i><a id="link3" href="/news/emergency" style="text-decoration-style: none;"> 突发事件响应</a><i class="fa fa-chevron-down"></i></div>
                 <ul class="submenu">
                     <li><a href="#most_news">最新资讯</a></li>
                     <li><a href="#detec_emer">突发事件检测</a></li>
@@ -461,12 +465,15 @@
             </li>
 
              <li>
-                <div class="link" ><i class="fa fa-suitcase"></i><a href="/news/infor_search" style="text-decoration-style: none;"> 出访风险评估</a><i class="fa fa-chevron-down"></i></div>
-                <ul class="submenu">
-                    <li><a href="#business">业务评估</a></li>
-                    <li><a href="#security">安保评估</a></li>
-                    <li><a href="#history_visit">历史出访</a></li>
-                  
+
+                <div class="link" ><i class="fa fa-bell"></i><a id="link4" href="/news/infor_search" style="text-decoration-style: none;"> 出访风险评估</a><i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu" >
+                    <li id="sub_four" ><a href="#other_detail">当地概况</a></li>
+                    <li id="sub_one" ><a href="#business">业务评估</a></li>
+                    <li id="sub_two" ><a href="#security">安保评估</a></li>
+                    <li id="sub_three" ><a href="#history_visit">历史出访</a></li>
+
+
                 </ul>
             </li>
 
