@@ -196,7 +196,21 @@ for(var i =0;i<length;i++){
 
   });
   
-
+  function delete_key(keyword){
+    console.log(keyword);
+     // var r = confirm("您确定要删除吗？");
+     // console.log(key_data);
+     // if(r){
+     //  for( var i = 1;i<key_data.length;i++){
+     //    if (keyword == key_data[i]["key"]){
+     //       key_data.remove(i);
+     //       alert('删除成功！');
+     //       window.location.reload();
+     //    }
+     //  }
+     // }
+  }
+  
    $('#keyword_table').bootstrapTable({
                   //url: influ_url,
                   data:key_data,
@@ -243,27 +257,14 @@ for(var i =0;i<length;i++){
                       align: 'center',
                       valign: "middle",//垂直
                       formatter:function(value,row,index){  
-                      var d = '<span style="cursor:pointer;" onclick="delete_key(\''+ row.key+'\')">删除</span>';  
+                      var d = '<span style="cursor:pointer;" onclick="delete_key(\''+row.key+'\')">删除</span>';  
                         return d;  
                       }
                     }]
 
              });
-
-     function delete_key(keyword){
-    console.log(keyword);
-     var r = confirm("您确定要删除吗？");
-     console.log(key_data);
-     if(r){
-      for( var i = 1;i<key_data.length;i++){
-        if (keyword == key_data[i]["key"]){
-           key_data.remove(i);
-           alert('删除成功！');
-           window.location.reload();
-        }
-      }
-     }
-  }
+    
+     
 })
 
 function viewmore(){
