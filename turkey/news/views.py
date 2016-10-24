@@ -3009,32 +3009,33 @@ def turkey_emergency():
     
     return render_template('index/turkey_emergency.html')
 
-@mod.route('/submit_keyword/')
-def submit_key_ajax():
-    keyword = request.args.get('key')
-    if keyword == '':
-        f = open("keyword.json","r")
-        results = f.read()
-        f.close()
-        return results
-    else:
-        new_record = {}
-        new_record['key'] = keyword.decode('utf-8')
-        now_ts = int(time.time())
-        new_record['time'] = now_ts
-        # keyword = [{u"key":u"暴恐",u"time":u"2016-10-0"},{u"key":u"和平",u"time":u"2016-10-0"}]
-        # keyword.append(new_record)
-        # f = open("keyword.json","w")
-        # f.write(json.dumps(keyword))
-        # f.close()
-        f = open("keyword.json","r")
-        txt = json.loads(f.read())
-        f.close()
-        txt.append(new_record)
-        f = open("keyword.json","w")        
-        f.write(json.dumps(txt))
-        f.close()
-        f = open("keyword.json","r")
-        results = f.read()
-        f.close()
-        return results
+@mod.route('/show_keyword/')
+def show_key_ajax():
+    f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","r")
+    results = f.read()
+    f.close()
+    return results
+
+
+# @mod.route('/submit_keyword/')
+# def submit_key_ajax():
+#     keyword = request.args.get('key','')
+#     new_record = {}
+#     new_record['key'] = keyword
+#     now = datetime.datetime.now()
+#     otherStyleTime = now.strftime("%Y-%m-%d %H:%M")
+#     new_record['time'] = otherStyleTime
+#     f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","w")
+#     results = json.load(f.read())
+#     results.append(new_record)
+#     results = json.dumps(results)
+#     f.write(results)
+#     f.close()
+#     return results
+
+@mod.route('/delete_keyword/')
+def delete_key_ajax():
+    f = open("keyword.json","r")
+    results = f.read()
+    f.close()
+    return results
