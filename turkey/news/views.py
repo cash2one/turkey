@@ -3011,10 +3011,7 @@ def turkey_emergency():
 
 @mod.route('/submit_keyword/', methods=["GET", "POST"])
 def submit_key_ajax():
-    """返回话题管理页面
-    """
-    if request.method == "GET":
-        f = open("keyword.json","r")
-        results = f.read()
-        f.close()
-        return json.dumps(results)
+    input_data = request.get_json()
+    now_ts = int(time.time())
+    input_data['time'] = now_ts
+    return input_data
