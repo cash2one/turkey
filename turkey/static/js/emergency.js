@@ -10,20 +10,38 @@ var key_data = new Array(4)
 var key_data = [{"key":"暴恐","time":"2016-10-09"},{"key":"美国","time":"2016-09-20"},{"key":"维和","time":"2016-03-03"},{"key":"政变","time":"2016-03-10"}];
   
   function submit_keyword(){
-       var keyword = $('#input_key').val();
-       function callback(data){
-         console.log('提交返回值：'+data);   
-        }
-    var submit_key_url = '/news/submit_key/';
-      var job = {"key":keyword};
-      $.ajax({
-                  type:'POST',
-                  url: submit_key_url,
-                  contentType:"application/json",
-                  data: JSON.stringify(job),
-                  dataType: "json",
-                  success: callback
-              });
+    //    var keyword = $('#input_key').val();
+    //    function callback(data){
+    //      console.log('提交返回值：'+data);   
+    //     }
+    // var submit_key_url = '/news/submit_key/';
+    //   var job = {"key":keyword};
+    //   $.ajax({
+    //               type:'POST',
+    //               url: submit_key_url,
+    //               contentType:"application/json",
+    //               data: JSON.stringify(job),
+    //               dataType: "json",
+    //               success: callback
+    //           });
+    
+    function callback(data){
+      console.log(data);
+       $('#keyword_table').bootstrapTable('refresh',{url:get_key_url})
+       $("#addkey").modal('hide');
+       location.load();
+    }
+    var get_key_url = '/news/submit_keyword/';
+    $.ajax({
+                      url: get_key_url,
+                      type: 'GET',
+                      dataType: 'json',
+                      async: true,
+                      success:callback
+                    });
+    
+
+    
   }
   
   function delete_key(keyword){

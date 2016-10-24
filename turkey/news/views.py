@@ -3006,6 +3006,15 @@ def emergency():
 
 @mod.route('/turkey_emergency/')
 def turkey_emergency():
+    
+    return render_template('index/turkey_emergency.html')
+
+@mod.route('/submit_keyword/', methods=["GET", "POST"])
+def submit_key_ajax():
     """返回话题管理页面
     """
-    return render_template('index/turkey_emergency.html')
+    if request.method == "GET":
+        f = open("keyword.json","r")
+        results = f.read()
+        f.close()
+        return json.dumps(results)
