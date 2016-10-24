@@ -3009,31 +3009,3 @@ def turkey_emergency():
     """返回话题管理页面
     """
     return render_template('index/turkey_emergency.html')
-
-@mod.route('/submit_key/',methods=['GET', 'POST'])
-def ajax_submit_task():
-	if request.method == "POST":
-	    input_data = dict()
-	    input_data = request.get_json()
-	    now_ts = int(time.time())
-	    input_data['time'] = now_ts
-	    f = open("keyword.json","a")
-	    f.write(json.dumps(input_data))
-	    results = f.read()
-	    f.close()
-	    return json.dumps(results)
-
-# @mod.route('/dele_key/',methods=['GET', 'POST'])
-# def ajax_submit_task():
-# 	if request.method == "POST":
-# 	    input_data = dict()
-# 	    input_data = request.get_json()
-# 	    now_ts = int(time.time())
-# 	    input_data['time'] = now_ts
-# 	    f = open("keyword.json","a")
-# 	    f.write(json.dumps(input_data))
-# 	    results = f.read()
-# 	    f.close()
-# 	    return json.dumps(results)
-
-
