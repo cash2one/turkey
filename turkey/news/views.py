@@ -3009,9 +3009,32 @@ def turkey_emergency():
     
     return render_template('index/turkey_emergency.html')
 
-@mod.route('/submit_keyword/', methods=["GET", "POST"])
+@mod.route('/submit_keyword/')
 def submit_key_ajax():
-    input_data = request.get_json()
-    now_ts = int(time.time())
-    input_data['time'] = now_ts
-    return input_data
+    keyword = request.args.get('key')
+    if keyword == '':
+        f = open("keyword.json","r")
+        results = f.read()
+        f.close()
+        return results
+    else:
+        new_record = {}
+        new_record['key'] = keyword.decode('utf-8')
+        now_ts = int(time.time())
+        new_record['time'] = now_ts
+        # keyword = [{u"key":u"暴恐",u"time":u"2016-10-0"},{u"key":u"和平",u"time":u"2016-10-0"}]
+        # keyword.append(new_record)
+        # f = open("keyword.json","w")
+        # f.write(json.dumps(keyword))
+        # f.close()
+        f = open("keyword.json","r")
+        txt = json.loads(f.read())
+        f.close()
+        txt.append(new_record)
+        f = open("keyword.json","w")        
+        f.write(json.dumps(txt))
+        f.close()
+        f = open("keyword.json","r")
+        results = f.read()
+        f.close()
+        return results
