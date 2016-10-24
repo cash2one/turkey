@@ -8,14 +8,25 @@ var news_time_data=[{"title":"土耳其内政部对警队展开调查 1.2万名�
 var news_time_anti=[{"title":"报道称土耳其屏蔽网盘和GitHub以防止邮件泄露","paragraph":"据Turkey Blocks报道，土耳其已于上周六屏蔽了包括Google Drive、Dropbox、微软OneDrive等在内多家云存储服务（以及代码托管平台GitHub）。","keyword":["土耳其","网络"],"time":"2016-10-10","channel":"来源：cnbeta网站(台州)","click":"点击量：1000"},{"title":"普京访问土耳其会晤埃尔多安 签署天然气管道项目协议","paragraph":"据中国之声《全球华语广播网》报道，当地时间10号，世界能源大会在土耳其伊斯坦布尔开幕。与会议相比，大家更关注的是：俄罗斯总统普京与土耳其总统埃尔多安的会晤。这是去年11月土耳其在土叙边境击落一架俄罗斯战机，双方关系降到冰点以后，俄罗斯总统首次访问土耳其。","keyword":["土耳其","俄罗斯"],"time":"2016-10-11","channel":"来源：央广网","click":"点击量：800"},{"title":"Başbakan'ın açıklamaları doları yükseltti","paragraph":"Dolar, Başbakan Binali Yıldırım'ın kısa sürede başkanlık sistemini de içeren anayasa değişiklik tekliflerini TBMM'ye getirecekleri yönündeki açıklamalarının da etkisiyle 3.0715'ten kademeli olarak 3.0845'e yükseldi, borsa endeksi eksiye döndü.","keyword":["dollar","fiyat"],"time":"2016-10-12","channel":"来源：cnnturk","click":"点击量：600"},{"title":"13 Ekim altın fiyatları Çeyrek altın gram altın ne kadar?","paragraph":"13 Ekim altın fiyatlarında sabah saatlerinde hem düşüş hem yükseliş gözükmekte. Dolar’ın 3.10’u gördüğü saatlerde altın piyasasın genelinde düşüş gözüküyor. Gram altında ciddi oranda bir yükseliş gözükürken, çeyrek altında 0.0183’lük bir düşüş hakim. 13 Ekim’de çeyrek altın ve gram altın kaç lira oldu?","keyword":["altın fiyatlar","döviz"],"time":"2016-10-13","channel":"来源：cnntürk","click":"点击量：400"},{"title":"土耳其内政部对警队展开调查 1.2万名警员遭停职","paragraph":"据外媒报道，土耳其当局下令12801名警员停职，土耳其内政部此前刚对土耳其警队展开调查。","keyword":["土耳其内政部","警察"],"time":"2016-10-14","channel":"来源：中新网","click":"点击量：200"}];
 var key_data = new Array(4)
 var key_data = [{"key":"暴恐","time":"2016-10-09"},{"key":"美国","time":"2016-09-20"},{"key":"维和","time":"2016-03-03"},{"key":"政变","time":"2016-03-10"}];
-
-
+  
+  function submit_keyword(){
+       var keyword = $('#input_key').val();
+       function callback(data){
+         console.log('提交返回值：'+data);   
+        }
+    var submit_key_url = '/news/submit_key/';
+      var job = {"key":keyword};
+      $.ajax({
+                  type:'POST',
+                  url: submit_key_url,
+                  contentType:"application/json",
+                  data: JSON.stringify(job),
+                  dataType: "json",
+                  success: callback
+              });
+  }
+  
   function delete_key(keyword){
-     console.log(keyword);
-     var r = confirm("您确定要删除吗？");
-     console.log(key_data);
-     if(r){
-
      	var new_word = {"key":"关键词","time":"2016-10-02"}
            key_data.push(new_word);
       for( var i = 1;i<key_data.length;i++){
@@ -26,9 +37,7 @@ var key_data = [{"key":"暴恐","time":"2016-10-09"},{"key":"美国","time":"201
         }
       }
         location.reload();
-        console.log(key_data);
-     }
-     
+        console.log(key_data);     
   }
 
 function draw_news(news_data,length){
