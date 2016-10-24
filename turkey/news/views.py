@@ -71,6 +71,7 @@ def turkey_govorg():
 def turkey_powerdep():
     return render_template('index/card/turkey_powerdep.html')
 
+
 @mod.route('/turkey_info/')
 def turkey_info():
     """进入土耳其信息展示页面
