@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css"/>
-
+    <link rel="stylesheet" href="/static/css/bootstrap-table.css"/>
     <link rel="stylesheet" href="/static/css/emergency.css"/>
     <link rel="stylesheet" href="/static/css/j-select.css"/>
     <link href="/static/css/font-awesome.min.css" rel="stylesheet"/>
@@ -15,6 +15,54 @@
 {% block content %}
 
 <div style="margin-top:70px;">
+
+  <div class="col-lg-12"  id="keyword_manage">
+    <div class="panel panel-default">
+      <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+        <div><span style="float:right;cursor:pointer;"></span>关键词管理</div>
+      </div>
+      <div class="panel-body">
+        <div id="#" style="">
+            <button type="button" class="btn btn-success" style="float:right;" data-toggle="modal" data-target="#addkey">添加</button>
+            <table id="keyword_table" class="table table-hover table-condensed"></table>
+        	<!-- <table class="table" style="width:90%">
+        	<thead><tr><th>关键词</th><th>添加时间</th><th>操作</th></tr></thead>
+        	<tbody>
+        	<tr><td>暴恐</td><td>2016-10-09 22:00</td><td onclick="" style="cursor:pointer;">删除</td></tr>
+        	<tr><td>土耳其</td><td>2016-10-09 22:00</td><td onclick="" style="cursor:pointer;">删除</td></tr>
+        	<tr><td>美国</td><td>2016-10-09 22:00</td><td onclick="" style="cursor:pointer;">删除</td></tr>
+        	<tr><td>维和</td><td>2016-10-09 22:00</td><td onclick="" style="cursor:pointer;">删除</td></tr>
+        	</tbody></table> -->
+        	<div class="modal fade" id="addkey" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							添加关键词
+						</h4>
+					</div>
+					<div class="modal-body">
+						<input type="text" class="form-control" placeholder="请输入关键词">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+						</button>
+						<button type="button" class="btn btn-primary">
+							提交
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+        </div>
+      </div>
+    </div>
+    <!--panel///////////////////-->
+  </div>
+  <!--col-lg-12///////////////////-->  
+
   <div class="col-lg-12" id="most_news">
     <div class="panel panel-default">
       <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
@@ -121,7 +169,73 @@
         <div><span style="float:right;cursor:pointer;"></span>突发事件检测</div>
       </div>
       <div class="panel-body">
-        <div id="emergency_grah" style="height:450px;"></div>
+        <div id="emergency_grah">
+        	<div style="width:100%">
+                          <p class="focused"><b style="font-size:16px;">焦点舆情</b></p>
+                          <div style="padding-top:10px;border: 1px solid #ccc;">
+                            <div class="emer_event" style="cursor: pointer;float:left;width:10%;" onclick="see_emergency()">土耳其政变</div>
+                              <div class="text text2">
+				                <a href="#"><div class="textShow"  style="font-size:14px;font-weight: bold;">土耳其民众在主要城市抗议军事政变</div></a>
+				                <p style="color: #666;"><span style="font-size:12px;font-weight: bold;">【2016-07-16&nbsp;&nbsp;20点】：</span>据土耳其《每日新闻》报道，数千人１６日晚聚集在土耳其最大城市伊斯坦布尔市中心的塔克西姆广场。他们高唱土耳其国歌，高呼反对军事政变的口号，斥责政变给土耳其带来动荡...</br><i style="font-size:12px;">来源：新华网</i><a style="float:right;margin-right: 10px;cursor: pointer;" onclick="viewmore()">查看更多</a></span></p>
+				              </div>
+                          </div>
+                          <div style="padding-top:10px;border: 1px solid #ccc;">
+                            <div class="emer_event" style="float:left;cursor: pointer;width:10%;" onclick="see_emergency()">土耳其政变</div>
+                              <div class="text text2">
+				                <a href="#"><div class="textShow"  style="font-size:14px;font-weight: bold;">土耳其民众在主要城市抗议军事政变</div></a>
+				                <p style="color: #666;"><span style="font-size:12px;font-weight: bold;">【2016-07-16&nbsp;&nbsp;20点】：</span>据土耳其《每日新闻》报道，数千人１６日晚聚集在土耳其最大城市伊斯坦布尔市中心的塔克西姆广场。他们高唱土耳其国歌，高呼反对军事政变的口号，斥责政变给土耳其带来动荡...</br><i style="font-size:12px;">来源：新华网</i><a style="float:right;margin-right: 10px;cursor: pointer;"  onclick="viewmore()">查看更多</a></span></p>
+				              </div>
+                          </div>
+            </div>
+            <div class="modal fade" id="eventdetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							事件新闻
+						</h4>
+					</div>
+					<div class="modal-body" style="height: 500px;overflow-y: auto;">
+					<div id="event_more"></div>
+						 <!-- <div class="news_box">
+				                <a href="#"><div class="textShow"  style="font-size:14px;font-weight: bold;margin-bottom: 5px;">土耳其民众在主要城市抗议军事政变</div></a>
+				                <div style="color: #666;">据土耳其《每日新闻》报道，数千人１６日晚聚集在土耳其最大城市伊斯坦布尔市中心的塔克西姆广场。他们高唱土耳其国歌，高呼反对军事政变的口号，斥责政变给土耳其带来动荡...
+				                <h5>
+						          <a href="" target="_blank">埃塞俄比亚</a>
+						          <a href="" target="_blank">约旦</a>
+						          <a href="" target="_blank">伊朗</a>
+					            </h5>
+						        <h5>
+						          <i>2016-10-09 16：30</i>
+						          &nbsp;&nbsp;来源：央视新闻
+						        </h5>
+						        </div>
+				          </div> -->
+					    
+					</div>
+					<div class="quote" style="margin-bottom: 10px;margin-left: 120px;">
+						    <a href="#"><</a>
+						    <span class="current">1</span>
+						    <a href="#">2</a>
+						    <a href="#">3</a>
+						    <a href="#">4</a>
+						    <a href="#">5</a>
+						    ...
+						    <a href="#">19</a>
+						    <a href="#">20</a>
+						    <a href="#">></a>
+						  </div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+        </div>
+        </div>
       </div>
     </div>
     <!--panel///////////////////-->
@@ -137,10 +251,12 @@
     <script src="/static/js/echarts-all.js"></script>
     <!-- Bootstrap core JS -->
     <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/static/js/bootstrap-table.js"></script>
+    <script src="/static/js/bootstrap-table-zh-CN.js"></script>
     <script src="/static/js/jquery-nicescroll.js"></script>
     <script src="/static/js/jquery-jSelect.min.js"></script>    
     <script src="/static/js/emergency.js"></script>
-    <script src="/static/js/emergency_grah.js"></script>
+    <!-- <script src="/static/js/emergency_grah.js"></script> -->
     <script type="text/javascript">
         $(".select").jSelect();
     </script>

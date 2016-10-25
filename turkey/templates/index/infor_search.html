@@ -1,7 +1,13 @@
-{% extends "turkey_base1.html" %}
+{% extends "turkey_base.html" %}
 {% block module_title %}人物概览{% endblock %}
 
 {% block head_css %}
+
+<!--定义css-->
+<style type="text/css">
+	
+
+</style>
 
   <!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  --> 
  <!--    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap-datetimepicker1.css" /> -->
@@ -19,15 +25,79 @@
 	<script type="text/javascript" src="../../static/js/moment-with-locales.min.js"></script> -->
     <!-- <script type="text/javascript" src="../../static/js/bootstrap-datetimepicker.js"></script> -->
 
+    	<!-- 跳转到新的页面 -->
   		<script type="text/javascript" >
 		/*弹出对话框*/
-			function change_html()
+			function change()
 			{
 				
 				window.open("/news/interview_detail/");
-			}
-				
+			}		
 		</script>
+<!-- 起止日期格式 -->
+		<script language="javascript" type="text/javascript">
+		function check_time_from()
+		{
+			var datetype=/^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/; 
+			var datetype1=/^[0-9]{4}\/[0-9]{1,2}\/[0-9]{1,2}$/; 
+		    var time_from= document.getElementById("input_time_from").value;
+		                 // console.log(time_from);
+		        if (time_from=='') 
+		        {
+		            alert("开始日期不能为空！");
+		        }else if (!(datetype.exec(time_from) || datetype1.exec(time_from)))
+		        {
+		            alert("对不起,请您按以下格式输入日期:\n2005-5-5或2005/1/1"); 
+		        }      
+		}
+
+		function check_time_to()
+		{
+			
+		    var datetype=/^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/; 
+			var datetype1=/^[0-9]{4}\/[0-9]{1,2}\/[0-9]{1,2}$/; 
+		    var time_to= document.getElementById("input_time_to").value;
+		                 // console.log(time_from);
+		    if (time_to=='') 
+		    {
+		        alert("截至日期不能为空！");
+		    }else if (!(datetype.exec(time_to) || datetype1.exec(time_to)))
+		    {
+		        alert("对不起,请您按以下格式输入日期:\n2005-5-5或2005/1/1"); 
+		    }                		            
+		}
+		   
+		 function check_keyword()
+		 {
+		 	 var key_word= document.getElementById("key_word").value;
+		                 // console.log(time_from);
+		        if (key_word=='') 
+		        {
+		            alert("关键词不能为空！");
+		        }  
+		 }
+
+		 function check_all()
+		 {
+		 	 var time_from= document.getElementById("input_time_from").value;
+		 	 var time_to= document.getElementById("input_time_to").value;
+		 	 var key_word= document.getElementById("key_word").value;
+		 	 var country= $('#select_country option:selected') .val();
+		 	 var city= $('#select_city option:selected') .val();
+		 	 if (time_from==''||time_to==''||key_word==''||country==''||city=='') 
+		 	 {
+		 	 	alert('信息输入不全，请重新输入!');
+		 	 }
+		 	 else
+		 	 {
+		 	 	window.open("/news/interview_detail/");
+		 	 }
+		 }
+		</script>
+
+		
+<!-- 关键词不能为空 -->
+		
    
 {% endblock head_js %}
 
@@ -43,24 +113,18 @@
 
 			    <!--版面1的左半部分-->	
 			<div style="float:left;margin-left:100px;">
-				<img src="/static/img/explore.png" width="200px" height="200px" style="margin-top:20%;margin-left:20px;">
+				<img src="/static/img/explore.png" width="200px" height="200px" style="">
 					
-				<p style="margin-left:22%;margin-top:20%;font-size:x-large;font-weight: bold;color:#104F87;">直击出访事件</p>
+				<p style="margin-left:12%;margin-top:10%;font-size:x-large;font-weight: bold;color:#104F87;">直击出访事件</p>
 			</div>
 
 			<div id="content1"> 
 				<!--版面1的右半部分-->	
 				<div style="float:left;margin-left:30%;">
-					<form role="form" style="margin-top:-280px;float:left;">
-					    <div class="form-group">
-					        <span style="float: left;margin-left:6%;margin-right: 10px;margin-top: 9px;">请输入您感兴趣的出访领导人</span>
+					<form role="form" style="margin-top:-280px;float:left;margin-left:-30px">
+					    
 
-						    <input id="search_name" type="text" class="form-control " placeholder="多个领导人请用空格隔开" style="width:38%;height:43px;margin-left:5px "  >
-						    <!-- onkeydown="if(event.keyCode==13){entersearch()}" -->
-						    <img src="/static/img/star.png" width="10px" height="10px" style="float:left;margin-left: 61%;margin-top: -30px;">
-						</div>
-
-						<div class="container" style="margin-left:5%;margin-top: 20px;">
+						<div class="container" style="margin-left:5%;margin-top: 70px;">
 							<span style="float: left;margin-top: 9px;">请选择领导人出访时间</span>
 							<div style="float:left;">
 
@@ -68,8 +132,12 @@
 
 							<div class='col-md-3' id="date1">
 			       				<div class="form-group">
+			       				<!--  onchange="window.alert('触发事件，处理事情')" //失去光标时，触发事件并处理
+    onkeypress=" if(event.keyCode==13) { window.alert('触发事件，处理事情'); return false;}"   //回车触发事件并处理 -->
+    <!-- $("#txt").attr("value"); -->
+
 			        	    		<div class='input-group date'  style="width: 180px;height:40px;margin-left: 80px;margin-top:-80%;float: left;">
-			                			<input placeholder="2016-11-01" type='text' class="form-control" style="height:40px;" />
+			                			<input id="input_time_from" placeholder="2016-11-01或2016/11/01" type='text' class="form-control" onchange="check_time_from();" onkeypress="if(event.keyCode==13){ check_time_from();}" style="height:40px;"  />
 			                			
 			           		 		</div>
 			        			</div>
@@ -79,8 +147,8 @@
 			        		<div class='col-md-3' id="date2">
 			        			<div class="form-group" style="float:left;">
 			            			<div class='input-group date'  style="width: 180px;height:40px;margin-top: -27%;margin-left: 155%;float: left;">
-			                			<input placeholder="2016-11-20" type='text' class="form-control"  style="height:40px;" />
-			                			
+			                			<input id="input_time_to" placeholder="2016-11-20或2016/11/20" type='text' class="form-control" onchange="check_time_to();" onkeypress="if(event.keyCode==13){ check_time_to();}" style="height:40px;" />
+			                			<img src="/static/img/star.png" width="10px" height="10px"  style="float:left;margin-left: 110%;margin-top: -30px;">
 			            			</div>
 			        			</div>
 			    			</div>
@@ -117,10 +185,10 @@
 						</div>
 
 						<div class="form-group" style="width:60%;margin-left:5%;">
-							<span style="float: left;margin-left:2%;margin-right: 20px;margin-top: 9px;">请选择访问地点信息</span>
-								<p style="float:left;margin-top:10px;margin-left:40px;">国家</p>
-						        <select class="form-control input-lg" style="width: 25%;height: 40px;float:left;margin-left:10px;">
-						                <option value="">土耳其</option>
+							<span style="float: left;margin-left:2%;margin-right: 20px;margin-top: 9px;">请选择访问的地点信息</span>
+								<p style="float:left;margin-top:10px;margin-left:30px;">国家</p>
+						        <select id="select_country" class="form-control input-lg" style="width: 25%;height: 40px;float:left;margin-left:20px;">
+						                <option value="1">土耳其</option>
 						                <option value="">美国</option>
 						                <option value="">德国</option>
 						                <option value="">叙利亚</option>
@@ -130,9 +198,9 @@
 						                <option value="">澳大利亚</option>
 						        </select>
 
-						        <p style="float:left;margin-top:10px;margin-left:17px;margin-right: 10px;">城市</p>
-						        <select class="form-control input-lg" style="width:25%;height: 40px;margin-left:50px;">
-						                <option value="">伊斯坦布尔</option>
+						        <p style="float:left;margin-top:10px;margin-left:10px;margin-right:5px;">城市</p>
+						        <select id="select_city" class="form-control input-lg" style="width:25%;height: 40px;margin-left:50px;">
+						                <option value="1">伊斯坦布尔</option>
 						                <option value="">安卡拉</option>
 						                <option value="">阿达纳</option>
 						                <option value="">加济安泰普</option>
@@ -148,29 +216,26 @@
 						                <option value="">巴特曼</option>       
 
 						        </select>
+						        <img src="/static/img/star.png" width="10px" height="10px"  style="float:left;margin-left: 93%;margin-top: -30px;">
 						</div>
 
-						<div class="form-group">
-						    <span style="float: left;margin-left:6%;margin-right: 20px;margin-top: 9px;">请输入您感兴趣的被访问人</span>
-						    <input  class="form-control input-lg" type="search" placeholder="多个领导人请用空格隔开" style="width:38%;height:40px;margin-left:7%" >
-						    <img src="/static/img/star.png" width="10px" height="10px" style="float:left;margin-left: 61%;margin-top: -30px;">
-						                
-						</div>
+						
 
 						<div class="form-group">
-						    <span style="float: left;margin-left:6%;margin-right: 22px;margin-top: 9px;">请输入您感兴趣的访问议题</span>
-						    <input class="form-control  input-lg" type="text" placeholder="请输入您感兴趣的访问议题关键词" style="width:38%;margin-left:8%;height:40px">
-						    <img src="/static/img/star.png" width="10px" height="10px" style="float:left;margin-left: 61%;margin-top: -30px;">
+						    <span style="float: left;margin-left:72px;margin-right:50px;margin-top: 9px;">请输入出访相关关键词</span>
+						    <input id="key_word" class="form-control  input-lg" type="text" placeholder="请输入访问议题关键词"  onchange="check_keyword();" onkeypress="if(event.keyCode==13){ check_keyword();}" style="width:37.5%;margin-left:10%;height:40px">
+						    <img src="/static/img/star.png" width="10px" height="10px"  style="float:left;margin-left: 61%;margin-top: -30px;">
 						</div>
-					          <!--   <div class="form-group">
-					                <input class="form-control input-sm" type="text" placeholder=".input-sm" style="width:90%;margin-left:5%">
-					            </div> -->
-						<div class="form-group">
+					          
+					<!-- 	<div class="form-group">
 
-						</div>   
+						</div>    -->
 					        
-					    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="margin-top:10px;margin-left:52%;width: 100px;height: 40px;" > 搜索
-					    </button>
+					        <!-- button默认input的回车事件 -->
+					    <linkbutton class="btn btn-primary btn-lg" onclick="check_all()" style="margin-top:30px;margin-left:50%;width: 100px;height: 40px;" > 搜索
+					    </linkbutton>
+
+					    <!-- data-toggle="modal" data-target="#myModal"  -->
 					</form>
 				</div>
 			</div>
@@ -180,7 +245,7 @@
 </div>
 
 <!--多条件搜索模态框-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -242,13 +307,15 @@
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1" >
 					确认搜索
 				</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal -->
-</div>
+			</div> -->
+		<!-- </div> -->
+		<!-- /.modal-content -->
+	<!-- </div> -->
+	<!-- /.modal -->
+<!-- </div> -->
 
 <!--确认搜索后弹出的模态框-->
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -259,13 +326,28 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" onclick="change_html()" >查看详情</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal" ">关闭</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
-</div>
+            </div> -->
+        <!-- </div> -->
+        <!-- /.modal-content -->
+    <!-- </div> -->
+    <!-- /.modal -->
+<!-- </div> -->
+<!--将导航下拉部分隐藏-->
+   <script type="text/javascript">
+		window.onload=changetype(); 
+		function changetype()
+			{
+				console.log('aaaaaa');
+				document.getElementById("sub_one").style.display='none';  
+  				document.getElementById("sub_two").style.display='none';
+  				document.getElementById("sub_three").style.display='none'; 
+  				document.getElementById("sub_four").style.display='none'; 
+  			}
+  				
 
-
+	</script>
 
 
 {% endblock content %}
+
 
