@@ -3040,10 +3040,11 @@ def delete_key_ajax():
     keyword = request.args.get('key','')
     f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","r")
     results = json.loads(f.read())
-    for i in range(0,len(results)-1):
-        if keyword == results[i]["key"]:
-            del results[i]
     f.close()
+    for i in range(len(results)):
+        print results[i][u'key']
+        # if keyword == results[i]["key"]:
+        #     del results[i]
     f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","w")
     results = json.dumps(results)
     f.write(results)

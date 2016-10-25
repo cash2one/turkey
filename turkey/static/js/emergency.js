@@ -18,7 +18,9 @@ var news_time_anti=[{"title":"报道称土耳其屏蔽网盘和GitHub以防止�
      if(r){
      	var dele_key_url = '/news/delete_keyword/?key='+keyword;
       console.log(dele_key_url);
-      $('#keyword_table').bootstrapTable('refresh',{url: dele_key_url})
+      location.reload();
+       $('#keyword_table').bootstrapTable('refresh',{url: dele_key_url})
+       $("#addkey").modal('toggle');
         // location.reload();
       }     
   }
