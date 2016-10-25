@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hello, turkey</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            height: 50%;
+        }
+        #container {
+            width: 900px;
+            height: 450px;
+        }
+        #r-result {
+            width: 60%;
+            /*height: 30px;*/
+            /*line-height: 30px;*/
+            /*background-color: #A5C1DD;*/
+            position: relative;
+            bottom:100% ;
+            right: -55%;
+            padding-right: 20px;
+        }
+        span:before {
+            display: inline-block;
+            content: '';
+            width: 10px;
+            height: 10px;
+            margin-right: 10px;
+        }
+        span {
+            display: block;
+            font-size: 14px;
+            font-weight: 900;
+            margin-bottom: 5px;
+        }
+        .bu1:before {
+            background-color: #AE6D32;
+        }
+        .bu2:before {
+            background-color: purple;
+        }
+        .bu3:before {
+            background-color: #56ABE4;
+        }
+        .bu4:before {
+            background-color: #19FA28;
+        }
+        .bu5:before {
+            background-color: red;
+        }
+        .bu6:before {
+            background-color: #B02323;
+        }
+        .bu7:before {
+            background-color: #D8060C;
+        }
+        .bu8:before {
+            background-color: #CAC122;
+        }
+    </style>
+    <script type="text/javascript" src="API.js"></script>
+</head>
+
+<body onload="loand()">
+<div id="container"></div>
+<div id="r-result">
+    <span style="color: #AE6D32;" class="bu1">公共部门工会联合会</span>
+    <span style="color: purple;" class="bu2">土耳其商人和工业家联合会</span>
+    <span style="color: #56ABE4;" class="bu3">革命工会联合会</span>
+    <span style="color: #19FA28;" class="bu4">道德权利工人联合会</span>
+    <span style="color: red;" class="bu5">土耳其雇主联合会</span>
+    <span style="color: #B02323;" class="bu6">土耳其劳工联合会</span>
+    <span style="color: #D8060C;" class="bu7">土耳其商业和商品交易所联合会</span>
+    <span style="color: #CAC122;" class="bu8">独立工商者和商人协会</span>
+</div>
+<div></div>
+<!--<script src="jquery-1.11.3.min.js"></script>-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0ECXIPy41grtI3jUXqQMgILaG1vKUiLo"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+<script src="heatmap.js"></script>
+<script type="text/javascript">
+
+    function loand() {
+        var map = new BMap.Map("container");
+        var point = new BMap.Point(32.863, 39.937); //默认中心点
+        var marker = new BMap.Marker(point);
+        map.centerAndZoom(new BMap.Point(32.863, 39.937), 7 );
+        map.enableScrollWheelZoom();
+        var pt = new BMap.Point(32.863, 39.937);
+        var myIcon = new BMap.Icon("tutu.png", new BMap.Size(32,32),{anchor: new BMap.Size(10, 30)});
+        var markers = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+        map.addOverlay(marker);
+        var opts = {
+            width: 350,     // 信息窗口宽度
+            height: 0,     // 信息窗口高度
+            title: "商会组织"  // 信息窗口标题
+        };
+        var infoWindow = new BMap.InfoWindow("公共部门工会联合会或KESK(Confederation of Public Sector Unions or KESK)<br/>成立于1995年12月<br/>总部位于安卡拉<br/>领导人：Lami OZGEN, Sazyie KOSE", opts);  // 创建信息窗口对象
+        markers.addEventListener("click", function(){
+            map.openInfoWindow(infoWindow,pt); //开启信息窗口
+        });
+
+        var pt1 = new BMap.Point(28.970947, 41.004775);
+        var myIcon1 = new BMap.Icon("zi.png", new BMap.Size(32,32),{anchor: new BMap.Size(20, 40)});
+        var marker1 = new BMap.Marker(pt1,{icon:myIcon1});  // 创建标注
+        map.addOverlay(marker1);
+        var infoWindow1 = new BMap.InfoWindow("土耳其商人和工业家联合会或TUSKON （Confederation of Businessmen and Industrialists of Turkey or TUSKON）<br/>成立于2005"+
+                "(解散2016年7月27日)<br/>总部位于伊斯坦布尔<br/>领导人：Rizanur MERAL", opts);  // 创建信息窗口对象
+        marker1.addEventListener("click", function(){
+            map.openInfoWindow(infoWindow1,pt1); //开启信息窗口
+        });
+
+        var pt2 = new BMap.Point(28.674316, 41.104191);
+        var myIcon2 = new BMap.Icon("lan.png", new BMap.Size(32,32),{anchor: new BMap.Size(50, 50)});
+        var marker2 = new BMap.Marker(pt1,{icon:myIcon2});  // 创建标注
+        map.addOverlay(marker2);
+        var infoWindow2 = new BMap.InfoWindow("革命工会联合会或DISK（Confederation of Revolutionary Workers Unions or DISK）<br/>成立于1967年"+
+                "<br/>总部位于伊斯坦布尔<br/>领导人：Tayfun GORGUN", opts);  // 创建信息窗口对象
+        marker2.addEventListener("click", function(){
+            map.openInfoWindow(infoWindow2,pt2); //开启信息窗口
+        });
+
+        var pt3 = new BMap.Point(32.863, 39.937);
+        var myIcon3 = new BMap.Icon("liang.png", new BMap.Size(32,32),{anchor: new BMap.Size(30, 30)});
+        var marker3 = new BMap.Marker(pt3,{icon:myIcon3});  // 创建标注
+        map.addOverlay(marker3);
+        var infoWindow3 = new BMap.InfoWindow("道德权利工人联合会或Hak-Is（Moral Rights Workers Union or Hak-Is）<br/>成立于1976年10月22日"+
+                "<br/>总部位于安卡拉<br/>领导人：Mahmut ARSLAN", opts);  // 创建信息窗口对象
+        marker3.addEventListener("click", function(){
+            map.openInfoWindow(infoWindow3,pt3); //开启信息窗口
+        });
+
+        var pt4 = new BMap.Point(32.863, 39.937);
+        var myIcon4 = new BMap.Icon("red.png", new BMap.Size(32,32),{anchor: new BMap.Size(-10, 40)});
+        var marker4 = new BMap.Marker(pt4,{icon:myIcon4});  // 创建标注
+        map.addOverlay(marker4);
+        var infoWindow4 = new BMap.InfoWindow("土耳其雇主联合会或TISK（Turkish Confederation of Employers' Unions or TISK）"+
+                "<br/>总部位于安卡拉<br/>领导人：Tugrul KUDATGOBILIK", opts);  // 创建信息窗口对象
+        marker4.addEventListener("click", function(){
+            map.openInfoWindow(infoWindow4,pt4); //开启信息窗口
+        });
+
+        var pt5 = new BMap.Point(32.863, 39.937);
+        var myIcon5 = new BMap.Icon("sss.png", new BMap.Size(32,32),{anchor: new BMap.Size(10, 10)});
+        var marker5 = new BMap.Marker(pt5,{icon:myIcon5});  // 创建标注
+        map.addOverlay(marker5);
+        var infoWindow5 = new BMap.InfoWindow("土耳其劳工联合会（Turkish Confederation of Labor or Turk-Is）<br/>成立于1952年"+
+                "<br/>总部位于安卡拉<br/>领导人：Ergun ATALAY", opts);  // 创建信息窗口对象
+        marker5.addEventListener("click", function(){
+            map.openInfoWindow(infoWindow5,pt5); //开启信息窗口
+        });
+
+        var pt6 = new BMap.Point(32.863, 39.937);
+        var myIcon6 = new BMap.Icon("hong.png", new BMap.Size(32,32),{anchor: new BMap.Size(20, 50)});
+        var marker6 = new BMap.Marker(pt6,{icon:myIcon6});  // 创建标注
+        map.addOverlay(marker6);
+        var infoWindow6 = new BMap.InfoWindow("土耳其商业和商品交易所联合会或TOBB（Turkish Union of Chambers of Commerce and Commodity Exchanges or TOBB）<br/>成立于1950年3月8日"+
+                "<br/>总部位于安卡拉<br/>领导人：M. Rifat HISARCIKLIOGLU", opts);  // 创建信息窗口对象
+        marker6.addEventListener("click", function(){
+            map.openInfoWindow(infoWindow6,pt6); //开启信息窗口
+        });
+
+        var pt7 = new BMap.Point(28.674316, 41.104191);
+        var myIcon7 = new BMap.Icon("sh.png", new BMap.Size(32,32),{anchor: new BMap.Size(10, 40)});
+        var marker7 = new BMap.Marker(pt7,{icon:myIcon7});  // 创建标注
+        map.addOverlay(marker7);
+        var infoWindow7 = new BMap.InfoWindow("独立工商者和商人协会或MUSIAD （Independent Industrialists' and Businessmen's Association or MUSIAD）<br/>成立于1990年5月5日"+
+                "<br/>总部位于安卡拉<br/>领导人：Nail OLPAK", opts);  // 创建信息窗口对象
+        marker7.addEventListener("click", function(){
+            map.openInfoWindow(infoWindow7,pt7); //开启信息窗口
+        });
+
+
+        //城市名称
+        var pt8 = new BMap.Point(30.674981, 37.202153);
+        var myIcon8 = new BMap.Icon("circle.png", new BMap.Size(16,-16),{anchor: new BMap.Size(0, 20)});
+        var marker8 = new BMap.Marker(pt8,{icon:myIcon8});
+        map.addOverlay(marker8);
+        var opt8 = {
+            position : pt8,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(8,5)    //设置文本偏移量
+        }
+        var label = new BMap.Label("安塔利亚", opt8);  // 创建文本标注对象
+        label.setStyle({
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label);
+
+        var pt9 = new BMap.Point(28.267822, 36.853252);
+        var myIcon9 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker9 = new BMap.Marker(pt9,{icon:myIcon9});
+        map.addOverlay(marker9);
+        var opt9 = {
+            position : pt9,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label1 = new BMap.Label("马尔马里斯", opt9);  // 创建文本标注对象
+        label1.setStyle({
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label1);
+
+        var pt10 = new BMap.Point(29.091797, 37.788081);
+        var myIcon10 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker10 = new BMap.Marker(pt10,{icon:myIcon10});
+        map.addOverlay(marker10);
+        var opt10 = {
+            position : pt10,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label2 = new BMap.Label("登尼资里", opt10);  // 创建文本标注对象
+        label2.setStyle({
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label2);
+
+
+        var pt11 = new BMap.Point(27.136230, 38.410558);
+        var myIcon11 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker11 = new BMap.Marker(pt11,{icon:myIcon11});
+        map.addOverlay(marker11);
+        var opt11 = {
+            position : pt11,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label3 = new BMap.Label("伊兹密尔", opt11);  // 创建文本标注对象
+        label3.setStyle({
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label3);
+
+        var pt12 = new BMap.Point(26.389160, 40.145289);
+        var myIcon12 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker12 = new BMap.Marker(pt12,{icon:myIcon12});
+        map.addOverlay(marker12);
+        var opt12 = {
+            position : pt12,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label4 = new BMap.Label("恰纳卡莱", opt12);  // 创建文本标注对象
+        label4.setStyle({
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label4);
+
+        var pt13 = new BMap.Point(32.497559, 37.892196);
+        var myIcon13 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker13 = new BMap.Marker(pt13,{icon:myIcon13});
+        map.addOverlay(marker13);
+        var opt13 = {
+            position : pt13,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label5 = new BMap.Label("科尼亚", opt13);  // 创建文本标注对象
+        label5.setStyle({
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label5);
+
+        var pt14 = new BMap.Point(38.342285,38.358888 );
+        var myIcon14 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker14 = new BMap.Marker(pt14,{icon:myIcon14});
+        map.addOverlay(marker14);
+        var opt14 = {
+            position : pt14,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label6 = new BMap.Label("马拉蒂亚", opt14);  // 创建文本标注对象
+        label6.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label6);
+
+        var pt15 = new BMap.Point(35.354004,36.985003);
+        var myIcon15 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker15 = new BMap.Marker(pt15,{icon:myIcon15});
+        map.addOverlay(marker15);
+        var opt15 = {
+            position : pt15,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label7 = new BMap.Label("阿达纳", opt15);  // 创建文本标注对象
+        label7.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label7);
+
+        var pt16 = new BMap.Point(34.628906,36.809285);
+        var myIcon16 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker16 = new BMap.Marker(pt16,{icon:myIcon16});
+        map.addOverlay(marker16);
+        var opt16 = {
+            position : pt16,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label8 = new BMap.Label("梅尔辛", opt16);  // 创建文本标注对象
+        label8.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label8);
+
+        var pt17 = new BMap.Point(41.264648,39.926588);
+        var myIcon17 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker17 = new BMap.Marker(pt17,{icon:myIcon17});
+        map.addOverlay(marker17);
+        var opt17 = {
+            position : pt17,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label9 = new BMap.Label("埃尔祖鲁姆", opt17);  // 创建文本标注对象
+        label9.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label9);
+
+        var pt18 = new BMap.Point(37.023926,39.926588);
+        var myIcon18 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker18= new BMap.Marker(pt18,{icon:myIcon18});
+        map.addOverlay(marker18);
+        var opt18= {
+            position : pt18,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label10 = new BMap.Label("锡瓦斯", opt18);  // 创建文本标注对象
+        label10.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label10);
+
+        var pt19 = new BMap.Point(30.520020,38.771216);
+        var myIcon19 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker19= new BMap.Marker(pt19,{icon:myIcon19});
+        map.addOverlay(marker19);
+        var opt19= {
+            position : pt19,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label11 = new BMap.Label("阿菲永卡拉希萨尔", opt19);  // 创建文本标注对象
+        label11.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label11);
+
+        var pt20 = new BMap.Point(30.388184,40.780541);
+        var myIcon20 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker20= new BMap.Marker(pt20,{icon:myIcon20});
+        map.addOverlay(marker20);
+        var opt20= {
+            position : pt20,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label12 = new BMap.Label("萨卡里亚", opt20);  // 创建文本标注对象
+        label12.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label12);
+
+        var pt21 = new BMap.Point(34.035645,38.376115);
+        var myIcon21 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker21= new BMap.Marker(pt21,{icon:myIcon21});
+        map.addOverlay(marker21);
+        var opt21= {
+            position : pt21,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label13 = new BMap.Label("阿克萨赖", opt21);  // 创建文本标注对象
+        label13.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label13);
+
+        var pt22 = new BMap.Point(38.386230,40.896906);
+        var myIcon22 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker22= new BMap.Marker(pt22,{icon:myIcon22});
+        map.addOverlay(marker22);
+        var opt22= {
+            position : pt22,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label14 = new BMap.Label("吉雷松", opt22);  // 创建文本标注对象
+        label14.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label14);
+
+        var pt23 = new BMap.Point(40.517578,41.029643);
+        var myIcon23 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker23= new BMap.Marker(pt23,{icon:myIcon23});
+        map.addOverlay(marker23);
+        var opt23= {
+            position : pt23,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label15 = new BMap.Label("里泽", opt23);  // 创建文本标注对象
+        label15.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label15);
+
+        var pt24 = new BMap.Point(36.320801,41.261291);
+        var myIcon24 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker24= new BMap.Marker(pt24,{icon:myIcon24});
+        map.addOverlay(marker24);
+        var opt24= {
+            position : pt24,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label16 = new BMap.Label("萨姆松", opt24);  // 创建文本标注对象
+        label16.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label16);
+
+        var pt25 = new BMap.Point(43.374023,38.513788);
+        var myIcon25 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker25= new BMap.Marker(pt25,{icon:myIcon25});
+        map.addOverlay(marker25);
+        var opt25= {
+            position : pt25,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label17 = new BMap.Label("凡城", opt25);  // 创建文本标注对象
+        label17.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label17);
+
+        var pt26 = new BMap.Point(41.132813,37.909534);
+        var myIcon26 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker26= new BMap.Marker(pt26,{icon:myIcon26});
+        map.addOverlay(marker26);
+        var opt26= {
+            position : pt26,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label18 = new BMap.Label("巴特曼", opt26);  // 创建文本标注对象
+        label18.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label18);
+
+        var pt27 = new BMap.Point(30.520020,39.774769);
+        var myIcon27 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker27= new BMap.Marker(pt27,{icon:myIcon27});
+        map.addOverlay(marker27);
+        var opt27= {
+            position : pt27,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label19 = new BMap.Label("埃斯基谢希尔", opt27);  // 创建文本标注对象
+        label19.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label19);
+
+        var pt28 = new BMap.Point(33.771973,41.376809);
+        var myIcon28 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker28= new BMap.Marker(pt28,{icon:myIcon28});
+        map.addOverlay(marker28);
+        var opt28= {
+            position : pt28,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label20 = new BMap.Label("卡斯塔莫努", opt28);  // 创建文本标注对象
+        label20.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label20);
+
+        var pt29 = new BMap.Point(37.375488,37.072710);
+        var myIcon29 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker29= new BMap.Marker(pt29,{icon:myIcon29});
+        map.addOverlay(marker29);
+        var opt29= {
+            position : pt29,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label21 = new BMap.Label("加济安泰普", opt29);  // 创建文本标注对象
+        label21.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label21);
+
+        var pt30 = new BMap.Point(38.803711,37.160317);
+        var myIcon30 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker30= new BMap.Marker(pt30,{icon:myIcon30});
+        map.addOverlay(marker30);
+        var opt30= {
+            position : pt30,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label22 = new BMap.Label("尚勒乌尔法", opt30);  // 创建文本标注对象
+        label22.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label22);
+
+        var pt31 = new BMap.Point(39.495850,39.749434);
+        var myIcon31 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker31= new BMap.Marker(pt31,{icon:myIcon31});
+        map.addOverlay(marker31);
+        var opt31= {
+            position : pt31,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label23 = new BMap.Label("埃尔津詹", opt31);  // 创建文本标注对象
+        label23.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label23);
+
+        var pt32 = new BMap.Point(40.209961,37.926868);
+        var myIcon32 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker32= new BMap.Marker(pt32,{icon:myIcon32});
+        map.addOverlay(marker32);
+        var opt32= {
+            position : pt32,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(-10,10)    //设置文本偏移量
+        }
+        var label24 = new BMap.Label("迪亚巴克尔", opt32);  // 创建文本标注对象
+        label24.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label24);
+
+        var pt33 = new BMap.Point(34.947510,40.555548);
+        var myIcon33 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker33= new BMap.Marker(pt33,{icon:myIcon33});
+        map.addOverlay(marker33);
+        var opt33= {
+            position : pt33,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label25 = new BMap.Label("乔鲁姆", opt33);  // 创建文本标注对象
+        label25.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label25);
+
+        var pt34 = new BMap.Point(35.485021, 38.71987);
+        var myIcon34 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker34= new BMap.Marker(pt34,{icon:myIcon34});
+        map.addOverlay(marker34);
+        var opt34= {
+            position : pt34,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label26 = new BMap.Label("开塞利", opt34);  // 创建文本标注对象
+        label26.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label26);
+
+        var pt35 = new BMap.Point(27.224121,41.738528);
+        var myIcon35 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker35= new BMap.Marker(pt35,{icon:myIcon35});
+        map.addOverlay(marker35);
+        var opt35= {
+            position : pt35,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label27 = new BMap.Label("科尔克拉雷利", opt35);  // 创建文本标注对象
+        label27.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label27);
+
+        var pt36 = new BMap.Point(28.970947,41.021355);
+        var myIcon36 = new BMap.Icon("circle.png", new BMap.Size(16,16),{anchor: new BMap.Size(0, 20)});
+        var marker36= new BMap.Marker(pt36,{icon:myIcon36});
+        map.addOverlay(marker36);
+        var opt36= {
+            position : pt36,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(10,-15)    //设置文本偏移量
+        }
+        var label28 = new BMap.Label("伊斯坦布尔", opt36);  // 创建文本标注对象
+        label28.setStyle({
+            width:0,
+            height:0,
+            fontSize : "12px",
+            fontFamily:"微软雅黑",
+            border:"none",
+            backgroundColor:"#F4F2EF"
+        });
+        map.addOverlay(label28);
+
+        window.onmousewheel=function () {
+            var num=map.getZoom();
+            if (num>="9"||num<="6") {
+                map.clearOverlays();
+                map.addOverlay(marker);
+                map.addOverlay(marker1);
+                map.addOverlay(marker2);
+                map.addOverlay(marker3);
+                map.addOverlay(marker4);
+                map.addOverlay(marker5);
+                map.addOverlay(marker6);
+                map.addOverlay(marker7);
+                if (num=="5"){
+                    map.clearOverlays();
+                }
+            }else if(num=="7"){
+                map.addOverlay(marker8);
+                map.addOverlay(label);
+                map.addOverlay(marker9);
+                map.addOverlay(label1);
+                map.addOverlay(marker10);
+                map.addOverlay(label2);
+                map.addOverlay(marker11);
+                map.addOverlay(label3);
+                map.addOverlay(marker12);
+                map.addOverlay(label4);
+                map.addOverlay(marker13);
+                map.addOverlay(label5);
+                map.addOverlay(marker14);
+                map.addOverlay(label6);
+                map.addOverlay(marker15);
+                map.addOverlay(label7);
+                map.addOverlay(marker16);
+                map.addOverlay(label8);
+                map.addOverlay(marker17);
+                map.addOverlay(label9);
+                map.addOverlay(marker18);
+                map.addOverlay(label10);
+                map.addOverlay(marker19);
+                map.addOverlay(label11);
+                map.addOverlay(marker20);
+                map.addOverlay(label12);
+                map.addOverlay(marker21);
+                map.addOverlay(label13);
+                map.addOverlay(marker22);
+                map.addOverlay(label14);
+                map.addOverlay(marker23);
+                map.addOverlay(label15);
+                map.addOverlay(marker24);
+                map.addOverlay(label16);
+                map.addOverlay(marker25);
+                map.addOverlay(label17);
+                map.addOverlay(marker26);
+                map.addOverlay(label18);
+
+                map.addOverlay(marker27);
+                map.addOverlay(label19);
+                map.addOverlay(marker28);
+                map.addOverlay(label20);
+                map.addOverlay(marker29);
+                map.addOverlay(label21);
+                map.addOverlay(marker30);
+                map.addOverlay(label22);
+                map.addOverlay(marker31);
+                map.addOverlay(label23);
+                map.addOverlay(marker32);
+                map.addOverlay(label24);
+                map.addOverlay(marker33);
+                map.addOverlay(label25);
+                map.addOverlay(marker34);
+                map.addOverlay(label26);
+                map.addOverlay(marker35);
+                map.addOverlay(label27);
+                map.addOverlay(marker36);
+                map.addOverlay(label28);
+            }
+        };
+    }
+
+
+</script>
+
+
+</body>
+
+</html>
