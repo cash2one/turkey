@@ -30,7 +30,6 @@ def turkey_detail():
 def turkey_org():
     return render_template('index/card/turkey_org.html')
 
-
 @mod.route('/turkey_index/')
 def turkey_index():
     return render_template('index/turkey_index.html')
@@ -71,6 +70,13 @@ def turkey_govorg():
 def turkey_powerdep():
     return render_template('index/card/turkey_powerdep.html')
 
+@mod.route('/turkey_companyymm')
+def turkey_companyymm():
+    return render_template('index/card/turkey_companyymm.html')
+
+@mod.route('/turkey_detailymm')
+def turkey_detailymm():
+    return render_template('index/card/turkey_detailymm.html')
 
 @mod.route('/turkey_info/')
 def turkey_info():

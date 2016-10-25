@@ -104,7 +104,30 @@ ol .references li:target, sup.reference:target, span.citation:target {
    .personTxt b,.personTxt .bl {
     float: right;
    }
-
+#tabInfo {
+    border: 1px solid #000000;
+    margin: 30px 0px 50px 0px;
+    border-collapse: collapse;
+}
+#tabInfo tbody {
+        display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+#tabInfo tr th {
+    text-align: center;
+    font-size: 15px;
+    padding: 0px 5px;
+    border-right: 1px solid #000000;
+    border-top: 1px solid #000000;
+    background: #E5B8B7;
+}
+#tabInfo tr td {
+    text-align: center;
+    border-right: 1px solid #000000;
+    border-top: 1px solid #000000;
+    line-height: 18px;
+}
 </style>
 
 
@@ -156,49 +179,49 @@ ol .references li:target, sup.reference:target, span.citation:target {
                       <div id="line" style="width:800px;height:400px;margin:0 auto;"></div>
                     
                 </div>
-          
+                <div class="personTxt" style="margin:0 auto;">
+                      <p style="margin:0 auto;text-align:center;font-weight:900;">青山控股集团有限公司在境外最近投资的1个项目</p>
+                      <table id="tabInfo" border="0" cellspacing="0" frame="void" width="100%">
+                        <tbody><tr style="line-height: 30px;">
+                            <th width="300">
+                                公司名称
+                            </th>
+                            <th width="120">
+                                投资地区
+                            </th>
+                            <th width="100">
+                                时间
+                            </th>
+                            <th width="450">
+                                经营范围
+                            </th>
+                        </tr>
+                            <tr>
+                                <td style="padding: 5px 3px 5px 3px;">瑞浦土耳其金属贸易股份有限公司
+                                </td>
+                                <td>土耳其
+                                </td>
+                                <td>2016-05-31
+                                </td>
+                                <td>镍铬合金工业生产和焦炭工业生产、不锈钢压延制品等
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+
+                    
+                    
+                </div>
+                 
         </div>
          
-          <div class="personTxt" style="margin:0 auto;">
-                      <p style="margin:0 auto;text-align:center;">青山控股集团有限公司在境外最近投资的1个项目</p>
-                      <table>
-                        <thead>
-                            <tr>
-                                <td>公司名称</td>
-                            </tr>
-                            <tr>
-                                <td>投资地区</td>
-                            </tr>
-                            <tr>
-                                <td>时间</td>
-                            </tr>
-                            <tr>
-                                <td>经营范围</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>瑞浦土耳其金属贸易股份有限公司</td>
-                            </tr>
-                            <tr>
-                                <td>土耳其</td>
-                            </tr>
-                            <tr>
-                                <td>2016-5-31</td>
-                            </tr>
-                            <tr>
-                                <td>镍铬合金工业生产和焦炭工业生产、不锈钢压延制品等</td>
-                            </tr>
-                        </tbody>
-                      </table>  
-                    
-                </div>  
+            
 
 
 
 </div>
 
-<!-- <script type="text/javascript" src="../../../static/echarts/echarts.js"></script> -->
+
 <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
 <script type="text/javascript">
 
@@ -218,7 +241,7 @@ ol .references li:target, sup.reference:target, span.citation:target {
     legend: {
         orient : 'vertical',
         x : 'right',
-        data:['投资轨迹']
+        data:['']
     },
     toolbox: {
         // show : true,
