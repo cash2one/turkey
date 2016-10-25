@@ -42,6 +42,10 @@ def infor_search():
 def interview_detail():
     return render_template('index/interview_detail.html')
 
+# @mod.route('/mapchildren/')
+# def mapchildren():
+#     return render_template('index/mainmap/mapchildren.html')
+
 @mod.route('/person_detail/president_now')
 def person_detail_president_now():
     return render_template('index/card/person_detail_president_now.html')
@@ -3016,3 +3020,5 @@ def turkey_emergency():
     """返回话题管理页面
     """
     return render_template('index/turkey_emergency.html')
+
+

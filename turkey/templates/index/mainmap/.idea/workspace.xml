@@ -26,8 +26,13 @@
       <file leaf-file-name="mapbusiness.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mapbusiness.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="140">
               <caret line="179" column="57" selection-start-line="179" selection-start-column="57" selection-end-line="179" selection-end-column="57" />
+=======
+            <state relative-caret-position="514">
+              <caret line="196" column="26" selection-start-line="187" selection-start-column="32" selection-end-line="196" selection-end-column="26" />
+>>>>>>> d194faba4204dd55d925781eb0de535b576f957f
               <folding />
             </state>
           </provider>
@@ -36,7 +41,11 @@
       <file leaf-file-name="mapchildren.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mapchildren.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="0">
+=======
+            <state relative-caret-position="-1716">
+>>>>>>> d194faba4204dd55d925781eb0de535b576f957f
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -132,15 +141,26 @@
       <updated>1477123042212</updated>
       <workItem from="1477123045731" duration="373000" />
       <workItem from="1477197258313" duration="1799000" />
+<<<<<<< HEAD
       <workItem from="1477272313283" duration="646000" />
+=======
+      <workItem from="1477272313283" duration="1977000" />
+>>>>>>> d194faba4204dd55d925781eb0de535b576f957f
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="2818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+=======
+    <option name="totallyTimeSpent" value="4149000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+>>>>>>> d194faba4204dd55d925781eb0de535b576f957f
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1436012" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -211,7 +231,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mapchildren.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
+=======
+        <state relative-caret-position="-1716">
+>>>>>>> d194faba4204dd55d925781eb0de535b576f957f
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -219,8 +243,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mapbusiness.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="140">
           <caret line="179" column="57" selection-start-line="179" selection-start-column="57" selection-end-line="179" selection-end-column="57" />
+=======
+        <state relative-caret-position="514">
+          <caret line="196" column="26" selection-start-line="187" selection-start-column="32" selection-end-line="196" selection-end-column="26" />
+>>>>>>> d194faba4204dd55d925781eb0de535b576f957f
           <folding />
         </state>
       </provider>
