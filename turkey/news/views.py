@@ -3017,25 +3017,35 @@ def show_key_ajax():
     return results
 
 
-# @mod.route('/submit_keyword/')
-# def submit_key_ajax():
-#     keyword = request.args.get('key','')
-#     new_record = {}
-#     new_record['key'] = keyword
-#     now = datetime.datetime.now()
-#     otherStyleTime = now.strftime("%Y-%m-%d %H:%M")
-#     new_record['time'] = otherStyleTime
-#     f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","w")
-#     results = json.load(f.read())
-#     results.append(new_record)
-#     results = json.dumps(results)
-#     f.write(results)
-#     f.close()
-#     return results
+@mod.route('/submit_keyword/')
+def submit_key_ajax():
+    keyword = request.args.get('key','')
+    new_record = {}
+    new_record['key'] = keyword
+    now = datetime.datetime.now()
+    otherStyleTime = now.strftime("%Y-%m-%d %H:%M")
+    new_record['time'] = otherStyleTime
+    f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","r")
+    results = json.loads(f.read())
+    results.append(new_record)
+    f.close()
+    f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","w")
+    results = json.dumps(results)
+    f.write(results)
+    f.close()
+    return results
 
 @mod.route('/delete_keyword/')
 def delete_key_ajax():
-    f = open("keyword.json","r")
-    results = f.read()
+    keyword = request.args.get('key','')
+    f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","r")
+    results = json.loads(f.read())
+    for i in range(0,len(results)-1):
+        if keyword == results[i]["key"]:
+            del results[i]
+    f.close()
+    f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","w")
+    results = json.dumps(results)
+    f.write(results)
     f.close()
     return results
