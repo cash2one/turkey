@@ -92,6 +92,21 @@ var zhongzi_data=[{"name":"华为技术有限公司土耳其分公司","time":""
 "business":"金融服务业（融资、放贷)","person":"","business_contact":"","domestic_agency":""}]
 
 
+var zuzhi_data=[{"name":"库尔德工人党(Partiya Karkerên Kurdistan)","time":"1978","leader":"Cemil Bayik","leader_all":"阿卜杜拉·奥贾兰、Cemil Bayi、 Kesire Yildirim Öcalan, Hakki Karaer","geo":"土耳其东南部、伊拉克东北部、叙利亚东北部和伊朗西北部","construct":"库尔德工人党在西欧多个国家有多个领导人。然而，阿卜杜拉•奥贾兰一直是该组织不变的领导人。奥贾兰被捕后，包括他在内的领导人要求停火并由Murat Karayılan领导该组织到2015年。Cemil Bayik在2015年被选为该组织的新任领导人。Cemil Bayik除 Abdullah Öcalan, Kesire Yildirim Öcalan, 以及 Hakki Karaer之外的核心领导人之一。","atti_china":"不明确","turkey_atti":"抵制"},
+{"name":"库尔德自由之鹰","time":"2004.7.29","leader":"Bahoz Erdal（未公开，猜测）","leader_all":"","geo":"活动范围在土耳其全境，多在安卡拉、伊斯坦布尔等大城市进行恐怖袭击。","construct":"","atti_china":"","turkey_atti":"抵制"},
+{"name":"灰狼组织(Ülkü Ocakları)","time":"1968","leader":"Devlet Bahçeli","leader_all":"Alparslan Türkeş","geo":"土耳其及北塞浦路斯","construct":"","atti_china":"反华，支持疆独组织","turkey_atti":"名义抵制，暗地支持"},
+{"name":"伊斯兰国","time":"1999","leader":"首领（自称哈里发） 阿布·贝克尔·巴格达迪","leader_all":"","geo":"主要位于伊拉克和叙利亚境内","construct":"","atti_china":"反华","turkey_atti":"抵制"},
+{"name":"叙利亚土库曼旅","time":"2012.8.7","leader":"Ebu Bekir Muhammed Abbas","leader_all":"","geo":"土耳其东南部、叙利亚北部及东北部","construct":"","atti_china":"","turkey_atti":"支持"},
+{"name":"人民保卫军(Halk Koruma Birlikleri)","time":"2011","leader":"Sîpan Hemo","leader_all":"","geo":"叙利亚北部、东北部，土叙边境","construct":"","atti_china":"","turkey_atti":"反对"},
+{"name":"东突基金会(Doğu Türkistan Vakfı)","time":"1978.3.23","leader":"Eser Türkistanlı Saka","leader_all":"Yusuf Alptekin（1978-1986）；Rıza Bekin Paşa（1986-2010）；Ilgar Alptekin（2010-2012）；Mehmet İsa Artış（2012-2013.1.15）；Eser Türkistanlı Saka（2013.1.15至今）","geo":"总部地址：Damat İbrahim Paşa Medresesi, Dede Efendi Caddesi, Vezneciler No:4  Fatih/İstanbul(法蒂赫/伊斯坦布尔)","construct":"下设：基金会管理者、行政管理委员会、审计委员会  http://www.dtv.org.tr/","atti_china":"反华","turkey_atti":"名义抵制，暗地支持"},
+{"name":"东突移民协会(Doğu Türkistan Göçmenler Derneği)","time":"1960","leader":"","leader_all":"","geo":"","construct":"","atti_china":"反华","turkey_atti":"名义抵制，暗地支持"},
+{"name":"","time":"","leader":"","leader_all":"","geo":"","construct":"","atti_china":"反华","turkey_atti":"名义抵制，暗地支持"},
+{"name":"","time":"","leader":"","leader_all":"","geo":"","construct":"","atti_china":"反华","turkey_atti":"名义抵制，暗地支持"},
+{"name":"","time":"","leader":"","leader_all":"","geo":"","construct":"","atti_china":"反华","turkey_atti":"名义抵制，暗地支持"},
+{"name":"","time":"","leader":"","leader_all":"","geo":"","construct":"","atti_china":"反华","turkey_atti":"名义抵制，暗地支持"}]
+
+
+
 function draw_news(news_data,length){
 for(var i =0;i<length;i++){
 	var html = '';
@@ -176,5 +191,11 @@ function draw_zhongzi_data(data){
 
 }
 
+
+// function draw_zuzhi_data(zuzhi_data){
+
+
+// }
+
 draw_news(news_data,5);
-draw_zhongzi_data(zhongzi_data);
+// draw_zhongzi_data(zhongzi_data);
