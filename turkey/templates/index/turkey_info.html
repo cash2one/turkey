@@ -8,18 +8,7 @@
         /*
          * Base structure
          */
-
-        /* Move down content because we have a fixed navbar that is 50px tall */
-        /*body {
-            padding-top: 60px;
-            font-family: Arial,"Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei","文泉驿微米黑",STXihei,"华文细黑",sans-serif;
-            font-size: 12px;
-            background-color: #ebebeb;
-        }
-        body, form, ul, ol, li, h1, h2, h3, h4, h5, h6, p, dl, dd, td, th, input, img {
-            margin: 0;
-            padding: 0;
-        }*/
+ 
         #overview{
             width: 1100px;
 		    margin: 0 auto;
@@ -155,6 +144,8 @@
     </style>
     <link rel="stylesheet" href="/static/css/turkey_info_zixun.css">
     <!-- <link rel="stylesheet" href="/static/css/bootstrap.css"> -->
+   <!--  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'> -->
+	<link rel="stylesheet" type="text/css" href="../../static/css/style_card.css">
     {% endblock head_css %}
 
     {% block head_js %}
@@ -170,18 +161,298 @@
     <script src="{{ url_for('static', filename='js/exporting.js') }}"></script>
     <!--<script src="/static/css/js/echarts-all.js"></script>-->
     <script src="/static/echarts/echarts.js"></script>
+
+    <script type="text/javascript">
+        
+        function show_hide(id_name){
+
+        var div1=document.getElementById(id_name);
+        if(div1.style.display=="block"){
+            div1.style.display="none"; 
+        }else{
+            div1.style.display="block";
+        }
+    }
+
+    </script>
+
 {% endblock head_js %}
 
 {% block content %}
 
         <div id="overview" >
+
+        	<div class="container">
+		    <!-- Team members structure start -->
+		    	<div class="team-members row" style="margin-top: -1%;">
+		        	<!-- effect-1 html -->
+		        	<div class="single-member effect-4">
+		                <div class="member-info">
+		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">概况</h3>
+		                    <!-- <h5>ShowGilr</h5> -->
+		                </div>
+		                <div class="member-image">
+		                	<img src="../../static/img/turkey/card/gaikuang_blue.jpg" alt="Member">
+		                </div>
+		                <div class="more-info">
+		                	<span>
+		                		<b style="margin-left: -28%;">领土面积：</b>总计783562平方公里。
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">查看详情</a> -->
+		                		<br>
+		                		<b style="margin-left: -2%;">行政区域：</b>全国共有81个省、约600个县、3.6万多乡村。
+		                		<a href="#zhengzhizhidu" target="_blank">查看详情</a>
+		                		<br>
+		                		<b style="margin-left: -2%;">政府部门：</b>
+		                		总统府、大国民议会、总理府、总参谋部、内政部……
+		                		<a style="margin-left: 0%;" href="/news/turkey_party/" target="_blank">查看详情</a>
+		                		<br>
+		                		<b style="margin-left: -2%;">强力部门：</b>
+		                		国家情报组织、公共秩序及安全部、土耳其安全总局……
+		                		<a style="margin-left: 0%;" href="/news/turkey_party/" target="_blank">查看详情</a>
+
+
+		                	</span>
+		                   
+		                </div>
+		            </div>
+		            <!-- effect-1 html end -->
+		            
+		            <!-- effect-2 html -->
+		            <div class="single-member effect-4">
+		                <div class="member-info">
+		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">政治</h3>
+		                    <!-- <h5>ShowGilr</h5> -->
+		                </div>
+		                <div class="member-image">
+		                	<img src="../../static/img/turkey/card/zhengzhi_blue.png" alt="Member">
+		                </div>
+		                <div class="more-info">
+		                	<span>
+		                		<b style="margin-left: -50%;">政治制度：</b>
+		                		<a href="#zhengzhizhidu" target="_blank">议会共和制</a>
+		                		<br>
+		                		<b style="margin-left: -3%;">现任总统：</b>
+		                		<a href="/news/person_detail/president_now" target="_blank">雷杰普·塔伊普·埃尔多安</a>(2014.08- )<br><a style="margin-left: -14%;" href="/news/turkey_party/" target="_blank">(正义与发展党)</a>
+		                		<br>
+		                		<b style="margin-left: -13%;">现任总理：</b>
+		                		<a href="" target="_blank">毕纳利·耶尔德勒姆</a>(2016.05- )<br><a style="margin-left: -14%;" href="/news/turkey_party/" target="_blank">(正义与发展党)</a>
+		                		<br>
+		                		<b style="margin-left: -2%;">重要政党：</b>
+		                		<a href="/news/turkey_party/" target="_blank">正义与发展党</a>(议会席位：317/550)
+		                		<br>
+		                		<a href="" target="_blank" style="margin-left: 17%;">共和人民党</a>(议会席位：134/550)
+		                		<br>
+		                		<a href="" target="_blank" style="margin-left: 16%;">人民民主党</a>(议会席位：59/550)
+		                		<br>
+		                		<a href="" target="_blank" style="margin-left: 16%;">民族行动党</a>(议会席位：40/550)
+		                		<br>
+
+
+		                	</span>
+		                   
+		                </div>
+		            </div>
+		            <!-- effect-2 html end -->
+		            
+		            <!-- effect-3 html -->
+		            <div class="single-member effect-4">
+		                <div class="member-info">
+		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">经济</h3>
+		                    <!-- <h5>ShowGilr</h5> -->
+		                </div>
+		                <div class="member-image">
+		                	<img src="../../static/img/turkey/card/jingji_blue.jpg" alt="Member">
+		                </div>
+		                <div class="more-info">
+		                	<span>
+		                	    <b style="margin-left: -21%;">预算赤字：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		1.7%(GDP)(2015年)。
+		                		<br>
+		                		<b style="margin-left: -2.76%;">人均GDP：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		19500美元(2013年)、19900美元(2014年)、20400美元(2015年)。
+		                		<br>
+		                		<b style="margin-left: 1%;">GDP构成：</b>
+		                		农业(8.10%)、工业(27.7%)、服务业(64.2%)。
+		                		<br>
+		                		<b style="margin-left: 1%;">合作伙伴：</b>
+		                		
+		                		进口：中国、德国、俄罗斯、美国、意大利、其他。出口：德国、英国、伊拉克、意大利、美国、法国、其他。
+		                		<br>
+		                		
+		                		<br>
+		                		
+
+
+		                	</span>
+		                   
+		                </div>
+		            </div>
+		            <!-- effect-3 html end -->
+		            
+		            <!-- effect-4 html -->
+		            <div class="single-member effect-8">
+		                <div class="member-info">
+		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">国防</h3>
+		                   
+		                </div>
+		                <div class="member-image">
+		                	<img src="../../static/img/turkey/card/guofang_blue.jpg" alt="Member">
+		                </div>
+		                <div class="more-info">
+		                	<span>
+		                		<b style="margin-left: 1%;">军队体系说明：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		在和平时期，作为国内安全力量的国家宪兵总队和海岸警卫队隶属于内政部管辖，而在战时宪兵总队由陆军司令部管辖，海岸警卫队由海军司令部管辖。7·15政变后，总参谋长对土耳其总理负责，拥有武装部队的总指挥和控制权。同时还负责有效地进行军事行动，以及武装部队的作战准备。
+		                		<br>
+		                	</span>
+		                	
+		                </div>
+		            </div>
+		            <!-- effect-4 html end -->
+		            
+		            <!-- effect-5 html -->
+		            <div class="single-member effect-8">
+		                <div class="member-info">
+		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">外交</h3>
+		                    
+		                </div>
+		                <div class="member-image">
+		                	<img src="../../static/img/turkey/card/waijiao_blue.jpg" alt="Member">
+		                </div>
+		                <div class="more-info">
+		                	<span>
+		                		<b style="margin-left: 1%;">主要外交国家：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		中国、美国、俄罗斯、以色列、叙利亚。
+		                		<br>
+		                	</span>
+		                </div>
+		            </div>
+		            <!-- effect-5 html end -->
+		            
+		            <!-- effect-6 html -->
+		            <div class="single-member effect-8">
+		                <div class="member-info">
+		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">民族与宗教</h3>
+		                    
+		                </div>
+		                <div class="member-image">
+		                	<img src="../../static/img/turkey/card/minzu_blue.jpg" alt="Member">
+		                </div>
+		                <div class="more-info">
+		                	<span>
+		                		<b style="margin-left: 1%;">民族：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		<a href="">土耳其人</a>、<a href="">库尔德人</a>、<a href="">切尔卡西人</a>、<a href="">波斯尼亚人</a>、<a href="">阿尔巴尼亚人</a>、<a href="">格鲁吉亚人</a>、<a href="">阿拉伯人</a>、<a href="">朴玛克人</a>、<a href="">拉兹人</a>、<a href="">Hemşinler</a>。其中<a href="">土耳其人</a>(55000000人)是人口最多的民族，分布在土耳其大部分地区。
+		                		<br>
+		                		<b style="margin-left: 1%;">宗教：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		<a href="">伊斯兰教</a>(99%)和<a href="">其他宗教</a>(1%)。其中伊斯兰教派分为伊斯兰教逊尼派(70%)、什叶派的支派阿列维派(25%)和什叶派中的十二伊玛目派(5%);其他宗教包括基督徒和犹太人。
+
+		                		<!-- <a href="">切尔卡西人</a>、<a href="">波斯尼亚人</a>、<a href="">阿尔巴尼亚人</a>、<a href="">格鲁吉亚人</a>、<a href="">阿拉伯人</a>、<a href="">朴玛克人</a>、<a href="">拉兹人</a>、<a href="">Hemşinler</a>。其中<a href="">土耳其人</a>(55000000人)是人口最多的民族，分布在土耳其大部分地区。 -->
+		                		<br>
+		                	</span>
+		                </div>
+		            </div>
+		            <!-- effect-6 html end -->
+		            
+		            <!-- effect-7 html -->
+		            <div class="single-member effect-9">
+		                <div class="member-info">
+		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">组织</h3>
+		                    
+		                </div>
+		                <div class="member-image">
+		                	<img src="../../static/img/turkey/card/zuzhi_blue.jpg" alt="Member">
+		                </div>
+		                <div class="more-info">
+		                	<span>
+		                		<b style="margin-left: 1%;">地方极端组织：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		<a href="">库尔德工人党</a>、<a href="">库尔德自由之鹰</a>、<a href="">灰狼组</a>。
+		                		<br>
+		                		<b style="margin-left: 1%;">国际恐怖组织：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		<a href="">伊斯兰国</a>、<a href="">叙利亚土库曼旅</a>、<a href="">人民保卫军</a>。
+								<br>
+		                		<b style="margin-left: 1%;">东突&疆独组织：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		<a href="">东突基金会</a>、<a href="">东突移民协会</a>、<a href="">欧亚突厥协会联盟</a>、<a href="">东突教育与互助协会</a>、<a href="">东突青年协会</a>、<a href="">东突文化与团结协会</a>。
+		                		<br>
+		                		<b style="margin-left: -40%;">反华势力：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		<a href="">法轮功组织</a>。
+		                		<br>
+		                	</span>
+		                </div>
+		            </div>
+		            <!-- effect-7 html end -->
+		            
+		            <!-- effect-8 html -->
+		            <div class="single-member effect-9">
+		                <div class="member-info">
+		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">地方力量</h3>
+		                    
+		                </div>
+		                <div class="member-image">
+		                	<img src="../../static/img/turkey/card/difangliliang_blue.jpg" alt="Member">
+		                </div>
+		                <div class="more-info">
+		                	<b style="margin-left: 1%;">地方力量机构：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		<a href="">土耳其商人和工业家联合会</a>、<a href="">公共部门工会联合会</a>、<a href="">革命工会联合会</a>、<a href="">独立工商者和商人协会</a>、<a href="">道德权利工人联合会</a>、<a href="">土耳其雇主联合会</a>、<a href="">土耳其劳工联合会</a>、<a href="">土耳其工业家和商人协会</a>、<a href="">土耳其商业和商品交易所联合会</a>。
+		                		<br>
+		                </div>
+		            </div>
+		            <!-- effect-8 html end -->
+		            
+		            <!-- effect-9 html -->
+		            <div class="single-member effect-9">
+		                <div class="member-info">
+		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">中国利益</h3>
+		                    
+		                </div>
+		                <div class="member-image">
+		                	<img src="../../static/img/turkey/card/china_blue.jpg" alt="Member">
+		                </div>
+		                <div class="more-info">
+		                	<span>
+		                		<b style="margin-left: 0.6%;">华人华侨：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		<a href="">维吾尔族</a>(4-5万)、<a href="">哈萨克族</a>(2-3万)、<a href="">其他</a>(少量)。
+		                		<br>
+		                		<b style="margin-left: 0%;">华人商会：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		<a href="">土耳其中资企业商会</a>、<a href="">土耳其中国工商总会</a>、<a href="">伊斯坦布尔中资企业协会</a>、<a href="">伊斯坦布尔工业协会</a>、<a href="">伊斯坦布尔商会</a>、<a href="">安卡拉商会</a>、<a href="">安卡拉工业协会</a>……<a href="">查看详情</a>
+								<br>
+		                		<b style="margin-left: -80%;">留学生：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		
+		                		<br>
+		                		<b style="margin-left: -1%;">中资机构：</b>
+		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		<a href="">上海电力股份有限公司 </a>、<a href="">青山控股集团有限公司</a>、<a href="">法罗力热能设备（中国）有限公司</a>……<a href="">查看详情</a>。
+		                		<br>
+		                	</span>
+		                </div>
+		            </div>
+		            <!-- effect-9 html end -->
+		            
+		        </div>
+		    <!-- Team members structure start -->
+		    </div>
+
+
+
             <div class="col-lg-12" style="width: 1100px;" id="gaikuang_id">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;" onclick="show_hide('gaikuang_show_hide')">
                         <div><img id="gaikuang_img" src="/static/img/turkey/gaikuang.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">国家概况</div>                       
                     </div>
                     <!-- <div class="panel-body"> -->
-                      <div class="panel-body">
+                      <div class="panel-body" id="gaikuang_show_hide">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>历史综述</b>
                                    
@@ -405,125 +676,99 @@
                 </div>
             </div> -->
             
-            
             <div class="col-lg-12" id="zhengzhi_id">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
-                        <div>
-                        <img id="political_img" src="/static/img/turkey/political.png" alt="Photo" style="width: 30px;height: 25px;margin-top: -0.5%;">
-                        <!-- <span id="relation_href" style="float:right;cursor:pointer;"><u>查看详情</u></span> -->政治</div>
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;" onclick="show_hide('zhengzhi_show_hide')">
+                        <div><img id="political_img" src="/static/img/turkey/political.png" alt="Photo" style="width: 30px;height: 25px;margin-top: -0.5%;">政治</div>
                     </div>
-                    <!-- 历任总统 -->
-                    <div class="panel-body" style="float: left;">
-                        <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
-                        <p class="personal_domain"  ><b style="margin-left:2%;" >历任总统</b>
-                        <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
-                        </p>
+                    <div class="panel-body" id="zhengzhi_show_hide">
+						<!-- 历任总统 -->
+						<div style="float:left;">
+							<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                            <p class="personal_domain"  ><b style="margin-left:2%;" >历任总统</b>
+                            
+                            </p>
+                            
+                            <p style="font-size: 14px;margin-top: -1%;">任期：5年</p>
+                            <!-- <p style="font-size: 14px;margin-top: -2%;">5年</p> -->
+                            <p style="font-size: 14px;margin-top: -1%;">首任总统：<a href="/news/person_detail/president_first" target="_blank">穆斯塔法·凯末尔·阿塔图尔克</a></p>
+                           
+                            <p style="font-size: 14px;margin-top: -1%;">现任总统：<a href="/news/person_detail/president_now" target="_blank">雷杰普·塔伊普·埃尔多安</a></p>
                         
-                        <p style="font-size: 14px;margin-top: -1%;">任期：5年</p>
-                        <!-- <p style="font-size: 14px;margin-top: -2%;">5年</p> -->
-                        <p style="font-size: 14px;margin-top: -1%;">首任总统：<a href="/news/person_detail/president_first" target="_blank">穆斯塔法·凯末尔·阿塔图尔克</a></p>
-                       
-                        <p style="font-size: 14px;margin-top: -1%;">现任总统：<a href="/news/person_detail/president_now" target="_blank">雷杰普·塔伊普·埃尔多安</a></p>
-                        <!-- <p style="font-size: 14px;margin-top: -2%;">雷杰普·塔伊普·埃尔多安 </p> -->
-                       <div id="zongtong_xianren">
-                      
-                           <img id="zongtong_1_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
-                           <p style="margin-left:45%;margin-top: -48%;width: 100%;" ><a href="/news/person_detail/president_now" target="_blank" style="font-size: 12px;margin-top: -1%;float：left;">雷杰普·塔伊普·埃尔多安</a></br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>所属党派：<a href="/news/turkey_party/" target="_blank">正义与发展党</a></br>毕业院校：马尔马拉大学经贸学院</p>
+	                       <div id="zongtong_xianren">
+	                      
+	                           <img id="zongtong_1_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 1%;margin-left: 0%;">
+	                           <p style="margin-left:45%;margin-top: -49.5%;width: 100%;" ><a href="/news/person_detail/president_now" target="_blank" style="font-size: 12px;margin-top: -1%;float：left;">雷杰普·塔伊普·埃尔多安</a></br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>所属党派：<a href="/news/turkey_party/" target="_blank">正义与发展党</a></br>毕业院校：马尔马拉大学经贸学院</p>
 
-                       </div>
-                       <div style="margin-top: 16%;margin-left: -1%;" >
-                       
-                           <img id="zongtong_2_img" src="/static/img/turkey/zongtong_2.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
-                           <p style="margin-left:45%;margin-top: -47%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">阿卜杜拉·居尔</a></br>在任时间：2007.08-2014.08</br>出生日期：1950年10月29日</br>外文名：Abdullah Gul/Abdullah Gül</br>所属党派：<a href="">正义与发展党</a></br>毕业院校：伊斯坦布尔大学经济学院</p>
-                             
-                             
-
-                       </div>
-                       <div style="margin-top: 16%;">
-                           
-                          
-                           <img id="zongtong_3_img" src="/static/img/turkey/zongtong_3.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
-                           <p style="margin-left:45%;margin-top: -47%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">阿赫迈特·内吉代特·塞泽尔</a></br>在任时间：2000.05-2007.08</br>出生日期：1941年3月13日</br>外文名：Ahmet Necdet Sezer</br>所属党派：其他</br>毕业院校：安卡拉大学法学院</p>
-                             
-                       </div>
-                       <div style="margin-top: 6%;margin-left: 1%;">
-                           
-                           <a href="/news/president_total/">查看所有总统</a>
-                       </div>
-                       
-                    </div>
-                   <!-- 历任总理 -->
-
-                    <div class="panel-body" style="margin-left: 20%;float:left">
-                        <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
-                        <p class="personal_domain"><b style="margin-left:2%;" >历任总理</b>
-                        <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
-                        </p>
-                        
-                        <p style="font-size: 14px;margin-top: -1%;">任期：1~3年</p>
-                        <!-- <p style="font-size: 14px;margin-top: -2%;">5年</p> -->
-                        <p style="font-size: 14px;margin-top: -1%;">首任总理：<a>伊斯梅特·伊纳尼</a></p>
-                        <!-- <p style="font-size: 14px;margin-top: -2%;">穆斯塔法·凯末尔·阿塔图尔克 </p> -->
-                        <p style="font-size: 14px;margin-top: -1%;">现任总理：<a>毕纳利·耶尔德勒姆</a></p>
-                        <!-- <p style="font-size: 14px;margin-top: -2%;">雷杰普·塔伊普·埃尔多安 </p> -->
-                      
-                       
-                       <div id="zongli_xianren">
-                           
-                           <img id="zongli_1_img" src="/static/img/turkey/zongli_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
-                           <p style="margin-left:37%;margin-top: -39%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">毕纳利·耶尔德勒姆</a></br>在任时间：2016.05-至今</br>出生日期:1955年12月20日</br>外文名：Binali Yıldırım</br>所属党派：<a href="">正义与发展党</a></br>毕业院校:伊斯坦布尔理工大学海事学院/世界海事大学</p>
-
-                       </div>
-                       <div style="margin-top: 16%;margin-left: -1%;" >
-                       
-                           <img id="zongli_2_img" src="/static/img/turkey/zongli_2.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: -1%;margin-left: 2%;">
-                           <p style="margin-left:38%;margin-top: -39%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">艾哈迈德·达乌特奥卢</a></br>在任时间：2014.08-2016.05</br>出生日期:1959年2月26日</br>外文名：Ahmet Davutoglu</br>所属党派：<a href="">正义与发展党</a></br>毕业院校:海峡大学（Boğaziçi University）</p>
-                             
-
-                       </div>
-                       <div style="margin-top: 16%;">
-                           <img id="zongli_3_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
-                           <p style="margin-left:38%;margin-top: -39%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">雷杰普·塔伊普·埃尔多安</a></br>在任时间：2003.03—2014.08</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>所属党派：<a href="">正义与发展党</a></br>毕业院校：马尔马拉大学经贸学院</p>
-                           
-                       </div>
-                       <div style="margin-top: 6%;margin-left: 1%;">
-                           
-                           <a href="">查看所有总理</a>
-                       </div>
-                       
-                    </div>
-                    
-                     <!-- 政治右侧栏 -->
-                    <!-- <div class="right_col_zhengzhi" style="">
-	                	<div class="right_col_title">
-	                		<div style="margin-top: 2.3%;margin-left: 5%;float:left">
-	                			<p style="font-family: Microsoft YaHei;color: #104F87;font-size: 16px;">其他人还在看</p>
-	                		</div>
-	                		<div style="margin-top: 0%;margin-left: -1%;float：left;" >
-	                       
-	                           <img id="pujing_img" src="/static/img/turkey/pujing.png" alt="Photo" style="float：left;width: 80px;height: 100px;margin-top: 19%;margin-left: -43%;">
-                       			<p style="margin-left:22%;margin-top: -1%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">普京</a></p>
-	                        
 	                       </div>
-
-	                       <div style="margin-top: 0%;margin-left: -1%;float：left;margin-top: -60.2%;margin-left: 49%;" >
+	                       <div style="margin-top: 16%;margin-left: -1%;" >
 	                       
-	                           <img id="hamei_img" src="/static/img/turkey/hamei.png" alt="Photo" style="float：left;width:80px;height: 100px;">
-	                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">哈梅内伊</a></p>
-	                        
-	                       </div>
-	                		
-	                	</div>
-                	
-                	</div> -->
+	                           <img id="zongtong_2_img" src="/static/img/turkey/zongtong_2.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: -8%;margin-left: 1%;">
+	                           <p style="margin-left:45%;margin-top: -48.5%;width: 90%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">阿卜杜拉·居尔</a></br>在任时间：2007.08-2014.08</br>出生日期：1950年10月29日</br>外文名：Abdullah Gul/Abdullah Gül</br>所属党派：<a href="">正义与发展党</a></br>毕业院校：伊斯坦布尔大学经济学院</p>
+	                             
+	                             
 
-                	<div style="margin-top: 62%;">
-                		<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: -76.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
-                        <p class="personal_domain"><b style="margin-left: -75%;">政治制度</b>
+	                       </div>
+	                       <div style="margin-top: 16%;">
+	                           
+	                          
+	                           <img id="zongtong_3_img" src="/static/img/turkey/zongtong_3.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: -8%;margin-left: 0%;">
+	                           <p style="margin-left:45%;margin-top: -48.5%;width: 80%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">阿赫迈特·内吉代特·塞泽尔</a></br>在任时间：2000.05-2007.08</br>出生日期：1941年3月13日</br>外文名：Ahmet Necdet Sezer</br>所属党派：其他</br>毕业院校：安卡拉大学法学院</p>
+	                             
+	                       </div>
+	                       <div style="margin-top: -1%;margin-left: 1%;">
+	                           
+	                           <a href="/news/president_total/">查看所有总统</a>
+	                       </div> 
+						</div>                      
+                        <!--历任总理 -->
+                        <div style="float:left;margin-left: 20%;">
+							<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+	                        <p class="personal_domain"><b style="margin-left:2%;" >历任总理</b>
+	                        <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+	                        </p>
+	                        
+	                        <p style="font-size: 14px;margin-top: -1%;">任期：1~3年</p>
+	                        <!-- <p style="font-size: 14px;margin-top: -2%;">5年</p> -->
+	                        <p style="font-size: 14px;margin-top: -1%;">首任总理：<a>伊斯梅特·伊纳尼</a></p>
+	                        <!-- <p style="font-size: 14px;margin-top: -2%;">穆斯塔法·凯末尔·阿塔图尔克 </p> -->
+	                        <p style="font-size: 14px;margin-top: -1%;">现任总理：<a>毕纳利·耶尔德勒姆</a></p>
+	                        <!-- <p style="font-size: 14px;margin-top: -2%;">雷杰普·塔伊普·埃尔多安 </p> -->
+	                      
+	                       
+	                       <div id="zongli_xianren" style="margin-top: -1.5%;">
+	                           
+	                           <img id="zongli_1_img" src="/static/img/turkey/zongli_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
+	                           <p style="margin-left:37%;margin-top: -39%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">毕纳利·耶尔德勒姆</a></br>在任时间：2016.05-至今</br>出生日期:1955年12月20日</br>外文名：Binali Yıldırım</br>所属党派：<a href="">正义与发展党</a></br>毕业院校:伊斯坦布尔理工大学海事学院/世界海事大学</p>
+
+	                       </div>
+	                       <div style="margin-top: 8%;margin-left: -1%;" >
+	                       
+	                           <img id="zongli_2_img" src="/static/img/turkey/zongli_2.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: -1%;margin-left: 2%;">
+	                           <p style="margin-left:38%;margin-top: -39%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">艾哈迈德·达乌特奥卢</a></br>在任时间：2014.08-2016.05</br>出生日期:1959年2月26日</br>外文名：Ahmet Davutoglu</br>所属党派：<a href="">正义与发展党</a></br>毕业院校:海峡大学（Boğaziçi University）</p>
+	                             
+
+	                       </div>
+	                       <div style="margin-top: 2%;">
+	                           <img id="zongli_3_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 3%;margin-left: 1%;">
+	                           <p style="margin-left:38%;margin-top: -39%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">雷杰普·塔伊普·埃尔多安</a></br>在任时间：2003.03—2014.08</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>所属党派：<a href="">正义与发展党</a></br>毕业院校：马尔马拉大学经贸学院</p>
+	                           
+	                       </div>
+	                       <div style="margin-top: 1%;margin-left: 1%;">
+	                           
+	                           <a href="">查看所有总理</a>
+	                       </div>
+						</div>       
+                      	
+						<!-- 其他部分 -->
+						<div style="margin-top: 56%;" >
+                		    <div id="zhengzhizhidu" style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                        <p class="personal_domain">
+                            <b style="margin-left: 0%;">政治制度</b>
                              <p style="font-size: 14px;margin-top: -1%;margin-left: 3%;">以世俗主义为基础的议会共和制。<br>土耳其以世俗主义为指导，力图建设一个现代化的世俗国家，严禁宗教以任何形势干预政治。土耳其的国体是议会共和制，政体为议会制代民主制，国家特征为民主的、世俗的法治国家；致力于民族团结、社会安定和正义；尊重人权，忠于凯末尔主义；实行三权分立的政治制度，大国民议会为最高立法机构，宪法法院为最高司法机构，总理行使最高行政权。</p>
+                        </p>
 	                    
-                        <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 1.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0.3%;margin-top: 0%;margin-right: 0.6%;" ></div>
                         <p class="personal_domain"><b>重要政党</b>
 
                             <div style="float:left;">
@@ -539,44 +784,41 @@
                                  
                            </div>
 
-                           <div style="float:left;margin-top: 14%;margin-left: -53%;" >
+                           <div style="float:left;margin-top: 14%;margin-left: -54.4%;" >
                            
                                <img id="minzhudang_img" src="/static/img/turkey/minzhudang.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: 0%;margin-left: 0%;">
                                <p style="margin-left:50%;margin-top: -56%;width: 100%;" ><a href="http://baike.baidu.com/view/3367393.htm" style="font-size: 12px;margin-top: -1%;float：left;">人民民主党</a></br>创立人：具体不详</br>创立时间:2012年8月12日</br>外文名：Halkların Demokratik Partisi</br>现任主席：<a href="">塞拉哈丁·德米尔塔什</a></br><a href="">大国民议会</a>占有席位：59 / 550</p>
                                  
                            </div>
 
-                           <div style="margin-top: 14%;margin-left: -15.5%;float:left;" >
+                           <div style="margin-top: 14%;margin-left: -15.9%;float:left;" >
                            
                                <img id="minzudang_img" src="/static/img/turkey/minzudang.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-top: -1%;margin-left: 57%;">
                                <p style="margin-left:119%;margin-top: -66%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: -1%;float：left;">民族行动党</a></br>创立人：<a href="">拉赫桑·埃杰维特</a></br>创立时间:1985年11月14日</br>外文名：Democratic Left Party</br>现任主席：<a href="">德夫莱特·巴赫切利</a></br><a href="">大国民议会</a>占有席位：40 / 550</p>
 
                            </div>
-
+                        </p>
                          
-                               <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: -54.6%;margin-top: 27.5%;margin-right: 0.6%;" ></div>
-                                <p class="personal_domain" style="margin-top: 28.5%;"><b>政治时事</b>
-                                <!-- <div id="zhengzhishishi" style="float:left;margin-top: 2%;margin-left:2%;width:48%;height:200px;box-shadow: 0px 0px 5px #ddd inset;"> -->
-                                    <div id="zhengzhi_content" style="width:100%;height: auto;margin-left: 3%;">
-                                        
-                                    </div>
-                                        
+	                       <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: -57.6%;margin-top: 27.5%;margin-right: 0.6%;" ></div>
+	                        <p class="personal_domain" style="margin-top: 28.5%;">
+	                            <b>政治时事</b>
+	                            <div id="zhengzhi_content" style="width:100%;height: auto;margin-left: 3%;">
+	                                
+	                            </div>
+	                        </p>        
 
-                                    <!-- </div> -->
-                                    
-                           
-	                    
+	                	</div>
 
-                	</div>
-                      
+                    </div>   
                 </div>
             </div>
+            
             <div class="col-lg-12" id="jingji_id">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;" onclick="show_hide('jingji_show_hide')">
                         <div><img id="economic_img" src="/static/img/turkey/economic.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.3%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">经济</div>     
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" id="jingji_show_hide">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>概述</b>
                                         <p style="font-size: 14px;margin-top: -1%;margin-left: 1%;width: 90%;">土耳其2015年国内生产总值为7336亿美元。其大部分自由市场经济由其工业和服务业所推动，尽管其传统农业仍占就业的25％左右。积极的私有化计划减少了国家在基础工业，银行，运输和通信方面的干预。一个新兴的中产阶级企业家阶层为其经济注入了动力，扩大了除传统纺织品和服装以外的产品。汽车，石油化工和电子工业的重要性逐步上升，在土耳其的出口商品结构中超过了纺织品。
@@ -756,10 +998,10 @@
 
             <div class="col-lg-12" id="guofang_id">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;" onclick="show_hide('guofang_show_hide')">
                         <div><img id="guofang_img" src="/static/img/turkey/guofang.png" alt="Photo" style="width: 30px;height: 30px;margin-top: -0.3%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">国防</div>                       
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" id="guofang_show_hide">
                       <div class="panel-body">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>军队体系说明</b>
@@ -776,10 +1018,10 @@
 
              <div class="col-lg-12" style="width: 1100px;margin-left: -1.6%;" id="waijiao_id">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;" onclick="show_hide('waijiao_show_hide')">
                         <div><img id="waijiao_img" src="/static/img/turkey/waijiao.png" alt="Photo" style="width: 30px;height: 30px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">外交</div>                       
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" id="waijiao_show_hide">
                       <div class="panel-body">
                         <!-- <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>外交综述</b>
@@ -798,11 +1040,11 @@
 
               <div class="col-lg-12" style="width: 1100px;margin-left: -1.6%;" id="minzong_id">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;" onclick="show_hide('minzong_show_hide')">
                         <div><img id="people_img" src="/static/img/turkey/people.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">民族与宗教</div>                       
                     </div>
                     <!-- <div class="panel-body"> -->
-                      <div class="panel-body">
+                      <div class="panel-body" id="minzong_show_hide">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>民族</b>
                                        
@@ -947,15 +1189,35 @@
               </div>
               <div class="col-lg-12" style="width: 1100px;margin-left: -1.6%;" id="zuzhi_id">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
-                        <div><img id="orgnize_img" src="/static/img/turkey/orgnize.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">组织及地方力量</div>                       
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;" onclick="show_hide('zuzhi_show_hide')">
+                        <div><img id="orgnize_img" src="/static/img/turkey/orgnize.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">组织</div>                       
                     </div>
                     <!-- <div class="panel-body"> -->
-                      <div class="panel-body">
+                      <div class="panel-body" id="zuzhi_show_hide">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
-                                    <p class="personal_domain" style="margin-top: 0%;"><b>组织及地方力量关系图</b>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>组织关系图</b>
                                     
                                         <div id="zuzhi" style="float:left;width:100%;height:600px;">
+                                                  <!-- 树状图 -->
+                                        </div>
+                                                               
+                                    </p>
+                         
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-lg-12" style="width: 1100px;margin-left: -1.6%;" id="zuzhi_id">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;" onclick="show_hide('zuzhi_show_hide')">
+                        <div><img id="orgnize_img" src="/static/img/turkey/orgnize.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">地方力量</div>                       
+                    </div>
+                    <!-- <div class="panel-body"> -->
+                      <div class="panel-body" id="zuzhi_show_hide">
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>地方力量关系图</b>
+                                    
+                                        <div id="difangliliang" style="float:left;width:100%;height:600px;">
                                                   <!-- 树状图 -->
                                         </div>
                                                                
@@ -966,13 +1228,14 @@
                 </div>
               </div>
 
+
               <div class="col-lg-12" style="width: 1100px;margin-left: -1.6%;" id="china_id">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;" onclick="show_hide('china_show_hide')">
                         <div><img id="china_img" src="/static/img/turkey/china.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.2%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">中国利益</div>                       
                     </div>
                     <!-- <div class="panel-body"> -->
-                      <div class="panel-body">
+                      <div class="panel-body" id="china_show_hide">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>华人与华侨</b>
                                        <!-- 树状图 -->
@@ -2081,7 +2344,7 @@
                 },
                 tooltip : {
                     trigger: 'item',
-                    formatter: '{a} : {b}'
+                    formatter: '成立时间: {a}<br/>领导人:{b}<br/>名称:{c}'
                 },
                 toolbox: {
                     show : true,
@@ -2094,7 +2357,7 @@
                 legend: {
                     x: 'left',
                     // y: '-20',
-                    data:['组织及地方力量','土耳其地方极端组织','国际恐怖组织','东突&疆独组织','土耳其地方力量','反华势力']
+                    data:['组织及地方力量','土耳其地方极端组织','国际恐怖组织','东突&疆独组织','反华势力']
                 },
                 series : [
                     {
@@ -2113,9 +2376,6 @@
                             },
                             {
                                 name: '东突&疆独组织'
-                            },
-                            {
-                                name:'土耳其地方力量'
                             },
                             {
                                 name:'反华势力'
@@ -2160,7 +2420,7 @@
                             {category:1, name: '土耳其地方极端组织',value : 2},
                             {category:2, name: '国际恐怖组织',value : 3},
                             {category:3, name: '东突&疆独组织',value : 3},
-                            {category:4, name: '土耳其地方力量',value : 7},
+                           
                             {category:5, name: '反华势力',value : 5},
 
                             {category:1, name: '库尔德工人党',value : 8},
@@ -2177,17 +2437,6 @@
                             {category:3, name: '东突教育与互助协会',value : 7},
                             {category:3, name: '东突青年协会',value : 5},
                             {category:3, name: '东突文化与团结协会',value : 8},
-
-                            {category:4, name: '土耳其商人和工业家联合会',value : 9},
-                            {category:4, name: '公共部门工会联合会',value : 4},
-                            {category:4, name: '革命工会联合会',value : 4},
-                            {category:4, name: '独立工商者和商人协会',value : 1},
-                            {category:4, name: '道德权利工人联合会',value : 2},
-                            {category:4, name: '土耳其雇主联合会',value : 3},
-                            {category:4, name: '土耳其劳工联合会',value : 3},
-                            {category:4, name: '土耳其工业家和商人协会',value : 7},
-                            {category:4, name: '土耳其商业和商品交易所联合会',value : 5},
-
                             {category:5, name: '法轮功组织',value : 8},
 
                         ],
@@ -2211,18 +2460,6 @@
                             {source : '东突教育与互助协会', target : '东突&疆独组织', weight : 1},
                             {source : '东突青年协会', target : '东突&疆独组织', weight : 6},
                             {source : '东突文化与团结协会', target : '东突&疆独组织', weight : 1},
-
-                            {source : '土耳其商人和工业家联合会', target : '土耳其地方力量', weight : 1},
-
-                            {source : '公共部门工会联合会', target : '土耳其地方力量', weight : 1},
-                            {source : '革命工会联合会', target : '土耳其地方力量', weight : 1},
-                            {source : '独立工商者和商人协会', target : '土耳其地方力量', weight : 1},
-                            {source : '道德权利工人联合会', target : '土耳其地方力量', weight : 1},
-                            {source : '土耳其雇主联合会', target : '土耳其地方力量', weight : 6},
-                            {source : '土耳其劳工联合会', target : '土耳其地方力量', weight : 1},
-
-                            {source : '土耳其工业家和商人协会', target : '土耳其地方力量', weight : 1},
-                            {source : '土耳其商业和商品交易所联合会', target : '土耳其地方力量', weight : 1},
                             {source : '法轮功组织', target : '反华势力', weight : 6}
                         ]
                     }
@@ -2251,6 +2488,146 @@
         }
     );    
 </script>
+
+
+<!-- 地方力量 -->
+
+<script type="text/javascript">
+    require(  
+            [  
+                'echarts'  
+            ],  
+    function (ec) {  
+    
+      var myChart = echarts.init(document.getElementById('difangliliang'));
+      var ecConfig = require('echarts/config'); //放进require里的function{}里面
+      var zrEvent = require('zrender/tool/event');
+        // var myChart = echarts.init(document.getElementById('zuzhi'));
+        var option = {
+                title : {
+                    // text: '组织及地方力量关系图',
+                    subtext: '点击节点可查看详情',
+                    x:'right',
+                    y:'bottom'
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: '名称:{b}<br/>成立时间: {a}<br/>领导人:{c}'
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        restore : {show: true},
+                        magicType: {show: true, type: ['force', 'chord']},
+                        saveAsImage : {show: true}
+                    }
+                },
+                legend: {
+                    x: 'left',
+                    // y: '-20',
+                    data:['土耳其地方力量']
+                },
+                series : [
+                    {
+                        type:'force',
+                        name : "名称",
+                        ribbonType: false,
+                        categories : [
+                           
+                            {
+                                name:'土耳其地方力量'
+                            }
+                        ],
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    textStyle: {
+                                        color: '#333'
+                                    }
+                                },
+                                nodeStyle : {
+                                    brushType : 'both',
+                                    borderColor : 'rgba(255,215,0,0.4)',
+                                    borderWidth : 1
+                                },
+                                linkStyle: {
+                                    type: 'curve'
+                                }
+                            },
+                            emphasis: {
+                                label: {
+                                    show: false
+                                    // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+                                },
+                                nodeStyle : {
+                                    //r: 30
+                                },
+                                linkStyle : {}
+                            }
+                        },
+                        useWorker: false,
+                        minRadius : 15,
+                        maxRadius : 25,
+                        gravity: 1.1,
+                        scaling: 1.1,
+                        roam: 'move',
+                        nodes:[
+                            {category:0, name: '土耳其地方力量', value : 10},
+                            {category:0, name: '土耳其商人和工业家联合会',value : 9},
+                            {category:0, name: '公共部门工会联合会',value : 4},
+                            {category:0, name: '革命工会联合会',value : 4},
+                            {category:0, name: '独立工商者和商人协会',value : 1},
+                            {category:0, name: '道德权利工人联合会',value : 2},
+                            {category:0, name: '土耳其雇主联合会',value : 3},
+                            {category:0, name: '土耳其劳工联合会',value : 3},
+                            {category:0, name: '土耳其工业家和商人协会',value : 7},
+                            {category:0, name: '土耳其商业和商品交易所联合会',value : 5},
+
+
+                        ],
+                        links : [
+                            
+                            {source : '土耳其商人和工业家联合会', target : '土耳其地方力量', weight : 1},
+
+                            {source : '公共部门工会联合会', target : '土耳其地方力量', weight : 1},
+                            {source : '革命工会联合会', target : '土耳其地方力量', weight : 1},
+                            {source : '独立工商者和商人协会', target : '土耳其地方力量', weight : 1},
+                            {source : '道德权利工人联合会', target : '土耳其地方力量', weight : 1},
+                            {source : '土耳其雇主联合会', target : '土耳其地方力量', weight : 6},
+                            {source : '土耳其劳工联合会', target : '土耳其地方力量', weight : 1},
+
+                            {source : '土耳其工业家和商人协会', target : '土耳其地方力量', weight : 1},
+                            {source : '土耳其商业和商品交易所联合会', target : '土耳其地方力量', weight : 1}
+                        ]
+                    }
+                ]
+            };
+            var ecConfig = require('echarts/config');
+            function focus(param) {
+                var data = param.data;
+                var links = option.series[0].links;
+                var nodes = option.series[0].nodes;
+                if (
+                    data.source !== undefined
+                    && data.target !== undefined
+                ) { //点击的是边
+                    var sourceNode = nodes.filter(function (n) {return n.name == data.source})[0];
+                    var targetNode = nodes.filter(function (n) {return n.name == data.target})[0];
+                    console.log("选中了边 " + sourceNode.name + ' -> ' + targetNode.name + ' (' + data.weight + ')');
+                } else { // 点击的是点
+                    console.log("选中了" + data.name + '(' + data.value + ')');
+                    window.open('/news/turkey_org/');
+                }
+            }
+            myChart.on(ecConfig.EVENT.CLICK, focus)
+            
+            myChart.setOption(option); 
+        }
+    );    
+</script>
+
+
 
 <!-- 外交关系 -->
 <script type="text/javascript">
@@ -2391,7 +2768,7 @@
 
    
     </script>
-
+<script src="../../static/js/turkey_info.js" type="text/javascript"></script>
 <script src="../../static/js/turkey_info_zixun.js" type="text/javascript"></script>
 
 {% endblock content %}
