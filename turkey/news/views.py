@@ -3017,8 +3017,48 @@ def emergency():
 
 @mod.route('/turkey_emergency/')
 def turkey_emergency():
-    """返回话题管理页面
-    """
+    
     return render_template('index/turkey_emergency.html')
 
+@mod.route('/show_keyword/')
+def show_key_ajax():
+    f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","r")
+    results = f.read()
+    f.close()
+    return results
 
+
+@mod.route('/submit_keyword/')
+def submit_key_ajax():
+    keyword = request.args.get('key','')
+    new_record = {}
+    new_record['key'] = keyword
+    now = datetime.datetime.now()
+    otherStyleTime = now.strftime("%Y-%m-%d %H:%M")
+    new_record['time'] = otherStyleTime
+    f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","r")
+    results = json.loads(f.read())
+    results.append(new_record)
+    f.close()
+    f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","w")
+    results = json.dumps(results)
+    f.write(results)
+    f.close()
+    return results
+
+@mod.route('/delete_keyword/')
+def delete_key_ajax():
+    keyword = request.args.get('key','')
+    f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","r")
+    results = json.loads(f.read())
+    f.close()
+    for i in range(len(results)):
+        if results[i]["key"].encode('utf-8') == keyword.encode('utf-8'):
+            print results[i]["key"].encode('utf-8')
+            del results[i]
+            break
+    f = open("/home/ubuntu2/GuoJia/Turkey/turkey/turkey/news/keyword.json","w")
+    results = json.dumps(results)
+    f.write(results)
+    f.close()
+    return results
