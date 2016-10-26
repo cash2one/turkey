@@ -116,7 +116,7 @@
                 <!--风土人情详细内容-->
                 <div class="tab-pane fade" id="local_conditions">
                     <!-- <img id="fengturenqing" src="/static/img/fengturenqing.png" style="margin-top:10px;width: 100%;height:600px;"> -->
-                      <div class="news_box" style="width:100%;height:200px;">
+                      <div class="news_box" style="width:100%;height:180px;">
                           <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 30px;" >
                             </div>
                             <p class="personal_domain" style="margin-top: 30px;" ><b style="    margin-left: 20px;">宗教信仰</b></p>
@@ -125,7 +125,7 @@
                       </div>
 
 
-                      <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:370px;">
+                      <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:365px;">
                           <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 30px;margin-top:30px;" >
                             </div>
                             <p class="personal_domain" style="margin-top: 30px;" ><b style="    margin-left: 20px;">传统节日</b></p>
@@ -158,7 +158,7 @@
                       </div>
 
 
-                       <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:350px;">
+                       <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:340px;">
                           <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 30px;margin-top:30px;" >
                             </div>
                             <p class="personal_domain" style="margin-top: 30px;" ><b style="    margin-left: 20px;">传统文化</b></p>
@@ -186,7 +186,7 @@
                       </div>
 
 
-                         <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:200px;">
+                         <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:210px;">
                           <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 30px;margin-top:30px;" >
                             </div>
                             <p class="personal_domain" style="margin-top: 30px;" ><b style="    margin-left: 20px;">建筑</b></p>
@@ -1075,14 +1075,20 @@
 <script type="text/javascript">
 	function change_label1()
 	{		
+        // $('#friend_rank_detail').append(html);
 		$('#myTabDrop1').empty();
-		document.getElementById('myTabDrop1').innerHTML = "极端组织与反华势力";
+        var html= '极端组织与反华势力<b class="caret"></b>'
+        $('#myTabDrop1').append(html);
+		// document.getElementById('myTabDrop1').innerHTML = "极端组织与反华势力";
 	}
 		function change_label2()
 	{
+        $('#myTabDrop1').empty();
+        var html= '地方力量<b class="caret"></b>'
+        $('#myTabDrop1').append(html);
 		
-		$('#myTabDrop1').empty();
-		document.getElementById('myTabDrop1').innerHTML = "地方力量";
+		// $('#myTabDrop1').empty();
+		// document.getElementById('myTabDrop1').innerHTML = "地方力量";
 	}
 </script>
 

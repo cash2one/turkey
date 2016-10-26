@@ -4,11 +4,8 @@
 {% block head_css %}
 
 <!--定义css-->
-<style type="text/css">
-	
 
-</style>
-   <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css"/>
     <link rel="stylesheet" href="/static/css/bootstrap-table.css"/>
@@ -238,10 +235,7 @@
 						    <input id="key_word" class="form-control  input-lg" type="text" placeholder="请输入访问议题关键词"  onchange="check_keyword();" onkeypress="if(event.keyCode==13){ check_keyword();}" style="width:37.5%;margin-left:10%;height:40px">
 						    <img src="/static/img/star.png" width="10px" height="10px"  style="float:left;margin-left: 61%;margin-top: -30px;">
 						</div>
-					          
-					<!-- 	<div class="form-group">
-
-						</div>    -->
+			
 					        
 					        <!-- button默认input的回车事件 -->
 					    <linkbutton class="btn btn-primary btn-lg" onclick="check_all()" style="margin-top:30px;margin-left:50%;width: 100px;height: 40px;" > 搜索
@@ -263,33 +257,6 @@
     </div>
 
     <div class="panel-body">
-    	<!-- <table data-toggle="table">
-		    <thead>
-		        <tr>
-		            <th>起始日期</th>
-		            <th>终止日期</th>
-		            <th>国    家</th>
-		            <th>城    市</th>
-		            <th>关 键 词</th>
-		            <th>其    他</th>
-		        </tr>
-		    </thead>
-		    <tbody>
-		        <tr>
-		            <td>2016-01-11</td>
-		            <td>2016-01-30</td>
-		            <td>土耳其    </td>
-		            <td>安卡拉    </td>
-		            <td>一带一路  </td>
-		            <td><a href="">查看详情</a></td>
-		        </tr>
-		       <!--  <tr>
-		            <td>2</td>
-		            <td>Item 2</td>
-		            <td>$2</td>
-		        </tr> -->
-		    <!-- </tbody> -->
-		<!-- </table> --> 
 		<table id="keyword_table" class="table table-hover table-condensed"></table>
     </div>
 </div>
@@ -386,12 +353,14 @@
     <!-- </div> -->
     <!-- /.modal -->
 <!-- </div> -->
+
 <!--将导航下拉部分隐藏-->
+
    <script type="text/javascript">
 		window.onload=changetype(); 
 		function changetype()
 			{
-				console.log('aaaaaa');
+				// console.log('aaaaaa');
 				document.getElementById("sub_one").style.display='none';  
   				document.getElementById("sub_two").style.display='none';
   				document.getElementById("sub_three").style.display='none'; 
@@ -401,9 +370,10 @@
 
 	</script>
 
+	<!-- 搜索记录表 -->
 	<script type="text/javascript">
-		console.log('table');
-	var key_data=[{"begin_time":"2016-01-11","end_time":"2016-10-12","country":"土耳其","city":"安卡拉","keyword":"一带一路"}];
+		// console.log('table');
+	    var key_data=[{"begin_time":"2016-01-11","end_time":"2016-10-12","country":"土耳其","city":"安卡拉","keyword":"一带一路","detail":"查看详情"},{"begin_time":"2016-04-11","end_time":"2016-5-12","country":"土耳其","city":"伊斯坦布尔","keyword":"恐怖袭击","detail":"查看详情"}];
 			
   			 $('#keyword_table').bootstrapTable({
                   // url:show_key_url,
@@ -456,6 +426,13 @@
                     {
                         title: "关键词",
                         field: "keyword",
+                        sortable: true,
+                        align: "center",//水平
+                        valign: "middle",//垂直
+                    },
+                       {
+                        title: "查看详情",
+                        field: "detail",
                         sortable: true,
                         align: "center",//水平
                         valign: "middle",//垂直
