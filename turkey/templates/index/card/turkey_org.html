@@ -170,6 +170,8 @@
     <script src="{{ url_for('static', filename='js/exporting.js') }}"></script>
     <!--<script src="/static/css/js/echarts-all.js"></script>-->
     <script src="/static/echarts/echarts.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0ECXIPy41grtI3jUXqQMgILaG1vKUiLo"></script>
+
 {% endblock head_js %}
 
 {% block content %}
@@ -261,17 +263,15 @@
                 <div class="panel panel-default">
                     <div>
                         <div class="panel-heading" style="background-color: #31708f;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
-                            <div>
-                            <!-- <img id="political_img" src="/static/img/turkey/political.png" alt="Photo" style="width: 30px;height: 25px;margin-top: -0.5%;"> -->
-                            <!-- <span id="relation_href" style="float:right;cursor:pointer;"><u>查看详情</u></span> -->库尔德斯坦工人党</div>
+                            <div>库尔德斯坦工人党</div>
                         </div>
                         <!-- 历任总统 -->
                         <div class="panel-body" style="float: left;width:80%">
                             <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                             <p class="personal_domain" style='margin-bottom:12px' ><b>政党基本信息</b>
-                            <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+                           
                             </p>
-                            <HR width="93%" style="margin-top:-26px;border-top: 1px solid #969898"/>
+                            <HR width="93%" style="margin-left: -4%;margin-top:-26px;border-top: 1px solid #969898"/>
                             <span style="font-size: 14px;margin-top: -1%; margin-left:10px"><b>政党名称：</b>库尔德斯坦工人党</span>
                             <span style="font-size: 14px;margin-top: -1%;margin-left: 60px"><b>创立人：</b>阿卜杜拉·奥贾兰</span>
                             <span style="font-size: 14px;margin-top: -1%;margin-left: 45px"><b>成立时间：</b>1978年</span>
@@ -296,12 +296,32 @@
                         </div>
                     </div>
 
-                	<div>
-                		<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-top: 0%;margin-left:15px;margin-right: 0.6%;" ></div>
-                        <div style="margin-top: 29%">
-                        <p class="personal_domain" style='margin-bottom:15px'><b style="">党派发展历史</b>
+
+                    <div style="z-index:999999">
+                        <div  style="float: left;width:100%;height: 500px;margin-left: 1%;" >
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                        <p class="personal_domain" style='margin-bottom:12px' ><b>势力范围</b>
+                       
+                        </p>
+                       <!--  <HR width="93%" style="margin-left: -4%;margin-top:-26px;border-top: 1px solid #969898"/> -->
+                          <HR width="95%" style="margin-left: -4%;margin-top:-26px;margin-left:12px;border-top: 1px solid #969898"/> 
+                            
+                            <div id="map_org" style="width: 90%;height: 400px;margin-left:3%">
+                                
+                            </div>
                         </div>
-                        <HR width="96%" style="margin-top:-28px;margin-left:25px;border-top: 1px solid #969898"/>
+                        
+                    </div>
+                    </div>
+                    
+
+
+                	<div style="margin-top: -4%;">
+                		<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-top: 0%;margin-left:1%;margin-right: 0.6%;" ></div>
+                        <div style="margin-top: 79%;margin-left:45%;">
+                        <p class="personal_domain" style='margin-bottom:15px'><b style="    margin-left: -77.5%;">党派发展历史</b>
+                        </div>
+                        <HR width="96%" style="margin-left: -4%;margin-top:-28px;margin-left:25px;border-top: 1px solid #969898"/>
                             <p style="font-size: 14px;margin-left: 3%;"><b>发展历程：</b></p>
                             <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify ">工人党的核心是一个原名“安卡拉民主爱国高等教育协会”（APOCUS）或“阿波会”（土耳其语：Apocular，“阿波主义者”）的组织，成员主要由学生组成，由阿卜杜拉·奥贾兰领导（“阿波”是他的昵称）。虽然该组织在安卡拉成立，但随后很快将焦点转向土耳其东南部地区与当地的广大库尔德族人口，组织开始成型。随着1978年10月27日“工人党独立宣言”正式发表，该组织改名为库尔德工人党。因其意识形态以共产主义为主，同时兼有库尔德民族主义，工人党很快卷入与右翼组织的冲突中。</p>
                             <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">1979年，穆罕默德·杰拉勒·布贾克（Mehmet Celal Bucak）被指“剥削农民”与“通敌”。工人党尝试暗杀他，但未成功。这是工人党第一次在公开场合进行的暴力活动。此举引发土耳其政治极端团体之间的激烈巷战。从1978至1982年，土耳其国家安全委员会记录在案的恐怖活动有43000多起。在冲突当中，土耳其前总理尼哈特·埃里姆于1980年被暗杀身亡。当年的军事政变很大程度上结束了冲突，工人党的党员被判死刑、徒刑或流亡叙利亚。</p>
@@ -359,81 +379,10 @@
         
 </div>
 
+ <script type="text/javascript" src="/static/js/map_org.js"></script>
 
 {% endblock content %}
 
-{% block tail_js %}
-    <script src="/static/echarts/echarts.js"></script>
-    <script type="text/javascript">
-        var name = "{{ topic }}";
-        var subevent_id = "{{ subevent_id }}";
-        var topicid= "{{ topic_id }}";
-        cluster_eva_min_size = "{{ cluster_eva_min_size }}";
-        var vsm = "{{ vsm }}"
-        $('#act_href').click(function(){
-            window.open("/news/?query=" + name);
-        });
-        $('#commtent_href').click(function(){
-            window.open("/cluster/?query=" + name + "&subevent_id="+ subevent_id);
-        });
-        $('#relation_href').click(function(){
-            window.open("/news/network/?query=" + name);
-        });
-        </script>
-    <script src="/static/js/overview.js"></script>
-    <script>
-    function drawSubeventPie(data){
-        var pie_data = [];
-        var One_pie_data = {};
-        for (var d in data){ 
-            d = data[d];
-            One_pie_data = {'value': d["count"], 'name': d["name"] + d["count"]};
-            pie_data.push(One_pie_data);        
-        }
 
-        var option = {
-            title : {
-                text: '社会活动主题占比图',
-                x:'center', 
-                y: 'bottom',
-                textStyle:{
-                fontWeight:'lighter',
-                fontSize: 13,
-                }        
-            },
-            toolbox: {
-                show : true,
-                feature : {
-                    mark : {show: true},
-                    dataView : {show: true, readOnly: false},
-                    restore : {show: true},            
-                    saveAsImage : {show: true}
-                }
-            },
-            calculable : true,
-            series : [
-                {
-                    name:'访问来源',
-                    type:'pie',
-                    radius : '50%',
-                    center: ['50%', '50%'],
-                    roseType : 'area',
-                    data: pie_data
-                }
-            ]
-        };
-            require(
-            [
-                'echarts',
-                'echarts/chart/pie'
-            ],
-            function (echarts) {
-                var myChart = echarts.init(document.getElementById('subeventpie'));
-                myChart.setOption(option);
-            });
-    }
-    </script>
-
-{% endblock tail_js %}
 
 {% endblock body %}
