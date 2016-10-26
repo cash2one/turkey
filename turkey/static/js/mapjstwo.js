@@ -5,8 +5,11 @@
     var map = new BMap.Map("allmap");
     var point = new BMap.Point(32.863, 39.937); //默认中心点
     var marker = new BMap.Marker(point);
-    map.centerAndZoom(new BMap.Point(32.863, 39.937), 10);
+    map.addControl(new BMap.NavigationControl());
+
+    map.centerAndZoom(new BMap.Point(32.863, 39.937), 8);
     map.enableScrollWheelZoom();
+
     var pt = new BMap.Point(32.863, 39.937);
     var myIcon = new BMap.Icon("/static/img/tutu.png", new BMap.Size(32,32),{anchor: new BMap.Size(10, 30)});
     var markers = new BMap.Marker(pt,{icon:myIcon});  // 创建标注

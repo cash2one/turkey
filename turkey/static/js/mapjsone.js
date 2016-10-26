@@ -6,6 +6,7 @@
         var map = new BMap.Map("container");
         var point = new BMap.Point(32.863,39.937); //默认中心点
         var marker = new BMap.Marker(point);
+        map.addControl(new BMap.NavigationControl());
         map.centerAndZoom(new BMap.Point(32.863,39.937), 7);
         map.enableScrollWheelZoom();
         function add_oval(centre,x,y)
