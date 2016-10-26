@@ -30,7 +30,6 @@ def turkey_detail():
 def turkey_org():
     return render_template('index/card/turkey_org.html')
 
-
 @mod.route('/turkey_index/')
 def turkey_index():
     return render_template('index/turkey_index.html')
@@ -43,10 +42,10 @@ def infor_search():
 def interview_detail():
     return render_template('index/interview_detail.html')
 
-# @mod.route('/mapchildren/')
-# def mapchildren():
-#     return render_template('index/mainmap/mapchildren.html')
-
+@mod.route('/interview_mapymm/')
+def interview_mapymm():
+    return render_template('index/interview_mapymm.html')
+  
 @mod.route('/person_detail/president_now')
 def person_detail_president_now():
     return render_template('index/card/person_detail_president_now.html')
@@ -74,6 +73,14 @@ def turkey_govorg():
 @mod.route('/turkey_powerdep')
 def turkey_powerdep():
     return render_template('index/card/turkey_powerdep.html')
+
+@mod.route('/turkey_companyymm')
+def turkey_companyymm():
+    return render_template('index/card/turkey_companyymm.html')
+
+@mod.route('/turkey_detailymm')
+def turkey_detailymm():
+    return render_template('index/card/turkey_detailymm.html')
 
 @mod.route('/turkey_info/')
 def turkey_info():

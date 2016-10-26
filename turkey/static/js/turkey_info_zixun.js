@@ -185,11 +185,11 @@ function draw_zhongzi_data(data){
 		    
 			 $("#zhongzi_table").append(html);
 
-    // }
+}
 	
 	
 
-}
+
 
 
 // function draw_zuzhi_data(zuzhi_data){

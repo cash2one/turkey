@@ -141,6 +141,24 @@
         border-right: 1px solid #CCCCCC;
     }
 
+    /*表格样式*/
+    	#org_chart th, td{
+    		height: 0px !important; 
+    		line-height: 1.3 !important;
+    	}
+		.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;text-align: left ;}
+		.tg td{font-family:Arial, sans-serif;font-size:12px !important;padding:0px 0px !important;border-style:solid;border-width:1px;overflow:hidden;	word-break:normal;border-color:#999;color:#444;}
+		.tg th{font-family:Arial, sans-serif;font-size:12px !important;font-weight:normal;padding:0px 0px !important;border-style:solid;border-width:1px;	overflow:hidden;word-break:normal;border-color:#999;color:black;background-color:#cbcefb;}
+		.tg .tg-4kqm{background-color:#dae2ee;vertical-align:center}
+		.tg .tg-480y{font-size:14px !important;font-family:Arial, Helvetica, sans-serif !important;text-align:center;vertical-align:center}
+		.tg .tg-yw4l{vertical-align:top}
+		.tg .tg-6k2t{vertical-align:top}
+		.tg1  {border-collapse:collapse;border-spacing:0;}
+		.tg1 td{font-family:Arial, sans-serif;font-size:12px;padding:5px 2.5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;text-align: left !important;}
+		.tg1 th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;padding: 5px 5px !important;height: 20px;line-height: 2;text-align: left !important;}
+		.tg1 .tg1-fs2w{font-weight:bold;background-color:#cbcefb;vertical-align:top;height: 20px;line-height: 2;}
+		.tg1 .tg1-yw4l{vertical-align:center}
+		a {cursor:pointer}
     </style>
     <link rel="stylesheet" href="/static/css/turkey_info_zixun.css">
     <!-- <link rel="stylesheet" href="/static/css/bootstrap.css"> -->
@@ -162,6 +180,8 @@
     <!--<script src="/static/css/js/echarts-all.js"></script>-->
     <script src="/static/echarts/echarts.js"></script>
 
+	<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+	<script type="text/javascript" src="/static/js/highcharts/exporting.js"></script>
     <script type="text/javascript">
         
         function show_hide(id_name){
@@ -1195,11 +1215,198 @@
                     <!-- <div class="panel-body"> -->
                       <div class="panel-body" id="zuzhi_show_hide">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
-                                    <p class="personal_domain" style="margin-top: 0%;"><b>组织关系图</b>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>组织列表</b></p>
                                     
-                                        <div id="zuzhi" style="float:left;width:100%;height:600px;">
-                                                  <!-- 树状图 -->
-                                        </div>
+                                      <div id="zuzhi" style="float:left;width:100%;">
+                                      	<table id="org_chart" class="tg" style="undefined;table-layout: fixed; width: 1038px">
+                                      	<colgroup>
+                                      		<col style="width: 100px">
+                                      		<col style="width: 60px">
+                                      		<col style="width: 80px">
+                                      		<col style="width: 100px">
+                                      		<col style="width: 100px">
+                                      		<col style="width: 100px">
+                                      		<col style="width: 65px">
+                                      		<col style="width: 39px">
+                                      		<col style="width: 74px">
+                                      		<col style="width: 136px">
+                                      		<col style="width: 148px">
+                                      	</colgroup>
+                                      	  <tr >
+                                      	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">组织名称</th>
+                                      	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">成立时间</th>
+                                      	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">领导人</th>
+                                      	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">历任领导人</th>
+                                      	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">势力地域分布</th>
+                                      	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">组织性质</th>
+                                      	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">组织结构</th>
+                                      	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">对华态度</th>
+                                      	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">土耳其政府态度</th>
+                                      	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">与政府、地方力量间的关系</th>
+                                      	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">相关事件</th>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-6k2t">库尔德工人党<br>（Partiya Karkerên Kurdistan）</td>
+                                      	    <td class="tg-6k2t">1978</td>
+                                      	    <td class="tg-6k2t">Cemil Bayik</td>
+                                      	    <td class="tg-6k2t">阿卜杜拉·奥贾兰、Cemil Bayi、 Kesire Yildirim Öcalan, Hakki Karaer</td>
+                                      	    <td class="tg-6k2t">土耳其东南部、伊拉克东北部、叙利亚东北部和伊朗西北部</td>
+                                      	    <td class="tg-6k2t">民族分裂势力（被美国国务院列为外国恐怖组织；被英国内务部列为非法组织；被欧盟共同外交与安全政策列为恐怖团体。）</td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t">不明确</td>
+                                      	    <td class="tg-6k2t">抵制</td>
+                                      	    <td class="tg-6k2t">该组织1980年被土政府取缔后转入地下活动，自1984年以来，一直在土东南部地区从事反政府活动，并多次与土政府军发生冲突，造成3万多人丧生。<a data-toggle="modal" data-target="#myModal1">
+                                      		查看更多</a></td>
+                                      	    <td class="tg-6k2t">从2004年起，库尔德工人党加紧了对伊拉克边境地区土耳其军队、警察与政府目标的攻击。安卡拉向美方增施压力，以获得军事打击伊拉克北部库尔德工人党基地的许可。<a data-toggle="modal" data-target="#myModal2">
+                                      		查看更多</a></td>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-yw4l">库尔德自由之鹰</td>
+                                      	    <td class="tg-yw4l">2004.7.29</td>
+                                      	    <td class="tg-yw4l">Bahoz Erdal（未公开，猜测）</td>
+                                      	    <td class="tg-yw4l">无</td>
+                                      	    <td class="tg-yw4l">活动范围在土耳其全境，多在安卡拉、伊斯坦布尔等大城市进行恐怖袭击。</td>
+                                      	    <td class="tg-yw4l">民族分裂势力</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l">抵制</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l">1.2010年6月8日，在伊斯坦布尔的Küçükçekmece区进行恐怖袭击，造成15名警察受伤。<a data-toggle="modal" data-target="#myModal3">
+                                      		查看更多</a></td>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-6k2t">伊斯兰国</td>
+                                      	    <td class="tg-6k2t">1999年</td>
+                                      	    <td class="tg-6k2t">首领（自称哈里发） 阿布·贝克尔·巴格达迪</td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t">主要位于伊拉克和叙利亚境内</td>
+                                      	    <td class="tg-6k2t">极端组织</td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t">反华</td>
+                                      	    <td class="tg-6k2t">抵制</td>
+                                      	    <td class="tg-6k2t">一方面，土耳其想利用IS铲除库尔德武装力量。另一方面，从宗教上来看，阿萨德的下台对土耳其有利，这样土耳其就可以从意识形态和地缘政治上，<a data-toggle="modal" data-target="#myModal4">查看更多</a></td>
+                                      	    <td class="tg-6k2t">2015年6月21日，叙利亚边境：库尔德小镇发生爆炸，造成34人死亡，IS宣称负责。2015年10月10日，安卡拉：超过100名和平示威人士在地铁站外被袭死亡，IS宣称负责。<a data-toggle="modal" data-target="#myModal5">查看更多</a></td>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-yw4l">灰狼组织(Grey Wolves)<br>(Ülkü Ocakları)<br>https://en.wikipedia.org/wiki/Grey_Wolves_(organization)</td>
+                                      	    <td class="tg-yw4l">1968</td>
+                                      	    <td class="tg-yw4l">Devlet Bahçeli (1997–今)</td>
+                                      	    <td class="tg-yw4l">Alparslan Türkeş (1968–199797)</td>
+                                      	    <td class="tg-yw4l">土耳其及北塞浦路斯</td>
+                                      	    <td class="tg-yw4l">极右翼组织</td>
+                                      	    <td class="tg-yw4l">无</td>
+                                      	    <td class="tg-yw4l">反华，支持疆独组织</td>
+                                      	    <td class="tg-yw4l">名义抵制，暗地支持</td>
+                                      	    <td class="tg-yw4l">土耳其约3.6%的选民是该组织支持者大概190万人</td>
+                                      	    <td class="tg-yw4l">2011年9月安卡拉警方搜查了安卡拉地区灰狼组织的40各处所，拘捕了 36，缴获大量枪支和刀具。据警方透露，他们计划向在平与民主党（BDP）发动...<a data-toggle="modal" data-target="#myModal6">查看更多</a></td>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-6k2t">叙利亚土库曼旅</td>
+                                      	    <td class="tg-6k2t">2012.8.7</td>
+                                      	    <td class="tg-6k2t">Ebu Bekir Muhammed Abbas</td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t">土耳其东南部、叙利亚北部及东北部</td>
+                                      	    <td class="tg-6k2t">叙利亚武装</td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t">支持</td>
+                                      	    <td class="tg-6k2t">同盟包括：土耳其军队、自由叙利亚军 反对：伊斯兰国、叙利亚政府军、库尔德人民保卫军</td>
+                                      	    <td class="tg-6k2t">2015年11月24日，土耳其军方在土叙边境击落一架俄罗斯战机，一名飞行员当场死亡，另一名飞行员跳伞，被叙利亚土库曼旅的一支射杀。</td>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-yw4l">人民保卫军（YPG）<br>（Halk Koruma Birlikleri）</td>
+                                      	    <td class="tg-yw4l">2011年</td>
+                                      	    <td class="tg-yw4l">Sîpan Hemo</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l">叙利亚北部、东北部，土叙边境</td>
+                                      	    <td class="tg-yw4l">民兵组织（叙利亚库尔德人政党民主联盟党（PYD）的下属军事组织）</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l">反对</td>
+                                      	    <td class="tg-yw4l">在土耳其和叙利亚边境地区，民兵组织“叙利亚库尔德大众保护组织”（YPG） 及其武装“民主联盟党”让土耳其很担心，害怕叙利亚北部完全被库尔德武装控制。<a href="http://news.sohu.com/20160629/n456862531.shtml" target="_blank">查看出处</a> </td>
+                                      	    <td class="tg-yw4l">2016年8月24日，土耳其展开名为“幼发拉底之盾行动”的军事攻势，土耳其军队协助亲土耳其武装分子夺取叙利亚北部边境城镇贾拉布鲁斯后，开始攻击附近的人民保护部队控制区。<a href=" https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%B0%91%E4%BF%9D%E8%AD%B7%E9%83%A8%E9%9A%8A" target="_blank">查看出处</a> </td>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-6k2t">东突基金会<br>（Doğu Türkistan Vakfı）</td>
+                                      	    <td class="tg-6k2t">1978.3.23</td>
+                                      	    <td class="tg-6k2t">Eser Türkistanlı Saka</td>
+                                      	    <td class="tg-6k2t">Yusuf Alptekin（1978-1986）；Rıza Bekin Paşa（1986-2010）；Ilgar Alptekin（2010-2012）；Mehmet İsa Artış（2012-2013.1.15）；Eser Türkistanlı Saka（2013.1.15至今）</td>
+                                      	    <td class="tg-6k2t">总部地址：Damat İbrahim Paşa Medresesi, Dede Efendi Caddesi, Vezneciler No:4  Fatih/İstanbul(法蒂赫/伊斯坦布尔) <br>联系方式：<br>Tel：0212 519 46 67<br>Fax：0212 519 46 67</td>
+                                      	    <td class="tg-6k2t">东突组织</td>
+                                      	    <td class="tg-6k2t">下设：基金会管理者、行政管理委员会、审计委员会  </td>
+                                      	    <td class="tg-6k2t">反华</td>
+                                      	    <td class="tg-6k2t">名义抵制，暗地支持</td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-yw4l">东突移民协会<br>（Doğu Türkistan Göçmenler Derneği）</td>
+                                      	    <td class="tg-yw4l">1960年</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l">总部地址：58. Bulvar Caddesi No:130/1 Zeytinburnu, 34025 Zeytinburnu/伊斯坦布尔, 土耳其 tel：+90 212 558 6963  Faks: +90 (212) </td>
+                                      	    <td class="tg-yw4l">东突组织</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l">反华</td>
+                                      	    <td class="tg-yw4l">名义抵制，暗地支持</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-6k2t">欧亚突厥协会联盟<br>（Avrasya Türk Dernekleri Federasyonu）</td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t">总部地址：Aksaray Mektebi Sokak 5A, 34093 伊斯坦布尔, 土耳其<br> tel：+90 212 558 6963 https://www.facebook.com/avrasyaturkderneklerifederasyonu/</td>
+                                      	    <td class="tg-6k2t">东突组织</td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t">反华</td>
+                                      	    <td class="tg-6k2t">名义抵制，暗地支持</td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-yw4l">东突教育与互助协会<br>（Doğu Türkistan Maarif ve Dayanışma Derneği）</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l">总部地址：Ordek Kasap Mah. Millet Caddesi Gulsen Apt No:108 D: 5 Capa/法蒂赫，伊斯坦布尔 <a data-toggle="modal" data-target="#myModal7">查看更多</a></td>
+                                      	    <td class="tg-yw4l">东突组织</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l">反华</td>
+                                      	    <td class="tg-yw4l">名义抵制，暗地支持</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-6k2t">东突青年协会<br>（Doğu Türkistan Gençlik ve Kültür Derneği）<br>http://dtder.com/</td>
+                                      	    <td class="tg-6k2t">2006年 </td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t">总部地址：Nuripaşa Mah. 63/1 Sokak No:4-6A Zeytinburnu / 伊斯坦布尔 <br> Tel：0 212 558 01 00    0 539 972 76 25        Fax：0 212 558 01 00 </td>
+                                      	    <td class="tg-6k2t">东突组织</td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t">反华</td>
+                                      	    <td class="tg-6k2t">名义抵制，暗地支持</td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	    <td class="tg-6k2t"></td>
+                                      	  </tr>
+                                      	  <tr>
+                                      	    <td class="tg-yw4l">东突文化与团结协会http://www.gokbayrak.com/sayfa.asp?id=14</td>
+                                      	    <td class="tg-yw4l">1989年 </td>
+                                      	    <td class="tg-yw4l">Seyit TÜMTÜRK</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	    <td class="tg-yw4l">总部：Hoca Ahmet Yesevi Mh. Türkistan Evleri 44.Sk. No:28/A Kocasinan<a data-toggle="modal" data-target="#myModal8">查看更多</a>
+                                      	    </td>
+                                      	    <td class="tg-yw4l">东突组织</td>
+                                      	    <td class="tg-yw4l">领导层设有一个会长两个副会长，一个秘书长一个副秘书长，一个会计一个副会计</td>
+                                      	    <td class="tg-yw4l">反华</td>
+                                      	    <td class="tg-yw4l">名义抵制，暗地支持</td>
+                                      	    <td class="tg-yw4l">会长Seyit TÜMTÜRK与世界维吾尔大会有密切联系，在世维会担任副部长，负责世维会在土耳其活动的事务。</td>
+                                      	    <td class="tg-yw4l"></td>
+                                      	  </tr>
+                                      	</table>
+                                      </div>
                                                                
                                     </p>
                          
@@ -1215,10 +1422,88 @@
                     <!-- <div class="panel-body"> -->
                       <div class="panel-body" id="zuzhi_show_hide">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
-                                    <p class="personal_domain" style="margin-top: 0%;"><b>地方力量关系图</b>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>地方力量列表</b>
                                     
-                                        <div id="difangliliang" style="float:left;width:100%;height:600px;">
-                                                  <!-- 树状图 -->
+                                        <div id="difangliliang" style="float:left;width:100%;">                               
+                                        	<table class="tg1" style="undefined;table-layout: fixed; width: 1030px">
+                                        	<colgroup>
+                                        	<col style="width: 407px">
+                                        	<col style="width: 623px">
+                                        	</colgroup>
+                                        	  <tr>
+                                        	    <th class="tg1-fs2w" colspan="2">1.土耳其商人和工业家联合会或TUSKON （Confederation of Businessmen and Industrialists of Turkey or TUSKON）</th>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-yw4l">领导人：Rızanur Meral<br>成立时间：2005年<br>解散时间：2016年7月27日<br>类型：雇主联盟<br>总部：伊斯坦布尔<br>网站：www.tuskon.org:（已经被关闭）</td>
+                                        	    <td class="tg1-yw4l">
+                                        	    	该组织是土耳其的雇主组织，约有4万名成员。 它成立于2005年由七个商业联合会。 90％的TUSKON成员是雇员不到50人的小型或中型企业。 TUSKON参与了在地方，区域，国家和全球各级的所有决策者的游说。 SANKO汽车集团董事总经理Rızanur Meral是TUSKON的最后一位总裁。<br>TUSKON与土耳其传教士FethullahGülen的伊斯兰葛兰运动密切相关。该运动控制了世界各地的许多企业和组织，他们的许多领导人有TUSKON的成员，如亚洲银行[4] TUSKON在2016年7月的政变企图后关闭。
+
+                                        	    </td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-fs2w" colspan="2">2.公共部门工会联合会或KESK （Confederation of Public Sector Unions or KESK） </td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-yw4l">负责人：Lami OZGEN, Sazyie KOSE,共同负责<br>土耳其语：KamuEmekçileriSendikalarıKonfederasyonu<br>成立于1995年12月 <br>隶属ITUC，ETUC<br>办公地点：安卡拉，土耳其<br>网站: www.kesk.org.tr</td>
+                                        	    <td class="tg1-yw4l">暂无简介信息</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-fs2w" colspan="2">3.革命工会联合会或DISK（Confederation of Revolutionary Workers Unions or DISK）</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-yw4l">土耳其语：TürkiyeDevrimciİşçiSendikalarıKonfederasyonu <br>负责人：Tayfun GORGUN<br>成立：1967年<br>会员：327,000<br>隶属：ITUC，ETUC，TUAC<br>办公地点：伊斯坦布尔，土耳其<br>网站：www.disk.org.tr</td>
+                                        	    <td class="tg1-yw4l">土耳其进步工会联合会是土耳其四个主要的全国工会中心之一。 它成立于1967年，作为土耳其工会联合会的一个分手联盟，成员有327,000。DİSK隶属于国际工会联合会和欧洲工会联合会。</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-fs2w" colspan="2">4.独立工商者和商人协会或MUSIAD （Independent Industrialists' and Businessmen's Association or MUSIAD）</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-yw4l">主席：Nail OLPAK<br>成立时间：1990年5月5日<br>网址：http://www.musiad.org.tr/en</td>
+                                        	    <td class="tg1-yw4l">该组织是一个非政府组织，主要由1990年5月5日由一群土耳其商人创办的中小型企业组成。协会的目标是帮助土耳其达到保护地方和普遍价值的国家的状态;在其区域有效，在全世界受到尊重并且繁荣;确保土耳其和世界在社会，文化和技术部门的发展。<br>根据2015年的记录，MÜSİAD在土耳其有85个联系点，在63个不同国家有159个联络点，有11,000多名成员。协会持有ISO 9001：2000质量认证。MÜSİAD组织了一年一度的国防工业博览会，名为高科技港口。第二届展会于2015年10月6 - 8日在卡塔尔多哈举行，并促进了土耳其和卡塔尔之间数十亿美元的贸易。MÜSİAD还支持土耳其的住房开发商和投资者组织（KONUTDER）展览，以增加与来自海湾的投资者的房地产贸易关系。</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-fs2w" colspan="2">5.道德权利工人联合会或Hak-Is（Moral Rights Workers Union or Hak-Is）</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-yw4l">土耳其语：TürkiyeHakİşçiSendikalarıKonfederasyounu<br>成立于：1976年10月22日<br>负责人：Mahmut ARSLAN<br>成员340,000<br>隶属：ITUC，ETUC<br>办公地点：安卡拉，土耳其<br>网站：www.hakis.org.tr</td>
+                                        	    <td class="tg1-yw4l">暂无简介信息</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-fs2w" colspan="2">6.土耳其雇主联合会或TISK（Turkish Confederation of Employers' Unions or TISK）</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-yw4l">负责人：Tugrul KUDATGOBILIK<br>地址：安卡拉<br>电话号码 :03124397717<br>邮箱:tisk@tisk.org.tr<br>网址：http://tisk.org.tr/en/</td>
+                                        	    <td class="tg1-yw4l">暂无简介信息</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-fs2w" colspan="2">7.土耳其劳工联合会（Turkish Confederation of Labor or Turk-Is</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-yw4l">土耳其语：TürkiyeIşçiSendikalari Konfederasyonu<br>成立：1952年  <br>负责人：Ergun ATALAY<br>会员：175万（声称）<br>隶属：ITUC，ETUC，TUAC<br>办公地点：安卡拉，土耳其<br>网站：www.turkis.org.tr</td>
+                                        	    <td class="tg1-yw4l">土耳其工会联合会（TÜRK-İŞ）是土耳其四个主要的全国工会中心之一。 它创建于1952年，是四个中心中最古老的，是1980年军事政变的唯一工会组织。TÜRK-İŞ声称拥有175万会员资格，隶属于国际工会联合会和欧洲工会联合会。 它也是经合组织工会咨询委员会的成员。</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-fs2w" colspan="2">8.土耳其商人和工匠联合会或TESK （Turkish Confederation of Tradesmen and Craftsmen or TESK）</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-yw4l">负责人：Bendevi PALANDOKEN <br>网址：http://www.tesk.org.tr/tr/yeni/indexhaber2.php</td>
+                                        	    <td class="tg1-yw4l">暂无简介信息</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-fs2w" colspan="2">9.土耳其工业家和商人协会或TUSIAD（Turkish Industrialists' and Businessmen's Association or TUSIAD）</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-yw4l">负责人：Muharrem YILMAZ<br>成立：1971年<br>总部：土耳其伊斯坦布尔<br>世界各地设有6个代表处：安卡拉，布鲁塞尔，华盛顿特区，巴黎，柏林和北京<br>网址：http://tusiad.org/tr/</td>
+                                        	    <td class="tg1-yw4l">TUSIAD是土耳其工商协会（土耳其语：TÜSİAD），是土耳其的顶级商业协会。一家独立的非政府组织，致力于通过私营企业促进公共福利。 <br>TUSIAD支持在土耳其和国外的重要社会和经济问题的独立研究和政策讨论。与美国商业圆桌会议一样，TUSIAD由土耳其主要工业和服务公司的CEO和高管组成，包括全球财富500强公司中的那些公司。土耳其媒体称这个群体是“代表土耳其的世俗精英”。</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-fs2w" colspan="2">10.土耳其商业和商品交易所联合会或TOBB（Turkish Union of Chambers of Commerce and Commodity Exchanges or TOBB）</td>
+                                        	  </tr>
+                                        	  <tr>
+                                        	    <td class="tg1-yw4l">成立：1950年3月8日<br>负责人：M. Rifat HISARCIKLIOGLU<br>类型：NGO<br>用途：商业，工业和海运商务<br>总部：安卡拉，土耳其<br>网站:www.tobb.org.tr</td>
+                                        	    <td class="tg1-yw4l">暂无简介信息</td>
+                                        	  </tr>
+                                        	</table>
                                         </div>
                                                                
                                     </p>
@@ -1411,6 +1696,8 @@
                           <div id="zhongzijigou_id" style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>中资机构</b>
                                     <div id="zhongzi_table" style="width:100%;height: auto;" >
+                                    	<div class="shadow" style="width: 458px; height: 350px;margin-left: 250px;border: 1px solid #2d2c41;" id='divHighcharts1'>
+                                    	        </div>
                                         
                                     </div>
                                      
@@ -1424,8 +1711,193 @@
         </div>
 
 
-        
+
+
 </div>
+<!-- 模态框-->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					库尔德工人党与政府、地方力量间的关系
+				</h4>
+			</div>
+			<div class="modal-body">
+				该组织1980年被土政府取缔后转入地下活动，自1984年以来，一直在土东南部地区从事反政府活动，并多次与土政府军发生冲突，造成3万多人丧生。奥贾兰被捕后，该组织曾多次宣布单方面停火，该组织在土境内的反政府武装活动逐渐减弱。但土政府认为这是一种缓兵伎俩，继续对其实行清剿。<br>伊战前，土军曾多次进入伊拉克北部地区实施越境军事打击。但伊战后，土军还未采取过大规模越境军事行动。<br>2004年5月底，该组织发表声明，宣布结束长达近5年的停火，重新对土军进行袭击。随后，土境内爆炸袭击活动不断。特别是今年以来，大批库尔德工人党武装人员从伊北部地区越过伊土边界，在土东部和东南部地区袭击土军事目标。为遏止库尔德工人党武装的袭击活动，打击其有生力量，土军方随即调动安全部队进行围剿。<br>土军方还于2007年4月12日宣布将越境打击活跃在伊北部的该组织武装。尽管遭到美国和伊拉克的反对，土实施越境军事打击的决心没有动摇。<br>2007年10月9日，土反恐最高委员会发表声明称，土将采取包括越境军事行动在内的各种措施。土总理埃尔多安12日表示，土耳其已为越境军事行动做好准备。由于军事行动需要得到土耳其议会的批准，土政府15日向议会递交了实施越境军事打击的动议。
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					库尔德工人党-相关事件
+				</h4>
+			</div>
+			<div class="modal-body">
+				从2004年起，库尔德工人党加紧了对伊拉克边境地区土耳其军队、警察与政府目标的攻击。安卡拉向美方增施压力，以获得军事打击伊拉克北部库尔德工人党基地的许可。库尔德工人党宣称自己只是以行动来自卫和保护库尔德人。2014年8月25日中国驻大使馆25日证实，3名中国工人24日在土耳其东南部遭库尔德工人党武装人员劫持，使馆正在全力营救中方人员。
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					库尔德自由之鹰-相关事件
+				</h4>
+			</div>
+			<div class="modal-body">
+				1.2010年6月8日，在伊斯坦布尔的Küçükçekmece区进行恐怖袭击，造成15名警察受伤。<br>2.2010年10月31日，在伊斯坦布尔塔克西姆区制造的恐怖袭击造成32人受伤。<br>3.2011年9月20日，在安卡拉市中心Kızılay附近制造的炸弹袭击造成3人死亡，34人受伤。<br>4.2012年8月9日，在伊兹密尔发动针对土耳其军队的连环自杀式爆炸袭击，造成至少2名军人死亡，超过30人受伤。<br>5.2015年12月23日，TAK制造了针对伊斯坦布尔第二国际机场的恐怖袭击，导致一死一伤。<br>6.2016年2月17日，TAK在安卡拉市中心制造针对一辆运输军人的巴士的汽车炸弹袭击，造成28人死亡。<br>7.2016年3月13日，TAK在安卡拉市中心的一个公交车站附近制造汽车炸弹袭击，造成至少37死125伤。<br>8.2016年4月27日，TAK在土耳其第四大城市布尔萨內的一座清真寺附近制造自杀式恐怖袭击。<br>9.2016年6月7日，TAK在伊斯坦布尔Fatih区制造汽车炸弹袭击，造成包括5名警察，6名平民在内的11人死亡，36人受伤。<br>10.2016年8月24日，在安塔利亚-凯梅尔的高速公路上制造了对土耳其宪兵部队的袭击。   <br><a href="http://www.teyrebazenkurdistan.com/index.html" target="_blank">http://www.teyrebazenkurdistan.com/index.html</a><br> 
+				<a href="https://tr.wikipedia.org/wiki/K%C3%BCrdistan_%C3%96zg%C3%BCrl%C3%BCk_%C5%9Eahinleri
+			" target="_blank">https://tr.wikipedia.org/wiki/K%C3%BCrdistan_%C3%96zg%C3%B<br>Crl%C3%BCk_%C5%9Eahinleri
+			</a> </div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					伊斯兰国与政府、地方力量间的关系
+				</h4>
+			</div>
+			<div class="modal-body">
+				一方面，土耳其想利用IS铲除库尔德武装力量。另一方面，从宗教上来看，阿萨德的下台对土耳其有利，这样土耳其就可以从意识形态和地缘政治上，重塑一个亲土耳其的叙利亚。　　<br>但IS开始在世界范围内采取暴力活动，这与埃尔多安想要营造的“和平的伊斯兰”背道而驰。　　<br>土耳其与叙利亚有着长达910千米的边界线，已成为世界各地极端人员参加IS的通道，这让土耳其痛苦不堪。　　<br>身为北约成员国，土耳其迫于西方盟友压力，开始对极端分子采取更为“谨慎”的措施，导致ISIS威胁将抓捕土耳其士兵、轰炸奥斯曼帝国创始人奥斯曼一世后代位于叙利亚的墓地。　　<br>2015年4月21日，土耳其军队派出57架武装和100量车辆保护墓地。此后，土耳其就和IS结下了仇。
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					伊斯兰国-相关事件
+				</h4>
+			</div>
+			<div class="modal-body">
+				2015年6月21日，叙利亚边境：库尔德小镇发生爆炸，造成34人死亡，IS宣称负责。2015年10月10日，安卡拉：超过100名和平示威人士在地铁站外被袭死亡，IS宣称负责。2016年1月12日，伊斯坦布尔：叙利亚人在旅游区制造了爆炸事件，造成11名德国游客死亡。土耳其政府称其为IS制造的恐怖袭击。2016年3月19日，伊斯坦布尔：商业街发生自杀式爆炸袭击，造成4名平民死亡。IS宣称负责。2016年6月28日晚，IS在位于伊斯坦布尔的土耳其最大的机场阿塔图尔克国际机场制造爆炸事件。<br><a href="http://news.sohu.com/20160629/n456862531.shtml" target="_blank">http://news.sohu.com/20160629/n456862531.shtml</a>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					灰狼组织-相关事件
+				</h4>
+			</div>
+			<div class="modal-body">
+				2011年9月安卡拉警方搜查了安卡拉地区灰狼组织的40各处所，拘捕了 36，缴获大量枪支和刀具。据警方透露，他们计划向在平与民主党（BDP）发动袭击。<a>http://www.todayszaman.com/national_ankara-police-detain-36-in-mhp-youth-branch-raid_256514.html</a><br>2014年10月的灰狼组织被卷入致命冲突和骚乱。当时库尔德人在土耳其的各个城市游行示威，抗议艾因阿拉伯围困期间，土耳其的不干预政策。Milliyet报道称灰狼组织正在伊斯坦布尔企图私刑处死一个年轻人。<a>http://www.milliyet.com.tr/uc-buyuk-kent-de-karisti-gundem-1951452/</a><br>在2015年7月，灰狼组织在土耳其伊斯坦布尔举行抗议活动，抗议“中国政府禁止维吾尔人于斋戒月敬拜及斋戒”。该组织烧毁中国国旗，袭击中国餐馆，伤害了误认为是中国人的韩国游客。<a>http://www.bbc.com/news/world-asia-china-33440998</a> <br>2015年9月7-8日土耳其民族主义者，包括灰狼组织的成员，袭击了亲库尔德人民民主党（HDP）在土耳其的128个办事处。http://en.rfi.fr/general/20151026-tensions-running-high-turkey-elections-loom2015年11月21日，灰狼组织在伊斯坦布尔俄罗斯领事馆附近抗议俄罗斯参与叙利亚内战。他们指责俄罗斯屠宰叙利亚土库曼人<br><a href="http://www.sozcu.com.tr/2015/gundem/ulkuculer-turkmenler-icin-sokaktaydi-991514/" target="_blank">http://www.sozcu.com.tr/2015/gundem/ulkuculer-turkmenler-icin-sokaktaydi-991514/</a>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					东突教育与互助协会-势力地域分布
+				</h4>
+			</div>
+			<div class="modal-body">
+				总部地址：Ordek Kasap Mah. Millet Caddesi Gulsen Apt No:108 D: 5 Capa/法蒂赫，伊斯坦布尔 <br> Tel: 0212 5232877<br>Fax: 0212 5232876 <br> 设有两分部：<br>1.Nuripaşa Mah. 65/A sok. No:13/zeytinburnu，伊斯坦布尔 <br>Tel: 0212 6641197 <br> 2.Fevziçakmak Mah. Türkeli Sok. No: 25 D: 4 Sefaköy / Küçükçekmece – 伊斯坦布尔 <br>Tel: 0090 212 425 53 58<br> Fax: 0090 212 425 53 57
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					东突文化与团结协会-势力地域分布
+				</h4>
+			</div>
+			<div class="modal-body">
+				总部：Hoca Ahmet Yesevi Mh. Türkistan Evleri 44.Sk. No:28/A Kocasinan – 开塞利 – 土耳其
+				<br>Tel: 0352 3393965 Fax: 0352 3373504<br>分部：Aşağı Öveçler Mah. 4.Cad. 1330 Sk. Bayındır Apt.No:6/5 Çankaya – 安卡拉-土耳其 
+				<br>Tel & Fax: 0312 473 00 83
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 模态框结束 -->
 
 <!-- 实际增长率 -->
 <script type="text/javascript">
@@ -2324,308 +2796,9 @@
 </script>
  -->
 
-<script type="text/javascript">
-    require(  
-            [  
-                'echarts'  
-            ],  
-    function (ec) {  
-    
-      var myChart = echarts.init(document.getElementById('zuzhi'));
-      var ecConfig = require('echarts/config'); //放进require里的function{}里面
-      var zrEvent = require('zrender/tool/event');
-        // var myChart = echarts.init(document.getElementById('zuzhi'));
-        var option = {
-                title : {
-                    // text: '组织及地方力量关系图',
-                    subtext: '点击节点可查看详情',
-                    x:'right',
-                    y:'bottom'
-                },
-                tooltip : {
-                    trigger: 'item',
-                    formatter: '成立时间: {a}<br/>领导人:{b}<br/>名称:{c}'
-                },
-                toolbox: {
-                    show : true,
-                    feature : {
-                        restore : {show: true},
-                        magicType: {show: true, type: ['force', 'chord']},
-                        saveAsImage : {show: true}
-                    }
-                },
-                legend: {
-                    x: 'left',
-                    // y: '-20',
-                    data:['组织及地方力量','土耳其地方极端组织','国际恐怖组织','东突&疆独组织','反华势力']
-                },
-                series : [
-                    {
-                        type:'force',
-                        name : "名称",
-                        ribbonType: false,
-                        categories : [
-                            {
-                                name: '组织及地方力量'
-                            },
-                            {
-                                name: '土耳其地方极端组织'
-                            },
-                            {
-                                name:'国际恐怖组织'
-                            },
-                            {
-                                name: '东突&疆独组织'
-                            },
-                            {
-                                name:'反华势力'
-                            }
-                        ],
-                        itemStyle: {
-                            normal: {
-                                label: {
-                                    show: true,
-                                    textStyle: {
-                                        color: '#333'
-                                    }
-                                },
-                                nodeStyle : {
-                                    brushType : 'both',
-                                    borderColor : 'rgba(255,215,0,0.4)',
-                                    borderWidth : 1
-                                },
-                                linkStyle: {
-                                    type: 'curve'
-                                }
-                            },
-                            emphasis: {
-                                label: {
-                                    show: false
-                                    // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
-                                },
-                                nodeStyle : {
-                                    //r: 30
-                                },
-                                linkStyle : {}
-                            }
-                        },
-                        useWorker: false,
-                        minRadius : 15,
-                        maxRadius : 25,
-                        gravity: 1.1,
-                        scaling: 1.1,
-                        roam: 'move',
-                        nodes:[
-                            {category:0, name: '组织及地方力量', value : 10},
-                            {category:1, name: '土耳其地方极端组织',value : 2},
-                            {category:2, name: '国际恐怖组织',value : 3},
-                            {category:3, name: '东突&疆独组织',value : 3},
-                           
-                            {category:5, name: '反华势力',value : 5},
-
-                            {category:1, name: '库尔德工人党',value : 8},
-                            {category:1, name: '库尔德自由之鹰',value : 9},
-                            {category:1, name: '灰狼组',value : 4},
-
-                            {category:2, name: '伊斯兰国',value : 4},
-                            {category:2, name: '叙利亚土库曼旅',value : 1},
-                            {category:2, name: '人民保卫军', value : 10},
-
-                            {category:3, name: '东突基金会',value : 2},
-                            {category:3, name: '东突移民协会',value : 3},
-                            {category:3, name: '欧亚突厥协会联盟',value : 3},
-                            {category:3, name: '东突教育与互助协会',value : 7},
-                            {category:3, name: '东突青年协会',value : 5},
-                            {category:3, name: '东突文化与团结协会',value : 8},
-                            {category:5, name: '法轮功组织',value : 8},
-
-                        ],
-                        links : [
-                            {source : '土耳其地方极端组织', target : '组织及地方力量',weight : 1},
-                            {source : '国际恐怖组织', target : '组织及地方力量', weight : 2},
-                            {source : '东突&疆独组织', target : '组织及地方力量', weight : 1},
-                            {source : '土耳其地方力量', target : '组织及地方力量', weight : 2},
-                            {source : '反华势力', target : '组织及地方力量', weight : 3},
-                            {source : '库尔德工人党', target : '土耳其地方极端组织', weight : 1},
-                            {source : '库尔德自由之鹰', target : '土耳其地方极端组织', weight : 6},
-                            {source : '灰狼组', target : '土耳其地方极端组织', weight : 1},
-
-                            {source : '伊斯兰国', target : '国际恐怖组织', weight : 1},
-                            {source : '叙利亚土库曼旅', target : '国际恐怖组织', weight : 1},
-                            {source : '人民保卫军', target : '国际恐怖组织', weight : 1},
-
-                            {source : '东突基金会', target : '东突&疆独组织', weight : 1},
-                            {source : '东突移民协会', target : '东突&疆独组织', weight : 1},
-                            {source : '欧亚突厥协会联盟', target : '东突&疆独组织', weight : 1},
-                            {source : '东突教育与互助协会', target : '东突&疆独组织', weight : 1},
-                            {source : '东突青年协会', target : '东突&疆独组织', weight : 6},
-                            {source : '东突文化与团结协会', target : '东突&疆独组织', weight : 1},
-                            {source : '法轮功组织', target : '反华势力', weight : 6}
-                        ]
-                    }
-                ]
-            };
-            var ecConfig = require('echarts/config');
-            function focus(param) {
-                var data = param.data;
-                var links = option.series[0].links;
-                var nodes = option.series[0].nodes;
-                if (
-                    data.source !== undefined
-                    && data.target !== undefined
-                ) { //点击的是边
-                    var sourceNode = nodes.filter(function (n) {return n.name == data.source})[0];
-                    var targetNode = nodes.filter(function (n) {return n.name == data.target})[0];
-                    console.log("选中了边 " + sourceNode.name + ' -> ' + targetNode.name + ' (' + data.weight + ')');
-                } else { // 点击的是点
-                    console.log("选中了" + data.name + '(' + data.value + ')');
-                    window.open('/news/turkey_org/');
-                }
-            }
-            myChart.on(ecConfig.EVENT.CLICK, focus)
-            
-            myChart.setOption(option); 
-        }
-    );    
-</script>
 
 
-<!-- 地方力量 -->
 
-<script type="text/javascript">
-    require(  
-            [  
-                'echarts'  
-            ],  
-    function (ec) {  
-    
-      var myChart = echarts.init(document.getElementById('difangliliang'));
-      var ecConfig = require('echarts/config'); //放进require里的function{}里面
-      var zrEvent = require('zrender/tool/event');
-        // var myChart = echarts.init(document.getElementById('zuzhi'));
-        var option = {
-                title : {
-                    // text: '组织及地方力量关系图',
-                    subtext: '点击节点可查看详情',
-                    x:'right',
-                    y:'bottom'
-                },
-                tooltip : {
-                    trigger: 'item',
-                    formatter: '名称:{b}<br/>成立时间: {a}<br/>领导人:{c}'
-                },
-                toolbox: {
-                    show : true,
-                    feature : {
-                        restore : {show: true},
-                        magicType: {show: true, type: ['force', 'chord']},
-                        saveAsImage : {show: true}
-                    }
-                },
-                legend: {
-                    x: 'left',
-                    // y: '-20',
-                    data:['土耳其地方力量']
-                },
-                series : [
-                    {
-                        type:'force',
-                        name : "名称",
-                        ribbonType: false,
-                        categories : [
-                           
-                            {
-                                name:'土耳其地方力量'
-                            }
-                        ],
-                        itemStyle: {
-                            normal: {
-                                label: {
-                                    show: true,
-                                    textStyle: {
-                                        color: '#333'
-                                    }
-                                },
-                                nodeStyle : {
-                                    brushType : 'both',
-                                    borderColor : 'rgba(255,215,0,0.4)',
-                                    borderWidth : 1
-                                },
-                                linkStyle: {
-                                    type: 'curve'
-                                }
-                            },
-                            emphasis: {
-                                label: {
-                                    show: false
-                                    // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
-                                },
-                                nodeStyle : {
-                                    //r: 30
-                                },
-                                linkStyle : {}
-                            }
-                        },
-                        useWorker: false,
-                        minRadius : 15,
-                        maxRadius : 25,
-                        gravity: 1.1,
-                        scaling: 1.1,
-                        roam: 'move',
-                        nodes:[
-                            {category:0, name: '土耳其地方力量', value : 10},
-                            {category:0, name: '土耳其商人和工业家联合会',value : 9},
-                            {category:0, name: '公共部门工会联合会',value : 4},
-                            {category:0, name: '革命工会联合会',value : 4},
-                            {category:0, name: '独立工商者和商人协会',value : 1},
-                            {category:0, name: '道德权利工人联合会',value : 2},
-                            {category:0, name: '土耳其雇主联合会',value : 3},
-                            {category:0, name: '土耳其劳工联合会',value : 3},
-                            {category:0, name: '土耳其工业家和商人协会',value : 7},
-                            {category:0, name: '土耳其商业和商品交易所联合会',value : 5},
-
-
-                        ],
-                        links : [
-                            
-                            {source : '土耳其商人和工业家联合会', target : '土耳其地方力量', weight : 1},
-
-                            {source : '公共部门工会联合会', target : '土耳其地方力量', weight : 1},
-                            {source : '革命工会联合会', target : '土耳其地方力量', weight : 1},
-                            {source : '独立工商者和商人协会', target : '土耳其地方力量', weight : 1},
-                            {source : '道德权利工人联合会', target : '土耳其地方力量', weight : 1},
-                            {source : '土耳其雇主联合会', target : '土耳其地方力量', weight : 6},
-                            {source : '土耳其劳工联合会', target : '土耳其地方力量', weight : 1},
-
-                            {source : '土耳其工业家和商人协会', target : '土耳其地方力量', weight : 1},
-                            {source : '土耳其商业和商品交易所联合会', target : '土耳其地方力量', weight : 1}
-                        ]
-                    }
-                ]
-            };
-            var ecConfig = require('echarts/config');
-            function focus(param) {
-                var data = param.data;
-                var links = option.series[0].links;
-                var nodes = option.series[0].nodes;
-                if (
-                    data.source !== undefined
-                    && data.target !== undefined
-                ) { //点击的是边
-                    var sourceNode = nodes.filter(function (n) {return n.name == data.source})[0];
-                    var targetNode = nodes.filter(function (n) {return n.name == data.target})[0];
-                    console.log("选中了边 " + sourceNode.name + ' -> ' + targetNode.name + ' (' + data.weight + ')');
-                } else { // 点击的是点
-                    console.log("选中了" + data.name + '(' + data.value + ')');
-                    window.open('/news/turkey_org/');
-                }
-            }
-            myChart.on(ecConfig.EVENT.CLICK, focus)
-            
-            myChart.setOption(option); 
-        }
-    );    
-</script>
 
 
 
@@ -2768,6 +2941,53 @@
 
    
     </script>
+
+    <script type="text/javascript">
+
+    var chart = new Highcharts.Chart({  
+               // <pre name="code" class="html">   
+               chart: { type: 'line',  
+                          renderTo: 'divHighcharts1',   
+                          options3d: { enabled: true, alpha: 45, beta: 0 } },    
+            title: {
+                style: {fontFamily: 'Microsoft YaHei',fontSize: '16px',height: '50px'},
+                text: '土耳其'+'投资趋势',
+                x: -20
+            },
+            xAxis: {
+                categories: ['2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',],
+                labels: {
+                step: 2,
+                staggerLines: 1
+              }
+            },
+            yAxis: {
+                title: {
+                    text: '投资次数'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+
+                }]
+
+            },
+            tooltip: {
+            
+            formatter: function() {
+                return '<b>'+ this.series.name +'</b><br/>'+this.x +'年: 投资<b>'+ this.y + '</b>次';
+              }
+            },
+            series: [{
+                name: '投资轨迹',
+                data: [1,7,10,8,8,14,16,15,11,20,39,29,18,]
+            }]
+    });
+
+
+    </script>
+
 <script src="../../static/js/turkey_info.js" type="text/javascript"></script>
 <script src="../../static/js/turkey_info_zixun.js" type="text/javascript"></script>
 
