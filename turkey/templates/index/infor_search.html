@@ -4,22 +4,29 @@
 {% block head_css %}
 
 <!--定义css-->
-<style type="text/css">
-	
 
-</style>
-
-  <!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  --> 
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="/static/css/bootstrap-table.css"/>
+  <!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  -->
+  <!-- <link rel="stylesheet" href="/static/css/bootstrap-table.css"/> -->
+ 
  <!--    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap-datetimepicker1.css" /> -->
 {% endblock head_css %}
   
 
 {% block head_js %}
+{{ super () }}
 	<script type="text/javascript" src="../../static/js/jquery.js"></script>
 	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>  -->
-    
-	<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/static/js/bootstrap-table.js"></script>
+    <script src="/static/js/bootstrap-table-zh-CN.js"></script>
+
+  <!--   
+    <script src="/static/js/bootstrap-table.js"></script>
+    <script src="/static/js/bootstrap-table-zh-CN.js"></script> -->
     <!-- <script type="text/javascript" src="../../static/js/bootstrap-datetimepicker1.min.js"></script>
     <script type="text/javascript" src="../../static/js/moment.min.js"></script>
 	<script type="text/javascript" src="../../static/js/moment-with-locales.min.js"></script> -->
@@ -96,6 +103,7 @@
 		</script>
 
 		
+		
 <!-- 关键词不能为空 -->
 		
    
@@ -107,6 +115,7 @@
         <h3 id="outside_accident" class="panel-title">走进出访事件</h3>
     </div>
     <div class="panel-body">
+
 		<div id="content" class="content1">			
 		<!--第一个面板显示的内容-->	
 		<div id="content1">
@@ -226,10 +235,7 @@
 						    <input id="key_word" class="form-control  input-lg" type="text" placeholder="请输入访问议题关键词"  onchange="check_keyword();" onkeypress="if(event.keyCode==13){ check_keyword();}" style="width:37.5%;margin-left:10%;height:40px">
 						    <img src="/static/img/star.png" width="10px" height="10px"  style="float:left;margin-left: 61%;margin-top: -30px;">
 						</div>
-					          
-					<!-- 	<div class="form-group">
-
-						</div>    -->
+			
 					        
 					        <!-- button默认input的回车事件 -->
 					    <linkbutton class="btn btn-primary btn-lg" onclick="check_all()" style="margin-top:30px;margin-left:50%;width: 100px;height: 40px;" > 搜索
@@ -243,6 +249,21 @@
 	</div>	   
 </div>
 </div>
+
+
+<div class="panel panel-primary" style="margin-top:10px;margin-left: 2.5%;width: 95%;">
+    <div class="panel-heading" style="background-color:#104F87;border-color: #104F87;">
+        <h3 id="outside_accident" class="panel-title">搜索记录</h3>
+    </div>
+
+    <div class="panel-body">
+		<table id="keyword_table" class="table table-hover table-condensed"></table>
+    </div>
+</div>
+<!-- 
+<div style="width:95%;height:400px;">
+	
+</div> -->
 
 <!--多条件搜索模态框-->
 <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -332,12 +353,14 @@
     <!-- </div> -->
     <!-- /.modal -->
 <!-- </div> -->
+
 <!--将导航下拉部分隐藏-->
+
    <script type="text/javascript">
 		window.onload=changetype(); 
 		function changetype()
 			{
-				console.log('aaaaaa');
+				// console.log('aaaaaa');
 				document.getElementById("sub_one").style.display='none';  
   				document.getElementById("sub_two").style.display='none';
   				document.getElementById("sub_three").style.display='none'; 
@@ -346,6 +369,80 @@
   				
 
 	</script>
+
+	<!-- 搜索记录表 -->
+	<script type="text/javascript">
+		// console.log('table');
+	    var key_data=[{"begin_time":"2016-01-11","end_time":"2016-10-12","country":"土耳其","city":"安卡拉","keyword":"一带一路","detail":"查看详情"},{"begin_time":"2016-04-11","end_time":"2016-5-12","country":"土耳其","city":"伊斯坦布尔","keyword":"恐怖袭击","detail":"查看详情"}];
+			
+  			 $('#keyword_table').bootstrapTable({
+                  // url:show_key_url,
+                  data:key_data,
+                  search: true,//是否搜索
+                  pagination: true,//是否分页
+                  pageSize: 20,//单页记录数
+                  pageList: [5, 10, 20, 50],//分页步进值
+                  sidePagination: "client",//服务端分页
+                  searchAlign: "left",
+                  searchOnEnterKey: false,//回车搜索
+                  showRefresh: true,//刷新按钮
+                  showColumns: true,//列选择按钮
+                  buttonsAlign: "left",//按钮对齐方式
+                  locale: "zh-CN",//中文支持
+                  detailView: false,
+                  showToggle:true,
+                  sortName:'time',
+                  sortOrder:"desc",
+                  columns: [  
+                 
+                    {
+                        title: "起始时间",
+                        field: "begin_time",
+                        sortable: true,
+                        align: "center",//水平
+                        valign: "middle",//垂直
+                    },
+                    {
+                        title: "终止时间",
+                        field: "end_time",
+                        sortable: true,
+                        align: "center",//水平
+                        valign: "middle",//垂直
+                    },
+                    {
+                        title: "国家",
+                        field: "country",
+                        sortable: true,
+                        align: "center",//水平
+                        valign: "middle",//垂直
+                    },
+                    {
+                        title: "城市",
+                        field: "city",
+                        sortable: true,
+                        align: "center",//水平
+                        valign: "middle",//垂直
+                    },
+                    {
+                        title: "关键词",
+                        field: "keyword",
+                        sortable: true,
+                        align: "center",//水平
+                        valign: "middle",//垂直
+                    },
+                       {
+                        title: "查看详情",
+                        field: "detail",
+                        sortable: true,
+                        align: "center",//水平
+                        valign: "middle",//垂直
+                    },
+                    
+                    ]
+
+             });//table结束
+		</script>
+
 
 
 {% endblock content %}
