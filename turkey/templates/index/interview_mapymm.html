@@ -708,34 +708,51 @@
                     /*line-height: 30px;*/
                     /*background-color: #A5C1DD;*/
                     position: absolute;
-                    bottom:100px ;
+                    bottom:140px ;
                     right: -150px;
                     /*padding-left: 40px;*/
                 }
-                #r-result input {
-                    outline: none;
+                
+                #r-result span:before {
+                     display: inline-block;
+                     content: '';
+                     width: 10px;
+                     height: 10px;
+                     margin-right: 10px;
+                }
+                #r-result span {
                     display: block;
-                    /*border: none;*/
-                    -webkit-border-radius:20px;
-                    -moz-border-radius:20px;
-                    border-radius:20px;
-                    font-size: 12px;
-                    color: #fff;
-                    text-align: center;
-                    width: 120px;
-                    height: 40px;
-                    line-height: 40px;
-                    background-color: #999999;
+                    font-size: 16px;
                     font-weight: 900;
                     margin-top: 30px;
                 }
+                #r-result span:hover {
+                    cursor: pointer;
+                }
+                #r-result .one:before {
+                    background-color: green;
+                }
+                #r-result .two:before {
+                    background-color: gold;
+                }
+                #r-result .three:before {
+                    background-color: purple;
+                }
+                #r-result .four:before {
+                    background-color: salmon;
+                }
+                #r-result .all:before {
+                    background-color: silver;
+                }
+
+
             </style>
             <div id="r-result">
-                <input class="one" type="button"   value="库尔德工人党"  style="background-color: green"/>
-                <input class="two" type="button"   value="库尔德自由之鹰" style="background-color: gold"/>
-                <input class="three" type="button"   value="灰狼组织" style="background-color: purple"/>
-                <input class="four" type="button" value="法轮功" style="background-color: salmon"/>
-                <input class="all" type="button" value="纵览" style="background-color: silver"/>
+                <span class="one" style="color: green"/>库尔德工人党</span>
+                <span class="two" style="color:gold"/>库尔德自由之鹰</span>
+                <span class="three" style="color:purple"/>灰狼组织</span>
+                <span class="four" style="color:salmon"/>法轮功</span>
+                <span class="all" style="color:silver"/>纵览</span>
             </div>
             <script type="text/javascript" src="../../static/js/mapjsone.js"></script>
             <!-- /div> -->
