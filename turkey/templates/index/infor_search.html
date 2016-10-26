@@ -88,10 +88,11 @@
 		 {
 		 	 var time_from= document.getElementById("input_time_from").value;
 		 	 var time_to= document.getElementById("input_time_to").value;
-		 	 var key_word= document.getElementById("key_word").value;
+		 	 // var key_word= document.getElementById("key_word").value;
 		 	 var country= $('#select_country option:selected') .val();
 		 	 var city= $('#select_city option:selected') .val();
-		 	 if (time_from==''||time_to==''||key_word==''||country==''||city=='') 
+		 	 // if (time_from==''||time_to==''||key_word==''||country==''||city=='') 
+		 	 if (time_from==''||time_to==''||country==''||city=='') 
 		 	 {
 		 	 	alert('信息输入不全，请重新输入!');
 		 	 }
@@ -232,8 +233,9 @@
 
 						<div class="form-group">
 						    <span style="float: left;margin-left:72px;margin-right:50px;margin-top: 9px;">请输入出访相关关键词</span>
-						    <input id="key_word" class="form-control  input-lg" type="text" placeholder="请输入访问议题关键词"  onchange="check_keyword();" onkeypress="if(event.keyCode==13){ check_keyword();}" style="width:37.5%;margin-left:10%;height:40px">
-						    <img src="/static/img/star.png" width="10px" height="10px"  style="float:left;margin-left: 61%;margin-top: -30px;">
+						    <input id="key_word" class="form-control  input-lg" type="text" placeholder="请输入访问议题关键词"  onchange="check_keyword();" style="width:37.5%;margin-left:10%;height:40px">
+						    <!-- onkeypress="if(event.keyCode==13){ check_keyword();}"  -->
+						    <!-- <img src="/static/img/star.png" width="10px" height="10px"  style="float:left;margin-left: 61%;margin-top: -30px;"> -->
 						</div>
 			
 					        
@@ -373,7 +375,7 @@
 	<!-- 搜索记录表 -->
 	<script type="text/javascript">
 		// console.log('table');
-	    var key_data=[{"begin_time":"2016-01-11","end_time":"2016-10-12","country":"土耳其","city":"安卡拉","keyword":"一带一路","detail":"查看详情"},{"begin_time":"2016-04-11","end_time":"2016-5-12","country":"土耳其","city":"伊斯坦布尔","keyword":"恐怖袭击","detail":"查看详情"}];
+	    var key_data=[{"begin_time":"2016-01-11","end_time":"2016-10-12","country":"土耳其","city":"安卡拉","keyword":"一带一路","detail":"<a href='/news/interview_detail'>查看详情</a>"},{"begin_time":"2016-04-11","end_time":"2016-5-12","country":"土耳其","city":"伊斯坦布尔","keyword":"恐怖袭击","detail":"<a href='/news/interview_detail'>查看详情</a>"}];
 			
   			 $('#keyword_table').bootstrapTable({
                   // url:show_key_url,
