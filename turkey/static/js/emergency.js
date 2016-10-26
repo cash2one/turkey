@@ -18,8 +18,10 @@ var news_time_anti=[{"title":"报道称土耳其屏蔽网盘和GitHub以防止�
      if(r){
      	var dele_key_url = '/news/delete_keyword/?key='+keyword;
       console.log(dele_key_url);
+
       // location.reload();
        $('#keyword_table').bootstrapTable('refresh',{url: dele_key_url})
+       alert('删除成功！')
       
       }     
   }
@@ -289,12 +291,13 @@ function submit_keyword(){
 	   console.log(key_url);
     //    function callback(data){
     //   console.log(data);
-      
-       
+    document.getElementById('input_key').value =""
+       alert('添加成功！');
     // }
        location.reload();
        $('#keyword_table').bootstrapTable('refresh',{url: key_url })
        $("#addkey").modal('toggle');
+       
        
     //    function callback(data){
     //      console.log('提交返回值：'+data);   
