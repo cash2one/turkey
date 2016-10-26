@@ -693,24 +693,28 @@
 
 
             
-            <div class="tab-pane fade in active" id="extreme_organization" style="margin-left: -20px;width: 1100px;">
+            <div class="tab-pane fade in active" id="extreme_organization" style="margin-left: -20px;width: 900px;position:relative;">
                 <div style="height:550px;margin-left:30px" id="container">
                     <!-- <img id="zongtong_1_img" src="/static/img/jiduanzuzhi.png" style="width: 800px;" > -->
                     <!-- <iframe style="width:1000px;height:450px;margin-top:20px;" src="mainmap/mapchildren"></iframe> -->
                 </div>
                 <style type="text/css">
+                #myTabContent {
+                    margin-left: -10px;
+                }
                 #r-result {
-                    width: 60%;
+                    /*width: 60%;*/
                     /*height: 30px;*/
                     /*line-height: 30px;*/
                     /*background-color: #A5C1DD;*/
-                    position: relative;
-                    bottom:25px ;
-                    left: 10px;
-                    padding-left: 20px;
+                    position: absolute;
+                    bottom:100px ;
+                    right: -150px;
+                    /*padding-left: 40px;*/
                 }
                 #r-result input {
                     outline: none;
+                    display: block;
                     /*border: none;*/
                     -webkit-border-radius:20px;
                     -moz-border-radius:20px;
@@ -718,11 +722,12 @@
                     font-size: 12px;
                     color: #fff;
                     text-align: center;
-                    width: 100px;
-                    height: 20px;
-                    line-height: 20px;
+                    width: 120px;
+                    height: 40px;
+                    line-height: 40px;
                     background-color: #999999;
                     font-weight: 900;
+                    margin-top: 30px;
                 }
             </style>
             <div id="r-result">
@@ -754,20 +759,20 @@
 
 
             
-            <div class="tab-pane fade" id="anti_force" style="margin-left: -20px;width: 1100px;position:relative;">
+            <div class="tab-pane fade" id="anti_force" style="margin-left: -20px;width: 870px;position:relative;">
                 <div style="height:550px;margin-left:30px" id="allmap">
                     <!-- <img id="zongtong_1_img" src="/static/img/fanhuashili.png" style="width: 800px;"> -->
                 </div>
                 <style type="text/css">
                             #r-result2 {
-                                width: 60%;
+                                /*width: 60%;*/
                                 /*height: 30px;*/
                                 /*line-height: 30px;*/
                                 /*background-color: #A5C1DD;*/
                                 position: absolute;
-                                top:20px ;
-                                right: -35%;
-                                padding-right: 20px;
+                                top:100px ;
+                                right: -27%;
+                                /*padding-right: 20px;*/
                             }
                             #r-result2 span:before {
                                 display: inline-block;
@@ -780,43 +785,43 @@
                                 display: block;
                                 font-size: 14px;
                                 font-weight: 900;
-                                margin-bottom: 5px;
+                                margin-bottom: 20px;
                             }
                             .bu1:before {
-                                background-color: #AE6D32;
-                            }
-                            .bu2:before {
-                                background-color: purple;
-                            }
-                            .bu3:before {
                                 background-color: #56ABE4;
                             }
+                            .bu2:before {
+                                background-color: #9D55B8;
+                            }
+                            .bu3:before {
+                                background-color: #FF0000;
+                            }
                             .bu4:before {
-                                background-color: #19FA28;
+                                background-color: #EA8010;
                             }
                             .bu5:before {
-                                background-color: red;
+                                background-color: #0D0B0B;
                             }
                             .bu6:before {
-                                background-color: #B02323;
+                                background-color: #00BB9C;
                             }
                             .bu7:before {
-                                background-color: #D8060C;
+                                background-color: #03F714;
                             }
                             .bu8:before {
-                                background-color: #CAC122;
+                                background-color: #FF0277;
                             }
                         </style>
                     
                     <div id="r-result2">
-                        <span style="color: #AE6D32;" class="bu1">公共部门工会联合会</span>
-                        <span style="color: purple;" class="bu2">土耳其商人和工业家联合会</span>
-                        <span style="color: #56ABE4;" class="bu3">革命工会联合会</span>
-                        <span style="color: #19FA28;" class="bu4">道德权利工人联合会</span>
-                        <span style="color: red;" class="bu5">土耳其雇主联合会</span>
-                        <span style="color: #B02323;" class="bu6">土耳其劳工联合会</span>
-                        <span style="color: #D8060C;" class="bu7">土耳其商业和商品交易所联合会</span>
-                        <span style="color: #CAC122;" class="bu8">独立工商者和商人协会</span>
+                        <span style="color: #56ABE4;" class="bu1">公共部门工会联合会</span>
+                        <span style="color: #9D55B8;" class="bu2">土耳其商人和工业家联合会</span>
+                        <span style="color: #FF0000;" class="bu3">革命工会联合会</span>
+                        <span style="color: #EA8010;" class="bu4">道德权利工人联合会</span>
+                        <span style="color: #0D0B0B;" class="bu5">土耳其雇主联合会</span>
+                        <span style="color: #00BB9C;" class="bu6">土耳其劳工联合会</span>
+                        <span style="color: #03F714;" class="bu7">土耳其商业和商品交易所联合会</span>
+                        <span style="color: #FF0277;" class="bu8">独立工商者和商人协会</span>
                     </div>
                     <script type="text/javascript" src="../../static/js/mapjstwo.js"></script>
                             
