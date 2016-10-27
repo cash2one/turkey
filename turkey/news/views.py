@@ -3062,3 +3062,8 @@ def delete_key_ajax():
     f.write(results)
     f.close()
     return results
+
+@mod.route('/parameter_manage/')
+def parameter_manage():
+    
+    return render_template('index/parameter_manage.html')
