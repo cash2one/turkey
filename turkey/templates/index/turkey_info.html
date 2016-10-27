@@ -140,6 +140,9 @@
         border-left: 1px solid #CCCCCC;
         border-right: 1px solid #CCCCCC;
     }
+    .col-lg-12 {
+    width: 98%;
+}
 
     /*表格样式*/
     	#org_chart th, td{
@@ -184,6 +187,7 @@
 
 	<!-- <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script> -->
 	<script type="text/javascript" src="/static/js/highcharts/exporting.js"></script>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script type="text/javascript">
         
         function show_hide(id_name){
@@ -206,41 +210,94 @@
 
         	<div class="container">
 		    <!-- Team members structure start -->
-		    	<div class="team-members row" style="margin-top: -1%;">
+		    	<div class="team-members row" style="">
+		    		<style type="text/css">
+		    		#overview {
+		    			width: 100%;
+		    		}
+		    			.row {
+		    				height: 600px;
+		    				margin: 0;
+		    			}
+		    			.container {
+		    				width: 100%;
+		    				padding-left: 0px;
+		    				height: 600px;
+		    				
+		    			}
+		    			.single-member{
+		    				width: 180px;
+		    				height: 180px;
+		    				margin: 0;
+		    			}
+		    			.single-member img {
+		    				width: 180px;
+		    				height: 180px;
+		    			}
+		    			.effect-4,.effect-8,.effect-9 {
+						    max-height: 180px;
+						    min-height: 180px;
+						}
+						.more-info {
+							text-align: left;
+						}
+						.member-info span b {
+							font-size: 8px;
+						}
+						.effect-8 .member-image {
+							bottom: -20px;
+						}
+						.effect-9 .member-image {
+							bottom: -25px;
+						}
+					
+		    		</style>
 		        	<!-- effect-1 html -->
-		        	<div class="single-member effect-4">
+		        	<div class="single-member effect-4 ef1">
 		                <div class="member-info">
 		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">概况</h3>
 		                    <!-- <h5>ShowGilr</h5> -->
 		                </div>
 		                <div class="member-image">
-		                	<img src="../../static/img/turkey/card/gaikuang_blue.jpg" alt="Member">
+		                	<img id="one" src="../../static/img/turkey/card/gaikuang_blue.jpg" alt="Member">
 		                </div>
-		                <div class="more-info">
-		                	<span>
-		                		<b style="margin-left: -28%;">领土面积：</b>总计783562平方公里。
-		                		<!-- <a href="#zhengzhizhidu" target="_blank">查看详情</a> -->
-		                		<br>
-		                		<b style="margin-left: -2%;">行政区域：</b>全国共有81个省、约600个县、3.6万多乡村。
+		                <div class="more-info" style="text-align: left;">
+		                	<span id="oneone" style="display:block;width:300px;height:155px;margin-left:-50px;">
+		                		<b style="">领土面积：</b>总计783562平方公里。
 		                		<a href="#zhengzhizhidu" target="_blank">查看详情</a>
 		                		<br>
-		                		<b style="margin-left: -2%;">政府部门：</b>
-		                		总统府、大国民议会、总理府、总参谋部、内政部……
-		                		<a style="margin-left: 0%;" href="/news/turkey_party/" target="_blank">查看详情</a>
+		                		<b style="">行政区域：</b>全国共有81个省、约600个县、3.6万多乡村。
+		                		<a href="#zhengzhizhidu" target="_blank">查看详情</a>
 		                		<br>
-		                		<b style="margin-left: -2%;">强力部门：</b>
+		                		<b style="">政府部门：</b>
+		                		总统府、大国民议会、总理府、总参谋部、内政部……
+		                		<a style="" href="/news/turkey_party/" target="_blank">查看详情</a>
+		                		<br>
+		                		<b style="">强力部门：</b>
 		                		国家情报组织、公共秩序及安全部、土耳其安全总局……
-		                		<a style="margin-left: 0%;" href="/news/turkey_party/" target="_blank">查看详情</a>
-
+		                		<a style="" href="/news/turkey_party/" target="_blank">查看详情</a>
 
 		                	</span>
 		                   
 		                </div>
 		            </div>
+		            <script type="text/javascript">
+
+		            	$(".ef1").hover(function(){
+		            		$(".ef1").css({overflow:"visible"})
+		            		$(".ef1 .more-info").css({overflow:"visible"})
+		            		// $("#one").css("display","none")
+		            	},function(){
+		            		$(".ef1").css({overflow:"hidden"})
+		            		$(".ef1 .more-info").css({overflow:"hidden"})
+		            		// $("#one").css("display","block")
+		            	})
+		            	
+		            </script>
 		            <!-- effect-1 html end -->
 		            
 		            <!-- effect-2 html -->
-		            <div class="single-member effect-4">
+		            <div class="single-member effect-4 ef2" style="margin:0 200px;">
 		                <div class="member-info">
 		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">政治</h3>
 		                    <!-- <h5>ShowGilr</h5> -->
@@ -249,17 +306,17 @@
 		                	<img src="../../static/img/turkey/card/zhengzhi_blue.png" alt="Member">
 		                </div>
 		                <div class="more-info">
-		                	<span>
-		                		<b style="margin-left: -50%;">政治制度：</b>
+		                	<span style="display:block;width:400px;height:155px;margin-left:-100px;">
+		                		<b>政治制度：</b>
 		                		<a href="#zhengzhizhidu" target="_blank">议会共和制</a>
 		                		<br>
-		                		<b style="margin-left: -3%;">现任总统：</b>
-		                		<a href="/news/person_detail/president_now" target="_blank">雷杰普·塔伊普·埃尔多安</a>(2014.08- )<br><a style="margin-left: -14%;" href="/news/turkey_party/" target="_blank">(正义与发展党)</a>
+		                		<b>现任总统：</b>
+		                		<a href="/news/person_detail/president_now" target="_blank">雷杰普·塔伊普·埃尔多安</a>(2014.08- )<a style="" href="/news/turkey_party/" target="_blank">(正义与发展党)</a>
 		                		<br>
-		                		<b style="margin-left: -13%;">现任总理：</b>
-		                		<a href="" target="_blank">毕纳利·耶尔德勒姆</a>(2016.05- )<br><a style="margin-left: -14%;" href="/news/turkey_party/" target="_blank">(正义与发展党)</a>
+		                		<b style="">现任总理：</b>
+		                		<a href="" target="_blank">毕纳利·耶尔德勒姆</a>(2016.05- )<a style="" href="/news/turkey_party/" target="_blank">(正义与发展党)</a>
 		                		<br>
-		                		<b style="margin-left: -2%;">重要政党：</b>
+		                		<b style="">重要政党：</b>
 		                		<a href="/news/turkey_party/" target="_blank">正义与发展党</a>(议会席位：317/550)
 		                		<br>
 		                		<a href="" target="_blank" style="margin-left: 17%;">共和人民党</a>(议会席位：134/550)
@@ -274,10 +331,21 @@
 		                   
 		                </div>
 		            </div>
+		            <script type="text/javascript">
+		            $(".ef2").hover(function(){
+		            		$(".ef2").css({overflow:"visible"})
+		            		$(".ef2 .more-info").css({overflow:"visible"})
+		            		// $("#one").css("display","none")
+		            	},function(){
+		            		$(".ef2").css({overflow:"hidden"})
+		            		$(".ef2 .more-info").css({overflow:"hidden"})
+		            		// $("#one").css("display","block")
+		            	})
+		            </script>
 		            <!-- effect-2 html end -->
 		            
 		            <!-- effect-3 html -->
-		            <div class="single-member effect-4">
+		            <div class="single-member effect-4 ef3">
 		                <div class="member-info">
 		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">经济</h3>
 		                    <!-- <h5>ShowGilr</h5> -->
@@ -286,19 +354,19 @@
 		                	<img src="../../static/img/turkey/card/jingji_blue.jpg" alt="Member">
 		                </div>
 		                <div class="more-info">
-		                	<span>
-		                	    <b style="margin-left: -21%;">预算赤字：</b>
+		                	<span style="display:block;width:300px;height:155px;margin-left:-60px;">
+		                	    <b style="">预算赤字：</b>
 		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
 		                		1.7%(GDP)(2015年)。
 		                		<br>
-		                		<b style="margin-left: -2.76%;">人均GDP：</b>
+		                		<b style="">人均GDP：</b>
 		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
 		                		19500美元(2013年)、19900美元(2014年)、20400美元(2015年)。
 		                		<br>
-		                		<b style="margin-left: 1%;">GDP构成：</b>
+		                		<b style="">GDP构成：</b>
 		                		农业(8.10%)、工业(27.7%)、服务业(64.2%)。
 		                		<br>
-		                		<b style="margin-left: 1%;">合作伙伴：</b>
+		                		<b style="">合作伙伴：</b>
 		                		
 		                		进口：中国、德国、俄罗斯、美国、意大利、其他。出口：德国、英国、伊拉克、意大利、美国、法国、其他。
 		                		<br>
@@ -311,10 +379,20 @@
 		                   
 		                </div>
 		            </div>
+		            <script type="text/javascript">
+		            $(".ef3").hover(function(){
+		            		$(".ef3").css({overflow:"visible"})
+		            		$(".ef3 .more-info").css({overflow:"visible"})
+		            		// $("#one").css("display","none")
+		            	},function(){
+		            		$(".ef3").css({overflow:"hidden"})
+		            		$(".ef3 .more-info").css({overflow:"hidden"})
+		            		// $("#one").css("display","block")
+		            	})</script>
 		            <!-- effect-3 html end -->
 		            
 		            <!-- effect-4 html -->
-		            <div class="single-member effect-8">
+		            <div class="single-member effect-8 ef4" style="margin:20px 0;z-index:50;">
 		                <div class="member-info">
 		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">国防</h3>
 		                   
@@ -323,8 +401,8 @@
 		                	<img src="../../static/img/turkey/card/guofang_blue.jpg" alt="Member">
 		                </div>
 		                <div class="more-info">
-		                	<span>
-		                		<b style="margin-left: 1%;">军队体系说明：</b>
+		                	<span style="display:block;width:300px;height:155px;margin-left:-50px;">
+		                		<b style="">军队体系说明：</b>
 		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
 		                		在和平时期，作为国内安全力量的国家宪兵总队和海岸警卫队隶属于内政部管辖，而在战时宪兵总队由陆军司令部管辖，海岸警卫队由海军司令部管辖。7·15政变后，总参谋长对土耳其总理负责，拥有武装部队的总指挥和控制权。同时还负责有效地进行军事行动，以及武装部队的作战准备。
 		                		<br>
@@ -332,10 +410,20 @@
 		                	
 		                </div>
 		            </div>
+		            <script type="text/javascript">
+		            $(".ef4").hover(function(){
+		            		$(".ef4").css({overflow:"visible"})
+		            		$(".ef4 .more-info").css({overflow:"visible"})
+		            		// $(".ef4 member-image img").css({visible:"hidden"})
+		            	},function(){
+		            		$(".ef4").css({overflow:"hidden"})
+		            		$(".ef4 .more-info").css({overflow:"hidden"})
+		            		// $(".ef4 member-image img").show();
+		            	})</script>
 		            <!-- effect-4 html end -->
 		            
 		            <!-- effect-5 html -->
-		            <div class="single-member effect-8">
+		            <div class="single-member effect-8 ef5" style="margin:20px 200px;z-index:50;">
 		                <div class="member-info">
 		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">外交</h3>
 		                    
@@ -344,7 +432,7 @@
 		                	<img src="../../static/img/turkey/card/waijiao_blue.jpg" alt="Member">
 		                </div>
 		                <div class="more-info">
-		                	<span>
+		                	<span style="display:block;width:300px;height:155px;margin-left:-50px;">
 		                		<b style="margin-left: 1%;">主要外交国家：</b>
 		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
 		                		中国、美国、俄罗斯、以色列、叙利亚。
@@ -352,10 +440,20 @@
 		                	</span>
 		                </div>
 		            </div>
+		            <script type="text/javascript">
+		            $(".ef5").hover(function(){
+		            		$(".ef5").css({overflow:"visible"})
+		            		$(".ef5 .more-info").css({overflow:"visible"})
+		            		$(".ef5 member-image img").css("display","none")
+		            	},function(){
+		            		$(".ef5").css({overflow:"hidden"})
+		            		$(".ef5 .more-info").css({overflow:"hidden"})
+		            		$(".ef5 member-image img").css("display","block")
+		            	})</script>
 		            <!-- effect-5 html end -->
 		            
 		            <!-- effect-6 html -->
-		            <div class="single-member effect-8">
+		            <div class="single-member effect-8 ef6"  style="margin:20px 0;z-index:50;">
 		                <div class="member-info">
 		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">民族与宗教</h3>
 		                    
@@ -364,10 +462,10 @@
 		                	<img src="../../static/img/turkey/card/minzu_blue.jpg" alt="Member">
 		                </div>
 		                <div class="more-info">
-		                	<span>
+		                	<span style="display:block;width:390px;height:155px;margin-left:-160px;">
 		                		<b style="margin-left: 1%;">民族：</b>
 		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
-		                		<a href="">土耳其人</a>、<a href="">库尔德人</a>、<a href="">切尔卡西人</a>、<a href="">波斯尼亚人</a>、<a href="">阿尔巴尼亚人</a>、<a href="">格鲁吉亚人</a>、<a href="">阿拉伯人</a>、<a href="">朴玛克人</a>、<a href="">拉兹人</a>、<a href="">Hemşinler</a>。其中<a href="">土耳其人</a>(55000000人)是人口最多的民族，分布在土耳其大部分地区。
+		                		<a href="">土耳其人</a>、<a href="">库尔德人</a>、<a href="">切尔卡西人</a>、<a href="">波斯尼亚人</a>、<a href="">阿尔巴尼亚人</a>、<a href="">格鲁吉亚人</a>、<a href="">阿拉伯人</a>、<a href="">朴玛克人</a>、<a href="">拉兹人</a>、<a href="">Hemşinler</a>。
 		                		<br>
 		                		<b style="margin-left: 1%;">宗教：</b>
 		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
@@ -378,10 +476,20 @@
 		                	</span>
 		                </div>
 		            </div>
+		            <script type="text/javascript">
+		            $(".ef6").hover(function(){
+		            		$(".ef6").css({overflow:"visible"})
+		            		$(".ef6 .more-info").css({overflow:"visible"})
+		            		$(".ef6 member-image img").css("display","none")
+		            	},function(){
+		            		$(".ef6").css({overflow:"hidden"})
+		            		$(".ef6 .more-info").css({overflow:"hidden"})
+		            		$(".ef6 member-image img").css("display","block")
+		            	})</script>
 		            <!-- effect-6 html end -->
 		            
 		            <!-- effect-7 html -->
-		            <div class="single-member effect-9">
+		            <div class="single-member effect-9 ef7">
 		                <div class="member-info">
 		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">组织</h3>
 		                    
@@ -390,7 +498,7 @@
 		                	<img src="../../static/img/turkey/card/zuzhi_blue.jpg" alt="Member">
 		                </div>
 		                <div class="more-info">
-		                	<span>
+		                	<span style="display:block;width:350px;height:155px;margin-left:-80px;">
 		                		<b style="margin-left: 1%;">地方极端组织：</b>
 		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
 		                		<a href="">库尔德工人党</a>、<a href="">库尔德自由之鹰</a>、<a href="">灰狼组</a>。
@@ -403,17 +511,27 @@
 		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
 		                		<a href="">东突基金会</a>、<a href="">东突移民协会</a>、<a href="">欧亚突厥协会联盟</a>、<a href="">东突教育与互助协会</a>、<a href="">东突青年协会</a>、<a href="">东突文化与团结协会</a>。
 		                		<br>
-		                		<b style="margin-left: -40%;">反华势力：</b>
+		                		<b style="margin-left: 1%;">反华势力：</b>
 		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
 		                		<a href="">法轮功组织</a>。
 		                		<br>
 		                	</span>
 		                </div>
 		            </div>
+		            <script type="text/javascript">
+		            $(".ef7").hover(function(){
+		            		$(".ef7").css({overflow:"visible"})
+		            		$(".ef7 .more-info").css({overflow:"visible"})
+		            		// $("#one").css("display","none")
+		            	},function(){
+		            		$(".ef7").css({overflow:"hidden"})
+		            		$(".ef7 .more-info").css({overflow:"hidden"})
+		            		// $("#one").css("display","block")
+		            	})</script>
 		            <!-- effect-7 html end -->
 		            
 		            <!-- effect-8 html -->
-		            <div class="single-member effect-9">
+		            <div class="single-member effect-9 ef8" style="margin:0 200px;">
 		                <div class="member-info">
 		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">地方力量</h3>
 		                    
@@ -421,17 +539,27 @@
 		                <div class="member-image">
 		                	<img src="../../static/img/turkey/card/difangliliang_blue.jpg" alt="Member">
 		                </div>
-		                <div class="more-info">
-		                	<b style="margin-left: 1%;">地方力量机构：</b>
+		                <div class="more-info" style="margin-left:1%;width:300px;height:155px;margin-left:-50px;">
+		                	<b>地方力量机构：</b>
 		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
 		                		<a href="">土耳其商人和工业家联合会</a>、<a href="">公共部门工会联合会</a>、<a href="">革命工会联合会</a>、<a href="">独立工商者和商人协会</a>、<a href="">道德权利工人联合会</a>、<a href="">土耳其雇主联合会</a>、<a href="">土耳其劳工联合会</a>、<a href="">土耳其工业家和商人协会</a>、<a href="">土耳其商业和商品交易所联合会</a>。
 		                		<br>
 		                </div>
 		            </div>
+		            <script type="text/javascript">
+		            $(".ef8").hover(function(){
+		            		$(".ef8").css({overflow:"visible"})
+		            		$(".ef8 .more-info").css({overflow:"visible"})
+		            		// $("#one").css("display","none")
+		            	},function(){
+		            		$(".ef8").css({overflow:"hidden"})
+		            		$(".ef8 .more-info").css({overflow:"hidden"})
+		            		// $("#one").css("display","block")
+		            	})</script>
 		            <!-- effect-8 html end -->
 		            
 		            <!-- effect-9 html -->
-		            <div class="single-member effect-9">
+		            <div class="single-member effect-9 ef9">
 		                <div class="member-info">
 		                	<h3 style="font-size: 22px;font-family: Microsoft YaHei;">中国利益</h3>
 		                    
@@ -440,12 +568,12 @@
 		                	<img src="../../static/img/turkey/card/china_blue.jpg" alt="Member">
 		                </div>
 		                <div class="more-info">
-		                	<span>
+		                	<span style="display:block;width:360px;height:155px;margin-left:-120px;">
 		                		<b style="margin-left: 0.6%;">华人华侨：</b>
-		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
+		                		<!-- <a href="#zhengzhizhidu_blank">议会共和制</a> -->
 		                		<a href="">维吾尔族</a>(4-5万)、<a href="">哈萨克族</a>(2-3万)、<a href="">其他</a>(少量)。
 		                		<br>
-		                		<b style="margin-left: 0%;">华人商会：</b>
+		                		<b style="margin-left: 0%;">华人商会：" target="</b>
 		                		<!-- <a href="#zhengzhizhidu" target="_blank">议会共和制</a> -->
 		                		<a href="">土耳其中资企业商会</a>、<a href="">土耳其中国工商总会</a>、<a href="">伊斯坦布尔中资企业协会</a>、<a href="">伊斯坦布尔工业协会</a>、<a href="">伊斯坦布尔商会</a>、<a href="">安卡拉商会</a>、<a href="">安卡拉工业协会</a>……<a href="">查看详情</a>
 								<br>
@@ -460,6 +588,16 @@
 		                	</span>
 		                </div>
 		            </div>
+		            <script type="text/javascript">
+		            $(".ef9").hover(function(){
+		            		$(".ef9").css({overflow:"visible"})
+		            		$(".ef9 .more-info").css({overflow:"visible"})
+		            		// $("#one").css("display","none")
+		            	},function(){
+		            		$(".ef9").css({overflow:"hidden"})
+		            		$(".ef9 .more-info").css({overflow:"hidden"})
+		            		// $("#one").css("display","block")
+		            	})</script>
 		            <!-- effect-9 html end -->
 		            
 		        </div>
@@ -821,7 +959,7 @@
                            </div>
                         </p>
                          
-	                       <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: -57.6%;margin-top: 27.5%;margin-right: 0.6%;" ></div>
+	                       <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: -54.6%;margin-top: 27.5%;margin-right: 0.6%;" ></div>
 	                        <p class="personal_domain" style="margin-top: 28.5%;">
 	                            <b>政治时事</b>
 	                            <div id="zhengzhi_content" style="width:100%;height: auto;margin-left: 3%;">
@@ -875,7 +1013,7 @@
                                     </p>
                         <!-- 进出口相关 -->
                         <div id="jinchukou_id" style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: -98%;margin-top: 23%;margin-right: 0.6%;" ></div>
-                                    <p class="personal_domain" style="margin-top: 64.5%;margin-left: -98%;"><b>出口</b>
+                                    <p class="personal_domain" style="margin-top: 63.5%;margin-left: -98%;"><b>出口</b>
                                     <div id="chukou_big" style="float:left;width:48%;height:300px;box-shadow: 0px 0px 5px #ddd inset;">
                                         <!-- 出口相关图 -->
                                         <p style="margin-top: 2%;margin-left: 2%;">出口金额：1546亿美元（2015年）、1689亿美元（2014年估计）。</p>
