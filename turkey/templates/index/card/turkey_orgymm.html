@@ -1,0 +1,408 @@
+{% extends "/index/card/card_base.html" %}
+{% block module_title %}人物卡片{% endblock %}
+{% block body %}
+
+
+{% block head_css %}
+
+
+    <style type="text/css">
+        /*
+         * Base structure
+         */
+
+        /* Move down content because we have a fixed navbar that is 50px tall */
+        /*body {
+            padding-top: 60px;
+            font-family: Arial,"Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei","文泉驿微米黑",STXihei,"华文细黑",sans-serif;
+            font-size: 12px;
+            background-color: #ebebeb;
+        }
+        body, form, ul, ol, li, h1, h2, h3, h4, h5, h6, p, dl, dd, td, th, input, img {
+            margin: 0;
+            padding: 0;
+        }*/
+        #overview{
+            width: 1100px;
+		    margin: 0 auto;
+		    background-color: white;
+		    margin-left: 16px;
+		    margin-top: 60px;
+		    float: left;
+
+            
+
+        }
+        #overview p {
+            margin-bottom:10px;
+        }
+
+        .open a, a, a:hover {
+            text-decoration: None;
+        }
+
+        a:hover {
+            /*text-decoration:underline;*/
+            color:blue;
+
+        }
+
+        ul, ol, li {
+            list-style: none;
+        }
+        .panel-body div{
+            /*float:left;*/
+        }
+        .panel-heading div{
+            font-size: 22px;
+            font-family: Microsoft YaHei;
+        }
+        table th, td{
+            text-align: center;
+            height: 30px;
+            line-height: 50px;
+        }
+        .list-group a{
+            float: right;
+        }
+        .shadow {
+        -webkit-box-shadow:5px 6px 3px #ABA8A8;
+        -moz-box-shadow:5px 6px 3px #ABA8A8;
+        box-shadow:5px 6px 3px #ABA8A8;
+    }
+    .panel-heading {
+        background-color: #78748C;
+        color: white;
+    }
+    .personal_domain {
+        height: 35px;
+    }
+    .personal_domain b{
+        font-family: Microsoft YaHei;color: #104F87;font-size: 16px;
+    }
+    .personal_domain span{
+        padding: 10px;
+        background-color: #45b8b3;
+        color: white;
+        border-radius: 4px;
+        margin:5px;
+    }
+    #hanhan , #wuyuan{
+        padding: 10px;
+        background-color: #43b6af;
+        color: white;
+        border-radius: 4px;
+        margin:12px;
+        margin-right: 10px;
+    }
+    #comment ul li {
+        line-height: 25px;
+        height:80px;
+    }
+    .personal_domain a{
+        color: #2a6496;
+    }
+    .menu_overview{
+        float: left;
+    background-color: #3379b7;
+    margin-left:30px;
+    height: 51px;
+    color: white;
+    width: 100px;
+    padding: 18px;
+    font-size: 15px;
+    }
+    .keywords_cloud_div a:hover{
+        color:blue;
+
+    }
+
+    .right_col{
+    	float: left;
+        padding-top: 40px;
+        margin-top: 30px;
+        margin-left: 25px;
+        width: 20%;
+        height: 340px;
+        height: screen.height;
+        background-color: #ffffff;
+        border-bottom: 1px solid #CCCCCC;
+        border-top: 1px solid #CCCCCC;
+        border-left: 1px solid #CCCCCC;
+        border-right: 1px solid #CCCCCC;
+    }
+
+    .right_col_title{
+	    width: 100%;
+		height: 30px;
+		margin-top: -20%;
+		background-color: #CCCCCC;
+    }
+
+    .right_col_zhengzhi{
+    	float: left;
+        padding-top: 40px;
+        margin-top: 30px;
+        margin-left: 96px;
+        width: 20%;
+        height: 400px;
+        height: screen.height;
+        background-color: #ffffff;
+        border-bottom: 1px solid #CCCCCC;
+        border-top: 1px solid #CCCCCC;
+        border-left: 1px solid #CCCCCC;
+        border-right: 1px solid #CCCCCC;
+    }
+
+    </style>
+{% endblock head_css %}
+
+{% block head_js %}
+        <!-- JQuery core JS -->
+    <script src="/static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap core JS -->
+    <script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/moment.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/datarangepiker.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/highstock.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/exporting.js') }}"></script>
+    <!--<script src="/static/css/js/echarts-all.js"></script>-->
+    <script src="/static/echarts/echarts.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0ECXIPy41grtI3jUXqQMgILaG1vKUiLo"></script>
+
+{% endblock head_js %}
+
+{% block content %}
+
+        <div id="overview" >
+            {% if topic == '冯骥才' %}
+ 
+
+            <div class="shadow" style="border-radius: 10px;float: left;padding:15px;border: 4px solid #104F87;margin: 15px;width: 97%;">
+                <div id = "porphoto" style="width:105px;float:left;margin-top: 0.4%;margin-left: -1%;">
+                    <p style="margin-top: 5.3%;font-family: Microsoft YaHei;color: #104F87;font-size: 24px;margin-left: 11%;" >Turkey</p>
+                    <span class="img-photo" style="margin-left:1%;margin-top:0px;margin-bottom:10px;display:block;float:left;"><img id="turkey_img" src="/static/img/turkey/turkey.png" alt="Photo" width="100" height="70"></span>
+                </div>
+                <div style="float:left;width:675px;margin-left: 1%;">
+                    <p style="font-size:16px;">
+                        <!-- <b>{{topic}}</b> -->
+                        
+                        <!-- <a id="alert_png" href="/cluster/?query=冯骥才&subevent_id=global"><img src="../../static/img/warning2.png" width="20px" style="margin-left: 1px;margin-bottom: 5px;" title="有舆情事件，请点击查看"></a> -->
+                    </p>
+
+                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                    <p class="personal_domain"><b>人口地理</b>
+                    <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
+                    </p>
+                    <p style="font-size: 14px;margin-top: -2%;">
+                        土耳其共和国，简称土耳其，现有人口78,741,053人，是一个横跨欧亚两洲的国家，北临黑海，南临地中海，东南与叙利亚、伊拉克接壤，西临爱琴海，并与希腊以及保加利亚接壤，东部与格鲁吉亚、亚美尼亚、阿塞拜疆和伊朗接壤。土耳其地理位置和地缘政治战略意义极为重要，是连接欧亚的十字路口。
+                    </p>
+
+                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                    <p class="personal_domain"><b>行政区域</b>
+                    <a href="">查看详情</a>
+                    </p>
+                    <p style="font-size: 14px;margin-top: -2%;">土耳其行政区划等级为省、县、乡、村。全国共分为81省、约600个县、3.6万多乡村。</p>
+                    
+                    <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                    <div class="personal_domain"><b>机构设置</b>
+                    <a href="">查看详情</a>
+                    </div>
+                    <p style="font-size: 14px;margin-top: -0.5%;margin-bottom: 3%;">
+                        政府机构：总统府、大国民议会、总理府、总参谋部、司法部、国防部、内政部、外交部、财政部、教育部、环境部、卫生部、交通、航运和通讯部、食品、农业和畜牧业部、劳动和社会保障部、科学、工业和技术部、能源和自然资源部、文化旅游部、森林和水利部、家庭和社会政策部、欧盟事务部、经济部、青年与体育部、海关和贸易部、发展部。
+                    </p>
+                    <p style="font-size: 14px;margin-top: -0.5%;margin-bottom: 3%;">
+                         强力部门：对外情报机构：国家情报组织（英语：National Intelligence Organization、土耳其语：Millî İstihbarat Teşkilatı, MİT）、对内情报机构：公共秩序及安全部。（ 英语：Undersecretariat of Public Order and Security、土耳其语：Kamu Düzeni ve Güvenliği Müsteşarlığı（KDGM ））、土耳其安全总局。
+
+                    </p>
+
+                    
+                </div>
+
+                <div class="right_col" style="">
+                	<div class="right_col_title">
+                		<div style="margin-top: 2.3%;margin-left: 5%;float:left">
+                			<p style="font-family: Microsoft YaHei;color: #104F87;font-size: 16px;">其他人还在看</p>
+                		</div>
+                		<div style="margin-top: 0%;margin-left: -1%;float：left;" >
+                       
+                           <img id="yilang_img" src="/static/img/turkey/yilang.png" alt="Photo" style="float：left;width:80px;height: 60px;margin-top: 20%;margin-left: -45%;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="http://baike.baidu.com/link?url=DyeVveVUww4ea_KOLwiAUT81KqXm1Iey1MBI4slgwFlEbdLNtMjYw2FX6YAB8vSC_aergr2tsoLXQ6kzg0vqVPKVA2GA9Yed0tgjZ_QnZK_" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">伊朗</a></p>
+                        
+                       </div>
+
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;margin-top: -44.2%;margin-left: 49%;" >
+                       
+                           <img id="ruassia_img" src="/static/img/turkey/ruassia.png" alt="Photo" style="float：left;width:80px;height: 60px;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">俄罗斯</a></p>
+                        
+                       </div>
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;" >
+                       
+                           <img id="shatealabo_img" src="/static/img/turkey/shatealabo.png" alt="Photo" style="float：left;width:80px;height: 60px;margin-left: 9%;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">沙特阿拉伯</a></p>
+                        
+                       </div>
+
+                       <div style="margin-top: 0%;margin-left: -1%;float：left;margin-top: -44.2%;margin-left: 49%;" >
+                       
+                           <img id="yiselie_img" src="/static/img/turkey/yiselie.png" alt="Photo" style="float：left;width:80px;height: 60px;border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">
+                           <p style="margin-left:0%;margin-top: 0%;width: 100%;" ><a href="" style="font-size: 12px;margin-top: 0%;float：left;margin-left: 18%;">以色列</a></p>
+                        
+                       </div>
+                		
+                	</div>
+                	
+                </div>
+            </div>
+            {% endif %}
+            
+            <div class="col-lg-12" >
+                <div class="panel panel-default">
+                    <div>
+                        <div class="panel-heading" style="background-color: #31708f;color: white;border-bottom: 1px solid transparent;border-color: #104F87;">
+                            <div>库尔德斯坦工人党</div>
+                        </div>
+                        <!-- 历任总统 -->
+                        <div class="panel-body" style="float: left;width:80%">
+                            <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                            <p class="personal_domain" style='margin-bottom:12px' ><b>政党基本信息</b>
+                           
+                            </p>
+                            <HR width="93%" style="margin-left: -4%;margin-top:-26px;border-top: 1px solid #969898"/>
+                            <span style="font-size: 14px;margin-top: -1%; margin-left:10px"><b>政党名称：</b>库尔德斯坦工人党</span>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left: 60px"><b>创立人：</b>阿卜杜拉·奥贾兰</span>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left: 45px"><b>成立时间：</b>1978年</span>
+                            <p></p>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left: 10px"><b>现任领导人：</b>耶尔德勒姆</span>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left: 90px"><b>政治倾向：</b>    极左翼</span>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left: 90px"><b>欧洲组织：</b>库尔德斯坦社群团体</span>
+                            <p></p>
+                            <span style="font-size: 14px;margin-top: -1%;margin-left:10px"><b>总部：</b>伊拉克库尔德斯坦坎迪尔山</span>
+                            <p></p>
+                            <p></p>
+                            <div style='float:left'>
+                                <p style="font-size: 14px;margin-left:10px"><b>意识形态:</b></p>
+                                <p></p>
+                                <p style="font-size: 14px; margin-left:30px"><b>库尔德民族主义&nbsp;&nbsp;自由意志社会主</b></p>
+                                <p></p>
+                                <p style="font-size: 14px; margin-left:30px"><b>地方自治主义&nbsp;&nbsp;民主联邦主义</b></p>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="float: right;width:20%">
+                        <img id="zhengyidang_img" src="/static/img/turkey/kuer.png" alt="Photo" style="float：left;width: 230px;height: 250px;margin-top: 20px;margin-left: -60px;">
+                        </div>
+                    </div>
+
+
+                    <div style="z-index:999999">
+                        <div  style="float: left;width:100%;height: 500px;margin-left: 1%;" >
+                        <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                        <p class="personal_domain" style='margin-bottom:12px' ><b>势力范围</b>
+                       
+                        </p>
+                       <!--  <HR width="93%" style="margin-left: -4%;margin-top:-26px;border-top: 1px solid #969898"/> -->
+                          <HR width="95%" style="margin-left: -4%;margin-top:-26px;margin-left:12px;border-top: 1px solid #969898"/> 
+                            
+                            <div id="map_org" style="width: 70%;height: 400px;">
+                                
+                            </div>
+
+                            <style>
+                                .mr .ku {
+                                    font-size: 22px;
+                                    font-weight: 900;
+                                    color: #7BBA78;
+                                    margin-bottom: 60px;
+                                }
+                                .mr p {
+                                    font-size: 14px;
+                                }
+
+                            </style>
+                            <div class="mr" style="float:right;width: 26%;height: 500px;margin-top: -400px;">
+                                <p class="ku">库尔德工人党</p>
+                                <p class="fan" style="margin-top:40px;"><span style="font-size:20px;color:red;font-weight:500;">活动范围:</span><br/>土耳其东南部、伊拉克东北部、叙利亚东北部和伊朗西北部</p>
+                                <p class="shi" style="margin-top:40px;"><span style="font-size:20px;color:red;font-weight:500;">暴乱事件:</span><br/>从2004年起，库尔德工人党加紧了对伊拉克边境地区土耳其军队、警察与政府目标的攻击。安卡拉向美方增施压力，以获得军事打击伊拉克北部库尔德工人党基地的许可。库尔德工人党宣称自己只是以行动来自卫和保护库尔德人。<br/>2014年8月25日中国驻大使馆25日证实，3名中国工人24日在土耳其东南部遭库尔德工人党武装人员劫持，使馆正在全力营救中方人员。
+                                 </p>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    </div>
+                    
+
+
+                	<div style="margin-top: -4%;">
+                		<div style="float:left;width:6px;height:22px;background-color: #104F87;margin-top: 0%;margin-left:1%;margin-right: 0.6%;" ></div>
+                        <div style="margin-top: 79%;margin-left:45%;">
+                        <p class="personal_domain" style='margin-bottom:15px'><b style="    margin-left: -77.5%;">党派发展历史</b>
+                        </div>
+                        <HR width="96%" style="margin-left: -4%;margin-top:-28px;margin-left:25px;border-top: 1px solid #969898"/>
+                            <p style="font-size: 14px;margin-left: 3%;"><b>发展历程：</b></p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify ">工人党的核心是一个原名“安卡拉民主爱国高等教育协会”（APOCUS）或“阿波会”（土耳其语：Apocular，“阿波主义者”）的组织，成员主要由学生组成，由阿卜杜拉·奥贾兰领导（“阿波”是他的昵称）。虽然该组织在安卡拉成立，但随后很快将焦点转向土耳其东南部地区与当地的广大库尔德族人口，组织开始成型。随着1978年10月27日“工人党独立宣言”正式发表，该组织改名为库尔德工人党。因其意识形态以共产主义为主，同时兼有库尔德民族主义，工人党很快卷入与右翼组织的冲突中。</p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">1979年，穆罕默德·杰拉勒·布贾克（Mehmet Celal Bucak）被指“剥削农民”与“通敌”。工人党尝试暗杀他，但未成功。这是工人党第一次在公开场合进行的暴力活动。此举引发土耳其政治极端团体之间的激烈巷战。从1978至1982年，土耳其国家安全委员会记录在案的恐怖活动有43000多起。在冲突当中，土耳其前总理尼哈特·埃里姆于1980年被暗杀身亡。当年的军事政变很大程度上结束了冲突，工人党的党员被判死刑、徒刑或流亡叙利亚。</p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">1980年11月10日，土耳其驻法国斯特拉斯堡领事馆受到爆炸袭击，造成严重财产损失，但是没有人员伤亡。亚美尼亚地下解放军（亚美尼亚激进组织，经常攻击土耳其领事馆，当时被列为恐怖组织，现已停止活动）与库尔德工人党宣布对此负责。一位发言人在与法新社通话时称，爆炸是一次联合行动，标志了两个民族主义组织之间“成效显著的合作”成果[25]。</p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">从1984年开始，工人党（主要在伊朗、伊拉克与叙利亚支持下以其为基地）开始转变为准军事组织，向土耳其政府机关、军事与民用目标发动常规与炸弹爆炸袭击，大多数袭击与东南安纳托利亚计划（GAP）——一个基于东南安纳托利亚9百万人的可持续发展理念的综合系统性地区发展计划——有关。工人党也将行动形式分散化，行动拓展到很多欧洲和中东国家。</p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify ">随着苏联解体，工人党很大程度上放弃了共产主义思想基础，尝试更好地调和民族主义观点和伊斯兰信仰。在1990年代中期，传统的炸弹袭击也开始转变成自杀式爆炸袭击，在1995至1999年之间进行过15次之多。大多数自杀式爆炸袭击者（15人中有11人）是妇女。</p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">工人党的支持者于2003年2月15日反战游行中在伦敦街头示威[3]。1990年代后期起，土耳其军队开始在与工人党的阵地战中取得上风，后冷战时代国际政治的变化也使工人党失去了很多国外支持者。因安全方面的担忧下降，土耳其国会开始在可控情况下解除法律限制，对此外界因立场不同称之为“正常化”或“修好”。禁止出版库尔德语出版物的禁令在1991年解除，更多更彻底的改革，诸如解除库尔德语广播的禁令，在工人党活动寥寥的2000年得以实施
+                            </p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify ">1999年，土耳其政府在被希腊警方从希腊驻肯尼亚大使馆引渡回一个当地机场后逮捕了奥贾兰。此项行动由中情局与土耳其国家情报局联合进行。奥贾兰被土耳其宣判为死刑。他将土耳其政府上诉到欧洲人权法庭（ECtHR），土耳其因此将其从死刑减至无期徒刑，使他不致被处死。欧洲人权法庭认为，因为在土耳其审判阿卜杜拉·奥贾兰法庭中有一名军法官，违反了欧洲人权公约第6条（公正审判权），但没有违反第2条（生存权）。被捕的奥贾兰发出关于和平方案的号召，而工人党发现自己上了很多国家的黑名单。因此工人党开始一系列的转变，并实现了单方面停火，一直持续到2004年。当年4月2日，欧盟理事会将工人党列入恐怖组织名单。随后在同年，美国财政部冻结了工人党各个支部的资金。按照土耳其官方说法，伊拉克北部库尔德地区领导人马苏德·巴尔扎尼和美国占领军当局没有尽全力消灭工人党游击队和守卫伊拉克-土耳其边界，引起伊土两国关系紧张。</p>
+                             </p>
+
+                           <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left:15px;margin-right: 0.6%;" >
+                               
+                           </div>
+                            <p class="personal_domain" style='margin-bottom:15px'><b>武装活动</b>
+                            <HR width="96%" style="margin-top:-28px;margin-left:25px;border-top: 1px solid #969898"/>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">自从1970年建立以来，在于1980年军事政变时到达高潮的土耳其全境内爆发的暴力冲突中，库尔德工人党发展成为准军事组织。1980年代后期和1990年代工人党和土耳其政府之间的对峙使土耳其东南部成为战场。工人党主要在土耳其开展武装活动，并将其他国家的土耳其设施作为目标，偶尔也会和邻国，如伊拉克与伊朗的库尔德人准军事组织合作</p>
+                            <p style="font-size: 14px;margin-left: 4%; margin-right: 10px; text-align: justify">库尔德工人党坚称，自己的暴力活动是在它所认为的当地政府对库尔德人(包括1983年土耳其语言法禁令)与库尔德文化权力的打压之下，为了保护库尔德人而进行的。在战事中，工人党被人权组织如大赦国际和人权观察等指控对土耳其和库尔德人双方的平民犯下暴行。土耳其政府之前的行动也被这些组织所诟病。事实上，土耳其政府发动了一系列针对工人党的清剿战役，也从明确反对分离主义的1982年宪法开始采取政治行动，包括1983年(军政府还政于民时)
+                            </p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">在几个工人党控制的区域宣布紧急状态。这一系列的反恐政改还包括有库尔德人血统的图尔固特·厄扎尔（Turgut Özal）总理1985年建立的村民自卫队制度。总的来说，这场持续逾三十年的低烈度冲突在土耳其影响广泛。另外，这场冲突也是土耳其与欧盟在土耳其入盟谈判中一个重要部分。埃里克·鲁洛在2000年11月/12月号的《外交》杂志中指出：“按照土耳其司法部的说法，除了死于军事行动中3 5000人之外，1 7500人在冲突开始的1984年与1998年间被暗杀。另有1000人在1999年的头9个月中被暗杀。据土耳其报道，这些作案者一个也没有被抓获，他们属于直接或间接为安全部门工作的雇佣兵组织。”[在1980年代后期与1990年代早期，为了赢得不断增长的库尔德农民阶层的支持，工人党将自己的左翼世俗意识形态修正为更适应与接受伊斯兰教信仰的形式。它也放弃了之前袭击库尔德平民的策略，将目标集中在政府和旅游景点上。</p>
+                            <p style="font-size: 14px;margin-left: 3%;"><b>战术：</b></p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">库尔德工人党的活动区域主要是多山的乡村地区和人口密集的市区。山区地形使工人党成员在山洞网络中得以藏身，也增加了土耳其军队进行空中袭击特别是使用直升机的风险。在市区中，工人党成员总能混迹于当地人群之中。工人党也埋设过地雷。使用地雷造成过平民死亡，部分因为民用卡车与公共汽车而不是原先设想的军用装甲车意外触发了引信</p>
+                            <p style="font-size: 14px;margin-left: 3%;"><b>安卡拉大学的研究：</b></p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify ">工人党被发现在它的部队中使用儿童，最近的一项安卡拉大学保健科学学院的研究调查了从该组织抓获的儿童的参战动机。被调查者中86%参加工人党是为了为家中增加收入，工人党会供养他们的家庭做会回报。所有的儿童都报告说这些承诺未被履行，80%的被调查者也报告说曾经主动制止其他家庭成员——通常是弟弟——参加该组织[86]。调查也显示60%的被调查者教育水平低于高中。被问及为何呆在工人党中而不是向政府投诚时，三分之二的被调查者说他们害怕被工人党发现，因为报复不仅限于对这些士兵的人身伤害；他们的家庭也会有危险。百分之五的人说害怕土耳其共和国政府的惩罚。研究也调查了该组织的性别平等情况。88%的对象报告说，虽然它持有马克思主义意识形态，并宣称平等是其主要目标，但在组织之内并无平等存在</p>
+                            <p style="font-size: 14px;margin-left: 3%;"><b>土耳其武装部队的对策：</b></p>
+                            <p style="font-size: 14px;margin-left: 4%;margin-right: 10px; text-align: justify">为了和工人党的活动对抗，土耳其军队的清剿战斗一直持续至今。其中包括使用由退伍军人和宪兵军官和士官组成的特别行动组。这些假部队身着工人党军服。他们被指控作为“民团”随意处决工人党嫌犯，而且据报道从右翼的民族行动党（MHP）得到大量人员补充。行动党的青年组织“灰狼”在1970年代嚣张一时，1980年军事政变后大多数成员被捕，但很快被土耳其政府释放，条件是参加镇压叛乱，土耳其政府在这一点上和极端民族主义取得一致。与反游击战同时，土耳其的北约支部在敌后部署了一个反共秘密准军事组织网络，这些准军事部队在与工人党1980年代的战斗中处决与酷刑折磨过数千人。他们穿着工人党战斗服，将处决作为心理战的一种方式使用 。一名退役的土耳其中校塔拉特·图尔汗（Talat Turhan）证实了镇压叛乱的秘密行动中有施加酷刑。在一份1997年1月28日发布的报告中，土耳其政府一级警司萨瓦斯描述了军队的“特种战争”参与诈骗、勒索、强奸与贩毒的情况。报告同时也描述了土耳其政府将西韦雷克（Siverek）和西尔万（Hilvan）两市周围大片区域的治安交给部落酋长萨达特·布贾克（Sedat Bucak）的私人军队，后者是一名国会议员，与土耳其总理坦苏·奇莱尔（Tansu Çiller）过从甚密。土耳其日报《左翼报》1998年2月4日刊登的一个版本提到：“在实施紧急状态的地区库尔德省份中，实施死刑的权力被下放到了低级军官——甚至更严重地——悔改的囚犯手中，他们昨天还是恐怖分子，而明天则是潜在的犯人……当犯人在某案暂时休庭，从一个政府部门被转交另一个政府部门时，被发现死于一座桥下。而明显人们不能谈论没有凶手的谋杀。”
+                            </p>
+
+
+
+
+                            <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left:15px;margin-right: 0.6%;" >
+                               
+                           </div>
+                            <p class="personal_domain" style='margin-bottom:15px'><b>参考文献</b>
+                            <HR width="96%" style="margin-top:-28px;margin-left:25px;border-top: 1px solid #969898"/>
+                                <p style="font-size: 14px;margin-left: 3%;"> <b>1.</b>Fitzherbert, Yvo. A new kind of freedom born in terror. OpenDemocracy. 26 August 2014 [30 September 2015]</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>2.</b>Kolokotronis, Alexander. The No State Solutiolin: Institutionalizing Libertarian Socialism in Kurdistan. New Politics. 2 November 2014 [30 September 2015]</p>
+                                <p style="font-size: 14px;margin-left: 3%"><b>3.</b> Taylor, Rafael. The new PKK: unleashing a social revolution in Kurdistan. ROAR Magazine. 17 August 2014 [30 September 2015].</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>4.</b>^ Tax, Meredith. The Revolution in Rojava. Dissent. 22 April 2015 [30 September 2015].</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>5.</b>Jones, Owen. Why the revolutionary Kurdish fight against Isis deserves our support. The Guardian. 10 March 2015 [30 September 2015].</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>6.</b>Legard, Sveinung; David Graeber. We Have a Lot to Learn. New Compass. 17 September 2015 [30 September 2015].</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>7.</b>Hozat, Bese. Bese Hozat: PKK is a social system today. pkkonline.com. 25 November 2013 [18 June 2015].</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>8.</b>Jongerden, Joost. Rethinking Politics and Democracy in the Middle East (PDF). [8 September 2013]</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>9.</b>Öcalan, Abdullah. Democratic Confederalism (PDF). 2011 [8 September 2013]. ISBN 978-0-9567514-2-3.</p>
+                                <p style="font-size: 14px;margin-left: 3%;"><b>10.</b>Öcalan, Abdullah. The declaration of Democratic Confederalism. KurdishMedia.com. 2 April 2005 [8 September 2013].</p>
+
+
+                	</div>
+                      
+                </div>
+            </div>
+
+
+        
+</div>
+
+ <script type="text/javascript" src="/static/js/map_org.js"></script>
+
+{% endblock content %}
+
+
+
+{% endblock body %}
