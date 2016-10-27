@@ -87,13 +87,14 @@
 
 		 function check_all()
 		 {
-		 	 var time_from= document.getElementById("input_time_from").value;
-		 	 var time_to= document.getElementById("input_time_to").value;
+		 	 // var time_from= document.getElementById("input_time_from").value;
+		 	 // var time_to= document.getElementById("input_time_to").value;
 		 	 // var key_word= document.getElementById("key_word").value;
 		 	 var country= $('#select_country option:selected') .val();
 		 	 var city= $('#select_city option:selected') .val();
 		 	 // if (time_from==''||time_to==''||key_word==''||country==''||city=='') 
-		 	 if (time_from==''||time_to==''||country==''||city=='') 
+		 	 // if (time_from==''||time_to==''||country==''||city=='') 
+		 	 if (country==''||city=='') 
 		 	 {
 		 	 	alert('信息输入不全，请重新输入!');
 		 	 }
@@ -148,7 +149,7 @@
     <!-- $("#txt").attr("value"); -->
 
 			        	    		<div class='input-group date'  style="position:relative;width: 180px;height:40px;margin-left: 80px;margin-top:-80%;float: left;">
-			                			<input id="input_time_from" placeholder="开始时间" type='text' class="form-control" onchange="check_time_from();" onkeypress="if(event.keyCode==13){ check_time_from();}" style="height:40px;text-align:center;"/>
+			                			<input id="input_time_from" placeholder="2016-01-01" type='text' class="form-control" onchange="check_time_from();" onkeypress="if(event.keyCode==13){ check_time_from();}" style="height:40px;text-align:center;"/>
 			                			<span class="glyphicon glyphicon-calendar" style="position:absolute;right:10px;
 			                			z-index:5;top:13px;"></span>
 			           		 		</div>
@@ -159,7 +160,7 @@
 			        		<div class='col-md-3' id="date2">
 			        			<div class="form-group" style="float:left;">
 			            			<div class='input-group date'  style="position:relative;width: 180px;height:40px;margin-top: -27%;margin-left: 155%;float: left;">
-			                			<input id="input_time_to" placeholder="结束时间" type='text' class="form-control" onchange="check_time_to();" onkeypress="if(event.keyCode==13){ check_time_to();}" style="height:40px;text-align:center;" />
+			                			<input id="input_time_to" placeholder="2016-01-30" type='text' class="form-control" onchange="check_time_to();" onkeypress="if(event.keyCode==13){ check_time_to();}" style="height:40px;text-align:center;" />
 			                			<span class="glyphicon glyphicon-calendar" style="position:absolute;right:10px;
 			                			z-index:5;top:13px;"></span>
 			                			<img src="/static/img/star.png" width="10px" height="10px"  style="float:left;margin-left: 110%;margin-top: -30px;">

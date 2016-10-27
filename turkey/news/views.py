@@ -30,9 +30,9 @@ def turkey_detail():
 def turkey_org():
     return render_template('index/card/turkey_org.html')
 
-@mod.route('/turkey_orgymm/')
-def turkey_orgymm():
-    return render_template('index/card/turkey_orgymm.html')
+# @mod.route('/turkey_orgymm/')
+# def turkey_orgymm():
+#     return render_template('index/card/turkey_orgymm.html')
 
 @mod.route('/turkey_index/')
 def turkey_index():
@@ -105,22 +105,12 @@ def turkey_info():
 
 
    
-@mod.route('/turkey_infoymm/')
-def turkey_infoymm():
-    """进入土耳其信息展示页面
-    """
-    # topic_name = request.args.get('query', default_topic_name) # 话题名
-    # topicid = em.getEventIDByName(topic_name)
-    # module_name = u'人物概览分析'
-    # subevent_id = request.args.get('subevent_id', 'global')
-    # cluster_num = request.args.get('cluster_num', default_cluster_num)
-    # cluster_eva_min_size = request.args.get('cluster_eva_min_size', default_cluster_eva_min_size)
-    # vsm = request.args.get('vsm', default_vsm)
-
-    # return render_template("index/turkey_info.html",module_name=module_name, topic=topic_name, topic_id=topicid, subevent_id=subevent_id, \
-    #         cluster_num=cluster_num, cluster_eva_min_size=cluster_eva_min_size, \
-    #         vsm=vsm)
-    return render_template("index/turkey_infoymm.html")
+# @mod.route('/turkey_info/')
+# def turkey_infoy():
+#     """进入土耳其信息展示页面
+#     """
+  
+#     return render_template("index/turkey_info.html")
 
 
 
