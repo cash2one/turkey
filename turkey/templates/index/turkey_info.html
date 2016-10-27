@@ -151,8 +151,8 @@
 		.tg th{font-family:Arial, sans-serif;font-size:12px !important;font-weight:normal;padding:0px 0px !important;border-style:solid;border-width:1px;	overflow:hidden;word-break:normal;border-color:#999;color:black;background-color:#cbcefb;}
 		.tg .tg-4kqm{background-color:#dae2ee;vertical-align:center}
 		.tg .tg-480y{font-size:14px !important;font-family:Arial, Helvetica, sans-serif !important;text-align:center;vertical-align:center}
-		.tg .tg-yw4l{vertical-align:top}
-		.tg .tg-6k2t{vertical-align:top}
+		.tg .tg-yw4l{vertical-align:top;text-align:left !important;}
+		.tg .tg-6k2t{vertical-align:top;text-align:left !important;}
 		.tg1  {border-collapse:collapse;border-spacing:0;}
 		.tg1 td{font-family:Arial, sans-serif;font-size:12px;padding:5px 2.5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;text-align: left !important;}
 		.tg1 th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;padding: 5px 5px !important;height: 20px;line-height: 2;text-align: left !important;}
@@ -164,6 +164,8 @@
     <!-- <link rel="stylesheet" href="/static/css/bootstrap.css"> -->
    <!--  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'> -->
 	<link rel="stylesheet" type="text/css" href="../../static/css/style_card.css">
+	
+	<link rel="stylesheet" type="text/css" href="../../static/css/dropdownlist.css">
     {% endblock head_css %}
 
     {% block head_js %}
@@ -180,7 +182,7 @@
     <!--<script src="/static/css/js/echarts-all.js"></script>-->
     <script src="/static/echarts/echarts.js"></script>
 
-	<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+	<!-- <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script> -->
 	<script type="text/javascript" src="/static/js/highcharts/exporting.js"></script>
     <script type="text/javascript">
         
@@ -472,7 +474,7 @@
                         <div><img id="gaikuang_img" src="/static/img/turkey/gaikuang.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">国家概况</div>                       
                     </div>
                     <!-- <div class="panel-body"> -->
-                      <div class="panel-body" id="gaikuang_show_hide">
+                      <div class="panel-body"  id="gaikuang_show_hide">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>历史综述</b>
                                    
@@ -910,7 +912,7 @@
                                     <table class="table table-bordered">
                                         <!-- <caption>边框表格布局</caption> -->
                                         <thead>
-                                            <tr>
+                                            <tr style="background-color: #cbcefb;font-size: 13px;font-weight: bold;">
                                                 <th>年份</th>
                                                 <th>预算收入</th>
                                                 <th>预算支出</th>
@@ -961,7 +963,7 @@
                                     <table class="table table-bordered">
                                         <caption>双边经贸关系(单位：十亿美元)</caption>
                                         <thead>
-                                            <tr>
+                                            <tr style="background-color: #cbcefb;font-size: 13px;font-weight: bold;">
                                                 <th>年份</th>
                                                 <th>出口</th>
                                                 <th>出口</th>
@@ -1072,7 +1074,7 @@
                                         <table class="table table-bordered">
                                         <!-- <caption>双边经贸关系(单位：十亿美元)</caption> -->
                                         <thead>
-                                            <tr>
+                                            <tr style="background-color: #cbcefb;font-size: 13px;font-weight: bold;">
                                                 <th>民族</th>
                                                 <th>人口</th>
                                                 <th>地域分布</th>
@@ -1184,7 +1186,7 @@
                                         <table class="table table-bordered" style="float:left;width:40%;margin-left: 8%">
                                         <caption>其他宗教构成</caption>
                                         <thead>
-                                            <tr>
+                                            <tr style="background-color: #cbcefb;font-size: 13px;font-weight: bold;">
                                                 <th></th>
                                                 <th>基督徒</th>
                                                 <th>犹太人</th>
@@ -1213,7 +1215,7 @@
                         <div><img id="orgnize_img" src="/static/img/turkey/orgnize.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">组织</div>                       
                     </div>
                     <!-- <div class="panel-body"> -->
-                      <div class="panel-body" id="zuzhi_show_hide">
+                      <div class="panel-body" id="zuzhi_show_hide" >
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>组织列表</b></p>
                                     
@@ -1246,7 +1248,7 @@
                                       	    <th class="tg-480y" style="font-size: 14px;font-weight: bolder;">相关事件</th>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-6k2t">库尔德工人党<br>（Partiya Karkerên Kurdistan）</td>
+                                      	    <td class="tg-6k2t"><a href="/news/turkey_org" target="_blank">库尔德工人党</a><br>（Partiya Karkerên Kurdistan）</td>
                                       	    <td class="tg-6k2t">1978</td>
                                       	    <td class="tg-6k2t">Cemil Bayik</td>
                                       	    <td class="tg-6k2t">阿卜杜拉·奥贾兰、Cemil Bayi、 Kesire Yildirim Öcalan, Hakki Karaer</td>
@@ -1261,7 +1263,7 @@
                                       		查看更多</a></td>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-yw4l">库尔德自由之鹰</td>
+                                      	    <td class="tg-yw4l"><a>库尔德自由之鹰</td>
                                       	    <td class="tg-yw4l">2004.7.29</td>
                                       	    <td class="tg-yw4l">Bahoz Erdal（未公开，猜测）</td>
                                       	    <td class="tg-yw4l">无</td>
@@ -1275,7 +1277,7 @@
                                       		查看更多</a></td>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-6k2t">伊斯兰国</td>
+                                      	    <td class="tg-6k2t"><a>伊斯兰国</td>
                                       	    <td class="tg-6k2t">1999年</td>
                                       	    <td class="tg-6k2t">首领（自称哈里发） 阿布·贝克尔·巴格达迪</td>
                                       	    <td class="tg-6k2t"></td>
@@ -1288,7 +1290,7 @@
                                       	    <td class="tg-6k2t">2015年6月21日，叙利亚边境：库尔德小镇发生爆炸，造成34人死亡，IS宣称负责。2015年10月10日，安卡拉：超过100名和平示威人士在地铁站外被袭死亡，IS宣称负责。<a data-toggle="modal" data-target="#myModal5">查看更多</a></td>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-yw4l">灰狼组织(Grey Wolves)<br>(Ülkü Ocakları)<br>https://en.wikipedia.org/wiki/Grey_Wolves_(organization)</td>
+                                      	    <td class="tg-yw4l"><a>灰狼组织(Grey Wolves)<br>(Ülkü Ocakları)<br>https://en.wikipedia.org/wiki/Grey_Wolves_(organization)</td>
                                       	    <td class="tg-yw4l">1968</td>
                                       	    <td class="tg-yw4l">Devlet Bahçeli (1997–今)</td>
                                       	    <td class="tg-yw4l">Alparslan Türkeş (1968–199797)</td>
@@ -1301,7 +1303,7 @@
                                       	    <td class="tg-yw4l">2011年9月安卡拉警方搜查了安卡拉地区灰狼组织的40各处所，拘捕了 36，缴获大量枪支和刀具。据警方透露，他们计划向在平与民主党（BDP）发动...<a data-toggle="modal" data-target="#myModal6">查看更多</a></td>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-6k2t">叙利亚土库曼旅</td>
+                                      	    <td class="tg-6k2t"><a>叙利亚土库曼旅</td>
                                       	    <td class="tg-6k2t">2012.8.7</td>
                                       	    <td class="tg-6k2t">Ebu Bekir Muhammed Abbas</td>
                                       	    <td class="tg-6k2t"></td>
@@ -1314,7 +1316,7 @@
                                       	    <td class="tg-6k2t">2015年11月24日，土耳其军方在土叙边境击落一架俄罗斯战机，一名飞行员当场死亡，另一名飞行员跳伞，被叙利亚土库曼旅的一支射杀。</td>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-yw4l">人民保卫军（YPG）<br>（Halk Koruma Birlikleri）</td>
+                                      	    <td class="tg-yw4l"><a>人民保卫军（YPG）<br>（Halk Koruma Birlikleri）</td>
                                       	    <td class="tg-yw4l">2011年</td>
                                       	    <td class="tg-yw4l">Sîpan Hemo</td>
                                       	    <td class="tg-yw4l"></td>
@@ -1327,7 +1329,7 @@
                                       	    <td class="tg-yw4l">2016年8月24日，土耳其展开名为“幼发拉底之盾行动”的军事攻势，土耳其军队协助亲土耳其武装分子夺取叙利亚北部边境城镇贾拉布鲁斯后，开始攻击附近的人民保护部队控制区。<a href=" https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%B0%91%E4%BF%9D%E8%AD%B7%E9%83%A8%E9%9A%8A" target="_blank">查看出处</a> </td>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-6k2t">东突基金会<br>（Doğu Türkistan Vakfı）</td>
+                                      	    <td class="tg-6k2t"><a>东突基金会<br>（Doğu Türkistan Vakfı）</td>
                                       	    <td class="tg-6k2t">1978.3.23</td>
                                       	    <td class="tg-6k2t">Eser Türkistanlı Saka</td>
                                       	    <td class="tg-6k2t">Yusuf Alptekin（1978-1986）；Rıza Bekin Paşa（1986-2010）；Ilgar Alptekin（2010-2012）；Mehmet İsa Artış（2012-2013.1.15）；Eser Türkistanlı Saka（2013.1.15至今）</td>
@@ -1340,7 +1342,7 @@
                                       	    <td class="tg-6k2t"></td>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-yw4l">东突移民协会<br>（Doğu Türkistan Göçmenler Derneği）</td>
+                                      	    <td class="tg-yw4l"><a>东突移民协会<br>（Doğu Türkistan Göçmenler Derneği）</td>
                                       	    <td class="tg-yw4l">1960年</td>
                                       	    <td class="tg-yw4l"></td>
                                       	    <td class="tg-yw4l"></td>
@@ -1353,7 +1355,7 @@
                                       	    <td class="tg-yw4l"></td>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-6k2t">欧亚突厥协会联盟<br>（Avrasya Türk Dernekleri Federasyonu）</td>
+                                      	    <td class="tg-6k2t"><a>欧亚突厥协会联盟<br>（Avrasya Türk Dernekleri Federasyonu）</td>
                                       	    <td class="tg-6k2t"></td>
                                       	    <td class="tg-6k2t"></td>
                                       	    <td class="tg-6k2t"></td>
@@ -1366,7 +1368,7 @@
                                       	    <td class="tg-6k2t"></td>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-yw4l">东突教育与互助协会<br>（Doğu Türkistan Maarif ve Dayanışma Derneği）</td>
+                                      	    <td class="tg-yw4l"><a>东突教育与互助协会<br>（Doğu Türkistan Maarif ve Dayanışma Derneği）</td>
                                       	    <td class="tg-yw4l"></td>
                                       	    <td class="tg-yw4l"></td>
                                       	    <td class="tg-yw4l"></td>
@@ -1379,7 +1381,7 @@
                                       	    <td class="tg-yw4l"></td>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-6k2t">东突青年协会<br>（Doğu Türkistan Gençlik ve Kültür Derneği）<br>http://dtder.com/</td>
+                                      	    <td class="tg-6k2t"><a>东突青年协会<br>（Doğu Türkistan Gençlik ve Kültür Derneği）<br>http://dtder.com/</td>
                                       	    <td class="tg-6k2t">2006年 </td>
                                       	    <td class="tg-6k2t"></td>
                                       	    <td class="tg-6k2t"></td>
@@ -1392,7 +1394,7 @@
                                       	    <td class="tg-6k2t"></td>
                                       	  </tr>
                                       	  <tr>
-                                      	    <td class="tg-yw4l">东突文化与团结协会http://www.gokbayrak.com/sayfa.asp?id=14</td>
+                                      	    <td class="tg-yw4l"><a>东突文化与团结协会http://www.gokbayrak.com/sayfa.asp?id=14</td>
                                       	    <td class="tg-yw4l">1989年 </td>
                                       	    <td class="tg-yw4l">Seyit TÜMTÜRK</td>
                                       	    <td class="tg-yw4l"></td>
@@ -1414,13 +1416,13 @@
                 </div>
               </div>
 
-              <div class="col-lg-12" style="width: 1100px;margin-left: -1.6%;" id="zuzhi_id">
+              <div class="col-lg-12" style="width: 1100px;margin-left: -1.6%;" id="difang_id">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;" onclick="show_hide('zuzhi_show_hide')">
-                        <div><img id="orgnize_img" src="/static/img/turkey/orgnize.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">地方力量</div>                       
+                    <div class="panel-heading" style="background-color: #104F87;color: white;border-bottom: 1px solid transparent;border-color: #104F87;" onclick="show_hide('difang_show_hide')">
+                        <div><img id="orgnize_img" src="/static/img/turkey/difang.png" alt="Photo" style="width: 28px;height: 28px;margin-top: -0.8%;margin-left: -0.5%;margin-right: 0.5%;margin-bottom: -0.3%;">地方力量</div>                       
                     </div>
                     <!-- <div class="panel-body"> -->
-                      <div class="panel-body" id="zuzhi_show_hide">
+                      <div class="panel-body" id="difang_show_hide">
                         <div style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>地方力量列表</b>
                                     
@@ -1431,7 +1433,7 @@
                                         	<col style="width: 623px">
                                         	</colgroup>
                                         	  <tr>
-                                        	    <th class="tg1-fs2w" colspan="2">1.土耳其商人和工业家联合会或TUSKON （Confederation of Businessmen and Industrialists of Turkey or TUSKON）</th>
+                                        	    <th class="tg1-fs2w" colspan="2"><a>1.土耳其商人和工业家联合会或TUSKON （Confederation of Businessmen and Industrialists of Turkey or TUSKON）</th>
                                         	  </tr>
                                         	  <tr>
                                         	    <td class="tg1-yw4l">领导人：Rızanur Meral<br>成立时间：2005年<br>解散时间：2016年7月27日<br>类型：雇主联盟<br>总部：伊斯坦布尔<br>网站：www.tuskon.org:（已经被关闭）</td>
@@ -1441,63 +1443,63 @@
                                         	    </td>
                                         	  </tr>
                                         	  <tr>
-                                        	    <td class="tg1-fs2w" colspan="2">2.公共部门工会联合会或KESK （Confederation of Public Sector Unions or KESK） </td>
+                                        	    <td class="tg1-fs2w" colspan="2"><a>2.公共部门工会联合会或KESK （Confederation of Public Sector Unions or KESK） </td>
                                         	  </tr>
                                         	  <tr>
                                         	    <td class="tg1-yw4l">负责人：Lami OZGEN, Sazyie KOSE,共同负责<br>土耳其语：KamuEmekçileriSendikalarıKonfederasyonu<br>成立于1995年12月 <br>隶属ITUC，ETUC<br>办公地点：安卡拉，土耳其<br>网站: www.kesk.org.tr</td>
                                         	    <td class="tg1-yw4l">暂无简介信息</td>
                                         	  </tr>
                                         	  <tr>
-                                        	    <td class="tg1-fs2w" colspan="2">3.革命工会联合会或DISK（Confederation of Revolutionary Workers Unions or DISK）</td>
+                                        	    <td class="tg1-fs2w" colspan="2"><a>3.革命工会联合会或DISK（Confederation of Revolutionary Workers Unions or DISK）</td>
                                         	  </tr>
                                         	  <tr>
                                         	    <td class="tg1-yw4l">土耳其语：TürkiyeDevrimciİşçiSendikalarıKonfederasyonu <br>负责人：Tayfun GORGUN<br>成立：1967年<br>会员：327,000<br>隶属：ITUC，ETUC，TUAC<br>办公地点：伊斯坦布尔，土耳其<br>网站：www.disk.org.tr</td>
                                         	    <td class="tg1-yw4l">土耳其进步工会联合会是土耳其四个主要的全国工会中心之一。 它成立于1967年，作为土耳其工会联合会的一个分手联盟，成员有327,000。DİSK隶属于国际工会联合会和欧洲工会联合会。</td>
                                         	  </tr>
                                         	  <tr>
-                                        	    <td class="tg1-fs2w" colspan="2">4.独立工商者和商人协会或MUSIAD （Independent Industrialists' and Businessmen's Association or MUSIAD）</td>
+                                        	    <td class="tg1-fs2w" colspan="2"><a>4.独立工商者和商人协会或MUSIAD （Independent Industrialists' and Businessmen's Association or MUSIAD）</td>
                                         	  </tr>
                                         	  <tr>
                                         	    <td class="tg1-yw4l">主席：Nail OLPAK<br>成立时间：1990年5月5日<br>网址：http://www.musiad.org.tr/en</td>
                                         	    <td class="tg1-yw4l">该组织是一个非政府组织，主要由1990年5月5日由一群土耳其商人创办的中小型企业组成。协会的目标是帮助土耳其达到保护地方和普遍价值的国家的状态;在其区域有效，在全世界受到尊重并且繁荣;确保土耳其和世界在社会，文化和技术部门的发展。<br>根据2015年的记录，MÜSİAD在土耳其有85个联系点，在63个不同国家有159个联络点，有11,000多名成员。协会持有ISO 9001：2000质量认证。MÜSİAD组织了一年一度的国防工业博览会，名为高科技港口。第二届展会于2015年10月6 - 8日在卡塔尔多哈举行，并促进了土耳其和卡塔尔之间数十亿美元的贸易。MÜSİAD还支持土耳其的住房开发商和投资者组织（KONUTDER）展览，以增加与来自海湾的投资者的房地产贸易关系。</td>
                                         	  </tr>
                                         	  <tr>
-                                        	    <td class="tg1-fs2w" colspan="2">5.道德权利工人联合会或Hak-Is（Moral Rights Workers Union or Hak-Is）</td>
+                                        	    <td class="tg1-fs2w" colspan="2"><a>5.道德权利工人联合会或Hak-Is（Moral Rights Workers Union or Hak-Is）</td>
                                         	  </tr>
                                         	  <tr>
                                         	    <td class="tg1-yw4l">土耳其语：TürkiyeHakİşçiSendikalarıKonfederasyounu<br>成立于：1976年10月22日<br>负责人：Mahmut ARSLAN<br>成员340,000<br>隶属：ITUC，ETUC<br>办公地点：安卡拉，土耳其<br>网站：www.hakis.org.tr</td>
                                         	    <td class="tg1-yw4l">暂无简介信息</td>
                                         	  </tr>
                                         	  <tr>
-                                        	    <td class="tg1-fs2w" colspan="2">6.土耳其雇主联合会或TISK（Turkish Confederation of Employers' Unions or TISK）</td>
+                                        	    <td class="tg1-fs2w" colspan="2"><a>6.土耳其雇主联合会或TISK（Turkish Confederation of Employers' Unions or TISK）</td>
                                         	  </tr>
                                         	  <tr>
                                         	    <td class="tg1-yw4l">负责人：Tugrul KUDATGOBILIK<br>地址：安卡拉<br>电话号码 :03124397717<br>邮箱:tisk@tisk.org.tr<br>网址：http://tisk.org.tr/en/</td>
                                         	    <td class="tg1-yw4l">暂无简介信息</td>
                                         	  </tr>
                                         	  <tr>
-                                        	    <td class="tg1-fs2w" colspan="2">7.土耳其劳工联合会（Turkish Confederation of Labor or Turk-Is</td>
+                                        	    <td class="tg1-fs2w" colspan="2"><a>7.土耳其劳工联合会（Turkish Confederation of Labor or Turk-Is</td>
                                         	  </tr>
                                         	  <tr>
                                         	    <td class="tg1-yw4l">土耳其语：TürkiyeIşçiSendikalari Konfederasyonu<br>成立：1952年  <br>负责人：Ergun ATALAY<br>会员：175万（声称）<br>隶属：ITUC，ETUC，TUAC<br>办公地点：安卡拉，土耳其<br>网站：www.turkis.org.tr</td>
                                         	    <td class="tg1-yw4l">土耳其工会联合会（TÜRK-İŞ）是土耳其四个主要的全国工会中心之一。 它创建于1952年，是四个中心中最古老的，是1980年军事政变的唯一工会组织。TÜRK-İŞ声称拥有175万会员资格，隶属于国际工会联合会和欧洲工会联合会。 它也是经合组织工会咨询委员会的成员。</td>
                                         	  </tr>
                                         	  <tr>
-                                        	    <td class="tg1-fs2w" colspan="2">8.土耳其商人和工匠联合会或TESK （Turkish Confederation of Tradesmen and Craftsmen or TESK）</td>
+                                        	    <td class="tg1-fs2w" colspan="2"><a>8.土耳其商人和工匠联合会或TESK （Turkish Confederation of Tradesmen and Craftsmen or TESK）</td>
                                         	  </tr>
                                         	  <tr>
                                         	    <td class="tg1-yw4l">负责人：Bendevi PALANDOKEN <br>网址：http://www.tesk.org.tr/tr/yeni/indexhaber2.php</td>
                                         	    <td class="tg1-yw4l">暂无简介信息</td>
                                         	  </tr>
                                         	  <tr>
-                                        	    <td class="tg1-fs2w" colspan="2">9.土耳其工业家和商人协会或TUSIAD（Turkish Industrialists' and Businessmen's Association or TUSIAD）</td>
+                                        	    <td class="tg1-fs2w" colspan="2"><a>9.土耳其工业家和商人协会或TUSIAD（Turkish Industrialists' and Businessmen's Association or TUSIAD）</td>
                                         	  </tr>
                                         	  <tr>
                                         	    <td class="tg1-yw4l">负责人：Muharrem YILMAZ<br>成立：1971年<br>总部：土耳其伊斯坦布尔<br>世界各地设有6个代表处：安卡拉，布鲁塞尔，华盛顿特区，巴黎，柏林和北京<br>网址：http://tusiad.org/tr/</td>
                                         	    <td class="tg1-yw4l">TUSIAD是土耳其工商协会（土耳其语：TÜSİAD），是土耳其的顶级商业协会。一家独立的非政府组织，致力于通过私营企业促进公共福利。 <br>TUSIAD支持在土耳其和国外的重要社会和经济问题的独立研究和政策讨论。与美国商业圆桌会议一样，TUSIAD由土耳其主要工业和服务公司的CEO和高管组成，包括全球财富500强公司中的那些公司。土耳其媒体称这个群体是“代表土耳其的世俗精英”。</td>
                                         	  </tr>
                                         	  <tr>
-                                        	    <td class="tg1-fs2w" colspan="2">10.土耳其商业和商品交易所联合会或TOBB（Turkish Union of Chambers of Commerce and Commodity Exchanges or TOBB）</td>
+                                        	    <td class="tg1-fs2w" colspan="2"><a>10.土耳其商业和商品交易所联合会或TOBB（Turkish Union of Chambers of Commerce and Commodity Exchanges or TOBB）</td>
                                         	  </tr>
                                         	  <tr>
                                         	    <td class="tg1-yw4l">成立：1950年3月8日<br>负责人：M. Rifat HISARCIKLIOGLU<br>类型：NGO<br>用途：商业，工业和海运商务<br>总部：安卡拉，土耳其<br>网站:www.tobb.org.tr</td>
@@ -1527,7 +1529,7 @@
                                         <table class="table table-bordered">
                                         <caption>华人与华侨(6~8万)</caption>
                                         <thead>
-                                            <tr>
+                                            <tr style="background-color: #cbcefb;font-size: 13px;font-weight: bold;">
                                                 <th>民族</th>
                                                 <th>人口</th>
                                                 <th>简介</th>
@@ -1565,7 +1567,7 @@
                                        <table class="table table-bordered">
                                         <!-- <caption>双边经贸关系(单位：十亿美元)</caption> -->
                                         <thead>
-                                            <tr>
+                                            <tr style="background-color: #cbcefb;font-size: 13px;font-weight: bold;">
                                                 <th>名称</th>
                                                  <th>成立时间</th>
                                                 <th>所在地</th>
@@ -1695,12 +1697,28 @@
                                     </p>
                           <div id="zhongzijigou_id" style="float:left;width:6px;height:22px;background-color: #104F87;    margin-left: 0%;margin-top: 0%;margin-right: 0.6%;" ></div>
                                     <p class="personal_domain" style="margin-top: 0%;"><b>中资机构</b>
+                                      <div id="zhongzijigou_id" style="float:left;width:4px;height:22px;background-color: #104F87;    margin-left: 2%;margin-top: 0%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 0%;"><b>投资趋势</b>
+
                                     <div id="zhongzi_table" style="width:100%;height: auto;" >
-                                    	<div class="shadow" style="width: 458px; height: 350px;margin-left: 250px;border: 1px solid #2d2c41;" id='divHighcharts1'>
+                                    	<div class="shadow" style="width: 1030px; height: 350px;border: 1px solid #2d2c41;" id='divHighcharts1'>
                                     	        </div>
                                         
                                     </div>
-                                     
+									 <div id="zhongzijigou_id" style="float:left;width:4px;height:22px;background-color: #104F87;    margin-left: 2%;margin-top: 2%;margin-right: 0.6%;" ></div>
+                                    <p class="personal_domain" style="margin-top: 2%;"><b>机构列表</b>
+                                     <div id="zhongzi_list" style="width:100%;height: auto;">
+                                     	<div style="width: 10%;float:left;margin-top:2%;margin-left:2%;">
+                                     		<span style="margin-left: -20%;font-size: 16px;font-family: Microsoft YaHei;">按行业：</span> 
+                                     	</div>
+                                     	<div id="zhongzi_industry" style="width: 10%;float:left;margin-left: -5.5%;margin-top: 1.5%;"></div>
+                                     	<div style="width: 10%;float:left;margin-top:2%;    margin-left: 12%;">
+                                     		<span style="font-size: 16px;font-family: Microsoft YaHei;">按地域：</span>
+                                     	</div>
+                                     	<div id="zhongzi_geo" style="width: 10%;float:left;margin-left: -3.5%;margin-top: 1.5%;"></div>
+                                     	<div id="zhongzijigou_list" style="width:100%;z-index: 9999999;"></div>
+                                     </div>
+
                                     </p>
 
                        
@@ -2976,7 +2994,7 @@
             tooltip: {
             
             formatter: function() {
-                return '<b>'+ this.series.name +'</b><br/>'+this.x +'年: 投资<b>'+ this.y + '</b>次';
+                return this.x +'年: 投资<b>'+ this.y + '</b>次';
               }
             },
             series: [{
@@ -2987,6 +3005,7 @@
 
 
     </script>
+<script src="../../static/js/dropdownlist.js" type="text/javascript"></script>
 
 <script src="../../static/js/turkey_info.js" type="text/javascript"></script>
 <script src="../../static/js/turkey_info_zixun.js" type="text/javascript"></script>

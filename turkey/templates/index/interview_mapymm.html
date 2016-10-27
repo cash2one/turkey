@@ -17,7 +17,7 @@
     <script type="text/javascript" src="../../static/js/echarts.js"></script>
     <script type="text/javascript" src="../../static/js/echarts-all.js"></script>
     <!-- // <script type="text/javascript" src="../../static/js/API.js"></script> -->
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0ECXIPy41grtI3jUXqQMgILaG1vKUiLo"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0ECXIPy41grtI3jUXqQMgILaG1vKUiLo"></script>
 
     
 
@@ -57,15 +57,19 @@
                 
 
                     <div>
-                        <button type="button" class="btn btn-default" data-toggle="collapse" 
-                        data-target="#country">查看国家天气预报</button>
+                       <!--  <button type="button" class="btn btn-default" data-toggle="collapse" 
+                        data-target="#country">查看国家天气预报</button> -->
 
-                        <div id="country" class="collapse" >
-                            <div class="well" style="width:100%;float:left;" >
-                                <h3>土耳其天气预报（一周内）</h3>
-                                <img id="turkey_climate" src="/static/img/turkey_climate.png" style="width: 75%;height: 400px;">
+                       <!--  <div id="country" class="collapse" > -->
+                            <div class="well" style="width:50%;float:left;" >
 
-                                <div class="panel panel-default" style="float:right;margin-right: 10px;width: 220px;">
+                            	  <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 20px;margin-right: 0.6%;" ></div>
+                            	<p class="personal_domain" style="" ><b>土耳其天气预报（一周内）</b>  </p> 
+
+                                <!-- <h3 style="font-size: 20px;"></h3> -->
+                                <img id="turkey_climate" src="/static/img/turkey_climate.png" style="width: 100%;height: 150px;">
+
+                               <!--  <div class="panel panel-default" style="float:right;margin-right: 10px;width: 220px;">
                                     <div class="panel-heading">
                                         小贴士
                                     </div>
@@ -76,22 +80,24 @@
                                     </div>
                                 </div>
 
-                            </div>
+                            <!-- </div> -->
                         </div>
                     </div>
 
                     <!-- style="border-top:1px solid #ddd" -->
                     <div >
-                         <button type="button" class="btn btn-default" data-toggle="collapse" 
+                        <!--  <button type="button" class="btn btn-default" data-toggle="collapse" 
                         data-target="#city">查看城市天气预报</button>
-
-                        <div id="city" class="collapse" >
-                            <div class="well" style="width:100%;float:left;">
-                                <h3>安卡拉天气预报</h3>
-                                <img id="ankala_climate" src="/static/img/ankala_climate.png" style="width: 75%;height:200px;"> 
-                                <h3>安卡拉天气详情</h3>    
-                                <img id="ankala_climate_detail" src="/static/img/ankala_climate_detail.png" style="width:75%;height:200px;">    
-                                <div class="panel panel-default" style="float:right;margin-right: 10px;width: 220px;margin-top: -256px;">
+ -->
+                        <!-- <div id="city" class="collapse" > -->
+                            <div class="well" style="width:50%;float:left;">
+                                <!-- <h3>安卡拉天气预报</h3> -->
+                                <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 20px;margin-right: 0.6%;" ></div>
+                            	<p class="personal_domain" style="" ><b>安卡拉天气预报</b>  </p>
+                                <img id="ankala_climate" src="/static/img/ankala_climate.png" style="width: 100%;height:150px;"> 
+                                <!-- <h3>安卡拉天气详情</h3>    
+                                <img id="ankala_climate_detail" src="/static/img/ankala_climate_detail.png" style="width:75%;height:200px;">     -->
+                               <!--  <div class="panel panel-default" style="float:right;margin-right: 10px;width: 220px;margin-top: -256px;">
                                     <div class="panel-heading">
                                         小贴士
                                     </div>
@@ -100,17 +106,17 @@
                                         <img id="tieshi2" src="/static/img/tieshi2.png" style="margin-top:10px;width: 190px;">
                                         <img id="tieshi3" src="/static/img/tieshi3.png" style="margin-top:10px;width: 190px;">
                                     </div>
-                                </div>
+                                </div> -->
 
                             </div>
-                        </div>
+                        <!-- </div> -->
                     </div>                
                 </div>
                 
                 <!--风土人情详细内容-->
                 <div class="tab-pane fade" id="local_conditions">
                     <!-- <img id="fengturenqing" src="/static/img/fengturenqing.png" style="margin-top:10px;width: 100%;height:600px;"> -->
-                      <div class="news_box" style="width:100%;height:200px;">
+                      <div class="news_box" style="width:100%;height:180px;">
                           <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 30px;" >
                             </div>
                             <p class="personal_domain" style="margin-top: 30px;" ><b style="    margin-left: 20px;">宗教信仰</b></p>
@@ -119,7 +125,7 @@
                       </div>
 
 
-                      <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:370px;">
+                      <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:365px;">
                           <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 30px;margin-top:30px;" >
                             </div>
                             <p class="personal_domain" style="margin-top: 30px;" ><b style="    margin-left: 20px;">传统节日</b></p>
@@ -152,7 +158,7 @@
                       </div>
 
 
-                       <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:350px;">
+                       <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:340px;">
                           <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 30px;margin-top:30px;" >
                             </div>
                             <p class="personal_domain" style="margin-top: 30px;" ><b style="    margin-left: 20px;">传统文化</b></p>
@@ -180,7 +186,7 @@
                       </div>
 
 
-                         <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:200px;">
+                         <div class="news_box" style="border-top:1px solid #ddd;width:100%;height:210px;">
                           <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 30px;margin-top:30px;" >
                             </div>
                             <p class="personal_domain" style="margin-top: 30px;" ><b style="    margin-left: 20px;">建筑</b></p>
@@ -238,13 +244,13 @@
                 <!--人物资讯详细内容-->
                 <div class="tab-pane fade in active" id="people" style="height:200px;">
                 <!-- 拟出访人 -->
-                    <div style="margin-left:10%;">
-                        <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 20px;margin-right: 0.6%;" >
+                    <div style="margin-left:10%;margin-top: -150px;">
+                        <!-- <div style="float:left;width:6px;height:22px;background-color: #104F87;margin-left: 20px;margin-right: 0.6%;" >
                         
                         </div>
                             <p class="personal_domain" style="margin-top: 30px;" ><b>拟出访人</b>
                                 <!-- <span>当代著名作家</span> <span> 文学家</span><span> 艺术家</span> -->
-                            </p>
+                            <!-- </p>  -->
                         <div>
                             <img id="zongtong_1_img" src="/static/img/turkey/zongtong_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-left: 1%;float: left;">
                             <p style="float: left;margin-left:10px;">塔伊普·埃尔多安</br>在任时间：2014.08-至今</br>出生日期：1954年2月26日</br>外文名：Recep Tayyip Erdogan</br>毕业院校：马尔马拉大学经贸学院</br></br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="detail" href="/news/person_detail/president_now" style="margin-top:5px;">查看更多详情</a></p>
@@ -256,7 +262,7 @@
                 <!-- 推荐的出访人 -->
                 <div style="margin-top: 200px;margin-left: 110px;">
                     
-                        <div>
+                        <div style="    margin-left: 400px;">
                             <img id="zongtong_1_img" src="/static/img/turkey/zongli_1.png" alt="Photo" style="float：left;width: 100px;height: 120px;margin-left: 1%;float: left;">
                             <p style="float: left;margin-left:10px;">毕纳利·耶尔德勒姆</br>在任时间：2016.05-至今</br>出生日期：1955年12月20日</br>外文名：Binali Yıldırım</br>毕业院校：伊斯坦布尔理工大学海事学院/世界海事大学</br></br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a id="detail" href="/news/person_detail/president_now" style="margin-top:5px;">查看更多详情</a></p>
 
@@ -460,8 +466,8 @@
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-                    <li><a href="#extreme_organization" tabindex="-1" data-toggle="tab">极端与反华势力</a></li>
-                    <li><a href="#anti_force" tabindex="-1" data-toggle="tab">地方力量</a></li>
+                    <li><a href="#extreme_organization" tabindex="-1" data-toggle="tab" onclick="change_label1();">极端与反华势力</a></li>
+                    <li><a href="#anti_force" tabindex="-1" data-toggle="tab" onclick="change_label2();">地方力量</a></li>
                     <!-- <li><a href="#local_organization" tabindex="-1" data-toggle="tab">地方力量</a></li> -->
                 </ul>
             </li>
@@ -687,44 +693,75 @@
 
 
             
-            <div class="tab-pane fade in active" id="extreme_organization" style="margin-left: -30px;">
+            <div class="tab-pane fade in active" id="extreme_organization" style="margin-left: -20px;width: 900px;position:relative;">
                 <div style="height:550px;margin-left:30px" id="container">
                     <!-- <img id="zongtong_1_img" src="/static/img/jiduanzuzhi.png" style="width: 800px;" > -->
                     <!-- <iframe style="width:1000px;height:450px;margin-top:20px;" src="mainmap/mapchildren"></iframe> -->
                 </div>
                 <style type="text/css">
+                #myTabContent {
+                    margin-left: -10px;
+                }
                 #r-result {
-                    width: 60%;
+                    /*width: 60%;*/
                     /*height: 30px;*/
                     /*line-height: 30px;*/
                     /*background-color: #A5C1DD;*/
-                    position: relative;
-                    bottom:25px ;
-                    left: 10px;
-                    padding-left: 20px;
+                    position: absolute;
+                    bottom:140px ;
+                    right: -150px;
+                    /*padding-left: 40px;*/
                 }
-                #r-result input {
-                    outline: none;
-                    /*border: none;*/
-                    -webkit-border-radius:20px;
-                    -moz-border-radius:20px;
-                    border-radius:20px;
-                    font-size: 12px;
-                    color: #fff;
-                    text-align: center;
-                    width: 100px;
-                    height: 20px;
-                    line-height: 20px;
-                    background-color: #999999;
+                
+                #r-result span:before {
+                     display: inline-block;
+                     content: '';
+                     width: 10px;
+                     height: 10px;
+                     margin-right: 10px;
+                }
+                #r-result span {
+                    display: block;
+                    font-size: 16px;
                     font-weight: 900;
+                    margin-top: 30px;
                 }
+                #r-result span:hover {
+                    cursor: pointer;
+                }
+                #r-result .one:before {
+                    background-color: green;
+                }
+                #r-result .two:before {
+                    background-color: gold;
+                }
+                #r-result .three:before {
+                    background-color: purple;
+                }
+                #r-result .four:before {
+                    background-color: salmon;
+                }
+                #r-result .all {
+                    outline: none;
+                    margin-top: 30px;
+                    width: 130px;
+                    height: 30px;
+                    line-height: 30px;
+                    text-align: center;
+                    font-size: 16px;
+                    border-radius: 20px;
+                    background-color: #104F87;
+                    
+                }
+
+
             </style>
             <div id="r-result">
-                <input class="one" type="button"   value="库尔德工人党"  style="background-color: green"/>
-                <input class="two" type="button"   value="库尔德自由之鹰" style="background-color: gold"/>
-                <input class="three" type="button"   value="灰狼组织" style="background-color: purple"/>
-                <input class="four" type="button" value="法轮功" style="background-color: salmon"/>
-                <input class="all" type="button" value="纵览" style="background-color: silver"/>
+                <span class="one" style="color: green"/>库尔德工人党</span>
+                <span class="two" style="color:gold"/>库尔德自由之鹰</span>
+                <span class="three" style="color:purple"/>灰狼组织</span>
+                <span class="four" style="color:salmon"/>法轮功</span>
+                <input type="button" class="all" style="color:white;font-weight:900;" value="全部"/>
             </div>
             <script type="text/javascript" src="../../static/js/mapjsone.js"></script>
             <!-- /div> -->
@@ -748,20 +785,20 @@
 
 
             
-            <div class="tab-pane fade" id="anti_force" style="margin-left: -30px;position:relative;">
+            <div class="tab-pane fade" id="anti_force" style="margin-left: -20px;width: 870px;position:relative;">
                 <div style="height:550px;margin-left:30px" id="allmap">
                     <!-- <img id="zongtong_1_img" src="/static/img/fanhuashili.png" style="width: 800px;"> -->
                 </div>
                 <style type="text/css">
                             #r-result2 {
-                                width: 60%;
+                                /*width: 60%;*/
                                 /*height: 30px;*/
                                 /*line-height: 30px;*/
                                 /*background-color: #A5C1DD;*/
                                 position: absolute;
-                                top:20px ;
-                                right: -35%;
-                                padding-right: 20px;
+                                top:100px ;
+                                right: -27%;
+                                /*padding-right: 20px;*/
                             }
                             #r-result2 span:before {
                                 display: inline-block;
@@ -774,43 +811,43 @@
                                 display: block;
                                 font-size: 14px;
                                 font-weight: 900;
-                                margin-bottom: 5px;
+                                margin-bottom: 20px;
                             }
                             .bu1:before {
-                                background-color: #AE6D32;
-                            }
-                            .bu2:before {
-                                background-color: purple;
-                            }
-                            .bu3:before {
                                 background-color: #56ABE4;
                             }
+                            .bu2:before {
+                                background-color: #9D55B8;
+                            }
+                            .bu3:before {
+                                background-color: #FF0000;
+                            }
                             .bu4:before {
-                                background-color: #19FA28;
+                                background-color: #EA8010;
                             }
                             .bu5:before {
-                                background-color: red;
+                                background-color: #0D0B0B;
                             }
                             .bu6:before {
-                                background-color: #B02323;
+                                background-color: #00BB9C;
                             }
                             .bu7:before {
-                                background-color: #D8060C;
+                                background-color: #03F714;
                             }
                             .bu8:before {
-                                background-color: #CAC122;
+                                background-color: #FF0277;
                             }
                         </style>
                     
                     <div id="r-result2">
-                        <span style="color: #AE6D32;" class="bu1">公共部门工会联合会</span>
-                        <span style="color: purple;" class="bu2">土耳其商人和工业家联合会</span>
-                        <span style="color: #56ABE4;" class="bu3">革命工会联合会</span>
-                        <span style="color: #19FA28;" class="bu4">道德权利工人联合会</span>
-                        <span style="color: red;" class="bu5">土耳其雇主联合会</span>
-                        <span style="color: #B02323;" class="bu6">土耳其劳工联合会</span>
-                        <span style="color: #D8060C;" class="bu7">土耳其商业和商品交易所联合会</span>
-                        <span style="color: #CAC122;" class="bu8">独立工商者和商人协会</span>
+                        <span style="color: #56ABE4;" class="bu1">公共部门工会联合会</span>
+                        <span style="color: #9D55B8;" class="bu2">土耳其商人和工业家联合会</span>
+                        <span style="color: #FF0000;" class="bu3">革命工会联合会</span>
+                        <span style="color: #EA8010;" class="bu4">道德权利工人联合会</span>
+                        <span style="color: #0D0B0B;" class="bu5">土耳其雇主联合会</span>
+                        <span style="color: #00BB9C;" class="bu6">土耳其劳工联合会</span>
+                        <span style="color: #03F714;" class="bu7">土耳其商业和商品交易所联合会</span>
+                        <span style="color: #FF0277;" class="bu8">独立工商者和商人协会</span>
                     </div>
                     <script type="text/javascript" src="../../static/js/mapjstwo.js"></script>
                             
@@ -1066,6 +1103,26 @@
 </div>
 
 <!-- js -->
+<script type="text/javascript">
+	function change_label1()
+	{		
+        // $('#friend_rank_detail').append(html);
+		$('#myTabDrop1').empty();
+        var html= '极端组织与反华势力<b class="caret"></b>'
+        $('#myTabDrop1').append(html);
+		// document.getElementById('myTabDrop1').innerHTML = "极端组织与反华势力";
+	}
+		function change_label2()
+	{
+        $('#myTabDrop1').empty();
+        var html= '地方力量<b class="caret"></b>'
+        $('#myTabDrop1').append(html);
+		
+		// $('#myTabDrop1').empty();
+		// document.getElementById('myTabDrop1').innerHTML = "地方力量";
+	}
+</script>
+
 <script type="text/javascript">
         var myChart = echarts.init(document.getElementById('international'));
             option = {
