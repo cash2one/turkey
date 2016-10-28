@@ -199,7 +199,7 @@ var data_zhongzi=[
 {"company":"慈溪康鑫摩托车有限公司","item":"土耳其神马摩托车工业外贸有限公司","time":"2006/3/21","industry":"008","geo":"003"},
 {"company":"大连闻达化工股份有限公司","item":"-","industry":"022","time":"-","geo":"013"},
 {"company":"大同煤矿集团有限责任公司","item":"大同煤矿集团土耳其代表处","time":"2007/8/15","industry":"014","geo":"003"},
-{"company":"地质矿产廊坊聚力岩土工程科技开发公司","item":"2014年投资在【土耳其】的地质矿产廊坊聚力岩土工程科技开发公司土耳其分公司。","time":"2014/9/26","industry":"014","geo":"013"},
+{"company":"地质矿产廊坊聚力岩土工程科技开发公司","item":"2014年投资在土耳其的地质矿产廊坊聚力岩土工程科技开发公司土耳其分公司。","time":"2014/9/26","industry":"014","geo":"013"},
 {"company":"东方电气股份有限公司","item":"东方电气（土耳其）股份有限公司   ，","time":"2016","industry":"002","geo":"003"},
 {"company":"东方电气股份有限公司","item":"与土耳其Hema电力公司签署了《Hema 2×660MW 超超临界火电项目EPC合同》","time":"2016/1/22","industry":"002","geo":"003"},
 {"company":"东方电气集团国际合作有限公司    ","item":"土耳其卡亚贝水电项目","industry":"002","time":"-","geo":"013"},
@@ -350,8 +350,8 @@ var data_zhongzi=[
 {"company":"中国能源建设集团广东省电力设计研究院","item":"与土耳其吉奈尔集团(Ciner Group)正式签订土耳其KONYA ILGIN 1×500MW CFB超临界燃煤电厂EPC总承包项目合同。2016年投资在【土耳其】的中国能源建设集团广东省电力设计研究院有限公司土耳其分公司。","time":"2015.2.9日签订合同，预计项目于2020年竣工投产","industry":"002","geo":"004"},
 {"company":"中国能源建设集团广东省电力设计研究院","item":"中国能建广东院签订土耳其500MW超临界燃煤电厂总承包合同","time":"2015/2/9","industry":"002","geo":"013"},
 {"company":"中国能源建设集团山西省电力勘测设计院","item":"中国能源建设集团山西省电力勘测设计院土耳其代表处","time":"1905/7/7","industry":"002","geo":"013"},
-{"company":"中国能源建设集团山西省电力勘测设计院有限公司","item":"2015年投资在【土耳其】的中国能源建设集团山西省电力勘测设计院土耳其代表处。","time":"2015/5/5","industry":"002","geo":"004"},
-{"company":"中国能源建设集团山西省电力勘测设计院有限公司","item":"2015年投资在【土耳其】的中国能源建设集团山西省电力勘测设计院土耳其代表处。","time":"2015/5/5","industry":"002","geo":"003"},
+{"company":"中国能源建设集团山西省电力勘测设计院有限公司","item":"2015年投资在土耳其的中国能源建设集团山西省电力勘测设计院土耳其代表处。","time":"2015/5/5","industry":"002","geo":"004"},
+{"company":"中国能源建设集团山西省电力勘测设计院有限公司","item":"2015年投资在土耳其的中国能源建设集团山西省电力勘测设计院土耳其代表处。","time":"2015/5/5","industry":"002","geo":"003"},
 {"company":"中国轻工业品进出口总公司","item":"中轻土耳其有限公司","time":"2013/12/19","industry":"016","geo":"013"},
 {"company":"中国石化集团国际石油工程有限公司","item":"中国石化集团国际石油工程土耳其公司","time":" 2014-09-19 ","industry":"017","geo":"013"},
 {"company":"中国石油技术开发公司","item":"-","industry":"017","time":"-","geo":"013"},
@@ -367,7 +367,7 @@ var data_zhongzi=[
 {"company":"中冶海外工程有限公司   ","item":"-","industry":"016","time":"-","geo":"013"},
 {"company":"重庆建设摩托车股份有限公司","item":"中国重庆北方建设土耳其办事处","time":"2009/8/10","industry":"008","geo":"013"},
 {"company":"重庆力帆实业（集团）进出口有限公司","item":"-","time":"-","geo":"013"},
-{"company":"重庆立崧电机设备有限公司   ","item":"2010年投资在【土耳其】的重庆立崧电机设备有限公司售后服务中心土耳其办事处。","time":"2010/9/3","industry":"025","geo":"013"},
+{"company":"重庆立崧电机设备有限公司   ","item":"2010年投资在土耳其的重庆立崧电机设备有限公司售后服务中心土耳其办事处。","time":"2010/9/3","industry":"025","geo":"013"},
 {"company":"重庆续鑫工贸有限公司","item":"三山车架制造贸易有限公司","time":"2013/9/13","industry":"008","geo":"013"},
 {"company":"自贡市沃斯顿电器有限公司","item":"自贡市沃斯顿电器有限公司土耳其分公司","time":"2013/10/8","industry":"025","geo":"013"},
 
@@ -444,7 +444,7 @@ function draw_data_industry(data_zhongzi){
 	html+='<table id="zhongzi_chart" class="tg" style="undefined;table-layout: fixed; width: 1038px">';
     html+='<colgroup>';  	
     html+='<col style="width: 50px">';	
-    html+='<col style="width: 320px">';  		
+    html+='<col style="width: 240px">';  		
     html+='<col style="width: 350px">'; 		
     html+='<col style="width: 120px">';  		
     html+='<col style="width: 70px">';   		
@@ -468,21 +468,21 @@ var k=0;
 			if (value_industry=='001'){
 				console.log("value_industry=='001'");
 				html+='<tr>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+(i+1)+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;"><a href="/news/turkey_companyymm" target="_blank">'+data_zhongzi[i].company+'</a></td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+data_zhongzi[i].item+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+data_zhongzi[i].time+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;"><a href="/news/turkey_detailymm" target="_blank">查看详情</a></td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+(i+1)+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;"><a href="/news/turkey_companyymm" target="_blank">'+data_zhongzi[i].company+'</a></td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+data_zhongzi[i].item+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+data_zhongzi[i].time+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;"><a href="/news/turkey_detailymm" target="_blank">查看详情</a></td>';
 				html +='</tr>';
 			}else if(data_zhongzi[i].industry == value_industry){
 				// console.log(data_zhongzi[i].industry);
 				k+=1;
 				html+='<tr>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+k+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;"><a href="/news/turkey_companyymm" target="_blank">'+data_zhongzi[i].company+'</a></td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+data_zhongzi[i].item+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+data_zhongzi[i].time+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;"><a href="/news/turkey_detailymm" target="_blank">查看详情</a></td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+k+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;"><a href="/news/turkey_companyymm" target="_blank">'+data_zhongzi[i].company+'</a></td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+data_zhongzi[i].item+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+data_zhongzi[i].time+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;"><a href="/news/turkey_detailymm" target="_blank">查看详情</a></td>';
 				// html += '<td style="vertical-align: middle;">'+data_zhongzi[i].company+'</td>';
 				// html += '<td style="vertical-align: middle;">'+data_zhongzi[i].item+'</td>';
 				// html += '<td style="vertical-align: middle;">'+data_zhongzi[i].time+'</td>';
@@ -565,21 +565,21 @@ var k=0;
 			if (value_geo=='001'){
 				console.log("value_geo=='001'");
 				html+='<tr>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+(i+1)+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;"><a href="/news/turkey_companyymm" target="_blank">'+data_zhongzi[i].company+'</a></td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+data_zhongzi[i].item+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+data_zhongzi[i].time+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;"><a href="/news/turkey_detailymm" target="_blank">查看详情</a></td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+(i+1)+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;"><a href="/news/turkey_companyymm" target="_blank">'+data_zhongzi[i].company+'</a></td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+data_zhongzi[i].item+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+data_zhongzi[i].time+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;"><a href="/news/turkey_detailymm" target="_blank">查看详情</a></td>';
 				html +='</tr>';
 			}else if(data_zhongzi[i].geo == value_geo){
 				// console.log(data_zhongzi[i].industry);
 				k+=1;
 				html+='<tr>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+k+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;"><a href="/news/turkey_companyymm" target="_blank">'+data_zhongzi[i].company+'</a></td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+data_zhongzi[i].item+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;">'+data_zhongzi[i].time+'</td>';
-				html+='<td class="tg-480y" style="font-size: 14px;font-weight: bolder;"><a href="/news/turkey_detailymm" target="_blank">查看详情</a></td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+k+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;"><a href="/news/turkey_companyymm" target="_blank">'+data_zhongzi[i].company+'</a></td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+data_zhongzi[i].item+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+data_zhongzi[i].time+'</td>';
+				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;"><a href="/news/turkey_detailymm" target="_blank">查看详情</a></td>';
 				// html += '<td style="vertical-align: middle;">'+data_zhongzi[i].company+'</td>';
 				// html += '<td style="vertical-align: middle;">'+data_zhongzi[i].item+'</td>';
 				// html += '<td style="vertical-align: middle;">'+data_zhongzi[i].time+'</td>';
