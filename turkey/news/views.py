@@ -42,6 +42,10 @@ def turkey_index():
 def infor_search():
     return render_template('index/infor_search.html')
 
+@mod.route('/infor_searchymm/')
+def infor_searchymm():
+    return render_template('index/infor_searchymm.html')
+
 @mod.route('/interview_detail/')
 def interview_detail():
     return render_template('index/interview_detail.html')
