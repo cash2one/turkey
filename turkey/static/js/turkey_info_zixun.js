@@ -464,9 +464,9 @@ function draw_data_industry(data_zhongzi){
 var k=0;
 	for(i=0;i<data_zhongzi.length;i++){
 		
-		console.log(data_zhongzi[i].industry);
+		//console.log(data_zhongzi[i].industry);
 			if (value_industry=='001'){
-				console.log("value_industry=='001'");
+				//console.log("value_industry=='001'");
 				html+='<tr>';
 				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;">'+(i+1)+'</td>';
 				html+='<td class="tg1-yw4l" style="font-size: 14px;line-height:2 !important;"><a href="/news/turkey_companyymm" target="_blank">'+data_zhongzi[i].company+'</a></td>';
